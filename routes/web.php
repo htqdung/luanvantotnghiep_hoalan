@@ -55,3 +55,4 @@ Route::group(['prefix'=>'trangchinh'],function(){
 
 		Route::get('dathang4', 'trangchinhController@dathang4');
 	});
+});
