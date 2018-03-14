@@ -1,11 +1,11 @@
 <!-- menu -->
-<div class="ban-top">
+<div class="ban-top" style="background: #9E0CF5">
 	<div class="container">
 		<div class="top_nav_left">
 			<nav class="navbar navbar-default">
 			  <div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
+				<div class="navbar-header" style="background: #9BBDF5" >
 				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
@@ -14,12 +14,12 @@
 				  </button>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+				<div class="collapse navbar-collapse menu--shylock"  id="bs-example-navbar-collapse-1" >
 				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item menu__item--current"><a class="menu__link" href="trangchinh/trangchu/trangchu">Trang Chủ <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="trangchinh/gioithieu/gioithieu">Giới Thiệu</a></li>
+					<li class="active menu__item menu__item--current"><a style="font-size: 14px" class="menu__link" href="trangchinh/trangchu/trangchu"><b>TRANG CHỦ</b> <span class="sr-only">(current)</span></a></li>
+					<li class=" menu__item"><a class="menu__link" href="trangchinh/gioithieu/gioithieu"><b>GIỚI THIỆU</b></a></li>
 					<li class="dropdown menu__item">
-						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hoa Lan<span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>HOA LAN</b><span class="caret"></span></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="agile_inner_drop_nav_info">
 									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
@@ -52,7 +52,7 @@
 							</ul>
 					</li>
 					<li class="dropdown menu__item">
-						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quà Tặng<span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>QUÀ TẶNG</b><span class="caret"></span></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="agile_inner_drop_nav_info">
 									<div class="col-sm-3 multi-gd-img">
@@ -84,6 +84,7 @@
 								</div>
 							</ul>
 					</li>
+					<li class=" menu__item"><a class="menu__link" href="trangchinh/gioithieu/gioithieu"><b>KHUYẾN MÃI</b></a></li>
 					<!--
 					<li class="menu__item dropdown">
 					   <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Short Codes <b class="caret"></b></a>
@@ -93,18 +94,19 @@
 								</ul>
 					</li>
 					-->
-					<li class=" menu__item"><a class="menu__link" href="trangchinh/lienhe/lienhe">Liên Hệ</a></li>
+					<li class=" menu__item"><a class="menu__link" href="trangchinh/lienhe/lienhe"><b>LIÊN HỆ</b></a></li>
 				  </ul>
 				</div>
 			  </div>
 			</nav>	
 		</div>
-		<div class="top_nav_right">
-			<div class="wthreecartaits wthreecartaits2 cart cart box_1"> 
-				<form action="#" method="post" class="last"> 
+		<div class="top_nav_right" >
+			<div class="wthreecartaits wthreecartaits2 cart cart box_1" style="background: #9E0CF5" > 
+				<form action="#" method="post" class="last" > 
 					<input type="hidden" name="cmd" value="_cart">
 					<input type="hidden" name="display" value="1">
-					<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+
+					<button class="w3view-cart hover-cart"  type="submit" name="submit" value="" style="background: #9E0CF5" ><i class="fa fa-cart-plus " data-toggle="tooltip" title="Giỏ hàng" style="font-size: 1.3em; color: #fff"  aria-hidden="true" ></i></button>
 				</form>  
   			</div>
 		</div>

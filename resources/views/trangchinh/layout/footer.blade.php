@@ -44,31 +44,20 @@
 </div>
 <!--grids-->
 <!-- footer -->
-<div class="footer">
-	<div class="footer_agile_inner_info_w3l">
-		<div class="col-md-3 footer-left">
-			<h2><a href="index.html"><span>E</span>lite Shoppy </a></h2>
+<div class="footer" style="background-color: #A0BCF5">
+
+	<div class="footer_agile_inner_info_w3l"> 
+		<div class="col-md-3 footer-left" >
+			
+			<h2><a href="index.html"> <span style="background:#F56E5E !important;">N</span>EAR</a></h2>
 			<p>Cửa hàng kinh doanh sỉ lẻ các loại hoa lan, chuyên cung cấp các sản phẩm đẹp, lạ, chất lượng cao. 
 			</p>
-			<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
-															<li><a href="#" class="facebook">
-																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="twitter"> 
-																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="instagram">
-																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="pinterest">
-																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul>
+			
 		</div>
-		<div class="col-md-9 footer-right">
+		<div class="col-md-9 footer-right" style="padding-right: 0px; margin-right: 0px;">
 			<div class="sign-grds">
-				<div class="col-md-4 sign-gd">
-					<h4><span>Thông Tin</span> Chúng Tôi </h4>
+				<div class="col-md-3 sign-gd">
+					<h4>DANH MỤC </h4>
 					<ul>
 						<li><a href="index.html">Trang Chủ</a></li>
 						<li><a href="mens.html">Giới Thiệu</a></li>
@@ -78,16 +67,16 @@
 					</ul>
 				</div>
 				
-				<div class="col-md-5 sign-gd-two">
-					<h4><span>Thông Tin</span> Cửa Hàng</h4>
+				<div class="col-md-4 sign-gd-two">
+					<h4>THÔNG TIN CỬA HÀNG</h4>
 					<div class="w3-address">
 						<div class="w3-address-grid">
 							<div class="w3-address-left">
 								<i class="fa fa-phone" aria-hidden="true"></i>
 							</div>
 							<div class="w3-address-right">
-								<h6>Số Điện Thoại</h6>
-								<p>+1 234 567 8901</p>
+								<h6>Số điện thoại</h6>
+								<p>0913­826-156</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -97,7 +86,8 @@
 							</div>
 							<div class="w3-address-right">
 								<h6>Email</h6>
-								<p>Email :<a href="mailto:example@email.com"> mail@example.com</a></p>
+								<p>Email :<a href="mailto:sales@near.vn"> sales@near.vn
+								</a></p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -106,7 +96,7 @@
 								<i class="fa fa-map-marker" aria-hidden="true"></i>
 							</div>
 							<div class="w3-address-right">
-								<h6>Địa Chỉ</h6>
+								<h6>Địa chỉ</h6>
 								<p>Khu vực 6, Phường Hưng Thạnh, Quận Cái Răng, TP. Cần Thơ.
 								</p>
 							</div>
@@ -114,18 +104,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 sign-gd flickr-post">
-					<h4>ĐỘI NGŨ<span> | ẢNH</span></h4>
-					<ul>
-						<li><a href="single.html"><img src="trangchinh_asset/images/t1.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="trangchinh_asset/images/t2.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="trangchinh_asset/images/t3.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="trangchinh_asset/images/t4.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="trangchinh_asset/images/t1.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="trangchinh_asset/images/t2.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="trangchinh_asset/images/t3.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="trangchinh_asset/images/t2.jpg" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="trangchinh_asset/images/t4.jpg" alt=" " class="img-responsive" /></a></li>
+
+				<div class="col-md-5 sign-gd flickr-post"  >
+					<h4>LIÊN HỆ VỚI CHÚNG TÔI</h4>
+					<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
+															  
+						<div class="fb-page "  
+							 data-href="https://www.facebook.com/Vườn-Lan-Cái-Nai-1992538604093631" 
+							 data-width="340"
+							data-hide-cover="false"
+							 data-show-facepile="true" >
+						 </div>
 					</ul>
 				</div>
 				<div class="clearfix"></div>

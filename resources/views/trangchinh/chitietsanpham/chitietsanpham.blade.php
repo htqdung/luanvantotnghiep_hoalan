@@ -5,14 +5,14 @@
 <!-- /banner_bottom_agile_info -->
 <div class="page-head_agile_info_w3l">
 	<div class="container">
-			<h3>CHI TIẾT <span>SẢN PHẨM </span></h3>
+			<h3>CHI TIẾT SẢN PHẨM</h3>
 			<!--/w3_short-->
 				 <div class="services-breadcrumb">
 						<div class="agile_inner_breadcrumb">
 
 						   <ul class="w3_short">
 								<li><a href="index.html">Trang Chủ</a><i>|</i></li>
-								<li>Chi Tiết</li>
+								<li>Chi tiết sản phẩm</li>
 							</ul>
 						 </div>
 				</div>
@@ -157,7 +157,7 @@
   													<div class="bootstrap-tab-text-grid-right">
   														<ul>
   															<li><a href="#">Admin</a></li>
-  															<li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Reply</a></li>
+  															<li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i>Trả lời</a></li>
   														</ul>
   														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget.Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis 
   															suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem 
@@ -166,7 +166,7 @@
   													<div class="clearfix"> </div>
   												</div>
   												<div class="add-review">
-  													<h4>add a review</h4>
+  													<h4>Thêm đánh giá</h4>
   													<form action="#" method="post">
   														<input type="text" name="Name" required="Name">
   														<input type="email" name="Email" required="Email"> 
@@ -193,7 +193,7 @@
   						<!--/slider_owl-->
   						
   						<div class="w3_agile_latest_arrivals">
-  							<h3 class="wthree_text_info">SẢN PHẨM <span>VỪA XEM</span></h3>	
+  							<h3 class="wthree_text_info">SẢN PHẨM VỪA XEM</h3>	
   							<div class="col-md-3 product-men single">
   								<div class="men-pro-item simpleCart_shelfItem">
   									<div class="men-thumb-item">

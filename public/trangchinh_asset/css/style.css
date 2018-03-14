@@ -47,7 +47,11 @@ label{
 }
 /*-- header --*/
 .header {
-    background: #000;
+    background: #fff;
+}
+.hover-cart:hover{
+    color:#fff !important;
+    background: red;
 }
 .header ul li {
     display: inline-block;
@@ -224,7 +228,7 @@ li.share {
     text-align: center;
 }
 .logo_agile span {
-    background: #000;
+    background: #F56E5E !important;
     padding: 0 17px;
     font-weight: bold;
     color: #fff;
@@ -342,7 +346,7 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
 /*-- //header-bot --*/
 /*-- banner-top --*/
 .ban-top{
-	background:#000;
+	background:#F56E5E;
     padding: 0px 0;
 }
 .dropdown-menu.columns-3 {
@@ -555,38 +559,38 @@ a.simpleCart_empty {
 }
 /*-- banner --*/  
 .carousel .item{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner.jpg) no-repeat;
 	background-size:cover;	 
 }
 .carousel .item.item2{   
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner01.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner01.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner01.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner01.jpg) no-repeat;
 	background-size:cover;	
 }   
 .carousel .item.item3{   
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner03.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner03.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner03.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner03.jpg) no-repeat;
 	background-size:cover;	 
 }   
 .carousel .item.item4{        
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner04.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner04.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner04.jpg) no-repeat;
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner04.jpg) no-repeat;
 	background-size:cover; 
 }  
 .carousel .item.item5{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner05.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner05.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner05.jpg) no-repeat;
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner05.jpg) no-repeat;
 	background-size:cover; 
 }  
 
@@ -598,7 +602,7 @@ a.simpleCart_empty {
 } 
 .carousel-caption h2 span, .carousel-caption h3 span{
     font-weight: 800;
-    color: #2fdab8;
+    color: #74FE97;
 }
 .carousel-caption p {
     letter-spacing: 12px;
@@ -608,7 +612,7 @@ a.simpleCart_empty {
     margin-top: 1em;
 }
 .carousel-caption a {
-    color: #fff;
+    color: #000;
     letter-spacing: 3px;
     padding: 8px 20px;
     margin-top: 2em;
@@ -798,7 +802,7 @@ ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
     float: none;
 }
 .footer-left p{
-    color: #737070;
+    color: #000;
     line-height: 2em;
     font-size: 14px;
     margin-top: 22px;
@@ -807,12 +811,12 @@ ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
     outline: none;
     width: 100%;
     padding: 10px 14px;
-    color: #848484;
+    color: #000;
     font-size: 14px;
     border: 1px solid #3a3939;
     width: 74%;
     letter-spacing: 3px;
-    background: #1f1f1f;
+    background: #fff;
 }
 .newsright input[type="submit"]{
     border: none;
@@ -855,17 +859,17 @@ ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
 	list-style-type:none;
 }
 .sign-gd ul li a,.sign-gd-two ul li a{
-    color: #737070;
+    color: #000;
     letter-spacing: 1px;
 }
 .sign-gd ul li a:hover,.sign-gd-two ul li a:hover{
-    color: #2fdab8;	
+    color: #fff;	
 }
 .w3ls-post-grid:nth-child(2){
 	margin:1em 0;
 }
 .w3-address-grid{
-    background: #080808;
+    background: #ADCCD4;
     padding: 1em;
 }
 .w3-address-left{
@@ -881,7 +885,7 @@ ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
     width: 87%;
 }
 .w3-address-right h6{
-    color: #FFFFFF;
+    color: #000;
     font-size: 0.9em;
     margin: 0;
     font-weight: 600;
@@ -890,10 +894,10 @@ ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
 .w3-address-right p{
     margin: 1em 0 0 0;
     font-size: .9em;
-    color: #565656;
+    color: #000;
 }
 .w3-address-right p a{
-    color: #2fdab8;
+    color: blue;
     text-decoration: none;
 }
 .w3-address-right p a:hover{
@@ -903,6 +907,7 @@ ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
 	display:block;
 	margin:.5em 0;
 }
+
 .w3-address-grid:nth-child(2){
     margin: 0.2em 0;
 }
@@ -916,7 +921,7 @@ ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
     width: 28%;
 }
 p.copy-right {
-    color: #848484;
+    color: #000;
     text-align: center;
     margin-top: 62px;
     font-size: 14px;
@@ -963,7 +968,7 @@ color: #2fdab8;
     padding: 1em 0em 0 0em;
 }
 .contact-form {
-    background: #181919;
+    background: #9EB7F5;
     padding: 5em 3em;
 }
 .contact input[type="text"], .contact input[type="email"], .contact textarea {
@@ -985,7 +990,7 @@ color: #2fdab8;
 /*-- input-effect --*/
 .styled-input input:focus ~ label, .styled-input input:valid ~ label,.styled-input textarea:focus ~ label ,.styled-input textarea:valid ~ label{
     font-size: .9em;
-    color: #2fdab8;
+    color: #000;
     top: -1.3em;
     -webkit-transition: all 0.125s;
 	-moz-transition: all 0.125s; 
@@ -1039,7 +1044,7 @@ color: #2fdab8;
 	transition: all 0.075s; 
 } 
 .white-w3ls{
-	color:#fff!important;
+	color:#000!important;
 }
 .modal-body-sub {
     padding:2em !important;
@@ -1260,7 +1265,7 @@ position:relative;
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #2fdab8;
+  background: #ACEBFE;
 }
 .hvr-outline-out:before {
   content: '';
@@ -1834,7 +1839,7 @@ ul.multi-column-dropdown li a:hover{
 }
 .w3layouts_mail_grid_left2 h3{
     font-size: 0.9em;
-    color: #2fdab8;
+    color: #000;
     margin: 0em 0 0.5em;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1849,7 +1854,7 @@ ul.multi-column-dropdown li a:hover{
 	color:#212121;
 }
 .w3layouts_mail_grid_left2 p{
-color: #545454;
+color: #000;
     font-size: 0.9em;
     line-height: 1.8em;
 }
@@ -1882,7 +1887,7 @@ color: #545454;
   left: 0;
   right: 0;
   bottom: 0;
-  background:#2fdab8;
+  background:#A0BCF5;
   -webkit-transform: scale(0);
   transform: scale(0);
   -webkit-transition-property: transform;
@@ -1902,7 +1907,7 @@ color: #545454;
 /*-- //coupons --*/
 /*-- /about --*/
 .page-head_agile_info_w3l {
-    background: url(../images/inner1.jpg) no-repeat center;
+    background: url(../images/inner.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -2023,12 +2028,12 @@ h3.tittle {
    display:block;	
 }
 .mail-agileits-w3layouts i {
-    color: #0e0e0e;
+    color: #c14545;
     font-size: 23px;
     float: left;
     width: 70px;
     height: 70px;
-    border: 2px solid #ddd;
+    border: 2px solid #a06e6e;
     text-align: center;
     line-height: 67px;
 }
@@ -2068,13 +2073,13 @@ h3.tittle {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
-    background: #2fdab8;
+    background: #9E55F5;
     color: #fff;
 }
 .contact-right p {
     text-transform: uppercase;
     font-weight: 700;
-    color: #2fdab8;
+    color: #633D9C;
     font-size: 1em;
     letter-spacing: 2px;
 	margin-bottom: 0.5em;

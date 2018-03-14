@@ -3,7 +3,7 @@
 @section('content')
 <div class="page-head_agile_info_w3l">
 	<div class="container">
-			<h3>GIỚI THIỆU <span>VỀ CHÚNG TÔI </span></h3>
+			<h3>GIỚI THIỆU VỀ CHÚNG TÔI</h3>
 			<!--/w3_short-->
 				 <div class="services-breadcrumb">
 						<div class="agile_inner_breadcrumb">
@@ -25,33 +25,13 @@
 				   	<img src="trangchinh_asset/images/ab_pic.jpg" alt=" " class="img-responsive" />
 				</div>
 				 <div class="col-md-6 ab_pic_w3ls_text_info">
-				    <h5>lịch Sử <span> Hình Thành</span> </h5>
+				    <h5>LỊCH SỬ HÌNH THÀNH </h5>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie blandit ipsum auctor. Mauris volutpat augue dolor..</p>
 					<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore magna aliqua.</p>
 				</div>
 				  <div class="clearfix"></div>
 			</div>    
-            <div class="banner_bottom_agile_info_inner_w3ls">
-    	           <div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
-						<figure class="effect-roxy">
-							<img src="trangchinh_asset/images/bottom1.jpg" alt=" " class="img-responsive" />
-							<figcaption>
-								<h3><span>F</span>all Ahead</h3>
-								<p>New Arrivals</p>
-							</figcaption>			
-						</figure>
-					</div>
-					 <div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
-						<figure class="effect-roxy">
-							<img src="trangchinh_asset/images/bottom2.jpg" alt=" " class="img-responsive" />
-							<figcaption>
-								<h3><span>F</span>all Ahead</h3>
-								<p>New Arrivals</p>
-							</figcaption>			
-						</figure>
-					</div>
-					<div class="clearfix"></div>
-		    </div> 
+           
 		 </div> 
     </div>
 <!-- team -->

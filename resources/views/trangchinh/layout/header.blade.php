@@ -1,11 +1,14 @@
 <!-- header -->
-<div class="header" id="home">
-	<div class="container">
+	
+
+<div class="header" style="background: #9E86F5" id="home">
+	
+	<div class="container" >
 		<ul>
-		    <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Đăng Nhập </a></li>
-			<li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Đăng Ký </a></li>
-			<li><i class="fa fa-phone" aria-hidden="true"></i> Điện Thoại : 01234567898</li>
-			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
+		    <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" style="color: #B0FFFF" aria-hidden="true"></i><b> ĐĂNG NHẬP</b> </a></li>
+			<li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" style="color: #B0FFFF"aria-hidden="true"></i><b> ĐĂNG KÝ</b> </a></li>
+			<li><i class="fa fa-phone" style="color: #B0FFFF" aria-hidden="true"></i> <b>ĐIỆN THOẠI : 01234567898</b></li>
+			<li> <b> <i class="fa fa-envelope-o" style="color: #B0FFFF" aria-hidden="true"></i></b> <a href="mailto:info@example.com"><b>info@example.com</b></a></li>
 		</ul>
 	</div>
 </div>
@@ -14,18 +17,21 @@
 <div class="header-bot">
 	<div class="header-bot_inner_wthreeinfo_header_mid">
 		
-		<!-- header-bot -->
-			<div class="col-md-4 logo_agile">
-				<h1><a href="index.html"><span>E</span>lite Shoppy <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
+		<!-- header-bot logo -->
+			<div class="col-md-4 logo_agile" >
+				<img src="trangchinh_asset/images/logo2.png">
+				<h1><a href="index.html"></a></h1>
 			</div>
         <!-- header-bot -->
 			<div class="col-md-4">
 			</div>
 
-		<div class="col-md-4 header-middle">
-			<form action="#" method="post">
-					<input type="search" name="search" placeholder="Tìm kiếm..." required="">
-					<input type="submit" value=" ">
+		<div class="col-md-4 header-middle" >
+			<form action="#" method="post" >
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
+						<span class="input-group-btn" ><button class="btn btn-secondary" style="background-color: #9BBDF5"><i class="fa fa-search"></i></button></span>
+					</div>
 				<div class="clearfix"></div>
 			</form>
 		</div>
