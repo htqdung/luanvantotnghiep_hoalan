@@ -84,7 +84,7 @@
 								</div>
 							</ul>
 					</li>
-					<li class=" menu__item"><a class="menu__link" href="trangchinh/gioithieu/gioithieu"><b>KHUYẾN MÃI</b></a></li>
+					<li class=" menu__item"><a class="menu__link" href="trangchinh/khuyenmai/khuyenmai"><b>KHUYẾN MÃI</b></a></li>
 					<!--
 					<li class="menu__item dropdown">
 					   <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Short Codes <b class="caret"></b></a>

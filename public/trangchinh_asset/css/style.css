@@ -5553,5 +5553,8 @@ p.w3ls_para {
 	#PPMiniCart {
       left: 68% !important;
     }
+    .border-dung{
+        border: 1px solid #e1e1e1;
+    }
 }
 /*-- //responsive media queries --*/

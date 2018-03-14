@@ -1,9 +1,9 @@
 <div class="coupons">
 		<div class="coupons-grids text-center">
 			<div class="w3layouts_mail_grid">
-				<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
-						<i class="fa fa-truck" aria-hidden="true"></i>
+				<div class="col-md-3 w3layouts_mail_grid_left " >
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out " style="background: #E7E1EE">
+						<i class="fa fa-truck" style="color:#FF7528" aria-hidden="true"></i>
 					</div>
 					<div class="w3layouts_mail_grid_left2">
 						<h3>MIỄN PHÍ VẬN CHUYỂN</h3>
@@ -11,8 +11,8 @@
 					</div>
 				</div>
 				<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
-						<i class="fa fa-headphones" aria-hidden="true"></i>
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out"  style="background: #E7E1EE">
+						<i class="fa fa-headphones" style="color: #000" aria-hidden="true"></i>
 					</div>
 					<div class="w3layouts_mail_grid_left2">
 						<h3>HỖ TRỢ 24/7</h3>
@@ -20,8 +20,8 @@
 					</div>
 				</div>
 				<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
-						<i class="fa fa-shopping-bag" aria-hidden="true"></i>
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out" style="background: #E7E1EE">
+						<i class="fa fa-shopping-bag" style="color: #6B2175;" aria-hidden="true"></i>
 					</div>
 					<div class="w3layouts_mail_grid_left2">
 						<h3>TÍCH ĐIỂM ĐỔI QUÀ</h3>
@@ -29,8 +29,8 @@
 					</div>
 				</div>
 					<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
-						<i class="fa fa-gift" aria-hidden="true"></i>
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out" style="background: #E7E1EE">
+						<i class="fa fa-gift" style="color: #2883FF" aria-hidden="true"></i>
 					</div>
 					<div class="w3layouts_mail_grid_left2">
 						<h3>THẺ QUÀ TẶNG</h3>

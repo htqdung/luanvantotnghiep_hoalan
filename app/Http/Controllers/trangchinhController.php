@@ -28,6 +28,11 @@ class trangchinhController extends Controller
         return view('trangchinh.giohang.giohang');
     }
 
+    public function khuyenmai()
+    {
+        return view('trangchinh.khuyenmai.khuyenmai');
+    }
+
     public function chitietsanpham()
     {
         return view('trangchinh.chitietsanpham.chitietsanpham');

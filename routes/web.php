@@ -46,6 +46,11 @@ Route::group(['prefix'=>'trangchinh'],function(){
 		Route::get('giohang', 'trangchinhController@giohang');
 	});
 
+	Route::group(['prefix'=>'khuyenmai'], function ()
+	{
+		Route::get('khuyenmai', 'trangchinhController@khuyenmai');
+	});
+
 	Route::group(['prefix'=>'dathang'],function(){
 		Route::get('dathang1', 'trangchinhController@dathang1');
 		

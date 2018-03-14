@@ -42,13 +42,13 @@
 							<div class="mail-agileits-w3layouts">
 								<i class="fa fa-map-marker" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Vườn Lan Cái Nai-Bảy Khai</p>
+									<p>Vườn Lan Cái Nai - Bảy Khai</p>
 									 <span> Khu vực 6, Phường Hưng Thạnh, Quận Cái Răng, TP. Cần Thơ.</span>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 							<ul class="social-nav model-3d-0 footer-social w3_agile_social two contact">
-							                              <li class="share">CHIA SẼ : </li>
+							                              <li class="share">CHIA SẺ: </li>
 															<li><a href="#" class="facebook">
 																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
 																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
@@ -91,20 +91,19 @@
 					</div>
 				</div>
 				<div class="clearfix"> </div>
-				 <div style="clear: both;"></div>
-				<div class="row">
+				
+				<div class="row" style="padding-top: 25px;">
 				<div class="span12">
 	   
 			
-		  <iframe style="width:100%; height:300; border: 0px" scrolling="no" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;aq=0&amp;oq=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;sll=9.995811,105.7666827,18.27&amp;sspn=9.995811,105.7666827,18.27&amp;ie=UTF8&amp;hq=&amp;hnear=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;t=m&amp;ll=9.995811,105.7666827,18.27&amp;spn=9.995811,105.7666827,18.27&amp;z=14&amp;output=embed"></iframe><br />
-			<small><a href="https://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;aq=0&amp;oq=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;sll=9.995811,105.7666827,18.27&amp;sspn=9.995811,105.7666827,18.27&amp;ie=UTF8&amp;hq=&amp;hnear=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;t=m&amp;ll=9.995811,105.7666827,18.27&amp;spn=9.995811,105.7666827,18.27&amp;z=14" style="color:#0000FF;text-align:left"></a></small>
-	  
-	   </div>
-	</div>
-	</div>
+					<iframe style="width:100%; height:300; border: 0px" scrolling="no" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;aq=0&amp;oq=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;sll=9.995811,105.7666827,18.27&amp;sspn=9.995811,105.7666827,18.27&amp;ie=UTF8&amp;hq=&amp;hnear=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;t=m&amp;ll=9.995811,105.7666827,18.27&amp;spn=9.995811,105.7666827,18.27&amp;z=14&amp;output=embed"></iframe><br />
+					<small><a href="https://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;aq=0&amp;oq=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;sll=9.995811,105.7666827,18.27&amp;sspn=9.995811,105.7666827,18.27&amp;ie=UTF8&amp;hq=&amp;hnear=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;t=m&amp;ll=9.995811,105.7666827,18.27&amp;spn=9.995811,105.7666827,18.27&amp;z=14" style="color:#0000FF;text-align:left"></a></small>
+				  
+			   	</div>
 			</div>
-       </div>
+		</div>
 	</div>
+</div>
 <!--//contact-->
 
 @endsection
