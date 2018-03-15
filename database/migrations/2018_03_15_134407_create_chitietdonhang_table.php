@@ -15,13 +15,12 @@ class CreateChitietdonhangTable extends Migration
     {
         Schema::create('tbl_chitietdonhang', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('so_luong');
-            $table->integer('don_gia');
-            $table->integer('thanh_tien');
-            $table->integer('san_pham_id')->unsigned();
-            $table->foreign('san_pham_id')->references('id')->on('tbl_sanpham');
-            $table->integer('don_hang_id')->unsigned();
-            $table->foreign('don_hang_id')->references('id')->on('tbl_donhang');
+            $table->integer('donhang_id')->unsigned();
+            $table->foreign('donhang_id')->references('id')->on('tbl_donhang')->onDelete('cascade');
+            $table->string('so_luong', 10);
+            $table->string('thanh_tien', 20);
+            $table->integer('dongia_id')->unsigned();
+            $table->foreign('dongia_id')->references('id')->on('tbl_dongia')->onDelete('cascade');
             $table->timestamps();
         });
     }

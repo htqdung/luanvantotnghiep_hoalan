@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChiTable extends Migration
+class CreateGiaohangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateChiTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_chi', function (Blueprint $table) {
+        Schema::create('tbl_giaohang', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_chi', 100)->unique();
-            $table->text('mo_ta', 200)->nullable();
-            $table->string('trang_thai',50);
+            $table->integer('chitietdonhang_id')->unsigned();
+            $table->foreign('chitietdonhang_id')->references('id')->on('tbl_chitietdonhang')->onDelete('cascade');
+            $table->dateTimeTz('ngay_giao_hang');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateChiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_chi');
+        Schema::dropIfExists('tbl_giaohang');
     }
 }

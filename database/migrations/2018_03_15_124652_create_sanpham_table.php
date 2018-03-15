@@ -15,15 +15,12 @@ class CreateSanphamTable extends Migration
     {
         Schema::create('tbl_sanpham', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_san_pham', 50);
-            $table->text('mo_ta');
-            $table->integer('so_luong');
-            $table->integer('gia');
-            $table->integer('diem_thuong');
-            $table->string('tag',255);
-            $table->tinyInteger('trang_thai');
-            $table->integer('loai_san_pham_id')->unsigned();
-            $table->foreign('loai_san_pham_id')->references('id')->on('tbl_loaisanpham');
+            $table->string('ten_san_pham', 200);
+            $table->text('mo_ta', 1000)->nullable();
+            $table->string('hinh_thuc', 1000);
+            $table->string('kich_thuoc', 200);
+            $table->string('diem_thuong', 10);
+            $table->string('tag', 100)->nullable();
             $table->timestamps();
         });
     }

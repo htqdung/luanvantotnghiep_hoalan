@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLoaisanphamTable extends Migration
+class CreateNhomTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateLoaisanphamTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_loaisanpham', function (Blueprint $table) {
+        Schema::create('tbl_nhom', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_loai_san_pham',50);
-            $table->tinyInteger('trang_thai');
-            
+            $table->string('ten_nhom', 100)->unique();
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateLoaisanphamTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_loaisanpham');
+        Schema::dropIfExists('tbl_nhom');
     }
 }

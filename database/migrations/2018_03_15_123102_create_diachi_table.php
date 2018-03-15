@@ -15,12 +15,10 @@ class CreateDiachiTable extends Migration
     {
         Schema::create('tbl_diachi', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_nguoi_nhan', 40);
-            $table->string('so_dien_thoai', 25);
-            $table->string('dia_chi', 50);            
+            $table->string('so_nha', 20);
+            $table->string('ten_duong', 100);
             $table->integer('phuongxa_id')->unsigned();
-            $table->foreign('phuongxa_id')->references('id')->on('tbl_phuongxa');
-                
+            $table->foreign('phuongxa_id')->references('id')->on('tbl_phuongxa')->onDelete('cascade');
             $table->timestamps();
         });
     }

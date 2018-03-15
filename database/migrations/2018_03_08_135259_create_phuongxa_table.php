@@ -15,9 +15,9 @@ class CreatePhuongxaTable extends Migration
     {
         Schema::create('tbl_phuongxa', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_phuong_xa', 40);
-            $table->integer('quan_id')->unsigned();
-            $table->foreign('quan_id')->references('id')->on('tbl_quanhuyen');
+            $table->string('ten_phuong_xa', 40)->unique();
+            $table->integer('quanhuyen_id')->unsigned();
+            $table->foreign('quanhuyen_id')->references('id')->on('tbl_quanhuyen')->onDelete('cascade');
             $table->timestamps();
         });
     }

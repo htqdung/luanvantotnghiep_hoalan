@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSanphamloaiTable extends Migration
+class CreateSanphamLoaiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateSanphamloaiTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_sanphamloai', function (Blueprint $table) {
+        Schema::create('tbl_sanpham_loai', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('so_luong');
-            $table->integer('san_pham_id')->unsigned();
-            $table->foreign('san_pham_id')->references('id')->on('tbl_sanpham');
+            $table->integer('sanpham_id')->unsigned();
+            $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
             $table->integer('loai_id')->unsigned();
-            $table->foreign('loai_id')->references('id')->on('tbl_loai');
+            $table->foreign('loai_id')->references('id')->on('tbl_loai')->onDelete('cascade');
+            $table->string('so_luong', 10);
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateSanphamloaiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_sanphamloai');
+        Schema::dropIfExists('tbl_sanpham_loai');
     }
 }

@@ -15,13 +15,12 @@ class CreateNguoidungTable extends Migration
     {
         Schema::create('tbl_nguoidung', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_nguoi_dung', 50);
-            $table->string('so_dien_thoai', 25);
-            $table->string('email', 36);
-            $table->string('username', 50);
+            $table->string('username', 50)->unique();
             $table->string('password', 36);
             $table->integer('nhom_id')->unsigned();
-            $table->foreign('nhom_id')->references('id')->on('tbl_nhom');
+            $table->foreign('nhom_id')->references('id')->on('tbl_nhom')->onDelete('cascade');
+            $table->integer('thongtinlienhe_id')->unsigned();
+            $table->foreign('thongtinlienhe_id')->references('id')->on('tbl_thongtinlienhe')->onDelete('cascade');
             $table->timestamps();
         });
     }

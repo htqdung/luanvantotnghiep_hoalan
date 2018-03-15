@@ -15,16 +15,17 @@ class CreateDonhangTable extends Migration
     {
         Schema::create('tbl_donhang', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('ngay_dat_hang');
-            $table->integer('phi_van_chuyen');
-            $table->integer('tong_tien');
-            $table->tinyInteger('hinh_thuc_thanh_toan');
+            $table->dateTimeTz('ngay_dat_hang');
             $table->integer('nguoidung_id')->unsigned();
-            $table->foreign('nguoidung_id')->references('id')->on('tbl_nguoidung');
+            $table->foreign('nguoidung_id')->references('id')->on('tbl_nguoidung')->onDelete('cascade');
+            $table->integer('sanpham_id')->unsigned();
+            $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
             $table->integer('diachi_id')->unsigned();
-            $table->foreign('diachi_id')->references('id')->on('tbl_diachi');
-            $table->integer('khuyenmai_id')->unsigned();
-            $table->foreign('khuyenmai_id')->references('id')->on('tbl_khuyenmai');
+            $table->foreign('diachi_id')->references('id')->on('tbl_diachi')->onDelete('cascade');
+            $table->string('phi_van_chuyen', 10);
+            $table->string('tong_tien', 20);
+            $table->string('ten_nguoi_nhan', 1000);
+            $table->string('hinh_thuc_thanh_toan', 200);
             $table->timestamps();
         });
     }

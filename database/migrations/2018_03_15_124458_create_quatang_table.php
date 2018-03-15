@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNhomTable extends Migration
+class CreateQuatangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateNhomTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_nhom', function (Blueprint $table) {
+        Schema::create('tbl_quatang', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_nhom', 100);
+            $table->string('ten_qua_tang', 200);
+            $table->string('so_luong', 10);
+            $table->integer('hinhthuckhuyenmai_id')->unsigned();
+            $table->foreign('hinhthuckhuyenmai_id')->references('id')->on('tbl_hinhthuckhuyenmai')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateNhomTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_nhom');
+        Schema::dropIfExists('tbl_quatang');
     }
 }
