@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGiamgiaTable extends Migration
+class CreateHinhthuckhuyenmaiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateGiamgiaTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_giamgia', function (Blueprint $table) {
+        Schema::create('tbl_hinhthuckhuyenmai', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('uu_dai');
-            $table->date('ngay_bat_dau');
-            $table->date('ngay_ngay_ket_thuc');
+            $table->string('ten_hinh_thuc', 200);
+            $table->string('ti_le_giam_gia', 10);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateGiamgiaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_giamgia');
+        Schema::dropIfExists('tbl_hinhthuckhuyenmai');
     }
 }

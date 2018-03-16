@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLienheTable extends Migration
+class CreateUudaiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateLienheTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_lienhe', function (Blueprint $table) {
+        Schema::create('tbl_uudai', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten', 30);
-            $table->string('so_dien_thoai', 25);
-            $table->string('email', 50);
-            $table->string('tieu_de', 50);
-            $table->text('noidung');
+             $table->string('so_luong_toi_thieu', 10);
+            $table->string('ti_le_giam_gia', 10);
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateLienheTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_lienhe');
+        Schema::dropIfExists('tbl_uudai');
     }
 }

@@ -15,15 +15,14 @@ class CreateLoaiTable extends Migration
     {
         Schema::create('tbl_loai', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_loai', 200);
-            $table->string('ten_khoa_hoc', 200);
-            $table->string('mo_ta', 200);
-            $table->tinyInteger('trangthai');
-
+            $table->string('ten_loai', 200)->unique();
+            $table->string('ten_khoa_hoc', 200)->unique();
+            $table->text('mo_ta', 200)->nullable();
             $table->integer('chi_id')->unsigned();
-            $table->foreign('chi_id')->references('id')->on('tbl_chi');
+            $table->foreign('chi_id')->references('id')->on('tbl_chi')->onDelete('cascade');
             $table->integer('dacdiem_id')->unsigned();
-            $table->foreign('dacdiem_id')->references('id')->on('tbl_dacdiem');
+            $table->foreign('dacdiem_id')->references('id')->on('tbl_dacdiem')->onDelete('cascade');
+            $table->tinyInteger('trang_thai');
             $table->timestamps();
         });
     }

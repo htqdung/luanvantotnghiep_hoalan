@@ -15,9 +15,9 @@ class CreateQuanhuyenTable extends Migration
     {
         Schema::create('tbl_quanhuyen', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_quan', 30);
-            $table->integer('tinh_id')->unsigned();
-            $table->foreign('tinh_id')->references('id')->on('tbl_tinh_thanhpho');
+            $table->string('ten_quan_huyen', 30)->unique();
+            $table->integer('tinh_thanhpho_id')->unsigned();
+            $table->foreign('tinh_thanhpho_id')->references('id')->on('tbl_tinh_thanhpho')->onDelete('cascade');
             $table->timestamps();
         });
     }

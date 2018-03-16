@@ -15,9 +15,9 @@ class CreateHinhanhTable extends Migration
     {
         Schema::create('tbl_hinhanh', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_hinh', 255);
-            $table->integer('san_pham_id')->unsigned();
-            $table->foreign('san_pham_id')->references('id')->on('tbl_sanpham');
+             $table->string('ten_hinh', 255);
+            $table->integer('sanpham_id')->unsigned();
+            $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
             $table->timestamps();
         });
     }
