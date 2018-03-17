@@ -8,7 +8,7 @@ class adminController extends Controller
 {
     public function getTest()
     {
-    	//return view('admin.index');
+    	return view('admin.index');
     	
     }
 }
