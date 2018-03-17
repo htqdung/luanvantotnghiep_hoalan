@@ -7,8 +7,8 @@
 		<ul>
 		    <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" style="color: #B0FFFF" aria-hidden="true"></i><b> ĐĂNG NHẬP</b> </a></li>
 			<li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" style="color: #B0FFFF"aria-hidden="true"></i><b> ĐĂNG KÝ</b> </a></li>
-			<li><i class="fa fa-phone" style="color: #B0FFFF" aria-hidden="true"></i> <b>ĐIỆN THOẠI : 01234567898</b></li>
-			<li> <b> <i class="fa fa-envelope-o" style="color: #B0FFFF" aria-hidden="true"></i></b> <a href="mailto:info@example.com"><b>info@example.com</b></a></li>
+			<li><i class="fa fa-phone" style="color: #B0FFFF" aria-hidden="true"></i> <b>ĐIỆN THOẠI : 0913 826 156</b></li>
+			<li> <b> <i class="fa fa-envelope-o" style="color: #B0FFFF" aria-hidden="true"></i></b> <a href="mailto:sales@near.vn"><b>sales@near.vn</b></a></li>
 		</ul>
 	</div>
 </div>

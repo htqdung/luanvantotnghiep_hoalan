@@ -76,7 +76,7 @@
 							</div>
 							<div class="w3-address-right">
 								<h6>Số điện thoại</h6>
-								<p>0913­826-156</p>
+								<p>0913 826 156</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>

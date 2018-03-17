@@ -1,5 +1,5 @@
 <?php
-
+include_once('qd_web.php');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('test', function(){
 	return view('trangchinh.dathang.dathang1');
