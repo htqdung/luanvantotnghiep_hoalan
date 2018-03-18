@@ -317,15 +317,6 @@
   font-weight: 700;
 }
 
-
-
-
-
-
-
-
-
-
 /* type */
 h1,
 h2,
@@ -342,7 +333,7 @@ h6,
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  color: #fff;
 }
 h1,
 .h1,

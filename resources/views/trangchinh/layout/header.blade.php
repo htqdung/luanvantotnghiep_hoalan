@@ -18,15 +18,11 @@
 	<div class="header-bot_inner_wthreeinfo_header_mid">
 		
 		<!-- header-bot logo -->
-			<div class="col-md-4 logo_agile" >
-				<img src="trangchinh_asset/images/logo2.png">
-				<h1><a href="index.html"></a></h1>
-			</div>
-        <!-- header-bot -->
-			<div class="col-md-4">
+			<div class="col-md-8 logo_agile" >
+				<a href="trangchinh/trangchu/trangchu"><img style="width: 750px; height: 100px" src="trangchinh_asset/images/logoshop5.jpg"></a>
 			</div>
 
-		<div class="col-md-4 header-middle" >
+		<div class="col-md-4 header-middle" style="margin-top: 30px; margin-bottom: 5px" >
 			<form action="#" method="post" >
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">

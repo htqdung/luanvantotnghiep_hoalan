@@ -229,12 +229,12 @@ li.share {
 }
 .logo_agile span {
     background: #F56E5E !important;
-    padding: 0 17px;
+    padding: 0 10px;
     font-weight: bold;
     color: #fff;
 }
 .logo_agile h1 a {
-    font-weight: 300;
+    font-weight: 200;
     color: #000;
     letter-spacing: 1px;
     font-size: 1.5em;
@@ -242,13 +242,6 @@ li.share {
 }
 .logo_agile h1 a:hover {
   text-decoration:none;
-}
-i.fa.fa-shopping-bag.top_logo_agile_bag {
-    position: absolute;
-    font-size: 17px;
-    top: 66px;
-    right: 14px;
-    color: #2fdab8;
 }
 
 /*-- header-bot --*/
@@ -559,38 +552,38 @@ a.simpleCart_empty {
 }
 /*-- banner --*/  
 .carousel .item{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
 	background-size:cover;	 
 }
 .carousel .item.item2{   
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner01.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner01.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner01.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner01.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
 	background-size:cover;	
 }   
 .carousel .item.item3{   
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner03.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner03.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner03.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner03.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
 	background-size:cover;	 
 }   
 .carousel .item.item4{        
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner04.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner04.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner04.jpg) no-repeat;
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner04.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner7.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner7.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner7.jpg) no-repeat;
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner7.jpg) no-repeat;
 	background-size:cover; 
 }  
 .carousel .item.item5{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner05.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner05.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner05.jpg) no-repeat;
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner05.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner6.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner6.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner6.jpg) no-repeat;
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner6.jpg) no-repeat;
 	background-size:cover; 
 }  
 
@@ -780,6 +773,7 @@ figure.effect-roxy:hover p,.agileinfo_banner_bottom_grid_three_left:hover figcap
 
 .wthree_banner_bottom_grid_three_left1 {
     width: 49.5%;
+    height: 300px;
     float: left;
 }
 .banner_bottom_agile_info {
@@ -797,12 +791,12 @@ figure.effect-roxy:hover p,.agileinfo_banner_bottom_grid_three_left:hover figcap
 .footer_agile_inner_info_w3l {
     width: 90%;
     margin: 0 auto;
+    color: #ddd;
 }
 ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
     float: none;
 }
 .footer-left p{
-    color: #000;
     line-height: 2em;
     font-size: 14px;
     margin-top: 22px;
@@ -1907,7 +1901,7 @@ color: #000;
 /*-- //coupons --*/
 /*-- /about --*/
 .page-head_agile_info_w3l {
-    background: url(../images/inner.jpg) no-repeat center;
+    background: url(../images/banner9.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;

@@ -17,6 +17,7 @@ class CreateHinhthuckhuyenmaiTable extends Migration
             $table->increments('id');
             $table->string('ten_hinh_thuc', 200);
             $table->string('ti_le_giam_gia', 10);
+            $table->string('trang_thai',50);
             $table->timestamps();
         });
     }

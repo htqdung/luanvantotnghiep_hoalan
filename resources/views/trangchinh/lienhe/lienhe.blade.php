@@ -96,7 +96,7 @@
 				<div class="span12">
 	   
 			
-					<iframe style="width:100%; height:300; border: 0px" scrolling="no" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;aq=0&amp;oq=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;sll=9.995811,105.7666827,18.27&amp;sspn=9.995811,105.7666827,18.27&amp;ie=UTF8&amp;hq=&amp;hnear=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;t=m&amp;ll=9.995811,105.7666827,18.27&amp;spn=9.995811,105.7666827,18.27&amp;z=14&amp;output=embed"></iframe><br />
+					<iframe style="width:100%; height:500px; border: 0px" scrolling="no" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;aq=0&amp;oq=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;sll=9.995811,105.7666827,18.27&amp;sspn=9.995811,105.7666827,18.27&amp;ie=UTF8&amp;hq=&amp;hnear=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;t=m&amp;ll=9.995811,105.7666827,18.27&amp;spn=9.995811,105.7666827,18.27&amp;z=14&amp;output=embed"></iframe><br />
 					<small><a href="https://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;aq=0&amp;oq=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;sll=9.995811,105.7666827,18.27&amp;sspn=9.995811,105.7666827,18.27&amp;ie=UTF8&amp;hq=&amp;hnear=Vườn+lan+Cái+Nai,+Hưng+Thành,+Cái+Răng,+Cần+Thơ,+Việt+Nam&amp;t=m&amp;ll=9.995811,105.7666827,18.27&amp;spn=9.995811,105.7666827,18.27&amp;z=14" style="color:#0000FF;text-align:left"></a></small>
 				  
 			   	</div>
