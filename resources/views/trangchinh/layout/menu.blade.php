@@ -57,24 +57,16 @@
 								<div class="agile_inner_drop_nav_info">
 									<div class="col-sm-3 multi-gd-img">
 										<ul class="multi-column-dropdown">
-											<li><a href="trangchinh/sanpham/sanpham">Clothing</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Wallets</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Footwear</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Watches</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Accessories</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Bags</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Caps & Hats</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Mừng 8-3</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Mừng ngày nhà giáo Việt Nam</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Mừng ngày lễ Tết</a></li>
 										</ul>
 									</div>
 									<div class="col-sm-3 multi-gd-img">
 										<ul class="multi-column-dropdown">
-											<li><a href="trangchinh/sanpham/sanpham">Jewellery</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Sunglasses</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Perfumes</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Beauty</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Shirts</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Sunglasses</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Swimwear</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Tân gia nhà</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Khánh thành</a></li>
+											
 										</ul>
 									</div>
 									<div class="col-sm-6 multi-gd-img multi-gd-text ">

@@ -1606,1286 +1606,1288 @@
 <!-- /new_arrivals --> 
 
 <!-- /new_arrivals --> 
+
 	<div class="new_arrivals_agile_w3ls_info"> 
-		<div class="container">
-		    <h3 class="wthree_text_info"><span>TẤT CẢ SẢN PHẨM</span> </h3>		
-				<div id="horizontalTab">
-						<ul class="resp-tabs-list">
-							<li> Men's</li>
-							<li> Women's</li>
-							<li> Bags</li>
-							<li> Footwear</li>
-						</ul>
-					<div class="resp-tabs-container">
-					<!--/tab_one-->
-						<div class="tab1">
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/m1.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/m1.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Formal Blue Shirt</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$45.99</span>
-											<del>$69.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Formal Blue Shirt" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
+	<div class="container">
+		<h3 class="wthree_text_info"><span>TẤT CẢ SẢN PHẨM</span></h3>		
+		<div id="horizontalTab">
+			<ul class="resp-tabs-list">
+				<li> Men's</li>
+				<li> Women's</li>
+				<li> Bags</li>
+				<li> Footwear</li>
+			</ul>
+			<div class="resp-tabs-container">
+				<!--/tab_one-->
+				<div class="tab1">
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/m1.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/m1.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 									</div>
 								</div>
+								<span class="product-new-top">Mới</span>
+
 							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/m2.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/m2.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Gabi Full Sleeve Sweatshirt</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$45.99</span>
-											<del>$69.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Sweatshirt" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Formal Blue Shirt</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$45.99</span>
+									<del>$69.71</del>
 								</div>
-							</div>
-                            <div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/m3.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/m3.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Dark Blue Track Pants</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$80.99</span>
-											<del>$89.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Dark Blue Track Pants" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Formal Blue Shirt" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
 								</div>
+
 							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/m4.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/m4.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Round Neck Black T-Shirt</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$190.99</span>
-											<del>$159.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Black T-Shirt" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/m5.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/m5.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Men's Black Jeans</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$60.99</span>
-											<del>$90.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Men's Black Jeans" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-								<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/m7.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/m7.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Analog Watch</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$160.99</span>
-											<del>$290.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Analog Watch" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-								<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/m6.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/m6.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Reversible Belt</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$30.99</span>
-											<del>$50.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Reversible Belt" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-								<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/m8.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/m8.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Party Men's Blazer</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$260.99</span>
-											<del>$390.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Party Men's Blazer" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<!--//tab_one-->
-						<!--/tab_two-->
-						<div class="tab2">
-							 <div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/w1.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/w1.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">A-line Black Skirt</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$130.99</span>
-											<del>$189.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="A-line Black Skirt" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/w2.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/w2.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Sleeveless Solid Blue Top</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$140.99</span>
-											<del>$189.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Sleeveless Solid Blue Top" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/w3.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/w3.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Skinny Jeans</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$150.99</span>
-											<del>$189.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Skinny Jeans " />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/w4.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/w4.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Black Basic Shorts</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$120.99</span>
-											<del>$189.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Black Basic Shorts" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/w5.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/w5.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Pink Track Pants</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$220.99</span>
-											<del>$389.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Pink Track Pants" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/w6.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/w6.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Analog Watch</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$320.99</span>
-											<del>$489.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Analog Watch" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-						    <div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/w7.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/w7.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Ankle Length Socks</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$100.99</span>
-											<del>$159.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Ankle Length Socks" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-								<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/w8.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/w8.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Reebok Women's Tights</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$130.99</span>
-											<del>$169.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Reebok Women's Tights" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					 <!--//tab_two-->
-						<div class="tab3">
-								
-						<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/b1.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/b1.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Laptop Messenger Bag</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$140.99</span>
-											<del>$169.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value=" Laptop Messenger Bag" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/b2.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/b2.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Puma Backpack</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$127.99</span>
-											<del>$169.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Puma Backpack" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-                            <div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/b3.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/b3.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham"> Laptop Backpack</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$120.99</span>
-											<del>$189.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value=" Laptop Backpack" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/b4.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/b4.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Travel Duffel Bag </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$190.99</span>
-											<del>$259.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Travel Duffel Bag " />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-													<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/b5.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/b5.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham"> Hand-held Bag </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$190.99</span>
-											<del>$259.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value=" Hand-held Bag " />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-																			
-									</div>
-								</div>
-							</div>
-													<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/b6.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/b6.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Butterflies Bag </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$190.99</span>
-											<del>$259.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Butterflies Bag" />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-																			
-									</div>
-								</div>
-							</div>
-													<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/b7.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/b7.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Costa Swiss Bag </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$290.99</span>
-											<del>$359.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Costa Swiss Bag" />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-																			
-									</div>
-								</div>
-							</div>
-													<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/b8.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/b8.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Noble Designs Bag </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$120.99</span>
-											<del>$159.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Noble Designs Bag " />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="tab4">
-							
-							    <div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/s1.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/s1.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Running Shoes</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$80.99</span>
-											<del>$89.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Running Shoes" />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/s2.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/s2.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Shoetopia Lace Up</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$90.99</span>
-											<del>$59.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Shoetopia Lace Up" />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/s3.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/s3.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Steemo Casuals(Black)</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$90.99</span>
-											<del>$59.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Steemo Casuals (Black)" />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/s4.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/s4.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Benetton Flip Flops</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$40.99</span>
-											<del>$99.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Benetton Flip Flops" />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-															
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/s5.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/s5.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Moonwalk Bellies </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$80.99</span>
-											<del>$99.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Moonwalk Bellies" />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/s6.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/s6.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Aero Canvas Loafers  </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$120.99</span>
-											<del>$199.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Aero Canvas Loafers" />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/s7.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/s7.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Sparx Sporty Canvas Shoes</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$160.99</span>
-											<del>$199.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="Sparx Sporty Canvas Shoes" />
-													<input type="hidden" name="amount" value="30.99" />
-													<input type="hidden" name="discount_amount" value="1.00" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-												</fieldset>
-											</form>
-										</div>
-																			
-									</div>
-								</div>
-							</div>
-								<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="trangchinh_asset/images/s8.jpg" alt="" class="pro-image-front">
-										<img src="trangchinh_asset/images/s8.jpg" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
-												</div>
-											</div>
-											<span class="product-new-top">Mới</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Women BLACK Heels</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">$180.99</span>
-											<del>$199.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-										<form action="#" method="post">
-											<fieldset>
-												<input type="hidden" name="cmd" value="_cart" />
-												<input type="hidden" name="add" value="1" />
-												<input type="hidden" name="business" value=" " />
-												<input type="hidden" name="item_name" value="Women BLACK Heels" />
-												<input type="hidden" name="amount" value="30.99" />
-												<input type="hidden" name="discount_amount" value="1.00" />
-												<input type="hidden" name="currency_code" value="USD" />
-												<input type="hidden" name="return" value=" " />
-												<input type="hidden" name="cancel_return" value=" " />
-												<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
-											</fieldset>
-										</form>
-									</div>															
-									</div>
-								</div>
-							</div>
-							<div class="clearfix"></div>
 						</div>
 					</div>
-				</div>	
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/m2.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/m2.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Gabi Full Sleeve Sweatshirt</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$45.99</span>
+									<del>$69.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Sweatshirt" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/m3.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/m3.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Dark Blue Track Pants</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$80.99</span>
+									<del>$89.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Dark Blue Track Pants" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/m4.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/m4.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Round Neck Black T-Shirt</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$190.99</span>
+									<del>$159.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Black T-Shirt" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/m5.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/m5.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Men's Black Jeans</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$60.99</span>
+									<del>$90.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Men's Black Jeans" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/m7.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/m7.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Analog Watch</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$160.99</span>
+									<del>$290.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Analog Watch" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/m6.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/m6.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Reversible Belt</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$30.99</span>
+									<del>$50.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Reversible Belt" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/m8.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/m8.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Party Men's Blazer</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$260.99</span>
+									<del>$390.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Party Men's Blazer" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<!--//tab_one-->
+				<!--/tab_two-->
+				<div class="tab2">
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/w1.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/w1.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">A-line Black Skirt</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$130.99</span>
+									<del>$189.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="A-line Black Skirt" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/w2.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/w2.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Sleeveless Solid Blue Top</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$140.99</span>
+									<del>$189.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Sleeveless Solid Blue Top" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/w3.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/w3.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Skinny Jeans</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$150.99</span>
+									<del>$189.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Skinny Jeans " />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/w4.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/w4.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Black Basic Shorts</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$120.99</span>
+									<del>$189.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Black Basic Shorts" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/w5.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/w5.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Pink Track Pants</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$220.99</span>
+									<del>$389.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Pink Track Pants" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/w6.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/w6.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Analog Watch</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$320.99</span>
+									<del>$489.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Analog Watch" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/w7.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/w7.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Ankle Length Socks</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$100.99</span>
+									<del>$159.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Ankle Length Socks" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/w8.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/w8.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Reebok Women's Tights</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$130.99</span>
+									<del>$169.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Reebok Women's Tights" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<!--//tab_two-->
+				<div class="tab3">
+
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/b1.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/b1.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Laptop Messenger Bag</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$140.99</span>
+									<del>$169.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value=" Laptop Messenger Bag" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/b2.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/b2.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Puma Backpack</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$127.99</span>
+									<del>$169.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Puma Backpack" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/b3.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/b3.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham"> Laptop Backpack</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$120.99</span>
+									<del>$189.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value=" Laptop Backpack" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/b4.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/b4.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Travel Duffel Bag </a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$190.99</span>
+									<del>$259.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Travel Duffel Bag " />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/b5.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/b5.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham"> Hand-held Bag </a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$190.99</span>
+									<del>$259.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value=" Hand-held Bag " />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/b6.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/b6.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Butterflies Bag </a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$190.99</span>
+									<del>$259.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Butterflies Bag" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/b7.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/b7.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Costa Swiss Bag </a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$290.99</span>
+									<del>$359.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Costa Swiss Bag" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/b8.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/b8.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Noble Designs Bag </a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$120.99</span>
+									<del>$159.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Noble Designs Bag " />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="tab4">
+
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/s1.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/s1.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Running Shoes</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$80.99</span>
+									<del>$89.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Running Shoes" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/s2.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/s2.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Shoetopia Lace Up</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$90.99</span>
+									<del>$59.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Shoetopia Lace Up" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/s3.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/s3.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Steemo Casuals(Black)</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$90.99</span>
+									<del>$59.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Steemo Casuals (Black)" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/s4.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/s4.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Benetton Flip Flops</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$40.99</span>
+									<del>$99.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Benetton Flip Flops" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/s5.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/s5.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Moonwalk Bellies </a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$80.99</span>
+									<del>$99.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Moonwalk Bellies" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/s6.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/s6.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Aero Canvas Loafers  </a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$120.99</span>
+									<del>$199.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Aero Canvas Loafers" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/s7.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/s7.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Sparx Sporty Canvas Shoes</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$160.99</span>
+									<del>$199.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Sparx Sporty Canvas Shoes" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img src="trangchinh_asset/images/s8.jpg" alt="" class="pro-image-front">
+								<img src="trangchinh_asset/images/s8.jpg" alt="" class="pro-image-back">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
+									</div>
+								</div>
+								<span class="product-new-top">Mới</span>
+
+							</div>
+							<div class="item-info-product ">
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Women BLACK Heels</a></h4>
+								<div class="info-product-price">
+									<span class="item_price">$180.99</span>
+									<del>$199.71</del>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Women BLACK Heels" />
+											<input type="hidden" name="amount" value="30.99" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+										</fieldset>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
 			</div>
-		</div>
+		</div>	
+	</div>
+</div>
 
 @extends('trangchinh.layout.facebook');
 
