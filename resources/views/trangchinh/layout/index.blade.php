@@ -22,10 +22,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="trangchinh_asset/css/fonts_1.css" rel="stylesheet">
 <link href='trangchinh_asset/css/fonts_2.css' rel='stylesheet' type='text/css'>
 <link href="trangchinh_asset/css/style.default.css" rel="stylesheet">
+
 <!-- //css -->
 
 </head>
-<body>
+<body style="background: 	#fff">
 
 	@include('trangchinh.layout.header')
 

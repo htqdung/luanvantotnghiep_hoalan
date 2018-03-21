@@ -1,11 +1,11 @@
 <!-- menu -->
-<div class="ban-top" style="height: 73px; background: #9E0CF5">
+<div class="ban-top" style="height: 73px; background: #62bcfa; border-bottom: 1px solid #e1e1e1;">
 	<div class="container">
 		<div class="top_nav_left">
 			<nav class="navbar navbar-default">
 			  <div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header" style="height: 73px; background: #9E0CF5">
+				<div class="navbar-header" style="height: 73px; background: #62bcfa">
 				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
@@ -19,7 +19,7 @@
 					<li class="active menu__item menu__item--current"><a style="font-size: 14px" class="menu__link" href="trangchinh/trangchu/trangchu"><b>TRANG CHỦ</b> <span class="sr-only">(current)</span></a></li>
 					<li class=" menu__item"><a class="menu__link" href="trangchinh/gioithieu/gioithieu"><b>GIỚI THIỆU</b></a></li>
 					<li class="dropdown menu__item">
-						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>HOA LAN</b><span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle menu__link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><b class="mau-menu">HOA LAN</b><span class="caret"></span></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="agile_inner_drop_nav_info">
 									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
@@ -101,12 +101,12 @@
 			</nav>	
 		</div>
 		<div class="top_nav_right" >
-			<div class="wthreecartaits wthreecartaits2 cart cart box_1" style="height: 73px; background: #9E0CF5" > 
+			<div class="wthreecartaits wthreecartaits2 cart cart box_1" style="height: 73px; background: #62bcfa" > 
 				<form action="#" method="post" class="last" > 
 					<input type="hidden" name="cmd" value="_cart">
 					<input type="hidden" name="display" value="1">
 
-					<button class="w3view-cart hover-cart"  type="submit" name="submit" value="" style=" background: #9E0CF5" ><i class="fa fa-cart-plus " data-toggle="tooltip" title="Giỏ hàng" style="font-size: 1.3em; color: #fff"  aria-hidden="true" ></i></button>
+					<button class="w3view-cart hover-cart"  type="submit" name="submit" value="" style=" background: 	#62bcfa" ><i class="fa fa-cart-plus " data-toggle="tooltip" title="Giỏ hàng" style="font-size: 1.3em; color: #fff"  aria-hidden="true" ></i></button>
 				</form>  
   			</div>
 		</div>

@@ -1,14 +1,14 @@
 <!-- header -->
 	
 
-<div class="header" style="background: #9E86F5" id="home">
+<div class="header" style="background: #62bcfa" id="home">
 	
 	<div class="container" >
 		<ul>
-		    <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" style="color: #B0FFFF" aria-hidden="true"></i><b> ĐĂNG NHẬP</b> </a></li>
-			<li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" style="color: #B0FFFF"aria-hidden="true"></i><b> ĐĂNG KÝ</b> </a></li>
-			<li><i class="fa fa-phone" style="color: #B0FFFF" aria-hidden="true"></i> <b>ĐIỆN THOẠI : 0913 826 156</b></li>
-			<li> <b> <i class="fa fa-envelope-o" style="color: #B0FFFF" aria-hidden="true"></i></b> <a href="mailto:sales@near.vn"><b>sales@near.vn</b></a></li>
+		    <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" style="color: #fff" aria-hidden="true"></i><b> ĐĂNG NHẬP</b> </a></li>
+			<li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" style="color: #fff"aria-hidden="true"></i><b> ĐĂNG KÝ</b> </a></li>
+			<li><i class="fa fa-phone" style="color: #fff" aria-hidden="true"></i> <b>ĐIỆN THOẠI : 0913 826 156</b></li>
+			<li> <b> <i class="fa fa-envelope-o" style="color: #fff" aria-hidden="true"></i></b> <a href="mailto:sales@near.vn"><b>sales@near.vn</b></a></li>
 		</ul>
 	</div>
 </div>
@@ -19,14 +19,14 @@
 		
 		<!-- header-bot logo -->
 			<div class="col-md-8 logo_agile" >
-				<a href="trangchinh/trangchu/trangchu"><img style="width: 750px; height: 100px" src="trangchinh_asset/images/logoshop5.jpg"></a>
+				<a href="trangchinh/trangchu/trangchu"><img style="width: 650px; height: 90px ;" src="trangchinh_asset/images/logoshop5.png"></a>
 			</div>
 
-		<div class="col-md-4 header-middle" style="margin-top: 30px; margin-bottom: 5px" >
+		<div class="col-md-4 header-middle" style="margin-top: 10px; margin-bottom: 5px" >
 			<form action="#" method="post" >
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
-						<span class="input-group-btn"><button class="btn btn-secondary" style="background-color: #9BBDF5"><i class="fa fa-search" style="font-size: 20px"></i></button></span>
+						<span class="input-group-btn"><button class="btn btn-secondary" style="background-color: #62bcfa"><i class="fa fa-search" style="font-size: 19px ; color: #fff; border: 1px solid #62bcfa "></i></button></span>
 					</div>
 				<div class="clearfix"></div>
 			</form>
