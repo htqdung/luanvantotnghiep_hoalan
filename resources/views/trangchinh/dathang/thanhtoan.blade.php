@@ -1,7 +1,7 @@
 <div class="col-md-3">
 
     <div class="box" id="order-summary">
-        <div class="box-header">
+        <div style="background-color: #045FB4; text-align: center;" class="box-header">
             <h3>THANH TOÁN</h3>
         </div>
         <p class="text-muted">Phí vận chuyển và phụ phí được tính toán dựa trên các giá trị bạn đã nhập.</p>

@@ -63,8 +63,8 @@
 																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
 														</ul>
 					</div>
-					<div class="col-md-6 contact-form" >
-						<h4 class="white-w3ls" style="color: #000" >Liên hệ với chúng tôi</h4>
+					<div style="background-color: #F2F2F2" class="col-md-6 contact-form" >
+						<h4 class="white-w3ls" style="color: #111" >Liên hệ với chúng tôi</h4>
 						<form action="#" method="post">
 							<div class="styled-input agile-styled-input-top">
 								<input type="text" name="Name" required="">
@@ -86,13 +86,13 @@
 								<label>Nội dung</label>
 								<span></span>
 							</div>	 
-							<input type="submit" value="Gửi">
+							<input style="background-color: #62bcfa" type="submit" value="Gửi">
 						</form>
 					</div>
 				</div>
 				<div class="clearfix"> </div>
 				
-				<div class="row" style="padding-top: 25px;">
+				<div class="row" style="padding-top: 50px;">
 				<div class="span12">
 	   
 			

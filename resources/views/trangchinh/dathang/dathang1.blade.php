@@ -29,16 +29,24 @@
 
                         <div class="content">
                             <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label style="margin-bottom: 10px" for="firstname">Họ Tên:</label>
+                                        <input style="margin-bottom: 20px" type="text" class="form-control" id="firstname">
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="firstname">Tên:</label>
-                                        <input type="text" class="form-control" id="firstname">
+                                        <label style="margin-bottom: 10px" for="lastname">Số Điện Thoại:</label>
+                                        <input style="margin-bottom: 20px" type="text" class="form-control" id="lastname">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="lastname">Họ:</label>
-                                        <input type="text" class="form-control" id="lastname">
+                                        <label style="margin-bottom: 10px" for="email">Email:</label>
+                                        <input style="margin-bottom: 20px" type="text" class="form-control" id="email">
                                     </div>
                                 </div>
                             </div>
@@ -47,58 +55,40 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="company">Company</label>
-                                        <input type="text" class="form-control" id="company">
+                                        <label style="margin-bottom: 10px" for="company">Tỉnh/Thành Phố:</label>
+                                        <select style="margin-bottom: 20px" class="form-control" id="state"></select>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="street">Đường:</label>
-                                        <input type="text" class="form-control" id="street">
+                                        <label style="margin-bottom: 10px" for="street">Quận/Huyện:</label>
+                                        <select style="margin-bottom: 20px" class="form-control" id="state"></select>
                                     </div>
                                 </div>
                             </div>
                             <!-- /.row -->
 
                             <div class="row">
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="form-group">
-                                        <label for="city">Company</label>
-                                        <input type="text" class="form-control" id="city">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="form-group">
-                                        <label for="zip">ZIP</label>
-                                        <input type="text" class="form-control" id="zip">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="form-group">
-                                        <label for="state">State</label>
-                                        <select class="form-control" id="state"></select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="form-group">
-                                        <label for="country">Country</label>
-                                        <select class="form-control" id="country"></select>
-                                    </div>
-                                </div>
-
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="phone">Điện Thoại:</label>
-                                        <input type="text" class="form-control" id="phone">
+                                        <label style="margin-bottom: 10px" for="city">Phường/Xã:</label>
+                                        <select style="margin-bottom: 20px" class="form-control" id="state"></select>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="email">Email:</label>
-                                        <input type="text" class="form-control" id="email">
+                                        <label style="margin-bottom: 10px" for="zip">Địa Chỉ</label>
+                                        <input style="margin-bottom: 20px" type="text" class="form-control" id="zip">
                                     </div>
                                 </div>
+                            <!-- /.row -->
 
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label style="margin-bottom: 10px" for="state">Ghi Chú:</label>
+                                        <textarea type="text" class="form-control" id="zip" rows="8" cols="95"></textarea>
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.row -->
                         </div>

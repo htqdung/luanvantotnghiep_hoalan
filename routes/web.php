@@ -13,7 +13,7 @@ include_once('qd_web.php');
 
 
 Route::get('test', function(){
-	return view('trangchinh.dathang.dathang1');
+	return view('trangchinh.trangchu.test');
 });
 
 Route::group(['prefix'=>'trangchinh'],function(){

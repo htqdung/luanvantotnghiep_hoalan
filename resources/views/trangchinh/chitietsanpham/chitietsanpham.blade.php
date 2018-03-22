@@ -193,7 +193,7 @@
   						<!--/slider_owl-->
   						
   						<div class="w3_agile_latest_arrivals">
-  							<h3 class="wthree_text_info">SẢN PHẨM VỪA XEM</h3>	
+  							<h3 class="wthree_text_info"><span>SẢN PHẨM</span> VỪA XEM</h3>	
   							<div class="col-md-3 product-men single">
   								<div class="men-pro-item simpleCart_shelfItem">
   									<div class="men-thumb-item">
@@ -209,6 +209,20 @@
   									</div>
   									<div class="item-info-product ">
   										<h4><a href="single.html">Sleeveless Solid Blue Top</a></h4>
+                      <div class="rating1">
+                        <span style="margin-top: 10px" class="starRating">
+                          <input id="rating5" type="radio" name="rating" value="5">
+                          <label for="rating5">5</label>
+                          <input id="rating4" type="radio" name="rating" value="4">
+                          <label for="rating4">4</label>
+                          <input id="rating3" type="radio" name="rating" value="3" checked="">
+                          <label for="rating3">3</label>
+                          <input id="rating2" type="radio" name="rating" value="2">
+                          <label for="rating2">2</label>
+                          <input id="rating1" type="radio" name="rating" value="1">
+                          <label for="rating1">1</label>
+                        </span>
+                      </div>
   										<div class="info-product-price">
   											<span class="item_price">$140.99</span>
   											<del>$189.71</del>
@@ -248,6 +262,20 @@
   									</div>
   									<div class="item-info-product ">
   										<h4><a href="single.html">Black Basic Shorts</a></h4>
+                                            <div class="rating1">
+                        <span style="margin-top: 10px" class="starRating">
+                          <input id="rating5" type="radio" name="rating" value="5">
+                          <label for="rating5">5</label>
+                          <input id="rating4" type="radio" name="rating" value="4">
+                          <label for="rating4">4</label>
+                          <input id="rating3" type="radio" name="rating" value="3" checked="">
+                          <label for="rating3">3</label>
+                          <input id="rating2" type="radio" name="rating" value="2">
+                          <label for="rating2">2</label>
+                          <input id="rating1" type="radio" name="rating" value="1">
+                          <label for="rating1">1</label>
+                        </span>
+                      </div>
   										<div class="info-product-price">
   											<span class="item_price">$120.99</span>
   											<del>$189.71</del>
@@ -287,6 +315,20 @@
   									</div>
   									<div class="item-info-product ">
   										<h4><a href="single.html">Aero Canvas Loafers  </a></h4>
+                                            <div class="rating1">
+                        <span style="margin-top: 10px" class="starRating">
+                          <input id="rating5" type="radio" name="rating" value="5">
+                          <label for="rating5">5</label>
+                          <input id="rating4" type="radio" name="rating" value="4">
+                          <label for="rating4">4</label>
+                          <input id="rating3" type="radio" name="rating" value="3" checked="">
+                          <label for="rating3">3</label>
+                          <input id="rating2" type="radio" name="rating" value="2">
+                          <label for="rating2">2</label>
+                          <input id="rating1" type="radio" name="rating" value="1">
+                          <label for="rating1">1</label>
+                        </span>
+                      </div>
   										<div class="info-product-price">
   											<span class="item_price">$120.99</span>
   											<del>$199.71</del>
@@ -326,6 +368,20 @@
   									</div>
   									<div class="item-info-product ">
   										<h4><a href="single.html">Ankle Length Socks</a></h4>
+                                            <div class="rating1">
+                        <span style="margin-top: 10px" class="starRating">
+                          <input id="rating5" type="radio" name="rating" value="5">
+                          <label for="rating5">5</label>
+                          <input id="rating4" type="radio" name="rating" value="4">
+                          <label for="rating4">4</label>
+                          <input id="rating3" type="radio" name="rating" value="3" checked="">
+                          <label for="rating3">3</label>
+                          <input id="rating2" type="radio" name="rating" value="2">
+                          <label for="rating2">2</label>
+                          <input id="rating1" type="radio" name="rating" value="1">
+                          <label for="rating1">1</label>
+                        </span>
+                      </div>
   										<div class="info-product-price">
   											<span class="item_price">$100.99</span>
   											<del>$159.71</del>

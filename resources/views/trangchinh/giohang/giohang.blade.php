@@ -37,9 +37,9 @@
                                         <tr>
                                             <th colspan="2">Sản Phẩm</th>
                                             <th>Số Lượng</th>
-                                            <th>Giá</th>
+                                            <th>Đơn Giá</th>
                                             <th>Giảm Giá</th>
-                                            <th colspan="2">Tổng Cộng</th>
+                                            <th colspan="2">Thành Tiền</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -128,7 +128,7 @@
 
                 <div class="col-md-3">
                     <div class="box" id="order-summary">
-                        <div class="box-header">
+                        <div style="background-color: #045FB4; text-align: center;" class="box-header">
                             <h3>THANH TOÁN</h3>
                         </div>
                         <p class="text-muted">Tổng thanh toán chưa bao gồm phí vận chuyển và thuế.</p>
@@ -155,7 +155,7 @@
 
 
                     <div class="box">
-                        <div class="box-header">
+                        <div style="background-color: #045FB4; text-align: center;" class="box-header">
                             <h3>MÃ GIẢM GIÁ</h3>
                         </div>
                         <p class="text-muted">Nếu bạn có mã giảm giá, vui lòng nhập mã vào ô bên dưới.</p>
@@ -185,13 +185,27 @@
                                         <img src="trangchinh_asset/images/w2.jpg" alt="" class="pro-image-back">
                                         <div class="men-cart-pro">
                                             <div class="inner-men-cart-pro">
-                                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                                <a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
                                             </div>
                                         </div>
                                         
                                     </div>
                                     <div class="item-info-product ">
                                         <h4><a href="single.html">Sleeveless Solid Blue Top</a></h4>
+                                        <div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
                                         <div class="info-product-price">
                                             <span class="item_price">$140.99</span>
                                             <del>$189.71</del>
@@ -208,7 +222,7 @@
                                                     <input type="hidden" name="currency_code" value="USD">
                                                     <input type="hidden" name="return" value=" ">
                                                     <input type="hidden" name="cancel_return" value=" ">
-                                                    <input type="submit" name="submit" value="Add to cart" class="button">
+                                                    <input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button">
                                                 </fieldset>
                                             </form>
                                         </div>
@@ -223,13 +237,27 @@
                                         <img src="trangchinh_asset/images/w4.jpg" alt="" class="pro-image-back">
                                         <div class="men-cart-pro">
                                             <div class="inner-men-cart-pro">
-                                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                                <a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
                                             </div>
                                         </div>
                                         
                                     </div>
                                     <div class="item-info-product ">
                                         <h4><a href="single.html">Black Basic Shorts</a></h4>
+                                        <div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
                                         <div class="info-product-price">
                                             <span class="item_price">$120.99</span>
                                             <del>$189.71</del>
@@ -246,7 +274,7 @@
                                                     <input type="hidden" name="currency_code" value="USD">
                                                     <input type="hidden" name="return" value=" ">
                                                     <input type="hidden" name="cancel_return" value=" ">
-                                                    <input type="submit" name="submit" value="Add to cart" class="button">
+                                                    <input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button">
                                                 </fieldset>
                                             </form>
                                         </div>
@@ -261,13 +289,27 @@
                                         <img src="trangchinh_asset/images/s6.jpg" alt="" class="pro-image-back">
                                         <div class="men-cart-pro">
                                             <div class="inner-men-cart-pro">
-                                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                                <a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
                                             </div>
                                         </div>
                                         
                                     </div>
                                     <div class="item-info-product ">
                                         <h4><a href="single.html">Aero Canvas Loafers  </a></h4>
+                                        <div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
                                         <div class="info-product-price">
                                             <span class="item_price">$120.99</span>
                                             <del>$199.71</del>
@@ -284,7 +326,7 @@
                                                     <input type="hidden" name="currency_code" value="USD">
                                                     <input type="hidden" name="return" value=" ">
                                                     <input type="hidden" name="cancel_return" value=" ">
-                                                    <input type="submit" name="submit" value="Add to cart" class="button">
+                                                    <input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button">
                                                 </fieldset>
                                             </form>
                                         </div>
@@ -299,13 +341,27 @@
                                         <img src="trangchinh_asset/images/w7.jpg" alt="" class="pro-image-back">
                                         <div class="men-cart-pro">
                                             <div class="inner-men-cart-pro">
-                                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                                <a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
                                             </div>
                                         </div>
                                         
                                     </div>
                                     <div class="item-info-product ">
                                         <h4><a href="single.html">Ankle Length Socks</a></h4>
+                                        <div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
                                         <div class="info-product-price">
                                             <span class="item_price">$100.99</span>
                                             <del>$159.71</del>
@@ -322,7 +378,7 @@
                                                     <input type="hidden" name="currency_code" value="USD">
                                                     <input type="hidden" name="return" value=" ">
                                                     <input type="hidden" name="cancel_return" value=" ">
-                                                    <input type="submit" name="submit" value="Add to cart" class="button">
+                                                    <input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button">
                                                 </fieldset>
                                             </form>
                                         </div>

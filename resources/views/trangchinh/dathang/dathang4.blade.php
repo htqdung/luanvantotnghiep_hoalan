@@ -32,11 +32,11 @@
 								<table class="table table-striped">
 									<thead>
 										<tr>
-											<th colspan="2">Product</th>
-											<th>Quantity</th>
-											<th>Unit price</th>
-											<th>Discount</th>
-											<th>Total</th>
+											<th colspan="2">Sản Phẩm</th>
+											<th>Số Lượng</th>
+											<th>Đơn Giá</th>
+											<th>Giảm Giá</th>
+											<th>Thành Tiền</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -82,7 +82,7 @@
 									</tbody>
 									<tfoot>
 										<tr>
-											<th colspan="5">Total</th>
+											<th colspan="5">Tổng Cộng:</th>
 											<th>$446.00</th>
 										</tr>
 									</tfoot>

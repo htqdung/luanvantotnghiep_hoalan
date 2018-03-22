@@ -23,28 +23,28 @@
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="agile_inner_drop_nav_info">
 									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-										<a href="trangchinh/sanpham/sanpham"><img src="trangchinh_asset/images/top2.jpg" alt=" "/></a>
+										<a href="trangchinh/sanpham/sanpham"><img src="trangchinh_asset/images/hoalan5.jpg" alt=" "/></a>
 									</div>
 									<div class="col-sm-3 multi-gd-img">
 										<ul class="multi-column-dropdown">
-											<li><a href="trangchinh/sanpham/sanpham">Clothing</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Wallets</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Footwear</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Watches</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Accessories</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Bags</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Caps & Hats</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Vũ Nữ</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Hồ Điệp</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Kiếm</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Hoàng Thảo</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Cát Lan</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Hài</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Trúc Lan</a></li>
 										</ul>
 									</div>
 									<div class="col-sm-3 multi-gd-img">
 										<ul class="multi-column-dropdown">
-											<li><a href="trangchinh/sanpham/sanpham">Jewellery</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Sunglasses</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Perfumes</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Beauty</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Shirts</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Sunglasses</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Swimwear</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Hoàng Hậu</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Giáng Hương</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Ngọc Điểm</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Địa Lan</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Hài</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Nghinh Xuân</a></li>
+											<li><a href="trangchinh/sanpham/sanpham">Lan Đai Châu</a></li>
 										</ul>
 									</div>
 									<div class="clearfix"></div>
@@ -70,7 +70,7 @@
 										</ul>
 									</div>
 									<div class="col-sm-6 multi-gd-img multi-gd-text ">
-										<a href="trangchinh/sanpham/sanpham"><img src="trangchinh_asset/images/top1.jpg" alt=" "/></a>
+										<a href="trangchinh/sanpham/sanpham"><img src="trangchinh_asset/images/hoalan1.jpg" alt=" "/></a>
 									</div>
 									<div class="clearfix"></div>
 								</div>

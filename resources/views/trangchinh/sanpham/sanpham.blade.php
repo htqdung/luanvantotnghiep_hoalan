@@ -205,6 +205,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Party Men's Blazer</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$260.99</span>
 											<del>$390.71</del>
@@ -244,6 +258,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Analog Watch</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$160.99</span>
 											<del>$290.71</del>
@@ -283,6 +311,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Running Shoes</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$80.99</span>
 											<del>$89.71</del>
@@ -328,6 +370,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Formal Blue Shirt</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$45.99</span>
 											<del>$69.71</del>
@@ -367,6 +423,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Gabi Full Sleeve Sweatshirt</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$45.99</span>
 											<del>$69.71</del>
@@ -406,6 +476,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Dark Blue Track Pants</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$80.99</span>
 											<del>$89.71</del>
@@ -445,6 +529,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Round Neck Black T-Shirt</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$190.99</span>
 											<del>$159.71</del>
@@ -484,6 +582,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Men's Black Jeans</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$60.99</span>
 											<del>$90.71</del>
@@ -523,6 +635,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Analog Watch</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$160.99</span>
 											<del>$290.71</del>
@@ -562,6 +688,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Reversible Belt</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$30.99</span>
 											<del>$50.71</del>
@@ -601,6 +741,20 @@
 									</div>
 									<div class="item-info-product ">
 										<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Party Men's Blazer</a></h4>
+										<div class="rating1">
+                                            <span style="margin-top: 10px" class="starRating">
+                                                <input id="rating5" type="radio" name="rating" value="5">
+                                                <label for="rating5">5</label>
+                                                <input id="rating4" type="radio" name="rating" value="4">
+                                                <label for="rating4">4</label>
+                                                <input id="rating3" type="radio" name="rating" value="3" checked="">
+                                                <label for="rating3">3</label>
+                                                <input id="rating2" type="radio" name="rating" value="2">
+                                                <label for="rating2">2</label>
+                                                <input id="rating1" type="radio" name="rating" value="1">
+                                                <label for="rating1">1</label>
+                                            </span>
+                                        </div>
 										<div class="info-product-price">
 											<span class="item_price">$260.99</span>
 											<del>$390.71</del>

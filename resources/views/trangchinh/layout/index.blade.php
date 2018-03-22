@@ -198,6 +198,21 @@ $(window).load(function(){
 <script src="trangchinh_asset/js/imagezoom.js"></script>
 <!-- single -->
 
+<script type='text/javascript' src="trangchinh_asset/js/codex-fly.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.add-to-cart').on('click',function(){
+        //Scroll to top if cart icon is hidden on top
+        $('html, body').animate({
+            'scrollTop' : $(".w3view-cart").position().top
+        });
+        //Select item image and pass to the function
+        var itemImg = $(this).parent().find('img').eq(0);
+        flyToElement($(itemImg), $('.w3view-cart'));
+    });
+});
+</script>
+
 <!-- //script -->
 
 </body>
