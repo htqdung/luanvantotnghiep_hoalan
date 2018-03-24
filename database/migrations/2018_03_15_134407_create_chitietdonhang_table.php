@@ -17,10 +17,10 @@ class CreateChitietdonhangTable extends Migration
             $table->increments('id');
             $table->integer('donhang_id')->unsigned();
             $table->foreign('donhang_id')->references('id')->on('tbl_donhang')->onDelete('cascade');
+            $table->integer('sanpham_id')->unsigned();
+            $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
             $table->string('so_luong', 10);
             $table->string('thanh_tien', 20);
-            $table->integer('dongia_id')->unsigned();
-            $table->foreign('dongia_id')->references('id')->on('tbl_dongia')->onDelete('cascade');
             $table->timestamps();
         });
     }

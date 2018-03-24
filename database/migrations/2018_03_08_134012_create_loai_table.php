@@ -22,7 +22,6 @@ class CreateLoaiTable extends Migration
             $table->foreign('chi_id')->references('id')->on('tbl_chi')->onDelete('cascade');
             $table->integer('dacdiem_id')->unsigned();
             $table->foreign('dacdiem_id')->references('id')->on('tbl_dacdiem')->onDelete('cascade');
-            $table->tinyInteger('trang_thai');
             $table->timestamps();
         });
     }

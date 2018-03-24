@@ -19,7 +19,6 @@ class CreateDacdiemTable extends Migration
             $table->string('la',100);
             $table->string('than',100);
             $table->string('re',100);
-            $table->string('trang_thai',100);
             $table->timestamps();
         });
     }

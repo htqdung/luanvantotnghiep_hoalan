@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrangthaiHoadonTable extends Migration
+class CreateTrangthaiDonhangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateTrangthaiHoadonTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_trangthai_hoadon', function (Blueprint $table) {
+        Schema::create('tbl_trangthai_donhang', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('trangthai_id')->unsigned();
-            $table->foreign('trangthai_id')->references('id')->on('tbl_trangthai');
+            $table->foreign('trangthai_id')->references('id')->on('tbl_trangthai')->onDelete('cascade');
             $table->integer('donhang_id')->unsigned();
-            $table->foreign('donhang_id')->references('id')->on('tbl_donhang');
-            
+            $table->foreign('donhang_id')->references('id')->on('tbl_donhang')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateTrangthaiHoadonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_trangthai_hoadon');
+        Schema::dropIfExists('tbl_trangthai_donhang');
     }
 }
