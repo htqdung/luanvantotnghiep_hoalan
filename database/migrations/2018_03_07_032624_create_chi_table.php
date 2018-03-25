@@ -17,7 +17,6 @@ class CreateChiTable extends Migration
             $table->increments('id');
             $table->string('ten_chi', 100)->unique();
             $table->text('mo_ta', 200)->nullable();
-            $table->string('trang_thai',50);
             $table->timestamps();
         });
     }

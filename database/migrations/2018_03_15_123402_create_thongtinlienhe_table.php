@@ -15,8 +15,6 @@ class CreateThongtinlienheTable extends Migration
     {
         Schema::create('tbl_thongtinlienhe', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('lienhe_id')->unsigned();
-            $table->foreign('lienhe_id')->references('id')->on('tbl_lienhe')->onDelete('cascade');
             $table->string('ten', 100);
             $table->string('so_dien_thoai', 15);
             $table->string('email', 100);

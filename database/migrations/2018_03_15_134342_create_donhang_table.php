@@ -18,8 +18,6 @@ class CreateDonhangTable extends Migration
             $table->dateTimeTz('ngay_dat_hang');
             $table->integer('nguoidung_id')->unsigned();
             $table->foreign('nguoidung_id')->references('id')->on('tbl_nguoidung')->onDelete('cascade');
-            $table->integer('sanpham_id')->unsigned();
-            $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
             $table->integer('diachi_id')->unsigned();
             $table->foreign('diachi_id')->references('id')->on('tbl_diachi')->onDelete('cascade');
             $table->string('phi_van_chuyen', 10);
