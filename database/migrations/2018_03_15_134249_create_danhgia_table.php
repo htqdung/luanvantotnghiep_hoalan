@@ -18,7 +18,7 @@ class CreateDanhgiaTable extends Migration
             $table->integer('nguoidung_id')->unsigned();
             $table->foreign('nguoidung_id')->references('id')->on('tbl_nguoidung')->onDelete('cascade');
             $table->text('noi_dung', 1000)->nullable();
-            $table->string('danh_gia', 10);
+            $table->integer('danh_gia');
             $table->integer('sanpham_id')->unsigned();
             $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
             $table->dateTimeTz('ngay_danh_gia');

@@ -19,7 +19,7 @@ class CreateSanphamTable extends Migration
             $table->text('mo_ta', 1000)->nullable();
             $table->string('hinh_thuc', 1000);
             $table->string('kich_thuoc', 200);
-            $table->string('diem_thuong', 10);
+            $table->integer('diem_thuong');
             $table->string('tag', 100)->nullable();
             $table->timestamps();
         });

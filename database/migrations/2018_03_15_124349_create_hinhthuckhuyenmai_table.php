@@ -16,7 +16,7 @@ class CreateHinhthuckhuyenmaiTable extends Migration
         Schema::create('tbl_hinhthuckhuyenmai', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ten_hinh_thuc', 200);
-            $table->string('ti_le_giam_gia', 10);
+            $table->integer('ti_le_giam_gia');
             $table->timestamps();
         });
     }

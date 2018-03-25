@@ -19,7 +19,7 @@ class CreateSanphamLoaiTable extends Migration
             $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
             $table->integer('loai_id')->unsigned();
             $table->foreign('loai_id')->references('id')->on('tbl_loai')->onDelete('cascade');
-            $table->string('so_luong', 10);
+            $table->integer('so_luong');
             $table->timestamps();
         });
     }

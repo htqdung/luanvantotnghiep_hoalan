@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUudaiTable extends Migration
+class CreateKhoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateUudaiTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_uudai', function (Blueprint $table) {
+        Schema::create('tbl_kho', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('so_luong_toi_thieu');
-            $table->integer('ti_le_giam_gia');
+            $table->integer('sanpham_id')->unsigned();
+            $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
+            $table->integer('so_luong');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateUudaiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_uudai');
+        Schema::dropIfExists('tbl_kho');
     }
 }
