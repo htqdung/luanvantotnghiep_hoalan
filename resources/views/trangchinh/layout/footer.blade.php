@@ -119,7 +119,7 @@
 				<div class="clearfix"></div>
 			</div>
 		</div>
-		<div class="clearfix"></div>
+		<!--<div class="clearfix"></div>
 			<div class="agile_newsletter_footer">
 					<div class="col-sm-6 newsleft">
 				<h3>ĐĂNG KÝ NHẬN THÔNG TIN MỚI NHẤT!</h3>
@@ -129,9 +129,9 @@
 					<input type="email" placeholder="Nhập Email của bạn..." name="email" required="">
 					<input style="background-color: #5882FA" type="submit" value="Đăng Ký">
 				</form>
-			</div>
+			</div>-->
 
-		<div class="clearfix"></div>
+		<div class="clearfix"></div> 
 	</div>
 		<p style="color: #fff;" class="copy-right">&Copy 2018 Elite shoppy. All rights reserved | Design by <a href="http://w3layouts.com/">KTPM2014</a></p>
 	</div>

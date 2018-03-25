@@ -12,7 +12,7 @@ class CreateNguoidungTable extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
         Schema::create('tbl_nguoidung', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username', 50)->unique();

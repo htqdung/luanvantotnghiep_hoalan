@@ -32,7 +32,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<table class="table">
-					<h3><b>ĐẶC ĐIỂM HOA</b></h3>
+					<h3><b>CHI</b></h3>
 				    <thead>
 				      <tr>
 				        <th style="width: 5%">Id</th>

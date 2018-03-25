@@ -111,10 +111,10 @@
 		<h3 class="wthree_text_info"><span>SẢN PHẨM MỚI</span></h3>		
 		<div id="horizontalTab">
 			<ul class="resp-tabs-list">
-				<li> Men's</li>
-				<li> Women's</li>
-				<li> Bags</li>
-				<li> Footwear</li>
+				<li> Lan vanda</li>
+				<li> Lan hồ điệp</li>
+				<li> Lan vũ nữ</li>
+				<li> Lan khác</li>
 			</ul>
 			<div class="resp-tabs-container">
 				<!--/tab_one-->
@@ -149,8 +149,8 @@
 									</span>
 								</div>
 								<div class="info-product-price">
-									<span class="item_price">$45.99</span>
-									<del>$69.71</del>
+									<span class="item_price">$69.71</span>
+									
 								</div>
 								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 									<form action="#" method="post">
@@ -2115,12 +2115,6 @@
 	<div class="container">
 		<h3 class="wthree_text_info"><span>TẤT CẢ SẢN PHẨM</span></h3>		
 		<div id="horizontalTab">
-			<ul class="resp-tabs-list">
-				<li> Men's</li>
-				<li> Women's</li>
-				<li> Bags</li>
-				<li> Footwear</li>
-			</ul>
 			<div class="resp-tabs-container">
 				<!--/tab_one-->
 				<div class="tab1">
