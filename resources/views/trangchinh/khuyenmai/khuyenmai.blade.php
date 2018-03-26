@@ -42,11 +42,11 @@
 								<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 							</div>
 						</div>
-						<span class="product-new-top">Mới</span>
+						<span class="product-new-top"> Sale</span>
 							
 					</div>
 					<div class="item-info-product ">
-						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Party Men's Blazer</a></h4>
+						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan Hồng</a></h4>
 						<div class="info-product-price">
 							<span class="item_price">$260.99</span>
 							<del>$390.71</del>
@@ -86,11 +86,11 @@
 									<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 								</div>
 							</div>
-							<span class="product-new-top">Mới</span>
+							<span class="product-new-top"> Sale</span>
 							
 					</div>
 					<div class="item-info-product ">
-						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Gabi Full Sleeve Sweatshirt</a></h4>
+						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan Hồng</a></h4>
 						<div class="info-product-price">
 							<span class="item_price">$45.99</span>
 							<del>$69.71</del>
@@ -125,11 +125,11 @@
 									<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 								</div>
 							</div>
-							<span class="product-new-top">Mới</span>
+							<span class="product-new-top"> Sale</span>
 							
 					</div>
 					<div class="item-info-product ">
-						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Dark Blue Track Pants</a></h4>
+						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan Hồng</a></h4>
 						<div class="info-product-price">
 							<span class="item_price">$80.99</span>
 							<del>$89.71</del>
@@ -164,11 +164,11 @@
 									<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 								</div>
 							</div>
-							<span class="product-new-top">Mới</span>
+							<span class="product-new-top"> Sale</span>
 							
 					</div>
 					<div class="item-info-product ">
-						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Round Neck Black T-Shirt</a></h4>
+						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan Hồng</a></h4>
 						<div class="info-product-price">
 							<span class="item_price">$190.99</span>
 							<del>$159.71</del>
@@ -204,11 +204,11 @@
 									<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 								</div>
 							</div>
-							<span class="product-new-top">Mới</span>
+							<span class="product-new-top"> Sale</span>
 							
 					</div>
 					<div class="item-info-product ">
-						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Men's Black Jeans</a></h4>
+						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan Hồng</a></h4>
 						<div class="info-product-price">
 							<span class="item_price">$60.99</span>
 							<del>$90.71</del>
@@ -243,11 +243,11 @@
 									<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 								</div>
 							</div>
-							<span class="product-new-top">Mới</span>
+							<span class="product-new-top"> Sale</span>
 							
 					</div>
 					<div class="item-info-product ">
-						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Analog Watch</a></h4>
+						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan Hồng</a></h4>
 						<div class="info-product-price">
 							<span class="item_price">$160.99</span>
 							<del>$290.71</del>
@@ -282,11 +282,11 @@
 									<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 								</div>
 							</div>
-							<span class="product-new-top">Mới</span>
+							<span class="product-new-top"> Sale</span>
 							
 					</div>
 					<div class="item-info-product ">
-						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Reversible Belt</a></h4>
+						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan Hồng</a></h4>
 						<div class="info-product-price">
 							<span class="item_price">$30.99</span>
 							<del>$50.71</del>
@@ -323,11 +323,11 @@
 								<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 							</div>
 						</div>
-						<span class="product-new-top">Mới</span>
+						<span class="product-new-top"> Sale</span>
 							
 					</div>
 					<div class="item-info-product ">
-						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Party Men's Blazer</a></h4>
+						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan Hồng</a></h4>
 						<div class="info-product-price">
 							<span class="item_price">$260.99</span>
 							<del>$390.71</del>
@@ -362,11 +362,11 @@
 								<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 							</div>
 						</div>
-						<span class="product-new-top">Mới</span>
+						<span class="product-new-top"> Sale</span>
 							
 					</div>
 					<div class="item-info-product ">
-						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Party Men's Blazer</a></h4>
+						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan Hồng</a></h4>
 						<div class="info-product-price">
 							<span class="item_price">$260.99</span>
 							<del>$390.71</del>
@@ -402,11 +402,11 @@
 								<a href="trangchinh/chitietsanpham/chitietsanpham" class="link-product-add-cart">Xem Chi Tiết</a>
 							</div>
 						</div>
-						<span class="product-new-top">Mới</span>
+						<span class="product-new-top"> Sale</span>
 							
 					</div>
 					<div class="item-info-product ">
-						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Party Men's Blazer</a></h4>
+						<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan Hồng</a></h4>
 						<div class="info-product-price">
 							<span class="item_price">$260.99</span>
 							<del>$390.71</del>

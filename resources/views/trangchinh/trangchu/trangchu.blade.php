@@ -132,44 +132,7 @@
 								<span class="product-new-top">Mới</span>
 
 							</div>
-							<div class="item-info-product ">
-								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Formal Blue Shirt</a></h4>
-								<div class="rating1">
-									<span style="margin-top: 10px" class="starRating">
-										<input id="rating5" type="radio" name="rating" value="5">
-										<label for="rating5">5</label>
-										<input id="rating4" type="radio" name="rating" value="4">
-										<label for="rating4">4</label>
-										<input id="rating3" type="radio" name="rating" value="3" checked="">
-										<label for="rating3">3</label>
-										<input id="rating2" type="radio" name="rating" value="2">
-										<label for="rating2">2</label>
-										<input id="rating1" type="radio" name="rating" value="1">
-										<label for="rating1">1</label>
-									</span>
-								</div>
-								<div class="info-product-price">
-									<span class="item_price">$69.71</span>
-									
-								</div>
-								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-									<form action="#" method="post">
-										<fieldset>
-											<input type="hidden" name="cmd" value="_cart" />
-											<input type="hidden" name="add" value="1" />
-											<input type="hidden" name="business" value=" " />
-											<input type="hidden" name="item_name" value="Formal Blue Shirt" />
-											<input type="hidden" name="amount" value="30.99" />
-											<input type="hidden" name="discount_amount" value="1.00" />
-											<input type="hidden" name="currency_code" value="USD" />
-											<input type="hidden" name="return" value=" " />
-											<input type="hidden" name="cancel_return" value=" " />
-											<a href="javascript:void(0);" class="add-to-cart"><input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" /></a>
-										</fieldset>
-									</form>
-								</div>
-
-							</div>
+							menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2532 current_page_item menu-item-has-children menu-item-2544 act first has-children
 						</div>
 					</div>
 					<div class="col-md-3 product-men">
