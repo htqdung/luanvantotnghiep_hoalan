@@ -17,7 +17,7 @@ class CreateDanhgiaTable extends Migration
             $table->increments('id');
             $table->integer('nguoidung_id')->unsigned();
             $table->foreign('nguoidung_id')->references('id')->on('tbl_nguoidung')->onDelete('cascade');
-            $table->text('noi_dung', 1000)->nullable();
+            $table->text('noi_dung')->nullable();
             $table->integer('danh_gia');
             $table->integer('sanpham_id')->unsigned();
             $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');

@@ -128,7 +128,7 @@
 
                 <div class="col-md-3">
                     <div class="box" id="order-summary">
-                        <div style="background-color: #045FB4; text-align: center;" class="box-header">
+                        <div style="background-color: #4E7AC7; text-align: center;" class="box-header">
                             <h3>THANH TOÁN</h3>
                         </div>
                         <p class="text-muted">Tổng thanh toán chưa bao gồm phí vận chuyển và thuế.</p>
@@ -153,7 +153,7 @@
 
                     </div>
 
-
+                    <!--
                     <div class="box">
                         <div style="background-color: #045FB4; text-align: center;" class="box-header">
                             <h3>MÃ GIẢM GIÁ</h3>
@@ -166,10 +166,10 @@
 
                                 <span class="input-group-btn">
 
-					<button class="btn btn-primary" type="button"><i class="fa fa-gift"></i></button>
+					               <button class="btn btn-primary" type="button"><i class="fa fa-gift"></i></button>
 
-				    </span>
-                            </div>
+				                </span>
+                    </div> -->
                             <!-- /input-group -->
                         </form>
                     </div>

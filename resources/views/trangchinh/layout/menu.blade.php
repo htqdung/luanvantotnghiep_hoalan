@@ -1,11 +1,11 @@
 <!-- menu -->
-<div class="ban-top" style="height: 73px; background: #62bcfa; border-bottom: 1px solid #e1e1e1;">
+<div class="ban-top" style="height: 73px; background: #4E7AC7; border-bottom: 1px solid #e1e1e1;">
 	<div class="container">
 		<div class="top_nav_left">
 			<nav class="navbar navbar-default">
 			  <div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header" style="height: 73px; background: #62bcfa">
+				<div class="navbar-header" style="height: 73px; background: #4E7AC7">
 				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
@@ -93,13 +93,8 @@
 			</nav>	
 		</div>
 		<div class="top_nav_right" >
-			<div class="wthreecartaits wthreecartaits2 cart cart box_1" style="height: 73px; background: #62bcfa" > 
-				<form action="#" method="post" class="last" > 
-					<input type="hidden" name="cmd" value="_cart">
-					<input type="hidden" name="display" value="1">
-
-					<button class="w3view-cart hover-cart"  type="submit" name="submit" value="" style=" background: 	#62bcfa" ><i class="fa fa-cart-plus " data-toggle="tooltip" title="Giỏ hàng" style="font-size: 1.3em; color: #fff"  aria-hidden="true" ></i></button>
-				</form>  
+			<div class="wthreecartaits wthreecartaits2 cart cart box_1" style="height: 72px; background: #4E7AC7" > 
+					<a href="trangchinh/giohang/giohang"><button class="w3view-cart hover-cart"  type="submit" name="submit" value="" style=" background: 	#4E7AC7" ><i class="fa fa-cart-plus " data-toggle="tooltip" title="Giỏ hàng" style="font-size: 1.3em; color: #fff"  aria-hidden="true" ></i></button></a>
   			</div>
 		</div>
 		<div class="clearfix"></div>

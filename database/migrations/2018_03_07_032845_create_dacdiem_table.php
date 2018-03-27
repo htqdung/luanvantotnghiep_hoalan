@@ -15,7 +15,7 @@ class CreateDacdiemTable extends Migration
     {
         Schema::create('tbl_dacdiem', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('hoa',100);
+            $table->string('hoa',1000);
             $table->string('la',100);
             $table->string('than',100);
             $table->string('re',100);

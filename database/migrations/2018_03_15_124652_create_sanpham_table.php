@@ -16,9 +16,8 @@ class CreateSanphamTable extends Migration
         Schema::create('tbl_sanpham', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ten_san_pham', 200);
-            $table->text('mo_ta', 1000)->nullable();
-            $table->string('hinh_thuc', 1000);
-            $table->string('kich_thuoc', 200);
+            $table->text('mo_ta')->nullable();
+            $table->text('thong_tin_chi_tiet');
             $table->integer('diem_thuong');
             $table->string('tag', 100)->nullable();
             $table->timestamps();

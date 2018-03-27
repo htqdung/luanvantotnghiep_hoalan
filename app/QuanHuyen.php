@@ -15,6 +15,6 @@ class QuanHuyen extends Model
 
     public function tbl_tinhthanhpho()
     {
-    	return $this->belongsTo('App\TinhThanhPho','tinhthanhpho_id','id');
+    	return $this->belongsTo('App\TinhThanhPho','tinh_thanhpho_id','id');
     }
 }
