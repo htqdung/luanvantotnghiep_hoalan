@@ -1,7 +1,7 @@
 <!-- header -->
 	
 
-<div class="header" style="background: #62bcfa" id="home">
+<div class="header" style="background: #7FB2F0" id="home">
 	
 	<div class="container" >
 		<ul>
@@ -26,7 +26,7 @@
 			<form action="#" method="post" >
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
-						<span class="input-group-btn"><button class="btn btn-secondary" style="background-color: #62bcfa"><i class="fa fa-search" style="font-size: 19px ; color: #fff; border: 1px solid #62bcfa "></i></button></span>
+						<span class="input-group-btn"><button class="btn btn-secondary" style="background-color: #7FB2F0"><i class="fa fa-search" style="font-size: 19px ; color: #fff; border: 1px solid #7FB2F0 "></i></button></span>
 					</div>
 				<div class="clearfix"></div>
 			</form>

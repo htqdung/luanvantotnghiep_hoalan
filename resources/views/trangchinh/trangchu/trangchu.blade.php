@@ -18,7 +18,7 @@
 					<div class="carousel-caption">
 						<h3> <span>TƯNG BỪNG KHAI TRƯƠNG</span></h3>
 						<p>Từ ngày 13/3 - 13/4</p>
-						<a class="hvr-outline-out button2" href="mens.html">Xem ngay </a>
+						<a class="hvr-outline-out button2" href="trangchinh/sanpham/sanpham">Xem ngay </a>
 					</div>
 				</div>
 			</div>
@@ -27,7 +27,7 @@
 					<div class="carousel-caption">
 						<h3> <span>TƯNG BỪNG KHAI TRƯƠNG</span></h3>
 						<p>Từ ngày 13/3 - 13/4</p>
-						<a class="hvr-outline-out button2" href="mens.html">Xem ngay </a>
+						<a class="hvr-outline-out button2" href="trangchinh/sanpham/sanpham">Xem ngay </a>
 					</div>
 				</div>
 			</div>
@@ -36,16 +36,17 @@
 					<div class="carousel-caption">
 						<h3><span>TƯNG BỪNG KHAI TRƯƠNG</span></h3>
 						<p>Từ ngày 13/3 - 13/4</p>
-						<a class="hvr-outline-out button2" href="mens.html">Xem ngay </a>
+						<a class="hvr-outline-out button2" href="trangchinh/sanpham/sanpham">Xem ngay </a>
 					</div>
 				</div>
 			</div>
+			<!--
 			<div class="item item4"> 
 				<div class="container">
 					<div class="carousel-caption">
 						<h3><span>TƯNG BỪNG KHAI TRƯƠNG</span></h3>
 						<p>Từ ngày 13/3 - 13/4</p>
-						<a class="hvr-outline-out button2" href="mens.html">Xem ngay </a>
+						<a class="hvr-outline-out button2" href="trangchinh/sanpham/sanpham">Xem ngay </a>
 					</div>
 				</div>
 			</div>
@@ -54,10 +55,11 @@
 					<div class="carousel-caption">
 						<h3><span>TƯNG BỪNG KHAI TRƯƠNG</span></h3>
 						<p>Từ ngày 13/3 - 13/4</p>
-						<a class="hvr-outline-out button2" href="mens.html">Xem ngay </a>
+						<a class="hvr-outline-out button2" href="trangchinh/sanpham/sanpham">Xem ngay </a>
 					</div>
 				</div>
 			</div> 
+			-->
 		</div>
 		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -75,7 +77,7 @@
 	<div class="banner_bottom_agile_info">
 	    <div class="container">
             <div class="banner_bottom_agile_info_inner_w3ls">
-            	<a href="mens.html">
+            	<a href="trangchinh/sanpham/sanpham">
     	           <div style="height: 500px" class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
 						<figure class="effect-roxy">
 							<img src="trangchinh_asset/images/hoalan.jpg" alt=" " class="img-responsive" />
@@ -86,7 +88,7 @@
 						</figure>
 					</div>
 				</a>
-				<a href="mens.html">
+				<a href="trangchinh/sanpham/sanpham">
 					 <div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
 						<figure class="effect-roxy">
 							<img src="trangchinh_asset/images/hoalan2.jpg" alt=" " class="img-responsive" />
@@ -133,7 +135,11 @@
 
 							</div>
 							<div class="item-info-product ">
+<<<<<<< HEAD
 								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan hồ điệp trắng nhị vàng</a></h4>
+=======
+								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Gabi Full Sleeve Sweatshirt</a></h4>
+>>>>>>> 6211181965dc6512880d1f6b1a119bb751c6b348
 								<div class="rating1">
 									<span style="margin-top: 10px" class="starRating">
 										<input id="rating5" type="radio" name="rating" value="5">
@@ -149,8 +155,12 @@
 									</span>
 								</div>
 								<div class="info-product-price">
+<<<<<<< HEAD
 									<span class="item_price">5.200.000</span>
 									
+=======
+									<span class="item_price">4.000.000đ</span>
+>>>>>>> 6211181965dc6512880d1f6b1a119bb751c6b348
 								</div>
 								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 									<form action="#" method="post">
@@ -158,13 +168,21 @@
 											<input type="hidden" name="cmd" value="_cart" />
 											<input type="hidden" name="add" value="1" />
 											<input type="hidden" name="business" value=" " />
+<<<<<<< HEAD
 											<input type="hidden" name="item_name" value="Formal Blue Shirt" />
+=======
+											<input type="hidden" name="item_name" value="Sweatshirt" />
+>>>>>>> 6211181965dc6512880d1f6b1a119bb751c6b348
 											<input type="hidden" name="amount" value="30.99" />
 											<input type="hidden" name="discount_amount" value="1.00" />
 											<input type="hidden" name="currency_code" value="USD" />
 											<input type="hidden" name="return" value=" " />
 											<input type="hidden" name="cancel_return" value=" " />
+<<<<<<< HEAD
 											<a href="javascript:void(0);" class="add-to-cart"><input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" /></a>
+=======
+											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+>>>>>>> 6211181965dc6512880d1f6b1a119bb751c6b348
 										</fieldset>
 									</form>
 								</div>
@@ -203,7 +221,6 @@
 								</div>
 								<div class="info-product-price">
 									<span class="item_price">$45.99</span>
-									<del>$69.71</del>
 								</div>
 								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 									<form action="#" method="post">
@@ -256,7 +273,6 @@
 								</div>
 								<div class="info-product-price">
 									<span class="item_price">$80.99</span>
-									<del>$89.71</del>
 								</div>
 								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 									<form action="#" method="post">
@@ -309,7 +325,6 @@
 								</div>
 								<div class="info-product-price">
 									<span class="item_price">$190.99</span>
-									<del>$159.71</del>
 								</div>
 								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 									<form action="#" method="post">
@@ -362,7 +377,6 @@
 								</div>
 								<div class="info-product-price">
 									<span class="item_price">$60.99</span>
-									<del>$90.71</del>
 								</div>
 								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 									<form action="#" method="post">
@@ -1842,7 +1856,7 @@
   		<h3 class="wthree_text_info"><span>CHƯƠNG TRÌNH KHUYẾN MÃI</span></h3>
 
   		<div class="col-md-5 bb-grids bb-left-agileits-w3layouts">
-  			<a href="womens.html">
+  			<a href="trangchinh/sanpham/sanpham">
   				<div class="bb-left-agileits-w3layouts-inner grid">
   					<figure class="effect-roxy">
   						<img src="trangchinh_asset/images/bb1.jpg" alt=" " class="img-responsive" />
@@ -1855,7 +1869,7 @@
   			</a>
   		</div>
   		<div class="col-md-7 bb-grids bb-middle-agileits-w3layouts">
-  			<a href="mens.html">
+  			<a href="trangchinh/sanpham/sanpham">
   				<div class="bb-middle-agileits-w3layouts grid">
   					<figure class="effect-roxy">
   						<img src="trangchinh_asset/images/bottom3.jpg" alt=" " class="img-responsive" />
@@ -1866,7 +1880,7 @@
   					</figure>
   				</div>
   			</a>
-  			<a href="mens.html">
+  			<a href="trangchinh/sanpham/sanpham">
   				<div class="bb-middle-agileits-w3layouts forth grid">
   					<figure class="effect-roxy">
   						<img src="trangchinh_asset/images/bottom4.jpg" alt=" " class="img-responsive">
@@ -3842,7 +3856,7 @@
 	<!-- /we-offer -->
 		<div class="sale-w3ls">
 			<div class="container">
-				<h6 >ĐẠI LÝ PHÂN PHỐI GIẢM ĐẾN <span style="color: #2fdab8" >20%</span></h6>
+				<h6 >MUA SỐ LƯỢNG LỚN GIẢM ĐẾN <span style="color: #7FB2F0" >20%</span></h6>
 				<a class="hvr-outline-out button2" href="trangchinh/chitietsanpham/chitietsanpham">Xem Ngay </a>
 			</div>
 		</div>

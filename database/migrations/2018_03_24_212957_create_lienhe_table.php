@@ -16,7 +16,7 @@ class CreateLienheTable extends Migration
         Schema::create('tbl_lienhe', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tieu_de', 200);
-            $table->text('noi_dung', 1000);
+            $table->text('noi_dung');
             $table->dateTimeTz('ngay_lien_he');
             $table->integer('nguoidung_id')->unsigned();
             $table->foreign('nguoidung_id')->references('id')->on('tbl_nguoidung')->onDelete('cascade');

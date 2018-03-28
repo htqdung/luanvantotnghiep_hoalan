@@ -16,7 +16,7 @@ class CreateChiTable extends Migration
         Schema::create('tbl_chi', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ten_chi', 100)->unique();
-            $table->text('mo_ta', 200)->nullable();
+            $table->text('mo_ta')->nullable();
             $table->timestamps();
         });
     }

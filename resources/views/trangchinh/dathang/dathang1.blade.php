@@ -13,16 +13,16 @@
 
                 <div class="box">
                     <form method="post" action="">
-                        <h1>ĐỊA CHỈ</h1>
+                        <h3 class="wthree_text_info" style="color: #35478C; margin-top: 5px; margin-bottom: 40px; text-align: left;">THÔNG TIN GIAO HÀNG</h3>
                         <hr>
                         <ul class="nav nav-pills nav-justified">
-                            <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>ĐỊA CHỈ</a>
+                            <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>ĐỊA CHỈ <br> GIAO HÀNG</a>
                             </li>
-                            <li class="disabled"><a href="#"><i class="fa fa-truck"></i><br>PHƯƠNG THỨC VẬN CHUYỂN</a>
+                            <li class="disabled"><a href="#"><i class="fa fa-truck"></i><br>PHƯƠNG THỨC <br> VẬN CHUYỂN</a>
                             </li>
-                            <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>PHƯƠNG THỨC THANH TOÁN</a>
+                            <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>PHƯƠNG THỨC <br> THANH TOÁN</a>
                             </li>
-                            <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>KIỂM TRA ĐƠN HÀNG</a>
+                            <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>KIỂM TRA <br> ĐƠN HÀNG</a>
                             </li>
                             <br>
                         </ul>
