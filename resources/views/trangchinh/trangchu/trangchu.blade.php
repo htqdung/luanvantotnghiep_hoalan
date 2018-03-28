@@ -135,11 +135,7 @@
 
 							</div>
 							<div class="item-info-product ">
-<<<<<<< HEAD
 								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Lan hồ điệp trắng nhị vàng</a></h4>
-=======
-								<h4><a href="trangchinh/chitietsanpham/chitietsanpham">Gabi Full Sleeve Sweatshirt</a></h4>
->>>>>>> 6211181965dc6512880d1f6b1a119bb751c6b348
 								<div class="rating1">
 									<span style="margin-top: 10px" class="starRating">
 										<input id="rating5" type="radio" name="rating" value="5">
@@ -155,12 +151,9 @@
 									</span>
 								</div>
 								<div class="info-product-price">
-<<<<<<< HEAD
-									<span class="item_price">5.200.000</span>
-									
-=======
+
 									<span class="item_price">4.000.000đ</span>
->>>>>>> 6211181965dc6512880d1f6b1a119bb751c6b348
+
 								</div>
 								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 									<form action="#" method="post">
@@ -168,21 +161,17 @@
 											<input type="hidden" name="cmd" value="_cart" />
 											<input type="hidden" name="add" value="1" />
 											<input type="hidden" name="business" value=" " />
-<<<<<<< HEAD
-											<input type="hidden" name="item_name" value="Formal Blue Shirt" />
-=======
+
 											<input type="hidden" name="item_name" value="Sweatshirt" />
->>>>>>> 6211181965dc6512880d1f6b1a119bb751c6b348
+
 											<input type="hidden" name="amount" value="30.99" />
 											<input type="hidden" name="discount_amount" value="1.00" />
 											<input type="hidden" name="currency_code" value="USD" />
 											<input type="hidden" name="return" value=" " />
 											<input type="hidden" name="cancel_return" value=" " />
-<<<<<<< HEAD
-											<a href="javascript:void(0);" class="add-to-cart"><input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" /></a>
-=======
-											<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
->>>>>>> 6211181965dc6512880d1f6b1a119bb751c6b348
+											<a href="javascript:void(0);" class="add-to-cart">
+												<input type="submit" name="submit" value="Thêm Vào Giỏ Hàng" class="button" />
+											</a>
 										</fieldset>
 									</form>
 								</div>
