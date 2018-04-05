@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="admin/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="admin/assets/css/style.css">
         
-    </style>">
+    </style>
     <!-- page specific plugin styles -->
     <!--end page specific -->
     <!-- text fonts -->

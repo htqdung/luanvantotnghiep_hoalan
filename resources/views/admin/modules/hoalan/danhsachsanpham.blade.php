@@ -37,21 +37,24 @@
 				    <thead>
 				      <tr>
 				        <th style="width: 5%">Id</th>
-				        <th style="width: 15%">Tên sản phẩm</th>
-				        <th style="width: 10%">Kích thước</th>
-				        <th style="width: 10%">Hình thức</th>
+				        <th style="width: 18%">Tên sản phẩm</th>
+				        <th style="width: 5% ">Đơn giá</th>
+				        <th style="width: 15%">Kích thước</th>
+				        <th style="width: 13%">Hình thức</th>
 				        <th style="width: 20%">Mô tả</th>							       
 				        <th style="width: 10%">Điểm thưởng</th>
 				        <th style="width: 10%">Tag</th>
-				        <th style="width: 20%" colspan="3">Chức năng</th>
+
+				        <th style="width: 5%" colspan="3">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>
 				      <tr>
 				        <td>1</td>
 				        <td>Lan vũ nữ</td>
+				        <td>2.000.000</td>
 				        <td>3</td>
-				        <td>khôgn</td>
+				        <td>không</td>
 				        <td>5 bông, 1 giỏ</td>
 				        <td>4</td>
 				        <td>hoasinhnhat</td>
@@ -66,8 +69,9 @@
 				      <tr>
 				        <td>1</td>
 				        <td>Lan vũ nữ</td>
+				        <td>3.000.000</td>
 				        <td>3</td>
-				        <td>khôgn</td>
+				        <td>không</td>
 				        <td>5 bông, 1 giỏ</td>
 				        <td>4</td>
 				        <td>sinhnhat</td>

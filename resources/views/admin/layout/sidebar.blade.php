@@ -1,4 +1,4 @@
-<div id="sidebar" class="sidebar responsive ace-save-state">
+  <div id="sidebar" class="sidebar responsive ace-save-state">
       <script type="text/javascript">
       try { ace.settings.loadState('sidebar') } catch (e) {}
       </script>
@@ -27,7 +27,7 @@
       <!-- /.sidebar-shortcuts -->
       <ul class="nav nav-list">
           <li class="active">
-              <a href="index.html">
+              <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">
   				<i class="menu-icon fa fa-tachometer"></i>
   				<span class="menu-text"> Trang chủ </span>
   			</a>
@@ -44,7 +44,7 @@
   					</a>
                   </li>
                   <li class="">
-                      <a href="typography.html">
+                      <a href="{{  route('DANH_MUC_HOA') }}">
   						<i class="menu-icon fa fa-caret-right"></i>
   						Danh mục hoa
   					</a>
@@ -58,14 +58,14 @@
                       <b class="arrow"></b>
                   </li>
                   <li class="">
-                      <a href="buttons.html">
+                      <a href="{{ route('DANH_SACH_CHi') }}">
   						<i class="menu-icon fa fa-caret-right"></i>
   						Danh mục chi
   					</a>
                       <b class="arrow"></b>
                   </li>
                   <li class="">
-                      <a href="content-slider.html">
+                      <a href="">
   						<i class="menu-icon fa fa-caret-right"></i>
   						Sản phẩm hoa
   					</a>
@@ -81,38 +81,39 @@
   				</a>
               <b class="arrow"></b>
               <ul class="submenu">
+                 <li class="">
+                      <a href="{{ route('TAT_CA_DON_HANG') }}">
+                <i class="menu-icon fa fa-caret-right"></i>
+                Tất cả đơn hàng
+              </a>
+                      <b class="arrow"></b>
+                  </li>
                   <li class="">
-                      <a href="tables.html">
+                      <a href="{{ route('DON_HANG_DANG_GIAO') }}">
   							<i class="menu-icon fa fa-caret-right"></i>
-  							Chưa xử lý
+  							Đang giao
   						</a>
                       <b class="arrow"></b>
                   </li>
                   <li class="">
-                      <a href="jqgrid.html">
+                      <a href="{{ route('DON_HANG_DANG_XU_LY') }}">
   							<i class="menu-icon fa fa-caret-right"></i>
-  							Đã xử lý
+  							Đang xử lý
   						</a>
                       <b class="arrow"></b>
                   </li>
-                  <li class="">
-                      <a href="jqgrid.html">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							Tất cả đơn hàng
-  						</a>
-                      <b class="arrow"></b>
-                  </li>
+                 
               </ul>
           </li>
           <li class="">
-              <a href="#" class="dropdown-toggle">
+              <a href="{{ route('DANH_SACH_NGUOI_DUNG') }}">
   					<i class="menu-icon fa fa-users"></i>
   					<span class="menu-text"> Người dùng </span>
   				</a>
               <b class="arrow"></b>
           </li>
           <li class="">
-              <a href="#" class="dropdown-toggle">
+              <a href="{{ route('DANH_SACH_KHUYEN_MAI') }}" class="dropdown-toggle">
   					<i class="menu-icon fa fa-calendar"></i>
   					<span class="menu-text"> Khuyến mãi </span>
   					<b class="arrow fa fa-angle-down"></b>
@@ -120,26 +121,27 @@
               <b class="arrow"></b>
               <ul class="submenu">
                   <li class="">
-                      <a href="jqgrid.html">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							Danh sách khuyến mãi
-  						</a>
+                      <a href="{{ route('DANH_SACH_KHUYEN_MAI') }}">
+          							<i class="menu-icon fa fa-caret-right"></i>
+          							Danh sách khuyến mãi
+        					   	</a>
                       <b class="arrow"></b>
                   </li>
                   <li class="">
-                      <a href="tables.html">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							Ưu đãi
-  						</a>
+                      <a href="{{ route('DANH_SACH_UU_DAI') }}">
+          							<i class="menu-icon fa fa-caret-right"></i>
+          							Ưu đãi
+          						</a>
                       <b class="arrow"></b>
                   </li>
-                  <li class="">
-                      <a href="jqgrid.html">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							Giảm giá
-  						</a>
+                   <li class="">
+                      <a href="{{ route('DANH_SACH_QUA_TANG') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Quà tặng
+                      </a>
                       <b class="arrow"></b>
                   </li>
+                
               </ul>
           </li>
           <li class="">

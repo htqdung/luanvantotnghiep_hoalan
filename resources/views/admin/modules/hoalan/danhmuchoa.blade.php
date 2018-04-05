@@ -5,7 +5,7 @@
 		<ul class="breadcrumb">
 			<li>
 				<i class="ace-icon fa fa-home home-icon"></i>
-				<a href="#">Trang chủ</a>
+				<a href=" {{ route('MO_GIAO_DIEN_ADMIN') }} ">Trang chủ</a>
 			</li>
 		
 		</ul><!-- /.breadcrumb -->
@@ -43,31 +43,19 @@
 				      </tr>
 				    </thead>
 				    <tbody>
-				      <tr>
-				        <td>1</td>
-				        <td>Lan vũ nữ</td>
-				        <td>Arachnis annamensis</td>
-				        <td> Thân dài, Chùm hoa dài 50–60 cm, số lượng khoảng từ 15-20 chiếc. Hoa to 4–5 cm, nở hoa vào mùa xuân, hoa không có mùi thơm, lá cứng dài từ 30 cm đến 40 cm.</td>
-				        <td>
-				        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-	                    	<a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i> Chi tiết</a>
-	                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
-	                    </td>
+				    	@foreach ($data as $item)
+				        <tr>
+				      		<td>{{ $item->id }}</td>
+					        <td>{{ $item->ten_loai}}</td>
+					        <td>{{ $item->ten_khoa_hoc }}</td>
+					        <td>{{ $item->mo_ta}}</td>
+					        <td>
+					        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_HOA', $item->id) }}"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
+		                    	<a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
+		                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
+		                    </td>
 				      </tr>	
-				      <tr>
-				        <td>1</td>
-				        <td>Lan vũ nữ</td>
-				        <td>Arachnis annamensis</td>
-				        <td> Thân dài, Chùm hoa dài 50–60 cm, số lượng khoảng từ 15-20 chiếc. Hoa to 4–5 cm, nở hoa vào mùa xuân, hoa không có mùi thơm, lá cứng dài từ 30 cm đến 40 cm.</td>
-				        <td>
-				        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-	                    	<a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i> Chi tiết</a>
-	                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
-	                    </td>
-				      </tr>	
-				      	
-				      
-	                  					      
+				      @endforeach			      
 				    </tbody>
 				  </table>
 			</div>

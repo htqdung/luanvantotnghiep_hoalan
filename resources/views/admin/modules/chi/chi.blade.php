@@ -24,8 +24,8 @@
 		<!-- /.page-header -->
 		 <div class="box box-primary">
 	      <div class="box-header with-border">
-	        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-	        <a class="btn btn-success" style="float: right; padding: 0px" href="#"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm</a>
+	        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-1x fa-fw"></i>Làm mới</a>
+	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_CHI') }}"><i class="fa fa-plus-circle fa-1x fa-fw"></i> Thêm mới</a>
 	      </div>
 		<div class="row" >
 		</div><!-- /.row -->
@@ -36,36 +36,28 @@
 				    <thead>
 				      <tr>
 				        <th style="width: 5%">Id</th>
-				        <th style="width: 25%">Tên chi</th>
-				         <th style="width: 40%">Mô tả</th>							   
-				        <th style="width: 30%">Chức năng</th>
+				        <th style="width: 15%">Tên chi</th>
+				         <th style="width: 60%">Mô tả</th>							   
+				        <th style="width: 20%">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>
-				      <tr>
-				        <td>1</td>
-				        <td>Arachnis</td>
-				       
-				        <td> Arachnis, viết tắt là Arach trong thương mại làm vườn, là một chi trong ho Phong lan, gồm hơn 20 loài phân bố ở Đông Nam Á, Indonesia, Philippines, New Guinea, và quần đảo Solomon.</td>
-				       
+				      
+					  @foreach ($data as $item)
+					  <tr>
+				        <td>{{ $item->id }}</td>
+				        <td>{{ $item->ten_chi }}</td>
+		
+				        <td>{{ $item->mo_ta }}</td>
+
 				        <td>
-				        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-	                    	<a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i> Chi tiết</a>
-	                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
+				        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
+	                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
 	                    </td>
 				      </tr>	
-				       <tr>
-				        <td>1</td>
-				        <td>Arachnis</td>
-				        
-				        <td> Arachnis, viết tắt là Arach trong thương mại làm vườn, là một chi trong ho Phong lan, gồm hơn 20 loài phân bố ở Đông Nam Á, Indonesia, Philippines, New Guinea, và quần đảo Solomon.</td>
-				       
-				        <td>
-				        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-	                    	<a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i> Chi tiết</a>
-	                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
-	                    </td>
-				      </tr>			      				      
+				      
+					  @endforeach
+				            				      
 				    </tbody>
 				  </table>
 			</div>

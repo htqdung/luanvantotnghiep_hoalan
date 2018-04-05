@@ -7,7 +7,7 @@
               <span class="icon-bar"></span>
           </button>
           <div class="navbar-header pull-left">
-              <a href="index.html" class="navbar-brand">
+              <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}" class="navbar-brand">
   				<small>
   					<i class="fa fa-leaf"></i>
   					Near Admin
