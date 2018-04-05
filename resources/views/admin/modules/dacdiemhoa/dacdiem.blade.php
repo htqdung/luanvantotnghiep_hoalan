@@ -25,7 +25,7 @@
 		 <div class="box box-primary">
 	      <div class="box-header with-border">
 	        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-	        <a class="btn btn-success" style="float: right; padding: 0px" href="#"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm</a>
+	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_DAC_DIEM') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm</a>
 	      </div>
 		<div class="row" >
 		</div><!-- /.row -->
@@ -40,35 +40,36 @@
 				         <th style="width: 15%">Lá</th>
 				         <th style="width: 20%">Thân</th>
 				         <th style="width: 15%">Rể</th>  							   
-				        <th style="width: 30%">Chức năng</th>
+				        <th style="width: 5%" colspan="3">Chức năng</th>
 				      </tr>
 				    </thead>
-				    <tbody>
-				      <tr>
-				        <td>1</td>
-				        <td>Hoa to 4–5 cm, nở hoa vào mùa xuân, hoa không có mùi thơm</td>
-				        <td>Lá cứng dài từ 30 cm đến 40 cm.</td>
-				        <td> Thân dài, Chùm hoa dài 50–60 cm, số lượng khoảng từ 15-20 chiếc.</td>
-				        <td>Rễ chùm</td>
-				        <td>
-				        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-	                    	<a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i> Chi tiết</a>
-	                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
-	                    </td>
-				      </tr>	
-				      <tr>
-				        <td>1</td>
-				        <td>Hoa to 4–5 cm, nở hoa vào mùa xuân, hoa không có mùi thơm</td>
-				        <td>Lá cứng dài từ 30 cm đến 40 cm.</td>
-				        <td> Thân dài, Chùm hoa dài 50–60 cm, số lượng khoảng từ 15-20 chiếc.</td>
-				        <td>Rễ chùm</td>
-				        <td>
-				        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-	                    	<a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i> Chi tiết</a>
-	                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
-	                    </td>
-				      </tr>				      				      
-				    </tbody>
+				        <tbody>
+                @foreach ($data as $item)
+                  <tr>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->hoa }}</td>
+                    <td>{{ $item->la}}</td>
+                    <td>{{ $item->than}}</td>
+                    <td>{{ $item->re}}</td>
+                    
+                    
+                    <td>
+                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_DAC_DIEM', $item->id)  }}"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
+                      
+                    </td>
+
+                    <td>
+                     
+                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
+                     
+                    </td>
+
+                    <td>
+                      <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
+                    </td>
+                </tr> 
+                @endforeach           
+              </tbody>           
 				  </table>
 			</div>
 		</div>

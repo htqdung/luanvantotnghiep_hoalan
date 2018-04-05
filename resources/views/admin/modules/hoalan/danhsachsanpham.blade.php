@@ -24,7 +24,7 @@
 		 <div class="box box-primary">
 	      <div class="box-header with-border">
 	      	 <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-	        <a class="btn btn-success" style="float: right; padding: 0px" href="#"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm hoa</a>
+	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_DANH_SACH_SAN_PHAM') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm sản phẩm</a>
 	       
 	        
 	      </div>
@@ -40,7 +40,6 @@
 				        <th style="width: 18%">Tên sản phẩm</th>
 				        <th style="width: 5% ">Đơn giá</th>
 				        <th style="width: 15%">Kích thước</th>
-				        <th style="width: 13%">Hình thức</th>
 				        <th style="width: 20%">Mô tả</th>							       
 				        <th style="width: 10%">Điểm thưởng</th>
 				        <th style="width: 10%">Tag</th>
@@ -49,43 +48,33 @@
 				      </tr>
 				    </thead>
 				    <tbody>
-				      <tr>
-				        <td>1</td>
-				        <td>Lan vũ nữ</td>
-				        <td>2.000.000</td>
-				        <td>3</td>
-				        <td>không</td>
-				        <td>5 bông, 1 giỏ</td>
-				        <td>4</td>
-				        <td>hoasinhnhat</td>
-				        <td><a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-	                    	</td>
-				        <td><a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i> Chi tiết</a>
-	                    	</td>
-				        <td>
-				        	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
-	                    </td>
-				      </tr>	
-				      <tr>
-				        <td>1</td>
-				        <td>Lan vũ nữ</td>
-				        <td>3.000.000</td>
-				        <td>3</td>
-				        <td>không</td>
-				        <td>5 bông, 1 giỏ</td>
-				        <td>4</td>
-				        <td>sinhnhat</td>
-				       <td><a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-	                    	</td>
-				        <td><a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i> Chi tiết</a>
-	                    	</td>
-				        <td>
-				        	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
-	                    </td>
-				      </tr>	
-				      	
-				      
-	                  					      
+				      @foreach ($data as $item)
+                  <tr>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->ten_san_pham }}</td>
+                    <td>{{ $item->gia }}</td>
+                    <td>{{ $item->thong_tin_chi_tiet}}</td>
+                    <td>{{ $item->mo_ta}}</td>
+                    <td>{{ $item->diem_thuong}}</td>
+                    <td>{{ $item->tag}}</td>
+                    
+                    
+                    <td>
+                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_SAN_PHAM', $item->id)  }}"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
+                      
+                    </td>
+
+                    <td>
+                     
+                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
+                     
+                    </td>
+
+                    <td>
+                      <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
+                    </td>
+                </tr> 
+                @endforeach    	      
 				    </tbody>
 				  </table>
 			</div>

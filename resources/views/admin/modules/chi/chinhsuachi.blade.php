@@ -54,7 +54,7 @@
         <!-- /.box-body -->
 
         <div class="box-footer">
-          <a class="btn btn-danger" href="#">Quay lại</a>
+          <a class="btn btn-danger" href="{{ route('DANH_SACH_CHi') }}">Quay lại</a>
           <button type="submit" class="btn btn-primary"> <i class="fa fa-save faa-pulse animated "></i> Lưu lại</button>
           <button type="reset" class="btn btn-success">Làm mới</button>
         </div>

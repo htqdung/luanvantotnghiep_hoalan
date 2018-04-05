@@ -25,7 +25,7 @@
   </div>
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">Thêm đặc điểm</h3>
+        <h3 class="box-title">Chỉnh sửa sản phẩm</h3>
       </div>
       <!-- /.box-header -->
       <!-- form start -->
@@ -38,42 +38,56 @@
             <div class="col-md-12">
             	 <div class="col-md-6" style="margin-right: 0; ">
                     <label for="exampleInputEmail1">Id</label>
-                    <input type="text" class="form-control" name="barcode" id="sach" placeholder="" style="margin-right: 0; ">
+                    <input type="text" class="form-control" name="id" id="sanpham" placeholder="" style="margin-right: 0; ">
                  </div>  
                  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Hoa</label>
-                    <input type="text" class="form-control" name="barcode" id="sach" placeholder="" style="margin-right: 0; ">
+                    <label for="exampleInputEmail1">Tên sản phẩm</label>
+                    <input type="text" class="form-control" name="tensanpham" id="sanpham" placeholder="" style="margin-right: 0; ">
                  </div>                  
             </div>
             <div  class="col-md-12">
             	 
                   <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Lá</label>
-                    <input type="text" class="form-control" name="barcode" id="sach" placeholder="" style="margin-right: 0; ">
+                    <label for="exampleInputEmail1">Đơn giá</label>
+                    <input type="number" class="form-control" name="dongia" id="sanpham" placeholder="" style="margin-right: 0; ">
                   </div>
                     <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Thân</label>
-                    <input type="text" class="form-control" name="barcode" id="sach" placeholder="" style="margin-right: 0; ">
-                 
-            	
-            </div>
-             <div  class="col-md-12">
+                    <label for="exampleInputEmail1">Kích thước</label>
+                    <input type="text" class="form-control" name="kichthuoc" id="sanpham" placeholder="" style="margin-right: 0; ">
+           			 </div>
+            <div  class="col-md-12">
             	  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Rể</label>
-                    <input type="text" class="form-control" name="barcode" id="sach" placeholder="" style="margin-right: 0; ">
+                    <label for="exampleInputEmail1">Hình thức</label>
+                    <input type="text" class="form-control" name="hinhthuc" id="sanpham" placeholder="" style="margin-right: 0; ">
                   </div>
-            	
+                  
+            	  <div class="col-md-6" style="margin-right: 0; ">
+                    <label for="exampleInputEmail1">Mô tả</label>
+                    <input type="text" class="form-control" name="mota" id="sanpham" placeholder="" style="margin-right: 0; ">
+                  </div>
+			<div  class="col-md-12">
+                 
+            	  <div class="col-md-6" style="margin-right: 0; ">
+                    <label for="exampleInputEmail1">Điểm thưởng</label>
+                    <input type="text" class="form-control" name="diemthuong" id="sanpham" placeholder="" style="margin-right: 0; ">
+                  </div>
+                 
+            	  <div class="col-md-6" style="margin-right: 0; ">
+                    <label for="exampleInputEmail1">Tag</label>
+                    <input type="text" class="form-control" name="tag" id="sanpham" placeholder="" style="margin-right: 0; ">
+                  </div>
+            </div>	
             </div>
           </div> 
-                 
+               
         <div style="clear: both;"></div>
        
             
       
         <!-- /.box-body -->
 
-        <div class="box-footer">          
-          <a class="btn btn-danger" href="{{ route('DAC_DIEM_HOA') }}">Quay lại</a>
+        <div class="box-footer" style="padding-top: 25px">          
+          <a class="btn btn-danger" href="{{ route('DANH_SACH_SAN_PHAM') }}">Quay lại</a>
           
           <button type="submit" class="btn btn-primary"><i class="fa fa-next faa-pulse animated "></i>Lưu lại</button>
           <button type="reset" class="btn btn-success"><i class="fa  fa-refresh fa-spin"></i> Làm mới</button>

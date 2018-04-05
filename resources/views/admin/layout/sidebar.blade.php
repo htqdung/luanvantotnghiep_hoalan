@@ -38,10 +38,10 @@
               <b class="arrow"></b>
               <ul class="submenu">
                   <li class="">
-                      <a href="#" class="dropdown-toggle">
-  						<i class="menu-icon fa fa-caret-right"></i>
-  						Danh sách sản phẩm
-  					</a>
+                      <a href="{{ route('DANH_SACH_SAN_PHAM') }}" >
+            						<i class="menu-icon fa fa-caret-right"></i>
+            						Danh sách sản phẩm
+            					</a>
                   </li>
                   <li class="">
                       <a href="{{  route('DANH_MUC_HOA') }}">
@@ -51,7 +51,7 @@
                       <b class="arrow"></b>
                   </li>
                   <li class="">
-                      <a href="elements.html">
+                      <a href="{{ route('DAC_DIEM_HOA') }}">
   						<i class="menu-icon fa fa-caret-right"></i>
   						Đặc điểm hoa
   					</a>
@@ -64,13 +64,7 @@
   					</a>
                       <b class="arrow"></b>
                   </li>
-                  <li class="">
-                      <a href="">
-  						<i class="menu-icon fa fa-caret-right"></i>
-  						Sản phẩm hoa
-  					</a>
-                      <b class="arrow"></b>
-                  </li>
+                 
               </ul>
           </li>
           <li class="">

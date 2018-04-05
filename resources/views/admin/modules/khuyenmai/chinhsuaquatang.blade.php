@@ -23,7 +23,7 @@
     </div><!-- /.nav-search -->
   </div>
       <div class="box-header with-border">
-        <h3 class="box-title">Chỉnh sửa loài hoa</h3>
+        <h3 class="box-title"> Chỉnh sửa quà tặng</h3>
       </div>
       <!-- /.box-header -->
       <!-- form start -->
@@ -37,19 +37,13 @@
                 <input type="text" name="id" class="form-control" id="chi" placeholder="">
               </div>
               <div class="col-md-6">
-                <label>Tên loài</label>
+                <label>Tên quà tặng</label>
                 <input type="text" name="ten_nguoi_dung" class="form-control" id=chi" placeholder="">
               </div>
               <div class="col-md-6">
-                <label>Tên khoa học</label>
-                <input type="text" name="so_dien_thoai" class="form-control" id=chi" placeholder="">
+                <label>Số lượng</label>
+                <input type="number" name="so_dien_thoai" class="form-control" id=chi" placeholder="">
               </div>
-              <div class="col-md-6">
-                <label>Mô tả</label>
-                <input type="text" name="email" class="form-control" id=chi" placeholder="">
-              </div>
-              
-        
               <div style="clear:both"></div>
             </div>
                      
@@ -59,7 +53,7 @@
         <!-- /.box-body -->
 
         <div class="box-footer">
-          <a class="btn btn-danger" href="{{ route('DANH_MUC_HOA') }}">Quay lại</a>
+          <a class="btn btn-danger" href="{{ route('DANH_SACH_QUA_TANG') }}">Quay lại</a>
           <button type="submit" class="btn btn-primary"> <i class="fa fa-save faa-pulse animated "></i> Lưu lại</button>
           <button type="reset" class="btn btn-success">Làm mới</button>
         </div>
@@ -72,7 +66,3 @@
   <!--/.col (right) -->
 </div>
 @endsection
-
-
-
-

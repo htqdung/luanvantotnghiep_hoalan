@@ -26,7 +26,7 @@
      <div class="box box-primary">
         <div class="box-header with-border">
           <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-          <a class="btn btn-success" style="float: right; padding: 0px" href="#"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm ưu đãi</a>
+          <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_UU_DAI') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm ưu đãi</a>
         </div>
     <div class="row" >
     </div><!-- /.row -->
@@ -56,7 +56,7 @@
                            
                     </td>
                      <td>
-                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
+                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_UU_DAI', $item->id) }}"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
                            
                     </td>
                      <td>

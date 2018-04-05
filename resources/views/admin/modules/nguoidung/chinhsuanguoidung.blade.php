@@ -42,7 +42,7 @@
               </div>
               <div class="col-md-6">
                 <label>Số điện thoại</label>
-                <input type="text" name="so_dien_thoai" class="form-control" id=chi" placeholder="">
+                <input type="number" name="so_dien_thoai" class="form-control" id=chi" placeholder="">
               </div>
               <div class="col-md-6">
                 <label>Email</label>
@@ -62,7 +62,7 @@
         <!-- /.box-body -->
 
         <div class="box-footer">
-          <a class="btn btn-danger" href="#">Quay lại</a>
+          <a class="btn btn-danger" href="{{ route('DANH_SACH_NGUOI_DUNG') }}">Quay lại</a>
           <button type="submit" class="btn btn-primary"> <i class="fa fa-save faa-pulse animated "></i> Lưu lại</button>
           <button type="reset" class="btn btn-success">Làm mới</button>
         </div>

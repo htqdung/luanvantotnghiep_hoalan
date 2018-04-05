@@ -23,15 +23,38 @@ class adminController extends Controller
         // echo $hoalan;
         return view('admin.modules.hoalan.danhmuchoa_chinhsua', ['data'=>$hoalan]);
     }
-
+    public function themdanhmuchoa()
+    {
+        return view('admin.modules.hoalan.themdanhmuchoa');
+    }
+//sản phẩm
     public function getdachsachsanpham()
     {
-    	return view('admin.modules.hoalan.danhsachsanpham');
+         $sanpham = DB::table('tbl_sanpham')
+        ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
+
+        ->select('tbl_sanpham.id','ten_san_pham','gia','thong_tin_chi_tiet','mo_ta','diem_thuong','tag')
+        ->get();
+        // return $nguoidung;
+       
+    	return view('admin.modules.hoalan.danhsachsanpham',['data'=>$sanpham]);
+    }
+    public function themdanhsachsanpham()
+    {
+        return view('admin.modules.hoalan.themdanhsachsanpham');
+    }
+    public function chinhsuasanpham($id)
+    {
+        return view('admin.modules.hoalan.chinhsuasanpham');
     }
 //đặc điểm
     public function getdacdiemhoa()
     {
-    	return view('admin.modules.dacdiemhoa.dacdiem');
+         $dacdiem = DB::table('tbl_dacdiem')
+          ->select('id','hoa','la','than','re')
+        ->orderBy('id','desc')
+        ->paginate(10);   
+    	return view('admin.modules.dacdiemhoa.dacdiem',['data'=>$dacdiem]);
     }
     public function chinhsuadacdiem($id)
     {
@@ -63,7 +86,7 @@ class adminController extends Controller
     {
        return view('admin.modules.chi.themchi');
     }
-    public function chinhsuachi()
+    public function chinhsuachi($id)
     {
         return view('admin.modules.chi.chinhsuachi');
     }
@@ -89,15 +112,10 @@ class adminController extends Controller
     {
         return view('admin.modules.nguoidung.themnguoidung');
     }
-    public function chinhsuanguoidung()
+    public function chinhsuanguoidung($id)
     {
         return view('admin.modules.nguoidung.chinhsuanguoidung');
     }
-
-
-
-
-
 
 //khuyến mãi
 
@@ -129,7 +147,15 @@ class adminController extends Controller
         ->get();
         return view('admin.modules.khuyenmai.chitietkhuyenmai', ['data'=>$chuongtrinhkhuyenmai,'data2'=>$danhsachsanpham]);
     }
+    public function themkhuyenmai()
+    {
+        return view('admin.modules.khuyenmai.themkhuyenmai');
+    }
+    public function chinhsuakhuyenmai($id)
+    {
 
+      return view('admin.modules.khuyenmai.chinhsuakhuyenmai');
+    }
 //ưu đãi
     public function danhsachuudai()
     {
@@ -142,6 +168,14 @@ class adminController extends Controller
        // return ($uudai) ;
         return view('admin.modules.khuyenmai.uudai',['data'=>$uudai]);
     }
+    public function themuudai()
+    {
+        return view('admin.modules.khuyenmai.themuudai');
+    }
+    public function chinhsuauudai($id)
+    {
+        return view('admin.modules.khuyenmai.chinhsuauudai');
+    }
 
 //quà tặng
     public function danhsachquatang()
@@ -150,6 +184,14 @@ class adminController extends Controller
         ->select('tbl_quatang.id','ten_qua_tang','so_luong')
         ->get();
         return view('admin.modules.khuyenmai.quatang', ['data'=>$quatang]);
+    }
+    public function themquatang()
+    {
+        return view('admin.modules.khuyenmai.themquatang');
+    }
+    public function chinhsuaquatang($id)
+    {
+        return view('admin.modules.khuyenmai.chinhsuaquatang');
     }
 
 //đơn hàng

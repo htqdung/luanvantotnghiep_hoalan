@@ -23,7 +23,7 @@
     </div><!-- /.nav-search -->
   </div>
       <div class="box-header with-border">
-        <h3 class="box-title">Chỉnh sửa loài hoa</h3>
+        <h3 class="box-title">Thêm loài hoa</h3>
       </div>
       <!-- /.box-header -->
       <!-- form start -->

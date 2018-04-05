@@ -51,7 +51,7 @@
 				        <td>{{ $item->mo_ta }}</td>
 
 				        <td>
-				        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
+				        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_CHI', $item->id) }}"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
 	                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
 	                    </td>
 				      </tr>	
