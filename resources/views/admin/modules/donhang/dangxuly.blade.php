@@ -23,13 +23,6 @@
 
   <div class="page-content">
     <!-- /.page-header -->
-     <div class="box box-primary">
-        <div class="box-header with-border">
-          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-          <a class="btn btn-success" style="float: right; padding: 0px" href="#"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm hoa</a>
-        </div>
-    <div class="row" >
-    </div><!-- /.row -->
     <div class="row">
       <div class="col-md-12">
         <table class="table">

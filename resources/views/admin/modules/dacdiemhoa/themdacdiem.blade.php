@@ -30,37 +30,29 @@
       <!-- /.box-header -->
       <!-- form start -->
       <form role="form" method="POST" action="" enctype="multipart/form-data">
-        <input type="hidden" name="_token" value="">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">   
-              <div style="clear:both"></div>
-          
+          <div style="clear:both"></div>
           <div class="form-group">
             <div class="col-md-12">
-            	 <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Id</label>
-                    <input type="text" class="form-control" name="barcode" id="sach" placeholder="" style="margin-right: 0; ">
+                 <div class="col-md-6" style="margin-right: 0; ">
+                    <label for="hoa">Hoa</label>
+                    <input type="text" class="form-control" name="hoa" id="hoa" placeholder="" style="margin-right: 0; ">
                  </div>  
                  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Hoa</label>
-                    <input type="text" class="form-control" name="barcode" id="sach" placeholder="" style="margin-right: 0; ">
-                 </div>                  
+                    <label for="la">Lá</label>
+                    <input type="text" class="form-control" name="la" id="la" placeholder="" style="margin-right: 0; ">
+                  </div>                
             </div>
-            <div  class="col-md-12">
-            	 
-                  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Lá</label>
-                    <input type="text" class="form-control" name="barcode" id="sach" placeholder="" style="margin-right: 0; ">
-                  </div>
-                    <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Thân</label>
-                    <input type="text" class="form-control" name="barcode" id="sach" placeholder="" style="margin-right: 0; ">
-                 
-            	
-            </div>
+                    
              <div  class="col-md-12">
+              <div class="col-md-6" style="margin-right: 0; ">
+                      <label for="than">Thân</label>
+                      <input type="text" class="form-control" name="than" id="than" placeholder="" style="margin-right: 0; ">
+                     </div>
             	  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Rể</label>
-                    <input type="text" class="form-control" name="barcode" id="sach" placeholder="" style="margin-right: 0; ">
+                    <label for="re">Rể</label>
+                    <input type="text" class="form-control" name="re" id="re" placeholder="" style="margin-right: 0; ">
                   </div>
             	
             </div>
@@ -72,7 +64,7 @@
       
         <!-- /.box-body -->
 
-        <div class="box-footer">          
+        <div class="box-footer" style ="padding-top: 25px">          
           <a class="btn btn-danger" href="{{ route('DAC_DIEM_HOA') }}">Quay lại</a>
           
           <button type="submit" class="btn btn-primary"><i class="fa fa-next faa-pulse animated "></i>Lưu lại</button>

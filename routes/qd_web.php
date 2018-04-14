@@ -1,6 +1,6 @@
 <?php
 
-Route::get('admin', 'adminController@getTest')->name('MO_GIAO_DIEN_ADMIN');
+Route::get('qt-admin', 'adminController@getTest')->name('MO_GIAO_DIEN_ADMIN');
 //danh mục hoa
 Route::get('qt-danh-muc-hoa', 'adminController@getdanhmuchoa')->name('DANH_MUC_HOA');
 Route::get('qt-chinh-sua-loai-hoa/{id}', 'adminController@getChinhSuaHoa')->name('CHINH_SUA_HOA');
@@ -8,16 +8,23 @@ Route::get('qt-them-danh-muc-hoa','adminController@themdanhmuchoa')->name('THEM_
 
 //sản phẩm
 Route::get('qt-danh-sach-san-pham', 'adminController@getdachsachsanpham')->name('DANH_SACH_SAN_PHAM');
-Route::get('qt-them-danh-sach-san-pham','adminController@themdanhsachsanpham')->name('THEM_DANH_SACH_SAN_PHAM');
+Route::get('qt-them-san-pham','adminController@themsanpham')->name('THEM_SAN_PHAM');
+Route::post('qt-them-san-pham','adminController@postThemSanPham');
+
+Route::post('qt-chinh-sua-san-pham/{id}','adminController@postChinhSuaSanPham');
 Route::get('qt-chinh-sua-san-pham/{id}','adminController@chinhsuasanpham')->name('CHINH_SUA_SAN_PHAM');
+Route::get('qt-chi-tiet-san-pham/{id}','adminController@chitietsanpham')->name('CHI_TIET_SAN_PHAM');
+
 //đặc điểm
 Route::get('qt-dac-diem-hoa', 'adminController@getdacdiemhoa')->name('DAC_DIEM_HOA');
 Route::get('qt-chinh-sua-dac-diem/{id}', 'adminController@chinhsuadacdiem')->name('CHINH_SUA_DAC_DIEM');
 Route::get('qt-them-dac-diem','adminController@themdacdiem')->name('THEM_DAC_DIEM');
+Route::post('qt-them-dac-diem','adminController@postThemDacDiem');
 
 //chi
 Route::get('qt-chi', 'adminController@getchi')->name('DANH_SACH_CHi');
 Route::get('qt-them-chi', 'adminController@themchi')->name('THEM_CHI');
+Route::post('qt-them-chi', 'adminController@postThemChi');
 Route::get('qt-chinh-sua-chi/{id}', 'adminController@chinhsuachi')->name('CHINH_SUA_CHI');
 
 //người dùng
@@ -27,9 +34,11 @@ Route::get('chinh-sua-nguoi-dung/{id}', 'adminController@chinhsuanguoidung')->na
 
 
 //khuyến mãi
-Route::get('danh-sach-khuyen-mai', 'adminController@getdanhsachkhuyenmai')->name('DANH_SACH_KHUYEN_MAI');
+Route::get('qt-danh-sach-khuyen-mai', 'adminController@getdanhsachkhuyenmai')->name('DANH_SACH_KHUYEN_MAI');
 Route::get('qt-chi-tiet-khuyen-mai/{id}','adminController@chitietkhuyenmai')->name('CHI_TIET_KHUYEN_MAI');
 Route::get('qt-them-khuyen-mai','adminController@themkhuyenmai')->name('THEM_KHUYEN_MAI');
+Route::post('qt-them-khuyen-mai','adminController@postThemKhuyenMai');
+
 Route::get('qt-chinh-sua-khuyen-mai/{id}','adminController@chinhsuakhuyenmai')->name('CHINH_SUA_KHUYEN_MAI');
 //ưu đãi
 Route::get('qt-danh-sach-uu-dai','adminController@danhsachuudai')->name('DANH_SACH_UU_DAI');

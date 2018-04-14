@@ -30,53 +30,71 @@
       <!-- /.box-header -->
       <!-- form start -->
       <form role="form" method="POST" action="" enctype="multipart/form-data">
-        <input type="hidden" name="_token" value="">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">   
               <div style="clear:both"></div>
           
           <div class="form-group">
             <div class="col-md-12">
-            	 <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Id</label>
-                    <input type="text" class="form-control" name="id" id="sanpham" placeholder="" style="margin-right: 0; ">
-                 </div>  
+            	 
                  <div class="col-md-6" style="margin-right: 0; ">
                     <label for="exampleInputEmail1">Tên sản phẩm</label>
-                    <input type="text" class="form-control" name="tensanpham" id="sanpham" placeholder="" style="margin-right: 0; ">
-                 </div>                  
+                    <input type="text" class="form-control" name="ten_san_pham" id="sanpham" placeholder="" style="margin-right: 0; " required>
+                 </div>
+                 <div class="col-md-6" style="margin-right: 0; ">
+                    <label for="exampleInputEmail1">Đơn giá</label>
+                    <input type="number" class="form-control" name="don_gia" id="sanpham" placeholder="" style="margin-right: 0; " required>
+                  </div>
+                                 
             </div>
             <div  class="col-md-12">
-            	 
-                  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Đơn giá</label>
-                    <input type="number" class="form-control" name="dongia" id="sanpham" placeholder="" style="margin-right: 0; ">
-                  </div>
-                    <div class="col-md-6" style="margin-right: 0; ">
+            	     
+                
+                 <div class="col-md-6" style="margin-right: 0; ">
                     <label for="exampleInputEmail1">Kích thước</label>
-                    <input type="text" class="form-control" name="kichthuoc" id="sanpham" placeholder="" style="margin-right: 0; ">
+                    <input type="text" class="form-control" name="kich_thuoc" id="sanpham" placeholder="" style="margin-right: 0; " required>
            			 </div>
-            <div  class="col-md-12">
-            	  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Hình thức</label>
-                    <input type="text" class="form-control" name="hinhthuc" id="sanpham" placeholder="" style="margin-right: 0; ">
-                  </div>
-                  
-            	  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Mô tả</label>
-                    <input type="text" class="form-control" name="mota" id="sanpham" placeholder="" style="margin-right: 0; ">
-                  </div>
-			<div  class="col-md-12">
-                 
-            	  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Điểm thưởng</label>
-                    <input type="text" class="form-control" name="diemthuong" id="sanpham" placeholder="" style="margin-right: 0; ">
-                  </div>
-                 
-            	  <div class="col-md-6" style="margin-right: 0; ">
+                  <div class="col-md-6" style="margin-right: 0; ">
                     <label for="exampleInputEmail1">Tag</label>
-                    <input type="text" class="form-control" name="tag" id="sanpham" placeholder="" style="margin-right: 0; ">
+                    <input type="text" class="form-control" name="tag" id="sanpham" placeholder="" style="margin-right: 0; " required>
                   </div>
-            </div>	
+            </div>
+            <div  class="col-md-12">
+                 
+                <div class="col-md-6" style="margin-right: 0; ">
+                    <label for="exampleInputEmail1">Điểm thưởng</label>
+                    <input type="number" class="form-control" name="diem_thuong" id="sanpham" placeholder="" style="margin-right: 0; " required>
+                  </div>
+                   <div class="col-md-6" style="margin-right: 0; ">
+                    <label for="exampleInputEmail1">Chọn hình ảnh</label>
+                    <input type="file" class="" name="hinh_anh" id="sanpham" placeholder="" style="margin-right: 0; " required>
+                 </div>    
+                 
+               
+            </div>  
+            <div  class="col-md-12">
+            	 <div   class="col-md-6">
+                 <div class="form-group" style="margin-right: 0; ">
+                     <label>Thêm các loài hoa</label>
+                     <small>* Có thể chọn được nhiều loài</small>
+                     <select id="framework" name="framework[]" multiple class="form-control" >
+                      
+                      @foreach ($data as $item)
+                        <option value="{{ $item->id }}">{{ $item->ten_khoa_hoc }}</option>
+                      @endforeach
+                      
+                      
+                     </select>
+                  </div>
+                </div>
+                  <div class="col-md-6" style="margin-right: 0; ">
+                    <label for="sp_mota">Mô tả: *</label>
+                    <textarea name="mo_ta" rows="5" cols="30" class="form-control" id="sp_mota" placeholder="Mô tả về sản phẩm này...."></textarea>
+                 </div>
+               </div>
+                   
+           </div>
+			      
             </div>
           </div> 
                

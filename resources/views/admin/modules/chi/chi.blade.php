@@ -35,17 +35,17 @@
 					<h3><b>CHI</b></h3>
 				    <thead>
 				      <tr>
-				        <th style="width: 5%">Id</th>
+				        <th style="width: 5%">STT</th>
 				        <th style="width: 15%">Tên chi</th>
 				         <th style="width: 60%">Mô tả</th>							   
 				        <th style="width: 20%">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>
-				      
+				      <?php $i=1; ?>
 					  @foreach ($data as $item)
 					  <tr>
-				        <td>{{ $item->id }}</td>
+				        <td><?= $i++; ?></td>
 				        <td>{{ $item->ten_chi }}</td>
 		
 				        <td>{{ $item->mo_ta }}</td>

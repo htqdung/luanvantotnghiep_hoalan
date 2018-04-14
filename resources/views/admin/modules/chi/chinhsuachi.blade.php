@@ -32,17 +32,13 @@
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
-              <div class="col-md-6">
-                <label>Id</label>
-                <input type="text" name="id" class="form-control" id="chi" placeholder="">
-              </div>
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <label>Tên chi</label>
                 <input type="text" name="ten_chi" class="form-control" id=chi" placeholder="">
               </div>
-              <div class ="col-md-6" >
-                <label for="exampleInputEmail1">Mô tả</label>
-                <input type="text" name="mo_ta" class="form-control" id="chi" placeholder="">
+              <div class="col-md-12">
+                <label>Mô tả</label>
+                <textarea  rows="10" cols="50" class="form-control" name="mo_ta"></textarea>
               </div>
         
               <div style="clear:both"></div>

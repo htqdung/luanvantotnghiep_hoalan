@@ -8,7 +8,7 @@
       <div class="box-header with-border">
         <h3 class="box-title">Danh sách sản phẩm</h3>
         <a style="float: right; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-        <a class="btn btn-success" style="float: right;" href="#"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm sản phẩm</a>
+        <a class="btn btn-success" style="float: right;" href="{{ route('THEM_SAN_PHAM') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm sản phẩm</a>
       </div>
       <!-- /.box-header -->
       <div class="box-body">

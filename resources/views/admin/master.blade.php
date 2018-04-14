@@ -5,7 +5,7 @@
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="#">Trang chủ</a>
+                <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
             </li>
         </ul>
         <!-- /.breadcrumb -->
@@ -21,9 +21,7 @@
     </div>
     <div class="page-content">
         <div class="page-header">
-            <h1>Trang chủ
-                    
-                </h1>
+            <h1>Trang chủ</h1>
         </div>
         <!-- /.page-header -->
         <div class="row">

@@ -33,20 +33,27 @@
           <div class="form-group">
              <div class="form-group">
               <div class="col-md-6">
-                <label>Id</label>
-                <input type="text" name="id" class="form-control" id="chi" placeholder="">
+                <label>Tên loài</label>
+                <input type="text" name="id" class="form-control" id="chi" required placeholder="">
               </div>
               <div class="col-md-6">
-                <label>Tên loài</label>
-                <input type="text" name="ten_nguoi_dung" class="form-control" id=chi" placeholder="">
+                <label>Chi</label>
+                <select id="" name="framework[]"  class="form-control" required>
+                      
+                      @foreach ($data as $item)
+                        <option value="{{ $item->id }}">{{ $item->ten_chi }}</option>
+                      @endforeach
+                      
+                      
+                 </select>
               </div>
               <div class="col-md-6">
                 <label>Tên khoa học</label>
-                <input type="text" name="so_dien_thoai" class="form-control" id=chi" placeholder="">
+                <input type="text" required name="so_dien_thoai" class="form-control" id=chi" placeholder="">
               </div>
               <div class="col-md-6">
                 <label>Mô tả</label>
-                <input type="text" name="email" class="form-control" id=chi" placeholder="">
+                <input type="text" name="email" required class="form-control" id=chi" placeholder="">
               </div>
               
         

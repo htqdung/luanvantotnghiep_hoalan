@@ -33,20 +33,16 @@
           <div class="form-group">
              <div class="form-group">
               <div class="col-md-6">
-                <label>Id</label>
-                <input type="text" name="id" class="form-control" id="chi" placeholder="">
-              </div>
-              <div class="col-md-6">
                 <label>Tên loài</label>
-                <input type="text" name="ten_nguoi_dung" class="form-control" id=chi" placeholder="">
+                <input type="text" name="ten_loai" class="form-control" id=chi" placeholder="">
               </div>
               <div class="col-md-6">
                 <label>Tên khoa học</label>
-                <input type="text" name="so_dien_thoai" class="form-control" id=chi" placeholder="">
+                <input type="text" name="ten_khoa_hoc" class="form-control" id=chi" placeholder="">
               </div>
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <label>Mô tả</label>
-                <input type="text" name="email" class="form-control" id=chi" placeholder="">
+                <textarea  rows="10" cols="50" class="form-control" name="mo_ta"></textarea>
               </div>
               
         

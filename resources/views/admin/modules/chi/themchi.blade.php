@@ -27,28 +27,24 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="POST" action="">
-        <input type="hidden" name="_token" value="#">
+      <form role="form" method="POST" action="" enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
               <div class="col-md-12" style="padding-top: 14px">
-                <label>Tên chi: *</label>
+                <label for="chi">Tên chi: *</label>
                 <input type="text"  name="ten_chi"  class="form-control" id="chi" placeholder="Điền tên chi">
               </div>
               <div class ="col-md-12" style="padding-top: 14px">
-                <label for="exampleInputEmail1">Mô tả: *</label>
-                <textarea name="mo_ta" rows="10" cols="50" class="form-control" id="chi" placeholder="Mô tả về loài chi này...."></textarea>
+                <label for="chi_mota">Mô tả: *</label>
+                <textarea name="mo_ta" rows="10" cols="50" class="form-control" id="chi_mota" placeholder="Mô tả về loài chi này...."></textarea>
               </div>
-        
               <div style="clear:both"></div>
             </div>
-                     
           </div>
-          
         </div>
         <!-- /.box-body -->
-
         <div class="box-footer">
           <a class="btn btn-danger" href="{{ route('DANH_SACH_CHi') }}">Quay lại</a>
           <button type="submit" class="btn btn-primary"> <i class="fa fa-save faa-pulse animated "></i> Lưu lại</button>

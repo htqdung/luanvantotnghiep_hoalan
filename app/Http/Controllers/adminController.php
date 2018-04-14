@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Loai;
+use App\Chi;
+use App\DacDiem;
+use App\SanPham;
 use Illuminate\Http\Request;
 use DB;
+use App\HinhThucKhuyenMai;
 class adminController extends Controller
 {
     public function getTest()
@@ -25,7 +29,11 @@ class adminController extends Controller
     }
     public function themdanhmuchoa()
     {
-        return view('admin.modules.hoalan.themdanhmuchoa');
+        $chi = DB::table('tbl_chi')
+        ->select('id', 'ten_chi', 'mo_ta')
+        ->orderBy('id', 'desc')
+        ->paginate(10);
+        return view('admin.modules.hoalan.themdanhmuchoa', ['data'=>$chi]);
     }
 //sản phẩm
     public function getdachsachsanpham()
@@ -33,19 +41,94 @@ class adminController extends Controller
          $sanpham = DB::table('tbl_sanpham')
         ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
 
-        ->select('tbl_sanpham.id','ten_san_pham','gia','thong_tin_chi_tiet','mo_ta','diem_thuong','tag')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','thong_tin_chi_tiet','mo_ta','diem_thuong','tag')
+        ->orderBy('id_sanpham','desc')
         ->get();
         // return $nguoidung;
        
     	return view('admin.modules.hoalan.danhsachsanpham',['data'=>$sanpham]);
     }
-    public function themdanhsachsanpham()
+    public function themsanpham()
     {
-        return view('admin.modules.hoalan.themdanhsachsanpham');
+        $hoalan = DB::table('tbl_loai')->get();
+
+        return view('admin.modules.hoalan.themdanhsachsanpham', ['data'=>$hoalan]);
     }
     public function chinhsuasanpham($id)
     {
-        return view('admin.modules.hoalan.chinhsuasanpham');
+         $danhmuahoachosanpham = DB::table('tbl_loai')
+        ->join('tbl_sanpham_loai', 'tbl_sanpham_loai.loai_id', '=', 'tbl_loai.id')
+        ->join('tbl_sanpham', 'tbl_sanpham.id', '=', 'tbl_sanpham_loai.sanpham_id')
+        ->select('ten_loai', 'tbl_sanpham.mo_ta', 'tbl_sanpham_loai.so_luong','tbl_loai.id as id_loai')
+        ->get();
+
+        $sanpham = DB::table('tbl_sanpham')
+        ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','thong_tin_chi_tiet','mo_ta','diem_thuong','tag')
+        ->where('tbl_sanpham.id', '=', $id)
+        ->get();
+
+        $hinhanhsp = DB::table('tbl_hinhanh')
+        ->join('tbl_sanpham', 'tbl_hinhanh.sanpham_id' ,'=', 'tbl_sanpham.id')
+        ->select('ten_hinh')
+        ->where('tbl_hinhanh.sanpham_id', '=', $id)
+        ->get();
+           // return $sanpham;
+        // return $hinhanhsp;
+        return view('admin.modules.hoalan.chinhsuasanpham', ['data_dmhoa'=>$danhmuahoachosanpham, 'data_sp'=>$sanpham, 'data_hinhanh'=>$hinhanhsp]);
+    }
+    public function postChinhSuaSanPham(Request $request,$id)
+    {
+        $sanpham = SanPham::findOrFail($id);
+        $sanpham->ten_san_pham=$request->input('ten_san_pham');
+      
+        $sanpham->thong_tin_chi_tiet=$request->input('kich_thuoc');
+        $sanpham->mo_ta=$request->input('mo_ta');
+        $sanpham->diem_thuong=$request->input('diem_thuong');
+        $sanpham->tag=$request->input('tag');  
+        
+        $sanpham->save();
+         return redirect()->intended('qt-danh-sach-san-pham');
+    }
+
+
+
+    public function chitietsanpham($id)
+    {
+        $danhmuahoachosanpham = DB::table('tbl_loai')
+        ->join('tbl_sanpham_loai', 'tbl_sanpham_loai.loai_id', '=', 'tbl_loai.id')
+        ->join('tbl_sanpham', 'tbl_sanpham.id', '=', 'tbl_sanpham_loai.sanpham_id')
+        ->select('ten_khoa_hoc', 'tbl_sanpham.mo_ta', 'tbl_sanpham_loai.so_luong')
+        ->get();
+
+         $sanpham = DB::table('tbl_sanpham')
+        ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','thong_tin_chi_tiet','mo_ta','diem_thuong','tag')
+        ->where('tbl_sanpham.id', '=', $id)
+        ->limit(1)
+        ->get();
+
+        $hinhanhsp = DB::table('tbl_hinhanh')
+        ->leftJoin('tbl_sanpham', 'tbl_hinhanh.sanpham_id' ,'=', 'tbl_sanpham.id')
+        ->select('ten_hinh')->where('tbl_sanpham.id', '=', $id)->get();
+        // return $danhmuahoachosanpham;
+        // return $sanpham;
+        // return $hinhanhsp;
+        return view('admin.modules.hoalan.chitietsanpham', ['data_hoa'=>$danhmuahoachosanpham, 'data_sp'=>$sanpham, 'data_hinhanh'=>$hinhanhsp]);
+    }
+    public function postThemSanPham(Request $request)
+    {
+        $sanpham = new SanPham();
+        $sanpham->ten_san_pham=$request->input('ten_san_pham');
+      //  $sanpham->gia=$request->input('don_gia');
+        $sanpham->thong_tin_chi_tiet=$request->input('kich_thuoc');
+        $sanpham->mo_ta=$request->input('mo_ta');
+        $sanpham->diem_thuong=$request->input('diem_thuong');
+        $sanpham->tag=$request->input('tag');  
+       // $sanpham->hinhanhsp=$request->input('hinh_anh');
+        $sanpham->save();
+         return redirect()->intended('qt-danh-sach-san-pham');
+        //return $this::getdachsachsanpham();
     }
 //đặc điểm
     public function getdacdiemhoa()
@@ -66,7 +149,20 @@ class adminController extends Controller
     }
     public function themdacdiem()
     {
+
+
         return view('admin.modules.dacdiemhoa.themdacdiem');
+    }
+    public function postThemDacDiem(Request $request)
+    {
+        $dacdiem = new DacDiem();
+        $dacdiem->hoa=$request->input('hoa');
+        $dacdiem->la=$request->input('la');
+        $dacdiem->than=$request->input('than');
+        $dacdiem->re=$request->input('re');
+        $dacdiem->save();
+
+        return $this::getdacdiemhoa();
     }
 
 
@@ -85,6 +181,15 @@ class adminController extends Controller
     public function themchi()
     {
        return view('admin.modules.chi.themchi');
+    }
+    public function postThemChi(Request $request)
+    {
+        $chi = new Chi();
+        $chi->ten_chi=$request->input('ten_chi');
+        $chi->mo_ta=$request->input('mo_ta');
+        $chi->save();
+
+        return $this::getchi();
     }
     public function chinhsuachi($id)
     {
@@ -126,6 +231,7 @@ class adminController extends Controller
        
         ->leftJoin('tbl_hinhthuckhuyenmai','tbl_chuongtrinhkhuyenmai.hinhthuckhuyenmai_id','=','tbl_hinhthuckhuyenmai.id')
         ->leftJoin('tbl_quatang', 'tbl_quatang.hinhthuckhuyenmai_id', '=', 'tbl_quatang.id')
+        ->orderBy('tbl_chuongtrinhkhuyenmai.id', 'DESC')
         ->get();
        // return $chuongtrinhkhuyenmai;
         return view('admin.modules.khuyenmai.danhsachkhuyenmai' , ['data'=>$chuongtrinhkhuyenmai]);
@@ -151,6 +257,25 @@ class adminController extends Controller
     {
         return view('admin.modules.khuyenmai.themkhuyenmai');
     }
+
+    public function postThemKhuyenMai(Request $request)
+    {
+        // echo "abc";
+        $khuyenmai = new HinhThucKhuyenMai();
+        $khuyenmai->ten_hinh_thuc=$request->input('ten_khuyen_mai');
+        $khuyenmai->ti_le_giam_gia=$request->input('ti_le_giam');
+        $khuyenmai->save();
+         $chuongtrinhkhuyenmai = DB::table('tbl_chuongtrinhkhuyenmai')
+        ->select('tbl_chuongtrinhkhuyenmai.id','ngay_bat_dau','ngay_ket_thuc','ti_le_giam_gia','tbl_hinhthuckhuyenmai.ten_hinh_thuc', 'tbl_quatang.ten_qua_tang','so_luong', 'tbl_chuongtrinhkhuyenmai.created_at')
+       
+        ->leftJoin('tbl_hinhthuckhuyenmai','tbl_chuongtrinhkhuyenmai.hinhthuckhuyenmai_id','=','tbl_hinhthuckhuyenmai.id')
+        ->leftJoin('tbl_quatang', 'tbl_quatang.hinhthuckhuyenmai_id', '=', 'tbl_quatang.id')
+        ->orderBy('tbl_chuongtrinhkhuyenmai.id', 'DESC')
+        ->get();
+       // return $chuongtrinhkhuyenmai;
+        return view('admin.modules.khuyenmai.danhsachkhuyenmai' , ['data'=>$chuongtrinhkhuyenmai]);
+    }
+
     public function chinhsuakhuyenmai($id)
     {
 

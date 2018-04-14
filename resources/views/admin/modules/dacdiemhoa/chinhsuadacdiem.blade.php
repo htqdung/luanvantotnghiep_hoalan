@@ -33,10 +33,6 @@
           <div class="form-group">
              <div class="form-group">
               <div class="col-md-6">
-                <label>Id</label>
-                <input type="text" name="id" class="form-control" id="chi" placeholder="">
-              </div>
-              <div class="col-md-6">
                 <label>Hoa</label>
                 <input type="text" name="ten_chi" class="form-control" id=chi" placeholder="">
               </div>

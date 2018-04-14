@@ -6,8 +6,7 @@
 			<li>
 				<i class="ace-icon fa fa-home home-icon"></i>
 				<a href="#">Trang chủ</a>
-			</li>
-		
+			</li
 		</ul><!-- /.breadcrumb -->
 
 		<div class="nav-search" id="nav-search">
@@ -25,7 +24,7 @@
 		 <div class="box box-primary">
 	      <div class="box-header with-border">
 	        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_DAC_DIEM') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm</a>
+	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_DAC_DIEM') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm mới</a>
 	      </div>
 		<div class="row" >
 		</div><!-- /.row -->
@@ -35,7 +34,7 @@
 					<h3><b>ĐẶC ĐIỂM HOA</b></h3>
 				    <thead>
 				      <tr>
-				        <th style="width: 5%">Id</th>
+				        <th style="width: 5%">STT</th>
 				        <th style="width: 15%">Tên hoa</th>
 				         <th style="width: 15%">Lá</th>
 				         <th style="width: 20%">Thân</th>
@@ -44,9 +43,10 @@
 				      </tr>
 				    </thead>
 				        <tbody>
+				        	<?php $i=1;?>
                 @foreach ($data as $item)
                   <tr>
-                    <td>{{ $item->id }}</td>
+                    <td><?= $i++; ?></td>
                     <td>{{ $item->hoa }}</td>
                     <td>{{ $item->la}}</td>
                     <td>{{ $item->than}}</td>
@@ -57,13 +57,6 @@
                       <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_DAC_DIEM', $item->id)  }}"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
                       
                     </td>
-
-                    <td>
-                     
-                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
-                     
-                    </td>
-
                     <td>
                       <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
                     </td>
