@@ -33,10 +33,10 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">   
               <div style="clear:both"></div>
-          
+      
           <div class="form-group">
             <div class="col-md-12">
-               
+                  
                  <div class="col-md-6" style="margin-right: 0; ">
                     <label for="exampleInputEmail1">Tên sản phẩm</label>
                     <input type="text" value="{{ $data_sp[0]->ten_san_pham }}" class="form-control" name="ten_san_pham" id="sanpham" placeholder="" style="margin-right: 0; " required>
@@ -67,7 +67,7 @@
                   </div>
                    <div class="col-md-6" style="margin-right: 0; ">
                     <label for="exampleInputEmail1">Chọn hình ảnh</label>
-                    <input type="file"  value="{{ $data_hinhanh[0]->ten_hinh }}" class="" name="hinh_anh" id="sanpham" placeholder="" style="margin-right: 0; ">
+                    <input type="file"  value="" class="" name="hinh_anh" id="sanpham" placeholder="" style="margin-right: 0; ">
                  </div>    
                  
                
@@ -116,12 +116,7 @@
       
         <!-- /.box-body -->
 
-        <div class="box-footer" style="padding-top: 25px">          
-          <a class="btn btn-danger" href="{{ route('DANH_SACH_SAN_PHAM') }}">Quay lại</a>
-          
-          <button type="submit" class="btn btn-primary"><i class="fa fa-next faa-pulse animated "></i>Lưu lại</button>
-          <button type="reset" class="btn btn-success"><i class="fa  fa-refresh fa-spin"></i> Làm mới</button>
-        </div>
+       
       </form>
     </div>
     <!-- /.box -->

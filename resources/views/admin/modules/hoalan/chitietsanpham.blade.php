@@ -68,16 +68,14 @@
                         </tr>
                         <tr>
                           <th style="width: 30%">Mô tả: </th>
-                          <td>{{ $data->mo_ta }}3</td>
+                          <td>{{ $data->mo_ta }}</td>
                         </tr>
                         @endforeach
                         
                        
                     </thead>
                     <tbody>
-                           <td>
-                                <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
-                          </td>           
+                                  
                     </tbody> 
                   </table>  
                 </div> 

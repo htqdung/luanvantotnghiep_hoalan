@@ -144,57 +144,60 @@
   					<span class="menu-text">Báo cáo </span>						
   				</a>
           </li>
-          <li class="">
+
+        <div hidden="hidden"><li class="">
               <a href="#" class="dropdown-toggle">
-  					<i class="menu-icon fa fa-cogs"></i>
+            <i class="menu-icon fa fa-cogs"></i>
   
-  					<span class="menu-text">
-  						Cài đặt
+            <span class="menu-text">
+              Cài đặt
   
-  						<span class="badge badge-primary"></span>
-  					</span>
+              <span class="badge badge-primary"></span>
+            </span>
   
-  					<b class="arrow fa fa-angle-down"></b>
-  				</a>
+            <b class="arrow fa fa-angle-down"></b>
+          </a>
               <b class="arrow"></b>
               <ul class="submenu">
                   <li class="">
                       <a href="faq.html">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							FAQ
-  						</a>
+                <i class="menu-icon fa fa-caret-right"></i>
+                FAQ
+              </a>
                       <b class="arrow"></b>
                   </li>
                   <li class="">
                       <a href="error-404.html">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							Error 404
-  						</a>
+                <i class="menu-icon fa fa-caret-right"></i>
+                Error 404
+              </a>
                       <b class="arrow"></b>
                   </li>
                   <li class="">
                       <a href="error-500.html">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							Error 500
-  						</a>
+                <i class="menu-icon fa fa-caret-right"></i>
+                Error 500
+              </a>
                       <b class="arrow"></b>
                   </li>
                   <li class="">
                       <a href="grid.html">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							Grid
-  						</a>
+                <i class="menu-icon fa fa-caret-right"></i>
+                Grid
+              </a>
                       <b class="arrow"></b>
                   </li>
                   <li class="">
                       <a href="blank.html">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							Blank Page
-  						</a>
+                <i class="menu-icon fa fa-caret-right"></i>
+                Blank Page
+              </a>
                       <b class="arrow"></b>
                   </li>
               </ul>
           </li>
+        </div>  
+          
       </ul>
       <!-- /.nav-list -->
       <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

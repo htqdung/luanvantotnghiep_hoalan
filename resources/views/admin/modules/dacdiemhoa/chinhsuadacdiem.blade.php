@@ -27,26 +27,26 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="POST" action="">
-        <input type="hidden" name="_token" value="#">
+      <form role="form" method="POST" action="" enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
               <div class="col-md-6">
                 <label>Hoa</label>
-                <input type="text" name="ten_chi" class="form-control" id=chi" placeholder="">
+                <input type="text" value="{{ $data[0]->hoa }}"   name="hoa" class="form-control" id=dacdiem" placeholder="">
               </div>
                <div class="col-md-6">
                 <label>Lá</label>
-                <input type="text" name="ten_chi" class="form-control" id=chi" placeholder="">
+                <input type="text" value="{{ $data[0]->la }}"  name="la" class="form-control" id=dacdiem" placeholder="">
               </div>
                <div class="col-md-6">
                 <label>Thân</label>
-                <input type="text" name="ten_chi" class="form-control" id=chi" placeholder="">
+                <input type="text" value="{{ $data[0]->than }}"  name="than" class="form-control" id=dacdiem" placeholder="">
               </div>
               <div class ="col-md-6" >
                 <label for="exampleInputEmail1">Rể</label>
-                <input type="text" name="mo_ta" class="form-control" id="chi" placeholder="">
+                <input type="text" value="{{ $data[0]->re }}"  name="re" class="form-control" id="dacdiem" placeholder="">
               </div>
         
               <div style="clear:both"></div>

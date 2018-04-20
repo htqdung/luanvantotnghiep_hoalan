@@ -27,18 +27,33 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="POST" action="">
-        <input type="hidden" name="_token" value="#">
+      <form role="form" method="POST" action=""  enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
               <div class="col-md-6">
                 <label>Tên loài</label>
-                <input type="text" name="id" class="form-control" id="chi" required placeholder="">
+                <input type="text" name="ten_loai" class="form-control" id="chi" required placeholder="">
+              </div>
+              <div class="col-md-6">
+                <label>Tên khoa học</label>
+                <input type="text" required name="ten_khoa_hoc" class="form-control" id=chi" placeholder="">
+              </div>
+              <div class="col-md-6">
+                <label>Đặc điểm</label>
+                <select id="" name="dacdiem_id"  class="form-control" required>
+                      
+                      @foreach ($dacdiem as $item)
+                        <option value="{{ $item->id }}">Hoa: {{ $item->hoa }}, Lá: {{ $item->la }}, Thân: {{ $item->than }}, Rễ:{{ $item->re }} </option>
+                      @endforeach
+                      
+                      
+                 </select>
               </div>
               <div class="col-md-6">
                 <label>Chi</label>
-                <select id="" name="framework[]"  class="form-control" required>
+                <select id="" name="id_chi"  class="form-control" required>
                       
                       @foreach ($data as $item)
                         <option value="{{ $item->id }}">{{ $item->ten_chi }}</option>
@@ -47,14 +62,11 @@
                       
                  </select>
               </div>
-              <div class="col-md-6">
-                <label>Tên khoa học</label>
-                <input type="text" required name="so_dien_thoai" class="form-control" id=chi" placeholder="">
-              </div>
-              <div class="col-md-6">
-                <label>Mô tả</label>
-                <input type="text" name="email" required class="form-control" id=chi" placeholder="">
-              </div>
+              
+              <div class="col-md-12" style="margin-right: 0; ">
+                    <label for="sp_mota">Mô tả: *</label>
+                    <textarea name="mo_ta" rows="5" cols="30" class="form-control" id="sp_mota" placeholder="Mô tả về sản phẩm này...."></textarea>
+                 </div>
               
         
               <div style="clear:both"></div>
@@ -67,7 +79,7 @@
 
         <div class="box-footer">
           <a class="btn btn-danger" href="{{ route('DANH_MUC_HOA') }}">Quay lại</a>
-          <button type="submit" class="btn btn-primary"> <i class="fa fa-save faa-pulse animated "></i> Lưu lại</button>
+          <button type="submit" class="btn btn-primary">Lưu lại</button>
           <button type="reset" class="btn btn-success">Làm mới</button>
         </div>
       </form>

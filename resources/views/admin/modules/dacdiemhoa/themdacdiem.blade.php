@@ -68,7 +68,7 @@
           <a class="btn btn-danger" href="{{ route('DAC_DIEM_HOA') }}">Quay lại</a>
           
           <button type="submit" class="btn btn-primary"><i class="fa fa-next faa-pulse animated "></i>Lưu lại</button>
-          <button type="reset" class="btn btn-success"><i class="fa  fa-refresh fa-spin"></i> Làm mới</button>
+          <button type="reset" class="btn btn-success"><i class="fa  fa-refresh "></i> Làm mới</button>
         </div>
       </form>
     </div>

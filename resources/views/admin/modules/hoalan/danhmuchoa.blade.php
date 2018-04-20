@@ -9,7 +9,6 @@
 			</li>
 		
 		</ul><!-- /.breadcrumb -->
-
 		<div class="nav-search" id="nav-search">
 			<form class="form-search">
 				<span class="input-icon">
@@ -24,35 +23,39 @@
 		<!-- /.page-header -->
 		 <div class="box box-primary">
 	      <div class="box-header with-border">
-	        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_DANH_MUC_HOA') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm mới</a>
+	        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh  fa-1x fa-fw"></i>Làm mới</a>
+	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_DANH_MUC_HOA') }}"><i class="fa fa-plus-circle  fa-1x fa-fw"></i> Thêm mới</a>
 	      </div>
-		<div class="row" >
-		</div><!-- /.row -->
 		<div class="row">
 			<div class="col-md-12">
 				<table class="table">
 					<h3><b>DANH MỤC HOA</b></h3>
 				    <thead>
 				      <tr>
-				        <th style="width: 5%">Id</th>
-				        <th style="width: 15%">Tên loài</th>
-				         <th style="width: 15%">Tên khoa học</th>
-				         <th style="width: 35%">Mô tả</th>  							   
-				        <th style="width: 30%">Chức năng</th>
+				        <th style="width: 5%">id</th>
+				        <th style="width: 20%">Tên loài</th>
+				         <th style="width:25%">Tên khoa học</th>
+				         <th style="width:35%">Mô tả</th>  
+
+				         <th style="width:15%">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>
+				    	<?php $i=1; ?>
 				    	@foreach ($data as $item)
 				        <tr>
-				      		<td>{{ $item->id }}</td>
+				      		<td><?= $i++;?></td>
 					        <td>{{ $item->ten_loai}}</td>
 					        <td>{{ $item->ten_khoa_hoc }}</td>
 					        <td>{{ $item->mo_ta}}</td>
 					        <td>
-					        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_HOA', $item->id) }}"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-		                    	<a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
-		                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
+					        	
+		                     <td>
+		                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_HOA', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+		                                          
+		                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="#"><i class="fa fa-info-circle"></i></a>
+		                 
+		                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
 		                    </td>
 				      </tr>	
 				      @endforeach			      

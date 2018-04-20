@@ -1,11 +1,14 @@
 <?php
 
 Route::get('qt-admin', 'adminController@getTest')->name('MO_GIAO_DIEN_ADMIN');
-//danh mục hoa
+//danh mục loài hoa
 Route::get('qt-danh-muc-hoa', 'adminController@getdanhmuchoa')->name('DANH_MUC_HOA');
 Route::get('qt-chinh-sua-loai-hoa/{id}', 'adminController@getChinhSuaHoa')->name('CHINH_SUA_HOA');
-Route::get('qt-them-danh-muc-hoa','adminController@themdanhmuchoa')->name('THEM_DANH_MUC_HOA');
+Route::post('qt-chinh-sua-loai-hoa/{id}', 'adminController@postChinhSuaLoaiHoa');
 
+
+Route::get('qt-them-danh-muc-hoa','adminController@themdanhmuchoa')->name('THEM_DANH_MUC_HOA');
+Route::post('qt-them-danh-muc-hoa', 'adminController@postThemLoaiHoa');
 //sản phẩm
 Route::get('qt-danh-sach-san-pham', 'adminController@getdachsachsanpham')->name('DANH_SACH_SAN_PHAM');
 Route::get('qt-them-san-pham','adminController@themsanpham')->name('THEM_SAN_PHAM');
@@ -18,6 +21,10 @@ Route::get('qt-chi-tiet-san-pham/{id}','adminController@chitietsanpham')->name('
 //đặc điểm
 Route::get('qt-dac-diem-hoa', 'adminController@getdacdiemhoa')->name('DAC_DIEM_HOA');
 Route::get('qt-chinh-sua-dac-diem/{id}', 'adminController@chinhsuadacdiem')->name('CHINH_SUA_DAC_DIEM');
+Route::post('qt-chinh-sua-dac-diem/{id}', 'adminController@postChinhSuaDacDiem');
+
+
+
 Route::get('qt-them-dac-diem','adminController@themdacdiem')->name('THEM_DAC_DIEM');
 Route::post('qt-them-dac-diem','adminController@postThemDacDiem');
 

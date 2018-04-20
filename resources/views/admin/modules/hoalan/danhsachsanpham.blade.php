@@ -23,8 +23,8 @@
 		<!-- /.page-header -->
 		 <div class="box box-primary">
 	      <div class="box-header with-border">
-	      	 <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_SAN_PHAM') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm mới</a>
+	      	 <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh  fa-1x fa-fw"></i>Làm mới</a>
+	        <a class="btn btn-primary" style="float: right; padding: 0px" href="{{ route('THEM_SAN_PHAM') }}"><i class="fa fa fa-plus  fa-1x fa-fw"></i> Thêm mới</a>
 	       
 	        
 	      </div>
@@ -44,7 +44,7 @@
 				        <th style="width: 10%">Điểm thưởng</th>
 				        <th style="width: 10%">Tag</th>
 
-				        <th style="width: 5%" colspan="3">Chức năng</th>
+				        <th style="width: 15%">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>
@@ -52,7 +52,7 @@
 				      @foreach ($data as $item)
                   <tr>
                     <td><?= $i++; ?></td>
-                    <td>{{ $item->ten_san_pham }}</td>
+                    <td><a href="{{ route('CHI_TIET_SAN_PHAM', $item->id_sanpham)  }}">{{ $item->ten_san_pham }}</a></td>
                     <td>{{ $item->gia }}</td>
                     <td>{{ $item->thong_tin_chi_tiet}}</td>
                     <td>{{ $item->mo_ta}}</td>
@@ -61,23 +61,20 @@
                     
                     
                     <td>
-                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_SAN_PHAM', $item->id_sanpham)  }}"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
-                      
+                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_SAN_PHAM', $item->id_sanpham)  }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+                                          
+                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="{{ route('CHI_TIET_SAN_PHAM', $item->id_sanpham)  }}"><i class="	fa fa-info-circle"></i></a>
+                 
+                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
+                   
                     </td>
 
-                    <td>
-                     
-                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="{{ route('CHI_TIET_SAN_PHAM', $item->id_sanpham)  }}"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
-                     
-                    </td>
-
-                    <td>
-                      <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
-                    </td>
+                   
                 </tr> 
                 @endforeach    	      
 				    </tbody>
 				  </table>
+				  {{ $data->render() }}
 			</div>
 		</div>
 	</div><!-- /.page-content -->

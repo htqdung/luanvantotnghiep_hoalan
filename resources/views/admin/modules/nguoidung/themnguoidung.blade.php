@@ -32,10 +32,7 @@
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
-              <div class="col-md-6">
-                <label>Id</label>
-                <input type="text" name="id" class="form-control" id="chi" placeholder="">
-              </div>
+             
               <div class="col-md-6">
                 <label>Tên người dùng</label>
                 <input type="text" name="ten_nguoi_dung" class="form-control" id=chi" placeholder="">

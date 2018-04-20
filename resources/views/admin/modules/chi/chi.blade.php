@@ -36,9 +36,9 @@
 				    <thead>
 				      <tr>
 				        <th style="width: 5%">STT</th>
-				        <th style="width: 15%">Tên chi</th>
+				        <th style="width: 25%">Tên chi</th>
 				         <th style="width: 60%">Mô tả</th>							   
-				        <th style="width: 20%">Chức năng</th>
+				        <th style="width: 10%">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>
@@ -49,11 +49,11 @@
 				        <td>{{ $item->ten_chi }}</td>
 		
 				        <td>{{ $item->mo_ta }}</td>
-
-				        <td>
-				        	<a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_CHI', $item->id) }}"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
-	                    	<a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
-	                    </td>
+						<td>
+		                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_CHI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+		                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
+		                    </td>
+				       
 				      </tr>	
 				      
 					  @endforeach

@@ -5,6 +5,7 @@ use App\Loai;
 use App\Chi;
 use App\DacDiem;
 use App\SanPham;
+use App\DonGia;
 use Illuminate\Http\Request;
 use DB;
 use App\HinhThucKhuyenMai;
@@ -15,8 +16,10 @@ class adminController extends Controller
     	return view('admin.trangchu.index');
     	
     }
+//loài hoa
     public function getdanhmuchoa()
     {
+
         $hoalan = DB::table('tbl_loai')->get();
     	return view('admin.modules.hoalan.danhmuchoa', ['data'=>$hoalan]);
     }
@@ -24,16 +27,61 @@ class adminController extends Controller
     public function getChinhSuaHoa($id)
     {
         $hoalan = Loai::findOrFail($id);
-        // echo $hoalan;
-        return view('admin.modules.hoalan.danhmuchoa_chinhsua', ['data'=>$hoalan]);
+        $dacdiem = DB::table('tbl_dacdiem')
+        ->select('id', 'hoa', 'la', 'than', 're')
+        
+        ->orderBy('id', 'desc')
+        ->get();
+        // ->paginate(10);
+
+        $chi = DB::table('tbl_chi')
+        
+        ->select('id', 'ten_chi')
+        ->orderBy('id', 'desc')->get();
+        // ->paginate(10);
+        // return $chi;
+        return view('admin.modules.hoalan.danhmuchoa_chinhsua', ['data'=>$hoalan , 'dacdiem'=>$dacdiem , 'chi'=>$chi]);
     }
     public function themdanhmuchoa()
     {
         $chi = DB::table('tbl_chi')
-        ->select('id', 'ten_chi', 'mo_ta')
+        ->select('id', 'ten_chi')
         ->orderBy('id', 'desc')
         ->paginate(10);
-        return view('admin.modules.hoalan.themdanhmuchoa', ['data'=>$chi]);
+
+        $dacdiem = DB::table('tbl_dacdiem')
+        ->select('id', 'hoa', 'la', 'than', 're')
+        ->orderBy('id', 'desc')
+        ->paginate(10);
+
+        return view('admin.modules.hoalan.themdanhmuchoa', ['data'=>$chi,'dacdiem'=>$dacdiem]);
+    }
+
+    public function postThemLoaiHoa(Request $request)
+    {  
+        $hoalan = new Loai();
+        $hoalan->ten_loai=$request->input('ten_loai');
+        $hoalan->ten_khoa_hoc=$request->input('ten_khoa_hoc');
+        $hoalan->chi_id=$request->input('id_chi');
+        $hoalan->dacdiem_id=$request->input('dacdiem_id');
+        $hoalan->mo_ta=$request->input('mo_ta');
+        $hoalan->save();
+
+
+
+        return redirect()->intended('qt-danh-muc-hoa');
+
+    }
+
+    public function postChinhSuaLoaiHoa(Request $request,$id)
+    {
+        $hoalan = SanPham::findOrFail($id);
+        $hoalan->ten_loai=$request->input('ten_loai');
+        $hoalan->ten_khoa_hoc=$request->input('ten_khoa_hoc');
+        
+        $hoalan->mo_ta=$request->input('mo_ta');
+        $hoalan->save();
+        return redirect()->intended('qt-danh-muc-hoa');
     }
 //sản phẩm
     public function getdachsachsanpham()
@@ -43,15 +91,16 @@ class adminController extends Controller
 
         ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','thong_tin_chi_tiet','mo_ta','diem_thuong','tag')
         ->orderBy('id_sanpham','desc')
-        ->get();
+        ->paginate(5);
         // return $nguoidung;
        
     	return view('admin.modules.hoalan.danhsachsanpham',['data'=>$sanpham]);
     }
     public function themsanpham()
     {
+        
         $hoalan = DB::table('tbl_loai')->get();
-
+        // return $tmp2;
         return view('admin.modules.hoalan.themdanhsachsanpham', ['data'=>$hoalan]);
     }
     public function chinhsuasanpham($id)
@@ -66,14 +115,15 @@ class adminController extends Controller
         ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
         ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','thong_tin_chi_tiet','mo_ta','diem_thuong','tag')
         ->where('tbl_sanpham.id', '=', $id)
-        ->get();
+        ->get()->toArray();
 
         $hinhanhsp = DB::table('tbl_hinhanh')
         ->join('tbl_sanpham', 'tbl_hinhanh.sanpham_id' ,'=', 'tbl_sanpham.id')
         ->select('ten_hinh')
         ->where('tbl_hinhanh.sanpham_id', '=', $id)
+        ->limit(1)
         ->get();
-           // return $sanpham;
+       
         // return $hinhanhsp;
         return view('admin.modules.hoalan.chinhsuasanpham', ['data_dmhoa'=>$danhmuahoachosanpham, 'data_sp'=>$sanpham, 'data_hinhanh'=>$hinhanhsp]);
     }
@@ -88,6 +138,13 @@ class adminController extends Controller
         $sanpham->tag=$request->input('tag');  
         
         $sanpham->save();
+
+
+        $select_dongia = DB::table('tbl_sanpham')
+        ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
+        ->select('tbl_dongia.id as id_dongia')
+        ->where('tbl_sanpham.id', '=', $id)
+        ->get();
          return redirect()->intended('qt-danh-sach-san-pham');
     }
 
@@ -119,14 +176,31 @@ class adminController extends Controller
     public function postThemSanPham(Request $request)
     {
         $sanpham = new SanPham();
+
         $sanpham->ten_san_pham=$request->input('ten_san_pham');
-      //  $sanpham->gia=$request->input('don_gia');
+     //$sanpham->gia=$request->input('don_gia');
         $sanpham->thong_tin_chi_tiet=$request->input('kich_thuoc');
         $sanpham->mo_ta=$request->input('mo_ta');
         $sanpham->diem_thuong=$request->input('diem_thuong');
         $sanpham->tag=$request->input('tag');  
        // $sanpham->hinhanhsp=$request->input('hinh_anh');
         $sanpham->save();
+    
+        $last_sanpham = DB::table('tbl_sanpham')
+        ->select('id')
+        ->orderBy('id','desc')
+        ->first();
+        $tmp1 = json_encode($last_sanpham);
+        $tmp =  ltrim($tmp1, '{"id":');
+        // $tmp = str_replace($tmp1,'{"id":', '');
+        $tmp2 = rtrim($tmp,'}');
+  
+     
+        $dongia = new DonGia();
+        $dongia->sanpham_id=$tmp2;
+        $dongia->gia=$request->input('don_gia');
+        $dongia->save();
+        // return $last_sanpham;
          return redirect()->intended('qt-danh-sach-san-pham');
         //return $this::getdachsachsanpham();
     }
@@ -165,7 +239,17 @@ class adminController extends Controller
         return $this::getdacdiemhoa();
     }
 
-
+    public function postChinhSuaDacDiem(Request $request,$id)
+    {
+         $dacdiem = DacDiem::findOrFail($id);
+        $dacdiem->hoa=$request->input('hoa');
+      
+        $dacdiem->la=$request->input('la');
+        $dacdiem->than=$request->input('than');
+        $dacdiem->re=$request->input('re');
+        $dacdiem->save();
+         return redirect()->intended('qt-dac-diem-hoa');
+    }
 
 
 //chi

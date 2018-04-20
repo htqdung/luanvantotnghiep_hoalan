@@ -18,13 +18,12 @@
 			</form>
 		</div><!-- /.nav-search -->
 	</div>
-
 	<div class="page-content">
 		<!-- /.page-header -->
 		 <div class="box box-primary">
 	      <div class="box-header with-border">
-	        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_DAC_DIEM') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm mới</a>
+	        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh  fa-1x fa-fw"></i>Làm mới</a>
+	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_DAC_DIEM') }}"><i class="fa fa-plus-circle  fa-1x fa-fw"></i> Thêm mới</a>
 	      </div>
 		<div class="row" >
 		</div><!-- /.row -->
@@ -35,11 +34,11 @@
 				    <thead>
 				      <tr>
 				        <th style="width: 5%">STT</th>
-				        <th style="width: 15%">Tên hoa</th>
-				         <th style="width: 15%">Lá</th>
+				        <th style="width: 20%">Tên hoa</th>
+				         <th style="width: 25%">Lá</th>
 				         <th style="width: 20%">Thân</th>
-				         <th style="width: 15%">Rể</th>  							   
-				        <th style="width: 5%" colspan="3">Chức năng</th>
+				         <th style="width: 20%">Rể</th>  							   
+				        <th style="width: 10%" >Chức năng</th>
 				      </tr>
 				    </thead>
 				        <tbody>
@@ -52,14 +51,12 @@
                     <td>{{ $item->than}}</td>
                     <td>{{ $item->re}}</td>
                     
+                    <td>
+		                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_DAC_DIEM', $item->id)  }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+		                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
+		                    </td>
                     
-                    <td>
-                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_DAC_DIEM', $item->id)  }}"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
-                      
-                    </td>
-                    <td>
-                      <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
-                    </td>
+                   
                 </tr> 
                 @endforeach           
               </tbody>           

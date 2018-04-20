@@ -52,8 +52,8 @@
                   <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->ten_hinh_thuc}}</td>
-                    <td>{{ $item->created_at}}</td>
-                    <td>{{ $item->created_at}}</td>
+                    <td>{{ $item->ngay_bat_dau}}</td>
+                    <td>{{ $item->ngay_ket_thuc}}</td>
                     <td>{{ $item->ti_le_giam_gia}}</td>
                   
                                    
