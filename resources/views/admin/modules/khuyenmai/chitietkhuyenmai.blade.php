@@ -3,13 +3,8 @@
 
   <!-- left column -->
   <div class="col-md-12">
-			
-    <!-- general form elements -->
+		<!-- general form elements -->
     <div class="box box-primary">
-
-		
-
-
       <div class="box-header with-border">
       	 <div class="nav-search" id="nav-search">
 			      <form class="form-search">
@@ -31,16 +26,11 @@
               <div class="col-md-6 form-group img-rounded" >
                   <div style="margin-left: 20%; padding-top: 10px " >
                       <a href=""> <img src="#" class="img-rounded" alt="Hình đại diện" style="width: 286px; height: 370px">  </a>
-                     
-                      
                   </div>
-              
-                  
               </div>
               <div class="col-md-6"  style="padding-top: 10px">
                 <div class="">
                   <table class="table table-condensed">
-                
                     <tbody>
                     	 <tr>
                         <th style="width: 30%">Tên khuyến mãi: </th>
@@ -63,15 +53,11 @@
                       <tr>
                         <th style="width: 30%">Ngày bắt đầu : </th>
                         <td></td>
-                        
                       </tr>
                       <tr>
                         <th style="width: 30%">Ngày kết thúc: </th>
                         <td></td>
-                        
                       </tr>
-                     
-                      
                     </tbody>
                   </table>
                 </div> 

@@ -13,14 +13,13 @@ class adminController extends Controller
 {
     public function getTest()
     {
-    	return view('admin.trangchu.index');
-    	
+    	return view('admin.trangchu.index');	
     }
 //loài hoa
     public function getdanhmuchoa()
     {
 
-        $hoalan = DB::table('tbl_loai')->get();
+        $hoalan = DB::table('tbl_loai')->paginate(10);
     	return view('admin.modules.hoalan.danhmuchoa', ['data'=>$hoalan]);
     }
 
@@ -293,7 +292,10 @@ class adminController extends Controller
         ->join('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
         ->join('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_thongtinlienhe.ten','so_nha', 'ten_duong','so_dien_thoai', 'email', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho')
-        ->get();
+        ->paginate(10);
+
+
+
         // return $nguoidung;
         return view('admin.modules.nguoidung.danhsachnguoidung' , ['data'=>$nguoidung]);
     }
@@ -305,7 +307,34 @@ class adminController extends Controller
     {
         return view('admin.modules.nguoidung.chinhsuanguoidung');
     }
+    public function ChiTietNguoiDung($id)
+    {
+         $donhang = DB::table('tbl_donhang')
+        ->leftJoin('tbl_nguoidung','tbl_donhang.nguoidung_id', '=', 'tbl_nguoidung.id')
+        ->leftJoin('tbl_thongtinlienhe','tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
+        ->leftJoin('tbl_trangthai_donhang','tbl_donhang.id','=','tbl_trangthai_donhang.donhang_id')
+        ->leftJoin('tbl_trangthai','tbl_trangthai.id','=','tbl_trangthai_donhang.trangthai_id')
+        ->leftJoin('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
+        ->leftJoin('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
+        ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
+        ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
+        ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','hinh_thuc_thanh_toan', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
+        ->where('tbl_donhang.nguoidung_id','=',$id)
+        ->orderBy('tbl_donhang.id', 'desc')
+        ->paginate(5);
 
+        $nguoidung = DB::table('tbl_nguoidung')
+        ->join('tbl_thongtinlienhe','tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
+        ->join('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
+        ->join('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
+        ->join('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
+        ->join('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
+        ->select('tbl_nguoidung.id as id_nguoidung','tbl_thongtinlienhe.ten','so_nha', 'ten_duong','so_dien_thoai', 'email', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho')
+        ->where('tbl_nguoidung.id','=',$id)
+        ->get();
+        // return $nguoidung;
+       return view('admin.modules.nguoidung.chitietnguoidung',['data'=>$donhang,'nguoidung'=>$nguoidung]);
+    }
 //khuyến mãi
 
     public function getdanhsachkhuyenmai()
@@ -316,7 +345,7 @@ class adminController extends Controller
         ->leftJoin('tbl_hinhthuckhuyenmai','tbl_chuongtrinhkhuyenmai.hinhthuckhuyenmai_id','=','tbl_hinhthuckhuyenmai.id')
         ->leftJoin('tbl_quatang', 'tbl_quatang.hinhthuckhuyenmai_id', '=', 'tbl_quatang.id')
         ->orderBy('tbl_chuongtrinhkhuyenmai.id', 'DESC')
-        ->get();
+        ->paginate(10);
        // return $chuongtrinhkhuyenmai;
         return view('admin.modules.khuyenmai.danhsachkhuyenmai' , ['data'=>$chuongtrinhkhuyenmai]);
     }
@@ -368,12 +397,11 @@ class adminController extends Controller
 //ưu đãi
     public function danhsachuudai()
     {
-          $uudai = DB::table('tbl_uudai')
+        $uudai = DB::table('tbl_uudai')
         ->select('tbl_uudai.id','tbl_sanpham.ten_san_pham', 'so_luong_toi_thieu', 'ti_le_giam_gia')
-         ->leftJoin('tbl_hinhthucuudai', 'tbl_hinhthucuudai.sanpham_id', '=', 'tbl_hinhthucuudai.id')
-          ->leftJoin('tbl_sanpham', 'tbl_hinhthucuudai.sanpham_id', '=', 'tbl_sanpham.id')
-   
-        ->get();
+        ->leftJoin('tbl_hinhthucuudai', 'tbl_hinhthucuudai.sanpham_id', '=', 'tbl_hinhthucuudai.id')
+        ->leftJoin('tbl_sanpham', 'tbl_hinhthucuudai.sanpham_id', '=', 'tbl_sanpham.id')
+        ->paginate(10);
        // return ($uudai) ;
         return view('admin.modules.khuyenmai.uudai',['data'=>$uudai]);
     }
@@ -416,7 +444,8 @@ class adminController extends Controller
         ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','hinh_thuc_thanh_toan', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
-        ->get();
+
+        ->paginate();
 
         return view('admin.modules.donhang.tatcadonhang', ['data'=>$donhang]);
     }
@@ -432,7 +461,8 @@ class adminController extends Controller
         ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','hinh_thuc_thanh_toan', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
-        ->get();
+        ->where('tbl_trangthai.ten_trang_thai' , '=', 'Đang giao')
+        ->paginate();
 
         return view('admin.modules.donhang.tatcadonhang', ['data'=>$donhang]);
     }
@@ -448,8 +478,34 @@ class adminController extends Controller
         ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','hinh_thuc_thanh_toan', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
-        ->get();
+        ->where('tbl_trangthai.ten_trang_thai' , '=', 'Đã xử lý')
+        ->paginate(10);
 
         return view('admin.modules.donhang.tatcadonhang', ['data'=>$donhang]);
+    }
+
+
+
+    public function getDanhSachDonHangDaGiao()
+    {
+        $donhang = DB::table('tbl_donhang')
+        ->leftJoin('tbl_nguoidung','tbl_donhang.nguoidung_id', '=', 'tbl_nguoidung.id')
+        ->leftJoin('tbl_thongtinlienhe','tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
+        ->leftJoin('tbl_trangthai_donhang','tbl_donhang.id','=','tbl_trangthai_donhang.donhang_id')
+        ->leftJoin('tbl_trangthai','tbl_trangthai.id','=','tbl_trangthai_donhang.trangthai_id')
+        ->leftJoin('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
+        ->leftJoin('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
+        ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
+        ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
+        ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','hinh_thuc_thanh_toan', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
+        ->where('tbl_trangthai.ten_trang_thai' , '=', 'Đã giao')
+        ->paginate(10);
+
+        return view('admin.modules.donhang.tatcadonhang', ['data'=>$donhang]);
+    }
+//báo cáo
+    public function getBaoCao()
+    {
+        return view('admin.modules.baocao.baocao');
     }
 }

@@ -6,7 +6,7 @@
     <ul class="breadcrumb">
       <li>
         <i class="ace-icon fa fa-home home-icon"></i>
-        <a href="# ">Trang chủ</a>
+<a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
     
     </ul><!-- /.breadcrumb -->
@@ -25,7 +25,7 @@
     <!-- /.page-header -->
      <div class="box box-primary">
         <div class="box-header with-border">
-          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
+          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh  fa-1x fa-fw"></i>Làm mới</a>
          
         </div>
     <div class="row" >
@@ -58,12 +58,8 @@
 
                     <td>
                      
-                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
+                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="{{ route('CHI_TIET_NGUOI_DUNG', $item->id_nguoidung) }}"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
                      
-                    </td>
-
-                    <td>
-                      <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
                     </td>
                 </tr> 
                 @endforeach           

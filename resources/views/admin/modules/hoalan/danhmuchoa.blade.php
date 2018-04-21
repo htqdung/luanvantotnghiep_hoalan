@@ -48,9 +48,7 @@
 					        <td>{{ $item->ten_loai}}</td>
 					        <td>{{ $item->ten_khoa_hoc }}</td>
 					        <td>{{ $item->mo_ta}}</td>
-					        <td>
-					        	
-		                     <td>
+		                    <td>
 		                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_HOA', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 		                                          
 		                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="#"><i class="fa fa-info-circle"></i></a>
@@ -61,6 +59,7 @@
 				      @endforeach			      
 				    </tbody>
 				  </table>
+					{{ $data->render() }}
 			</div>
 		</div>
 	</div><!-- /.page-content -->

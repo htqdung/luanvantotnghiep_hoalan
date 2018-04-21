@@ -21,23 +21,17 @@
                   <th style="width: 13%">Hình thức</th>
                   <th style="width: 10%">Kích thước</th>
                   <th style="width: 7%">Điểm thưởng</th>
-                   <th style="width: 20%">Mô tả </th>
+                  <th style="width: 20%">Mô tả </th>
                   <th style="width: 7%">Tag</th>
                   <th colspan="3" style="width: 10%">Chức năng</th>
-                  
                 </tr>
                 </thead>
-                
-
               </table>
-            
             </div>
             <!-- /.box-body -->
           </div>
     </div>
     <!-- /.box -->
-
-  
   </div>
   <!--/.col (right) -->
 </div>

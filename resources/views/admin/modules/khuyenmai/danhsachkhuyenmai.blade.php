@@ -6,7 +6,7 @@
     <ul class="breadcrumb">
       <li>
         <i class="ace-icon fa fa-home home-icon"></i>
-        <a href="# ">Trang chủ</a>
+        <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
     
     </ul><!-- /.breadcrumb -->
@@ -25,8 +25,8 @@
     <!-- /.page-header -->
      <div class="box box-primary">
         <div class="box-header with-border">
-          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-          <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_KHUYEN_MAI') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm mới</a>
+          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="{{ route('DANH_SACH_KHUYEN_MAI') }}"><i class="fa fa-refresh fa-1x fa-fw"></i>Làm mới</a>
+          <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_KHUYEN_MAI') }}"><i class="fa fa-plus-circle fa-1x fa-fw"></i> Thêm mới</a>
         </div>
     <div class="row" >
     </div><!-- /.row -->
@@ -35,39 +35,31 @@
         <table class="table">
           <h3><b>DANH SÁCH KHUYẾN MẠI</b></h3>
                   <thead>
-                  <tr style="margin: 0px">
-                    <th style="width: 3%">Id</th>
-                    <th style="width: 20%">Tên khuyến mại</th>
-                    <th style="width: 15%">Ngày bắt đầu </th>
-                    <th style="width: 15%">Ngày kết thúc</th>
-                    <th style="width: 10%">Tỉ lệ giảm</th>
-                  
-                   
-                    <th colspan="3" style="width: 20%; text-align: center;">Chức năng</th>
-                    
-                  </tr>
+                    <tr style="margin: 0px">
+                      <th style="width: 3%">Id</th>
+                      <th style="width: 20%">Tên khuyến mại</th>
+                      <th style="width: 15%">Ngày bắt đầu </th>
+                      <th style="width: 15%">Ngày kết thúc</th>
+                      <th style="width: 10%">Tỉ lệ giảm</th>
+                      <th colspan="3" style="width: 20%; text-align: center;">Chức năng</th>
+                    </tr>
                   </thead>
-                   <tbody>
+                <tbody>
                 @foreach ($data as $item)
                   <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->ten_hinh_thuc}}</td>
                     <td>{{ $item->ngay_bat_dau}}</td>
                     <td>{{ $item->ngay_ket_thuc}}</td>
-                    <td>{{ $item->ti_le_giam_gia}}</td>
-                  
-                                   
+                    <td>{{ $item->ti_le_giam_gia}}</td>           
                     <td>
-                            <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="{{ route('CHI_TIET_KHUYEN_MAI', $item->id) }}"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
-                           
+                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="{{ route('CHI_TIET_KHUYEN_MAI', $item->id) }}"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
                     </td>
-                     <td>
-                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_KHUYEN_MAI', $item->id) }}"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-                           
+                    <td>
+                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_KHUYEN_MAI', $item->id) }}"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
                     </td>
-                     <td>
-                     
-                            <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
+                    <td>
+                      <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
                     </td>
                 </tr> 
                 @endforeach           

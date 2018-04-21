@@ -4,8 +4,7 @@
 	<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 		<ul class="breadcrumb">
 			<li>
-				<i class="ace-icon fa fa-home home-icon"></i>
-				<a href="#">Trang chủ</a>
+				<i class="ace-icon fa fa-home home-icon"></i><a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
 			</li>	
 		</ul><!-- /.breadcrumb -->
 		<div class="nav-search" id="nav-search">

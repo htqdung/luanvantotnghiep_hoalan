@@ -9,7 +9,7 @@
     <ul class="breadcrumb">
       <li>
         <i class="ace-icon fa fa-home home-icon"></i>
-        <a href="# ">Trang chủ</a>
+        <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
     
     </ul><!-- /.breadcrumb -->

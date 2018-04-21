@@ -6,7 +6,7 @@
     <ul class="breadcrumb">
       <li>
         <i class="ace-icon fa fa-home home-icon"></i>
-        <a href="# ">Trang chủ</a>
+        <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
     
     </ul><!-- /.breadcrumb -->
@@ -43,7 +43,7 @@
                 @foreach ($data as $item)
                   <tr>
                     <td>{{ $item->id }}</td>
-                    <td>{{ $item->ngay_dat_hang }}</td>
+                    <td>{{ date('d-m-Y', strtotime($item->ngay_dat_hang)) }}</td>
                    
                     <td>{{ $item->so_nha}}, {{ $item->ten_duong }}, {{ $item->ten_phuong_xa }}, {{ $item->ten_quan_huyen}} , {{ $item->ten_tinh_thanhpho }}</td>
                      <td>{{ $item->hinh_thuc_thanh_toan}}</td>

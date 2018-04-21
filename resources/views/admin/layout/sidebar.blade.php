@@ -90,6 +90,13 @@
                       <b class="arrow"></b>
                   </li>
                   <li class="">
+                      <a href="{{ route('DON_HANG_DA_GIAO') }}">
+                <i class="menu-icon fa fa-caret-right"></i>
+                Đã giao
+              </a>
+                      <b class="arrow"></b>
+                  </li>
+                  <li class="">
                       <a href="{{ route('DON_HANG_DANG_XU_LY') }}">
   							<i class="menu-icon fa fa-caret-right"></i>
   							Đang xử lý
@@ -139,7 +146,7 @@
               </ul>
           </li>
           <li class="">
-              <a href="#" class="dropdown-toggle">
+              <a href="{{ route('DANH_SACH_BAO_CAO') }}" >
   					<i class="menu-icon fa  fa-bar-chart-o"></i>
   					<span class="menu-text">Báo cáo </span>						
   				</a>

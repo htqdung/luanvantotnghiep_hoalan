@@ -8,7 +8,7 @@
         <div class="box-header with-border">
         <h3 class="box-title">Chi tiết sản phẩm</h3>
         <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="{{ route('DANH_SACH_SAN_PHAM') }}">
-          <i class="  fa fa-hand-o-left"></i>  Quay lại</a>
+          <i class="fa fa-hand-o-left"></i>  Quay lại</a>
         
        </div>  
       </div>

@@ -38,7 +38,7 @@ Route::get('qt-chinh-sua-chi/{id}', 'adminController@chinhsuachi')->name('CHINH_
 Route::get('qt-danh-sach-nguoi-dung', 'adminController@getnguoidung')->name('DANH_SACH_NGUOI_DUNG');
 Route::get('them-nguoi-dung', 'adminController@themnguoidung')->name('THEM_NGUOI_DUNG');
 Route::get('chinh-sua-nguoi-dung/{id}', 'adminController@chinhsuanguoidung')->name('CHINH_SUA_NGUOI_DUNG');
-
+Route::get('qt-chi-tiet-nguoi-dung/{id}', 'adminController@ChiTietNguoiDung')->name('CHI_TIET_NGUOI_DUNG');
 
 //khuyến mãi
 Route::get('qt-danh-sach-khuyen-mai', 'adminController@getdanhsachkhuyenmai')->name('DANH_SACH_KHUYEN_MAI');
@@ -57,6 +57,11 @@ Route::get('qt-them-qua-tang','adminController@themquatang')->name('THEM_QUA_TAN
 Route::get('qt-chinh-sua-qua-tang/{id}','adminController@chinhsuaquatang')->name('CHINH_SUA_QUA_TANG');
 //đơn hàng
 Route::get('qt-tat-ca-don-hang','adminController@tatcadonhang')->name('TAT_CA_DON_HANG');
+
+Route::get('qt-don-hang-da-giao','adminController@getDanhSachDonHangDaGiao')->name('DON_HANG_DA_GIAO');
 Route::get('qt-don-hang-dang-giao','adminController@donhangdanggiao')->name('DON_HANG_DANG_GIAO');
 Route::get('qt-don-hang-dang-xu-ly','adminController@donhangdangxuly')->name('DON_HANG_DANG_XU_LY');
+
+//báo cáo
+Route::get('qt-bao-cao','adminController@getBaoCao')->name('DANH_SACH_BAO_CAO');
 ?>

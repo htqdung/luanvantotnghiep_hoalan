@@ -5,7 +5,7 @@
 		<ul class="breadcrumb">
 			<li>
 				<i class="ace-icon fa fa-home home-icon"></i>
-				<a href="#">Trang chủ</a>
+        			<a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
 			</li
 		</ul><!-- /.breadcrumb -->
 
@@ -50,10 +50,9 @@
                     <td>{{ $item->la}}</td>
                     <td>{{ $item->than}}</td>
                     <td>{{ $item->re}}</td>
-                    
                     <td>
-		                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_DAC_DIEM', $item->id)  }}"><i class="fa fa fa-pencil fa-fw"></i></a>
-		                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
+	                  <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_DAC_DIEM', $item->id)  }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+	                  <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
 		                    </td>
                     
                    
