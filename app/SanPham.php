@@ -42,4 +42,14 @@ class SanPham extends Model
     {
         return $this->hasMany('App\DonGia','sanpham_id','id');
     }
+
+    public function tbl_kho()
+    {
+        return $this->hasMany('App\Kho','sanpham_id','id');
+    }
+
+    public function loai()
+    {
+        return $this->belongsToMany('App\Loai','tbl_sanpham_loai','sanpham_id','loai_id');
+    }
 }

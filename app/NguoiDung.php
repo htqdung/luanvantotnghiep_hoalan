@@ -2,11 +2,15 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class NguoiDung extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class NguoiDung extends Authenticatable
 {
     protected $table = "tbl_nguoidung";
+
+    protected $fillable = [
+        'username', 'password',
+    ];
+
 
     public function tbl_danhgia()
     {

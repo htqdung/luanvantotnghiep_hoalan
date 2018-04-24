@@ -17,7 +17,7 @@ class CreateDongiaTable extends Migration
             $table->increments('id');
             $table->integer('sanpham_id')->unsigned();
             $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
-            $table->string('gia', 20);
+            $table->integer('gia');
             $table->dateTimeTz('ngay_ap_dung');
             $table->timestamps();
         });

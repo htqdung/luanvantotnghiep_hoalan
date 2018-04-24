@@ -12,16 +12,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--//tags -->
 <!-- css -->
-<link rel="stylesheet" type="text/css" href="trangchinh_asset/css/jquery-ui.css"> 
-<link href="trangchinh_asset/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="trangchinh_asset/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="trangchinh_asset/css/font-awesome.css" rel="stylesheet"> 
-<link href="trangchinh_asset/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
-<link rel="stylesheet" href="trangchinh_asset/css/flexslider.css" type="text/css" media="screen" />
-<link href="trangchinh_asset/css/team.css" rel="stylesheet" type="text/css" media="all" />
-<link href="trangchinh_asset/css/fonts_1.css" rel="stylesheet">
-<link href='trangchinh_asset/css/fonts_2.css' rel='stylesheet' type='text/css'>
-<link href="trangchinh_asset/css/style.default.css" rel="stylesheet">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="stylesheet" href="app/css/all.css">
 
 <!-- //css -->
 
@@ -31,6 +23,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	@include('trangchinh.layout.header')
 
 	@include('trangchinh.layout.menu')
+	@foreach(['success','danger'] as $item)
+		@if(session($item))
+			<div class="flash-message">
+				<div class="alert alert-{{ $item }}" role="alert" style="position: absolute;right: 10px;top: 20px">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<strong class="font-weight-100 font-size-14">{{ session($item) }}  </strong>
+				</div>
+			</div>
+
+		@endif
+	@endforeach
 
 	<div>
 		@yield('content')
@@ -46,27 +49,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="trangchinh_asset/js/modernizr.custom.js"></script>
 <script type="text/javascript" src="trangchinh_asset/js/bootstrap.js"></script>
 <!-- //js -->
-
-<!-- cart-js -->
-<script src="trangchinh_asset/js/minicart.min.js"></script>
-<script>
-	// Mini Cart
-	paypal.minicart.render({
-		action: '#'
-	});
-
-	if (~window.location.search.indexOf('reset=true')) {
-		paypal.minicart.reset();
-	}
-</script>
-<!-- //cart-js --> 
-
-<!-- Script for responsive tabs -->						
 <script src="trangchinh_asset/js/easy-responsive-tabs.js"></script>
 <script>
 	$(document).ready(function () {
 	$('#horizontalTab').easyResponsiveTabs({
-	type: 'default', //Types: default, vertical, accordion           
+	type: 'default', //Types: default, vertical, accordion
 	width: 'auto', //auto or any width like 600px
 	fit: true,   // 100% fit in a container
 	closed: 'accordion', // Start closed if in accordion view
@@ -87,17 +74,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 <!-- //Script for responsive tabs -->
 
-<!-- Stats -->
-	<script src="trangchinh_asset/js/jquery.waypoints.min.js"></script>
-	<script src="trangchinh_asset/js/jquery.countup.js"></script>
-	<script>
-		$('.counter').countUp();
-	</script>
-<!-- //Stats -->
-
-<!-- Start-smoth-scrolling -->
-<script type="text/javascript" src="trangchinh_asset/js/move-top.js"></script>
-<script type="text/javascript" src="trangchinh_asset/js/jquery.easing.min.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -106,37 +82,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script>
-<!-- //End-smoth-scrolling -->
-
-<!-- Starts scrolling icon -->
-	<script type="text/javascript">
-		$(document).ready(function() {				
-			$().UItoTop({ easingType: 'easeOutQuart' });			
-			});
-	</script>
-<!-- //Ends scrolling icon -->
-
-<script src="trangchinh_asset/js/responsiveslides.min.js"></script>
-<script>
-	$(function () {
-	// Slideshow 4
-	$("#slider3").responsiveSlides({
-		auto: true,
-		pager: true,
-		nav: false,
-		speed: 500,
-		namespace: "callbacks",
-		before: function () {
-			$('.events').append("<li>before event fired.</li>");
-		},
-		after: function () {
-			$('.events').append("<li>after event fired.</li>");
-		}
-	});
-});
-</script>
-<script src="trangchinh_asset/js/modernizr.custom.js"></script>
-<!-- Custom-JavaScript-File-Links --> 
 
 <!---->
 <script type='text/javascript'>
@@ -155,30 +100,6 @@ $(window).load(function(){
 <script type="text/javascript" src="trangchinh_asset/js/jquery-ui.js"></script>
 <!---->
 
-<!-- script for responsive tabs -->						
-<script src="trangchinh_asset/js/easy-responsive-tabs.js"></script>
-<script>
-	$(document).ready(function () {
-	$('#horizontalTab').easyResponsiveTabs({
-	type: 'default', //Types: default, vertical, accordion           
-	width: 'auto', //auto or any width like 600px
-	fit: true,   // 100% fit in a container
-	closed: 'accordion', // Start closed if in accordion view
-	activate: function(event) { // Callback function if tab is switched
-	var $tab = $(this);
-	var $info = $('#tabInfo');
-	var $name = $('span', $info);
-	$name.text($tab.text());
-	$info.show();
-	}
-	});
-	$('#verticalTab').easyResponsiveTabs({
-	type: 'vertical',
-	width: 'auto',
-	fit: true
-	});
-	});
-</script>
 
 <!-- FlexSlider -->
 <script src="trangchinh_asset/js/jquery.flexslider.js"></script>
@@ -192,28 +113,6 @@ $(window).load(function(){
 </script>
 <!-- //FlexSlider-->
 
-<!-- //script for responsive tabs -->	
-
-<!-- single -->
-<script src="trangchinh_asset/js/imagezoom.js"></script>
-<!-- single -->
-
-<script type='text/javascript' src="trangchinh_asset/js/codex-fly.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('.add-to-cart').on('click',function(){
-        //Scroll to top if cart icon is hidden on top
-        $('html, body').animate({
-            'scrollTop' : $(".w3view-cart").position().top
-        });
-        //Select item image and pass to the function
-        var itemImg = $(this).parent().find('img').eq(0);
-        flyToElement($(itemImg), $('.w3view-cart'));
-    });
-});
-</script>
-
-<!-- //script -->
 
 </body>
 </html>

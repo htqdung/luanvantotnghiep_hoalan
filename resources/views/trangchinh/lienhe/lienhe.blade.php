@@ -65,28 +65,19 @@
 					</div>
 					<div style="background-color: #F2F2F2" class="col-md-6 contact-form" >
 						<h4 class="white-w3ls" style="color: #111" >Liên hệ với chúng tôi</h4>
-						<form action="#" method="post">
-							<div class="styled-input agile-styled-input-top">
-								<input type="text" name="Name" required="">
-								<label>Họ tên</label>
-								<span></span>
-							</div>
+						<form action="{{ route('frontend.save.contact') }}" method="post" >
+							<input type="hidden" value="{{ csrf_token() }}" name="_token">
 							<div class="styled-input">
-								<input type="email" name="Email" required=""> 
-								<label>Email</label>
-								<span></span>
-							</div> 
-							<div class="styled-input">
-								<input type="text" name="Subject" required="">
+								<input type="text" name="tieu_de" required="">
 								<label>Tiêu đề</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<textarea name="Message" required=""></textarea>
+								<textarea name="noi_dung" required=""></textarea>
 								<label>Nội dung</label>
 								<span></span>
 							</div>	 
-							<input style="background-color: #62bcfa" type="submit" value="Gửi">
+							<input style="background-color: #62bcfa" style="display: block !important" type="submit" value="Gửi">
 						</form>
 					</div>
 				</div>

@@ -16,7 +16,7 @@ class CreateQuatangTable extends Migration
         Schema::create('tbl_quatang', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ten_qua_tang', 200);
-            $table->string('so_luong', 10);
+            $table->integer('so_luong');
             $table->integer('hinhthuckhuyenmai_id')->unsigned();
             $table->foreign('hinhthuckhuyenmai_id')->references('id')->on('tbl_hinhthuckhuyenmai')->onDelete('cascade');
             $table->timestamps();

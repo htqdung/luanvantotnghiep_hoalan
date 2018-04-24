@@ -15,8 +15,8 @@ class CreateUudaiTable extends Migration
     {
         Schema::create('tbl_uudai', function (Blueprint $table) {
             $table->increments('id');
-             $table->string('so_luong_toi_thieu', 10);
-            $table->string('ti_le_giam_gia', 10);
+            $table->integer('so_luong_toi_thieu');
+            $table->integer('ti_le_giam_gia');
             $table->timestamps();
         });
     }

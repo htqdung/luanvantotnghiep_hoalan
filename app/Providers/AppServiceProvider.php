@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Loai;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('trangchinh.layout.menu',function($view){
+            $loai_sp = Loai::all();
+            $view->with('loai_sp',$loai_sp);
+        });
     }
 
     /**

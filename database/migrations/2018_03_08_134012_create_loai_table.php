@@ -17,7 +17,7 @@ class CreateLoaiTable extends Migration
             $table->increments('id');
             $table->string('ten_loai', 200)->unique();
             $table->string('ten_khoa_hoc', 200)->unique();
-            $table->text('mo_ta', 200)->nullable();
+            $table->text('mo_ta')->nullable();
             $table->integer('chi_id')->unsigned();
             $table->foreign('chi_id')->references('id')->on('tbl_chi')->onDelete('cascade');
             $table->integer('dacdiem_id')->unsigned();

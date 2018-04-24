@@ -19,8 +19,9 @@ class CreateChitietdonhangTable extends Migration
             $table->foreign('donhang_id')->references('id')->on('tbl_donhang')->onDelete('cascade');
             $table->integer('sanpham_id')->unsigned();
             $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
-            $table->string('so_luong', 10);
-            $table->string('thanh_tien', 20);
+            $table->integer('don_gia');
+            $table->integer('so_luong');
+            $table->integer('thanh_tien');
             $table->timestamps();
         });
     }

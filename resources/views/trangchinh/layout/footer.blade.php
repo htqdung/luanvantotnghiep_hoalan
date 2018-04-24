@@ -2,8 +2,8 @@
 		<div class="coupons-grids text-center">
 			<div class="w3layouts_mail_grid">
 				<div class="col-md-3 w3layouts_mail_grid_left " >
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out " style="background-color: #62bcfa">
-						<i class="fa fa-truck" style="color:#fff" aria-hidden="true"></i>
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out " style="background-color: #4E7AC7">
+						<i class="fa fa-truck" style="color:#111" aria-hidden="true"></i>
 					</div>
 					<div class="w3layouts_mail_grid_left2">
 						<h3>MIỄN PHÍ VẬN CHUYỂN</h3>
@@ -11,7 +11,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out"  style="background-color: #62bcfa">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out"  style="background-color: #4E7AC7">
 						<i class="fa fa-headphones" style="color: #fff" aria-hidden="true"></i>
 					</div>
 					<div class="w3layouts_mail_grid_left2">
@@ -20,7 +20,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out" style="background-color: #62bcfa">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out" style="background-color: #4E7AC7">
 						<i class="fa fa-shopping-bag" style="color: #fff;" aria-hidden="true"></i>
 					</div>
 					<div class="w3layouts_mail_grid_left2">
@@ -29,7 +29,7 @@
 					</div>
 				</div>
 					<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out" style="background-color: #62bcfa">
+					<div class="w3layouts_mail_grid_left1 hvr-radial-out" style="background-color: #4E7AC7">
 						<i class="fa fa-gift" style="color: #fff" aria-hidden="true"></i>
 					</div>
 					<div class="w3layouts_mail_grid_left2">
@@ -44,12 +44,12 @@
 </div>
 <!--grids-->
 <!-- footer -->
-<div class="footer" style="background-color: #045FB4">
+<div class="footer" style="background-color: #16193B">
 
 	<div class="footer_agile_inner_info_w3l"> 
 		<div class="col-md-3 footer-left" >
 			
-			<h2><a href="index.html"> <span style="background:#5882FA !important; color: #fff;">N</span>EAR</a></h2>
+			<h2><a href="index.html"> <span style="background:#35478C !important; color: #fff;">N</span>EAR</a></h2>
 			<p style="color: #fff;">Cửa hàng kinh doanh sỉ lẻ các loại hoa lan, chuyên cung cấp các sản phẩm đẹp, lạ, chất lượng cao. 
 			</p>
 			
@@ -67,10 +67,10 @@
 					</ul>
 				</div>
 				
-				<div style="background-color: #045FB4; color: #fff;" class="col-md-4 sign-gd-two">
+				<div style="background-color: #16193B; color: #fff;" class="col-md-4 sign-gd-two">
 					<h4>THÔNG TIN CỬA HÀNG</h4>
 					<div class="w3-address">
-						<div style="color: #045FB4" class="w3-address-grid">
+						<div class="w3-address-grid">
 							<div class="w3-address-left">
 								<i class="fa fa-phone" aria-hidden="true"></i>
 							</div>

@@ -45,6 +45,15 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'tbl_nguoidung' => [
+            'driver'   => 'session',
+            'provider' => 'tbl_nguoidung',
+        ],
+
+        'tbl_nguoidung-api' => [
+            'driver'   => 'token',
+            'provider' => 'tbl_nguoidung',
+        ],
     ],
 
     /*
@@ -67,13 +76,12 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\NguoiDung::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'tbl_nguoidung' => [
+            'driver' => 'eloquent',
+            'model' => App\NguoiDung::class,
+        ],
     ],
 
     /*
@@ -96,6 +104,11 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+        ],
+        'tbl_nguoidung' => [
+            'provider' => 'tbl_nguoidung',
+            'table' => 'password_resets',
+            'expire' => 15,
         ],
     ],
 

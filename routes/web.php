@@ -10,51 +10,44 @@ include_once('qd_web.php');
 | contains the "web" middleware group. Now create something great!
 |
 */
+include_once 'route_frontend.php';
+//
+//Route::get('/',function(){
+//	return view('trangchinh.trangchu.trangchu');
+//});
+//Route::get('test', function(){
+//	return view('trangchinh.trangchu.test');
+//});
+//
+//Route::group(['prefix'=>'trangchinh'],function(){
+//
+//
+//
+//	Route::group(['prefix'=>'sanpham'],function(){
+//		Route::get('sanpham', 'trangchinhController@getsanpham');
+//	});
+//
+//	Route::group(['prefix'=>'chitietsanpham'],function(){
+//
+//		Route::get('chitietsanpham', 'trangchinhController@chitietsanpham');
+//	});
+//
+//
+//
+//
+//
+//
+//
+//	Route::group(['prefix'=>'dathang'],function(){
+//		Route::get('dathang1', 'trangchinhController@dathang1');
+//
+//		Route::get('dathang2', 'trangchinhController@dathang2');
+//
+//		Route::get('dathang3', 'trangchinhController@dathang3');
+//
+//		Route::get('dathang4', 'trangchinhController@dathang4');
+//	});
+//});
+Auth::routes();
 
-
-Route::get('test', function(){
-	return view('trangchinh.trangchu.test');
-});
-
-Route::group(['prefix'=>'trangchinh'],function(){
-
-	Route::group(['prefix'=>'trangchu'],function(){
-		Route::get('trangchu', 'trangchinhController@trangchu');
-	});
-
-	Route::group(['prefix'=>'gioithieu'],function(){
-		Route::get('gioithieu', 'trangchinhController@gioithieu');
-	});
-
-	Route::group(['prefix'=>'sanpham'],function(){
-		Route::get('sanpham', 'trangchinhController@sanpham');
-	});
-
-	Route::group(['prefix'=>'chitietsanpham'],function(){
-
-		Route::get('chitietsanpham', 'trangchinhController@chitietsanpham');
-	});
-
-	Route::group(['prefix'=>'lienhe'],function(){
-		Route::get('lienhe', 'trangchinhController@lienhe');
-	});
-
-	Route::group(['prefix'=>'giohang'],function(){
-		Route::get('giohang', 'trangchinhController@giohang');
-	});
-
-	Route::group(['prefix'=>'khuyenmai'], function ()
-	{
-		Route::get('khuyenmai', 'trangchinhController@khuyenmai');
-	});
-
-	Route::group(['prefix'=>'dathang'],function(){
-		Route::get('dathang1', 'trangchinhController@dathang1');
-		
-		Route::get('dathang2', 'trangchinhController@dathang2');
-
-		Route::get('dathang3', 'trangchinhController@dathang3');
-
-		Route::get('dathang4', 'trangchinhController@dathang4');
-	});
-});
+Route::get('/home', 'HomeController@index')->name('home');

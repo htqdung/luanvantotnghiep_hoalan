@@ -20,8 +20,8 @@ class CreateDonhangTable extends Migration
             $table->foreign('nguoidung_id')->references('id')->on('tbl_nguoidung')->onDelete('cascade');
             $table->integer('diachi_id')->unsigned();
             $table->foreign('diachi_id')->references('id')->on('tbl_diachi')->onDelete('cascade');
-            $table->string('phi_van_chuyen', 10);
-            $table->string('tong_tien', 20);
+            $table->integer('phi_van_chuyen');
+            $table->integer('tong_tien');
             $table->string('ten_nguoi_nhan', 1000);
             $table->string('hinh_thuc_thanh_toan', 200);
             $table->timestamps();

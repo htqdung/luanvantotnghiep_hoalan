@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -35,5 +37,35 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * @param Request $request
+     * @return $this|\Illuminate\Http\RedirectResponse
+     * dang nhap
+     */
+
+    public function login_nguoi_dung(Request $request)
+    {
+        $user = \DB::table('tbl_nguoidung')->where('username',$request->username)->where('password',($request->password))
+            ->first();
+        if ($user)
+        {
+            $request->session()->put('user',$user);
+            return redirect()->back();
+        }
+
+        return redirect()->back()->withInput($request->only('username','password'));
+    }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     * dang xuat
+     */
+
+    public function dangxuat()
+    {
+        \Session::forget('user');
+        return redirect()->back();
     }
 }

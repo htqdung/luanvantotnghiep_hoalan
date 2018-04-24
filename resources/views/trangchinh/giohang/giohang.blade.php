@@ -30,7 +30,7 @@
                             <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                             <h3 style="text-align: left;" class="wthree_text_info">GIỎ HÀNG</h3>
                             <hr>
-                            <p class="text-muted"> Hiện có (3) sản phẩm trong giỏ hàng của bạn.</p>
+                            <p class="text-muted"> Hiện có {{ \Cart::count() }} sản phẩm trong giỏ hàng của bạn.</p>
                             <div class="bs-docs-example">
                                 <table class="table table-striped">
                                     <thead>
@@ -43,62 +43,31 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    {{--{{ dd($products) }}--}}
+                                    @foreach($products as $key => $item)
                                         <tr>
                                             <td>
                                                 <a href="#">
-                                                    <img src="trangchinh_asset/images/b1.jpg" alt="White Blouse Armani">
+                                                    <img src="{{ asset('trangchinh_asset/images/') }}/{{ $item->options->hinhanh }}" alt="White Blouse Armani">
                                                 </a>
                                             </td>
-                                            <td><a href="#">Black Blouse Armani</a>
-                                            </td>
+                                            <td><a href="#">{{ $item->name }}</a></td>
                                             <td>
-                                                <input type="number" value="2" class="form-control">
+                                                <input type="number" value="{{ $item->qty }}" class="form-control" name="qty[]">
+                                                <input type="hidden" name="rowID[]" value="{{ $key }}">
                                             </td>
-                                            <td>$123.00</td>
-                                            <td>$0.00</td>
-                                            <td>$246.00</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
+                                            <td>{{ number_format($item->price,0,",",".") }} VNĐ</td>
+                                            <td>0</td>
+                                            <td>{{ number_format($item->price * $item->qty,0,",",".") }} VNĐ</td>
+                                            <td><a href="{{ route('delete.item.cart',$item->rowId) }}"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">
-                                                    <img src="trangchinh_asset/images/b2.jpg" alt="Black Blouse Armani">
-                                                </a>
-                                            </td>
-                                            <td><a href="#">Black Blouse Armani</a>
-                                            </td>
-                                            <td>
-                                                <input type="number" value="1" class="form-control">
-                                            </td>
-                                            <td>$200.00</td>
-                                            <td>$0.00</td>
-                                            <td>$200.00</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">
-                                                    <img src="trangchinh_asset/images/b3.jpg" alt="Black Blouse Armani">
-                                                </a>
-                                            </td>
-                                            <td><a href="#">Black Blouse Armani</a>
-                                            </td>
-                                            <td>
-                                                <input type="number" value="1" class="form-control">
-                                            </td>
-                                            <td>$200.00</td>
-                                            <td>$0.00</td>
-                                            <td>$200.00</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                        </tr>
+                                    @endforeach
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <th colspan="5">Tổng Tiền</th>
-                                            <th colspan="2">$446.00</th>
+                                            <th colspan="2">{{ number_format((str_replace(',','',\Cart::subtotal(0))),0,",",".") }} VNĐ</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -108,11 +77,11 @@
 
                             <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="trangchinh/sanpham/sanpham" class="btn btn-default"><i class="fa fa-chevron-left"></i> Trở lại mua hàng </a>
+                                    <a href="/" class="btn btn-default"><i class="fa fa-chevron-left"></i> Trở lại mua hàng </a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="trangchinh/giohang/giohang" class="btn btn-default"><i class="fa fa-refresh"></i>  Cập nhật giỏ hàng </a>
-                                    <a href="trangchinh/dathang/dathang1" class="btn btn-primary"> Tiến hành Thanh toán <i class="fa fa-chevron-right"></i></a>
+                                    <button  class="btn btn-default" type="submit"><i class="fa fa-refresh"></i>  Cập nhật giỏ hàng </button>
+                                    <a href="{{ route('pay') }}" class="btn btn-primary"> Tiến hành Thanh toán <i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </div>
 
@@ -128,7 +97,7 @@
 
                 <div class="col-md-3">
                     <div class="box" id="order-summary">
-                        <div style="background-color: #045FB4; text-align: center;" class="box-header">
+                        <div style="background-color: #4E7AC7; text-align: center;" class="box-header">
                             <h3>THANH TOÁN</h3>
                         </div>
                         <p class="text-muted">Tổng thanh toán chưa bao gồm phí vận chuyển và thuế.</p>
@@ -137,15 +106,15 @@
                                 <tbody>
                                     <tr>
                                         <td>Tổng Tiền</td>
-                                        <th>$446.00</th>
+                                        <th>{{ number_format((str_replace(',','',\Cart::subtotal(0))),0,",",".") }} VNĐ</th>
                                     </tr>
-                                    <tr>
-                                        <td>Giảm giá</td>
-                                        <th>$10.00</th>
-                                    </tr>
+                                    {{--<tr>--}}
+                                        {{--<td>Giảm giá</td>--}}
+                                        {{--<th>$10.00</th>--}}
+                                    {{--</tr>--}}
                                     <tr class="total">
                                         <td>Tổng Cộng</td>
-                                        <th>$456.00</th>
+                                        <th>{{ number_format((str_replace(',','',\Cart::subtotal(0))),0,",",".") }} VNĐ</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -153,7 +122,7 @@
 
                     </div>
 
-
+                    <!--
                     <div class="box">
                         <div style="background-color: #045FB4; text-align: center;" class="box-header">
                             <h3>MÃ GIẢM GIÁ</h3>
@@ -166,10 +135,10 @@
 
                                 <span class="input-group-btn">
 
-					<button class="btn btn-primary" type="button"><i class="fa fa-gift"></i></button>
+					               <button class="btn btn-primary" type="button"><i class="fa fa-gift"></i></button>
 
-				    </span>
-                            </div>
+				                </span>
+                    </div> -->
                             <!-- /input-group -->
                         </form>
                     </div>

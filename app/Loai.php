@@ -22,4 +22,9 @@ class Loai extends Model
     {
     	return $this->hasMany('App\SanPham_Loai','loai_id','id');
     }
+
+    public function sanpham()
+    {
+        return $this->belongsToMany(SanPham::class,'tbl_sanpham_loai','loai_id','sanpham_id');
+    }
 }
