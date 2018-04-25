@@ -93,7 +93,7 @@
                     <textarea style="height: 500px" id="content" ></textarea>
                     <input type="hidden" name="content" id="content2">
                     <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-                     <script>
+                    <script>
                         
                         var editor = CKEDITOR.replace( 'content' );
 
