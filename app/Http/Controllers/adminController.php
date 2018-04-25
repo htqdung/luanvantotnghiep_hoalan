@@ -275,10 +275,24 @@ class adminController extends Controller
         return $this::getchi();
     }
     public function chinhsuachi($id)
-    {
-        return view('admin.modules.chi.chinhsuachi');
-    }
 
+    {
+         $chi = DB::table('tbl_chi')
+        ->select('id', 'ten_chi', 'mo_ta')
+        ->orderBy('id', 'desc')
+        ->paginate(10);
+        return view('admin.modules.chi.chinhsuachi', ['data'=>$chi]);
+    }
+    public function postChinhSuaChi(Request $request, $id)
+    {
+        $chi = Chi::findOrFail($id);
+        $chi->ten_chi=$request->input('ten_chi');
+      
+        $chi->mo_ta=$request->input('mo_ta');
+      
+        $chi->save();
+         return redirect()->intended('qt-chi');
+    }
 
 
 //người dùng

@@ -27,20 +27,19 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="POST" action="">
-        <input type="hidden" name="_token" value="#">
+      <form role="form" method="POST" action="" enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
               <div class="col-md-12">
                 <label>Tên chi</label>
-                <input type="text" name="ten_chi" class="form-control" id=chi" placeholder="">
+                <input type="text" value="{{ $data[0]->ten_chi }}" name="ten_chi" class="form-control" id=chi" placeholder="">
               </div>
               <div class="col-md-12">
                 <label>Mô tả</label>
-                <textarea  rows="10" cols="50" class="form-control" name="mo_ta"></textarea>
+                <textarea  rows="10" cols="50" class="form-control" name="mo_ta">{{ $data[0]->mo_ta }}</textarea>
               </div>
-        
               <div style="clear:both"></div>
             </div>
                      

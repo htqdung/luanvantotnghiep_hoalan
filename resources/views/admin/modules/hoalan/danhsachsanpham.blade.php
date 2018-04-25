@@ -39,7 +39,7 @@
 				        <th style="width: 5%">Stt</th>
 				        <th style="width: 18%">Tên sản phẩm</th>
 				        <th style="width: 5% ">Đơn giá</th>
-				        <th style="width: 15%">Kích thước</th>
+				        <th style="width: 15%">Chiều cao(cm)</th>
 				        <th style="width: 20%">Mô tả</th>							       
 				        <th style="width: 10%">Điểm thưởng</th>
 				        <th style="width: 10%">Tag</th>

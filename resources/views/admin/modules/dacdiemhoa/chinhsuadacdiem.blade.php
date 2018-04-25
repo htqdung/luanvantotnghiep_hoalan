@@ -59,7 +59,7 @@
 
         <div class="box-footer">
           <a class="btn btn-danger" href="{{ route('DAC_DIEM_HOA') }}">Quay lại</a>
-          <button type="submit" class="btn btn-primary"> <i class="fa fa-save faa-pulse animated "></i> Lưu lại</button>
+          <button type="submit" class="btn btn-primary"> Lưu lại</button>
           <button type="reset" class="btn btn-success">Làm mới</button>
         </div>
       </form>

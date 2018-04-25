@@ -37,11 +37,11 @@
                   <thead>
                     <tr style="margin: 0px">
                       <th style="width: 3%">Id</th>
-                      <th style="width: 20%">Tên khuyến mại</th>
+                      <th style="width: 37%">Tên khuyến mại</th>
                       <th style="width: 15%">Ngày bắt đầu </th>
                       <th style="width: 15%">Ngày kết thúc</th>
-                      <th style="width: 10%">Tỉ lệ giảm</th>
-                      <th colspan="3" style="width: 20%; text-align: center;">Chức năng</th>
+                      <th style="width: 10%">Tỉ lệ giảm (%)</th>
+                      <th style="width: 15%; text-align: center;">Chức năng</th>
                     </tr>
                   </thead>
                 <tbody>
@@ -49,18 +49,18 @@
                   <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->ten_hinh_thuc}}</td>
-                    <td>{{ $item->ngay_bat_dau}}</td>
-                    <td>{{ $item->ngay_ket_thuc}}</td>
-                    <td>{{ $item->ti_le_giam_gia}}</td>           
+                    <td>{{ date('d-m-Y', strtotime($item->ngay_bat_dau)) }}</td>
+                     <td>{{ date('d-m-Y', strtotime($item->ngay_ket_thuc)) }}</td> 
+                    <td>{{ $item->ti_le_giam_gia}}</td>  
+                   
                     <td>
-                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="{{ route('CHI_TIET_KHUYEN_MAI', $item->id) }}"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
+                       <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_KHUYEN_MAI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+                                          
+                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="{{ route('CHI_TIET_KHUYEN_MAI', $item->id) }}"><i class=" fa fa-info-circle"></i></a>
+                 
+                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
                     </td>
-                    <td>
-                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_KHUYEN_MAI', $item->id) }}"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
-                    </td>
-                    <td>
-                      <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
-                    </td>
+                    
                 </tr> 
                 @endforeach           
               </tbody>              

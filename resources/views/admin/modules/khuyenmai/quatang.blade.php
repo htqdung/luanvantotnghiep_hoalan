@@ -37,11 +37,10 @@
                   <thead>
                   <tr style="margin: 0px">
                     <th style="width: 3%">Id</th>
-                    
-                    <th style="width: 20%">Tên quà tặng</th>
+                    <th style="width: 30%">Tên quà tặng</th>
                     <th style="width: 20%">Số lượng</th>
                     
-                    <th colspan="3" style="width: 20%; text-align: center;">Chức năng</th>
+                    <th style="width: 10%; text-align: center;">Chức năng</th>
                   </tr>
                   </thead>
                    <tbody>
@@ -49,19 +48,13 @@
                   <tr>
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->ten_qua_tang }}</td>
-                    <td>{{ $item->so_luong}}</td>
-                   
+                    <td>{{ $item->so_luong}}</td>                   
                     <td>
-                            <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
-                           
-                    </td>
-                     <td>
-                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="{{ route('CHINH_SUA_QUA_TANG', $item->id) }}"><i class="fa fa-cog fa-spin fa-1x fa-fw"></i>Chỉnh sửa</a>
-                           
-                    </td>
-                     <td>
-                     
-                            <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-spin fa-1x fa-fw"></i>Xóa</a>
+                       <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_QUA_TANG', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+                                          
+                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="#"><i class=" fa fa-info-circle"></i></a>
+                 
+                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
                     </td>
                 </tr> 
                 @endforeach           

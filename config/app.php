@@ -160,6 +160,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
+        //cái này dùng để mở CK editor
+        
+        Unisharp\Ckeditor\ServiceProvider::class,
     ],
 
     /*

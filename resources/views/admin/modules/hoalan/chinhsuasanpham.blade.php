@@ -102,8 +102,8 @@
         <div class="box-footer" style="padding-top: 25px">          
           <a class="btn btn-danger" href="{{ route('DANH_SACH_SAN_PHAM') }}">Quay lại</a>
           
-          <button type="submit" class="btn btn-primary"><i class="fa fa-next faa-pulse animated "></i>Lưu lại</button>
-          <button type="reset" class="btn btn-success"><i class="fa  fa-refresh fa-spin"></i> Làm mới</button>
+          <button type="submit" class="btn btn-primary"><i class=""></i>Lưu lại</button>
+          <button type="reset" class="btn btn-success"><i class=" "></i> Làm mới</button>
         </div>
       </form>
 

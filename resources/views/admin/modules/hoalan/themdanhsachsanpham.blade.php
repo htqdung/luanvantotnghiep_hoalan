@@ -73,7 +73,7 @@
                
             </div>  
             <div  class="col-md-12">
-            	 <div   class="col-md-6">
+            	<div   class="col-md-6">
                  <div class="form-group" style="margin-right: 0; ">
                      <label>Thêm các loài hoa</label>
                      <small>* Có thể chọn được nhiều loài</small>
@@ -86,12 +86,26 @@
                       
                      </select>
                   </div>
-                </div>
-                  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="sp_mota">Mô tả: *</label>
-                    <textarea name="mo_ta" rows="5" cols="30" class="form-control" id="sp_mota" placeholder="Mô tả về sản phẩm này...."></textarea>
-                 </div>
-               </div>
+              </div>
+              <div class="col-md-12 form-group" style="padding-top: 20px" >
+                    <label for="content" >Nội dung chi tiết: </label>
+                   
+                    <textarea style="height: 500px" id="content" ></textarea>
+                    <input type="hidden" name="content" id="content2">
+                    <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+                     <script>
+                        
+                        var editor = CKEDITOR.replace( 'content' );
+
+                        // The "change" event is fired whenever a change is made in the editor.
+                        editor.on('change', function( evt ) {
+                            
+                            var content = evt.editor.getData();
+                            $("#content2").val(content);
+                        });
+                    </script>
+              </div>    
+            </div>
                    
            </div>
 			      

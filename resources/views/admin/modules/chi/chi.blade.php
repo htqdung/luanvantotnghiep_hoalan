@@ -19,7 +19,6 @@
 			</form>
 		</div><!-- /.nav-search -->
 	</div>
-
 	<div class="page-content">
 		<!-- /.page-header -->
 		 <div class="box box-primary">
