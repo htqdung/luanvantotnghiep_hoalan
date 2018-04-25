@@ -34,77 +34,71 @@
         <div class="box-body">   
               <div style="clear:both"></div>
           
-          <div class="form-group">
-            <div class="col-md-12">
-            	 
-                 <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Tên sản phẩm</label>
-                    <input type="text" class="form-control" name="ten_san_pham" id="sanpham" placeholder="" style="margin-right: 0; " required>
-                 </div>
-                 <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Đơn giá</label>
-                    <input type="number" class="form-control" name="don_gia" id="sanpham" placeholder="" style="margin-right: 0; " required>
-                  </div>
-                                 
-            </div>
-            <div  class="col-md-12">
-            	     
+          <div class="col-md-12">
+              <div class="col-md-7">
+                  <label for="exampleInputEmail1">Tên sản phẩm</label>
+                  <input type="text" class="form-control" name="ten_san_pham" id="sanpham" placeholder="" style="margin-right: 0; " required>
+              </div>
+              <div class="col-md-5">
+                  <label for="exampleInputEmail1">Đơn giá</label>
+                  <input type="number" class="form-control" name="don_gia" id="sanpham" placeholder="" style="margin-right: 0; " required>
+              </div>
+              <div class="col-md-7 form-group" >
                 
-                 <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Kích thước</label>
-                    <input type="text" class="form-control" name="kich_thuoc" id="sanpham" placeholder="" style="margin-right: 0; " required>
-           			 </div>
-                  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Tag</label>
-                    <input type="text" class="form-control" name="tag" id="sanpham" placeholder="" style="margin-right: 0; " required>
+                  <label for="form-kichthuoc">Kích thước</label>
+                  <div id="form-kichthuoc">
+                      <input type="number" onchange="noi_chuoi()" class="form-controll inline" id="dai" placeholder="Dài">
+                      <input type="number" onchange="noi_chuoi()"  class="form-controll inline" id="rong" placeholder="Rộng">
+                      <input type="number" onchange="noi_chuoi()"  class="form-controll inline" id=cao placeholder="Cao">  
                   </div>
-            </div>
-            <div  class="col-md-12">
-                 
-                <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Điểm thưởng</label>
-                    <input type="number" class="form-control" name="diem_thuong" id="sanpham" placeholder="" style="margin-right: 0; " required>
-                  </div>
-                   <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="exampleInputEmail1">Chọn hình ảnh</label>
-                    <input type="file" class="" name="hinh_anh" id="sanpham" placeholder="" style="margin-right: 0; " required>
-                 </div>    
-                 
-               
-            </div>  
-            <div  class="col-md-12">
-            	<div   class="col-md-6">
-                 <div class="form-group" style="margin-right: 0; ">
+                  
+                  <input type="hidden" class="form-control" name="kich_thuoc" id="kich_thuoc" placeholder="" style="margin-right: 0; " required>
+              </div>
+              <div class="col-md-5">
+                  <label for="exampleInputEmail1">Tag</label>
+                  <input type="text" class="form-control" name="tag" id="sanpham" placeholder="" style="margin-right: 0; " required>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <div class="col-md-4">
+                  <label for="exampleInputEmail1">Điểm thưởng</label>
+                  <input type="number" class="form-control" name="diem_thuong" id="sanpham" placeholder="" style="margin-right: 0; " required>
+              </div>
+              <div class="col-md-4">
+                  <div class="form-group" style="margin-right: 0; ">
                      <label>Thêm các loài hoa</label>
                      <small>* Có thể chọn được nhiều loài</small>
-                     <select id="framework" name="framework[]" multiple class="form-control" >
-                      
+                     <select id="framework" name="framework[]" class="form-control" >                      
                       @foreach ($data as $item)
                         <option value="{{ $item->id }}">{{ $item->ten_khoa_hoc }}</option>
                       @endforeach
-                      
-                      
                      </select>
                   </div>
               </div>
-              <div class="col-md-12 form-group" style="padding-top: 20px" >
-                    <label for="content" >Nội dung chi tiết: </label>
-                   
-                    <textarea style="height: 500px" id="content" ></textarea>
-                    <input type="hidden" name="content" id="content2">
-                    <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-                    <script>
-                        
-                        var editor = CKEDITOR.replace( 'content' );
+              <div class="col-md-4">
+                  <label for="exampleInputEmail1">Chọn hình ảnh</label>
+                  <input type="file" class="" name="hinh_anh" id="sanpham" placeholder="" style="margin-right: 0; " required>
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12 form-group" style="padding-top: 20px" >
+                  <label for="content" >Nội dung chi tiết: </label>
+                 
+                  <textarea style="height: 500px" id="content" ></textarea>
+                  <input type="hidden" name="content" id="content2">
+                  <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+                  <script>
+                      
+                      var editor = CKEDITOR.replace( 'content' );
 
-                        // The "change" event is fired whenever a change is made in the editor.
-                        editor.on('change', function( evt ) {
-                            
-                            var content = evt.editor.getData();
-                            $("#content2").val(content);
-                        });
-                    </script>
-              </div>    
+                      // The "change" event is fired whenever a change is made in the editor.
+                      editor.on('change', function( evt ) {
+                          
+                          var content = evt.editor.getData();
+                          $("#content2").val(content);
+                      });
+                  </script>
+            </div>    
             </div>
                    
            </div>
@@ -118,7 +112,7 @@
       
         <!-- /.box-body -->
 
-        <div class="box-footer" style="padding-top: 25px">          
+        <div class="box-footer" style="padding-top: 0px  25px 50px 0px ; float: right;">          
           <a class="btn btn-warning" href="{{ route('DANH_SACH_SAN_PHAM') }}">Quay lại</a>
           
           <button type="submit" class="btn btn-primary"><i class="fa fa-next faa-pulse animated "></i>Lưu lại</button>
@@ -131,7 +125,19 @@
   
   </div>
 <script>
-    
+
+  function noi_chuoi() {
+    var dai = "";
+    var rong = "";
+    var cao = "";
+    var tong= "";
+    dai = document.getElementById("dai").value;    
+    rong = document.getElementById("rong").value;     
+    cao = document.getElementById("cao").value;
+    tong = "dai:" + dai + "|rong:" + rong + "|cao:" + cao; 
+    document.getElementById("kich_thuoc").value = tong;
+  }
+  
 
 </script>
   <!--/.col (right) -->
