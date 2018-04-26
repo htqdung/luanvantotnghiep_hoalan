@@ -36,33 +36,38 @@
           
           <div class="col-md-12">
               <div class="col-md-7">
-                  <label for="exampleInputEmail1">Tên sản phẩm</label>
-                  <input type="text" class="form-control" name="ten_san_pham" id="sanpham" placeholder="" style="margin-right: 0; " required>
+                  <label for="sanpham">Tên sản phẩm</label>
+                  <input type="text" class="form-control" name="ten_san_pham" id="sanpham" placeholder="" style="margin-right: 0; " >
               </div>
               <div class="col-md-5">
-                  <label for="exampleInputEmail1">Đơn giá</label>
-                  <input type="number" class="form-control" name="don_gia" id="sanpham" placeholder="" style="margin-right: 0; " required>
+                  <label for="dongia">Đơn giá</label>
+                  <input type="number" class="form-control" name="don_gia" id="dongia" placeholder="" style="margin-right: 0; " >
               </div>
               <div class="col-md-7 form-group" >
                 
-                  <label for="form-kichthuoc">Kích thước</label>
+                  <label for="form-kichthuoc">Kích thước:</label>
+                  <small>Dài - Rộng - Cao</small>
                   <div id="form-kichthuoc">
-                      <input type="number" onchange="noi_chuoi()" class="form-controll inline" id="dai" placeholder="Dài">
-                      <input type="number" onchange="noi_chuoi()"  class="form-controll inline" id="rong" placeholder="Rộng">
-                      <input type="number" onchange="noi_chuoi()"  class="form-controll inline" id=cao placeholder="Cao">  
+                      <div class="col-md-4"><input type="number"  onchange="noi_chuoi()" class="form-controll inline" id="dai" placeholder="Dài"></div>
+                      <div class="col-md-4"> <input type="number" onchange="noi_chuoi()"  class="form-controll inline" id="rong" placeholder="Rộng"></div>
+                      <div class="col-md-4"><input type="number" onchange="noi_chuoi()"  class="form-controll inline" id=cao placeholder="Cao"></div>
+                      
+                     
+                        
                   </div>
                   
-                  <input type="hidden" class="form-control" name="kich_thuoc" id="kich_thuoc" placeholder="" style="margin-right: 0; " required>
+                  <input type="hidden" class="form-control" name="kich_thuoc" id="kich_thuoc" placeholder="" style="margin-right: 0; " >
               </div>
               <div class="col-md-5">
-                  <label for="exampleInputEmail1">Tag</label>
-                  <input type="text" class="form-control" name="tag" id="sanpham" placeholder="" style="margin-right: 0; " required>
+                  <label for="tags">Tags</label>
+                  <input type="hidden" class="form-control" name="tags" id="tags" placeholder="" style="margin-right: 0; " >
+                  <input type="text" class="form-control" id="txtSkills" name = "Skills" data-role="tagsinput">               
               </div>
           </div>
           <div class="col-md-12">
               <div class="col-md-4">
-                  <label for="exampleInputEmail1">Điểm thưởng</label>
-                  <input type="number" class="form-control" name="diem_thuong" id="sanpham" placeholder="" style="margin-right: 0; " required>
+                  <label for="diemthuong">Điểm thưởng</label>
+                  <input type="number" class="form-control" name="diem_thuong" id="diemthuong" placeholder="" style="margin-right: 0; " >
               </div>
               <div class="col-md-4">
                   <div class="form-group" style="margin-right: 0; ">
@@ -76,8 +81,8 @@
                   </div>
               </div>
               <div class="col-md-4">
-                  <label for="exampleInputEmail1">Chọn hình ảnh</label>
-                  <input type="file" class="" name="hinh_anh" id="sanpham" placeholder="" style="margin-right: 0; " required>
+                  <label for="image">Chọn hình ảnh</label>
+                  <input type="file" accept="image/*" class="" name="hinh_anh" id="image" placeholder="" style="margin-right: 0; " >
               </div>
           </div>
           <div class="form-group">
@@ -85,7 +90,7 @@
                   <label for="content" >Nội dung chi tiết: </label>
                  
                   <textarea style="height: 500px" id="content" ></textarea>
-                  <input type="hidden" name="content" id="content2">
+                  <input type="hidden" name="mo_ta" id="content2">
                   <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
                   <script>
                       
@@ -124,6 +129,64 @@
 
   
   </div>
+<script type="text/javascript">
+// Get the reference to the input field
+var elt = $('#txtSkills');
+
+var skills = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('id'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+        url: '{!!url("/")!!}' + '/api/find?keyword=%QUERY%',
+      wildcard: '%QUERY%',
+    }
+});
+skills.initialize();
+</script>
+<script>
+
+$('#txtSkills').tagsinput({
+    itemValue : 'id',
+    itemText  : 'name',
+    maxChars: 10,
+    trimValue: true,
+    allowDuplicates : false,
+    freeInput: false,
+    focusClass: 'form-control',
+    tagClass: function(item) {
+      if(item.display)
+       return 'label label-' + item.display;
+      else
+        return 'label label-default';
+
+    },
+    onTagExists: function(item, $tag) {
+      $tag.hide().fadeIn();
+    },
+    typeaheadjs: [{
+          hint: false,
+                    highlight: true
+                  },
+                  {
+                 name: 'skills',
+            itemValue: 'id',
+            displayKey: 'name',
+            source: skills.ttAdapter(),
+            templates: {
+                    empty: [
+                        '<ul class="list-group"><li class="list-group-item">Nothing found.</li></ul>'
+                    ],
+                    header: [
+                        '<ul class="list-group">'
+                    ],
+                    suggestion: function (data) {
+                        return '<li class="list-group-item">' + data.name + '</li>'
+                  }
+            }
+    }]
+});
+</script>
+
 <script>
 
   function noi_chuoi() {
@@ -134,7 +197,7 @@
     dai = document.getElementById("dai").value;    
     rong = document.getElementById("rong").value;     
     cao = document.getElementById("cao").value;
-    tong = "dai:" + dai + "|rong:" + rong + "|cao:" + cao; 
+    tong = dai + "," + rong + "," + cao; 
     document.getElementById("kich_thuoc").value = tong;
   }
   

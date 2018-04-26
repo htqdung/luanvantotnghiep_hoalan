@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="admin/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="admin/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="admin/assets/css/style.css">
+    <link rel="stylesheet" href="admin/assets/tagsinput/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="admin/assets/tagsinput/bootstrap-tagsinput.js">
+    <link rel="stylesheet" href="admin/assets/tagsinput/bootstrap-tagsinput-angular.js">
         
     </style>
     <!-- page specific plugin styles -->

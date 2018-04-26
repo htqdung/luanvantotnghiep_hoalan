@@ -36,15 +36,15 @@
 					<h3><b>DANH SÁCH SẢN PHẨM</b></h3>
 				    <thead>
 				      <tr>
-				        <th style="width: 5%">Stt</th>
-				        <th style="width: 18%">Tên sản phẩm</th>
+				        <th style="width: 3%">Stt</th>
+				        <th style="width: 20%">Tên sản phẩm</th>
 				        <th style="width: 5% ">Đơn giá</th>
-				        <th style="width: 15%">Chiều cao(cm)</th>
-				        <th style="width: 20%">Mô tả</th>							       
-				        <th style="width: 10%">Điểm thưởng</th>
-				        <th style="width: 10%">Tag</th>
+				        <th style="width: 10%">Kích thước <small>(dài, rộng, cao)</small></th>
+				        <th style="width: 22%">Mô tả</th>							       
+				        <th style="width: 8%">Điểm thưởng</th>
+				        <th style="width: 12%">Tag</th>
 
-				        <th style="width: 15%">Chức năng</th>
+				        <th style="width: 25%">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>

@@ -8,6 +8,8 @@ use App\SanPham;
 use App\DonGia;
 use Illuminate\Http\Request;
 use DB;
+use App\HinhAnh;
+use DateTime;
 use App\HinhThucKhuyenMai;
 class adminController extends Controller
 {
@@ -174,10 +176,11 @@ class adminController extends Controller
     }
     public function postThemSanPham(Request $request)
     {
+
+
         $sanpham = new SanPham();
 
         $sanpham->ten_san_pham=$request->input('ten_san_pham');
-     //$sanpham->gia=$request->input('don_gia');
         $sanpham->thong_tin_chi_tiet=$request->input('kich_thuoc');
         $sanpham->mo_ta=$request->input('mo_ta');
         $sanpham->diem_thuong=$request->input('diem_thuong');
@@ -199,6 +202,21 @@ class adminController extends Controller
         $dongia->sanpham_id=$tmp2;
         $dongia->gia=$request->input('don_gia');
         $dongia->save();
+
+
+        $date = date("Y_m_d");
+        $timedate = date("h_i_s");
+        $time = '_'.$date.'_'.$timedate;
+        $duong_dan   = public_path().'\sanpham\\';
+        $file_anh = $request->file('hinh_anh');
+        $hinh_anh = \Image::make($file_anh);
+        $hinh_anh->resize(286,400);
+        $hinh_anh->save($duong_dan.'sanpham'.$time.'.'.$file_anh->getClientOriginalExtension());
+        $hinh_anh = new HinhAnh();
+        $hinh_anh->ten_hinh = "sanpham".$time.'.'.$file_anh->getClientOriginalExtension();
+        $hinh_anh->sanpham_id= $tmp2;
+        $hinh_anh->save();
+
         // return $last_sanpham;
          return redirect()->intended('qt-danh-sach-san-pham');
         //return $this::getdachsachsanpham();
