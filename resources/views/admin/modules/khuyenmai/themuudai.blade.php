@@ -23,32 +23,41 @@
     </div><!-- /.nav-search -->
   </div>
       <div class="box-header with-border">
-        <h3 class="box-title">Thêm khuyến mại</h3>
+        <h3 class="box-title">Thêm ưu đãi</h3>
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="POST" action="">
-        <input type="hidden" name="_token" value="#">
+      <form role="form" method="POST" action="" enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
-              <div class="col-md-6">
-                <label>Id</label>
-                <input type="text" name="id" class="form-control" id="chi" placeholder="">
+              <div class="col-md-12">
+                <div class="col-md-6">
+                  <label>Tên ưu đãi</label>
+                  <input type="text" name="ten_hinh_thuc" class="form-control" id=ten_hinh_thuc" placeholder="">
+                </div>
+                <div class="col-md-6">
+                    <label>Tên sản phẩm</label>
+                    <select name="ten_san_pham">
+                      @foreach ($data as $element)
+                        <option value="{{ $element->id_sanpham }}">{{ $element->ten_san_pham }}</option>
+                      @endforeach
+                    </select>
+                    
+                </div>
               </div>
-              <div class="col-md-6">
-                <label>Tên sản phẩm</label>
-                <input type="text" name="ten_nguoi_dung" class="form-control" id=chi" placeholder="">
-              </div>
-              <div class="col-md-6">
-                <label>Số lượng</label>
-                <input type="number" name="so_dien_thoai" class="form-control" id=chi" placeholder="">
-              </div>
-              <div class ="col-md-6" >
-                <label for="exampleInputEmail1">Tỉ lệ giảm</label>
-                <input type="text" name="dia_chi" class="form-control" id="chi" placeholder="">
-              </div>
-        
+              <div class="col-md-12">
+                  
+                  <div class="col-md-6">
+                    <label>Số lượng</label>
+                    <input type="number" name="so_luong_toi_thieu" class="form-control" placeholder="">
+                  </div> 
+                  <div class ="col-md-6" >
+                    <label for="exampleInputEmail1">Tỉ lệ giảm</label>
+                    <input type="number" name="ti_le_giam_gia"  class="form-control" id="ti_le_giam_gia" placeholder="%">
+                  </div>
+              </div> 
               <div style="clear:both"></div>
             </div>
                      
@@ -59,7 +68,7 @@
 
         <div class="box-footer">
           <a class="btn btn-danger" href="{{ route('DANH_SACH_UU_DAI') }}">Quay lại</a>
-          <button type="submit" class="btn btn-primary"> <i class="fa fa-save faa-pulse animated "></i> Lưu lại</button>
+          <button type="submit" class="btn btn-primary"> Lưu lại</button>
           <button type="reset" class="btn btn-success">Làm mới</button>
         </div>
       </form>

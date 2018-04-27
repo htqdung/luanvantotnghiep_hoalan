@@ -27,30 +27,26 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="POST" action="">
-        <input type="hidden" name="_token" value="#">
+      <form role="form" method="POST" action=""  enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
               <div class="col-md-6">
-                <label>Id</label>
-                <input type="text" name="id" class="form-control" id="chi" placeholder="">
-              </div>
-              <div class="col-md-6">
                 <label>Tên khuyến mại</label>
-                <input type="text" name="ten_nguoi_dung" class="form-control" id=chi" placeholder="">
+                <input type="text" name="ten_hinh_thuc" value="{{ $data[0]->ten_hinh_thuc }}" class="form-control" id=ten_hinh_thuc" placeholder="">
               </div>
               <div class="col-md-6">
                 <label>Ngày bắt đầu</label>
-                <input type="date" name="so_dien_thoai" class="form-control" id=chi" placeholder="">
+                <input type="date" name="ngay_bat_dau" value="{{ $data[0]->ngay_bat_dau }}" class="form-control" id=ngay_bat_dau" placeholder="">
               </div>
               <div class="col-md-6">
                 <label>Ngày kết thúc</label>
-                <input type="date" name="email" class="form-control" id=chi" placeholder="">
+                <input type="date" name="ngay_ket_thuc" value="{{ $data[0]->ngay_ket_thuc }}" class="form-control" id=ngay_ket_thuc" placeholder="">
               </div>
               <div class ="col-md-6" >
                 <label for="exampleInputEmail1">Tỉ lệ giảm</label>
-                <input type="text" name="dia_chi" class="form-control" id="chi" placeholder="">
+                <input type="text" name="ti_le_giam_gia" value="{{ $data[0]->ti_le_giam_gia }}" class="form-control" id="ti_le_giam_gia" placeholder="">
               </div>
         
               <div style="clear:both"></div>
@@ -63,7 +59,7 @@
 
         <div class="box-footer">
           <a class="btn btn-danger" href="{{ route('DANH_SACH_KHUYEN_MAI') }}">Quay lại</a>
-          <button type="submit" class="btn btn-primary"> <i class="fa fa-save faa-pulse animated "></i> Lưu lại</button>
+          <button type="submit" class="btn btn-primary">  Lưu lại</button>
           <button type="reset" class="btn btn-success">Làm mới</button>
         </div>
       </form>

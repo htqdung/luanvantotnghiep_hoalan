@@ -25,29 +25,30 @@
     <!-- /.page-header -->
      <div class="box box-primary">
         <div class="box-header with-border">
-          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-          <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_UU_DAI') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm mới</a>
+          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh  fa-1x fa-fw"></i>Làm mới</a>
+          <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_UU_DAI') }}"><i class="fa fa-plus-circle  fa-1x fa-fw"></i> Thêm mới</a>
         </div>
-    <div class="row" >
-    </div><!-- /.row -->
+    </div>
     <div class="row">
       <div class="col-md-12">
         <table class="table">
           <h3><b>DANH SÁCH ƯU ĐÃI</b></h3>
                   <thead>
                   <tr style="margin: 0px">
-                    <th style="width: 3%">Id</th>
-                    
-                    <th style="width: 42%">Tên sản phẩm</th>
-                    <th style="width: 20%">Số lượng</th>
-                    <th style="width: 20%">Tỉ lệ giảm giá (%)</th>
-                    <th  style="width: 15%; text-align: center;">Chức năng</th>
+                    <th style="width: 3%">Stt</th>
+                    <th style="width: 20%">Tên hình thức</th>
+                    <th style="width: 27%">Tên sản phẩm</th>
+                    <th style="width: 15%">Số lượng</th>
+                    <th style="width: 15% ;text-align: center">Tỉ lệ giảm giá (%)</th>
+                    <th  style="width: 30%; text-align: center;">Chức năng</th>
                   </tr>
                   </thead>
                    <tbody>
+                    <?php $i=1; ?>
                 @foreach ($data as $item)
                   <tr>
-                    <td>{{ $item->id }}</td>
+                    <td><?= $i++; ?></td>
+                    <td>{{ $item->ten_hinh_thuc }}</td>
                     <td>{{ $item->ten_san_pham }}</td>
                     <td>{{ $item->so_luong_toi_thieu}}</td>
                     <td>{{ $item->ti_le_giam_gia}}</td>
@@ -63,6 +64,7 @@
                 @endforeach           
               </tbody>              
           </table>
+          {{ $data->render() }}
       </div>
     </div>
   </div><!-- /.page-content -->

@@ -43,19 +43,14 @@
                   <label for="dongia">Đơn giá</label>
                   <input type="number" class="form-control" name="don_gia" id="dongia" placeholder="" style="margin-right: 0; " >
               </div>
-              <div class="col-md-7 form-group" >
-                
+              <div class="col-md-7 form-group" >                
                   <label for="form-kichthuoc">Kích thước:</label>
                   <small>Dài - Rộng - Cao</small>
                   <div id="form-kichthuoc">
                       <div class="col-md-4"><input type="number"  onchange="noi_chuoi()" class="form-controll inline" id="dai" placeholder="Dài"></div>
                       <div class="col-md-4"> <input type="number" onchange="noi_chuoi()"  class="form-controll inline" id="rong" placeholder="Rộng"></div>
-                      <div class="col-md-4"><input type="number" onchange="noi_chuoi()"  class="form-controll inline" id=cao placeholder="Cao"></div>
-                      
-                     
-                        
-                  </div>
-                  
+                      <div class="col-md-4"><input type="number" onchange="noi_chuoi()"  class="form-controll inline" id=cao placeholder="Cao"></div>                        
+                  </div>                  
                   <input type="hidden" class="form-control" name="kich_thuoc" id="kich_thuoc" placeholder="" style="margin-right: 0; " >
               </div>
               <div class="col-md-5">

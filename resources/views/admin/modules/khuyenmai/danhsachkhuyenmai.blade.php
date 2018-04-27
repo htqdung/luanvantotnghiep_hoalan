@@ -36,18 +36,19 @@
           <h3><b>DANH SÁCH KHUYẾN MẠI</b></h3>
                   <thead>
                     <tr style="margin: 0px">
-                      <th style="width: 3%">Id</th>
-                      <th style="width: 37%">Tên khuyến mại</th>
-                      <th style="width: 15%">Ngày bắt đầu </th>
-                      <th style="width: 15%">Ngày kết thúc</th>
-                      <th style="width: 10%">Tỉ lệ giảm (%)</th>
-                      <th style="width: 15%; text-align: center;">Chức năng</th>
+                      <th style="width: 3%; text-align: center;">Stt</th>
+                      <th style="width: 37% ; text-align: center;">Tên khuyến mại</th>
+                      <th style="width: 15%; text-align: center;">Ngày bắt đầu </th>
+                      <th style="width: 15% ;text-align: center;">Ngày kết thúc</th>
+                      <th style="width: 10% ;text-align: center;">Tỉ lệ giảm (%)</th>
+                      <th style="width: 20%; text-align: center;">Chức năng</th>
                     </tr>
                   </thead>
                 <tbody>
+                  <?php $i=1; ?>
                 @foreach ($data as $item)
                   <tr>
-                    <td>{{ $item->id }}</td>
+                    <td><?= $i++; ?></td>
                     <td>{{ $item->ten_hinh_thuc}}</td>
                     <td>{{ date('d-m-Y', strtotime($item->ngay_bat_dau)) }}</td>
                      <td>{{ date('d-m-Y', strtotime($item->ngay_ket_thuc)) }}</td> 

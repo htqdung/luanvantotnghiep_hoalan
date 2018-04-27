@@ -46,11 +46,13 @@ Route::get('qt-danh-sach-khuyen-mai', 'adminController@getdanhsachkhuyenmai')->n
 Route::get('qt-chi-tiet-khuyen-mai/{id}','adminController@chitietkhuyenmai')->name('CHI_TIET_KHUYEN_MAI');
 Route::get('qt-them-khuyen-mai','adminController@themkhuyenmai')->name('THEM_KHUYEN_MAI');
 Route::post('qt-them-khuyen-mai','adminController@postThemKhuyenMai');
-
 Route::get('qt-chinh-sua-khuyen-mai/{id}','adminController@chinhsuakhuyenmai')->name('CHINH_SUA_KHUYEN_MAI');
+Route::post('qt-chinh-sua-khuyen-mai/{id}','adminController@postChinhsuakhuyenmai');
+
 //ưu đãi
 Route::get('qt-danh-sach-uu-dai','adminController@danhsachuudai')->name('DANH_SACH_UU_DAI');
 Route::get('qt-them-uu-dai','adminController@themuudai')->name('THEM_UU_DAI');
+Route::post('qt-them-uu-dai','adminController@postThemUuDai');
 Route::get('qt-chinh-sua-uu-dai/{id}','adminController@chinhsuauudai')->name('CHINH_SUA_UU_DAI');
 //quà tặng
 Route::get('qt-danh-sach-qua-tang','adminController@danhsachquatang')->name('DANH_SACH_QUA_TANG');

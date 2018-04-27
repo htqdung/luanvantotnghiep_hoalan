@@ -1,6 +1,6 @@
  <html lang="en">
   @include('admin.script.script_head')
-      <body class="no-skin">
+      <body class="no-skin" onload=" tach_chuoi() ">
           @include('admin.layout.header')
           <div class="main-container ace-save-state" id="main-container">
               <script type="text/javascript">
