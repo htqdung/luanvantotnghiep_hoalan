@@ -47,10 +47,10 @@ h2.resp-accordion {
   display: none;
 }
 .resp-tab-active {
-  border-bottom: 4px solid #35478C;
+  border-bottom: 4px solid #35478C  ;
   margin-bottom: -1px !important;
   position:relative;
-  background:#35478C;
+  background:#7FB2F0;
 }
 .resp-tab-active:before {
     content: '';
@@ -70,7 +70,7 @@ h2.resp-accordion {
 }
 
 .resp-tab-active {
-    background-color:#35478C;
+    background-color:#7FB2F0;
 }
 
 .resp-content-active,
