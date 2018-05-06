@@ -1,3 +1,5 @@
+<?php ini_set('display_errors', 1);?>
+
  <html lang="en">
   @include('admin.script.script_head')
       <body class="no-skin" onload=" tach_chuoi() ">

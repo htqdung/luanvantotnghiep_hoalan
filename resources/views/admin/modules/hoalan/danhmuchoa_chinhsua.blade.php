@@ -33,11 +33,11 @@
              <div class="form-group">
               <div class="col-md-6">
                 <label>Tên loài</label>
-                <input type="text" value="{{ $data->ten_loai }}"  name="ten_loai" class="form-control" id=loai" placeholder="">
+                <input type="text" value="{{ $loai[0]->ten_loai }}"  name="ten_loai" class="form-control" id=loai" placeholder="">
               </div>
               <div class="col-md-6">
                 <label>Tên khoa học</label>
-                <input type="text" value="{{ $data->ten_loai }}" name="ten_khoa_hoc" class="form-control" id=loai" placeholder="">
+                <input type="text" value="{{ $loai[0]->ten_khoa_hoc }}" name="ten_khoa_hoc" class="form-control" id=loai" placeholder="">
               </div>
               <div class="col-md-6">
                 <label>Đặc điểm</label>
@@ -63,7 +63,7 @@
               </div>
               <div class="col-md-12">
                 <label>Mô tả</label>
-                <textarea  rows="10" cols="50" class="form-control" name="mo_ta">{{ $data->ten_loai }}</textarea>
+                <textarea  rows="10" cols="50" class="form-control" name="mo_ta">{{ $loai[0]->mo_ta }}</textarea>
               </div>
               
         

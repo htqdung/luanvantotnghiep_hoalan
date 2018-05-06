@@ -36,19 +36,20 @@
           <h3><b>DANH SÁCH NGƯỜI DÙNG</b></h3>
                   <thead>
                   <tr style="margin: 0px">
-                    <th style="width: 3%">ID</th>
+                    <th style="width: 3%">Stt</th>
                     <th style="width: 20%">Họ tên</th>
                     <th style="width: 10%">Số điện thoại</th>
                     <th style="width: 15%">Email</th>
                     <th style="width: 50%">Địa chỉ </th>
                     <th colspan="3">Chức năng</th>
-                    
+                  
                   </tr>
                   </thead>
                    <tbody>
+                    <?php $i=1; ?>
                 @foreach ($data as $item)
                   <tr>
-                    <td>{{ $item->id_nguoidung }}</td>
+                   <td><?= $i++; ?></td>
                     <td>{{ $item->ten}}</td>
                     <td>{{ $item->so_dien_thoai}}</td>
                     <td>{{ $item->email}}</td>

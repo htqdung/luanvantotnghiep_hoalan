@@ -29,7 +29,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<table class="table">
-					<h3><b>DANH MỤC HOA</b></h3>
+					<h3><b>DANH MỤC LOÀI HOA</b></h3>
 				    <thead>
 				      <tr>
 				        <th style="width: 5%">id</th>
@@ -51,9 +51,8 @@
 		                    <td>
 		                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_HOA', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 		                                          
-		                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="#"><i class="fa fa-info-circle"></i></a>
-		                 
-		                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
+		                      
+		                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{ route('XOA-LOAI-HOA', $item->id) }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
 		                    </td>
 				      </tr>	
 				      @endforeach			      

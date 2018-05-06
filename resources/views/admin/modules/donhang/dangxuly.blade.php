@@ -36,7 +36,7 @@
           </h3>
                   <thead>
                   <tr style="margin: 0px">
-                    <th style="width: 3%">ID</th>
+                    <th style="width: 3%">Stt</th>
                     <th style="width: 20%">Ngày đặt hàng</th>
                     <th style="width: 30%">Địa chỉ</th>
                     <th style="width: 15%">Hình thức thanh toán</th>
@@ -46,9 +46,10 @@
                   </tr>
                   </thead>
                    <tbody>
+                     <?php $i=1; ?>
                 @foreach ($data as $item)
                   <tr>
-                    <td>{{ $item->id }}</td>
+                    <td><?php echo $i; $i++;  ?></td>
                     <td>{{ date('d-m-Y', strtotime($item->ngay_dat_hang)) }}</td>                  
                     <td>{{ $item->so_nha}}, {{ $item->ten_duong }}, {{ $item->ten_phuong_xa }}, {{ $item->ten_quan_huyen}} , {{ $item->ten_tinh_thanhpho }}</td>
                      <td>{{ $item->hinh_thuc_thanh_toan}}</td>

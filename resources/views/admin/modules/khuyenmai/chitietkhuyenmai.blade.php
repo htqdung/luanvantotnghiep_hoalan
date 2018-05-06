@@ -34,29 +34,29 @@
                     <tbody>
                     	 <tr>
                         <th style="width: 30%">Tên khuyến mãi: </th>
-                        <td></td>
+                        <td>{{ $data[0]->ten_hinh_thuc }}</td>
                       </tr>
                       <tr>
                         <th style="width: 30%">Phần trăm: </th>
-                        <td></td>
+                        <td> {{ $data[0]->ti_le_giam_gia }}</td>
                       </tr>
                     
                       <tr>
                         <th style="width: 30%">Số lượng quà tặng: </th>
-                        <td></td>
+                        <td>{{ $data[0]->so_luong }}</td>
                       </tr>
                       <tr>
                         <th style="width: 30%">Tên quà tặng: </th>
-                        <td></td>
+                        <td>{{ $data[0]->ten_qua_tang }}</td>
                         
                       </tr>
                       <tr>
                         <th style="width: 30%">Ngày bắt đầu : </th>
-                        <td></td>
+                        <td>{{ $data[0]->ngay_bat_dau }}</td>
                       </tr>
                       <tr>
                         <th style="width: 30%">Ngày kết thúc: </th>
-                        <td></td>
+                        <td>{{ $data[0]->ngay_ket_thuc }}</td>
                       </tr>
                     </tbody>
                   </table>

@@ -37,14 +37,14 @@
 				    <thead>
 				      <tr>
 				        <th style="width: 3%">Stt</th>
-				        <th style="width: 20%">Tên sản phẩm</th>
-				        <th style="width: 5% ">Đơn giá</th>
-				        <th style="width: 10%">Kích thước <small>(dài, rộng, cao)</small></th>
-				        <th style="width: 22%">Mô tả</th>							       
-				        <th style="width: 8%">Điểm thưởng</th>
+				        <th style="width: 30% ; text-align: center;">Tên sản phẩm</th>
+				        <th style="width: 10% ; text-align: center;">Đơn giá</th>
+				      
+				       							       
+				        <th style="width: 10% ; text-align: center;">Điểm thưởng</th>
 				        <th style="width: 12%">Tag</th>
 
-				        <th style="width: 25%">Chức năng</th>
+				        <th  style="width: 15%; text-align: center;">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>
@@ -54,8 +54,8 @@
                     <td><?= $i++; ?></td>
                     <td><a href="{{ route('CHI_TIET_SAN_PHAM', $item->id_sanpham)  }}">{{ $item->ten_san_pham }}</a></td>
                     <td>{{ $item->gia }}</td>
-                    <td>{{ $item->thong_tin_chi_tiet}}</td>
-                    <td>{{ $item->mo_ta}}</td>
+                  
+                    
                     <td>{{ $item->diem_thuong}}</td>
                     <td>{{ $item->tag}}</td>
                     
@@ -65,7 +65,7 @@
                                           
                       <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="{{ route('CHI_TIET_SAN_PHAM', $item->id_sanpham)  }}"><i class="	fa fa-info-circle"></i></a>
                  
-                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
+                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{ route('XOA_SAN_PHAM', $item->id_sanpham)}}"><i class="fa fa fa-trash-o fa-fw"></i></a>
                    
                     </td>
 

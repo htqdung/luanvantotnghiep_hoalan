@@ -46,27 +46,7 @@
                     <label for="dongia">Đơn giá</label>
                     <input type="number" class="form-control" name="don_gia" value="{{ $data_sp[0]->gia }}" id="dongia" placeholder="" style="margin-right: 0; " >
                            
-                    <label for="form-kichthuoc">Kích thước:</label>
-                    <small>Dài - Rộng - Cao</small>
-                    <div id="form-kichthuoc" >
-                        <div class="col-md-4" class="form-inline"> 
-                          <label for="dai">Dài</label>
-                          <input type="number"  onchange="noi_chuoi()" class=" inline" id="dai" placeholder="Dài">
-                        </div>
-                        <div class="col-md-4" class="form-inline">
-
-                          <label for="dai">Rộng</label>
-                          <input type="number" onchange="noi_chuoi()"  class=" inline" id="rong" placeholder="Rộng">
-                        </div>
-                        <div class="col-md-4" class="form-inline">
-
-                          <label for="dai">Cao</label>
-                          <input type="number" onchange="noi_chuoi()"  class=" inline" id=cao placeholder="Cao">
-                        </div>                        
-                    </div>                  
-                    <input type="hidden" class="form-control" value="
-                      {{ $data_sp[0]->thong_tin_chi_tiet }}" name="kich_thuoc" id="kich_thuoc" placeholder="" style="margin-right: 0; " >
-                
+                    
                     <label for="tags">Tags</label>
                     <input type="hidden" class="form-control" name="tags" id="tags" value="{{ $data_sp[0]->tag }}" placeholder="" style="margin-right: 0; " >
                     <input type="text" class="form-control" id="txtSkills" name = "Skills" data-role="tagsinput">               

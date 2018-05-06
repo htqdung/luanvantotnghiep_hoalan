@@ -35,36 +35,29 @@
               <div style="clear:both"></div>
           
           <div class="col-md-12">
-              <div class="col-md-7">
+              <div class="col-md-6">
                   <label for="sanpham">Tên sản phẩm</label>
                   <input type="text" class="form-control" name="ten_san_pham" id="sanpham" placeholder="" style="margin-right: 0; " >
               </div>
-              <div class="col-md-5">
+              <div class="col-md-6">
                   <label for="dongia">Đơn giá</label>
                   <input type="number" class="form-control" name="don_gia" id="dongia" placeholder="" style="margin-right: 0; " >
               </div>
-              <div class="col-md-7 form-group" >                
-                  <label for="form-kichthuoc">Kích thước:</label>
-                  <small>Dài - Rộng - Cao</small>
-                  <div id="form-kichthuoc">
-                      <div class="col-md-4"><input type="number"  onchange="noi_chuoi()" class="form-controll inline" id="dai" placeholder="Dài"></div>
-                      <div class="col-md-4"> <input type="number" onchange="noi_chuoi()"  class="form-controll inline" id="rong" placeholder="Rộng"></div>
-                      <div class="col-md-4"><input type="number" onchange="noi_chuoi()"  class="form-controll inline" id=cao placeholder="Cao"></div>                        
-                  </div>                  
-                  <input type="hidden" class="form-control" name="kich_thuoc" id="kich_thuoc" placeholder="" style="margin-right: 0; " >
-              </div>
-              <div class="col-md-5">
+          </div>
+          <div class="col-md-12">
+              <div class="col-md-6">
                   <label for="tags">Tags</label>
                   <input type="hidden" class="form-control" name="tags" id="tags" placeholder="" style="margin-right: 0; " >
                   <input type="text" class="form-control" id="txtSkills" name = "Skills" data-role="tagsinput">               
               </div>
-          </div>
-          <div class="col-md-12">
-              <div class="col-md-4">
+              <div class="col-md-6">
                   <label for="diemthuong">Điểm thưởng</label>
                   <input type="number" class="form-control" name="diem_thuong" id="diemthuong" placeholder="" style="margin-right: 0; " >
               </div>
-              <div class="col-md-4">
+          </div>
+          <div class="col-md-12">
+              
+              <div class="col-md-6">
                   <div class="form-group" style="margin-right: 0; ">
                      <label>Thêm các loài hoa</label>
                      <small>* Có thể chọn được nhiều loài</small>
@@ -75,7 +68,7 @@
                      </select>
                   </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-6">
                   <label for="image">Chọn hình ảnh</label>
                   <input type="file" accept="image/*" class="" name="hinh_anh" id="image" placeholder="" style="margin-right: 0; " >
               </div>

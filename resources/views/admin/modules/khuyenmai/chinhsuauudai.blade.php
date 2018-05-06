@@ -10,7 +10,7 @@
         <i class="ace-icon fa fa-home home-icon"></i>
         <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
-    
+  
     </ul><!-- /.breadcrumb -->
 
     <div class="nav-search" id="nav-search">
@@ -27,26 +27,26 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="POST" action="">
-        <input type="hidden" name="_token" value="#">
+      <form role="form" method="POST" action="" enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
               <div class="col-md-6">
-                <label>Id</label>
-                <input type="text" name="id" class="form-control" id="chi" placeholder="">
+                <label>Tên hình thức</label>
+                <input type="text"  value="{{ $uudai[0]->ten_hinh_thuc }}" name="ten_hinh_thuc" class="form-control" id=uudai" placeholder="">
               </div>
-              <div class="col-md-6">
+               <div class="col-md-6">
                 <label>Tên sản phẩm</label>
-                <input type="text" name="ten_nguoi_dung" class="form-control" id=chi" placeholder="">
+                <input type="text"  value="{{ $uudai[0]->ten_san_pham }}" name="ten_san_pham" class="form-control" id=uudai" placeholder="">
               </div>
               <div class="col-md-6">
                 <label>Số lượng</label>
-                <input type="number" name="so_dien_thoai" class="form-control" id=chi" placeholder="">
+                <input type="number"  value="{{ $uudai[0]->so_luong_toi_thieu }}" name="so_luong" class="form-control" id=uudai" placeholder="">
               </div>
               <div class ="col-md-6" >
                 <label for="exampleInputEmail1">Tỉ lệ giảm</label>
-                <input type="number" name="dia_chi" class="form-control" id="chi" placeholder="">
+                <input type="number"  value="{{ $uudai[0]->ti_le_giam_gia }}" name="ti_le_giam_gia" class="form-control" id="uudai" placeholder="">
               </div>
         
               <div style="clear:both"></div>

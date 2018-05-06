@@ -33,20 +33,20 @@
     <div class="row">
       <div class="col-md-12">
         <table class="table">
-          <h3><b>DANH SÁCH KHUYẾN MẠI</b></h3>
+          <h3><b>HÌNH THỨC KHUYẾN MẠI</b></h3>
                   <thead>
                     <tr style="margin: 0px">
                       <th style="width: 3%; text-align: center;">Stt</th>
-                      <th style="width: 37% ; text-align: center;">Tên khuyến mại</th>
-                      <th style="width: 15%; text-align: center;">Ngày bắt đầu </th>
-                      <th style="width: 15% ;text-align: center;">Ngày kết thúc</th>
+                      <th style="width: 37% ">Tên khuyến mại</th>
+                      <th style="width: 15%">Ngày bắt đầu </th>
+                      <th style="width: 15% ">Ngày kết thúc</th>
                       <th style="width: 10% ;text-align: center;">Tỉ lệ giảm (%)</th>
-                      <th style="width: 20%; text-align: center;">Chức năng</th>
+                      <th style="width: 20%">Chức năng</th>
                     </tr>
                   </thead>
                 <tbody>
                   <?php $i=1; ?>
-                @foreach ($data as $item)
+                @foreach ($data as $item) 
                   <tr>
                     <td><?= $i++; ?></td>
                     <td>{{ $item->ten_hinh_thuc}}</td>
@@ -55,9 +55,9 @@
                     <td>{{ $item->ti_le_giam_gia}}</td>  
                    
                     <td>
-                       <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_KHUYEN_MAI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+                       <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_KHUYEN_MAI', $item->hinhthuckhuyenmai_id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
                                           
-                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="{{ route('CHI_TIET_KHUYEN_MAI', $item->id) }}"><i class=" fa fa-info-circle"></i></a>
+                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="{{ route('CHI_TIET_KHUYEN_MAI', $item->hinhthuckhuyenmai_id) }}"><i class=" fa fa-info-circle"></i></a>
                  
                       <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
                     </td>

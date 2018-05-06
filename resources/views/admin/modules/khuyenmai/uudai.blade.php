@@ -39,8 +39,8 @@
                     <th style="width: 20%">Tên hình thức</th>
                     <th style="width: 27%">Tên sản phẩm</th>
                     <th style="width: 15%">Số lượng</th>
-                    <th style="width: 15% ;text-align: center">Tỉ lệ giảm giá (%)</th>
-                    <th  style="width: 30%; text-align: center;">Chức năng</th>
+                    <th style="width: 15% ">Tỉ lệ giảm giá (%)</th>
+                    <th  style="width: 10%; text-align: center;">Chức năng</th>
                   </tr>
                   </thead>
                    <tbody>
@@ -55,10 +55,9 @@
                    
                      <td>
                        <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_UU_DAI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
-                                          
-                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="#"><i class=" fa fa-info-circle"></i></a>
+                     
                  
-                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
+                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{ route('XOA_UU_DAI', $item->id) }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
                     </td>
                 </tr> 
                 @endforeach           

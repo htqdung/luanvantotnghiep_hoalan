@@ -16,26 +16,13 @@
       <div class="box-body">
             <div class="row">
               <div class="col-md-6 form-group img-rounded" >
-                  <div style="margin-left: 20%; padding-top: 10px">
-                      <a href=""> 
-                        <img src="#" class="img-rounded" alt="Hình đại diện" style="width: 286px; height: 370px"> 
-                      </a>
+                   <div class="col-md-4">
+                     <img src="../public/sanpham/<?= $data_hinhanh[0]->ten_hinh; ?>" alt="">
+                    <label for="image">Chọn hình ảnh</label>
+                    <input type="file" multiple accept="image/*" class="" value="{{ $data_hinhanh[0]->ten_hinh }}" name="hinh_anh" id="image" placeholder="" style="margin-right: 0; " >
                   </div>
                   
-                 
-                  <div class="img-rounded" style="margin-top: 20px; width: 100%">
-                    <div class="form-group">
-                        <a href="#""><img class="img-rounded"  style="float: left; width:95px; height: 133px; margin-left: 20%; " src="#" alt="chitiet1"> </a>  
-                    </div>
-                    <div class="form-group">
-                        <a href="#" >
-                        <img class="img-rounded"  style="float: left; width: 95px; height: 133px; margin-left:20px;" src="#" alt="chitiet2"> </a>
-                        <a href="" >
-                    </div>
-                    <div class="form-group">
-                        <a href="#"><img class="img-rounded" style="float: left; width: 95px; height: 133px; margin-left: 20px;" src="#" alt="chitiet3"> </a>  
-                    </div>
-                  </div>  
+                  
               </div>
               <div class="col-md-6" style = "padding-top: 25px">
                 <div class="">
@@ -54,10 +41,10 @@
                           <th style="width: 30%">Giá: </th>
                          <td>{{ $data->gia }}</td>
                         </tr>
-                        <tr>
-                          <th style="width: 30%">Thông tin chi tiết: </th>
-                         <td>{{ $data->thong_tin_chi_tiet }}</td>
-                        </tr>
+                       {{--  <tr>
+                          <th style="width: 30%">Số lượng: </th>
+                         <td>{{ $data_hoa->so_luong }}</td>
+                        </tr> --}}
                         <tr>
                           <th style="width: 30%">Điểm thưởng: </th>
                          <td>{{ $data->diem_thuong }}</td>
@@ -66,10 +53,7 @@
                           <th style="width: 30%">Tags: </th>
                          <td>{{ $data->tag }}</td>
                         </tr>
-                        <tr>
-                          <th style="width: 30%">Mô tả: </th>
-                          <td>{{ $data->mo_ta }}</td>
-                        </tr>
+                       
                         @endforeach
                         
                        
@@ -80,6 +64,11 @@
                   </table>  
                 </div> 
               </div>
+            </div>
+            <div class="row">
+
+              <?= $data->mo_ta; ?>
+
             </div>
       </div>
       <!-- /.box-body -->

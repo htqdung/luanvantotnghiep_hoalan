@@ -38,14 +38,15 @@
               </div>
               <div class="col-md-6">
                 <label>Ngày bắt đầu</label>
-                <input type="date" name="ngay_bat_dau" value="{{ $data[0]->ngay_bat_dau }}" class="form-control" id=ngay_bat_dau" placeholder="">
+
+                <input type="date" name="ngay_bat_dau" value="{{ date("Y_m_d"),strtotime($data[0]->ngay_bat_dau) }}" class="form-control" id="ngay_bat_dau" placeholder="">
               </div>
               <div class="col-md-6">
                 <label>Ngày kết thúc</label>
-                <input type="date" name="ngay_ket_thuc" value="{{ $data[0]->ngay_ket_thuc }}" class="form-control" id=ngay_ket_thuc" placeholder="">
+                <input type="date" name="ngay_ket_thuc" value="{{ $data[0]->ngay_ket_thuc }}" class="form-control" id="ngay_ket_thuc" placeholder="">
               </div>
               <div class ="col-md-6" >
-                <label for="exampleInputEmail1">Tỉ lệ giảm</label>
+                <label for="exampleInputEmail1">Tỉ lệ giảm (%)</label>
                 <input type="text" name="ti_le_giam_gia" value="{{ $data[0]->ti_le_giam_gia }}" class="form-control" id="ti_le_giam_gia" placeholder="">
               </div>
         

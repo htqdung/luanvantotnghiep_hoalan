@@ -164,6 +164,10 @@ return [
         //cái này dùng để mở CK editor
         
         Unisharp\Ckeditor\ServiceProvider::class,
+
+
+        // THƯ VIỆN BIỂU ĐỒ
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
     ],
 
     /*
@@ -212,6 +216,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
 
     ],
 

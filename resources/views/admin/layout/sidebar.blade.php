@@ -146,7 +146,7 @@
               </ul>
           </li>
           <li class="">
-              <a href="{{ route('DANH_SACH_BAO_CAO') }}" >
+              <a href="{{ route('DANH_SACH_TONG') }}" >
   					<i class="menu-icon fa  fa-bar-chart-o"></i>
   					<span class="menu-text">Báo cáo </span>						
   				</a>

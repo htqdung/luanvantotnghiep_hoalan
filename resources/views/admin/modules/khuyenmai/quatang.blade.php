@@ -25,8 +25,8 @@
     <!-- /.page-header -->
      <div class="box box-primary">
         <div class="box-header with-border">
-          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>Làm mới</a>
-          <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_QUA_TANG') }}"><i class="fa fa-plus-circle fa-spin fa-1x fa-fw"></i> Thêm mới</a>
+          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="{{ route('DANH_SACH_QUA_TANG') }}"><i class="fa fa-refresh  fa-1x fa-fw"></i>Làm mới</a>
+          <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_QUA_TANG') }}"><i class="fa fa-plus-circle  fa-1x fa-fw"></i> Thêm mới</a>
         </div>
     <div class="row" >
     </div><!-- /.row -->
@@ -36,25 +36,26 @@
           <h3><b>DANH SÁCH QUÀ TẶNG</b></h3>
                   <thead>
                   <tr style="margin: 0px">
-                    <th style="width: 3%">Id</th>
-                    <th style="width: 30%">Tên quà tặng</th>
-                    <th style="width: 20%">Số lượng</th>
+                    <th style="width: 3%">Stt</th>
+                    <th style="width: 40%">Tên quà tặng</th>
+                    <th style="width: 30%">Số lượng</th>
                     
                     <th style="width: 10%; text-align: center;">Chức năng</th>
                   </tr>
                   </thead>
                    <tbody>
+                     <?php $i=1; ?>
                 @foreach ($data as $item)
                   <tr>
-                    <td>{{ $item->id }}</td>
+                    <td><?= $i++; ?></td>
                     <td>{{ $item->ten_qua_tang }}</td>
                     <td>{{ $item->so_luong}}</td>                   
                     <td>
                        <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_QUA_TANG', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
                                           
-                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="#"><i class=" fa fa-info-circle"></i></a>
+                     
                  
-                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="#"><i class="fa fa fa-trash-o fa-fw"></i></a>
+                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{ route('XOA_QUA_TANG', $item->id) }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
                     </td>
                 </tr> 
                 @endforeach           

@@ -27,22 +27,19 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="POST" action="">
-        <input type="hidden" name="_token" value="#">
+      <form role="form" method="POST" action="" enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
-              <div class="col-md-6">
-                <label>Id</label>
-                <input type="text" name="id" class="form-control" id="chi" placeholder="">
-              </div>
+            
               <div class="col-md-6">
                 <label>Tên quà tặng</label>
-                <input type="text" name="ten_nguoi_dung" class="form-control" id=chi" placeholder="">
+                <input type="text" value="{{ $quatang[0]->ten_qua_tang }}" name="ten_qua_tang" class="form-control" id=quatang" placeholder="">
               </div>
               <div class="col-md-6">
                 <label>Số lượng</label>
-                <input type="number" name="so_dien_thoai" class="form-control" id=chi" placeholder="">
+                <input type="number" value="{{ $quatang[0]->so_luong }}" name="so_luong" class="form-control" id=quatang" placeholder="">
               </div>
               <div style="clear:both"></div>
             </div>
