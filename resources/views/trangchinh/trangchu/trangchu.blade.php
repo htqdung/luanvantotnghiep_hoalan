@@ -39,26 +39,7 @@
 					</div>
 				</div>
 			</div>
-			<!--
-			<div class="item item4"> 
-				<div class="container">
-					<div class="carousel-caption">
-						<h3><span>TƯNG BỪNG KHAI TRƯƠNG</span></h3>
-						<p>Từ ngày 13/3 - 13/4</p>
-						<a class="hvr-outline-out button2" href="trangchinh/sanpham/sanpham">Xem ngay </a>
-					</div>
-				</div>
-			</div>
-			<div class="item item5"> 
-				<div class="container">
-					<div class="carousel-caption">
-						<h3><span>TƯNG BỪNG KHAI TRƯƠNG</span></h3>
-						<p>Từ ngày 13/3 - 13/4</p>
-						<a class="hvr-outline-out button2" href="trangchinh/sanpham/sanpham">Xem ngay </a>
-					</div>
-				</div>
-			</div> 
-			-->
+
 		</div>
 		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -139,7 +120,7 @@
 								<img src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" class="pro-image-back">
 								<div class="men-cart-pro">
 									<div class="inner-men-cart-pro">
-										<a href="{{ route('frontend.chitiet',$itemNew->id) }}" class="link-product-add-cart">Xem Chi Tiết</a>
+										<a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="link-product-add-cart">Xem Chi Tiết</a>
 									</div>
 								</div>
 								<span class="product-new-top">Mới</span>
@@ -198,7 +179,7 @@
 									<img src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" class="pro-image-back">
 									<div class="men-cart-pro">
 										<div class="inner-men-cart-pro">
-											<a href="{{ route('frontend.chitiet',$itemNew->id) }}" class="link-product-add-cart">Xem Chi Tiết</a>
+											<a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="link-product-add-cart">Xem Chi Tiết</a>
 										</div>
 									</div>
 									<span class="product-new-top">Mới</span>
@@ -263,7 +244,7 @@
 
 								</div>
 								<div class="item-info-product ">
-									<h4><a href="{{ route('frontend.chitiet',$itemNew->id) }}">{{ $itemNew->ten_san_pham }}</a></h4>
+									<h4><a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}">{{ $itemNew->ten_san_pham }}</a></h4>
 									<div class="rating1">
 									<span style="margin-top: 10px" class="starRating">
 										<input id="rating5" type="radio" name="rating" value="5">
@@ -461,7 +442,7 @@
 		<div class="sale-w3ls">
 			<div class="container">
 				<h6 >MUA SỐ LƯỢNG LỚN GIẢM ĐẾN <span style="color: #7FB2F0" >20%</span></h6>
-				<a class="hvr-outline-out button2" href="trangchinh/chitietsanpham/chitietsanpham">Xem Ngay </a>
+				<a class="hvr-outline-out button2" href="{{ route('frontend.khuyenmai') }}">Xem Ngay </a>
 			</div>
 		</div>
 	<!-- //we-offer -->

@@ -87,4 +87,9 @@ class ShoppingCartController extends Controller
         ];
         return view('trangchinh.dathang.dathang1',$viewData);
     }
+
+    public function postPay(Request $request)
+    {
+        dd($request->except('_token'));
+    }
 }

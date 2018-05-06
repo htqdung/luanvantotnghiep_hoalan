@@ -62,7 +62,7 @@
 							</div>
 						</ul>
 					</li>
-					<li class=" menu__item"><a class="menu__link" href="{{ route('frontend.sale') }}"><b>KHUYẾN MÃI</b></a></li>
+					<li class=" menu__item"><a class="menu__link" href="{{ route('frontend.khuyenmai') }}"><b>KHUYẾN MÃI</b></a></li>
 					<li class=" menu__item"><a class="menu__link" href="{{ route('frontend.contact') }}"><b>LIÊN HỆ</b></a></li>
 				  </ul>
 				</div>

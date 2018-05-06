@@ -1,6 +1,34 @@
 <!-- header -->
-	
 
+<style>
+	#result
+	{
+		width: 99%;
+		border: 1px solid #dedede;
+		top: 40px;
+		z-index: 99999;
+		position: absolute;
+		background: white;
+		height: 300px;
+		overflow-y: scroll;
+		list-style: none;
+	}
+	#result li {
+		padding: 5px;
+		border-bottom: 1px dotted #dedede;
+	}
+	#result li a {
+		text-transform: capitalize;
+		display: inline-block;
+		padding: 7px 10px;
+		font-size: 14px;
+		color: #666;
+	}
+	#result li:hover a{
+		color: #337ab7;
+		padding-left: 20px;
+	}
+</style>
 <div class="header" style="background: #7FB2F0" id="home">
 	
 	<div class="container" >
@@ -31,13 +59,14 @@
 			</div>
 
 		<div class="col-md-4 header-middle" style="margin-top: 10px; margin-bottom: 5px" >
-			<form action="#" method="post" >
+			<form action="" method="post" >
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
+						<input type="text" class="form-control typeahead" name="name_product" placeholder="Nhập từ khóa tìm kiếm..." value="{{ Request::get('name_product') }}">
 						<span class="input-group-btn"><button class="btn btn-secondary" style="background-color: #7FB2F0"><i class="fa fa-search" style="font-size: 19px ; color: #fff; border: 1px solid #7FB2F0 "></i></button></span>
 					</div>
 				<div class="clearfix"></div>
 			</form>
+			<div id="result" style="display: none"></div>
 		</div>
 		<div class="clearfix"></div>
 	</div>

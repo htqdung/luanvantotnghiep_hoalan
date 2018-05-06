@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Loai;
 use App\SanPham;
+use App\HinhThucKhuyenMai;
+use App\ChuongTrinhKhuyenMai;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -29,6 +31,24 @@ class FrontendController extends Controller
     }
 
     /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * xem don da dat
+     */
+    public function donhang()
+    {
+        return view('trangchinh.donhang.donhang');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * chi tiet don hang
+     */
+    public function chitietdonhang()
+    {
+        return view('trangchinh.donhang.chitietdonhang');
+    }
+
+    /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      * luu thong tin lien he
@@ -51,9 +71,9 @@ class FrontendController extends Controller
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * san pham  khuyen mai
+     * san pham qua tang
      */
-    public function sale()
+    public function quatang()
     {
         $products = \DB::table('tbl_sanpham')
             ->leftJoin('tbl_sanpham_loai','tbl_sanpham.id','tbl_sanpham_loai.sanpham_id')
@@ -66,6 +86,35 @@ class FrontendController extends Controller
             ->paginate(9);
 
         return view('trangchinh.khuyenmai.khuyenmai',compact('products'));
+    }
+
+     /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * san pham khuyen mai
+     */
+    public function  khuyenmai(Request $request)
+    {
+        $hinhthuckhuyenmai    = HinhThucKhuyenMai::all();
+        $hinhthuckhuyenmai_id = $request->hinhthuckhuyenmai;
+
+        $products = \DB::table('tbl_sanpham')
+            ->leftJoin('tbl_chuongtrinhkhuyenmai','tbl_sanpham.id','tbl_chuongtrinhkhuyenmai.sanpham_id')
+            ->leftJoin('tbl_dongia','tbl_sanpham.id','tbl_dongia.sanpham_id')
+            ->leftJoin('tbl_hinhanh','tbl_sanpham.id','tbl_hinhanh.sanpham_id');
+
+        if ( $hinhthuckhuyenmai_id)
+        {
+            $products = $products->where('tbl_chuongtrinhkhuyenmai.hinhthuckhuyenmai_id',$hinhthuckhuyenmai_id);
+        }
+
+        $products = $products->select('tbl_sanpham.*','tbl_dongia.gia','tbl_hinhanh.ten_hinh')->paginate(9);
+
+        $viewData = [
+            'products' => $products,
+            'filter'   => $request->query(),
+            'hinhthuckhuyenmai' => $hinhthuckhuyenmai
+        ];
+        return view('trangchinh.khuyenmai.khuyenmai',$viewData);
     }
 
     /**
@@ -119,5 +168,81 @@ class FrontendController extends Controller
         }
 
         return redirect('/');
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     * lay quan / huyen thuoc city
+     */
+    public function getCity(Request $request)
+    {
+        $data = [
+            'messages' => 'error'
+        ];
+
+        $id = $request->id;
+
+        if ($id)
+        {
+            $district = \DB::table('tbl_quanhuyen')->where('tinh_thanhpho_id',$id)->get();
+            $data = [
+                'messages' => 'success',
+                'district' => $district
+            ];
+            return response($data);
+        }
+
+        return response($data);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     *  lay phuong xa theo quan huyen
+     */
+    public function getDistrict(Request $request)
+    {
+        $data = [
+            'messages' => 'error'
+        ];
+
+        $id = $request->id;
+
+        if ($id)
+        {
+            $wards = \DB::table('tbl_phuongxa')->where('quanhuyen_id',$id)->get();
+            $data = [
+                'messages' => 'success',
+                'wards'    => $wards
+            ];
+            return response($data);
+        }
+
+        return response($data);
+    }
+
+    public function getWards(Request $request)
+    {
+
+    }
+
+    public function searchTypehead(Request $request)
+    {
+        $products = SanPham::select('id','ten_san_pham');
+        $query = $request->input('query');
+        if($query)
+        {
+            $products = $products->where("ten_san_pham","LIKE","%{$query}%")->orderBy('id','DESC')->get();
+        }else
+        {
+            $products = $products->orderBy('id','DESC')->get();
+        }
+        $products = $products->toArray();
+        foreach($products as $key => $item)
+        {
+            $products[$key]['slug'] = str_slug($item['ten_san_pham']);
+        }
+        return response()->json($products);
     }
 }

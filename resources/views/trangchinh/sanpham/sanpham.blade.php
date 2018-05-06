@@ -10,7 +10,7 @@
 			<div class="agile_inner_breadcrumb">
 
 				<ul class="w3_short">
-					<li><a href="index.html">Trang Chủ</a><i>|</i></li>
+					<li><a href="/">Trang Chủ</a><i>|</i></li>
 					<li>Sản Phẩm</li>
 				</ul>
 			</div>
@@ -40,12 +40,15 @@
 						<ul>
 							@foreach($loai as $loai)
 								<li><input type="checkbox" id="item-0-0" /><b><a style="margin-left: 30px" href="{{ \App\Helpers\Url::addParams(['loai' => $loai->id]) }}" for="item-0-0">  {{$loai->ten_loai}}</a></b>
-							</li>
+								</li>
 							@endforeach
 						</ul>
 					</li>
-					<li><input type="checkbox" id="item-1" checked="checked" /><label for="item-1"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Quà Tặng</label>
+
+					<li>
+						<input type="checkbox" id="item-1" /><b><a class="fa fa-long-arrow-right" href="" for="item-1"> Quà Tặng</a></b>
 					</li>
+
 					<!--<li><input type="checkbox" checked="checked" id="item-2" /><label for="item-2"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Giảm Giá</label>
 						<ul>
 							<li><input type="checkbox"  id="item-2-0" /><label for="item-2-0"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Summer Discount Sales</label>
