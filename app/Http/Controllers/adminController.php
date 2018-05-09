@@ -512,15 +512,11 @@ class adminController extends Controller
         $khuyenmai->ten_hinh_thuc=$request->input('ten_hinh_thuc');
         $khuyenmai->ti_le_giam_gia=$request->input('ti_le_giam_gia');
         $khuyenmai->save();
-
-
-
-
         return  redirect()->intended('qt-danh-sach-khuyen-mai');
-
-
     }
-       public function xoakhuyenmai(Request $request,$id)
+    
+
+    public function xoakhuyenmai(Request $request,$id)
     {
        $khuyenmai = HinhThucKhuyenMai::find($id);
         if($khuyenmai->delete())
@@ -533,6 +529,7 @@ class adminController extends Controller
        
     }
 //ưu đãi
+    
     public function danhsachuudai()
     {
         $uudai = DB::table('tbl_uudai')
