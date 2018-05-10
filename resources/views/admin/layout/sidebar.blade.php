@@ -37,33 +37,41 @@
               <a href="#" class="dropdown-toggle"><i class="menu-icon fa  fa-asterisk"></i><span class="menu-text">Hoa Lan</span><b class="arrow fa fa-angle-down"></b></a>
               <b class="arrow"></b>
               <ul class="submenu">
+                <li class="">
+                  <a href="{{ route('DANH_SACH_CHi') }}">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    Danh mục chi
+                  </a>
+                  <b class="arrow"></b>
+                </li>
+                 <li class="">
+                      <a href="{{ route('DAC_DIEM_HOA') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Đặc điểm hoa
+                      </a>
+                      <b class="arrow"></b>
+                  </li>
+                  <li class="">
+                      <a href="{{  route('DANH_MUC_HOA') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh mục loài hoa
+                      </a>
+                      <b class="arrow"></b>
+                  </li>
+                  <li class="">
+                <a href="#">
+                  <i class="menu-icon fa fa-caret-right"></i>
+                  Danh mục Tag
+                </a>
+                <b class="arrow"></b>
+             </li>
                   <li class="">
                       <a href="{{ route('DANH_SACH_SAN_PHAM') }}" >
             						<i class="menu-icon fa fa-caret-right"></i>
             						Danh sách sản phẩm
             					</a>
                   </li>
-                  <li class="">
-                      <a href="{{  route('DANH_MUC_HOA') }}">
-  						<i class="menu-icon fa fa-caret-right"></i>
-  						Danh mục hoa
-  					</a>
-                      <b class="arrow"></b>
-                  </li>
-                  <li class="">
-                      <a href="{{ route('DAC_DIEM_HOA') }}">
-  						<i class="menu-icon fa fa-caret-right"></i>
-  						Đặc điểm hoa
-  					</a>
-                      <b class="arrow"></b>
-                  </li>
-                  <li class="">
-                      <a href="{{ route('DANH_SACH_CHi') }}">
-  						<i class="menu-icon fa fa-caret-right"></i>
-  						Danh mục chi
-  					</a>
-                      <b class="arrow"></b>
-                  </li>
+              
                  
               </ul>
           </li>

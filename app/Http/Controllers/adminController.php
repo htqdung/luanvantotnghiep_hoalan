@@ -318,7 +318,7 @@ class adminController extends Controller
     public function getchi()
     {
         $chi = DB::table('tbl_chi')
-        ->select('id', 'ten_chi', 'mo_ta')
+        ->select('id', 'ten_chi','canh_hoa','dai_hoa','bong_hoa', 'mo_ta')
         ->orderBy('id', 'desc')
         ->paginate(10);
 
@@ -332,6 +332,9 @@ class adminController extends Controller
     {
         $chi = new Chi();
         $chi->ten_chi=$request->input('ten_chi');
+        $chi->canh_hoa=$request->input('canh_hoa');
+        $chi->dai_hoa=$request->input('dai_hoa');
+        $chi->bong_hoa=$request->input('bong_hoa');
         $chi->mo_ta=$request->input('mo_ta');
         $chi->save();
 
@@ -341,7 +344,7 @@ class adminController extends Controller
 
     {
          $chi = DB::table('tbl_chi')
-        ->select('id', 'ten_chi', 'mo_ta')
+         ->select('id', 'ten_chi','canh_hoa','dai_hoa','bong_hoa', 'mo_ta')
         ->orderBy('id', 'desc')
         ->paginate(10);
         return view('admin.modules.chi.chinhsuachi', ['data'=>$chi]);
@@ -349,10 +352,11 @@ class adminController extends Controller
     public function postChinhSuaChi(Request $request, $id)
     {
         $chi = Chi::findOrFail($id);
-        $chi->ten_chi=$request->input('ten_chi');
-      
+       $chi->ten_chi=$request->input('ten_chi');
+        $chi->canh_hoa=$request->input('canh_hoa');
+        $chi->dai_hoa=$request->input('dai_hoa');
+        $chi->bong_hoa=$request->input('bong_hoa');
         $chi->mo_ta=$request->input('mo_ta');
-      
         $chi->save();
          return redirect()->intended('qt-chi');
     }
@@ -369,7 +373,14 @@ class adminController extends Controller
         }
        
     }
-
+     public function chitietchi($id)
+    {
+        $chi = DB::table('tbl_chi')
+        ->select( 'ten_chi','canh_hoa','dai_hoa','bong_hoa', 'mo_ta')
+        ->where('tbl_chi.id', '=' , $id)
+        ->get();
+        return view('admin.modules.chi.chitietchi', ['data'=>$chi]);
+    }
 //người dùng
 
     public function getnguoidung()

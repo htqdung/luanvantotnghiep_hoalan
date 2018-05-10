@@ -11,7 +11,6 @@ include_once('qd_web.php');
 |
 */
 
-
 Route::get('test', function(){
 	return view('trangchinh.trangchu.test');
 });

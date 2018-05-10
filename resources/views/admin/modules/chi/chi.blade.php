@@ -23,8 +23,8 @@
 		<!-- /.page-header -->
 		 <div class="box box-primary">
 	      <div class="box-header with-border">
-	        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh fa-1x fa-fw"></i>Làm mới</a>
-	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_CHI') }}"><i class="fa fa-plus-circle fa-1x fa-fw"></i> Thêm mới</a>
+	         <a class="btn btn-primary" style="float: right; padding: 0px" href="{{ route('THEM_CHI') }}"><i class="fa fa fa-plus  fa-1x fa-fw"></i> Thêm mới</a>
+	 
 	      </div>
 		<div class="row" >
 		</div><!-- /.row -->
@@ -34,9 +34,12 @@
 					<h3><b>CHI</b></h3>
 				    <thead>
 				      <tr>
-				        <th style="width: 5%">STT</th>
-				        <th style="width: 25%">Tên chi</th>
-				         <th style="width: 60%">Mô tả</th>							   
+				        <th style="width: 7%">Mã số</th>
+				        <th style="width: 15%">Tên chi</th>
+				        <th style="width: 15%">Cánh hoa</th>
+				        <th style="width: 15%">Đài hoa</th>
+				        <th style="width: 15%">Bông hoa</th>
+				         							   
 				        <th style="width: 10%">Chức năng</th>
 				      </tr>
 				    </thead>
@@ -46,9 +49,12 @@
 					  <tr>
 				        <td><?= $i++; ?></td>
 				        <td>{{ $item->ten_chi }}</td>
-		
-				        <td>{{ $item->mo_ta }}</td>
+						<td>{{ $item->canh_hoa }}</td>
+						<td>{{ $item->dai_hoa }}</td>
+						<td>{{ $item->bong_hoa }}</td>
+				        
 						<td>
+							<a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_CHI') }}"><i class="glyphicon glyphicon-folder-open"></i></a>
 		                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_CHI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 		                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{ route('XOA_CHI', $item->id) }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
 		                    </td>

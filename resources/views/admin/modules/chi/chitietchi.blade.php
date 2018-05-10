@@ -22,8 +22,13 @@
       </form>
     </div><!-- /.nav-search -->
   </div>
+   <div class="box-header with-border">
+          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-warning" href="{{ route('DANH_SACH_CHi') }}"><i class=""></i>Quay lại</a>
+         
+        </div>
       <div class="box-header with-border">
-        <h3 class="box-title">Thêm chi</h3>
+        <h3 class="box-title">Chi tiết chi</h3>
+
       </div>
       <!-- /.box-header -->
       <!-- form start -->
@@ -34,53 +39,34 @@
              <div class="form-group">
               <div class="col-md-12">
                 <div class="col-md-6" style="padding-top: 14px">
-                <label for="chi">Tên chi: *</label>
-                <input type="text"  name="ten_chi"  class="form-control" id="chi" placeholder="Điền tên chi">
+                <label for="chi"><b>Tên chi:</b> {{ $data[0]->ten_chi}}</label>
+                
                 </div>
 
                 <div class="col-md-6" style="padding-top: 14px">
-                <label for="chi">Cánh hoa: *</label>
-                <input type="text"  name="canh_hoa"  class="form-control" id="chi" placeholder="">
+                <label for="chi"><b>Cánh hoa:</b> {{ $data[0]->canh_hoa}}</label>
+                
                </div>
               </div>
               <div class="col-md-12">
                 <div class="col-md-6" style="padding-top: 14px">
-                <label for="chi">Đài hoa: *</label>
-                <input type="text"  name="dai_hoa"  class="form-control" id="chi" placeholder="">
+                <label for="chi"><b>Đài hoa:</b> {{ $data[0]->dai_hoa}}</label>
+                
                 </div> 
                 <div class="col-md-6" style="padding-top: 14px">
-                <label for="chi">Bông hoa: *</label>
-                <input type="text"  name="bong_hoa"  class="form-control" id="chi" placeholder="">
+                <label for="chi"><b>Bông hoa:</b> {{ $data[0]->bong_hoa}}</label>
+               
               </div>               
               </div>
              <div class="col-md-12 form-group" style="padding-top: 20px" >
-                  <label for="content" >Mô tả: </label>
-                 
-                  <textarea style="height: 500px" id="content" ></textarea>
-                  <input type="hidden" name="mo_ta" id="content2">
-                  <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-                  <script>
-                      
-                      var editor = CKEDITOR.replace( 'content' );
-
-                      // The "change" event is fired whenever a change is made in the editor.
-                      editor.on('change', function( evt ) {
-                          
-                          var content = evt.editor.getData();
-                          $("#content2").val(content);
-                      });
-                  </script>
+                  <label for="content" ><b>Mô tả:</b><?= $data[0]->mo_ta;?> </label>
             </div>  
               <div style="clear:both"></div>
             </div>
           </div>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-         
-          <button type="submit" class="btn btn-primary" style="float: right;"> Lưu lại</button>
-          
-        </div>
+       
       </form>
    
     <!-- /.box -->

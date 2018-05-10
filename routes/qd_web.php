@@ -37,6 +37,8 @@ Route::post('qt-them-chi', 'adminController@postThemChi');
 Route::get('qt-chinh-sua-chi/{id}', 'adminController@chinhsuachi')->name('CHINH_SUA_CHI');
 Route::post('qt-chinh-sua-chi/{id}', 'adminController@postChinhSuaChi');
 Route::get('qt-xoa-chi/{id}', 'adminController@xoachi')->name('XOA_CHI');
+Route::get('qt-chi-tiet-chi/{id}','adminController@chitietchi')->name('CHI_TIET_CHI');
+
 
 //người dùng
 Route::get('qt-danh-sach-nguoi-dung', 'adminController@getnguoidung')->name('DANH_SACH_NGUOI_DUNG');
