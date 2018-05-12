@@ -15,6 +15,10 @@ class CreateTblTrangthaiDonhangTable extends Migration
     {
         Schema::create('tbl_trangthai_donhang', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('trangthai_id')->unsigned();
+            $table->foreign('trangthai_id')->references('id')->on('tbl_trangthai')->onDelete('cascade');
+            $table->integer('donhang_id')->unsigned();
+            $table->foreign('donhang_id')->references('id')->on('tbl_donhang')->onDelete('cascade');
             $table->timestamps();
         });
     }

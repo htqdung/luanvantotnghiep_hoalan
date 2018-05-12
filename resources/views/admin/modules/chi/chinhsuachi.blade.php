@@ -33,13 +33,44 @@
           <div class="form-group">
              <div class="form-group">
               <div class="col-md-12">
-                <label>Tên chi</label>
-                <input type="text" value="{{ $data[0]->ten_chi }}" name="ten_chi" class="form-control" id=chi" placeholder="">
+                  <div class="col-md-6">
+                  <label>Tên chi</label>
+                  <input type="text" value="{{ $data[0]->ten_chi }}" name="ten_chi" class="form-control" id=chi" placeholder="">
+                </div>
+                <div class="col-md-6">
+                  <label>Cánh hoa</label>
+                  <input type="text" value="{{ $data[0]->canh_hoa }}" name="canh_hoa" class="form-control" id=chi" placeholder="">
+                </div>
               </div>
               <div class="col-md-12">
-                <label>Mô tả</label>
-                <textarea  rows="10" cols="50" class="form-control" name="mo_ta">{{ $data[0]->mo_ta }}</textarea>
+                  <div class="col-md-6">
+                    <label>Đài hoa</label>
+                    <input type="text" value="{{ $data[0]->dai_hoa }}" name="dai_hoa" class="form-control" id=chi" placeholder="">
+                  </div>
+              <div class="col-md-6">
+                <label>Bông hoa</label>
+                <input type="text" value="{{ $data[0]->bong_hoa }}" name="bong_hoa" class="form-control" id=chi" placeholder="">
               </div>
+              </div>
+              
+              <div class="col-md-12 form-group" style="padding-top: 20px" >
+                  <label for="content" >Mô tả:  </label>
+                 
+                  <textarea style="height: 500px" id="content" >{{ $data[0]->mo_ta }}</textarea>
+                  <input type="hidden" name="mo_ta" id="content2">
+                  <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+                  <script>
+                      
+                      var editor = CKEDITOR.replace( 'content' );
+
+                      // The "change" event is fired whenever a change is made in the editor.
+                      editor.on('change', function( evt ) {
+                          
+                          var content = evt.editor.getData();
+                          $("#content2").val(content);
+                      });
+                  </script>
+             </div>  
               <div style="clear:both"></div>
             </div>
                      
@@ -49,9 +80,9 @@
         <!-- /.box-body -->
 
         <div class="box-footer">
-          <a class="btn btn-danger" href="{{ route('DANH_SACH_CHi') }}">Quay lại</a>
-          <button type="submit" class="btn btn-primary"> <i class="fa fa-save faa-pulse animated "></i> Lưu lại</button>
-          <button type="reset" class="btn btn-success">Làm mới</button>
+          
+          <button type="submit" style="float: right;" class="btn btn-primary"> <i class="" ></i> Lưu lại</button>
+          
         </div>
       </form>
    

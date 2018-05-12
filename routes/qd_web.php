@@ -1,4 +1,4 @@
- <?php
+  <?php
 
 Route::get('qt-admin', 'adminController@getTest')->name('MO_GIAO_DIEN_ADMIN');
 //danh mục loài hoa
@@ -95,7 +95,10 @@ Route::get('qt-bao-cao-thang-9','adminController@getBaoCaoTheoThangChin')->name(
 Route::get('qt-bao-cao-thang-10','adminController@getBaoCaoTheoThangMuoi')->name('DANH_SACH_THANG_MUOI');
 Route::get('qt-bao-cao-thang-11','adminController@getBaoCaoTheoThangMuoiMot')->name('DANH_SACH_THANG_MUOI_MOT');
 Route::get('qt-bao-cao-thang-12','adminController@getBaoCaoTheoThangMuoiHai')->name('DANH_SACH_THANG_MUOI_HAI');
-
+//tags
+Route::get('qt-danh-sach-tags','adminController@danhsachtags')->name('DANH_SACH_TAGS');
+Route::get('qt-them-tags', 'adminController@themtags')->name('THEM_TAGS');
+Route::post('qt-them-tags', 'adminController@postThemTags');
 // Route::get('/reporting', ['uses' =>'ReportController@index', 'as' => 'Report']);
 // Route::post('/reporting', ['uses' =>'ReportController@post']);
 ?>

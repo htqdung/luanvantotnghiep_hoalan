@@ -31,27 +31,35 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
           <div class="form-group">
-             <div class="form-group">
-              <div class="col-md-6">
-                <label>Tên khuyến mại</label>
-                <input type="text" name="ten_khuyen_mai"  class="form-control" id=chi" placeholder="Nhập vào tên khuyến mãi" >
+
+              
+              <div class="col-md-4"> 
+                  <img src="http://localhost:8080/luanvantotnghiep_hoalan/public/admin/assets/images/avatars/avatar2.png" alt="">
+                    <br>
+                  <label for="image">Chọn hình ảnh</label>
+
+                  <input type="file" accept="image/*" class="" name="ten_hinh_anh" id="image" placeholder="" style="margin-right: 0; " >
+                </div>
+              <div class="col-md-8">
+                  <div class="form-group">
+                  <label>Tên chương trình</label>
+                  <input type="text" name="ten_chuong_trinh"  class="form-control" id=chi" placeholder="Nhập vào tên khuyến mãi" >
+                </div>
+                <div class ="form-group" >
+                  <label for="exampleInputEmail1">Tỉ lệ giảm</label>
+                  <input type="number" name="ti_le_giam" class="form-control" id="chi" placeholder="% giảm giá">
+                </div>
+                <div class="form-group">
+                  <label>Ngày bắt đầu</label>
+                  <input type="date" name="ngay_bat_dau" class="form-control" id=chi" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label>Ngày kết thúc</label>
+                  <input type="date" name="ngay_ket_thuc" class="form-control" id=chi" placeholder="">
+                </div>
               </div>
-              <div class ="col-md-6" >
-                <label for="exampleInputEmail1">Tỉ lệ giảm</label>
-                <input type="number" name="ti_le_giam" class="form-control" id="chi" placeholder="% giảm giá">
-              </div>
-              <div class="col-md-6">
-                <label>Ngày bắt đầu</label>
-                <input type="date" name="ngay_bat_dau" class="form-control" id=chi" placeholder="">
-              </div>
-              <div class="col-md-6">
-                <label>Ngày kết thúc</label>
-                <input type="date" name="ngay_ket_thuc" class="form-control" id=chi" placeholder="">
-              </div>
-              <p>FORM NÀY THIẾU CỘT HÌNH ẢNH CHO KHUYẾN MÃI VÀ 2 CỘT NGÀY BẮT ĐẦU NGÀY KẾT THÚC TRONG CƠ SỞ DỮ LIỆU</p>
-        
               <div style="clear:both"></div>
-            </div>
+            
                      
           </div>
           
@@ -59,9 +67,7 @@
         <!-- /.box-body -->
 
         <div class="box-footer">
-          <a class="btn btn-danger" href="{{ route('DANH_SACH_KHUYEN_MAI') }}">Quay lại</a>
-          <button type="submit" class="btn btn-primary"> <i class="fa fa-save faa-pulse animated "></i> Lưu lại</button>
-          <button type="reset" class="btn btn-success">Làm mới</button>
+          <button type="submit" style="float: right;" class="btn btn-primary"> Lưu lại</button>
         </div>
       </form>
    

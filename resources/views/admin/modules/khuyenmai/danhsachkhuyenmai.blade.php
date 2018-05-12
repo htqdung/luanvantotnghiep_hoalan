@@ -25,7 +25,6 @@
     <!-- /.page-header -->
      <div class="box box-primary">
         <div class="box-header with-border">
-          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="{{ route('DANH_SACH_KHUYEN_MAI') }}"><i class="fa fa-refresh fa-1x fa-fw"></i>Làm mới</a>
           <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_KHUYEN_MAI') }}"><i class="fa fa-plus-circle fa-1x fa-fw"></i> Thêm mới</a>
         </div>
     <div class="row" >
@@ -33,14 +32,14 @@
     <div class="row">
       <div class="col-md-12">
         <table class="table">
-          <h3><b>HÌNH THỨC KHUYẾN MẠI</b></h3>
+          <h3><b>CHƯƠNG TRÌNH KHUYẾN MÃI</b></h3>
                   <thead>
                     <tr style="margin: 0px">
-                      <th style="width: 3%; text-align: center;">Stt</th>
-                      <th style="width: 37% ">Tên khuyến mại</th>
+                      <th style="width: 8%; text-align: center;">Mã số</th>
+                      <th style="width: 32% ">Tên chương trình</th>
+                      <th style="width: 15% ">Tỉ lệ giảm (%)</th>
                       <th style="width: 15%">Ngày bắt đầu </th>
-                      <th style="width: 15% ">Ngày kết thúc</th>
-                      <th style="width: 10% ;text-align: center;">Tỉ lệ giảm (%)</th>
+                      <th style="width: 15% ">Ngày kết thúc</th>  
                       <th style="width: 20%">Chức năng</th>
                     </tr>
                   </thead>
@@ -49,7 +48,7 @@
                 @foreach ($data as $item) 
                   <tr>
                     <td><?= $i++; ?></td>
-                    <td>{{ $item->ten_hinh_thuc}}</td>
+                    <td>{{ $item->ten_chuong_trinh}}</td>
                     <td>{{ date('d-m-Y', strtotime($item->ngay_bat_dau)) }}</td>
                      <td>{{ date('d-m-Y', strtotime($item->ngay_ket_thuc)) }}</td> 
                     <td>{{ $item->ti_le_giam_gia}}</td>  

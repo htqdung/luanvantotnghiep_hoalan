@@ -59,7 +59,7 @@
                       <b class="arrow"></b>
                   </li>
                   <li class="">
-                <a href="#">
+                <a href="{{ route('DANH_SACH_TAGS') }}">
                   <i class="menu-icon fa fa-caret-right"></i>
                   Danh mục Tag
                 </a>

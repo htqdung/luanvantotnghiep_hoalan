@@ -33,42 +33,69 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">   
           <div style="clear:both"></div>
-          <div class="form-group">
-            <div class="col-md-12">
-                 <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="hoa">Hoa</label>
+          
+            <div class="col-md-9 col-md-offset-2">
+              <div class="col-md-12">
+                  <div class="col-md-4" style="margin-right: 0; ">
+                    <label for="hoa"><b>Hoa</b></label>
                     <input type="text" class="form-control" name="hoa" id="hoa" placeholder="" style="margin-right: 0; ">
-                 </div>  
-                 <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="la">Lá</label>
+                  </div>  
+                  <div class="col-md-4" style="margin-right: 0; ">
+                    <label for="la"><b>Lá</b></label>
                     <input type="text" class="form-control" name="la" id="la" placeholder="" style="margin-right: 0; ">
-                  </div>                
-            </div>
-                    
-             <div  class="col-md-12">
-              <div class="col-md-6" style="margin-right: 0; ">
-                      <label for="than">Thân</label>
+                  </div> 
+                  <div class="col-md-4" style="margin-right: 0; ">
+                      <label for="than"><b>Thân</b></label>
                       <input type="text" class="form-control" name="than" id="than" placeholder="" style="margin-right: 0; ">
-                     </div>
-            	  <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="re">Rể</label>
+                  </div>               
+              </div>
+                    
+              <div class="col-md-12">
+                <div class="col-md-6" style="margin-right: 0; ">
+                    <label for="re"><b>Rể</b></label>
                     <input type="text" class="form-control" name="re" id="re" placeholder="" style="margin-right: 0; ">
                   </div>
-            	
+                <div class="col-md-6" style="margin-right: 0; ">
+                  <label for="thoigianno"><b>Thời gian nở</b></label>
+                  <input type="text" class="form-control" name="thoigianno" id="thoigianno" placeholder="" style="margin-right: 0; ">
+                </div>
+              </div>
+              <div class="col-md-12" style="margin-right: 0; ">
+                  <div class="col-md-12" style="padding-top: 10px">
+                    <label for="dac_diem_sinh_truong"><b>Đặc điểm sinh trưởng:</b></label> 
+                  </div>
+                   
+              </div>
+              <div class="col-md-12">
+                <div class="col-md-3" style="margin-right: 0; ">
+                    <label for="dac_diem_sinh_truong"><i>Nhiệt độ</i></label>
+                    <input type="text" class="form-control" name="nhiet_do" id="re" placeholder="" style="margin-right: 0; ">
+                </div> 
+                <div class="col-md-3" style="margin-right: 0; ">
+                    <label for="re"><i>Độ ẩm</i></label>
+                    <input type="text" class="form-control" name="do_am" id="re" placeholder="" style="margin-right: 0; ">
+                </div>
+                <div class="col-md-3" style="margin-right: 0; ">
+                    <label for="re"><i>Ánh sáng</i></label>
+                    <input type="text" class="form-control" name="anh_sang" id="re" placeholder="" style="margin-right: 0; ">
+                </div>
+                <div class="col-md-3" style="margin-right: 0; ">
+                    <label for="re"><i>Vấn đề sâu bệnh</i></label>
+                    <input type="text" class="form-control" name="van_de_sau_benh" id="re" placeholder="" style="margin-right: 0; ">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div style=" padding-top:  50px; padding-left: 46px" class="col-md-offset-10" >
+                  <input type="submit" class="btn btn-success" value="Lưu lại">
+                </div>  
+              </div>
             </div>
-          </div> 
-                 
-        <div style="clear: both;"></div>
-       
-            
-      
-        <!-- /.box-body -->
-
+        
         <div class="box-footer" style ="padding-top: 25px">          
-          <a class="btn btn-danger" href="{{ route('DAC_DIEM_HOA') }}">Quay lại</a>
           
-          <button type="submit" class="btn btn-primary"><i class="fa fa-next faa-pulse animated "></i>Lưu lại</button>
-          <button type="reset" class="btn btn-success"><i class="fa  fa-refresh "></i> Làm mới</button>
+          
+         
+         
         </div>
       </form>
     </div>

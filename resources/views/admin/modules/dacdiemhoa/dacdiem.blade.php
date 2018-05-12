@@ -22,7 +22,6 @@
 		<!-- /.page-header -->
 		 <div class="box box-primary">
 	      <div class="box-header with-border">
-	        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh  fa-1x fa-fw"></i>Làm mới</a>
 	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_DAC_DIEM') }}"><i class="fa fa-plus-circle  fa-1x fa-fw"></i> Thêm mới</a>
 	      </div>
 		<div class="row" >
@@ -34,10 +33,13 @@
 				    <thead>
 				      <tr>
 				        <th style="width: 5%">STT</th>
-				        <th style="width: 20%">Tên hoa</th>
-				         <th style="width: 25%">Lá</th>
-				         <th style="width: 20%">Thân</th>
-				         <th style="width: 20%">Rể</th>  							   
+				        <th style="width: 10%">Hoa</th>
+				         <th style="width: 15%">Lá</th>
+				         <th style="width: 15%">Thân</th>
+				         <th style="width: 10%">Rể</th> 
+			          	<th style="width: 10%">Thời gian nở</th> 
+			           	<th style="width: 15%">Đặc điểm sinh trưởng</th>  							   
+			            
 				        <th style="width: 10%" >Chức năng</th>
 				      </tr>
 				    </thead>
@@ -50,6 +52,9 @@
                     <td>{{ $item->la}}</td>
                     <td>{{ $item->than}}</td>
                     <td>{{ $item->re}}</td>
+                    <td>{{ $item->thoigianno}}</td>
+                    <td>{{ $item->dac_diem_sinh_truong}}</td>
+                    
                     <td>
 	                  <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_DAC_DIEM', $item->id)  }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 	                  <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{ route('XOA_DAC_DIEM', $item->id)}}"><i class="fa fa fa-trash-o fa-fw"></i></a>

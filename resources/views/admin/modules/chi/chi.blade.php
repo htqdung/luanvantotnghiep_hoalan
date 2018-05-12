@@ -44,20 +44,20 @@
 				      </tr>
 				    </thead>
 				    <tbody>
-				      <?php $i=1; ?>
+				      
 					  @foreach ($data as $item)
 					  <tr>
-				        <td><?= $i++; ?></td>
+				        <td>{{$item->id  }}</td>
 				        <td>{{ $item->ten_chi }}</td>
 						<td>{{ $item->canh_hoa }}</td>
 						<td>{{ $item->dai_hoa }}</td>
 						<td>{{ $item->bong_hoa }}</td>
 				        
 						<td>
-							<a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_CHI') }}"><i class="glyphicon glyphicon-folder-open"></i></a>
+							<a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_CHI', $item->id) }}"><i class="glyphicon glyphicon-folder-open"></i></a>
 		                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_CHI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 		                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{ route('XOA_CHI', $item->id) }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
-		                    </td>
+		                 </td>
 				       
 				      </tr>	
 				      

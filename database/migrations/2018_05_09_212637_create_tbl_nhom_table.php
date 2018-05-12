@@ -15,6 +15,7 @@ class CreateTblNhomTable extends Migration
     {
         Schema::create('tbl_nhom', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('ten_nhom',100);
             $table->timestamps();
         });
     }

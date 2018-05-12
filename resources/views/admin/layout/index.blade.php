@@ -10,6 +10,20 @@
               </script>
               @include('admin.layout.sidebar')
               <div class="main-content">
+                  @if(session()->has('message'))
+                    <div class=" success row col-lg-12" >
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                        </div>
+                    </div>
+                    @endif
+                    <script >
+                       $(document).ready(function () {          
+                              setTimeout(function() {
+                                  $('.success').slideUp("slow");
+                              }, 5000);
+                      });
+                      </script>
                   @yield('main-content')
               </div>
               <!-- /.main-content -->

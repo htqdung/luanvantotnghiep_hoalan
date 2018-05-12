@@ -31,57 +31,88 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
           <div class="form-group">
-             <div class="form-group">
-              <div class="col-md-6">
-                <label>Tên loài</label>
-                <input type="text" name="ten_loai" class="form-control" id="chi" required placeholder="">
-              </div>
-              <div class="col-md-6">
-                <label>Tên khoa học</label>
-                <input type="text" required name="ten_khoa_hoc" class="form-control" id=chi" placeholder="">
-              </div>
-              <div class="col-md-6">
-                <label>Đặc điểm</label>
-                <select id="" name="dacdiem_id"  class="form-control" required>
-                      
-                      @foreach ($dacdiem as $item)
-                        <option value="{{ $item->id }}">Hoa: {{ $item->hoa }}, Lá: {{ $item->la }}, Thân: {{ $item->than }}, Rễ:{{ $item->re }} </option>
-                      @endforeach
-                      
-                      
-                 </select>
-              </div>
-              <div class="col-md-6">
-                <label>Chi</label>
+            <div class="col-md-7 col-md-offset-2">
+              <div class="col-md-12">
+                <div class="col-md-12">
+                <label><b>Chi</b></label>
                 <select id="" name="id_chi"  class="form-control" required>
-                      
                       @foreach ($data as $item)
                         <option value="{{ $item->id }}">{{ $item->ten_chi }}</option>
                       @endforeach
+                </select>
+               </div>
+                <div class="col-md-12">
+                <label><b>Tên loài</b></label>
+                <input type="text" name="ten_loai" class="form-control" id="chi" required placeholder="">
+                </div>
+                <div class="col-md-12">
+                  <label><b>Tên khoa học</b></label>
+                  <input type="text" required name="ten_khoa_hoc" class="form-control" id=chi" placeholder="">
+                </div>
+
+                </div>
+                <div class="form-group col-md-12">
+                  <div class="col-md-12" >
+                    <label><b>Đặc điểm</b></label>  
+                  </div>
+                  <div class="col-md-6">
+                    <label><i>Hoa</i></label>
+                    <input type="text" value="{{ $item->hoa }}" required name="hoa" class="form-control" id=dacdiem" placeholder="">
+                    
+                  </div>
+                <div class="col-md-6">
+                  <label><i>Lá</i></label>
+                  <input type="text" value="{{ $item->la }}" required name="la" class="form-control" id=dacdiem" placeholder="">
+                </div>
+                </div>
+                
+                <div class="col-md-12">
+                  <div class="col-md-6">
+                  <label><i>Thân</i></label>
+                  <input type="text" value="{{ $item->than }}" required name="than" class="form-control" id=dacdiem" placeholder="">
+                </div>
+                <div class="col-md-6">
+                  <label><i>Rễ</i></label>
+                 <input type="text" value="{{ $item->re }}" required name="re" class="form-control" id=dacdiem" placeholder="">
+                </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-12">
+                    <label><i>Thời gian nở</i></label>
+                  <input type="text" value="{{ $item->thoigianno }}" required name="thoigianno" class="form-control" id=dacdiem" placeholder="">  
+                  </div>
+                  
+                </div>
+                <div class="col-md-12 form-group" style="padding-top: 20px" >
+                  <label for="content" >Mô tả: </label>
+                 
+                  <textarea style="height: 500px" id="content" ></textarea>
+                  <input type="hidden" name="mo_ta" id="content2">
+                  <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+                  <script>
                       
-                      
-                 </select>
+                      var editor = CKEDITOR.replace( 'content' );
+
+                      // The "change" event is fired whenever a change is made in the editor.
+                      editor.on('change', function( evt ) {
+                          
+                          var content = evt.editor.getData();
+                          $("#content2").val(content);
+                      });
+                  </script>
               </div>
+
+                     <button type="submit" style="float: right; padding-right: 25px" class="btn btn-primary">Lưu lại</button>   
+            </div>
               
-              <div class="col-md-12" style="margin-right: 0; ">
-                    <label for="sp_mota">Mô tả: *</label>
-                    <textarea name="mo_ta" rows="5" cols="30" class="form-control" id="sp_mota" placeholder="Mô tả về sản phẩm này...."></textarea>
-                 </div>
-              
+                
+              </div>
         
               <div style="clear:both"></div>
             </div>
-                     
           </div>
           
-        </div>
-        <!-- /.box-body -->
-
-        <div class="box-footer">
-          <a class="btn btn-danger" href="{{ route('DANH_MUC_HOA') }}">Quay lại</a>
-          <button type="submit" class="btn btn-primary">Lưu lại</button>
-          <button type="reset" class="btn btn-success">Làm mới</button>
-        </div>
+         
       </form>
    
     <!-- /.box -->

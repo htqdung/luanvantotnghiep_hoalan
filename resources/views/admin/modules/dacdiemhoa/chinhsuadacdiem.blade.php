@@ -32,21 +32,62 @@
         <div class="box-body">
           <div class="form-group">
              <div class="form-group">
-              <div class="col-md-6">
-                <label>Hoa</label>
-                <input type="text" value="{{ $data[0]->hoa }}"   name="hoa" class="form-control" id=dacdiem" placeholder="">
+              <div class="col-md-12">
+                  <div class="col-md-6">
+                  <label><b>Hoa</b></label>
+                  <input type="text" value="{{ $data[0]->hoa }}"   name="hoa" class="form-control" id=dacdiem" placeholder="">
+                </div>
+                 <div class="col-md-6">
+                  <label><b>Lá</b></label>
+                  <input type="text" value="{{ $data[0]->la }}"  name="la" class="form-control" id=dacdiem" placeholder="">
+                </div>
+                 
               </div>
-               <div class="col-md-6">
-                <label>Lá</label>
-                <input type="text" value="{{ $data[0]->la }}"  name="la" class="form-control" id=dacdiem" placeholder="">
+                <div class="col-md-12">
+                  <div class="col-md-4">
+                  <label><b>Thân</b></label>
+                  <input type="text" value="{{ $data[0]->than }}"  name="than" class="form-control" id=dacdiem" placeholder="">
+                </div>
+                  <div class ="col-md-4" >
+                  <label for="exampleInputEmail1"><b>Rể</b></label>
+                  <input type="text" value="{{ $data[0]->re }}"  name="re" class="form-control" id="dacdiem" placeholder="">
+                </div>
+                <div class ="col-md-4" >
+                  <label for="exampleInputEmail1"><b>Thời gian nở</b></label>
+                  <input type="text" value="{{ $data[0]->thoigianno }}"  name="thoigianno" class="form-control" id="dacdiem" placeholder="">
+                </div>
               </div>
-               <div class="col-md-6">
-                <label>Thân</label>
-                <input type="text" value="{{ $data[0]->than }}"  name="than" class="form-control" id=dacdiem" placeholder="">
+              <?php
+                  $du_lieu_chua_cat = $data[0]->dac_diem_sinh_truong;
+                  $du_lieu_se_cat[] = explode(',',$du_lieu_chua_cat);
+                  $nhiet_do = $du_lieu_se_cat[0][0];
+                  $anh_sang = $du_lieu_se_cat[0][1];
+                  $do_am = $du_lieu_se_cat[0][2];
+                  $sau_benh = $du_lieu_se_cat[0][3];
+
+              ?>
+
+
+              <div class ="col-md-12" >
+                <label for="exampleInputEmail1"><b>Đặc điểm sinh trưởng</b></label>
               </div>
-              <div class ="col-md-6" >
-                <label for="exampleInputEmail1">Rể</label>
-                <input type="text" value="{{ $data[0]->re }}"  name="re" class="form-control" id="dacdiem" placeholder="">
+              <div class ="col-md-12" >
+                <div class ="col-md-3" >
+                <label for="exampleInputEmail1"><i>Nhiệt độ</i></label>
+                <input type="text" value="<?= $nhiet_do;  ?>"  name="nhiet_do" class="form-control" id="dacdiem" placeholder="">
+              </div>
+              <div class ="col-md-3" >
+                <label for="exampleInputEmail1"><i>Độ ẩm</i></label>
+                <input type="text" value="<?= $do_am;  ?>"  name="do_am" class="form-control" id="dacdiem" placeholder="">
+              </div>
+              <div class ="col-md-3" >
+                <label for="exampleInputEmail1"><i>Ánh sáng</i></label>
+                <input type="text" value="<?= $anh_sang;  ?>"  name="anh_sang" class="form-control" id="dacdiem" placeholder="">
+              </div>
+              <div class ="col-md-3" >
+                <label for="exampleInputEmail1"><i>Vấn đề sâu bệnh</i></label>
+                <input type="text" value="<?=  $sau_benh; ?>"  name="saubenh" class="form-control" id="dacdiem" placeholder="">
+              </div>
               </div>
         
               <div style="clear:both"></div>
@@ -58,9 +99,9 @@
         <!-- /.box-body -->
 
         <div class="box-footer">
-          <a class="btn btn-danger" href="{{ route('DAC_DIEM_HOA') }}">Quay lại</a>
-          <button type="submit" class="btn btn-primary"> Lưu lại</button>
-          <button type="reset" class="btn btn-success">Làm mới</button>
+        
+          <button type="submit" style="float: right;" class="btn btn-primary"> Lưu lại</button>
+         
         </div>
       </form>
    

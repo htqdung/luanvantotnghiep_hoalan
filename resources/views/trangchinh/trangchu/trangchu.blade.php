@@ -77,6 +77,11 @@
 	<div class="banner_bottom_agile_info">
 	    <div class="container">
             <div class="banner_bottom_agile_info_inner_w3ls">
+            	
+
+
+
+
             	<a href="trangchinh/sanpham/sanpham">
     	           <div style="height: 500px" class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
 						<figure class="effect-roxy">
@@ -88,6 +93,13 @@
 						</figure>
 					</div>
 				</a>
+				
+
+
+
+
+
+
 				<a href="trangchinh/sanpham/sanpham">
 					 <div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
 						<figure class="effect-roxy">
