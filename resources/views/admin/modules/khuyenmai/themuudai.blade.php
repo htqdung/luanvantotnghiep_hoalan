@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-6">
                     <label>Tên sản phẩm</label>
-                    <select name="ten_san_pham">
+                    <select name="ten_san_pham" class="form-control">
                       @foreach ($data as $element)
                         <option value="{{ $element->id_sanpham }}">{{ $element->ten_san_pham }}</option>
                       @endforeach
@@ -67,9 +67,9 @@
         <!-- /.box-body -->
 
         <div class="box-footer">
-          <a class="btn btn-danger" href="{{ route('DANH_SACH_UU_DAI') }}">Quay lại</a>
-          <button type="submit" class="btn btn-primary"> Lưu lại</button>
-          <button type="reset" class="btn btn-success">Làm mới</button>
+          
+          <button type="submit" style="float: right;" class="btn btn-primary"> Lưu lại</button>
+          
         </div>
       </form>
    

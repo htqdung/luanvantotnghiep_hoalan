@@ -25,7 +25,7 @@
     <!-- /.page-header -->
      <div class="box box-primary">
         <div class="box-header with-border">
-          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="#"><i class="fa fa-refresh  fa-1x fa-fw"></i>Làm mới</a>
+          
           <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_UU_DAI') }}"><i class="fa fa-plus-circle  fa-1x fa-fw"></i> Thêm mới</a>
         </div>
     </div>

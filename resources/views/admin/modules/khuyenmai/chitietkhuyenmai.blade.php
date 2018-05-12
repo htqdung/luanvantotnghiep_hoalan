@@ -34,7 +34,7 @@
                     <tbody>
                     	 <tr>
                         <th style="width: 30%">Tên khuyến mãi: </th>
-                        <td>{{ $data[0]->ten_hinh_thuc }}</td>
+                        <td>{{ $data[0]->ten_chuong_trinh }}</td>
                       </tr>
                       <tr>
                         <th style="width: 30%">Phần trăm: </th>

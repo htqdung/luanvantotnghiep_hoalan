@@ -38,8 +38,7 @@
 				         <th style="width: 15%">Thân</th>
 				         <th style="width: 10%">Rể</th> 
 			          	<th style="width: 10%">Thời gian nở</th> 
-			           	<th style="width: 15%">Đặc điểm sinh trưởng</th>  							   
-			            
+			           	<th style="width: 15%">Đặc điểm sinh trưởng</th>  
 				        <th style="width: 10%" >Chức năng</th>
 				      </tr>
 				    </thead>

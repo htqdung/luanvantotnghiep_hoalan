@@ -99,6 +99,9 @@ Route::get('qt-bao-cao-thang-12','adminController@getBaoCaoTheoThangMuoiHai')->n
 Route::get('qt-danh-sach-tags','adminController@danhsachtags')->name('DANH_SACH_TAGS');
 Route::get('qt-them-tags', 'adminController@themtags')->name('THEM_TAGS');
 Route::post('qt-them-tags', 'adminController@postThemTags');
+Route::get('qt-chinh-sua-tags/{id}', 'adminController@chinhsuatags')->name('CHINH_SUA_TAGS');
+Route::post('qt-chinh-sua-tags/{id}', 'adminController@postChinhSuaTags');
+Route::get('qt-xoa-tags/{id}', 'adminController@xoatags')->name('XOA_TAGS');
 // Route::get('/reporting', ['uses' =>'ReportController@index', 'as' => 'Report']);
 // Route::post('/reporting', ['uses' =>'ReportController@post']);
 ?>

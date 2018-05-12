@@ -38,11 +38,11 @@
                   <tr style="margin: 0px">
                     <th style="width: 3%">Stt</th>
                     <th style="width: 20%">Ngày đặt hàng</th>
-                    <th style="width: 30%">Địa chỉ</th>
+                    <th style="width: 25%">Địa chỉ</th>
                     <th style="width: 15%">Hình thức thanh toán</th>
-                    <th style="width: 17%">Tổng tiền  </th>
-                    <th style="width: 15%">Trạng thái  </th>
-                    <th colspan="3">Chức năng</th>
+                    <th style="width: 10%">Tổng tiền  </th>
+                    <th style="width: 10%">Trạng thái  </th>
+                    <th style="width: 15%">Chức năng</th>
                   </tr>
                   </thead>
                    <tbody>
@@ -56,13 +56,10 @@
                     <td>{{ $item->tong_tien}}</td>
                     <td>{{ $item->ten_trang_thai}}</td>
                     <td>
-                      <a style="margin-right: 0px; padding: 0px; width: 100px" class="btn btn-info" href="#"><i class="fa fa-cog fa-1x fa-fw"></i>Chỉnh sửa</a>
-                    </td>
-                    <td>
-                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning" href="#"><i class="glyphicon glyphicon-folder-open"></i>Chi tiết</a>
-                    </td>                    <td>
-                      <a style="margin: 0px; padding: 0px; width: 100px" class="btn btn-danger" href="#"><i class="fa fa-close fa-1x fa-fw"></i>Xóa</a>
-                    </td>
+                        <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href=""><i class="glyphicon glyphicon-folder-open"></i></a>
+                          <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{-- {{ route('CHINH_SUA_CHI', $item->id) }} --}}"><i class="fa fa fa-pencil fa-fw"></i></a>
+                          <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{-- {{ route('XOA_CHI', $item->id) }} --}}"><i class="fa fa fa-trash-o fa-fw"></i></a>
+                     </td>
                 </tr> 
                 @endforeach           
               </tbody>              

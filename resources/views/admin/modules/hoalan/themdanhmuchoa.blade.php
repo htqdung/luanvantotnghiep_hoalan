@@ -57,29 +57,29 @@
                   </div>
                   <div class="col-md-6">
                     <label><i>Hoa</i></label>
-                    <input type="text" value="{{ $item->hoa }}" required name="hoa" class="form-control" id=dacdiem" placeholder="">
+                    <input type="text" value="{{ $dacdiem[0]->hoa }}" required name="hoa" class="form-control" id=dacdiem" placeholder="">
                     
                   </div>
                 <div class="col-md-6">
                   <label><i>Lá</i></label>
-                  <input type="text" value="{{ $item->la }}" required name="la" class="form-control" id=dacdiem" placeholder="">
+                  <input type="text" value="{{ $dacdiem[0]->la }}" required name="la" class="form-control" id=dacdiem" placeholder="">
                 </div>
                 </div>
                 
                 <div class="col-md-12">
                   <div class="col-md-6">
                   <label><i>Thân</i></label>
-                  <input type="text" value="{{ $item->than }}" required name="than" class="form-control" id=dacdiem" placeholder="">
+                  <input type="text" value="{{ $dacdiem[0]->than }}" required name="than" class="form-control" id=dacdiem" placeholder="">
                 </div>
                 <div class="col-md-6">
                   <label><i>Rễ</i></label>
-                 <input type="text" value="{{ $item->re }}" required name="re" class="form-control" id=dacdiem" placeholder="">
+                 <input type="text" value="{{ $dacdiem[0]->re }}" required name="re" class="form-control" id=dacdiem" placeholder="">
                 </div>
                 </div>
                 <div class="col-md-12">
                   <div class="col-md-12">
                     <label><i>Thời gian nở</i></label>
-                  <input type="text" value="{{ $item->thoigianno }}" required name="thoigianno" class="form-control" id=dacdiem" placeholder="">  
+                  <input type="text" value="{{ $dacdiem[0]->thoigianno }}" required name="thoigianno" class="form-control" id=dacdiem" placeholder="">  
                   </div>
                   
                 </div>

@@ -47,8 +47,11 @@
           <div class="col-md-12">
               <div class="col-md-6">
                   <label for="tags">Tags</label>
-                  <input type="hidden" class="form-control" name="tags" id="tags" placeholder="" style="margin-right: 0; " >
-                  <input type="text" class="form-control" id="txtSkills" name = "Skills" data-role="tagsinput">               
+                   <select id="framework" name="framework[]" class="form-control" >                      
+                      @foreach ($data as $item)
+                        <option value="{{ $item->id }}">{{ $item->ten_tags }}</option>
+                      @endforeach
+                     </select>              
               </div>
               <div class="col-md-6">
                   <label for="diemthuong">Điểm thưởng</label>
@@ -63,7 +66,7 @@
                      <small>* Có thể chọn được nhiều loài</small>
                      <select id="framework" name="framework[]" class="form-control" >                      
                       @foreach ($data as $item)
-                        <option value="{{ $item->id }}">{{ $item->ten_khoa_hoc }}</option>
+                        <option value="{{ $item->id }}">{{ $item->ten_loai }}</option>
                       @endforeach
                      </select>
                   </div>
@@ -106,10 +109,10 @@
         <!-- /.box-body -->
 
         <div class="box-footer" style="padding-top: 0px  25px 50px 0px ; float: right;">          
-          <a class="btn btn-warning" href="{{ route('DANH_SACH_SAN_PHAM') }}">Quay lại</a>
+          
           
           <button type="submit" class="btn btn-primary"><i class="fa fa-next faa-pulse animated "></i>Lưu lại</button>
-          <button type="reset" class="btn btn-success"><i class=""></i> Làm mới</button>
+         
         </div>
       </form>
     </div>

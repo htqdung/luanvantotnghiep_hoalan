@@ -86,7 +86,7 @@
               </div>
               <div class ="col-md-3" >
                 <label for="exampleInputEmail1"><i>Vấn đề sâu bệnh</i></label>
-                <input type="text" value="<?=  $sau_benh; ?>"  name="saubenh" class="form-control" id="dacdiem" placeholder="">
+                <input type="text" value="<?=  $sau_benh; ?>"  name="van_de_sau_benh" class="form-control" id="dacdiem" placeholder="">
               </div>
               </div>
         

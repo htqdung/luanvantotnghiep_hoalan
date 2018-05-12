@@ -27,7 +27,7 @@
 	</div>
 	<div class="infobox-data">		
 		<span class="infobox-data-number">11</span>
-		<div class="infobox-content"> <a href="#">NGƯỜI DÙNG</a></div>
+		<div class="infobox-content"> <a href="{{ route('DANH_SACH_NGUOI_DUNG') }}">NGƯỜI DÙNG</a></div>
 	</div>
 </div>
 <div class="infobox infobox-pink">
@@ -36,7 +36,7 @@
 	</div>
 	<div class="infobox-data">
 		<span class="infobox-data-number">8</span>
-		<div class="infobox-content"> <a href="#">ĐƠN HÀNG</a></div>
+		<div class="infobox-content"> <a href="{{ route('TAT_CA_DON_HANG') }}">ĐƠN HÀNG</a></div>
 	</div>
 </div>
 <div class="infobox infobox-red">
