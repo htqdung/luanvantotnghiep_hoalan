@@ -1,5 +1,4 @@
 @extends('trangchinh.layout.index')
-
 @section('content')
 <!--/single_page-->
 <!-- /banner_bottom_agile_info -->
@@ -42,9 +41,10 @@
           </div>  
         </div>
       </div>
+{{--      {{ dd($product) }}--}}
       <div class="col-md-8 single-right-left simpleCart_shelfItem">
-        <h3>Lan hồ điệp trắng nhị vàng</h3>
-        <p><span class="item_price">5.200.000</span></p>
+        <h3>{{ $product->ten_san_pham }}</h3>
+        <p><span class="item_price">{{ number_format($product->gia,0,",",'.') }} VNĐ</span></p>
         <div class="rating1">
           <span class="starRating">
             <input id="rating5" type="radio" name="rating" value="5">
@@ -61,30 +61,18 @@
         </div>
         <div class="color-quality">
           <div class="color-quality-right">
+
             <h5>Số lượng :   <select  id="country1" onchange="change_country(this.value)" class="frm-field required sect"  >
-              <option value="null">1</option>
-              <option value="null">2</option> 
-              <option value="null">3</option>         
-              <option value="null">4</option>               
-            </select>      </h5>
-          
+              @for($i = 1 ; $i <= $product->so_luong ; $i ++)
+                  <option value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            </select>
+            </h5>
+
           </div>
         </div>
-        <div class="occasional">
-          <h5>Phân loại :   
-          </h5>
-          <div class="colr ert">
-            <label class="radio"><input type="radio" name="radio" checked=""><i></i>Chậu</label>
-          </div>
-          <div class="colr">
-            <label class="radio"><input type="radio" name="radio"><i></i>Giỏ </label>
-          </div>
-          <div class="colr">
-            <label class="radio"><input type="radio" name="radio"><i></i>Lẵng</label>
-          </div>
-          <div class="clearfix"> </div>
-        </div>
-        <div class="occasion-cart">
+        <a href="{{ route('cart.add',$id) }}">Thêm vào giỏ hàng </a>
+        <div class="occasion-cart" style="display: none">
           <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
             <form action="#" method="post">
               <fieldset>
@@ -118,17 +106,14 @@
                   <ul class="resp-tabs-list">
                     <li>Mô tả</li>
                     <li>Đánh giá</li>
-                    <li>Thông tin chi tiết</li>
+                  
                   </ul>
                   <div class="resp-tabs-container">
                     <!--/tab_one-->
                     <div class="tab1">
 
                       <div class="single_page_agile_its_w3ls">
-                        <h6>Đặc điểm nổi bật</h6>
-                        <p>Lan Hồ Điệp là một trong những loài hoa Lan quý phái, lộng lẫy và rất lâu tàn. Nếu chúng ta chăm sóc tốt thì một chậu lan Hồ Điệp có thể trưng bày  từ 30 đến 40 ngày. Và sau khi hoa tàn quý khách chăm sóc tốt thì lan Hồ Điệp sẻ lên khỏe và sớm ra hoa lại.</p>
-                        <h6>Cách tưới nước cho hoa lan hồ điệp:</h6>
-                        <p class="w3ls_para">Vào mùa hè, cây cần được tưới khoảng 2-3 ngày một lần, ngược lại vào mùa đông, người chơi hoa chỉ cần tưới khoảng 10 ngày một lần Thời gian tốt nhất để tưới nước là buổi trưa vì lá sẽ khô cho tới tối. Nước dính lại có thể khiến cho lá bị thối, vì thế., cách tốt nhất là người trồng nên tưới nước cho cây phù hợp với từng mùa, đồng thời cũng xem xét nhu cầu nước và giá thể sử dụng (giá thể thường được sử dụng là vỏ cây, đá trân châu, vỏ cây dương xỉ, than củi).</p>
+                        {{ $product->mo_ta }}
                       </div>
                     </div>
                     <!--//tab_one-->
@@ -162,17 +147,7 @@
                         
                       </div>
                     </div>
-                    <div class="tab3">
-
-                      <div class="single_page_agile_its_w3ls">
-                        <h6>Tên khoa học:</h6>
-                        <p>aaaaaaaa.</p>
-                        <h6>Loài: </h6>
-                        <p class="w3ls_para">hồ điệp</p>
-                        <h6>Màu sắc:</h6>
-                          <p>trắng điểm vàng</p>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>  
               </div>

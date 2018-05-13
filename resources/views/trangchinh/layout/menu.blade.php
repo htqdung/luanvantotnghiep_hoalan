@@ -16,35 +16,20 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse menu--shylock"  id="bs-example-navbar-collapse-1" >
 				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item menu__item--current"><a style="font-size: 14px" class="menu__link" href="trangchinh/trangchu/trangchu"><b>TRANG CHỦ</b> <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="trangchinh/gioithieu/gioithieu"><b>GIỚI THIỆU</b></a></li>
+					<li class="active menu__item menu__item--current"><a style="font-size: 14px" class="menu__link" href="/"><b>TRANG CHỦ</b> <span class="sr-only">(current)</span></a></li>
+					<li class=" menu__item"><a class="menu__link" href="{{ route('frontend.about') }}"><b>GIỚI THIỆU</b></a></li>
 					<li class="dropdown menu__item">
 						<a href="#" class="dropdown-toggle menu__link " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><b class="mau-menu">HOA LAN</b><span class="caret"></span></a>
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="agile_inner_drop_nav_info">
 									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-										<a href="trangchinh/sanpham/sanpham"><img src="trangchinh_asset/images/hoalan5.jpg" alt=" "/></a>
+										<a href="{{ route('frontend.listproduct') }}"><img src="trangchinh_asset/images/hoalan5.jpg" alt=" "/></a>
 									</div>
-									<div class="col-sm-3 multi-gd-img">
-										<ul class="multi-column-dropdown">
-											<li><a href="trangchinh/sanpham/sanpham">Lan Vũ Nữ</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Lan Hồ Điệp</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Lan Kiếm</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Lan Hoàng Thảo</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Cát Lan</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Lan Hài</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Trúc Lan</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-3 multi-gd-img">
-										<ul class="multi-column-dropdown">
-											<li><a href="trangchinh/sanpham/sanpham">Lan Hoàng Hậu</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Lan Giáng Hương</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Lan Ngọc Điểm</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Địa Lan</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Lan Hài</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Lan Nghinh Xuân</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Lan Đai Châu</a></li>
+									<div class="col-sm-4 multi-gd-img">
+										<ul style="color: #16193B; margin-left: 20px; font-size: 15px;" class="multi-column-dropdown">
+											@foreach($loai_sp as $loai)
+												<li><b><a href="{{ route('frontend.listproduct') }}">{{$loai->ten_loai}}</a></b></li>
+											@endforeach
 										</ul>
 									</div>
 									<div class="clearfix"></div>
@@ -53,40 +38,32 @@
 					</li>
 					<li class="dropdown menu__item">
 						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>QUÀ TẶNG</b><span class="caret"></span></a>
-							<ul class="dropdown-menu multi-column columns-3">
-								<div class="agile_inner_drop_nav_info">
-									<div class="col-sm-3 multi-gd-img">
-										<ul class="multi-column-dropdown">
-											<li><a href="trangchinh/sanpham/sanpham">Mừng 8-3</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Mừng ngày nhà giáo Việt Nam</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Mừng ngày lễ Tết</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-3 multi-gd-img">
-										<ul class="multi-column-dropdown">
-											<li><a href="trangchinh/sanpham/sanpham">Tân gia nhà</a></li>
-											<li><a href="trangchinh/sanpham/sanpham">Khánh thành</a></li>
-											
-										</ul>
-									</div>
-									<div class="col-sm-6 multi-gd-img multi-gd-text ">
-										<a href="trangchinh/sanpham/sanpham"><img src="trangchinh_asset/images/hoalan1.jpg" alt=" "/></a>
-									</div>
-									<div class="clearfix"></div>
+						<ul class="dropdown-menu multi-column columns-3">
+							<div class="agile_inner_drop_nav_info">
+								<div class="col-sm-3 multi-gd-img">
+									<ul class="multi-column-dropdown">
+										<li><a href="{{ route('frontend.listproduct') }}">Mừng 8-3</a></li>
+										<li><a href="{{ route('frontend.listproduct') }}">Mừng ngày nhà giáo Việt Nam</a></li>
+										<li><a href="{{ route('frontend.listproduct') }}">Mừng ngày lễ Tết</a></li>
+									</ul>
 								</div>
-							</ul>
+
+								<div class="col-sm-3 multi-gd-img">
+									<ul class="multi-column-dropdown">
+										<li><a href="{{ route('frontend.listproduct') }}">Tân gia nhà</a></li>
+										<li><a href="{{ route('frontend.listproduct') }}">Khánh thành</a></li>
+
+									</ul>
+								</div>
+								<div class="col-sm-6 multi-gd-img multi-gd-text ">
+									<a href="{{ route('frontend.listproduct') }}"><img src="trangchinh_asset/images/hoalan1.jpg" alt=" "/></a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</ul>
 					</li>
-					<li class=" menu__item"><a class="menu__link" href="trangchinh/khuyenmai/khuyenmai"><b>KHUYẾN MÃI</b></a></li>
-					<!--
-					<li class="menu__item dropdown">
-					   <a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Short Codes <b class="caret"></b></a>
-								<ul class="dropdown-menu agile_short_dropdown">
-									<li><a href="icons.html">Web Icons</a></li>
-									<li><a href="typography.html">Typography</a></li>
-								</ul>
-					</li>
-					-->
-					<li class=" menu__item"><a class="menu__link" href="trangchinh/lienhe/lienhe"><b>LIÊN HỆ</b></a></li>
+					<li class=" menu__item"><a class="menu__link" href="{{ route('frontend.khuyenmai') }}"><b>KHUYẾN MÃI</b></a></li>
+					<li class=" menu__item"><a class="menu__link" href="{{ route('frontend.contact') }}"><b>LIÊN HỆ</b></a></li>
 				  </ul>
 				</div>
 			  </div>
@@ -94,7 +71,7 @@
 		</div>
 		<div class="top_nav_right" >
 			<div class="wthreecartaits wthreecartaits2 cart cart box_1" style="height: 72px; background: #4E7AC7" > 
-					<a href="trangchinh/giohang/giohang"><button class="w3view-cart hover-cart"  type="submit" name="submit" value="" style=" background: 	#4E7AC7" ><i class="fa fa-cart-plus " data-toggle="tooltip" title="Giỏ hàng" style="font-size: 1.3em; color: #fff"  aria-hidden="true" ></i></button></a>
+				<a href="{{ route('cart.index') }}"><button class="w3view-cart hover-cart"  type="submit" name="submit" value="" style=" background: 	#4E7AC7" ><i class="fa fa-cart-plus " data-toggle="tooltip" title="Giỏ hàng" style="font-size: 1.3em; color: #fff"  aria-hidden="true" ></i></button></a>
   			</div>
 		</div>
 		<div class="clearfix"></div>

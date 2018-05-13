@@ -3,7 +3,7 @@
 			<div class="w3layouts_mail_grid">
 				<div class="col-md-3 w3layouts_mail_grid_left " >
 					<div class="w3layouts_mail_grid_left1 hvr-radial-out " style="background-color: #4E7AC7">
-						<i class="fa fa-truck" style="color:#fff" aria-hidden="true"></i>
+						<i class="fa fa-truck" style="color:#111" aria-hidden="true"></i>
 					</div>
 					<div class="w3layouts_mail_grid_left2">
 						<h3>MIỄN PHÍ VẬN CHUYỂN</h3>
@@ -107,9 +107,9 @@
 
 				<div class="col-md-5 sign-gd flickr-post"  >
 					<h4>LIÊN HỆ VỚI CHÚNG TÔI</h4>
-					<ul class="social-nav model-3d-0 footer-social w3_agile_social two">		  
+					<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
 						<div class="fb-page "
-							 data-href="https://www.facebook.com/Vườn-Lan-Cái-Nai-1992538604093631" 
+							 data-href="https://www.facebook.com/Vườn-Lan-Cái-Nai-1992538604093631"
 							 data-width="340"
 							data-hide-cover="false"
 							 data-show-facepile="true" >
@@ -119,18 +119,6 @@
 				<div class="clearfix"></div>
 			</div>
 		</div>
-		<!--<div class="clearfix"></div>
-			<div class="agile_newsletter_footer">
-					<div class="col-sm-6 newsleft">
-				<h3>ĐĂNG KÝ NHẬN THÔNG TIN MỚI NHẤT!</h3>
-			</div>
-			<div class="col-sm-6 newsright">
-				<form action="#" method="post">
-					<input type="email" placeholder="Nhập Email của bạn..." name="email" required="">
-					<input style="background-color: #5882FA" type="submit" value="Đăng Ký">
-				</form>
-			</div>-->
-
 		<div class="clearfix"></div> 
 	</div>
 		<p style="color: #fff;" class="copy-right">&Copy 2018 Elite shoppy. All rights reserved | Design by <a href="http://w3layouts.com/">KTPM2014</a></p>
