@@ -6,34 +6,32 @@
 		<ul class="breadcrumb">
 			<li>
 				<i class="ace-icon fa fa-home home-icon"></i>
-		        <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
+		        <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ>></a><a href="javascript:void(0)">Danh mục chi</a>
 			</li>
 		
-		</ul><!-- /.breadcrumb -->
-
-		<div class="nav-search" id="nav-search">
-			<form class="form-search">
-				<span class="input-icon">
-					<input type="text" placeholder="Tìm kiếm ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-					<i class="ace-icon fa fa-search nav-search-icon"></i>
-				</span>
-			</form>
-		</div><!-- /.nav-search -->
+		</ul><!-- /.breadcrumb -->	
 	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- PAGE CONTENT BEGINS -->
+			<div class="hr hr-18 hr-double dotted"></div>
+			<div class="widget-box">
+				<div class="widget-header widget-header-blue widget-header-flat" style="text-align: center;">
+					<h4 class="widget-title lighter" >DANH MỤC CHI</h4>
+					<div class="widget-toolbar">
+						<button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> <a href="{{ route('THEM_CHI') }}">Thêm mới</a>  </button>
+					</div>
+				</div>
+			</div>
+			<div class="hr hr-18 hr-double dotted"></div>
+
+		</div><!-- /.col -->
+	</div><!-- /.row -->
 	<div class="page-content">
 		<!-- /.page-header -->
-		 <div class="box box-primary">
-	      <div class="box-header with-border">
-	         <a class="btn btn-primary" style="float: right; padding: 0px" href="{{ route('THEM_CHI') }}"><i class="fa fa fa-plus  fa-1x fa-fw"></i> Thêm mới</a>
-	
-	      </div>
-		<div class="row" >
-
-		</div><!-- /.row -->
 		<div class="row">
 			<div class="col-md-12">
 				<table class="table">
-					<h3><b>CHI</b></h3>
 				    <thead>
 				      <tr>
 				        <th style="width: 7%">Mã số</th>

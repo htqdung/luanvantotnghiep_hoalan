@@ -393,7 +393,8 @@ class adminController extends Controller
         $chi->bong_hoa=$request->input('bong_hoa');
         $chi->mo_ta=$request->input('mo_ta');
         $chi->save();
-         return redirect()->intended('qt-chi');
+        $name = $request->input('ten_chi');
+        return redirect()->intended('qt-chi')->with('message', 'Hoàn tất, Đã chỉnh sửa chi '.$name);
     }
 
       public function xoachi(Request $request,$id)

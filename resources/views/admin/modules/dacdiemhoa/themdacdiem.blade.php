@@ -33,7 +33,6 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">   
           <div style="clear:both"></div>
-          
             <div class="col-md-9 col-md-offset-2">
               <div class="col-md-12">
                   <div class="col-md-4" style="margin-right: 0; ">
