@@ -32,7 +32,7 @@
 					<h3><b>ĐẶC ĐIỂM HOA</b></h3>
 				    <thead>
 				      <tr>
-				        <th style="width: 5%">STT</th>
+				        <th style="width: 5%">Mã số</th>
 				        <th style="width: 10%">Hoa</th>
 				         <th style="width: 15%">Lá</th>
 				         <th style="width: 15%">Thân</th>

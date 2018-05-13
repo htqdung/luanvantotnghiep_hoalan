@@ -28,7 +28,10 @@ class adminController extends Controller
     {
 
         $hoalan = DB::table('tbl_loai')
-        ->orderBy('id', 'desc')
+        ->select('tbl_loai.id','tbl_loai.ten_loai','hoa', 'la', 'than', 're', 'thoigianno', 'ten_khoa_hoc', 'ten_chi')
+        ->join('tbl_dacdiem', 'tbl_loai.dacdiem_id', '=', 'tbl_dacdiem.id')
+        ->join('tbl_chi', 'tbl_chi.id', '=', 'tbl_loai.chi_id')
+        ->orderBy('tbl_loai.id', 'desc')
         ->paginate(10);
 
     	return view('admin.modules.hoalan.danhmuchoa', ['data'=>$hoalan]);
@@ -112,7 +115,7 @@ class adminController extends Controller
          $sanpham = DB::table('tbl_sanpham')
         ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
         //->leftJoin('tbl_sanpham_loai','tbl_sanpham_loai.sanpham_id','=','tbl_sanpham.id')
-        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong','tag')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong')
         ->orderBy('id_sanpham','desc')
         ->paginate(5);
         // return $nguoidung;
@@ -122,9 +125,11 @@ class adminController extends Controller
     public function themsanpham()
     {
         
+
+        $tags = DB::table('tbl_tags')->get();
         $hoalan = DB::table('tbl_loai')->get();
         // return $tmp2;
-        return view('admin.modules.hoalan.themdanhsachsanpham', ['data'=>$hoalan]);
+        return view('admin.modules.hoalan.themdanhsachsanpham', ['data'=>$hoalan , 'tags'=>$tags]);
     }
      public function postThemSanPham(Request $request)
     {
@@ -190,9 +195,9 @@ class adminController extends Controller
 
         $sanpham = DB::table('tbl_sanpham')
         ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
-        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong','tag')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong')
         ->where('tbl_sanpham.id', '=', $id)
-        ->get()->toArray();
+        ->get();
 
 
         $hinhanhsp = DB::table('tbl_hinhanh')
@@ -213,7 +218,7 @@ class adminController extends Controller
        // $sanpham->thong_tin_chi_tiet=$request->input('kich_thuoc');
         $sanpham->mo_ta=$request->input('mo_ta');
         $sanpham->diem_thuong=$request->input('diem_thuong');
-        $sanpham->tag=$request->input('tag');  
+        //$sanpham->tag=$request->input('tag');  
         $sanpham->save();
         $select_dongia = DB::table('tbl_sanpham')
         ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
@@ -235,7 +240,7 @@ class adminController extends Controller
 
          $sanpham = DB::table('tbl_sanpham')
         ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
-        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong','tag')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong')
         ->where('tbl_sanpham.id', '=', $id)
         ->limit(1)
         ->get();
@@ -679,26 +684,8 @@ class adminController extends Controller
         $quatang->so_luong=$request->input('so_luong');
         $quatang->save();
 
-
-        // $last_uudai = DB::table('tbl_uudai')
-        // ->select('id')
-        // ->orderBy('id','desc')
-        // ->first();
-        // $tmp1 = json_encode($last_uudai);
-        // $tmp =  ltrim($tmp1, '{"id":');
-        // // $tmp = str_replace($tmp1,'{"id":', '');
-        // $tmp2 = rtrim($tmp,'}');
-
-
-        // $hinhthucuudai = new HinhThucUuDai;
-        // $hinhthucuudai->ten_hinh_thuc=$request->input('ten_hinh_thuc');
-        // $hinhthucuudai->sanpham_id=$request->input('ten_san_pham');
-        // $hinhthucuudai->uudai_id=$tmp2;
-        // $hinhthucuudai->save();
-
-       
-         return redirect()->intended('qt-danh-sach-qua-tang');
-
+        return redirect()->intended('qt-danh-sach-qua-tang');
+        
     }
 
 

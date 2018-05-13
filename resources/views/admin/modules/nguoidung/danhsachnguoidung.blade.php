@@ -35,7 +35,7 @@
           <h3><b>DANH SÁCH NGƯỜI DÙNG</b></h3>
                   <thead>
                   <tr style="margin: 0px">
-                    <th style="width: 3%">Stt</th>
+                    <th style="width: 7%">Mã số</th>
                     <th style="width: 20%">Họ tên</th>
                     <th style="width: 10%">Số điện thoại</th>
                     <th style="width: 15%">Email</th>

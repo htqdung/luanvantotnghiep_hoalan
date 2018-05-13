@@ -48,7 +48,7 @@
               <div class="col-md-6">
                   <label for="tags">Tags</label>
                    <select id="framework" name="framework[]" class="form-control" >                      
-                      @foreach ($data as $item)
+                      @foreach ($tags as $item)
                         <option value="{{ $item->id }}">{{ $item->ten_tags }}</option>
                       @endforeach
                      </select>              

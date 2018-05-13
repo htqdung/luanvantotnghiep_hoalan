@@ -54,8 +54,13 @@
                 <div class="form-group col-md-12">
                   <div class="col-md-12" >
                     <label><b>Đặc điểm</b></label>  
+                    <select id="" name="dacdiem_id"  class="form-control" required>
+                      @foreach ($dacdiem as $item)
+                        <option value="{{ $item->id }}">{{ $item->hoa }},{{ $item->la }},{{ $item->than }},{{ $item->re }},{{ $item->thoigianno }}</option>
+                      @endforeach
+                </select>
                   </div>
-                  <div class="col-md-6">
+                 {{--  <div class="col-md-6">
                     <label><i>Hoa</i></label>
                     <input type="text" value="{{ $dacdiem[0]->hoa }}" required name="hoa" class="form-control" id=dacdiem" placeholder="">
                     
@@ -81,7 +86,7 @@
                     <label><i>Thời gian nở</i></label>
                   <input type="text" value="{{ $dacdiem[0]->thoigianno }}" required name="thoigianno" class="form-control" id=dacdiem" placeholder="">  
                   </div>
-                  
+                   --}}
                 </div>
                 <div class="col-md-12 form-group" style="padding-top: 20px" >
                   <label for="content" >Mô tả: </label>

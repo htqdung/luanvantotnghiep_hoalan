@@ -58,7 +58,7 @@
                                           
                       <a style="padding-left:10px; padding: 0px; margin:0px; width: 40px" data-toggle="tooltip" title="Chi tiết" class="btn btn-success" href="{{ route('CHI_TIET_KHUYEN_MAI', $item->chuongtrinhkhuyenmai_id) }}"><i class=" fa fa-info-circle"></i></a>
                  
-                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{ route('DANH_SACH_KHUYEN_MAI') }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
+                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{ route('XOA_KHUYEN_MAI',$item->chuongtrinhkhuyenmai_id) }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
                     </td>
                     
                 </tr> 

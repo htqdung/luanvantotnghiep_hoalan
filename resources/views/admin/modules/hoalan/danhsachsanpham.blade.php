@@ -35,15 +35,15 @@
 					<h3><b>DANH SÁCH SẢN PHẨM</b></h3>
 				    <thead>
 				      <tr>
-				        <th style="width: 3%">Stt</th>
-				        <th style="width: 30% ; text-align: center;">Tên sản phẩm</th>
-				        <th style="width: 10% ; text-align: center;">Đơn giá</th>
+				        <th style="width: 7%">Mã số</th>
+				        <th style="width: 30% ">Tên sản phẩm</th>
+				        <th style="width: 10%">Đơn giá</th>
 				      
 				       							       
-				        <th style="width: 10% ; text-align: center;">Điểm thưởng</th>
-				        <th style="width: 12%">Tag</th>
+				        <th style="width: 10% ">Điểm thưởng</th>
+				  
 
-				        <th  style="width: 15%; text-align: center;">Chức năng</th>
+				        <th  style="width: 15%">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>
@@ -56,7 +56,7 @@
                   
                     
                     <td>{{ $item->diem_thuong}}</td>
-                    <td>{{ $item->tag}}</td>
+          
                     
                     
                     <td>

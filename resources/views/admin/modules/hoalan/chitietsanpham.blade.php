@@ -49,10 +49,7 @@
                           <th style="width: 30%">Điểm thưởng: </th>
                          <td>{{ $data->diem_thuong }}</td>
                         </tr>
-                        <tr>
-                          <th style="width: 30%">Tags: </th>
-                         <td>{{ $data->tag }}</td>
-                        </tr>
+                        
                        
                         @endforeach
                         
