@@ -22,7 +22,7 @@
 	    </div><!-- /.nav-search -->
     </div>
     <div class="box-header with-border" style=" padding-top:10px">
-        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-warning" href="{{ route('DANH_SACH_CHi') }}"><i class="" ></i>Quay lại</a> 
+        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-warning" href="javascript:history.go(-1);"><i class="" ></i>Quay lại</a> 
     </div>
     <div class="box-header with-border">
        

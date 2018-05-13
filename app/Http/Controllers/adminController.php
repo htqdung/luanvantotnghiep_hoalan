@@ -17,6 +17,8 @@ use App\QuaTang;
 use Carbon\Carbon;
 use App\Tags;
 use App\Http\Requests\ThemTagsRequest;
+use App\Http\Requests\ThemChiRequest;
+use App\Http\Requests\ChinhSuaChiRequest;
 class adminController extends Controller
 {
     public function getTest()
@@ -360,7 +362,7 @@ class adminController extends Controller
     {
        return view('admin.modules.chi.themchi');
     }
-    public function postThemChi(Request $request)
+    public function postThemChi(ThemChiRequest $request)
     {
         $chi = new Chi();
         $chi->ten_chi=$request->input('ten_chi');
@@ -369,20 +371,20 @@ class adminController extends Controller
         $chi->bong_hoa=$request->input('bong_hoa');
         $chi->mo_ta=$request->input('mo_ta');
         $chi->save();
-
-        return $this::getchi();
+        return redirect()->intended('qt-chi')->with('message', "Hoàn tất, Đã thêm chi mới");
+        
     }
     public function chinhsuachi($id)
 
     {
-         $chi = DB::table('tbl_chi')
-         ->select('id', 'ten_chi','canh_hoa','dai_hoa','bong_hoa', 'mo_ta')
+        $chi = DB::table('tbl_chi')
+        ->select('id', 'ten_chi','canh_hoa','dai_hoa','bong_hoa', 'mo_ta')
         ->orderBy('id', 'desc')
+        ->where('id', '=', $id)->get();
 
-        ->paginate(10);
         return view('admin.modules.chi.chinhsuachi', ['data'=>$chi]);
     }
-    public function postChinhSuaChi(Request $request, $id)
+    public function postChinhSuaChi(ChinhSuaChiRequest $request, $id)
     {
         $chi = Chi::findOrFail($id);
         $chi->ten_chi=$request->input('ten_chi');
@@ -399,10 +401,10 @@ class adminController extends Controller
        $chi = Chi::find($id);
         if($chi->delete())
         {
-            return redirect()->intended('qt-chi');    
+            return redirect()->intended('qt-chi')->with('message', "Hoàn tất, Đã xóa chi!"); 
         }
         else{
-             return  redirect()->intended('qt-chi');
+             return  redirect()->intended('qt-chi')->with('errors', "Lỗi! Không thể xóa!");
         }
        
     }

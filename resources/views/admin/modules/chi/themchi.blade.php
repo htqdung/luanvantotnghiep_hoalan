@@ -1,7 +1,5 @@
 @extends('admin.layout.index')
 @section('main-content')
-
-  <!-- left column -->
   <div class="col-md-12">
     <!-- general form elements -->
      <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -25,6 +23,20 @@
       <div class="box-header with-border">
         <h3 class="box-title">Thêm chi</h3>
       </div>
+      @if(!empty($errors->first()))
+          <div class=" error row col-lg-12" >
+              <div class="alert alert-danger">
+                  <span>{{ $errors->first() }}</span>
+              </div>
+          </div>
+      @endif
+      <script >
+       $(document).ready(function () {          
+              setTimeout(function() {
+                  $('.error').slideUp("slow");
+              }, 5000);
+      });
+      </script>
       <!-- /.box-header -->
       <!-- form start -->
       <form role="form" method="POST" action="" enctype="multipart/form-data">
@@ -35,29 +47,27 @@
               <div class="col-md-12">
                 <div class="col-md-6" style="padding-top: 14px">
                 <label for="chi">Tên chi: *</label>
-                <input type="text"  name="ten_chi"  class="form-control" id="chi" placeholder="Điền tên chi">
+                <input type="text"  name="ten_chi"  class="form-control" id="chi" value="{{ old('ten_chi') }}" placeholder="Điền tên chi">
                 </div>
-
                 <div class="col-md-6" style="padding-top: 14px">
                 <label for="chi">Cánh hoa: *</label>
-                <input type="text"  name="canh_hoa"  class="form-control" id="chi" placeholder="">
+                <input type="text"  name="canh_hoa" value="{{ old('canh_hoa') }}"  class="form-control" id="chi" placeholder="">
                </div>
               </div>
               <div class="col-md-12">
                 <div class="col-md-6" style="padding-top: 14px">
                 <label for="chi">Đài hoa: *</label>
-                <input type="text"  name="dai_hoa"  class="form-control" id="chi" placeholder="">
+                <input type="text"  name="dai_hoa" value="{{ old('dai_hoa') }}"  class="form-control" id="chi" placeholder="">
                 </div> 
                 <div class="col-md-6" style="padding-top: 14px">
                 <label for="chi">Bông hoa: *</label>
-                <input type="text"  name="bong_hoa"  class="form-control" id="chi" placeholder="">
+                <input type="text"  name="bong_hoa"  value="{{ old('bong_hoa') }}" class="form-control" id="chi" placeholder="">
               </div>               
               </div>
              <div class="col-md-12 form-group" style="padding-top: 20px" >
                   <label for="content" >Mô tả: </label>
-                 
-                  <textarea style="height: 500px" id="content" ></textarea>
-                  <input type="hidden" name="mo_ta" id="content2">
+                  <textarea style="height: 500px" rows="20" id="content" > {{ old('mo_ta') }}</textarea>
+                  <input type="hidden" name="mo_ta"  id="content2">
                   <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
                   <script>
                       
@@ -75,18 +85,9 @@
             </div>
           </div>
         </div>
-        <!-- /.box-body -->
         <div class="box-footer">
-         
           <button type="submit" class="btn btn-primary" style="float: right;"> Lưu lại</button>
-          
         </div>
       </form>
-   
-    <!-- /.box -->
-
-  
-  
-  <!--/.col (right) -->
 </div>
 @endsection

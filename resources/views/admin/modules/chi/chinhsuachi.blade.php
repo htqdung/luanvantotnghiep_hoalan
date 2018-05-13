@@ -25,6 +25,20 @@
       <div class="box-header with-border">
         <h3 class="box-title">Chỉnh sửa chi</h3>
       </div>
+      @if(!empty($errors->first()))
+          <div class=" error row col-lg-12" >
+              <div class="alert alert-danger">
+                  <span>{{ $errors->first() }}</span>
+              </div>
+          </div>
+      @endif
+      <script >
+       $(document).ready(function () {          
+              setTimeout(function() {
+                  $('.error').slideUp("slow");
+              }, 5000);
+      });
+      </script>
       <!-- /.box-header -->
       <!-- form start -->
       <form role="form" method="POST" action="" enctype="multipart/form-data">
