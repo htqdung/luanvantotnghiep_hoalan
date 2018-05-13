@@ -32,7 +32,7 @@
 					<h3><b>DANH MỤC LOÀI HOA</b></h3>
 				    <thead>
 				      <tr>
-				        <th style="width: 5%">id</th>
+				        <th style="width: 5%">Mã số</th>
 				        <th style="width: 15%">Tên loài</th>
 				         <th style="width:15%">Tên khoa học</th>
 				         <th style="width:15%">Chi</th>

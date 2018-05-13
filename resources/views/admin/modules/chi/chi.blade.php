@@ -24,7 +24,7 @@
 		 <div class="box box-primary">
 	      <div class="box-header with-border">
 	         <a class="btn btn-primary" style="float: right; padding: 0px" href="{{ route('THEM_CHI') }}"><i class="fa fa fa-plus  fa-1x fa-fw"></i> Thêm mới</a>
-	 
+	
 	      </div>
 		<div class="row" >
 		</div><!-- /.row -->
@@ -44,10 +44,10 @@
 				      </tr>
 				    </thead>
 				    <tbody>
-				      
-					  @foreach ($data as $item)
-					  <tr>
-				        <td>{{$item->id  }}</td>
+				     <?php $i=1;?>
+                @foreach ($data as $item)
+                  <tr>
+                    <td><?= $i++; ?></td>
 				        <td>{{ $item->ten_chi }}</td>
 						<td>{{ $item->canh_hoa }}</td>
 						<td>{{ $item->dai_hoa }}</td>
