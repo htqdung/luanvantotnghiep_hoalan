@@ -21,7 +21,7 @@
                        $(document).ready(function () {          
                               setTimeout(function() {
                                   $('.success').slideUp("slow");
-                              }, 5000);
+                              }, 2000);
                       });
                       </script>
                   @yield('main-content')

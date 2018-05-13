@@ -3,104 +3,141 @@
 
 
   <!-- left column -->
-  <div class="col-md-12">
+<div class="col-md-12">
      <!-- general form elements -->
-     <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+  <div class="breadcrumbs ace-save-state" id="breadcrumbs">
     <ul class="breadcrumb">
       <li>
         <i class="ace-icon fa fa-home home-icon"></i>
         <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
-    
+      <li><a href="javascript:void(0)">Thêm đặc điểm</a></li>
     </ul><!-- /.breadcrumb -->
-
-    <div class="nav-search" id="nav-search">
-      <form class="form-search">
-        <span class="input-icon">
-          <input type="text" placeholder="Tìm kiếm ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-          <i class="ace-icon fa fa-search nav-search-icon"></i>
-        </span>
-      </form>
-    </div><!-- /.nav-search -->
   </div>
-    <div class="box box-primary">
-      <div class="box-header with-border">
-        <h3 class="box-title">Thêm đặc điểm</h3>
+<div class="row">
+  <div class="col-xs-12">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="hr hr-18 hr-double dotted"></div>
+    <div class="widget-box">
+      <div class="widget-header widget-header-blue widget-header-flat" >
+        <h4 class="widget-title lighter" >THÊM ĐẶC ĐIỂM </h4>        
       </div>
-      <!-- /.box-header -->
-      <!-- form start -->
+    </div>
+  </div><!-- /.col -->
+</div><!-- /.row -->
+@if(!empty($errors->first()))
+    <div class=" error row col-lg-12" >
+        <div class="alert alert-danger">
+            <span>{{ $errors->first() }}</span>
+        </div>
+    </div>
+@endif
+<script >
+ $(document).ready(function () {          
+        setTimeout(function() {
+            $('.error').slideUp("slow");
+        }, 5000);
+});
+</script>
+    <div class="box box-primary">
       <form role="form" method="POST" action="" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="box-body">   
-          <div style="clear:both"></div>
-            <div class="col-md-9 col-md-offset-2">
-              <div class="col-md-12">
-                  <div class="col-md-4" style="margin-right: 0; ">
-                    <label for="hoa"><b>Hoa</b></label>
-                    <input type="text" class="form-control" name="hoa" id="hoa" placeholder="" style="margin-right: 0; ">
-                  </div>  
-                  <div class="col-md-4" style="margin-right: 0; ">
-                    <label for="la"><b>Lá</b></label>
-                    <input type="text" class="form-control" name="la" id="la" placeholder="" style="margin-right: 0; ">
-                  </div> 
-                  <div class="col-md-4" style="margin-right: 0; ">
-                      <label for="than"><b>Thân</b></label>
-                      <input type="text" class="form-control" name="than" id="than" placeholder="" style="margin-right: 0; ">
-                  </div>               
-              </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-offset-3">
+              <div class="widget-box">
+                <div class="widget-header" style="text-align: center;">
+                  <h4 class="widget-title">Thông tin đặc điểm</h4>
+                  <div class="widget-toolbar">
+                    <a href="#" data-action="collapse">
+                      <i class="ace-icon fa fa-chevron-up"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="widget-body" style="background-color: #f7fbff;">
+                  <div class="widget-main" style="height: 535px">
                     
-              <div class="col-md-12">
-                <div class="col-md-6" style="margin-right: 0; ">
-                    <label for="re"><b>Rể</b></label>
-                    <input type="text" class="form-control" name="re" id="re" placeholder="" style="margin-right: 0; ">
+                    <div>
+                      <div class="col-md-12">
+                          <div class="col-md-12">
+                            <label for="form-field-8">Hoa</label>
+                            <input type="text"  name="hoa" title="Hoa: Thể hiện màu sắc, hình dáng và số cánh hoa,..."  class="form-control" id="chi" value="{{ old('hoa') }}" placeholder="Đặc điểm hoa">  
+                          </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div>
+                      <div class="col-md-12">
+                          <div class="col-md-12">
+                            <label for="form-field-8">Lá</label>
+                            <input type="text" id="form-field-8" title="Lá: Hình dáng lá, màu sắc,..."  name="la"  class="autosize-transition form-control" id="chi" placeholder="Đặc điểm lá" value="{{ old('la') }}"> 
+                          </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="col-md-12">
+                            <div class="col-md-12">
+                              <label for="form-field-8">Thân</label>
+                              <input type="text" id="form-field-8" name="than" class="autosize-transition form-control" title="Hình dáng thân" id="chi" placeholder="Đặc điểm thân" value="{{ old('than') }}">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                      <div class="col-md-12">
+                        <div class="col-md-12">
+                          <label for="form-field-8">Rể: </label>
+                          <input type="text" id="form-field-8"   name="re" 
+                          class="autosize-transition   form-control" id="chi" title="VD: Rễ chùm, rễ cọc,..." placeholder="Đặc điểm rể" value="{{ old('re') }} ">
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div>
+                      <div class="col-md-12">
+                        <div class="col-md-12">
+                      <label for="form-field-8">Thời gian nở hoa: </label>
+                      <input type="text" id="form-field-8"   name="thoigianno" 
+                      class="autosize-transition   form-control" id="thoigianno" title="Thời gian từ lúc hoa nở đến lúc hoa tàn là bao lâu? Người dùng thường chú trọng đến thời gian nở của hoa để chọn loại hoa tốt nhất đem về!" placeholder="Thời gian nở hoa của loài" value="{{ old('thoigianno') }}">
+                    </div>
+
                   </div>
-                <div class="col-md-6" style="margin-right: 0; ">
-                  <label for="thoigianno"><b>Thời gian nở</b></label>
-                  <input type="text" class="form-control" name="thoigianno" id="thoigianno" placeholder="" style="margin-right: 0; ">
-                </div>
-              </div>
-              <div class="col-md-12" style="margin-right: 0; ">
-                  <div class="col-md-12" style="padding-top: 10px">
-                    <label for="dac_diem_sinh_truong"><b>Đặc điểm sinh trưởng:</b></label> 
+
+                  <label style="padding-left: 4%; margin-top: 15px" for="">Đặc điểm sinh trưởng</label>
+                  <div>
+                        <div class="col-md-12">
+                          <div class="col-md-6" style="margin-right: 0; ">
+                              <label for="dac_diem_sinh_truong"><i>Nhiệt độ</i></label>
+                              <input type="text" class="form-control" name="nhiet_do" value="{{ old('nhiet_do') }}" id="re" placeholder="" style="margin-right: 0; ">
+                          </div> 
+                          <div class="col-md-6" style="margin-right: 0; ">
+                              <label for="re"><i>Độ ẩm</i></label>
+                              <input type="text" class="form-control" name="do_am" id="re" value="{{ old('do_am') }}" placeholder="" style="margin-right: 0; ">
+                          </div>
+                          <div class="col-md-6" style="margin-right: 0; ">
+                              <label for="re"><i>Ánh sáng</i></label>
+                              <input type="text" class="form-control" name="anh_sang" id="re" placeholder="" value="{{ old('anh_sang') }}" style="margin-right: 0; ">
+                          </div>
+                          <div class="col-md-6" style="margin-right: 0; ">
+                              <label for="re"><i>Vấn đề sâu bệnh</i></label>
+                              <input type="text" class="form-control" name="van_de_sau_benh" value="{{ old('van_de_sau_benh') }}" id="re" placeholder="" style="margin-right: 0; ">
+                          </div>
+                        </div>
+                      </div>
+                  <br>                    
                   </div>
-                   
+                      <button type="submit" class="btn btn-white btn-primary" style="float: right; margin-top: 15px; margin-right: 4.2%"><i class="ace-icon fa fa-floppy-o bigger-120 blue"></i> Lưu lại</button>
+                  </div>
               </div>
-              <div class="col-md-12">
-                <div class="col-md-3" style="margin-right: 0; ">
-                    <label for="dac_diem_sinh_truong"><i>Nhiệt độ</i></label>
-                    <input type="text" class="form-control" name="nhiet_do" id="re" placeholder="" style="margin-right: 0; ">
-                </div> 
-                <div class="col-md-3" style="margin-right: 0; ">
-                    <label for="re"><i>Độ ẩm</i></label>
-                    <input type="text" class="form-control" name="do_am" id="re" placeholder="" style="margin-right: 0; ">
-                </div>
-                <div class="col-md-3" style="margin-right: 0; ">
-                    <label for="re"><i>Ánh sáng</i></label>
-                    <input type="text" class="form-control" name="anh_sang" id="re" placeholder="" style="margin-right: 0; ">
-                </div>
-                <div class="col-md-3" style="margin-right: 0; ">
-                    <label for="re"><i>Vấn đề sâu bệnh</i></label>
-                    <input type="text" class="form-control" name="van_de_sau_benh" id="re" placeholder="" style="margin-right: 0; ">
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div style=" padding-top:  50px; padding-left: 46px" class="col-md-offset-10" >
-                  <input type="submit" class="btn btn-success" value="Lưu lại">
-                </div>  
-              </div>
-            </div>
-        
-        <div class="box-footer" style ="padding-top: 25px">          
-          
-          
-         
-         
+            </div><!-- /.span -->
+          </div>
+        </div>
+        <div class="box-footer" style ="padding-top: 25px">     
         </div>
       </form>
     </div>
-    <!-- /.box -->
-
-  
+    <!-- /.box -->  
   </div>
 <script>
     

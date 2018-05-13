@@ -19,6 +19,8 @@ use App\Tags;
 use App\Http\Requests\ThemTagsRequest;
 use App\Http\Requests\ThemChiRequest;
 use App\Http\Requests\ChinhSuaChiRequest;
+use App\Http\Requests\ThemDacDiemRequest;
+
 class adminController extends Controller
 {
     public function getTest()
@@ -292,7 +294,7 @@ class adminController extends Controller
 
         return view('admin.modules.dacdiemhoa.themdacdiem');
     }
-    public function postThemDacDiem(Request $request)
+    public function postThemDacDiem(ThemDacDiemRequest $request)
     {
 
         $nhiet_do = $request->input('nhiet_do');
@@ -312,7 +314,7 @@ class adminController extends Controller
         $dacdiem->hinh_dang=" Không có dữ liệu! ";
         $dacdiem->save();
 
-        return $this::getdacdiemhoa();
+        return redirect()->intended('qt-dac-diem-hoa')->with('message', 'Hoàn tất, Đã thêm mới một đặc điểm!');
     }
 
     public function postChinhSuaDacDiem(Request $request,$id)
@@ -340,7 +342,7 @@ class adminController extends Controller
        $dacdiem = DacDiem::find($id);
         if($dacdiem->delete())
         {
-            return redirect()->intended('qt-dac-diem-hoa');    
+            return redirect()->intended('qt-dac-diem-hoa')->with('message', 'Hoàn tất, Đã xóa một đặc điểm!');    
         }
         else{
              return  redirect()->intended('qt-dac-diem-hoa');

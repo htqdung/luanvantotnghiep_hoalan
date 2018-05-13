@@ -44,24 +44,36 @@
 				      </tr>
 				    </thead>
 				    <tbody>
-				     
+				<?php $i; $arr[][]="";?>
                 @foreach ($data as $item)
                   <tr>
                     <td>{{ $item->id }}</td>
 				        <td>{{ $item->ten_chi }}</td>
 						<td>{{ $item->canh_hoa }}</td>
 						<td>{{ $item->dai_hoa }}</td>
-						<td>{{ $item->bong_hoa }}</td>
-				        
-				        <?php $tmp = $item->ten_chi; 
-				        		$id_chi = $item->id;
-				        ?>
+						<td>{{ $item->bong_hoa }}</td>				     
 						<td>
 							<a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_CHI', $item->id) }}"><i class="glyphicon glyphicon-folder-open"></i></a>
-		                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_CHI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+		                     <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_CHI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 		                      {{-- <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" id="btnDelete" class="btn btn-danger" href="{{ route('XOA_CHI', $item->id) }}"><i class="fa fa fa-trash-o fa-fw"></i></a> --}}
-		                      <a type="button" class="btn btn-danger" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal" data-target="#removeUser"><i class="fa fa fa-trash-o fa-fw"></i></a>
+		                    <a type="button" class="btn btn-danger" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
 		                 </td>
+		                 <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id }}" role="dialog" tabindex="-1">
+						    <div class="modal-dialog" role="document">
+						        <div class="modal-content">
+						            <div class="modal-header">
+						                <h4 class="modal-title">Bạn có chắc chắn?</h4>
+						            </div>
+						            <div class="modal-body">
+						                <p>Sau khi nhấn đồng ý, Chi {{ $item->ten_chi }} dữ liệu liên quan đến chi <?php $tmp; ?> sẽ bị xóa bỏ!</p>
+						            </div>
+						            <div class="modal-footer">
+						                <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
+						                <a class="btn btn-danger" href="{{ route('XOA_CHI', $item->id) }}" id="remove-button" type="submit">Đồng ý</a>
+						            </div>
+						        </div><!-- end modal-content -->
+						    </div><!-- end modal-dialog -->
+						</div><!-- end modal -->
 				       
 				      </tr>	
 				      
@@ -73,24 +85,6 @@
 		</div>
 	</div><!-- /.page-content -->
 </div>
-
-<div aria-labelledby="myModalLabel" class="modal fade" id="removeUser" role="dialog" tabindex="-1">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Bạn có chắc chắn?</h4>
-            </div>
-            <div class="modal-body">
-                <p>Sau khi nhấn đồng ý, dữ liệu liên quan đến chi <?php $tmp; ?> sẽ bị xóa bỏ!</p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
-                <a class="btn btn-danger" href="{{ route('XOA_CHI', $id_chi) }}" id="remove-button" type="submit">Đồng ý</a>
-            </div>
-        </div><!-- end modal-content -->
-    </div><!-- end modal-dialog -->
-</div><!-- end modal -->
-
 
 
 

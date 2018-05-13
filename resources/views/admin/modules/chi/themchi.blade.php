@@ -21,8 +21,6 @@
           
         </div>
       </div>
-    
-
     </div><!-- /.col -->
   </div><!-- /.row -->
      
@@ -51,7 +49,6 @@
               <div class="widget-box">
                 <div class="widget-header" style="text-align: center;">
                   <h4 class="widget-title">Thông tin chi</h4>
-
                   <div class="widget-toolbar">
                     <a href="#" data-action="collapse">
                       <i class="ace-icon fa fa-chevron-up"></i>
