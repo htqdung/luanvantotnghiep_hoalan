@@ -19,6 +19,7 @@ use App\Tags;
 use App\Http\Requests\ThemTagsRequest;
 use App\Http\Requests\ThemChiRequest;
 use App\Http\Requests\ChinhSuaChiRequest;
+use App\Http\Requests\ThemHoaRequest;
 use App\Http\Requests\ThemDacDiemRequest;
 
 class adminController extends Controller
@@ -76,7 +77,7 @@ class adminController extends Controller
         return view('admin.modules.hoalan.themdanhmuchoa', ['data'=>$chi,'dacdiem'=>$dacdiem]);
     }
 
-    public function postThemLoaiHoa(Request $request)
+    public function postThemLoaiHoa(ThemHoaRequest $request)
     {  
         $hoalan = new Loai();
         $hoalan->ten_loai=$request->input('ten_loai');
@@ -85,11 +86,13 @@ class adminController extends Controller
         $hoalan->dacdiem_id=$request->input('dacdiem_id');
         $hoalan->mo_ta=$request->input('mo_ta');
         $hoalan->save();
-        return redirect()->intended('qt-danh-muc-hoa');
+        $tenhoa = $request->input('ten_loai');
+        $mss = 'Hoàn tất, Loài '.$tenhoa.' đã được thêm! ';
+        return redirect()->intended('qt-danh-muc-hoa')->with('message', $mss);
 
     }
 
-    public function postChinhSuaLoaiHoa(Request $request,$id)
+    public function postChinhSuaLoaiHoa(ThemHoaRequest $request,$id)
     {
         $hoalan = Loai::findOrFail($id);
         $hoalan->ten_loai=$request->input('ten_loai');
@@ -98,14 +101,16 @@ class adminController extends Controller
         $hoalan->dacdiem_id=$request->input('dacdiem_id');
         $hoalan->mo_ta=$request->input('mo_ta');
         $hoalan->save();
-        return redirect()->intended('qt-danh-muc-hoa');
+        $tenhoa = $request->input('ten_loai');
+        $mss = 'Hoàn tất, Loài '.$tenhoa.' đã được chỉnh sửa! ';
+        return redirect()->intended('qt-danh-muc-hoa')->with('message', $mss);
     }
     public function xoaloaihoa(Request $request,$id)
     {
        $hoalan = Loai::find($id);
         if($hoalan->delete())
         {
-            return redirect()->intended('qt-danh-muc-hoa');    
+            return redirect()->intended('qt-danh-muc-hoa')->with('message', 'Loài hoa đã được xóa thành công!');;    
         }
         else{
              return  redirect()->intended('qt-danh-muc-hoa');

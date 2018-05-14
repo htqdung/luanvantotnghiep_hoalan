@@ -56,7 +56,6 @@
 
                 <div class="widget-body" style="background-color: #f7fbff;">
                   <div class="widget-main" style="height: 535px">
-                    
                     <div>
                       <div class="col-md-12">
                           <div class="col-md-12">

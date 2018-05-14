@@ -48,9 +48,9 @@
     <script src=" {{ asset('admin/assets/js/bootstrap3-typeahead.min.js') }} "></script>
    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />-->
  
-     <script src=" {{ asset('admin/assets/js/bootstrap-multiselect.js') }}"></script>
-     
-<link rel="stylesheet" href=" {{ asset('admin/assets/css/bootstrap-multiselect.css') }} " />
+    <script src=" {{ asset('admin/assets/js/bootstrap-multiselect.js') }}"></script>
+    <link rel="stylesheet" href=" {{ asset('admin/assets/css/select2.min.css') }} " /> 
+    <link rel="stylesheet" href=" {{ asset('admin/assets/css/bootstrap-multiselect.css') }} " />
     <style>
     body {
         font-family: Roboto Slab;

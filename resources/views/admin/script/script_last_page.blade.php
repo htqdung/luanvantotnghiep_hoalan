@@ -41,11 +41,26 @@
     <script src="{{ asset('admin/assets/js/jquery.inputlimiter.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/jquery.maskedinput.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/bootstrap-tag.min.js') }}"></script>
-
+    <script src="{{ asset('admin/assets/js/select2.min.js') }}"></script>
     <script src=" {{ asset('admin/assets/js/ace-elements.min.js') }} "></script>
     <script src=" {{ asset('admin/assets/js/ace.min.js') }} "></script>
     <!-- inline scripts related to this page -->
+<script>
+    $('.select2').select2({allowClear:true})
+    $('#select2-multiple-style .btn').on('click', function(e){
+        var target = $(this).find('input[type=radio]');
+        var which = parseInt(target.val());
+        if(which == 2) $('.select2').addClass('tag-input-style');
+         else $('.select2').removeClass('tag-input-style');
+    });
+    $(document).one('ajaxloadstart.page', function(e) {
+        $('[class*=select2]').remove();
+        $('select[name="duallistbox_demo1[]"]').bootstrapDualListbox('destroy');
+        $('.rating').raty('destroy');
+        $('.multiselect').multiselect('destroy');
+    });
 
+</script>
 <script type="text/javascript">
             jQuery(function($) {
                 $('#id-disable-check').on('click', function() {

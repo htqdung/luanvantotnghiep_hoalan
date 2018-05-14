@@ -3,9 +3,9 @@
 
 
   <!-- left column -->
-  <div class="col-md-12">
+<div class="col-md-12">
      <!-- general form elements -->
-     <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+  <div class="breadcrumbs ace-save-state" id="breadcrumbs">
     <ul class="breadcrumb">
       <li>
         <i class="ace-icon fa fa-home home-icon"></i>
@@ -13,27 +13,56 @@
       </li>
     
     </ul><!-- /.breadcrumb -->
-
-    <div class="nav-search" id="nav-search">
-      <form class="form-search">
-        <span class="input-icon">
-          <input type="text" placeholder="Tìm kiếm ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-          <i class="ace-icon fa fa-search nav-search-icon"></i>
-        </span>
-      </form>
-    </div><!-- /.nav-search -->
   </div>
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">Thêm sản phẩm</h3>
+        <h3 class="box-title">THÊM SẢN PHẨM</h3>
       </div>
       <!-- /.box-header -->
       <!-- form start -->
+
+      @if(!empty($errors->first()))
+          <div class=" error row col-lg-12" >
+              <div class="alert alert-danger">
+                  <span>{{ $errors->first() }}</span>
+              </div>
+          </div>
+      @endif
+      <script >
+       $(document).ready(function () {          
+              setTimeout(function() {
+                  $('.error').slideUp("slow");
+              }, 5000);
+      });
+      </script>
       <form role="form" method="POST" action="" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="box-body">   
-              <div style="clear:both"></div>
-          
+        <div class="box-body">  
+          <div class="col-xs-12 col-sm-6 col-md-offset-3">
+            <div class="col-md-12">
+              <div class="widget-box">
+                <div class="widget-header" style="text-align: center;">
+                  <h4 class="widget-title">Thông tin loài hoa</h4>
+                  <div class="widget-toolbar">
+                    <a href="#" data-action="collapse">
+                      <i class="ace-icon fa fa-chevron-up"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="widget-body" style="background-color: #f7fbff;">
+                  <div class="widget-main">
+                      <label for="sanpham">Tên sản phẩm</label>
+                      <input type="text" class="form-control" name="ten_san_pham" id="sanpham" placeholder="" style="margin-right: 0; " >
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+                  
+              
+            </div>
+          </div> 
           <div class="col-md-12">
               <div class="col-md-6">
                   <label for="sanpham">Tên sản phẩm</label>
