@@ -22,6 +22,7 @@ class CreateTblDonhangTable extends Migration
             $table->foreign('diachi_id')->references('id')->on('tbl_diachi')->onDelete('cascade');
             $table->integer('phi_van_chuyen');
             $table->integer('tong_tien');
+            $table->text('ghi_chu')->nullable();
             $table->string('ten_nguoi_nhan', 1000);
             $table->integer('hinhthucthanhtoan_id')->unsigned();
             $table->foreign('hinhthucthanhtoan_id')->references('id')->on('tbl_hinh_thuc_thanh_toan')->onDelete('cascade');

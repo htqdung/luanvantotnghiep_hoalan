@@ -27,7 +27,7 @@ class adminController extends Controller
     {
     	return view('admin.trangchu.index');	
     }
-//loài hoa
+//loài hoa 
     public function getdanhmuchoa()
     {
 
@@ -51,16 +51,15 @@ class adminController extends Controller
         // ->paginate(10);
         $loai = DB::table('tbl_loai')
         ->select('tbl_loai.id','tbl_loai.ten_loai','ten_khoa_hoc','tbl_loai.mo_ta')
-        ->join('tbl_sanpham_loai', 'tbl_sanpham_loai.loai_id', '=', 'tbl_loai.id')
-        ->join('tbl_sanpham', 'tbl_sanpham.id', '=', 'tbl_sanpham_loai.sanpham_id')
-        ->where('tbl_sanpham_loai.loai_id', '=', $id)
+        
+        ->where('tbl_loai.id', '=', $id)
         ->get();
 
         $chi = DB::table('tbl_chi')
         ->select('id', 'ten_chi')
         ->orderBy('id', 'desc')->get();
         // ->paginate(10);
-         //return $loai;
+         // return $loai;
         return view('admin.modules.hoalan.danhmuchoa_chinhsua', ['data'=>$hoalan , 'dacdiem'=>$dacdiem , 'chi'=>$chi, 'loai'=>$loai]);
     }
     public function themdanhmuchoa()
@@ -274,17 +273,19 @@ class adminController extends Controller
     public function getdacdiemhoa()
     {
          $dacdiem = DB::table('tbl_dacdiem')
-          ->select('id','hoa','la','than','re', 'thoigianno','dac_diem_sinh_truong','hinh_dang')
+          ->select('id','hoa','la','than','re', 'thoigianno','dac_diem_sinh_truong')
         ->orderBy('id','desc')
         ->paginate(10);   
     	return view('admin.modules.dacdiemhoa.dacdiem',['data'=>$dacdiem]);
     }
     public function chinhsuadacdiem($id)
     {
+
+
         $dacdiem = DB::table('tbl_dacdiem')
-         ->select('id','hoa','la','than','re', 'thoigianno','dac_diem_sinh_truong','hinh_dang')
+         ->select('id','hoa','la','than','re', 'thoigianno','dac_diem_sinh_truong')
         ->orderBy('id','desc')
-        ->paginate(10);
+        ->get();
 
         return view('admin.modules.dacdiemhoa.chinhsuadacdiem', ['data'=>$dacdiem]);
     }
@@ -311,7 +312,7 @@ class adminController extends Controller
         $dacdiem->re=$request->input('re');
         $dacdiem->thoigianno=$request->input('thoigianno');
         $dacdiem->dac_diem_sinh_truong=$dacdiem_sinhtruong;
-        $dacdiem->hinh_dang=" Không có dữ liệu! ";
+        
         $dacdiem->save();
 
         return redirect()->intended('qt-dac-diem-hoa')->with('message', 'Hoàn tất, Đã thêm mới một đặc điểm!');
@@ -333,7 +334,7 @@ class adminController extends Controller
         $dacdiem->re=$request->input('re');
         $dacdiem->thoigianno=$request->input('thoigianno');
         $dacdiem->dac_diem_sinh_truong=$dacdiem_sinhtruong;
-        $dacdiem->hinh_dang=$request->input('hinh_dang');
+       
         $dacdiem->save();
          return redirect()->intended('qt-dac-diem-hoa');
     }

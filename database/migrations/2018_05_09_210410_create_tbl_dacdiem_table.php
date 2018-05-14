@@ -15,13 +15,13 @@ class CreateTblDacdiemTable extends Migration
     {
         Schema::create('tbl_dacdiem', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('hoa',100);
-            $table->string('la',100);
-            $table->string('than',100);
-            $table->string('re',100);
-            $table->string('thoigianno',100);
-            $table->string('dac_diem_sinh_truong', 200);
-            $table->string('hinh_dang', 200);
+            $table->string('hoa',255)->nullable();;
+            $table->string('la',255)->nullable();;
+            $table->string('than',255)->nullable();;
+            $table->string('re',255)->nullable();;
+            $table->string('thoigianno',255);
+            $table->string('dac_diem_sinh_truong', 255);
+           
             $table->timestamps();
         });
     }

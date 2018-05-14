@@ -18,8 +18,6 @@ class CreateTblChuongtrinhkhuyenmaiTable extends Migration
             $table->string('ten_chuong_trinh', 255);
             $table->string('ten_hinh_anh', 255);
             $table->string('ti_le_giam_gia',200);
-            $table->integer('sanpham_id')->unsigned();  
-            $table->foreign('sanpham_id')->references('id')->on('tbl_sanpham')->onDelete('cascade');
             $table->date('ngay_bat_dau');
             $table->date('ngay_ket_thuc');
             $table->timestamps();

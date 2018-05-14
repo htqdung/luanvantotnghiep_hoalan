@@ -18,18 +18,30 @@
 			</form>
 		</div><!-- /.nav-search -->
 	</div>
+<div class="row">
+		<div class="col-xs-12">
+			<!-- PAGE CONTENT BEGINS -->
+		<div class="hr hr-18 hr-double dotted"></div>
+		<div class="widget-box">
+			<div class="widget-header widget-header-blue widget-header-flat" style="text-align: center;">
+				<h4 class="widget-title lighter" >DANH MỤC LOÀI HOA</h4>
+				<div class="widget-toolbar">
+					<button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> <a href="{{ route('THEM_DANH_MUC_HOA') }}">Thêm mới</a>  </button>
+				</div>
+			</div>
+		</div>
+		<div class="hr hr-18 hr-double dotted"></div>
 
+		</div><!-- /.col -->
+	</div>
 	<div class="page-content">
 		<!-- /.page-header -->
 		 <div class="box box-primary">
-	      <div class="box-header with-border">
-	        
-	        <a class="btn btn-success" style="float: right; padding: 0px" href="{{ route('THEM_DANH_MUC_HOA') }}"><i class="fa fa-plus-circle  fa-1x fa-fw"></i> Thêm mới</a>
-	      </div>
+	      
 		<div class="row">
 			<div class="col-md-12">
 				<table class="table">
-					<h3><b>DANH MỤC LOÀI HOA</b></h3>
+					
 				    <thead>
 				      <tr>
 				        <th style="width: 5%">Mã số</th>

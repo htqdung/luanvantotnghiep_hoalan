@@ -15,7 +15,7 @@ class CreateTblTrangthaiTable extends Migration
     {
         Schema::create('tbl_trangthai', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_trang_thai', 30);
+            $table->string('ten_trang_thai', 100);
             $table->timestamps();
         });
     }

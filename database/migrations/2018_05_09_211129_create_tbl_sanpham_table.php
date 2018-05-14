@@ -15,11 +15,14 @@ class CreateTblSanphamTable extends Migration
     {
         Schema::create('tbl_sanpham', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_san_pham', 200);
+            $table->string('ten_san_pham', 255);
             $table->text('mo_ta')->nullable();
-            $table->text('thong_tin_chi_tiet');
+            $table->text('kich_thuoc');
             $table->integer('diem_thuong');
-            $table->string('tag', 100)->nullable();
+            $table->string('tag', 255)->nullable();
+            $table->string('so_luot_xem', 255)->nullable();
+            $table->string('so_luot_mua', 255)->nullable();
+
             $table->timestamps();
         });
     }
