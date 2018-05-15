@@ -1,6 +1,5 @@
 @extends('admin.layout.index')
 @section('main-content')
-
 <div class="main-content-inner">
 	<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 		<ul class="breadcrumb">

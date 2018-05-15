@@ -443,14 +443,13 @@
             
                     //programmatically add/remove a tag
                     var $tag_obj = $('#form-field-tags').data('tag');
-                    $tag_obj.add('Programmatically Added');
-                    
+                    // $tag_obj.add('');
                     var index = $tag_obj.inValues('some tag');
                     $tag_obj.remove(index);
                 }
                 catch(e) {
                     //display a textarea for old IE, because it doesn't support this plugin or another one I tried!
-                    tag_input.after('<textarea id="'+tag_input.attr('id')+'" name="'+tag_input.attr('name')+'" rows="3">'+tag_input.val()+'</textarea>').remove();
+                    tag_input.after('<textarea id="'+tag_input.attr('id')+'" name="'+tag_input.attr('name')+'" rows="100">'+tag_input.val()+'</textarea>').remove();
                     //autosize($('#form-field-tags'));
                 }
                 

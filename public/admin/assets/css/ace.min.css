@@ -21341,7 +21341,7 @@ input.typeahead.scrollable~.tt-menu {
     vertical-align: middle;
     background-color: #FFF;
     border: 1px solid #D5D5D5;
-    width: 206px
+    /*width: 206px*/
 }
 
 .tags:hover {

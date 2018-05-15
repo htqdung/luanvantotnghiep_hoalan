@@ -42,7 +42,7 @@
             <div class="col-md-12">
               <div class="widget-box">
                 <div class="widget-header" style="text-align: center;">
-                  <h4 class="widget-title">Thông tin loài hoa</h4>
+                  <h4 class="widget-title">Thông tin sản phẩm</h4>
                   <div class="widget-toolbar">
                     <a href="#" data-action="collapse">
                       <i class="ace-icon fa fa-chevron-up"></i>
@@ -50,99 +50,104 @@
                   </div>
                 </div>
 
+                
                 <div class="widget-body" style="background-color: #f7fbff;">
-                  <div class="widget-main">
-                      <label for="sanpham">Tên sản phẩm</label>
-                      <input type="text" class="form-control" name="ten_san_pham" id="sanpham" placeholder="" style="margin-right: 0; " >
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-                  
-              
-            </div>
-          </div> 
-          <div class="col-md-12">
-              <div class="col-md-6">
-                  <label for="sanpham">Tên sản phẩm</label>
-                  <input type="text" class="form-control" name="ten_san_pham" id="sanpham" placeholder="" style="margin-right: 0; " >
-              </div>
-              <div class="col-md-6">
-                  <label for="dongia">Đơn giá</label>
-                  <input type="number" class="form-control" name="don_gia" id="dongia" placeholder="" style="margin-right: 0; " >
-              </div>
-          </div>
-          <div class="col-md-12">
-              <div class="col-md-6">
-                  <label for="tags">Tags</label>
-                   <select id="framework" name="framework[]" class="form-control" >                      
-                      @foreach ($tags as $item)
-                        <option value="{{ $item->id }}">{{ $item->ten_tags }}</option>
-                      @endforeach
-                     </select>              
-              </div>
-              <div class="col-md-6">
-                  <label for="diemthuong">Điểm thưởng</label>
-                  <input type="number" class="form-control" name="diem_thuong" id="diemthuong" placeholder="" style="margin-right: 0; " >
-              </div>
-          </div>
-          <div class="col-md-12">
-              
-              <div class="col-md-6">
-                  <div class="form-group" style="margin-right: 0; ">
-                     <label>Thêm các loài hoa</label>
-                     <small>* Có thể chọn được nhiều loài</small>
-                     <select id="framework" name="framework[]" class="form-control" >                      
-                      @foreach ($data as $item)
-                        <option value="{{ $item->id }}">{{ $item->ten_loai }}</option>
-                      @endforeach
-                     </select>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <label for="image">Chọn hình ảnh</label>
-                  <input type="file" accept="image/*" class="" name="hinh_anh" id="image" placeholder="" style="margin-right: 0; " >
-              </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-12 form-group" style="padding-top: 20px" >
-                  <label for="content" >Nội dung chi tiết: </label>
-                 
-                  <textarea style="height: 500px" id="content" ></textarea>
-                  <input type="hidden" name="mo_ta" id="content2">
-                  <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-                  <script>
+                  <div class="widget-main" style="height: 850px">
+                    <div>
+                      <div class="col-md-12">
+                          <div class="col-md-12">
+                            <label for="form-field-8">Tên sản phẩm</label>
+                            <input type="text"  name="ten_san_pham" title="Ví dụ: chậu lan hồ điệp 12 cành,....."  class="form-control" id="chi" value="{{ old('ten_san_pham') }}" placeholder="Tên sản phẩm">  
+                          </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div>
+                      <div class="col-md-12">
+                          <div class="col-md-12">
+                            <label for="form-field-8">Thêm các loài hoa</label>
+                            <small>* Có thể chọn được nhiều loài</small>
+                               <select id="framework" name="framework[]" class="form-control" >                      
+                                @foreach ($data as $item)
+                                  <option value="{{ $item->id }}">{{ $item->ten_loai }}</option>
+                                @endforeach
+                               </select>
+                          </div>
+                        </div>
+                    </div>
+                    <br>
+                  <div>
+                        <div class="col-md-12">
+                          <div class="col-md-6" style="margin-right: 0; ">
+                              <label for="dac_diem_sinh_truong"><i>Đơn giá</i></label>
+                              <input type="number" class="form-control" name="gia" value="{{ old('gia') }}" id="re" placeholder="" style="margin-right: 0; ">
+                          </div> 
+                          <div class="col-md-6" style="margin-right: 0; ">
+                              <label for="re"><i>Điểm thưởng</i></label>
+                              <input type="number" class="form-control" name="diem_thuong" id="re" value="{{ old('diem_thuong') }}" placeholder="" style="margin-right: 0; ">
+                          </div>
+                        </div>
+                        <div>
+                          <div class="col-md-12">
+                            <label for="form-field-tags">Tags</label>
+                            <div class="col-md-12">
+                              <div class="inline">
+                                <input type="text" name="tags" id="form-field-tags" value="{{ old('tags') }}" placeholder="Nhập vào tags..." />
+                              </div>
+                            </div>
+                              
                       
-                      var editor = CKEDITOR.replace( 'content' );
+                          </div>
+                            
+                        <div>
+                        <div class="col-md-12">
+                            <div class="col-md-12">
+                             <label for="image">Chọn hình ảnh</label>
+                              <input type="file" accept="image/*" class="" name="hinh_anh" id="image" placeholder="" style="margin-right: 0; " >
+                            </div>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                          <div class="col-md-12">
+                              <div class="col-md-12 form-group" style="padding-top: 20px" >
+                                    <label for="content" >Nội dung chi tiết: </label>
+                                   
+                                    <textarea style="height: 500px" id="content" ></textarea>
+                                    <input type="hidden" name="mo_ta" id="content2">
+                                    <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+                                    <script>
+                                        
+                                        var editor = CKEDITOR.replace( 'content' );
 
-                      // The "change" event is fired whenever a change is made in the editor.
-                      editor.on('change', function( evt ) {
-                          
-                          var content = evt.editor.getData();
-                          $("#content2").val(content);
-                      });
-                  </script>
-            </div>    
-            </div>
+                                        // The "change" event is fired whenever a change is made in the editor.
+                                        editor.on('change', function( evt ) {
+                                            
+                                            var content = evt.editor.getData();
+                                            $("#content2").val(content);
+                                        });
+                                    </script>
+                              </div>
+                              </div>    
+                          </div>
+                          <button type="submit" class="btn btn-white btn-primary" style="float: right; margin-top: 15px; margin-right: 4.2%"><i class="ace-icon fa fa-floppy-o bigger-120 blue"></i> Lưu lại</button>
+                    </div>
+                      </div>
+
+                    
+                  <br>                    
+                  </div>
                    
-           </div>
-			      
+                    <div>          
+                  </div>
+                     
+                  </div>
+              </div>
+              </div>
+            </div>
+                  
+              
             </div>
           </div> 
-               
-        <div style="clear: both;"></div>
-       
-            
-      
-        <!-- /.box-body -->
-
-        <div class="box-footer" style="padding-top: 0px  25px 50px 0px ; float: right;">          
-          
-          
-          <button type="submit" class="btn btn-primary"><i class="fa fa-next faa-pulse animated "></i>Lưu lại</button>
-         
-        </div>
       </form>
     </div>
     <!-- /.box -->
@@ -168,7 +173,7 @@ skills.initialize();
 $('#txtSkills').tagsinput({
     itemValue : 'id',
     itemText  : 'name',
-    maxChars: 10,
+    maxChars: 200,
     trimValue: true,
     allowDuplicates : false,
     freeInput: false,
