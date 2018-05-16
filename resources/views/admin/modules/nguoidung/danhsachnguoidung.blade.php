@@ -37,10 +37,10 @@
                   <tr style="margin: 0px">
                     <th style="width: 7%">Mã số</th>
                     <th style="width: 20%">Họ tên</th>
-                    <th style="width: 10%">Số điện thoại</th>
+                    <th style="width: 15%">Số điện thoại</th>
                     <th style="width: 15%">Email</th>
-                    <th style="width: 50%">Địa chỉ </th>
-                    <th colspan="3">Chức năng</th>
+                    <th style="width: 30%">Địa chỉ </th>
+                    <th style="width: 10%">Chức năng</th>
                   
                   </tr>
                   </thead>

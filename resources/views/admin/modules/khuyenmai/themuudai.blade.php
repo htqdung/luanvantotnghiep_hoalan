@@ -1,7 +1,5 @@
 @extends('admin.layout.index')
 @section('main-content')
-
-  <!-- left column -->
   <div class="col-md-12">
     <!-- general form elements -->
      <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -12,71 +10,88 @@
       </li>
     
     </ul><!-- /.breadcrumb -->
-
-    <div class="nav-search" id="nav-search">
-      <form class="form-search">
-        <span class="input-icon">
-          <input type="text" placeholder="Tìm kiếm ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-          <i class="ace-icon fa fa-search nav-search-icon"></i>
-        </span>
-      </form>
-    </div><!-- /.nav-search -->
   </div>
-      <div class="box-header with-border">
-        <h3 class="box-title">Thêm ưu đãi</h3>
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- PAGE CONTENT BEGINS -->
+      <div class="hr hr-18 hr-double dotted"></div>
+      <div class="widget-box">
+        <div class="widget-header widget-header-blue widget-header-flat" >
+          <h4 class="widget-title lighter" >THÊM ƯU ĐÃI </h4>
+          
+        </div>
       </div>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+     
+      @if(!empty($errors->first()))
+          <div class=" error row col-lg-12" >
+              <div class="alert alert-danger">
+                  <span>{{ $errors->first() }}</span>
+              </div>
+          </div>
+      @endif
+      <script >
+       $(document).ready(function () {          
+              setTimeout(function() {
+                  $('.error').slideUp("slow");
+              }, 5000);
+      });
+      </script>
       <!-- /.box-header -->
       <!-- form start -->
       <form role="form" method="POST" action="" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
-          <div class="form-group">
-             <div class="form-group">
-              <div class="col-md-12">
-                <div class="col-md-6">
-                  <label>Tên ưu đãi</label>
-                  <input type="text" name="ten_hinh_thuc" class="form-control" id=ten_hinh_thuc" placeholder="">
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-offset-3">
+              <div class="widget-box">
+                <div class="widget-header" style="text-align: center;">
+                  <h4 class="widget-title">Thông tin ưu đãi</h4>
+                  <div class="widget-toolbar">
+                    <a href="#" data-action="collapse">
+                      <i class="ace-icon fa fa-chevron-up"></i>
+                    </a>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                    <label>Tên sản phẩm</label>
+
+                <div class="widget-body" style="background-color: #f7fbff;">
+                  <div class="widget-main">
+                    <div>
+                      <label>Tên ưu đãi</label>
+                      <input type="text" name="ten_hinh_thuc" value="{{ old('ten_hinh_thuc') }}" class="form-control" id="ten_hinh_thuc" placeholder="">
+                    </div>
+                    <br>
+                    <div>
+                      <label>Tên sản phẩm</label>
                     <select name="ten_san_pham" class="form-control">
                       @foreach ($data as $element)
                         <option value="{{ $element->id_sanpham }}">{{ $element->ten_san_pham }}</option>
                       @endforeach
                     </select>
-                    
-                </div>
-              </div>
-              <div class="col-md-12">
-                  
-                  <div class="col-md-6">
-                    <label>Số lượng</label>
-                    <input type="number" name="so_luong_toi_thieu" class="form-control" placeholder="">
-                  </div> 
-                  <div class ="col-md-6" >
-                    <label for="exampleInputEmail1">Tỉ lệ giảm</label>
-                    <input type="number" name="ti_le_giam_gia"  class="form-control" id="ti_le_giam_gia" placeholder="%">
+                    </div>
+                    <br>
+                    <div>
+                      <label for="form-field-11">Số lượng</label>
+                      <input type="number" min="0"  name="so_luong_toi_thieu"  class="form-control" id="so_luong_toi_thieu" value="{{ old('so_luong_toi_thieu') }}" placeholder="">
+                    </div>
+                    <br>
+                    <div>
+                      <label for="form-field-11">Tỉ lệ giảm giá (%)</label>
+                      <input type="number"  name="ti_le_giam_gia"  class="form-control" id="chi" value="{{ old('ti_le_giam_gia') }}" placeholder="">
+                    </div>
+                    <br>              
                   </div>
-              </div> 
-              <div style="clear:both"></div>
-            </div>
-                     
+
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="float: right;"> Lưu lại</button>
+              </div>
+            </div><!-- /.span -->
           </div>
-          
         </div>
-        <!-- /.box-body -->
-
-        <div class="box-footer">
-          
-          <button type="submit" style="float: right;" class="btn btn-primary"> Lưu lại</button>
-          
-        </div>
+        
       </form>
-   
-    <!-- /.box -->
-
-  
-  
-  <!--/.col (right) -->
 </div>
 @endsection

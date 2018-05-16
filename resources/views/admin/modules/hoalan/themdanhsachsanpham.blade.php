@@ -57,7 +57,7 @@
                       <div class="col-md-12">
                           <div class="col-md-12">
                             <label for="form-field-8">Tên sản phẩm</label>
-                            <input type="text"  name="ten_san_pham" title="Ví dụ: chậu lan hồ điệp 12 cành,....."  class="form-control" id="chi" value="{{ old('ten_san_pham') }}" placeholder="Tên sản phẩm">  
+                            <input type="text" required  name="ten_san_pham" title="Ví dụ: chậu lan hồ điệp 12 cành,....."  class="form-control" id="ten_san_pham" value="{{ old('ten_san_pham') }}" placeholder="Tên sản phẩm">  
                           </div>
                       </div>
                     </div>
@@ -67,7 +67,8 @@
                           <div class="col-md-12">
                             <label for="form-field-8">Thêm các loài hoa</label>
                             <small>* Có thể chọn được nhiều loài</small>
-                               <select id="framework" name="framework[]" class="form-control" >                      
+                               <br> 
+                               <select  id="framework" name="themloai[]" class="select2 col-md-12" multiple="multiple" class="form-control">
                                 @foreach ($data as $item)
                                   <option value="{{ $item->id }}">{{ $item->ten_loai }}</option>
                                 @endforeach
@@ -79,12 +80,27 @@
                   <div>
                         <div class="col-md-12">
                           <div class="col-md-6" style="margin-right: 0; ">
-                              <label for="dac_diem_sinh_truong"><i>Đơn giá</i></label>
-                              <input type="number" class="form-control" name="gia" value="{{ old('gia') }}" id="re" placeholder="" style="margin-right: 0; ">
+                              <label for="gia"><i>Đơn giá</i></label>
+                              <input type="number" min="0" class="form-control" name="gia" value="{{ old('gia') }}" id="gia" placeholder="" style="margin-right: 0; ">
                           </div> 
                           <div class="col-md-6" style="margin-right: 0; ">
-                              <label for="re"><i>Điểm thưởng</i></label>
-                              <input type="number" class="form-control" name="diem_thuong" id="re" value="{{ old('diem_thuong') }}" placeholder="" style="margin-right: 0; ">
+                              <label for="diem_thuong"><i>Điểm thưởng</i></label>
+                              <input type="number" class="form-control" name="diem_thuong" id="diem_thuong" min="0" max="100" value="{{ old('diem_thuong') }}" placeholder="" style="margin-right: 0; ">
+                              <small hidden="hidden" id = "diem_thuong_gioi_y" style="font-size: 0.85em; color: red">Điểm thưởng gợi ý!</small>
+                          </div>
+                        </div>
+                        <script>
+                             $("#gia").on("input change onlick",function(e){
+                              var diem_thuong = ($("#gia").val()/100000)*1;
+                              // alert(diem_thuong);
+                              $("#diem_thuong").val(Math.round( diem_thuong ));
+                              $('#diem_thuong_gioi_y').removeAttr('hidden');
+                              });
+                        </script>
+                        <div class="col-md-12">
+                          <div class="col-md-12" style="margin-right: 0; ">
+                              <label for="kich_thuoc"><i>Kích thước</i></label>
+                              <input type="text" required="required" class="form-control" name="kich_thuoc" id="kich_thuoc" value="{{ old('kich_thuoc') }}" placeholder="" style="margin-right: 0; ">
                           </div>
                         </div>
                         <div>
@@ -92,7 +108,7 @@
                             <label for="form-field-tags">Tags</label>
                             <div class="col-md-12">
                               <div class="inline">
-                                <input type="text" name="tags" id="form-field-tags" value="{{ old('tags') }}" placeholder="Nhập vào tags..." />
+                                <input type="text" name="ten_tags" id="form-field-tags" value="{{ old('tags') }}" placeholder="Nhập vào tags..." />
                               </div>
                             </div>
                               
@@ -111,9 +127,8 @@
                           <div class="col-md-12">
                               <div class="col-md-12 form-group" style="padding-top: 20px" >
                                     <label for="content" >Nội dung chi tiết: </label>
-                                   
-                                    <textarea style="height: 500px" id="content" ></textarea>
-                                    <input type="hidden" name="mo_ta" id="content2">
+                                    <textarea style="height: 500px" id="content" >{{ old('mo_ta') }}</textarea>
+                                    <input type="hidden" name="mo_ta" value=" {{ old('mo_ta') }}"  id="content2">
                                     <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
                                     <script>
                                         

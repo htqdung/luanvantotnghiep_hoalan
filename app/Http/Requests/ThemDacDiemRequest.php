@@ -31,7 +31,7 @@ class ThemDacDiemRequest extends FormRequest
             'nhiet_do' => 'required',
             'do_am' => 'required',
             'anh_sang' => 'required',
-            'van_de_sau_benh' => 'required'
+            'van_de_sau_benh' => 'required',
         ];
 
     }

@@ -16,11 +16,15 @@ use App\HinhThucUuDai;
 use App\QuaTang;
 use Carbon\Carbon;
 use App\Tags;
+use App\KhuyenMaiSanPham;
+use App\SanPham_Loai;
+// use App\khuyenmai_sanpham;
 use App\Http\Requests\ThemTagsRequest;
 use App\Http\Requests\ThemChiRequest;
 use App\Http\Requests\ChinhSuaChiRequest;
 use App\Http\Requests\ThemHoaRequest;
 use App\Http\Requests\ThemDacDiemRequest;
+use App\Http\Requests\ThemDanhSachSanPhamRequest;
 
 class adminController extends Controller
 {
@@ -125,7 +129,7 @@ class adminController extends Controller
         //->leftJoin('tbl_sanpham_loai','tbl_sanpham_loai.sanpham_id','=','tbl_sanpham.id')
         ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong')
         ->orderBy('id_sanpham','desc')
-        ->paginate(5);
+        ->paginate(10);
         // return $nguoidung;
        
     	return view('admin.modules.hoalan.danhsachsanpham',['data'=>$sanpham]);
@@ -139,18 +143,16 @@ class adminController extends Controller
         // return $tmp2;
         return view('admin.modules.hoalan.themdanhsachsanpham', ['data'=>$hoalan , 'tags'=>$tags]);
     }
-     public function postThemSanPham(Request $request)
+    public function postThemSanPham(ThemDanhSachSanPhamRequest $request)
     {
-
-
         $sanpham = new SanPham();
-
         $sanpham->ten_san_pham=$request->input('ten_san_pham');
-       // $sanpham->thong_tin_chi_tiet=$request->input('kich_thuoc');
+        $sanpham->kich_thuoc=$request->input('kich_thuoc');
         $sanpham->mo_ta=$request->input('mo_ta');
         $sanpham->diem_thuong=$request->input('diem_thuong');
-        //$sanpham->tag=$request->input('tag');  
-       // $sanpham->hinhanhsp=$request->input('hinh_anh');
+        $sanpham->so_luot_xem = 0;
+        $sanpham->so_luot_mua = 0;
+       
         $sanpham->save();
     
         $last_sanpham = DB::table('tbl_sanpham')
@@ -161,11 +163,11 @@ class adminController extends Controller
         $tmp =  ltrim($tmp1, '{"id":');
         // $tmp = str_replace($tmp1,'{"id":', '');
         $tmp2 = rtrim($tmp,'}');
-  
+        
      
         $dongia = new DonGia();
         $dongia->sanpham_id=$tmp2;
-        $dongia->gia=$request->input('don_gia');
+        $dongia->gia=$request->input('gia');
         $dongia->save();
 
 
@@ -181,14 +183,32 @@ class adminController extends Controller
         $hinh_anh->ten_hinh = "sanpham".$time.'.'.$file_anh->getClientOriginalExtension();
         $hinh_anh->sanpham_id= $tmp2;
         $hinh_anh->save();
+        // $tags = new Tags();
+        // $tags->ten_tags=$request->input('ten_tags');
 
-        $tags = new Tags();
-        $tags->ten_tags=$request->input('ten_tags');
-        $tags->save();
+        $tags = "".$request->input('ten_tags');
+        $tag_name = explode(",", $tags);
 
-        // return $last_sanpham;
-         return redirect()->intended('qt-danh-sach-san-pham');
-        //return $this::getdachsachsanpham();
+        $loai[]= $request->input('themloai');
+        
+        for($j = 0; $j < sizeof($loai); $j++ )
+        {
+            $tag = new SanPham_Loai();
+            $tag->ten_tags = $tag_name[$i];
+            $tag->sanpham_id = $tmp2;
+            $tag->save();
+        }
+
+        $tags_save = [];
+        for($i=0; $i<  sizeof($tag_name); $i++)
+        {
+            $tag = new Tags();
+            $tag->ten_tags = $tag_name[$i];
+            $tag->sanpham_id = $tmp2;
+            $tag->save();
+        }
+
+
     }
     public function chinhsuasanpham($id)
     {
@@ -436,6 +456,7 @@ class adminController extends Controller
         ->join('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
         ->join('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_thongtinlienhe.ten','so_nha', 'ten_duong','so_dien_thoai', 'email', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho')
+        ->orderBy('tbl_nguoidung.id', 'desc')
         ->paginate(10);
 
 
@@ -522,28 +543,71 @@ class adminController extends Controller
     }
     public function themkhuyenmai()
     {
-        return view('admin.modules.khuyenmai.themkhuyenmai');
+       
+        $sanpham = DB::table('tbl_sanpham')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham', 'mo_ta')
+        ->orderBy('id', 'desc')
+        ->paginate(10);
+        return view('admin.modules.khuyenmai.themkhuyenmai',['data'=>$sanpham]);
     }
 
     public function postThemKhuyenMai(Request $request)
     {
+
+
         // echo "abc";
         $khuyenmai = new ChuongTrinhKhuyenMai();
         $khuyenmai->ten_chuong_trinh=$request->input('ten_chuong_trinh');
-        $khuyenmai->ten_hinh_anh=$request->input('ten_hinh_anh');
+        $khuyenmai->ten_hinh_anh=$request->input('thangcho');
         $khuyenmai->ngay_bat_dau=$request->input('ngay_bat_dau');
         $khuyenmai->ngay_ket_thuc=$request->input('ngay_ket_thuc');
         $khuyenmai->ti_le_giam_gia=$request->input('ti_le_giam');
-        $khuyenmai->sanpham_id = 1;
+        
+        
+        $date = date("Y_m_d");
+        $timedate = date("h_i_s");
+        $time = '_'.$date.'_'.$timedate;
+        $duong_dan   = public_path().'\khuyenmai\\';
+        $file_anh = $request->file('thangcho');
+        $hinh_anh = \Image::make($file_anh);
+        $hinh_anh->resize(860,248);
+        $hinh_anh->save($duong_dan.'khuyenmai'.$time.'.'.$file_anh->getClientOriginalExtension());
+        $khuyenmai->ten_hinh_anh = "khuyenmai".$time.'.'.$file_anh->getClientOriginalExtension();
 
         $khuyenmai->save();
-         $chuongtrinhkhuyenmai = DB::table('tbl_chuongtrinhkhuyenmai')
-         ->select('tbl_chuongtrinhkhuyenmai.id as chuongtrinhkhuyenmai_id','ngay_bat_dau','ngay_ket_thuc','ten_hinh_anh','ten_chuong_trinh','ti_le_giam_gia', 'tbl_quatang.ten_qua_tang','so_luong', 'tbl_chuongtrinhkhuyenmai.created_at')
-        ->leftJoin('tbl_quatang', 'tbl_quatang.chuongtrinhkhuyenmai_id', '=', 'tbl_quatang.id')
-        ->orderBy('tbl_chuongtrinhkhuyenmai.id', 'DESC')
-        ->get();
-       // return $chuongtrinhkhuyenmai;
-        return view('admin.modules.khuyenmai.danhsachkhuyenmai' , ['data'=>$chuongtrinhkhuyenmai]);
+
+        $sl_khuyenmai = DB::table('tbl_chuongtrinhkhuyenmai')
+        ->select('id')
+        ->orderBy('id','desc')
+        ->first();
+        $tmp1 = json_encode($sl_khuyenmai);
+        $tmp =  ltrim($tmp1, '{"id":');
+        // $tmp = str_replace($tmp1,'{"id":', '');
+        $tmp2 = rtrim($tmp,'}');
+        // return $tmp2;
+
+
+        $id_sanpham = $request->input('ten_san_pham');
+        // // return $id_sanpham;
+
+        // $id_sp = explode(",",$id_sanpham);
+            // $tag_name = explode(",", $tags);
+        for($i= 0; $i < sizeof($id_sanpham); $i++){
+            $sanpham_khuyenmai = new KhuyenMaiSanPham();
+            $sanpham_khuyenmai->sanpham_id = $id_sanpham[$i];
+            $sanpham_khuyenmai->chuongtrinhkhuyenmai_id = $tmp2;
+            // echo $tmp2.",";
+            $sanpham_khuyenmai->save();
+            
+            // echo  $id_sanpham[$i];
+        }
+        // $tenctr = $request->input('ten_chuong_trinh');
+
+
+
+        // $mss = 'Hoàn tất, Chương trình khuyến mại '.$tenctr.' đã được thêm! ';
+        // return redirect()->intended('qt-danh-sach-khuyen-mai')->with('message', $mss);
+       
     }
 
     public function chinhsuakhuyenmai($id)
@@ -602,8 +666,8 @@ class adminController extends Controller
     {
         $danhsachsanpham = DB::table('tbl_sanpham')
         ->leftJoin('tbl_dongia', 'tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
-        ->leftJoin('tbl_chuongtrinhkhuyenmai', 'tbl_chuongtrinhkhuyenmai.sanpham_id','=','tbl_sanpham.id')
-        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham', 'mo_ta', 'tag')
+       // ->leftJoin(' tbl_khuyenmai_sanpham', 'tbl_khuyenmai_sanpham.sanpham_id','=','tbl_sanpham.id')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham', 'mo_ta')
     
         ->get();
         return view('admin.modules.khuyenmai.themuudai', ['data'=>$danhsachsanpham]);
@@ -677,7 +741,9 @@ class adminController extends Controller
     {
         $quatang = DB::table('tbl_quatang')
         ->select('tbl_quatang.id','ten_qua_tang','so_luong')
-        ->get();
+        ->orderBy('id', 'desc')
+        ->paginate(10);
+        
         return view('admin.modules.khuyenmai.quatang', ['data'=>$quatang]);
     }
     public function themquatang()
@@ -747,7 +813,8 @@ class adminController extends Controller
         ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
-        ->paginate(5);
+        ->orderBy('id','desc')
+        ->paginate(10);
 
         return view('admin.modules.donhang.tatcadonhang', ['data'=>$donhang]);
     }
@@ -765,7 +832,8 @@ class adminController extends Controller
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
         ->where('tbl_trangthai.ten_trang_thai' , '=', 'Đang giao')
-        ->paginate();
+        ->orderBy('id','desc')
+        ->paginate(10);
 
         return view('admin.modules.donhang.danggiao', ['data'=>$donhang]);
     }
@@ -805,6 +873,7 @@ class adminController extends Controller
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
         ->where('tbl_trangthai.ten_trang_thai' , '=', 'Đã giao')
+        ->orderBy('id','desc')
         ->paginate(10);
 
         return view('admin.modules.donhang.dagiao', ['data'=>$donhang]);
@@ -819,8 +888,8 @@ class adminController extends Controller
         $tmp_date = $current->month;
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
-       
-        ->paginate(5);
+       ->orderBy('id','desc')
+        ->paginate(10);
        // return $donhang;
          return view('admin.modules.baocao.baocao', ['data'=>$donhang]);
     }
@@ -835,7 +904,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 1)
-        ->paginate(5);
+        ->paginate(10);
        // return $donhang;
         return view('admin.modules.baocao.baocao1' , ['data'=>$donhang]);
     }
@@ -850,7 +919,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 2)
-        ->paginate(5);
+        ->paginate(10);
       
          return view('admin.modules.baocao.baocao2', ['data'=>$donhang]);
     }
@@ -864,7 +933,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 3)
-        ->paginate(5);
+        ->paginate(10);
        // return $donhang;3
      return view('admin.modules.baocao.baocao3', ['data'=>$donhang]);
     }
@@ -878,7 +947,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 4)
-        ->paginate(5);
+        ->paginate(10);
        return view('admin.modules.baocao.baocao4', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangNam()
@@ -891,7 +960,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 5)
-        ->paginate(5);
+        ->paginate(10);
         return view('admin.modules.baocao.baocao5', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangSau()
@@ -904,7 +973,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 6)
-        ->paginate(5);
+        ->paginate(10);
         return view('admin.modules.baocao.baocao6', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangBay()
@@ -917,7 +986,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 7)
-        ->paginate(5);
+        ->paginate(10);
       return view('admin.modules.baocao.baocao7', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangTam()
@@ -930,7 +999,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 8)
-        ->paginate(5);
+        ->paginate(10);
        return view('admin.modules.baocao.baocao8', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangChin()
@@ -943,7 +1012,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 9)
-        ->paginate(5);
+        ->paginate(10);
         return view('admin.modules.baocao.baocao9', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangMuoi()
@@ -956,7 +1025,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 10)
-        ->paginate(5);
+        ->paginate(10);
          return view('admin.modules.baocao.baocao10', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangMuoiMot()
@@ -969,7 +1038,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 11)
-        ->paginate(5);
+        ->paginate(10);
         return view('admin.modules.baocao.baocao11', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangMuoiHai()
@@ -982,7 +1051,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 12)
-        ->paginate(5);
+        ->paginate(10);
         return view('admin.modules.baocao.baocao12', ['data'=>$donhang]);
     }
 //tágs
@@ -990,8 +1059,7 @@ class adminController extends Controller
     {
         $tags = DB::table('tbl_tags')
         ->select('tbl_tags.id','ten_tags')
-
-        ->get();
+        ->paginate(10);
         return view('admin.modules.tags.danhsachtags', ['data'=>$tags]);
     }
     public function themtags()

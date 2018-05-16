@@ -41,10 +41,10 @@
 				      </tr>
 				    </thead>
 				    <tbody>
-				     	<?php $i=1;?>
+				     	
                 @foreach ($data as $item)
                   <tr>
-                    <td><?= $i++; ?></td>
+                    <td>{{ $item->id }}</td>
 				        <td>{{ $item->ten_tags }}</td>
 						
 						<td>
@@ -59,6 +59,8 @@
 				            				      
 				    </tbody>
 				  </table>
+				  {{ $data->render() }}
+				</div>
 			</div>
 		</div>
 	</div><!-- /.page-content -->

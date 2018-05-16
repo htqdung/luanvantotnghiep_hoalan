@@ -60,12 +60,21 @@
                   <div class="widget-main">
                     <div>
                       <label for="form-field-8">Tên khuyến mãi</label>
-                      <input type="text"  name="ten_chi"  class="form-control" id="chi" value="{{ old('ten_chuong_trinh') }}" placeholder="Điền tên khuyến mãi">
+                      <input type="text"  name="ten_chuong_trinh"  class="form-control" id="chi" value="{{ old('ten_chuong_trinh') }}" placeholder="Điền tên khuyến mãi">
                     </div>
                     <br>
                     <div>
                       <label for="form-field-11">Tỉ lệ giảm giá (%)</label>
                       <input type="number"  name="ti_le_giam"  class="form-control" id="chi" value="{{ old('ti_le_giam') }}" placeholder="">
+                    </div>
+                    <br>
+                    <div>
+                      <label for="form-field-8">Tên sản phẩm</label>
+                      <select  id="framework" name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control">
+                      @foreach ($data as $item)
+                        <option >{{ $item->ten_san_pham }}</option>
+                      @endforeach
+                     </select>
                     </div>
                     <br>
                     <div>
@@ -84,7 +93,7 @@
                     <br>
                   <label for="image">Chọn hình ảnh</label>
 
-                  <input type="file" accept="image/*" class="" name="ten_hinh_anh" id="image" placeholder="" style="margin-right: 0; " >
+                  <input type="file" accept="image/*" class="" name="thangcho" id="image" placeholder="" style="margin-right: 0; " >
                     </div>                   
                   </div>
 

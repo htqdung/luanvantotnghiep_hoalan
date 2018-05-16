@@ -36,7 +36,7 @@
           <h3><b>DANH SÁCH QUÀ TẶNG</b></h3>
                   <thead>
                   <tr style="margin: 0px">
-                    <th style="width: 3%">Stt</th>
+                    <th style="width: 5%">Mã số</th>
                     <th style="width: 40%">Tên quà tặng</th>
                     <th style="width: 30%">Số lượng</th>
                     

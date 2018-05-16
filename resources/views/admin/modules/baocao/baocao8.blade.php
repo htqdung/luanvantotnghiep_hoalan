@@ -45,7 +45,7 @@
           </select>
                   <thead>
                   <tr style="margin: 0px">
-                    <th style="width: 3%">Stt</th>
+                    <th style="width: 7%">Mã số</th>
                     <th style="width: 20%">Ngày đặt hàng</th>
                     <th style="width: 17%">Tổng tiền  </th>
                   </tr>

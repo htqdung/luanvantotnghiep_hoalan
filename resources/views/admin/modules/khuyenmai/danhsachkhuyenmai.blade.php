@@ -36,6 +36,7 @@
                 <th style="width: 8%; text-align: center;">Mã số</th>
                 <th style="width: 32% ">Tên chương trình</th>
                 <th style="width: 15% ">Tỉ lệ giảm (%)</th>
+                <th style="width: 10%">Tên sản phẩm</th>
                 <th style="width: 15%">Ngày bắt đầu </th>
                 <th style="width: 15% ">Ngày kết thúc</th>  
                 <th style="width: 20%">Chức năng</th>
@@ -49,7 +50,9 @@
                 <td>{{ $item->ten_chuong_trinh}}</td>
                 <td>{{ date('d-m-Y', strtotime($item->ngay_bat_dau)) }}</td>
                  <td>{{ date('d-m-Y', strtotime($item->ngay_ket_thuc)) }}</td> 
-                <td>{{ $item->ti_le_giam_gia}}</td>             
+                <td>{{ $item->ti_le_giam_gia}}</td>
+                <td>{{ $item->ten_san_pham}}</td>  
+
             <td>
               <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_KHUYEN_MAI', $item->id) }}"><i class="glyphicon glyphicon-folder-open"></i></a>
                          <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_KHUYEN_MAI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
