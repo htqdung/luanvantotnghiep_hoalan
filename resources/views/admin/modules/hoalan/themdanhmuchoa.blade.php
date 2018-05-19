@@ -8,7 +8,7 @@
         <i class="ace-icon fa fa-home home-icon"></i>
         <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
-    
+    <li><a href="javascript:void(0)">Thêm loài hoa</a></li>
     </ul><!-- /.breadcrumb -->
   </div>
   <div class="row">
@@ -47,7 +47,7 @@
             <div class="col-xs-12 col-sm-6 col-md-offset-3">
               <div class="widget-box">
                 <div class="widget-header" style="text-align: center;">
-                  <h4 class="widget-title">Thông tin loài hoa</h4>
+                  <h3 class="widget-title">Thông tin loài hoa</h3>
                   <div class="widget-toolbar">
                     <a href="#" data-action="collapse">
                       <i class="ace-icon fa fa-chevron-up"></i>

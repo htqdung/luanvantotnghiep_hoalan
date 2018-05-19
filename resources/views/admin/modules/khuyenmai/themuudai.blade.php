@@ -58,18 +58,19 @@
 
                 <div class="widget-body" style="background-color: #f7fbff;">
                   <div class="widget-main">
-                    <div>
+                    <div >
                       <label>Tên ưu đãi</label>
                       <input type="text" name="ten_hinh_thuc" value="{{ old('ten_hinh_thuc') }}" class="form-control" id="ten_hinh_thuc" placeholder="">
                     </div>
                     <br>
                     <div>
-                      <label>Tên sản phẩm</label>
-                    <select name="ten_san_pham" class="form-control">
-                      @foreach ($data as $element)
-                        <option value="{{ $element->id_sanpham }}">{{ $element->ten_san_pham }}</option>
-                      @endforeach
-                    </select>
+                      <label>Chọn sản phẩm</label>
+                      <select  id="framework"  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control">
+                        @foreach ($data as $item)
+                          <option value="{{ $item->id_sanpham }}">{{ $item->ten_san_pham }}</option>
+                        @endforeach
+
+                       </select>
                     </div>
                     <br>
                     <div>

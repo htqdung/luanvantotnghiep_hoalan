@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -25,9 +24,12 @@ class ChinhSuaChiRequest extends FormRequest
     {
         return [
             'ten_chi' => 'required',
-            'canh_hoa' => 'required',
-            'dai_hoa' => 'required',
-            'bong_hoa' => 'required',            
+            'ten_khoa_hoc_chi' => 'required',
+            'chi_re' => 'required',
+            'chi_canh' => 'required',  
+            'chi_la' => 'required',
+            'chi_than' => 'required',
+            'chi_hoa' => 'required',            
         ];
 
     }
@@ -37,9 +39,12 @@ class ChinhSuaChiRequest extends FormRequest
             
             
             "ten_chi.required" => "Tên chi không được để trống, vui lòng kiểm tra lại!",
-            "canh_hoa.required" => "Cánh hoa không được để trống, vui lòng kiểm tra lại!",
-            "dai_hoa.required" => "Đài hoa không được để trống, vui lòng kiểm tra lại!",
-            "bong_hoa.required" => "Bông hoa không được để trống, vui lòng kiểm tra lại!",
+            "ten_khoa_hoc_chi.required" => "Tên khoa học không được để trống, vui lòng kiểm tra lại!",
+            "chi_re.required" => "Rễ không được để trống, vui lòng kiểm tra lại!",
+            "chi_canh.required" => "Cành không được để trống, vui lòng kiểm tra lại!",
+            "chi_la.required" => "Lá không được để trống, vui lòng kiểm tra lại!",
+            "chi_than.required" => "Thân không được để trống, vui lòng kiểm tra lại!",
+            "chi_hoa.required" => "Hoa không được để trống, vui lòng kiểm tra lại!",
         ];
     }
 }

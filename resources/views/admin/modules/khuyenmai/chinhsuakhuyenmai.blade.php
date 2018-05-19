@@ -8,7 +8,7 @@
         <i class="ace-icon fa fa-home home-icon"></i>
         <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
-    
+    <li><a href="javascript:void(0)">Chỉnh sửa khuyến mại</a></li>
     </ul><!-- /.breadcrumb -->
   </div>
   <div class="row">
@@ -17,7 +17,7 @@
       <div class="hr hr-18 hr-double dotted"></div>
       <div class="widget-box">
         <div class="widget-header widget-header-blue widget-header-flat" >
-          <h4 class="widget-title lighter" >THÊM KHUYẾN MẠI </h4>
+          <h4 class="widget-title lighter" >CHỈNH SỬA KHUYẾN MẠI </h4>
           
         </div>
       </div>
@@ -60,7 +60,7 @@
                   <div class="widget-main">
                     <div>
                       <label for="form-field-8">Tên khuyến mãi</label>
-                      <input type="text" name="ten_hinh_thuc" value="{{ $data[0]->ten_hinh_thuc }}" class="form-control" id=ten_hinh_thuc" placeholder="">
+                      <input type="text" name="ten_hinh_thuc" value="{{ $data[0]->ten_chuong_trinh }}" class="form-control" id=ten_hinh_thuc" placeholder="">
                     </div>
                     <br>
                     <div>
@@ -70,12 +70,22 @@
                     <br>
                     <div>
                       <label for="form-field-11">Ngày bắt đầu</label>
-                      <input type="date" name="ngay_bat_dau" value="{{ date("Y_m_d"),strtotime($data[0]->ngay_bat_dau) }}" class="form-control" id="ngay_bat_dau" placeholder="">
+                      <input type="text" class="form-control" name="ngay_bat_dau" placeholder="DD/MM/YYYY" required value="{{ date("Y_m_d"),strtotime($data[0]->ngay_bat_dau) }}"  pattern="
+                        (?:30))|(?:(?:0[13578]|1[02])-31))/
+                        (?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])/
+                        (?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])
+                        " title="Enter a date in this format DD/MM/YYYY"/>
+                      
                     </div>
                     <br>
                     <div>
                       <label for="form-field-11">Ngày kết thúc</label>
-                      <input type="date" name="ngay_bat_dau" value="{{ date("Y_m_d"),strtotime($data[0]->ngay_ket_thuc) }}" class="form-control" id="ngay_bat_dau" placeholder="">
+                      <input type="text" class="form-control" name="ngay_ket_thuc" placeholder="DD/MM/YYYY" required value="{{ date("Y_m_d"),strtotime($data[0]->ngay_ket_thuc) }}"  pattern="
+                        (?:30))|(?:(?:0[13578]|1[02])-31))/
+                        (?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])/
+                        (?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])
+                        " title="Enter a date in this format DD/MM/YYYY"/>
+                      
                     </div>
                     <br>
                     

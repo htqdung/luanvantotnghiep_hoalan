@@ -10,6 +10,7 @@ Route::get('qt-xoa-loai-hoa/{id}', 'adminController@xoaloaihoa')->name('XOA-LOAI
 Route::get('qt-them-danh-muc-hoa','adminController@themdanhmuchoa')->name('THEM_DANH_MUC_HOA');
 Route::post('qt-them-danh-muc-hoa', 'adminController@postThemLoaiHoa');
 
+Route::get('qt-chi-tiet-loai-hoa/{id}', 'adminController@chitietloaihoa')->name('CHI_TIET_LOAI_HOA');
 //sản phẩm
 Route::get('qt-danh-sach-san-pham', 'adminController@getdachsachsanpham')->name('DANH_SACH_SAN_PHAM');
 Route::get('qt-them-san-pham','adminController@themsanpham')->name('THEM_SAN_PHAM');
@@ -95,6 +96,7 @@ Route::get('qt-bao-cao-thang-9','adminController@getBaoCaoTheoThangChin')->name(
 Route::get('qt-bao-cao-thang-10','adminController@getBaoCaoTheoThangMuoi')->name('DANH_SACH_THANG_MUOI');
 Route::get('qt-bao-cao-thang-11','adminController@getBaoCaoTheoThangMuoiMot')->name('DANH_SACH_THANG_MUOI_MOT');
 Route::get('qt-bao-cao-thang-12','adminController@getBaoCaoTheoThangMuoiHai')->name('DANH_SACH_THANG_MUOI_HAI');
+Route::get('qt-bao-cao-bieu-do','adminController@getBaoCaoTheoBieuDo')->name('DANH_SACH_BIEU_DO');
 //tags
 Route::get('qt-danh-sach-tags','adminController@danhsachtags')->name('DANH_SACH_TAGS');
 Route::get('qt-them-tags', 'adminController@themtags')->name('THEM_TAGS');

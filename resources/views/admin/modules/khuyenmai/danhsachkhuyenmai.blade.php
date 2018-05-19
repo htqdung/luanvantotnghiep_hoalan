@@ -36,41 +36,41 @@
                 <th style="width: 8%; text-align: center;">Mã số</th>
                 <th style="width: 32% ">Tên chương trình</th>
                 <th style="width: 15% ">Tỉ lệ giảm (%)</th>
-                <th style="width: 10%">Tên sản phẩm</th>
+                {{-- <th style="width: 10%">Tên sản phẩm</th> --}}
                 <th style="width: 15%">Ngày bắt đầu </th>
                 <th style="width: 15% ">Ngày kết thúc</th>  
                 <th style="width: 20%">Chức năng</th>
               </tr>
             </thead>
             <tbody>
-              <?php $i; $arr[][]="";?>
+              <?php $i; $arr[][]="";?> 
             @foreach ($data as $item) 
               <tr>
-                td>{{ $item->id }}</td>
+                <td>{{ $item->chuongtrinhkhuyenmai_id }}</td>
                 <td>{{ $item->ten_chuong_trinh}}</td>
                 <td>{{ date('d-m-Y', strtotime($item->ngay_bat_dau)) }}</td>
-                 <td>{{ date('d-m-Y', strtotime($item->ngay_ket_thuc)) }}</td> 
+                <td>{{ date('d-m-Y', strtotime($item->ngay_ket_thuc)) }}</td> 
                 <td>{{ $item->ti_le_giam_gia}}</td>
-                <td>{{ $item->ten_san_pham}}</td>  
+                {{-- <td>{{ $item->ten_san_pham}}</td>   --}}
 
             <td>
-              <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_KHUYEN_MAI', $item->id) }}"><i class="glyphicon glyphicon-folder-open"></i></a>
-                         <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_KHUYEN_MAI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+              <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_KHUYEN_MAI', $item->chuongtrinhkhuyenmai_id) }}"><i class="glyphicon glyphicon-folder-open"></i></a>
+                         <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_KHUYEN_MAI', $item->chuongtrinhkhuyenmai_id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
                           {{-- <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" id="btnDelete" class="btn btn-danger" href="{{ route('XOA_CHI', $item->id) }}"><i class="fa fa fa-trash-o fa-fw"></i></a> --}}
-                        <a type="button" class="btn btn-danger" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
+                        <a type="button" class="btn btn-danger" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->chuongtrinhkhuyenmai_id }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
                      </td>
-                     <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id }}" role="dialog" tabindex="-1">
+                     <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->chuongtrinhkhuyenmai_id }}" role="dialog" tabindex="-1">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">Bạn có chắc chắn?</h4>
                         </div>
                         <div class="modal-body">
-                            <p>Sau khi nhấn đồng ý, Khuyến mãi {{ $item->id }} dữ liệu liên quan đến khuyến mãi <?php $tmp; ?> sẽ bị xóa bỏ!</p>
+                            <p>Sau khi nhấn đồng ý, Khuyến mãi {{ $item->chuongtrinhkhuyenmai_id }} dữ liệu liên quan đến khuyến mãi <?php $tmp; ?> sẽ bị xóa bỏ!</p>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
-                            <a class="btn btn-danger" href="{{ route('XOA_KHUYEN_MAI', $item->id) }}" id="remove-button" type="submit">Đồng ý</a>
+                            <a class="btn btn-danger" href="{{ route('XOA_KHUYEN_MAI', $item->chuongtrinhkhuyenmai_id) }}" id="remove-button" type="submit">Đồng ý</a>
                         </div>
                     </div><!-- end modal-content -->
                 </div><!-- end modal-dialog -->

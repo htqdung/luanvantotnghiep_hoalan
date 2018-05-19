@@ -11,7 +11,7 @@
         <i class="ace-icon fa fa-home home-icon"></i>
         <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
-    
+    <li><a href="javascript:void(0)">Thêm sản phẩm</a></li>
     </ul><!-- /.breadcrumb -->
   </div>
     <div class="box box-primary">
@@ -38,7 +38,7 @@
       <form role="form" method="POST" action="" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">  
-          <div class="col-xs-12 col-sm-6 col-md-offset-3">
+          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2">
             <div class="col-md-12">
               <div class="widget-box">
                 <div class="widget-header" style="text-align: center;">
@@ -52,8 +52,8 @@
 
                 
                 <div class="widget-body" style="background-color: #f7fbff;">
-                  <div class="widget-main" style="height: 850px">
-                    <div>
+                  <div class="widget-main" style="height: 1100px">
+                    <div class="form-group">
                       <div class="col-md-12">
                           <div class="col-md-12">
                             <label for="form-field-8">Tên sản phẩm</label>
@@ -62,7 +62,7 @@
                       </div>
                     </div>
                     <br>
-                    <div>
+                    <div class="form-group">
                       <div class="col-md-12">
                           <div class="col-md-12">
                             <label for="form-field-8">Thêm các loài hoa</label>
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <br>
-                  <div>
+                  <div class="form-group">
                         <div class="col-md-12">
                           <div class="col-md-6" style="margin-right: 0; ">
                               <label for="gia"><i>Đơn giá</i></label>
@@ -103,26 +103,38 @@
                               <input type="text" required="required" class="form-control" name="kich_thuoc" id="kich_thuoc" value="{{ old('kich_thuoc') }}" placeholder="" style="margin-right: 0; ">
                           </div>
                         </div>
-                        <div>
+                        <div >
                           <div class="col-md-12">
-                            <label for="form-field-tags">Tags</label>
+                            <label for="form-field-tags" style="padding-left: 8px;">Tags</label>
                             <div class="col-md-12">
                               <div class="inline">
                                 <input type="text" name="ten_tags" id="form-field-tags" value="{{ old('tags') }}" placeholder="Nhập vào tags..." />
                               </div>
                             </div>
-                              
-                      
                           </div>
+
+                          <div class="col-md-12" style="padding-top: 25px">
+                          <div class="col-md-12">
+                            <div class="widget-box">
+                              <div class="widget-header">
+                                <h4 class="widget-title">Chọn ảnh</h4>
+                              </div>
+                            <br>
                             
-                        <div>
-                        <div class="col-md-12">
-                            <div class="col-md-12">
-                             <label for="image">Chọn hình ảnh</label>
-                              <input type="file" accept="image/*" class="" name="hinh_anh" id="image" placeholder="" style="margin-right: 0; " >
-                            </div>
+                            <div>                               
+                              <div class="col-xs-12">
+                                <input multiple="multiple" type="file" name="ten_hinh[]"  class="form-control" id="id-input-file-3" />
+                              </div>
+                                <label>
+                                  <input type="checkbox" name="" id="ten_hinh" class="ace" />
+                                  <span class="lbl"> Chọn ảnh</span>
+                                </label>
+                            </div>                             
+                           </div>
+                          </div>
                         </div>
-                    </div>
+                           <br>
+                        </div>
                         <div class="form-group">
                           <div class="col-md-12">
                               <div class="col-md-12 form-group" style="padding-top: 20px" >

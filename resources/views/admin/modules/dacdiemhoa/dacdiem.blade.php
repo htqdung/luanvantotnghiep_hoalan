@@ -61,6 +61,7 @@
 		                    <td>{{ $item->dac_diem_sinh_truong}}</td>
 		                    
 		                    <td>
+		                    	
 				                <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_DAC_DIEM', $item->id)  }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 				                
 					      		<a type="button" class="btn btn-danger" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
@@ -86,6 +87,7 @@
 		                @endforeach           
 		            </tbody>           
 				</table>
+				{{ $data->render() }}
 			</div>
 		</div>
 	</div><!-- /.page-content -->

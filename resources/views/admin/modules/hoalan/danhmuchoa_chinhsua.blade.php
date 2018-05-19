@@ -11,7 +11,7 @@
         <i class="ace-icon fa fa-home home-icon"></i>
         <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
-      <li><a href="javascript:void(0)">Thêm loài hoa</a></li>
+      <li><a href="javascript:void(0)">Chỉnh sửa loài hoa</a></li>
     </ul><!-- /.breadcrumb -->
   </div>
 <div class="row">
@@ -20,7 +20,7 @@
     <div class="hr hr-18 hr-double dotted"></div>
     <div class="widget-box">
       <div class="widget-header widget-header-blue widget-header-flat" >
-        <h4 class="widget-title lighter" >THÊM LOÀI HOA </h4>        
+        <h4 class="widget-title lighter" >CHỈNH SỬA LOÀI HOA </h4>        
       </div>
     </div>
   </div><!-- /.col -->

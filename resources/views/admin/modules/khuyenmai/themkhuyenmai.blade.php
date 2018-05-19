@@ -70,9 +70,9 @@
                     <br>
                     <div>
                       <label for="form-field-8">Tên sản phẩm</label>
-                      <select  id="framework" name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control">
+                      <select  id="framework"  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control">
                       @foreach ($data as $item)
-                        <option >{{ $item->ten_san_pham }}</option>
+                        <option value="{{ $item->id_sanpham }}">{{ $item->ten_san_pham }}</option>
                       @endforeach
                      </select>
                     </div>
@@ -92,9 +92,14 @@
                       <img src="http://localhost:8080/luanvantotnghiep_hoalan/public/admin/assets/images/avatars/avatar2.png" alt="">
                     <br>
                   <label for="image">Chọn hình ảnh</label>
-
                   <input type="file" accept="image/*" class="" name="thangcho" id="image" placeholder="" style="margin-right: 0; " >
-                    </div>                   
+                  </div>  
+                  <div class="form-group">
+                    <label for="">Chọn kích cỡ ảnh</label>
+                    <input type="number" value="1366" title="Nhập vào chiều ngang. Ví dụ: 1366px" name="ngang" >
+                    <input type="number" value="400" title="Nhập vào chiều dọc. Ví dụ: 1366px" name="doc" >
+                  </div>                 
+      
                   </div>
 
                 </div>

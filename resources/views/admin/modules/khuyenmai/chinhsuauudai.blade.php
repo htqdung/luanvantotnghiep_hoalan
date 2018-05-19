@@ -8,7 +8,7 @@
         <i class="ace-icon fa fa-home home-icon"></i>
         <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
-    
+    <li><a href="javascript:void(0)">Chỉnh sửa ưu đãi</a></li>
     </ul><!-- /.breadcrumb -->
   </div>
   <div class="row">
@@ -60,12 +60,23 @@
                   <div class="widget-main">
                     <div>
                       <label>Tên ưu đãi</label>
+                      <input type="hidden" value="{{ $uudai[0]->id_hinhthuc }}" name="id_hinhthuc">
                       <input type="text"  value="{{ $uudai[0]->ten_hinh_thuc }}" name="ten_hinh_thuc" class="form-control" id=uudai" placeholder="">
                     </div>
                     <br>
                     <div>
-                      <label>Tên sản phẩm</label>
-                     <input type="text"  value="{{ $uudai[0]->ten_san_pham }}" name="ten_san_pham" class="form-control" id=uudai" placeholder="">
+                      <label>Chọn sản phẩm</label>
+                      <select  id="framework"  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control">
+                        
+                        @foreach ($danhsachsanpham as $item)
+                          @if($uudai[0]->sanpham_id == $item->id_sanpham)
+                            <option selected value="{{ $uudai[0]->sanpham_id }}">{{ $uudai[0]->ten_san_pham }}</option>
+                          @else
+                            <option value="{{ $item->id_sanpham }}">{{ $item->ten_san_pham }}</option>
+                          @endif
+                        @endforeach
+
+                       </select>
                     </div>
                     <br>
                     <div>

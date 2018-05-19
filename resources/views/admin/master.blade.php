@@ -64,6 +64,9 @@
                 <div class="hr hr32 hr-dotted"></div>
                 <!-- PAGE CONTENT ENDS -->
             </div>
+           
+                                </div><!-- /.row -->
+
             <!-- /.col -->
         </div>
         <!-- /.row -->

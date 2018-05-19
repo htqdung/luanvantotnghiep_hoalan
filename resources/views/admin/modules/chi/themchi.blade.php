@@ -8,7 +8,7 @@
         <i class="ace-icon fa fa-home home-icon"></i>
         <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
-    
+    <li><a href="javascript:void(0)">Thêm chi</a></li>
     </ul><!-- /.breadcrumb -->
   </div>
   <div class="row">
@@ -64,20 +64,38 @@
                     </div>
                     <br>
                     <div>
-                      <label for="form-field-11">Cánh hoa</label>
-                      <textarea type="text" id="form-field-11"  name="canh_hoa"  class="autosize-transition form-control" id="chi" placeholder=""> {{ old('canh_hoa') }} </textarea>
+                      <label for="form-field-11">Tên khoa học</label>
+                      <textarea type="text" id="form-field-11"  name="ten_khoa_hoc_chi"  class="autosize-transition form-control" id="chi" placeholder="Điền tên khoa học"> {{ old('ten_khoa_hoc_chi') }} </textarea>
                     </div>
                     <br>
                     <div>
-                      <label for="form-field-11">Đài hoa: *</label>
-                      <textarea type="text" id="form-field-11"   name="dai_hoa" 
-                      class="autosize-transition   form-control" id="chi" placeholder="">{{ old('dai_hoa') }} </textarea>
+                      <label for="form-field-11">Hoa: *</label>
+                      <textarea type="text" id="form-field-11"   name="chi_hoa" 
+                      class="autosize-transition   form-control" id="chi" placeholder="Điền hoa: Cánh hoa, màu sắc,..">{{ old('chi_hoa') }} </textarea>
                     </div>
                     <br>
                     <div>
-                      <label for="form-field-11">Bông hoa: *</label>
-                      <textarea type="text" id="form-field-11"   name="bong_hoa" 
-                      class="autosize-transition   form-control" id="chi" placeholder="">{{ old('bong_hoa') }} </textarea>
+                      <label for="form-field-11">Lá: *</label>
+                      <textarea type="text" id="form-field-11"   name="chi_la" 
+                      class="autosize-transition   form-control" id="chi" placeholder="DDienf lá">{{ old('chi_la') }} </textarea>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="form-field-11">Thân: *</label>
+                      <textarea type="text" id="form-field-11"   name="chi_than" 
+                      class="autosize-transition   form-control" id="chi" placeholder="Điền thân">{{ old('chi_than') }} </textarea>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="form-field-11">Rễ: *</label>
+                      <textarea type="text" id="form-field-11"   name="chi_re" 
+                      class="autosize-transition   form-control" id="chi" placeholder="Điền rẽ">{{ old('chi_re') }} </textarea>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="form-field-11">Cành: *</label>
+                      <textarea type="text" id="form-field-11"   name="chi_canh" 
+                      class="autosize-transition   form-control" id="chi" placeholder="Điền cành">{{ old('chi_canh') }} </textarea>
                     </div>
                     <br>
                     <div class=" form-group" style="padding-top: 20px" >

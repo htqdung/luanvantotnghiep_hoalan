@@ -5,30 +5,23 @@
   <div class="col-md-12">
 		<!-- general form elements -->
     <div class="box box-primary">
-      <div class="box-header with-border">
-      	 <div class="nav-search" id="nav-search">
-			      <form class="form-search">
-			        <span class="input-icon">
-			          <input type="text" placeholder="Tìm kiếm ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-			          <i class="ace-icon fa fa-search nav-search-icon"></i>
-			        </span>
-			      </form>
-   		 </div><!-- /.nav-search -->
+     
         <h3 class="box-title">Chi tiết khuyến mãi</h3>
         
        
       </div>
       <!-- /.box-header -->
 
-      <div class="box-body">
+      <div class="box-body"> 
 
             <div class="row">
-              <div class="col-md-6 form-group img-rounded" >
+              <div class="col-md-12 form-group img-rounded" >
+                <label for="">Hình quảng cáo</label>
                   <div style="margin-left: 20%; padding-top: 10px " >
-                      <a href=""> <img src="#" class="img-rounded" alt="Hình đại diện" style="width: 286px; height: 370px">  </a>
+                      <a href="/luanvantotnghiep_hoalan/public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>"> <img src="/luanvantotnghiep_hoalan/public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>" class="img-rounded" alt="Hình đại diện" style="height: 200px; width: 100%">  </a>
                   </div>
               </div>
-              <div class="col-md-6"  style="padding-top: 10px">
+              <div class="col-md-12"  style="padding-top: 10px">
                 <div class="">
                   <table class="table table-condensed">
                     <tbody>
@@ -41,15 +34,7 @@
                         <td> {{ $data[0]->ti_le_giam_gia }}</td>
                       </tr>
                     
-                      <tr>
-                        <th style="width: 30%">Số lượng quà tặng: </th>
-                        <td>{{ $data[0]->so_luong }}</td>
-                      </tr>
-                      <tr>
-                        <th style="width: 30%">Tên quà tặng: </th>
-                        <td>{{ $data[0]->ten_qua_tang }}</td>
-                        
-                      </tr>
+                      
                       <tr>
                         <th style="width: 30%">Ngày bắt đầu : </th>
                         <td>{{ $data[0]->ngay_bat_dau }}</td>
@@ -72,7 +57,7 @@
 			                    <th style="width: 3%">Id</th>
 			                    <th style="width: 30%">Tên sản phẩm</th>
 			                    <th style="width: 35%">Mô tả </th>
-			                    <th style="width: 25%">Tag</th>
+			                    
 			                  
 			                   
 			                    <th style="width: 7%; text-align: center;">Chức năng</th>
@@ -84,8 +69,8 @@
 			                  <tr>
 			                    <td>{{ $item->id_sanpham }}</td>
 			                    <td>{{ $item->ten_san_pham}}</td>
-			                    <td>{{ $item->mo_ta}}</td>
-			                    <td>{{ $item->tag}}</td>
+			                    <td><?= $item->mo_ta; ?></td>
+			                    
 			                                   
 			                  
 			                     <td>

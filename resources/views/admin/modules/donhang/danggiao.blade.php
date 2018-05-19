@@ -8,17 +8,10 @@
         <i class="ace-icon fa fa-home home-icon"></i>
         <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
-    
+    <li><a href="javascript:void(0)">Đơn hàng đang giao</a></li>
     </ul><!-- /.breadcrumb -->
 
-    <div class="nav-search" id="nav-search">
-      <form class="form-search">
-        <span class="input-icon">
-          <input type="text" placeholder="Tìm kiếm ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-          <i class="ace-icon fa fa-search nav-search-icon"></i>
-        </span>
-      </form>
-    </div><!-- /.nav-search -->
+    
   </div>
 
   <div class="page-content">
@@ -26,7 +19,17 @@
     <div class="row">
       <div class="col-md-12">
         <table class="table">
-          <h3><b>ĐƠN HÀNG ĐANG GIAO</b></h3>
+          <h3><b>ĐƠN HÀNG ĐANG GIAO</b>  <div  style="margin-left: 80%">
+                    <label><b>Sắp xếp</b></label>
+                      <select name="forma" style="font-size: 0.7em;" onchange="location = this.value;">
+                        <option value=""> Chọn một danh sách</option>
+                        <option value="{{ route('TAT_CA_DON_HANG') }}">Tất cả đơn hàng</option>
+                        <option value="{{ route('DON_HANG_DA_GIAO') }}">Đã giao hàng</option>
+                        <option value="{{ route('DON_HANG_DANG_GIAO') }}">Đang giao</option>
+                        <option value="{{ route('DON_HANG_DANG_XU_LY') }}">Đang xử lý</option>
+                      </select> 
+                </div>
+          </h3>
                   <thead>
                   <tr style="margin: 0px">
                     <th style="width: 3%">Stt</th>

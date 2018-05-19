@@ -12,14 +12,7 @@
 	    
 	    </ul><!-- /.breadcrumb -->
 
-	    <div class="nav-search" id="nav-search">
-	      <form class="form-search">
-	        <span class="input-icon">
-	          <input type="text" placeholder="Tìm kiếm ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-	          <i class="ace-icon fa fa-search nav-search-icon"></i>
-	        </span>
-	      </form>
-	    </div><!-- /.nav-search -->
+	    
     </div>
     <div class="box-header with-border" style=" padding-top:10px">
         <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-warning" href="javascript:history.go(-1);"><i class="" ></i>Quay lại</a> 
@@ -27,11 +20,10 @@
     <div class="box-header with-border">
        
     </div>
-	<div class="panel-heading" role="tab" id="headingOne">
-		<h1 class="panel-title">
-			<a data-toggle="collapse" data-parent="#accordion"
-				href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-				<b>Thông tin chi tiết </b></a>
+	<div style="color: #2B7DBC" >
+		<h1 >
+			
+				<b>Thông tin chi tiết </b>
 		</h1>
 	</div>
 	<div id="collapseOne" class="panel-collapse collapse in"
@@ -41,23 +33,38 @@
 				<table class="table table-responsive" id="tblAccounts">
 					<tbody class="">
 						<tr >
-							<td style="width: 25%"><b>Tên chi:</b></td>
+							<td style="width: 15%"><h3><b>Tên chi:</b></h3></td>
 							<td class="form-value1" id="tdinputName" >{{ $data[0]->ten_chi}}</td>
 							
 						</tr>
 						<tr >
-							<td style="width: 15%"><b>Cánh hoa:</b></td>
-							<td class="form-value1" id="tdinputName" >{{ $data[0]->canh_hoa}}</td>
+							<td style="width: 15%"><h3><b>Tên khoa học:</b></h3></td>
+							<td class="form-value1" id="tdinputName" >{{ $data[0]->ten_khoa_hoc_chi}}</td>
+							
+						</tr>
+						<tr >
+							<td style="width: 15%"><h3><b>Hoa:</b></h3></td>
+							<td class="form-value1" id="tdinputName" >{{ $data[0]->chi_hoa}}</td>
+							
+						</tr>
+						<tr >
+							<td style="width: 15%"><h3><b>Lá:</b></h3></td>
+							<td class="form-value1" id="tdinputName" >{{ $data[0]->chi_la}}</td>
+							
+						</tr>
+						<tr >
+							<td style="width: 15%"><h3><b>Thân:</b></h3></td>
+							<td class="form-value1" id="tdinputName" >{{ $data[0]->chi_than}}</td>
 							
 						</tr>
 						<tr>
-							<td style="width: 15%"><b>Đài hoa:</b></td>
-							<td class="form-value1" id="tdinputDOB" >{{ $data[0]->dai_hoa}}</td>
+							<td style="width: 15%"><h3><b>Rễ:</b></h3></td>
+							<td class="form-value1" id="tdinputDOB" >{{ $data[0]->chi_re}}</td>
 							
 						</tr>
 						<tr>
-							<td style="width: 15%"><b>Bông hoa:</b></td>
-							<td class="form-value1" id="tdinputDOB" >{{ $data[0]->bong_hoa}}</td>
+							<td style="width: 15%"><h3><b>Cành:</b></h3></td>
+							<td class="form-value1" id="tdinputDOB" >{{ $data[0]->chi_canh}}</td>
 							
 						</tr>	
 							
@@ -65,7 +72,7 @@
 					</tbody>
 				</table>
 				
-					<h4><b>Mô tả:</b></h4>
+					<h1 style="color: #2B7DBC"><b>Mô tả:</b></h1>
 					
 							 <?= $data[0]->mo_ta;?>
 			</form>

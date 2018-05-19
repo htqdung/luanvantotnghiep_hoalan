@@ -7,6 +7,7 @@
 				<i class="ace-icon fa fa-home home-icon"></i>
 				<a href=" {{ route('MO_GIAO_DIEN_ADMIN') }} ">Trang chủ</a>
 			</li>
+			<li><a href="javascript:void(0)">Danh mục loài hoa</a></li>
 		</ul><!-- /.breadcrumb -->
 	</div>
 	<div class="row">
@@ -48,9 +49,10 @@
 						        <td>{{ $item->ten_loai}}</td>
 						        <td>{{ $item->ten_khoa_hoc }}</td>
 						        <td>{{ $item->ten_chi }}</td>
-						        <td>{{ $item->hoa }}, {{ $item->la }}</td>
+						        <td>{{ $item->hoa }}, {{ $item->la }},{{ $item->than }},{{ $item->re }}</td>
 						        
 			                    <td>
+			                    	<a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_LOAI_HOA', $item->id) }}"><i class="glyphicon glyphicon-folder-open"></i></a>
 			                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_HOA', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 			                                          
 			                      

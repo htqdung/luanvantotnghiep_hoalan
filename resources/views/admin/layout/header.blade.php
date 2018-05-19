@@ -17,6 +17,19 @@
           <div class="navbar-buttons navbar-header pull-right" role="navigation">
              
           </div>
+
+
+          <div class="navbar-header pull-right" style="float: right;" >
+              <a href="/" class="navbar-brand">
+          <small>
+           
+           <h5>
+             <i class="glyphicon glyphicon-globe" ></i>
+           Trang người dùng
+         </h5>
+          </small>
+        </a>
+          </div>
       </div>
       <!-- /.navbar-container -->
   </div>

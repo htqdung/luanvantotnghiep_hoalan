@@ -30,16 +30,18 @@
 		<!-- /.page-header -->
 		<div class="row">
 			<div class="col-md-12">
-				<table class="table">
+				<table class="table" >
 				    <thead>
 				      <tr>
-				        <th style="width: 7%">Mã số</th>
-				        <th style="width: 15%">Tên chi</th>
-				        <th style="width: 15%">Cánh hoa</th>
-				        <th style="width: 15%">Đài hoa</th>
-				        <th style="width: 15%">Bông hoa</th>
-				         							   
-				        <th style="width: 10%">Chức năng</th>
+				        <th style="width: 3%">Mã số</th>
+				        <th style="width: 8%">Tên chi</th>
+				        <th style="width: 8%">Tên khoa học</th>
+				        <th style="width: 13%">Lá</th>
+				        <th style="width: 13%">Thân</th>
+				         <th style="width:13%">Rễ</th>
+				        <th style="width: 13%">Cành</th>
+				        <th style="width: 13%">Hoa</th>							   
+				        <th style="width: 12%">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>
@@ -48,9 +50,13 @@
                   <tr>
                     <td>{{ $item->id }}</td>
 				        <td>{{ $item->ten_chi }}</td>
-						<td>{{ $item->canh_hoa }}</td>
-						<td>{{ $item->dai_hoa }}</td>
-						<td>{{ $item->bong_hoa }}</td>				     
+						<td>{{ $item->ten_khoa_hoc_chi }}</td>
+						<td> <?= substr($item->chi_la, 0, 100);  ?> <?php if(strlen($item->chi_la) > 100) echo  '.....'; ?></td>
+						<td> <?= substr($item->chi_than, 0, 100);  ?> <?php if(strlen($item->chi_than) > 100) echo  '.....'; ?></td>
+						<td> <?= substr($item->chi_re, 0, 100);  ?> <?php if(strlen($item->chi_re) > 100) echo  '.....'; ?></td>				     
+						<td> <?= substr($item->chi_canh, 0, 100);  ?> <?php if(strlen($item->chi_canh) > 100) echo  '.....'; ?></td>
+						<td> <?= substr($item->chi_hoa, 0, 100);  ?> <?php if(strlen($item->chi_hoa) > 100) echo  '.....'; ?></td>
+
 						<td>
 							<a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_CHI', $item->id) }}"><i class="glyphicon glyphicon-folder-open"></i></a>
 		                     <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_CHI', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
@@ -80,6 +86,7 @@
 				            				      
 				    </tbody>
 				  </table>
+				  {{ $data->render() }}
 			</div>
 		</div>
 	</div><!-- /.page-content -->

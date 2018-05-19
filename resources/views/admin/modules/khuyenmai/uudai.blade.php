@@ -35,7 +35,7 @@
                   <tr style="margin: 0px">
                     <th style="width: 7%">Mã số</th>
                     <th style="width: 20%">Tên hình thức</th>
-                    <th style="width: 27%">Tên sản phẩm</th>
+                    <th style="width: 27%">Sản phẩm áp dụng</th>
                     <th style="width: 15%">Số lượng</th>
                     <th style="width: 15% ">Tỉ lệ giảm giá (%)</th>
                     <th  style="width: 10%; text-align: center;">Chức năng</th>
@@ -45,6 +45,7 @@
                    <?php $i; $arr[][]="";?>
             @foreach ($data as $item) 
               <tr>
+                {{-- id _ uu dai --}}
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->ten_hinh_thuc }}</td>
                     <td>{{ $item->ten_san_pham }}</td>

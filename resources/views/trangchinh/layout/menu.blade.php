@@ -23,7 +23,7 @@
 							<ul class="dropdown-menu multi-column columns-3">
 								<div class="agile_inner_drop_nav_info">
 									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-										<a href="{{ route('frontend.listproduct') }}"><img src="trangchinh_asset/images/hoalan5.jpg" alt=" "/></a>
+		 								<a href="{{ route('frontend.listproduct') }}"><img src="trangchinh_asset/images/hoalan5.jpg" alt=" "/></a>
 									</div>
 									<div class="col-sm-4 multi-gd-img">
 										<ul style="color: #16193B; margin-left: 20px; font-size: 15px;" class="multi-column-dropdown">

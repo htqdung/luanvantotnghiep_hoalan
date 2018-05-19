@@ -8,7 +8,7 @@
         <i class="ace-icon fa fa-home home-icon"></i>
         <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
       </li>
-    
+    <li><a href="javascript:void(0)">Chỉnh sửa chi</a></li>
     </ul><!-- /.breadcrumb -->
   </div>
   <div class="row">
@@ -17,7 +17,7 @@
       <div class="hr hr-18 hr-double dotted"></div>
       <div class="widget-box">
         <div class="widget-header widget-header-blue widget-header-flat" >
-          <h4 class="widget-title lighter" >THÊM CHI </h4>
+          <h4 class="widget-title lighter" >CHỈNH SỬA CHI </h4>
           
         </div>
       </div>
@@ -67,20 +67,35 @@
                     </div>
                     <br>
                     <div>
-                      <label for="form-field-11">Cánh hoa</label>
-                      <textarea type="text" id="form-field-11"  name="canh_hoa"  class="autosize-transition form-control" id="chi" placeholder=""> {{ $data[0]->canh_hoa }} </textarea>
+                      <label for="form-field-11">Tên khoa học</label>
+                      <textarea type="text" id="form-field-11"  name="ten_khoa_hoc_chi"  class="autosize-transition form-control" id="chi" placeholder=""> {{ $data[0]->ten_khoa_hoc_chi }} </textarea>
                     </div>
                     <br>
                     <div>
-                      <label for="form-field-11">Đài hoa: *</label>
-                      <textarea type="text" id="form-field-11"   name="dai_hoa" 
-                      class="autosize-transition   form-control" id="chi" placeholder="">{{ $data[0]->dai_hoa }} </textarea>
+                      <label for="form-field-11">Hoa</label>
+                      <textarea type="text" id="form-field-11"  name="chi_hoa"  class="autosize-transition form-control" id="chi" placeholder=""> {{ $data[0]->chi_hoa }} </textarea>
                     </div>
                     <br>
                     <div>
-                      <label for="form-field-11">Bông hoa: *</label>
-                      <textarea type="text" id="form-field-11"   name="bong_hoa" 
-                      class="autosize-transition   form-control" id="chi" placeholder="">{{ $data[0]->bong_hoa }} </textarea>
+                      <label for="form-field-11">Lá</label>
+                      <textarea type="text" id="form-field-11"  name="chi_la"  class="autosize-transition form-control" id="chi" placeholder=""> {{ $data[0]->chi_la }} </textarea>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="form-field-11">Thân</label>
+                      <textarea type="text" id="form-field-11"  name="chi_than"  class="autosize-transition form-control" id="chi" placeholder=""> {{ $data[0]->chi_than }} </textarea>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="form-field-11">Rễ: *</label>
+                      <textarea type="text" id="form-field-11"   name="chi_re" 
+                      class="autosize-transition   form-control" id="chi" placeholder="">{{ $data[0]->chi_re }} </textarea>
+                    </div>
+                    <br>
+                    <div>
+                      <label for="form-field-11">Cành: *</label>
+                      <textarea type="text" id="form-field-11"   name="chi_canh" 
+                      class="autosize-transition   form-control" id="chi" placeholder="">{{ $data[0]->chi_canh }} </textarea>
                     </div>
                     <br>
                     <div class=" form-group" style="padding-top: 20px" >

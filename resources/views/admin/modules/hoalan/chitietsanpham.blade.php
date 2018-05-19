@@ -2,29 +2,60 @@
 @section('main-content')
   <!-- left column -->
   <div class="col-md-12">
+    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+      <ul class="breadcrumb">
+        <li>
+          <i class="ace-icon fa fa-home home-icon"></i>
+          <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
+        </li>
+      <li><a href="javascript:void(0)">Chi tiết sản phẩm</a></li>
+      </ul><!-- /.breadcrumb -->
+
+      
+    </div>
     <!-- general form elements -->
     <div class="box box-primary">
       <div class="box-header with-border">
         <div class="box-header with-border">
-        <h3 class="box-title">Chi tiết sản phẩm</h3>
-        <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="{{ route('DANH_SACH_SAN_PHAM') }}">
+        <h2 class="box-title" style="color: #2B7DBC" >Chi tiết sản phẩm
+          <a style="float: right; padding: 0px; margin-left: 5px" class="btn btn-success" href="{{ route('DANH_SACH_SAN_PHAM') }}">
           <i class="fa fa-hand-o-left"></i>  Quay lại</a>
-        
+        </h2>
        </div>  
       </div>
       <!-- /.box-header -->
       <div class="box-body">
             <div class="row">
-              <div class="col-md-6 form-group img-rounded" >
-                   <div class="col-md-4">
-                     <img src="../public/sanpham/<?= $data_hinhanh[0]->ten_hinh; ?>" alt="">
-                    <label for="image">Chọn hình ảnh</label>
-                    <input type="file" multiple accept="image/*" class="" value="{{ $data_hinhanh[0]->ten_hinh }}" name="hinh_anh" id="image" placeholder="" style="margin-right: 0; " >
-                  </div>
-                  
-                  
-              </div>
-              <div class="col-md-6" style = "padding-top: 25px">
+              <div class="col-md-12">
+              <div class="col-md-4" style="margin-left: 0px;">
+                      <ul class="ace-thumbnails clearfix">
+                        @foreach($data_hinhanh as $item)
+                        <li>
+                          <a href="../sanpham/<?php echo $item->ten_hinh; ?>" title="Photo Title" data-rel="colorbox">
+                            <img width="150" height="150" alt="150x150" src="/luanvantotnghiep_hoalan/public/sanpham/<?= $item->ten_hinh; ?>" />
+                          </a>
+                          <div class="tools">
+                            <a href="#">
+                              <i class="ace-icon fa fa-link"></i>
+                            </a>
+
+                            <a href="#">
+                              <i class="ace-icon fa fa-paperclip"></i>
+                            </a>
+
+                            <a href="#">
+                              <i class="ace-icon fa fa-pencil"></i>
+                            </a>
+
+                            <a href="#">
+                              <i class="ace-icon fa fa-times red"></i>
+                            </a>
+                          </div>
+                        </li>
+                        @endforeach
+                      </ul>
+                    </div>
+              <div class="col-md-8" style = "padding-top: 25px">
                 <div class="">
                   <table class="table">
                     <thead>
@@ -62,10 +93,12 @@
                 </div> 
               </div>
             </div>
+            </div>
             <div class="row">
-
+              <div class="col-md-12">
+              <h2 style="color: #2B7DBC">Mô tả</h2>
               <?= $data->mo_ta; ?>
-
+                </div>
             </div>
       </div>
       <!-- /.box-body -->

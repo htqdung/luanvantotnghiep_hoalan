@@ -29,7 +29,7 @@ class ThemDanhSachSanPhamRequest extends FormRequest
             'gia' => 'required',
             'diem_thuong' => 'required',
             'ten_tags' => 'required',
-            'hinh_anh' => 'required',
+            'ten_hinh' => 'required',
             'mo_ta' => 'required',
             'kich_thuoc' => 'required',
         ];
@@ -48,7 +48,7 @@ class ThemDanhSachSanPhamRequest extends FormRequest
             // "diem_thuong.min" => "Điểm thưởng phải là số lớn hơn 0, vui lòng kiểm tra lại! ",
             // "diem_thuong.max" => "Số quá lớn vui lòng kiểm tra lại, vui lòng kiểm tra lại! ",
             "ten_tags.required" => "Vui lòng nhập tags, vui lòng kiểm tra lại! ",
-            "hinh_anh.required" => "Vui lòng chọn ảnh, vui lòng kiểm tra lại! ",
+            "ten_hinh.required" => "Vui lòng chọn ảnh, vui lòng kiểm tra lại! ",
             "mo_ta.required" => "Vui lòng nhập mô tả, vui lòng kiểm tra lại! ",
             "kich_thuoc.required" =>"Vui lòng nhập kích thước của sản phẩm, vui lòng kiểm tra lại!",
         ];
