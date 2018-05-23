@@ -48,7 +48,7 @@
             <div class="col-xs-12 col-sm-6 col-md-offset-3">
               <div class="widget-box">
                 <div class="widget-header" style="text-align: center;">
-                  <h4 class="widget-title">Thông tin khuyến mãi</h4>
+                  <h4 class="widget-title">Thông tin khuyến mại</h4>
                   <div class="widget-toolbar">
                     <a href="#" data-action="collapse">
                       <i class="ace-icon fa fa-chevron-up"></i>
@@ -59,7 +59,7 @@
                 <div class="widget-body" style="background-color: #f7fbff;">
                   <div class="widget-main">
                     <div>
-                      <label for="form-field-8">Tên khuyến mãi</label>
+                      <label for="form-field-8">Tên khuyến mại</label>
                       <input type="text" name="ten_hinh_thuc" value="{{ $data[0]->ten_chuong_trinh }}" class="form-control" id=ten_hinh_thuc" placeholder="">
                     </div>
                     <br>

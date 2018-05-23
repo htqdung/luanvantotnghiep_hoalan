@@ -6,7 +6,7 @@
 		<!-- general form elements -->
     <div class="box box-primary">
      
-        <h3 class="box-title">Chi tiết khuyến mãi</h3>
+        <h3 class="box-title">Chi tiết khuyến mại</h3>
         
        
       </div>

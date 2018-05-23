@@ -18,8 +18,24 @@
          
         <table class="table">
           <h3><b>DANH SÁCH ĐƠN HÀNG</b>  <div  style="margin-left: 80%">
-                    <label><b>Sắp xếp</b></label>
-                      <select name="forma" style="font-size: 0.7em;" onchange="location = this.value;">
+                  <label><b>Sắp xếp</b></label>
+                    <select name="" onchange="window.location=this.value" id="" style="font-size: 0.7em; float: right;" >
+                      <option value="{{ route('DANH_SACH_TONG') }} ">Tất cả</option>
+                      <option value="{{ route('DANH_SACH_THANG_MOT') }}">Tháng một</option>
+                      <option value="{{ route('DANH_SACH_THANG_HAI') }}">Tháng hai</option>
+                      <option value="{{ route('DANH_SACH_THANG_BA') }}">Tháng ba</option>
+                      <option value="{{ route('DANH_SACH_THANG_TU') }}">Tháng tư</option>
+                      <option value="{{ route('DANH_SACH_THANG_NAM') }}">Tháng năm</option>
+                      <option value="{{ route('DANH_SACH_THANG_SAU') }}">Tháng sáu</option>
+                      <option value="{{ route('DANH_SACH_THANG_BAY') }}">Tháng bảy</option>
+                      <option value="{{ route('DANH_SACH_THANG_TAM') }}">Tháng tám</option>
+                      <option value="{{ route('DANH_SACH_THANG_CHIN') }}">Tháng chín</option>
+                      <option value="{{ route('DANH_SACH_THANG_MUOI') }}">Tháng mười</option>
+                      <option value="{{ route('DANH_SACH_THANG_MUOI_MOT') }}">Tháng mười một</option>
+                      <option value="{{ route('DANH_SACH_THANG_MUOI_HAI') }}">Tháng mười hai</option>
+                    </select>
+                    
+                      <select name="forma" style="font-size: 0.7em; float: left; " onchange="location = this.value;">
                         <option value=""> Chọn một danh sách</option>
                         <option value="{{ route('TAT_CA_DON_HANG') }}">Tất cả đơn hàng</option>
                         <option value="{{ route('DON_HANG_DA_GIAO') }}">Đã giao hàng</option>

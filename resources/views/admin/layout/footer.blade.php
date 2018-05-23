@@ -10,7 +10,7 @@
   						<i class="ace-icon fa fa-google-plus-square light-blue bigger-150"></i>
   					</a>
   
-  					<a href="#">
+  					<a href="https://www.facebook.com/Vườn-Lan-Cái-Nai-1992538604093631/">
   						<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
   					</a>
   

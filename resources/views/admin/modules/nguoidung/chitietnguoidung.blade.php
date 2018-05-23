@@ -27,7 +27,7 @@
 											<div class="text-center">
 												<img height="150" width="150" class="thumbnail inline no-margin-bottom" alt="{{ $nguoidung[0]->ten }}" src="admin/assets/images/avatars/avatar.jpg" />
 												<br />
-												<div class="width-150 label label-info label-xlg arrowed-in arrowed-in-right">
+												{{-- <div class="width-150 label label-info label-xlg arrowed-in arrowed-in-right">
 													<div class="inline position-relative">
 														<a class="user-title-label" href="#">
 															<i class="ace-icon fa fa-circle light-green"></i>
@@ -35,7 +35,7 @@
 															<span class="white">{{ $nguoidung[0]->ten }}</span>
 														</a>
 													</div>
-												</div>
+												</div> --}}
 											</div>
 										</div>
 

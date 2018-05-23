@@ -38,10 +38,10 @@
 				        <th style="width: 8%">Tên khoa học</th>
 				        <th style="width: 13%">Lá</th>
 				        <th style="width: 13%">Thân</th>
-				         <th style="width:13%">Rễ</th>
-				        <th style="width: 13%">Cành</th>
-				        <th style="width: 13%">Hoa</th>							   
-				        <th style="width: 12%">Chức năng</th>
+				         <th style="width:12%">Rễ</th>
+				        <th style="width: 12%">Cành</th>
+				        <th style="width: 12%">Hoa</th>							   
+				        <th style="width: 14%">Chức năng</th>
 				      </tr>
 				    </thead>
 				    <tbody>

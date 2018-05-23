@@ -27,14 +27,14 @@
                 <li class="">
                   <a href="{{ route('DANH_SACH_CHi') }}">
                     <i class="menu-icon fa fa-caret-right"></i>
-                    Danh mục chi
+                    Danh mục chi hoa
                   </a>
                   <b class="arrow"></b>
                 </li>
                  <li class="">
                       <a href="{{ route('DAC_DIEM_HOA') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Đặc điểm hoa
+                        Đặc điểm loài hoa
                       </a>
                       <b class="arrow"></b>
                   </li>
@@ -45,19 +45,20 @@
                       </a>
                       <b class="arrow"></b>
                   </li>
-                  <li class="">
-                <a href="{{ route('DANH_SACH_TAGS') }}">
-                  <i class="menu-icon fa fa-caret-right"></i>
-                  Danh mục Tag
-                </a>
-                <b class="arrow"></b>
-             </li>
+                 
                   <li class="">
                       <a href="{{ route('DANH_SACH_SAN_PHAM') }}" >
             						<i class="menu-icon fa fa-caret-right"></i>
-            						Danh sách sản phẩm
+            						Danh mục sản phẩm
             					</a>
                   </li>
+                   <li class="">
+                    <a href="{{ route('DANH_SACH_TAGS') }}">
+                      <i class="menu-icon fa fa-caret-right"></i>
+                      Danh mục Tags
+                    </a>
+                    <b class="arrow"></b>
+                   </li>
               
                  
               </ul>
@@ -111,7 +112,7 @@
           <li class="">
               <a href="{{ route('DANH_SACH_KHUYEN_MAI') }}" class="dropdown-toggle">
   					<i class="menu-icon fa fa-calendar"></i>
-  					<span class="menu-text"> Khuyến mãi </span>
+  					<span class="menu-text"> Khuyến mại </span>
   					<b class="arrow fa fa-angle-down"></b>
   				</a>
               <b class="arrow"></b>
@@ -119,7 +120,7 @@
                   <li class="">
                       <a href="{{ route('DANH_SACH_KHUYEN_MAI') }}">
           							<i class="menu-icon fa fa-caret-right"></i>
-          							Danh sách khuyến mãi
+          							Danh sách khuyến mại
         					   	</a>
                       <b class="arrow"></b>
                   </li>
@@ -140,7 +141,8 @@
                 
               </ul>
           </li>
-          <li class="">
+          <div hidden="hidden">
+             <li class="">
               <a href="{{ route('DANH_SACH_TONG') }}" class="dropdown-toggle">
             <i class="menu-icon fa fa-calendar"></i>
             <span class="menu-text">Báo cáo </span>
@@ -164,6 +166,7 @@
                   </li>
               </ul>
           </li>
+          </div>
 
         <div hidden="hidden"><li class="">
               <a href="#" class="dropdown-toggle">
