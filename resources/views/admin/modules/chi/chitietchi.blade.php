@@ -33,37 +33,37 @@
 				<table class="table table-responsive" id="tblAccounts">
 					<tbody class="">
 						<tr >
-							<td style="width: 15%"><h3><b>Tên chi:</b></h3></td>
+							<td style="width: 15%"><b>Tên chi:</b></td>
 							<td class="form-value1" id="tdinputName" >{{ $data[0]->ten_chi}}</td>
 							
 						</tr>
 						<tr >
-							<td style="width: 15%"><h3><b>Tên khoa học:</b></h3></td>
+							<td style="width: 15%"><b>Tên khoa học:</b></td>
 							<td class="form-value1" id="tdinputName" >{{ $data[0]->ten_khoa_hoc_chi}}</td>
 							
 						</tr>
 						<tr >
-							<td style="width: 15%"><h3><b>Hoa:</b></h3></td>
+							<td style="width: 15%"><b>Hoa:</b></td>
 							<td class="form-value1" id="tdinputName" >{{ $data[0]->chi_hoa}}</td>
 							
 						</tr>
 						<tr >
-							<td style="width: 15%"><h3><b>Lá:</b></h3></td>
+							<td style="width: 15%"><b>Lá:</b></td>
 							<td class="form-value1" id="tdinputName" >{{ $data[0]->chi_la}}</td>
 							
 						</tr>
 						<tr >
-							<td style="width: 15%"><h3><b>Thân:</b></h3></td>
+							<td style="width: 15%"><b>Thân:</b></td>
 							<td class="form-value1" id="tdinputName" >{{ $data[0]->chi_than}}</td>
 							
 						</tr>
 						<tr>
-							<td style="width: 15%"><h3><b>Rễ:</b></h3></td>
+							<td style="width: 15%"><b>Rễ:</b></td>
 							<td class="form-value1" id="tdinputDOB" >{{ $data[0]->chi_re}}</td>
 							
 						</tr>
 						<tr>
-							<td style="width: 15%"><h3><b>Cành:</b></h3></td>
+							<td style="width: 15%"><b>Cành:</b></td>
 							<td class="form-value1" id="tdinputDOB" >{{ $data[0]->chi_canh}}</td>
 							
 						</tr>	

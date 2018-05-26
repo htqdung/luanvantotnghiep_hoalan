@@ -30,7 +30,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table" >
-						<h3><b>DANH SÁCH SẢN PHẨM</b></h3>
+						
 					    <thead>
 					      <tr>
 					        <th style="width: 7%">Mã số</th>

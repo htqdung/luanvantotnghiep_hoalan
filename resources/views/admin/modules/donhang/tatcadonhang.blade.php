@@ -46,7 +46,7 @@
           </h3>
                   <thead>
                   <tr style="margin: 0px">
-                    <th style="width: 3%">Stt</th>
+                    <th style="width: 3%">Mã số</th>
                     <th style="width: 20%">Ngày đặt hàng</th>
                     <th style="width: 25%">Địa chỉ</th>
                     <th style="width: 15%">Hình thức thanh toán</th>
@@ -56,10 +56,10 @@
                   </tr>
                   </thead>
                    <tbody>
-                    <?php $i=1; ?>
+                   
                 @foreach ($data as $item)
                   <tr>
-                    <td><?php echo $i; $i++;  ?></td>
+                    <td>{{ $item->id }}</td>
                     <td>{{ date('d-m-Y', strtotime($item->ngay_dat_hang)) }}</td>                 
                     <td>{{ $item->so_nha}}, {{ $item->ten_duong }}, {{ $item->ten_phuong_xa }}, {{ $item->ten_quan_huyen}} , {{ $item->ten_tinh_thanhpho }}</td>
                      <td>{{ $item->ten_hinh_thuc}}</td>

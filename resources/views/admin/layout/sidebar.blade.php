@@ -120,21 +120,21 @@
                   <li class="">
                       <a href="{{ route('DANH_SACH_KHUYEN_MAI') }}">
           							<i class="menu-icon fa fa-caret-right"></i>
-          							Danh sách khuyến mại
+          							Danh mục khuyến mại
         					   	</a>
                       <b class="arrow"></b>
                   </li>
                   <li class="">
                       <a href="{{ route('DANH_SACH_UU_DAI') }}">
           							<i class="menu-icon fa fa-caret-right"></i>
-          							Ưu đãi
+          							Danh mục ưu đãi
           						</a>
                       <b class="arrow"></b>
                   </li>
                    <li class="">
                       <a href="{{ route('DANH_SACH_QUA_TANG') }}">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Quà tặng
+                        Danh mục quà tặng
                       </a>
                       <b class="arrow"></b>
                   </li>

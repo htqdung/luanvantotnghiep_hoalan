@@ -29,9 +29,41 @@ use App\Http\Requests\ChinhSuaDacDiemRequest;
 
 class adminController extends Controller
 {
+
+    public function TongNguoiDung()
+    {
+        $data  = DB::table('tbl_nguoidung')
+        ->count();
+        return $data;
+    }
+
+    public function TongDonHang()
+    {
+        $data  = DB::table('tbl_donhang')
+        ->count();
+        return $data;
+    }
+
+
+    public function TongDoanhThu()
+    {
+        $data = DB::table('tbl_donhang')
+                ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->get();
+        return $data;
+    }
+
+
+
     public function getTest()
     {
-    	return view('admin.trangchu.index');	
+        $data_nguoidung = $this::TongNguoiDung();
+        $data_donhang = $this::TongDonHang();
+        $data_tongdoanhthu =  $this::TongDoanhThu();
+
+
+        // return $data_tongdoanhthu;
+    	return view('admin.trangchu.index', ['data_nguoidung'=>$data_nguoidung, 'data_donhang'=>$data_donhang, 'data_tongdoanhthu'=>$data_tongdoanhthu]);	
     }
 //loài hoa 
     public function getdanhmuchoa()
@@ -1297,7 +1329,7 @@ class adminController extends Controller
         $tags->save();
         return redirect('/qt-danh-sach-tags');
     }
-      public function xoatags(Request $request,$id)
+    public function xoatags(Request $request,$id)
     {
        $tags = Tags::find($id);
         if($tags->delete())

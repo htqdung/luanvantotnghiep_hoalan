@@ -13,36 +13,61 @@
 <div class="row" >
 <div class="space-12"></div>
 
-	<div class="infobox-container" >
-
-		<div class="infobox infobox-blue" >
+				
+	<div class="infobox-container">
+		<div class="infobox  infobox-blue" style="background-color: #6fb3e0">
+			<div class="infobox-data" style="width: 100%">		
+				<div class="infobox-content"> <a style="color: #fff" href="{{ route('DANH_SACH_NGUOI_DUNG') }}">NGƯỜI DÙNG</a></div>
+			</div>
+			<br>
+			<hr style="margin-bottom: 8px">
 			<div class="infobox-icon">
 				<i class="ace-icon fa fa-user"></i>
 			</div>
-			<div class="infobox-data">		
-				<span class="infobox-data-number">11</span>
-				<div class="infobox-content"> <a href="{{ route('DANH_SACH_NGUOI_DUNG') }}">NGƯỜI DÙNG</a></div>
+			<div class="infobox-data" style="padding-top: 7px; text-align: center; width: 100%; position: relative; top: -40px;">		
+				<span class="infobox-data-number" style="color: #fff">{{ $data_nguoidung }}</span>
+				
 			</div>
 		</div>
-		<div class="infobox infobox-pink">
+		<div class="infobox infobox-pink" style="background-color: #6fb3e0">
+			<div class="infobox-data" style="width: 100%">		
+				<div class="infobox-content"> <a style="color: #fff" href="{{ route('TAT_CA_DON_HANG') }}">ĐƠN HÀNG</a></div>
+			</div>
+			<br>
+			<hr style="margin-bottom: 8px">
 			<div class="infobox-icon">
 				<i class="ace-icon fa fa-shopping-cart"></i>
 			</div>
-			<div class="infobox-data">
-				<span class="infobox-data-number">8</span>
-				<div class="infobox-content"> <a href="{{ route('TAT_CA_DON_HANG') }}">ĐƠN HÀNG</a></div>
+			<div class="infobox-data" style="padding-top: 7px; text-align: center; width: 100%; position: relative; top: -40px;">		
+				<span class="infobox-data-number" style="color: #fff">{{ $data_donhang }}</span>
+				
 			</div>
 		</div>
-		<div class="infobox infobox-red">
-			<div class="infobox-icon">
+		
+		<div class="infobox infobox-pink" style="background-color: #6fb3e0">
+			<div class="infobox-data" style="width: 100%">		
+				<div class="infobox-content"   ><a style="color: #fff" href="#">DOANH THU</a></div>
+			</div>
+			<br>
+			<hr style="margin-bottom: 8px">
+			<div class="infobox-icon"  style="color: #fff">
 				<i class="ace-icon fa fa-money"></i>
 			</div>
-			<div class="infobox-data">
-				<span class="infobox-data-number">7</span>
-				<div class="infobox-content"><a href="#">DOANH THU</a></div>
+			<div class="infobox-data" style="padding-top: 7px; color: #fff;  text-align: center;  position: relative; top: -40px; width: 100%">		
+				<span class="infobox-data-number">
+					@foreach ($data_tongdoanhthu as $element)
+						<?= number_format($element->total_sales); ?>
+					@endforeach
+				</span>
+				
 			</div>
-	</div>
+		</div>
+		
 </div>
+
+
+
+				
 <div class="vspace-12-sm"></div>
 </div><!-- /.row -->
 <div class="hr hr32 hr-dotted"></div>
