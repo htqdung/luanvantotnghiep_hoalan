@@ -122,21 +122,67 @@
                   <thead>
                   <tr style="margin: 0px">
                     <th style="width: 5%">Mã số</th>
-                    <th style="width: 20%">Tên người dùng</th>
-                    <th style="width: 30%">Ngày liên hệ</th>
-                    <th style="width: 15%">Tiêu đề</th> 
-                    <th style="width: 15%">Nội dung</th>                 
+                    <th style="width: 10%">Tên người dùng</th>
+                    <th style="width: 10%">Ngày liên hệ</th>
+                    <th style="width: 35%">Tiêu đề</th> 
+                    <th style="width: 15%">Chức năng</th>                 
                   </tr>
                   </thead>
                    <tbody>
                     
                 @foreach ($data_lienhe as $item)
                   <tr>
-                    <td>{{ $item->id}}</td>
-                    <td>{{ date('d-m-Y', strtotime($item->ngay_lien_he)) }}</td>    
+                    <td>{{ $item->id}}</td>                        
                     <td>{{ $item->ten}}</td>
-                     <td>{{ $item->tieu_de}}</td>                     
-                    <td>{{ $item->noi_dung}}</td>
+                    <td>{{ date('d-m-Y', strtotime($item->ngay_lien_he)) }}</td>
+                    <td>{{ $item->tieu_de}}</td>                     
+                    <td>
+                    	<a type="button" class="btn btn-danger" title="XÓA LIÊN HỆ" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id }}"><i class="fa fa-trash-o fa-fw"></i></a>
+                     
+	                     <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id }}" role="dialog" tabindex="-1">
+	                        <div class="modal-dialog" role="document">
+	                            <div class="modal-content">
+	                                <div class="modal-header">
+	                                    <h4 class="modal-title">Bạn có chắc chắn?</h4>
+	                                </div>
+	                                <div class="modal-body">
+	                                    <p>Sau khi nhấn đồng ý, Liên hệ {{ $item->tieu_de }} sẽ bị xóa bỏ!</p>
+	                                </div>
+	                                <div class="modal-footer">
+	                                    <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
+	                                    <a class="btn btn-danger" href="{{ route('XOA_LIEN_HE', $item->id) }}" id="remove-button" type="submit">Đồng ý</a>
+	                                </div>
+	                            </div><!-- end modal-content -->
+	                        </div><!-- end modal-dialog -->
+	                    </div><!-- end modal -->
+
+                    	<a type="button" class="btn btn-info" title="XEM CHI TIẾT" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal" data-target="#myModal{{ $item->id }}"><i class="fa fa-eye fa-fw"></i></a>
+						<!-- Modal -->
+						<div id="myModal{{ $item->id }}" class="modal fade" role="dialog">
+						  <div class="modal-dialog">
+
+						    <!-- Modal content-->
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal">&times;</button>
+						        <h4 class="modal-title">{{ $item->tieu_de }}</h4>
+						      </div>
+						      <div class="modal-body">
+						        <p><b>Tên người dùng: </b>{{ $item->ten }}</p>
+						        <p><b>Ngày liên hệ: </b> {{ date('d-m-Y', strtotime($item->ngay_lien_he)) }} </p>
+								<p><b>Nội dung: </b>{{ $item->noi_dung }}</p>
+								
+
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+						      </div>
+						    </div>
+
+						  </div>
+						</div>
+
+                    </td>
                 </tr> 
                 @endforeach           
               </tbody>              
@@ -272,6 +318,33 @@ var myChart = new Chart(ctx, {
 
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
+    </script>
+    <script>
+	    var d = new Date();
+	    var n = d.getMonth();
+	    var x  = n+1;
+	    var dem = new Array();
+	    for(var i = 0; i < 13; i++){
+	        if(x >= 0)
+	        {
+	        	if(x == 0)
+	        	{
+	        		x = 12;
+        		 	continue;
+	        	}
+	        	else
+	        	{
+	        		dem[i] = x;
+		         	x--;
+	        	}
+	        }
+	    }
+    	for (var i = 0; i < dem.length; i++) {
+    		if(dem[i] == null)
+    		{
+    			dem.splice(i,1);
+    		}
+    	}
     </script>
 @endsection
 

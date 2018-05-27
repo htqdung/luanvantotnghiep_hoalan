@@ -60,21 +60,21 @@
                         <a type="button" class="btn btn-danger" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->chuongtrinhkhuyenmai_id }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
                      </td>
                      <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->chuongtrinhkhuyenmai_id }}" role="dialog" tabindex="-1">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Bạn có chắc chắn?</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Sau khi nhấn đồng ý, Khuyến mãi {{ $item->chuongtrinhkhuyenmai_id }} dữ liệu liên quan đến khuyến mãi <?php $tmp; ?> sẽ bị xóa bỏ!</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
-                            <a class="btn btn-danger" href="{{ route('XOA_KHUYEN_MAI', $item->chuongtrinhkhuyenmai_id) }}" id="remove-button" type="submit">Đồng ý</a>
-                        </div>
-                    </div><!-- end modal-content -->
-                </div><!-- end modal-dialog -->
-            </div><!-- end modal -->
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Bạn có chắc chắn?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Sau khi nhấn đồng ý, Khuyến mãi {{ $item->chuongtrinhkhuyenmai_id }} dữ liệu liên quan đến khuyến mãi <?php $tmp; ?> sẽ bị xóa bỏ!</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
+                                    <a class="btn btn-danger" href="{{ route('XOA_KHUYEN_MAI', $item->chuongtrinhkhuyenmai_id) }}" id="remove-button" type="submit">Đồng ý</a>
+                                </div>
+                            </div><!-- end modal-content -->
+                        </div><!-- end modal-dialog -->
+                    </div><!-- end modal -->
                
               </tr> 
               

@@ -106,4 +106,6 @@ Route::post('qt-chinh-sua-tags/{id}', 'adminController@postChinhSuaTags');
 Route::get('qt-xoa-tags/{id}', 'adminController@xoatags')->name('XOA_TAGS');
 // Route::get('/reporting', ['uses' =>'ReportController@index', 'as' => 'Report']);
 // Route::post('/reporting', ['uses' =>'ReportController@post']);
+// 
+Route::get('qt-xoa-lien-he/{id}', 'adminController@XoaLienHe')->name('XOA_LIEN_HE');
 ?>

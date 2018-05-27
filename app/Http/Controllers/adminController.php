@@ -15,6 +15,7 @@ use App\UuDai;
 use App\HinhThucUuDai;
 use App\QuaTang;
 use Carbon\Carbon;
+use App\LienHe;
 use App\Tags;
 use App\KhuyenMaiSanPham;
 use App\SanPham_Loai;
@@ -237,6 +238,13 @@ class adminController extends Controller
         return $data_t1.",".$data_t2.",".$data_t3.",".$data_t4.",".$data_t5.",".$data_t6.",".$data_t7.",".$data_t8.",".$data_t9.",".$data_t10.",".$data_t11.",".$data_t12;
     }
 
+    public function XoaLienHe($id)
+    {
+        $lienhe = LienHe::findOrFail($id)
+        ->delete();
+        return redirect()->intended('qt-admin')->with('message', 'Liên hệ đã xóa thành công!');
+    }
+
 
     public function getTest()
     {
@@ -340,7 +348,7 @@ class adminController extends Controller
        $hoalan = Loai::find($id);
         if($hoalan->delete())
         {
-            return redirect()->intended('qt-danh-muc-hoa')->with('message', 'Loài hoa đã được xóa thành công!');;    
+            return redirect()->intended('qt-danh-muc-hoa')->with('message', 'Loài hoa đã được xóa thành công!');    
         }
         else{
              return  redirect()->intended('qt-danh-muc-hoa');
