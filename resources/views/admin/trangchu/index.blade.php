@@ -9,13 +9,11 @@
 		</ul><!-- /.breadcrumb -->
 		
 	</div>
-<!-- PAGE CONTENT BEGINS -->
-<div class="row" >
-<div class="space-12"></div>
-
-				
+	<!-- PAGE CONTENT BEGINS -->
+	<div class="row" >
+	<div class="space-12"></div>
 	<div class="infobox-container">
-		<div class="infobox  infobox-blue" style="background-color: #6fb3e0">
+		<div class="infobox" style="background-color: #6fb3e0">
 			<div class="infobox-data" style="width: 100%">		
 				<div class="infobox-content"> <a style="color: #fff" href="{{ route('DANH_SACH_NGUOI_DUNG') }}">NGƯỜI DÙNG</a></div>
 			</div>
@@ -29,7 +27,7 @@
 				
 			</div>
 		</div>
-		<div class="infobox infobox-pink" style="background-color: #6fb3e0">
+		<div class="infobox" style="background-color: #6fb3e0">
 			<div class="infobox-data" style="width: 100%">		
 				<div class="infobox-content"> <a style="color: #fff" href="{{ route('TAT_CA_DON_HANG') }}">ĐƠN HÀNG</a></div>
 			</div>
@@ -44,7 +42,7 @@
 			</div>
 		</div>
 		
-		<div class="infobox infobox-pink" style="background-color: #6fb3e0">
+		<div class="infobox" style="background-color: #6fb3e0">
 			<div class="infobox-data" style="width: 100%">		
 				<div class="infobox-content"   ><a style="color: #fff" href="#">DOANH THU</a></div>
 			</div>
@@ -62,102 +60,138 @@
 				
 			</div>
 		</div>
-		
-</div>
+	</div>	
+	<div class="vspace-12-sm"></div>
+	</div><!-- /.row -->
+	<div class="hr hr32 hr-dotted"></div>
 
-
-
-				
-<div class="vspace-12-sm"></div>
-</div><!-- /.row -->
-<div class="hr hr32 hr-dotted"></div>
-
-<div class="col-sm-12">
-		<div class="widget-box">
-			<div class="widget-header widget-header-flat widget-header-small">
-				
-
-				{{-- <div class="widget-toolbar no-border">
-					<div class="inline dropdown-hover">
-						<button class="btn btn-minier btn-primary">
-							This Week
-							<i class="ace-icon fa fa-angle-down icon-on-right bigger-110"></i>
-						</button>
-
-						<ul class="dropdown-menu dropdown-menu-right dropdown-125 dropdown-lighter dropdown-close dropdown-caret">
-							<li class="active">
-								<a href="#" class="blue">
-									<i class="ace-icon fa fa-caret-right bigger-110">&nbsp;</i>
-									This Week
-								</a>
-							</li>
-
-							<li>
-								<a href="#">
-									<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
-									Last Week
-								</a>
-							</li>
-
-							<li>
-								<a href="#">
-									<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
-									This Month
-								</a>
-							</li>
-
-							<li>
-								<a href="#">
-									<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
-									Last Month
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div> --}}
-				<h5 class="widget-title">
-					<h1>DOANH SỐ </h1>
-				</h5>
-				<div id="piechart"></div>
+	<div class="col-sm-12">
+		<div class="col-sm-6">	
+			<div class="widget-box">
+				<div class="widget-header widget-header-flat widget-header-small">
+					<h5 class="widget-title">
+					<h1>Doanh thu bán hàng</h1>
+					</h5>
+					<div id="piechart"></div>
+				</div>
 			</div>
+		</div>			
+		<div class="col-sm-6">
+			<div class="widget-box">
+				<div class="widget-header widget-header-flat widget-header-small">
+					<h5 class="widget-title">
+					<h1>TOP 5 SẢN PHẨM BÁN CHẠY</h1>
+					</h5>
+					<div id="piechart"></div>
+				</div>
+			</div>
+		</div>	
+	</div><!-- /.widget-box -->
 
-			
-		</div><!-- /.widget-box -->
-		
-	</div><!-- /.col -->
 
-</div><!-- /.row -->
-
-
+	<div class="col-sm-12">
+		<div class="col-sm-6">	
+			<div class="widget-box">
+				<div class="widget-header widget-header-flat widget-header-small">
+					<h5 class="widget-title">
+					<h1>Doanh thu bán hàng</h1>
+					</h5>
+					<div style="color:red" id="columnchart_material"></div>
+				</div>
+			</div>
+		</div>			
+		<div class="col-sm-6">
+			<div class="widget-box">
+				<div class="widget-header widget-header-flat widget-header-small">
+					<h5 class="widget-title">
+					<h1>TOP 5 SẢN PHẨM BÁN CHẠY</h1>
+					</h5>
+					<div id="piechart"></div>
+				</div>
+			</div>
+		</div>	
+	</div><!-- /.widget-box -->
+	 <div class="row">
+      <div class="col-md-12">
+         
+        <table class="table">
+          <h3><b>DANH SÁCH ĐÁNH GIÁ</b>  <div  style="margin-left: 80%">
+                   
+                </div>
+          </h3>
+                  <thead>
+                  <tr style="margin: 0px">
+                    <th style="width: 5%">Mã số</th>
+                    <th style="width: 20%">Tên người dùng</th>
+                    <th style="width: 30%">Ngày liên hệ</th>
+                    <th style="width: 15%">Tiêu đề</th> 
+                    <th style="width: 15%">Nội dung</th>                 
+                  </tr>
+                  </thead>
+                   <tbody>
+                    
+                @foreach ($data_lienhe as $item)
+                  <tr>
+                    <td>{{ $item->id}}</td>
+                    <td>{{ date('d-m-Y', strtotime($item->ngay_lien_he)) }}</td>    
+                    <td>{{ $item->ten}}</td>
+                     <td>{{ $item->tieu_de}}</td>                     
+                    <td>{{ $item->noi_dung}}</td>
+                </tr> 
+                @endforeach           
+              </tbody>              
+          </table>
+      </div>
+    </div>
 <!-- PAGE CONTENT ENDS -->	
 </div>
+<?php
+	$doanhthuthang[] =(explode(',', $data_doanhthunam));
+	for ($i = 0; $i < 12; $i++) {
+		echo '<input type="hidden" id="t',$i+1,'" value="',$doanhthuthang[0][$i],'">';
+	}
+?>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
+
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 // Draw the chart and set the chart values
 function drawChart() {
+	var t1 = document.getElementById("t1").value*1;
+	var t2 = document.getElementById("t2").value*1;
+	var t3 = document.getElementById("t3").value*1;
+	var t4 = document.getElementById("t4").value*1;
+	var t5 = document.getElementById("t5").value*1;
+	var t6 = document.getElementById("t6").value*1;
+	var t7 = document.getElementById("t7").value*1;
+	var t8 = document.getElementById("t8").value*1;
+	var t9 = document.getElementById("t9").value*1;
+	var t10 = document.getElementById("t10").value*1;
+	var t11 = document.getElementById("t11").value*1;
+	var t12 = document.getElementById("t12").value*1;
+
   var data = google.visualization.arrayToDataTable([
   ['Task', 'Hours per Day'],
-  ['tháng 1', 8],
-  ['Tháng 2', 2],
-  ['Tháng 3', 2],
-  ['Tháng 4', 3],
-  ['Tháng 5', 2],
-  ['Tháng 6', 7],
-  ['Tháng 7', 7],
-  ['Tháng 8', 7],
-  ['Tháng 9', 7],
-  ['Tháng 10', 7],
-  ['Tháng 11', 7],
-  ['Tháng 12', 7]
+  ["Tháng 1",t1],
+  ["Tháng 2",t2],
+  ["Tháng 3",t3],
+  ["Tháng 4",t4],
+  ["Tháng 5",t5],
+  ["Tháng 6",t6],
+  ["Tháng 7",t7],
+  ["Tháng 8",t8],
+  ["Tháng 9",t9],
+  ["Tháng 10",t10],
+  ["Tháng 11",t11],
+  ["Tháng 12",t12],
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':'', 'width':650, 'height':500};
+  var options = {'title':'', 'width':450, 'height':300};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -204,7 +238,41 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+<script type="text/javascript">
+		
 
+
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Tháng', 'Doanh thu'],
+          [' 1', 400],
+          [' 2', 460],
+          [' 3', 540],
+          [' 4', 540],
+          [' 5', 540],
+          [' 6', 540],
+          [' 7', 540],
+          [' 8', 540],
+          [' 9', 100],
+          [' 10', 540],
+          [' 11', 540],
+          [' 12', 540],
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Doanh thu hàng tháng (12 tháng)'
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
 @endsection
 
 

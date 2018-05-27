@@ -53,6 +53,189 @@ class adminController extends Controller
         return $data;
     }
 
+    public function DoanhThuNam()
+    {
+        
+        $data_t1 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 1)
+        ->get();
+        foreach ($data_t1 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t1 = 0;
+            }
+            else
+            {
+                $data_t1 = $value->total_sales."";    
+            }
+        }
+        $data_t2 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 2)
+        ->get();
+        foreach ($data_t2 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t2 = 0;
+            }
+            else
+            {
+                $data_t2 = $value->total_sales."";
+            }
+        }
+        $data_t3 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 3)
+        ->get();
+        foreach ($data_t3 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t3 = 0;
+            }
+            else
+            {
+                $data_t3 = $value->total_sales."";
+            }
+            
+        }        
+        $data_t4 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 4)
+        ->get();
+        foreach ($data_t4 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t4 = 0;
+            }
+            else
+            {
+                $data_t4 = $value->total_sales."";
+            }
+            
+        }
+        $data_t5 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 5)
+        ->get();
+        foreach ($data_t5 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t5 = 0;
+            }
+            else
+            {
+                $data_t5 = $value->total_sales."";
+            }
+           
+        }
+        $data_t6 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 6)
+        ->get();
+        foreach ($data_t6 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t6 = 0;
+            }
+            else
+            {
+                $data_t6 = $value->total_sales."";
+            }
+           
+        }
+        $data_t7 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 7)
+        ->get();
+        foreach ($data_t7 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t7 = 0;
+            }
+            else
+            {
+                $data_t7 = $value->total_sales."";
+            }
+           
+        }
+        $data_t8 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 8)
+        ->get();
+        foreach ($data_t8 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t8 = 0;
+            }
+            else
+            {
+                $data_t8 = $value->total_sales."";
+            }
+            
+        }
+        $data_t9 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 9)
+        ->get();
+        foreach ($data_t9 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t9 = 0;
+            }
+            else
+            {
+                $data_t9 = $value->total_sales."";
+            }
+          
+        }
+        $data_t10 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 10)
+        ->get();
+        foreach ($data_t10 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t10 = 0;
+            }
+            else
+            {
+                $data_t10 = $value->total_sales."";
+            }
+           
+        }
+        $data_t11 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 11)
+        ->get();
+        foreach ($data_t11 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t11 = 0;
+            }
+            else
+            {
+                $data_t11 = $value->total_sales."";
+            }
+           
+        }        
+        $data_t12 = DB::table('tbl_donhang')
+        ->select(DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', 12)
+        ->get();
+        foreach ($data_t12 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_t12 = 0;
+            }
+            else
+            {
+                $data_t12 = $value->total_sales."";
+            }
+         
+        }
+        return $data_t1.",".$data_t2.",".$data_t3.",".$data_t4.",".$data_t5.",".$data_t6.",".$data_t7.",".$data_t8.",".$data_t9.",".$data_t10.",".$data_t11.",".$data_t12;
+    }
 
 
     public function getTest()
@@ -60,10 +243,20 @@ class adminController extends Controller
         $data_nguoidung = $this::TongNguoiDung();
         $data_donhang = $this::TongDonHang();
         $data_tongdoanhthu =  $this::TongDoanhThu();
-
-
+        $data_doanhthunam = $this::DoanhThuNam();
+        $lienhe = $this::lienhe();
         // return $data_tongdoanhthu;
-    	return view('admin.trangchu.index', ['data_nguoidung'=>$data_nguoidung, 'data_donhang'=>$data_donhang, 'data_tongdoanhthu'=>$data_tongdoanhthu]);	
+    	return view('admin.trangchu.index', ['data_nguoidung'=>$data_nguoidung, 'data_donhang'=>$data_donhang, 'data_tongdoanhthu'=>$data_tongdoanhthu, 'data_doanhthunam'=>$data_doanhthunam, 'data_lienhe'=>$lienhe]);	
+    }
+    public function lienhe()
+    {
+        $lienhe = DB::table('tbl_lienhe')
+        ->select('tbl_lienhe.id','ngay_lien_he','tieu_de', 'noi_dung', 'ten')
+        ->join('tbl_nguoidung', 'tbl_lienhe.nguoidung_id', '=', 'tbl_nguoidung.id')
+        ->join('tbl_thongtinlienhe', 'tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
+        ->orderBy('tbl_lienhe.id', 'desc')
+        ->get();
+        return $lienhe;
     }
 //loài hoa 
     public function getdanhmuchoa()
@@ -442,13 +635,22 @@ class adminController extends Controller
         ->limit(1)
         ->get();
 
+        $danhgia = DB::table('tbl_danhgia')
+        ->leftJoin('tbl_nguoidung','tbl_danhgia.nguoidung_id', '=', 'tbl_nguoidung.id')
+        ->leftJoin('tbl_thongtinlienhe','tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
+        ->leftJoin('tbl_sanpham','tbl_danhgia.sanpham_id', '=', 'tbl_sanpham.id')
+        ->select('tbl_danhgia.id as id_danhgia','danh_gia','ten','ngay_danh_gia','ten_san_pham')
+        ->where('tbl_danhgia.id', '=', $id)
+        ->limit(1)
+        ->get();
+
         $hinhanhsp = DB::table('tbl_hinhanh')
         ->leftJoin('tbl_sanpham', 'tbl_hinhanh.sanpham_id' ,'=', 'tbl_sanpham.id')
         ->select('ten_hinh')->where('tbl_sanpham.id', '=', $id)->get();
         // return $danhmuahoachosanpham;
         // return $sanpham;
         // return $hinhanhsp;
-        return view('admin.modules.hoalan.chitietsanpham', ['data_hoa'=>$danhmuahoachosanpham, 'data_sp'=>$sanpham, 'data_hinhanh'=>$hinhanhsp]);
+        return view('admin.modules.hoalan.chitietsanpham', ['data_hoa'=>$danhmuahoachosanpham, 'data_sp'=>$sanpham, 'data_hinhanh'=>$hinhanhsp, 'data_danhgia'=>$danhgia]);
     }
    
      public function xoasanpham(Request $request,$id)

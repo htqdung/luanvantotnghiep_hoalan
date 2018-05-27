@@ -100,6 +100,37 @@
               <?= $data->mo_ta; ?>
                 </div>
             </div>
+    <div class="row">
+      <div class="col-md-12">
+         
+        <table class="table">
+          <h3><b>DANH SÁCH ĐÁNH GIÁ</b>  <div  style="margin-left: 80%">
+                   
+                </div>
+          </h3>
+                  <thead>
+                  <tr style="margin: 0px">
+                    <th style="width: 5%">Mã số</th>
+                    <th style="width: 20%">Tên người dùng</th>
+                    <th style="width: 30%">Ngày đánh giá</th>
+                    <th style="width: 15%">Điểm đánh giá</th>                 
+                  </tr>
+                  </thead>
+                   <tbody>
+                    <?php  $stt=1;  ?>
+                @foreach ($data_danhgia as $item)
+                  <tr>
+                    <td><?php echo $stt; $stt++; ?></td>
+                    <td>{{ date('d-m-Y', strtotime($item->ngay_danh_gia)) }}</td>                  
+                    <td>{{ $item->ten}}</td>
+                     <td>{{ $item->danh_gia}}</td>
+                    
+                </tr> 
+                @endforeach           
+              </tbody>              
+          </table>
+      </div>
+    </div>
       </div>
       <!-- /.box-body -->
     </div>

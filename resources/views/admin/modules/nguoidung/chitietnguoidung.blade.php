@@ -101,7 +101,7 @@
           </h3>
                   <thead>
                   <tr style="margin: 0px">
-                    <th style="width: 3%">Stt</th>
+                    <th style="width: 3%">Mã số</th>
                     <th style="width: 20%">Ngày đặt hàng</th>
                     <th style="width: 30%">Địa chỉ</th>
                     <th style="width: 15%">Hình thức thanh toán</th>

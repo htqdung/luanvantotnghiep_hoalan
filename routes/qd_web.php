@@ -1,5 +1,5 @@
   <?php
-
+Route::get('tsst', 'adminController@DoanhThuNam');
 Route::get('qt-admin', 'adminController@getTest')->name('MO_GIAO_DIEN_ADMIN');
 //danh mục loài hoa
 Route::get('qt-danh-muc-hoa', 'adminController@getdanhmuchoa')->name('DANH_MUC_HOA');
