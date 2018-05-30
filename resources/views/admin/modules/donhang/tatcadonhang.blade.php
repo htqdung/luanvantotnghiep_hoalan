@@ -17,31 +17,38 @@
       <div class="col-md-12">
          
         <table class="table">
-          <h3><b>DANH SÁCH ĐƠN HÀNG</b>  <div  style="margin-left: 80%">
-                  <label><b>Sắp xếp</b></label>
-                    <select name="" onchange="window.location=this.value" id="" style="font-size: 0.7em; float: right;" >
-                      <option value="{{ route('DANH_SACH_TONG') }} ">Tất cả</option>
-                      <option value="{{ route('DANH_SACH_THANG_MOT') }}">Tháng một</option>
-                      <option value="{{ route('DANH_SACH_THANG_HAI') }}">Tháng hai</option>
-                      <option value="{{ route('DANH_SACH_THANG_BA') }}">Tháng ba</option>
-                      <option value="{{ route('DANH_SACH_THANG_TU') }}">Tháng tư</option>
-                      <option value="{{ route('DANH_SACH_THANG_NAM') }}">Tháng năm</option>
-                      <option value="{{ route('DANH_SACH_THANG_SAU') }}">Tháng sáu</option>
-                      <option value="{{ route('DANH_SACH_THANG_BAY') }}">Tháng bảy</option>
-                      <option value="{{ route('DANH_SACH_THANG_TAM') }}">Tháng tám</option>
-                      <option value="{{ route('DANH_SACH_THANG_CHIN') }}">Tháng chín</option>
-                      <option value="{{ route('DANH_SACH_THANG_MUOI') }}">Tháng mười</option>
-                      <option value="{{ route('DANH_SACH_THANG_MUOI_MOT') }}">Tháng mười một</option>
-                      <option value="{{ route('DANH_SACH_THANG_MUOI_HAI') }}">Tháng mười hai</option>
-                    </select>
-                    
-                      <select name="forma" style="font-size: 0.7em; float: left; " onchange="location = this.value;">
-                        <option value=""> Chọn một danh sách</option>
-                        <option value="{{ route('TAT_CA_DON_HANG') }}">Tất cả đơn hàng</option>
-                        <option value="{{ route('DON_HANG_DA_GIAO') }}">Đã giao hàng</option>
-                        <option value="{{ route('DON_HANG_DANG_GIAO') }}">Đang giao</option>
-                        <option value="{{ route('DON_HANG_DANG_XU_LY') }}">Đang xử lý</option>
-                      </select> 
+          <h3><b>DANH SÁCH ĐƠN HÀNG</b>  
+            <div  >
+               <label  style="float: right; margin-right: 350px"><b>Sắp xếp: </b></label>
+                    <div class="col-md-12" >
+                           
+                           <div class="col-md-2"  style="float: right;">
+                             <select name="" onchange="window.location=this.value" id="" style="font-size: 0.7em; float: right;" >
+                              <option value="{{ route('DANH_SACH_TONG') }} ">Tất cả</option>
+                              <option value="{{ route('DANH_SACH_THANG_MOT') }}">Tháng một</option>
+                              <option value="{{ route('DANH_SACH_THANG_HAI') }}">Tháng hai</option>
+                              <option value="{{ route('DANH_SACH_THANG_BA') }}">Tháng ba</option>
+                              <option value="{{ route('DANH_SACH_THANG_TU') }}">Tháng tư</option>
+                              <option value="{{ route('DANH_SACH_THANG_NAM') }}">Tháng năm</option>
+                              <option value="{{ route('DANH_SACH_THANG_SAU') }}">Tháng sáu</option>
+                              <option value="{{ route('DANH_SACH_THANG_BAY') }}">Tháng bảy</option>
+                              <option value="{{ route('DANH_SACH_THANG_TAM') }}">Tháng tám</option>
+                              <option value="{{ route('DANH_SACH_THANG_CHIN') }}">Tháng chín</option>
+                              <option value="{{ route('DANH_SACH_THANG_MUOI') }}">Tháng mười</option>
+                              <option value="{{ route('DANH_SACH_THANG_MUOI_MOT') }}">Tháng mười một</option>
+                              <option value="{{ route('DANH_SACH_THANG_MUOI_HAI') }}">Tháng mười hai</option>
+                            </select>
+                          </div>
+                             <div class="col-md-2"  style="float: right;">
+                             <select name="forma" style="font-size: 0.7em; float: left; " onchange="location = this.value;">
+                                <option value=""> Chọn một danh sách</option>
+                                <option value="{{ route('TAT_CA_DON_HANG') }}">Tất cả đơn hàng</option>
+                                <option value="{{ route('DON_HANG_DA_GIAO') }}">Đã giao hàng</option>
+                                <option value="{{ route('DON_HANG_DANG_GIAO') }}">Đang giao</option>
+                                <option value="{{ route('DON_HANG_DANG_XU_LY') }}">Đang xử lý</option>
+                              </select> 
+                           </div>  
+                    </div>
                 </div>
           </h3>
                   <thead>
@@ -67,7 +74,7 @@
                     <td>{{ $item->ten_trang_thai}}</td>
                     <td>
                        <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-success" data-toggle="tooltip" title="Duyệt đơn hàng"  href=""><i class="glyphicon glyphicon-check"></i></a>
-                        <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href=""><i class="glyphicon glyphicon-folder-open"></i></a>
+                        <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href=""><i class="fa fa-eye fa-fw"></i></a>
                        
                          
                           <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{-- {{ route('XOA_CHI', $item->id) }} --}}"><i class="fa fa fa-trash-o fa-fw"></i></a>
@@ -77,6 +84,7 @@
                 @endforeach           
               </tbody>              
           </table>
+          {{ $data->render() }}
       </div>
     </div>
   </div><!-- /.page-content -->

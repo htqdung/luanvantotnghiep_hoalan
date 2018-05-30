@@ -5,7 +5,7 @@
     <ul class="breadcrumb">
       <li>
         <i class="ace-icon fa fa-home home-icon"></i>
-            <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ>></a><a href="javascript:void(0)">Danh sách khuyến mại</a>
+            <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ>></a><a href="javascript:void(0)">Danh mục quà tặng</a>
       </li>
     
     </ul><!-- /.breadcrumb -->  
@@ -16,7 +16,7 @@
       <div class="hr hr-18 hr-double dotted"></div>
       <div class="widget-box">
         <div class="widget-header widget-header-blue widget-header-flat" style="text-align: center;">
-          <h4 class="widget-title lighter" >DANH SÁCH QUÀ TẶNG</h4>
+          <h4 class="widget-title lighter" >DANH MỤC QUÀ TẶNG</h4>
           <div class="widget-toolbar">
             <button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> <a href="{{ route('THEM_QUA_TANG') }}">Thêm mới</a>  </button>
           </div>

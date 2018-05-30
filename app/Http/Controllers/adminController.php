@@ -30,6 +30,356 @@ use App\Http\Requests\ChinhSuaDacDiemRequest;
 
 class adminController extends Controller
 {
+    public function SanPhamXemNhieu()
+    {
+        $sanphamxemnhieu = DB::table('tbl_sanpham')
+        ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
+        ->select('tbl_sanpham.id as id_sanpham', 'tbl_dongia.gia' ,'ten_san_pham','so_luot_xem', 'so_luot_mua', 'tbl_sanpham.created_at')
+        ->orderBy('so_luot_xem','desc')
+        ->orderBy('so_luot_mua','desc')
+        ->paginate(2);
+        return $sanphamxemnhieu;
+       
+        // return view('admin.modules.hoalan.danhsachsanpham',['data'=>$sanpham]);
+    }
+
+    public function _GET_MONTH()
+    {
+        $date=  Carbon::now();
+        $month[] = array();
+        $minus_eleven = '-11 month';
+        $minus_ten = '-10 month';
+        $minus_nine = '-9 month';
+        $minus_eight = '-8 month';
+        $minus_seven = '-7 month';
+        $minus_six = '-6 month';
+        $minus_five = '-5 month';
+        $minus_four = '-4 month';
+        $minus_three = '-3 month';
+        $minus_two = '-2 month';
+        $minus_one = '-1 month';
+        $minus_zero = '-0 month';
+        $month_temp=0;
+        for($i = 0; $i <= 11; $i++)
+        {
+            if($i==0)
+            {
+                $month_temp = $minus_zero;
+            }
+            else if($i==1)
+            {
+                $month_temp = $minus_one;
+            }
+            else if($i==2)
+            {
+                $month_temp = $minus_two;
+            }
+            else if($i==3)
+            {
+                $month_temp = $minus_three;
+            }
+            else if($i==4)
+            {
+                $month_temp = $minus_four;
+            }
+            else if($i==5)
+            {
+                $month_temp = $minus_five;
+            }
+            else if($i==6)
+            {
+                $month_temp = $minus_six;
+            }
+            else if($i==7)
+            {
+                $month_temp = $minus_seven;
+            }
+            else if($i==8)
+            {
+                $month_temp = $minus_eight;
+            }
+            else if($i==9)
+            {
+                $month_temp = $minus_nine;
+            }
+            else if($i==10)
+            {
+                $month_temp = $minus_ten;
+            }
+            else
+            {
+                $month_temp = $minus_eleven;
+            }
+            $month_year = strtotime ( $month_temp , strtotime ( $date ) ) ;
+            $month_year = date ( 'Y-m-j' , $month_year );
+            $month[$i] = date("m",strtotime($month_year));
+        }
+        return $month;
+    }
+
+    public function _GET_YEAR()
+    {
+        $date=  Carbon::now();
+        $year[] = array();
+        $minus_eleven = '-11 month';
+        $minus_ten = '-10 month';
+        $minus_nine = '-9 month';
+        $minus_eight = '-8 month';
+        $minus_seven = '-7 month';
+        $minus_six = '-6 month';
+        $minus_five = '-5 month';
+        $minus_four = '-4 month';
+        $minus_three = '-3 month';
+        $minus_two = '-2 month';
+        $minus_one = '-1 month';
+        $minus_zero = '-0 month';
+        $month_temp=0;
+        for($i = 0; $i <= 11; $i++)
+        {
+            if($i==0)
+            {
+                $month_temp = $minus_zero;
+            }
+            else if($i==1)
+            {
+                $month_temp = $minus_one;
+            }
+            else if($i==2)
+            {
+                $month_temp = $minus_two;
+            }
+            else if($i==3)
+            {
+                $month_temp = $minus_three;
+            }
+            else if($i==4)
+            {
+                $month_temp = $minus_four;
+            }
+            else if($i==5)
+            {
+                $month_temp = $minus_five;
+            }
+            else if($i==6)
+            {
+                $month_temp = $minus_six;
+            }
+            else if($i==7)
+            {
+                $month_temp = $minus_seven;
+            }
+            else if($i==8)
+            {
+                $month_temp = $minus_eight;
+            }
+            else if($i==9)
+            {
+                $month_temp = $minus_nine;
+            }
+            else if($i==10)
+            {
+                $month_temp = $minus_ten;
+            }
+            else
+            {
+                $month_temp = $minus_eleven;
+            }
+            $month_year = strtotime ( $month_temp , strtotime ( $date ) ) ;
+            $month_year = date ( 'Y-m-j' , $month_year );
+            $year[$i] = date("Y",strtotime($month_year));
+        }
+
+        return $year;
+    }
+
+    public function DoanhThuBanHang12Thang()
+    {   
+        $month = $this::_GET_MONTH();
+        $year = $this::_GET_YEAR();
+        $data_1 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[0])
+        ->whereYear('ngay_dat_hang', '=', $year[0])
+        ->get();
+        foreach ($data_1 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_1 = 0;
+            }
+            else
+            {
+                $data_1 = $value->total_sales."";    
+            }
+        }
+        
+        $data_2 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[1])
+        ->whereYear('ngay_dat_hang', '=', $year[1])
+        ->get();
+        foreach ($data_2 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_2 = 0;
+            }
+            else
+            {
+                $data_2 = $value->total_sales."";    
+            }
+        }
+        $data_3 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[2])
+        ->whereYear('ngay_dat_hang', '=', $year[2])
+        ->get();
+        foreach ($data_3 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_3 = 0;
+            }
+            else
+            {
+                $data_3 = $value->total_sales."";    
+            }
+        }
+        $data_4 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[3])
+        ->whereYear('ngay_dat_hang', '=', $year[3])
+        ->get();
+        foreach ($data_4 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_4 = 0;
+            }
+            else
+            {
+                $data_4 = $value->total_sales."";    
+            }
+        }
+        $data_5 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[4])
+        ->whereYear('ngay_dat_hang', '=', $year[4])
+        ->get();
+        foreach ($data_5 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_5 = 0;
+            }
+            else
+            {
+                $data_5 = $value->total_sales."";    
+            }
+        }
+        $data_6 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[5])
+        ->whereYear('ngay_dat_hang', '=', $year[5])
+        ->get();
+        foreach ($data_6 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_6 = 0;
+            }
+            else
+            {
+                $data_6 = $value->total_sales."";    
+            }
+        }
+        $data_7 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[6])
+        ->whereYear('ngay_dat_hang', '=', $year[6])
+        ->get();
+        foreach ($data_7 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_7 = 0;
+            }
+            else
+            {
+                $data_7 = $value->total_sales."";    
+            }
+        }
+        $data_8 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[7])
+        ->whereYear('ngay_dat_hang', '=', $year[7])
+        ->get();
+        foreach ($data_8 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_8 = 0;
+            }
+            else
+            {
+                $data_8 = $value->total_sales."";    
+            }
+        }
+        $data_9 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[8])
+        ->whereYear('ngay_dat_hang', '=', $year[8])
+        ->get();
+        foreach ($data_9 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_9 = 0;
+            }
+            else
+            {
+                $data_9 = $value->total_sales."";    
+            }
+        }
+        $data_10 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[9])
+        ->whereYear('ngay_dat_hang', '=', $year[9])
+        ->get();
+        foreach ($data_10 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_10 = 0;
+            }
+            else
+            {
+                $data_10 = $value->total_sales."";    
+            }
+        }
+        $data_11 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[10])
+        ->whereYear('ngay_dat_hang', '=', $year[10])
+        ->get();
+        foreach ($data_11 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_11 = 0;
+            }
+            else
+            {
+                $data_11 = $value->total_sales."";    
+            }
+        }
+        $data_12 = DB::table('tbl_donhang') 
+        ->select( DB::raw('SUM(tong_tien) as total_sales'))
+        ->whereMonth('ngay_dat_hang', '=', $month[11])
+        ->whereYear('ngay_dat_hang', '=', $year[11])
+        ->get();
+        foreach ($data_12 as $value) {
+            if($value->total_sales == NULL)
+            {
+                $data_12 = 0;
+            }
+            else
+            {
+                $data_12 = $value->total_sales."";    
+            }
+        }
+
+        return $data_1.",".$data_2.",".$data_3.",".$data_4.",".$data_5.",".$data_6.",".$data_7.",".$data_8.",".$data_9.",".$data_10.",".$data_11.",".$data_12;
+    }
 
     public function TongNguoiDung()
     {
@@ -248,13 +598,16 @@ class adminController extends Controller
 
     public function getTest()
     {
+        $data_sanphamxemnhieu = $this::SanPhamXemNhieu();
         $data_nguoidung = $this::TongNguoiDung();
         $data_donhang = $this::TongDonHang();
         $data_tongdoanhthu =  $this::TongDoanhThu();
         $data_doanhthunam = $this::DoanhThuNam();
         $lienhe = $this::lienhe();
+        $data_doanhthu12thang = $this::DoanhThuBanHang12Thang();
+        
         // return $data_tongdoanhthu;
-    	return view('admin.trangchu.index', ['data_nguoidung'=>$data_nguoidung, 'data_donhang'=>$data_donhang, 'data_tongdoanhthu'=>$data_tongdoanhthu, 'data_doanhthunam'=>$data_doanhthunam, 'data_lienhe'=>$lienhe]);	
+    	return view('admin.trangchu.index', ['data_nguoidung'=>$data_nguoidung, 'data_donhang'=>$data_donhang, 'data_tongdoanhthu'=>$data_tongdoanhthu, 'data_doanhthunam'=>$data_doanhthunam, 'data_lienhe'=>$lienhe, 'data_doanhthu12thang'=>$data_doanhthu12thang, 'data_sanphamxemnhieu'=>$data_sanphamxemnhieu]);	
     }
     public function lienhe()
     {
@@ -263,7 +616,7 @@ class adminController extends Controller
         ->join('tbl_nguoidung', 'tbl_lienhe.nguoidung_id', '=', 'tbl_nguoidung.id')
         ->join('tbl_thongtinlienhe', 'tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
         ->orderBy('tbl_lienhe.id', 'desc')
-        ->get();
+        ->paginate(2);
         return $lienhe;
     }
 //loài hoa 
@@ -271,11 +624,11 @@ class adminController extends Controller
     {
 
         $hoalan = DB::table('tbl_loai')
-        ->select('tbl_loai.id','tbl_loai.ten_loai','hoa', 'la', 'than', 're', 'thoigianno', 'ten_khoa_hoc', 'ten_chi')
+        ->select('tbl_loai.id','tbl_loai.ten_loai','hoa', 'la', 'than', 're', 'thoigianno', 'ten_khoa_hoc', 'ten_chi', 'tbl_loai.mo_ta')
         ->join('tbl_dacdiem', 'tbl_loai.dacdiem_id', '=', 'tbl_dacdiem.id')
         ->join('tbl_chi', 'tbl_chi.id', '=', 'tbl_loai.chi_id')
         ->orderBy('tbl_loai.id', 'desc')
-        ->paginate(10);
+        ->paginate(5);
 
     	return view('admin.modules.hoalan.danhmuchoa', ['data'=>$hoalan]);
     }
@@ -310,7 +663,7 @@ class adminController extends Controller
         $dacdiem = DB::table('tbl_dacdiem')
         ->select('tbl_dacdiem.id', 'hoa', 'la', 'than', 're','thoigianno')
         ->orderBy('id', 'desc')
-        ->paginate(10);
+        ->paginate(5);
 
         return view('admin.modules.hoalan.themdanhmuchoa', ['data'=>$chi,'dacdiem'=>$dacdiem]);
     }
@@ -383,16 +736,42 @@ class adminController extends Controller
 //sản phẩm
     public function getdachsachsanpham()
     {
-         $sanpham = DB::table('tbl_sanpham')
+        $sanpham = DB::table('tbl_sanpham')
         ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
-        //->leftJoin('tbl_sanpham_loai','tbl_sanpham_loai.sanpham_id','=','tbl_sanpham.id')
         ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong')
         ->orderBy('id_sanpham','desc')
-        ->paginate(10);
-        // return $nguoidung;
+        ->paginate(5);
+        
+         $hinhanhsp = DB::table('tbl_hinhanh')
+        ->join('tbl_sanpham', 'tbl_hinhanh.sanpham_id' ,'=', 'tbl_sanpham.id')
+        ->select('ten_hinh')
+        ->get();
+
        
-    	return view('admin.modules.hoalan.danhsachsanpham',['data'=>$sanpham]);
+    	return view('admin.modules.hoalan.danhsachsanpham',['data'=>$sanpham, 'data_hinhanh'=>$hinhanhsp]);
     }
+
+
+    public function layDanhMucLoaiHoa($id)
+    {
+        $danhmuahoachosanpham = DB::table('tbl_loai')
+        ->join('tbl_sanpham_loai', 'tbl_sanpham_loai.loai_id', '=', 'tbl_loai.id')
+        ->join('tbl_sanpham', 'tbl_sanpham.id', '=', 'tbl_sanpham_loai.sanpham_id')
+        ->select('ten_loai')
+        ->where('tbl_sanpham.id', '=', $id)
+        ->get();
+
+        $tmp [] = NULL;
+        foreach ($danhmuahoachosanpham as $value) {
+            $tmp = $value->ten_loai;
+        }
+
+        return $tmp;
+    }
+
+
+
+
     public function themsanpham()
     {
         
@@ -518,7 +897,7 @@ class adminController extends Controller
         ->select('tbl_dongia.gia', 'tbl_dongia.id as dongia_id', 'ngay_ap_dung')
         ->join('tbl_sanpham', 'tbl_sanpham.id', '=', 'tbl_dongia.sanpham_id')
         ->orderBy('ngay_ap_dung', 'DESC')
-        ->limit(1)
+                
         ->get();
 
 
@@ -529,9 +908,8 @@ class adminController extends Controller
         ->get();
         // return $sanpham;
         // return $hinhanhsp;
-        return view('admin.modules.hoalan.chinhsuasanpham', ['data_dmhoa2'=>$danhmuahoa,'data_dmhoa'=>$danhmuahoachosanpham, 'data_sp'=>$sanpham, 'data_hinhanh'=>$hinhanhsp, 'data_gia'=>$dongia,
-            'data_tags'=>$tag
-        ]);
+        return view('admin.modules.hoalan.chinhsuasanpham', ['data_dmhoa2'=>$danhmuahoa,'data_dmhoa'=>$danhmuahoachosanpham, 'data_sp'=>$sanpham, 'data_hinhanh'=>$hinhanhsp,
+            'data_tags'=>$tag, 'data_gia'=> $dongia]);
     }
     public function postChinhSuaSanPham(Request $request,$id)
     {
@@ -647,9 +1025,8 @@ class adminController extends Controller
         ->leftJoin('tbl_nguoidung','tbl_danhgia.nguoidung_id', '=', 'tbl_nguoidung.id')
         ->leftJoin('tbl_thongtinlienhe','tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
         ->leftJoin('tbl_sanpham','tbl_danhgia.sanpham_id', '=', 'tbl_sanpham.id')
-        ->select('tbl_danhgia.id as id_danhgia','danh_gia','ten','ngay_danh_gia','ten_san_pham')
-        ->where('tbl_danhgia.id', '=', $id)
-        ->limit(1)
+        ->select('tbl_danhgia.id as id_danhgia','danh_gia','ten','ngay_danh_gia','noi_dung')
+        ->where('tbl_danhgia.sanpham_id', '=', $id)
         ->get();
 
         $hinhanhsp = DB::table('tbl_hinhanh')
@@ -679,7 +1056,7 @@ class adminController extends Controller
          $dacdiem = DB::table('tbl_dacdiem')
           ->select('id','hoa','la','than','re', 'thoigianno','dac_diem_sinh_truong')
         ->orderBy('id','desc')
-        ->paginate(10);   
+        ->paginate(5);   
     	return view('admin.modules.dacdiemhoa.dacdiem',['data'=>$dacdiem]);
     }
     public function chinhsuadacdiem($id)
@@ -761,7 +1138,7 @@ class adminController extends Controller
         $chi = DB::table('tbl_chi')
         ->select('id', 'ten_chi','ten_khoa_hoc_chi','chi_than','chi_re','chi_la','chi_hoa','chi_canh' ,'mo_ta')
         ->orderBy('id', 'desc')
-        ->paginate(10);
+        ->paginate(5);
 
     	return view('admin.modules.chi.chi', ['data'=>$chi]);
     }
@@ -842,13 +1219,44 @@ class adminController extends Controller
         ->join('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_thongtinlienhe.ten','so_nha', 'ten_duong','so_dien_thoai', 'email', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho')
         ->orderBy('tbl_nguoidung.id', 'desc')
-        ->paginate(10);
 
-
-
+        ->paginate(5);
+        $donhang = DB::table('tbl_donhang')
+        ->leftJoin('tbl_nguoidung','tbl_donhang.nguoidung_id', '=', 'tbl_nguoidung.id')
+        ->leftJoin('tbl_thongtinlienhe','tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
+        ->leftJoin('tbl_trangthai_donhang','tbl_donhang.id','=','tbl_trangthai_donhang.donhang_id')
+        ->leftJoin('tbl_trangthai','tbl_trangthai.id','=','tbl_trangthai_donhang.trangthai_id')
+         ->leftJoin('tbl_hinh_thuc_thanh_toan','tbl_hinh_thuc_thanh_toan.id','=','tbl_donhang.hinhthucthanhtoan_id')
+        ->leftJoin('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
+        ->leftJoin('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
+        ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
+        ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
+        ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
+      
+        ->orderBy('tbl_donhang.id', 'desc')
+        ->paginate(5);
         // return $nguoidung;
-        return view('admin.modules.nguoidung.danhsachnguoidung' , ['data'=>$nguoidung]);
+        return view('admin.modules.nguoidung.danhsachnguoidung' , ['data'=>$nguoidung,'donhang'=>$donhang]);
     }
+
+    public function getnguoidungadmin()
+    {
+        $nguoidung = DB::table('tbl_nguoidung')
+        ->join('tbl_thongtinlienhe','tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
+        ->join('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
+        ->join('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
+        ->join('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
+        ->join('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
+        ->join('tbl_nhom', 'tbl_nhom.id', '=','tbl_nguoidung.nhom_id' )
+        ->select('tbl_nguoidung.id as id_nguoidung','tbl_thongtinlienhe.ten','so_nha', 'ten_duong','so_dien_thoai', 'email', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho')
+
+        ->orderBy('tbl_nguoidung.id', 'desc')
+        ->where('tbl_nhom.id', '=', 1)
+        ->paginate(10);
+        // return $nguoidung;
+        return view('admin.modules.nguoidung.danhsachadmin' , ['data'=>$nguoidung]);
+    }
+
     public function themnguoidung()
     {
         return view('admin.modules.nguoidung.themnguoidung');
@@ -904,14 +1312,22 @@ class adminController extends Controller
     {
         $chuongtrinhkhuyenmai = DB::table('tbl_chuongtrinhkhuyenmai')
         ->select('tbl_chuongtrinhkhuyenmai.id as chuongtrinhkhuyenmai_id','ngay_bat_dau','ngay_ket_thuc','ten_hinh_anh','ten_chuong_trinh','ti_le_giam_gia')
-        // ->join('tbl_khuyenmai_sanpham', 'tbl_khuyenmai_sanpham.chuongtrinhkhuyenmai_id', '=', 'tbl_chuongtrinhkhuyenmai.id')
-        // ->join('tbl_sanpham', 'tbl_sanpham.id', '=', 'tbl_khuyenmai_sanpham.sanpham_id')
         ->orderBy('tbl_chuongtrinhkhuyenmai.id', 'DESC')
-        // ->distict()
-        ->paginate(10);
-       // return $chuongtrinhkhuyenmai;
+        ->paginate(5);
         return view('admin.modules.khuyenmai.danhsachkhuyenmai' , ['data'=>$chuongtrinhkhuyenmai]);
     }
+
+    public function laySanPhamChoKhuyenMai($id)
+    {
+        $danhsachsanpham = DB::table('tbl_sanpham')
+        ->join('tbl_khuyenmai_sanpham', 'tbl_khuyenmai_sanpham.sanpham_id','=','tbl_sanpham.id')
+        ->join('tbl_chuongtrinhkhuyenmai', 'tbl_khuyenmai_sanpham.chuongtrinhkhuyenmai_id','=','tbl_chuongtrinhkhuyenmai.id')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham')
+        ->where('tbl_chuongtrinhkhuyenmai.id','=',$id)
+        ->get();
+        return $danhsachsanpham;
+    }
+
     public function chitietkhuyenmai($id)
     {
         $chuongtrinhkhuyenmai = DB::table('tbl_chuongtrinhkhuyenmai')
@@ -1015,8 +1431,14 @@ class adminController extends Controller
         ->orderBy('tbl_chuongtrinhkhuyenmai.id', 'DESC')
         ->get();
 
+        $danhsachsanpham = DB::table('tbl_sanpham')
+        ->join('tbl_khuyenmai_sanpham', 'tbl_khuyenmai_sanpham.sanpham_id','=','tbl_sanpham.id')
+        ->join('tbl_chuongtrinhkhuyenmai', 'tbl_khuyenmai_sanpham.chuongtrinhkhuyenmai_id','=','tbl_chuongtrinhkhuyenmai.id')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham')
+        ->where('tbl_chuongtrinhkhuyenmai.id','=',$id)
+        ->get();
         // return $chuongtrinhkhuyenmai;
-      return view('admin.modules.khuyenmai.chinhsuakhuyenmai' ,['data'=>$chuongtrinhkhuyenmai]);
+      return view('admin.modules.khuyenmai.chinhsuakhuyenmai' ,['data'=>$chuongtrinhkhuyenmai, 'sanpham'=>$danhsachsanpham]);
     }
 
 
@@ -1055,7 +1477,7 @@ class adminController extends Controller
 
         ->join('tbl_sanpham', 'tbl_sanpham.id','=', 'tbl_hinhthucuudai.sanpham_id' )
         ->orderBy('tbl_uudai.id', 'DESC')
-        ->paginate(10);
+        ->paginate(5);
        // return ($uudai) ;
         return view('admin.modules.khuyenmai.uudai',['data'=>$uudai]);
     }
@@ -1156,7 +1578,7 @@ class adminController extends Controller
         ->select('tbl_quatang.id','ten_qua_tang','so_luong', 'ten_chuong_trinh')
         ->join('tbl_chuongtrinhkhuyenmai', 'tbl_chuongtrinhkhuyenmai.id', '=', 'tbl_quatang.chuongtrinhkhuyenmai_id')
         ->orderBy('id', 'desc')
-        ->paginate(10);
+        ->paginate(5);
         
         return view('admin.modules.khuyenmai.quatang', ['data'=>$quatang]);
     }
@@ -1198,15 +1620,23 @@ class adminController extends Controller
     public function chinhsuaquatang($id)
     {
         $quatang = DB::table('tbl_quatang')
-        ->select('tbl_quatang.id','ten_qua_tang','so_luong')
+        ->select('tbl_quatang.id','ten_qua_tang','so_luong','ten_chuong_trinh')
+          ->join('tbl_chuongtrinhkhuyenmai', 'tbl_chuongtrinhkhuyenmai.id', '=', 'tbl_quatang.chuongtrinhkhuyenmai_id')
        ->orderBy('tbl_quatang.id', 'DESC')
         ->get();
-        return view('admin.modules.khuyenmai.chinhsuaquatang',['quatang'=>$quatang]);
+         $khuyenmai = DB::table('tbl_chuongtrinhkhuyenmai')
+        ->select('tbl_chuongtrinhkhuyenmai.id','ten_chuong_trinh')
+        ->orderBy('ten_chuong_trinh', 'DESC')
+        ->get();
+
+        return view('admin.modules.khuyenmai.chinhsuaquatang',['quatang'=>$quatang,'data_khuyenmai'=>$khuyenmai ]);
     }
       public function postChinhsuaquatang(Request $request,$id)
     {
         $quatang = QuaTang::findOrFail($id);
         $quatang->ten_qua_tang=$request->input('ten_qua_tang');
+        $quatang->ten_chuong_trinh=$request->input('ten_chuong_trinh');
+
         $quatang->so_luong=$request->input('so_luong');
         $quatang->save();
         return redirect()->intended('qt-danh-sach-qua-tang');
@@ -1240,7 +1670,7 @@ class adminController extends Controller
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
         ->orderBy('id','desc')
-        ->paginate(10);
+        ->paginate(5);
 
         return view('admin.modules.donhang.tatcadonhang', ['data'=>$donhang]);
     }
@@ -1259,7 +1689,7 @@ class adminController extends Controller
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
         ->where('tbl_trangthai.ten_trang_thai' , '=', 'Đang giao')
         ->orderBy('id','desc')
-        ->paginate(10);
+        ->paginate(5);
 
         return view('admin.modules.donhang.danggiao', ['data'=>$donhang]);
     }
@@ -1278,7 +1708,7 @@ class adminController extends Controller
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
         ->where('tbl_trangthai.ten_trang_thai' , '=', 'Đang xử lý')
         ->orderBy('id','desc')
-        ->paginate(10);
+        ->paginate(5);
 
         return view('admin.modules.donhang.dangxuly', ['data'=>$donhang]);
     }
@@ -1300,7 +1730,7 @@ class adminController extends Controller
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
         ->where('tbl_trangthai.ten_trang_thai' , '=', 'Đã giao')
         ->orderBy('id','desc')
-        ->paginate(10);
+        ->paginate(5);
 
         return view('admin.modules.donhang.dagiao', ['data'=>$donhang]);
     }
@@ -1315,7 +1745,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
        ->orderBy('id','desc')
-        ->paginate(10);
+        ->paginate(5);
        // return $donhang;
          return view('admin.modules.baocao.baocao', ['data'=>$donhang]);
     }
@@ -1330,7 +1760,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 1)
-        ->paginate(10);
+        ->paginate(5);
        // return $donhang;
         return view('admin.modules.baocao.baocao1' , ['data'=>$donhang]);
     }
@@ -1345,7 +1775,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 2)
-        ->paginate(10);
+        ->paginate(5);
       
          return view('admin.modules.baocao.baocao2', ['data'=>$donhang]);
     }
@@ -1359,7 +1789,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 3)
-        ->paginate(10);
+        ->paginate(5);
        // return $donhang;3
      return view('admin.modules.baocao.baocao3', ['data'=>$donhang]);
     }
@@ -1373,7 +1803,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 4)
-        ->paginate(10);
+        ->paginate(5);
        return view('admin.modules.baocao.baocao4', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangNam()
@@ -1386,7 +1816,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 5)
-        ->paginate(10);
+        ->paginate(5);
         return view('admin.modules.baocao.baocao5', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangSau()
@@ -1399,7 +1829,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 6)
-        ->paginate(10);
+        ->paginate(5);
         return view('admin.modules.baocao.baocao6', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangBay()
@@ -1412,7 +1842,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 7)
-        ->paginate(10);
+        ->paginate(5);
       return view('admin.modules.baocao.baocao7', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangTam()
@@ -1425,7 +1855,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 8)
-        ->paginate(10);
+        ->paginate(5);
        return view('admin.modules.baocao.baocao8', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangChin()
@@ -1438,7 +1868,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 9)
-        ->paginate(10);
+        ->paginate(5);
         return view('admin.modules.baocao.baocao9', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangMuoi()
@@ -1451,7 +1881,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 10)
-        ->paginate(10);
+        ->paginate(5);
          return view('admin.modules.baocao.baocao10', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangMuoiMot()
@@ -1464,7 +1894,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 11)
-        ->paginate(10);
+        ->paginate(5);
         return view('admin.modules.baocao.baocao11', ['data'=>$donhang]);
     }
        public function getBaoCaoTheoThangMuoiHai()
@@ -1477,7 +1907,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 12)
-        ->paginate(10);
+        ->paginate(5);
         return view('admin.modules.baocao.baocao12', ['data'=>$donhang]);
     }
      public function getBaoCaoTheoBieuDo()
@@ -1490,7 +1920,7 @@ class adminController extends Controller
         $donhang = DB::table('tbl_donhang')
         ->select('tbl_donhang.id', 'ngay_dat_hang','tong_tien')
         ->whereMonth('ngay_dat_hang', '=', 12)
-        ->paginate(10);
+        ->paginate(5);
         return view('admin.modules.baocao.baocaodangluoi', ['data'=>$donhang]);
     }
 
@@ -1499,7 +1929,8 @@ class adminController extends Controller
     {
         $tags = DB::table('tbl_tags')
         ->select('tbl_tags.id','ten_tags')
-        ->paginate(10);
+        ->orderBy('id', 'desc')
+        ->paginate(5);
         return view('admin.modules.tags.danhsachtags', ['data'=>$tags]);
     }
     public function themtags()

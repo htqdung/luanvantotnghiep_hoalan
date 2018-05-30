@@ -44,7 +44,7 @@
 		
 		<div class="infobox" style="background-color: #6fb3e0">
 			<div class="infobox-data" style="width: 100%">		
-				<div class="infobox-content"   ><a style="color: #fff" href="#">DOANH THU</a></div>
+				<div class="infobox-content"   ><a style="color: #fff" href="#">TỔNG DOANH THU</a></div>
 			</div>
 			<br>
 			<hr style="margin-bottom: 8px">
@@ -70,131 +70,152 @@
 			<div class="widget-box">
 				<div class="widget-header widget-header-flat widget-header-small">
 					<h5 class="widget-title">
-					<h1>Doanh thu bán hàng</h1>
+					<h3>DOANH THU/ĐƠN HÀNG TRONG NĂM</h3>
 					</h5>
 					<div id="piechart"></div>
 				</div>
 			</div>
 		</div>			
-		<div class="col-sm-6">
-			<div class="widget-box">
-				<div class="widget-header widget-header-flat widget-header-small">
-					<h5 class="widget-title">
-					<h1>TOP 5 SẢN PHẨM BÁN CHẠY</h1>
-					</h5>
-					<div id="piechart"></div>
-				</div>
-			</div>
-		</div>	
-	</div><!-- /.widget-box -->
-
-
-	<div class="col-sm-12">
 		<div class="col-sm-6">	
 			<div class="widget-box">
 				<div class="widget-header widget-header-flat widget-header-small">
 					<h5 class="widget-title">
-					<h1>Doanh thu bán hàng</h1>
+					<h3>DOANH THU BÁN HÀNG</h3>
 					</h5>
 					<div style="color:red" id="columnchart_material"></div>
 				</div>
 			</div>
-		</div>			
-		<div class="col-sm-6">
+		</div>	
+	</div><!-- /.widget-box -->
+	<div class="col-sm-12">
+		
+		<div class="col-sm-6" >
 			<div class="widget-box">
-				<div class="widget-header widget-header-flat widget-header-small">
+				<div class="widget-header widget-header-flat widget-header-small" style=" width: ; height: ">
 					<h5 class="widget-title">
-					<h1>TOP 5 SẢN PHẨM BÁN CHẠY</h1>
+						<h3>ĐƯỢC XEM NHIỀU NHẤT</h3>
 					</h5>
-					<div id="piechart"></div>
+					<table class="table">
+			          	<thead>
+			              <tr style="margin: 0px">
+			                <th style="width: 5%">Mã số</th>
+			                <th style="width: 40%">Tên sản phẩm</th>
+			                <th style="width: 10%">Giá</th>
+			                <th style="width: 15%">Lượt xem</th>
+			                <th style="width: 15%">Lượt mua</th> 
+			                <th style="width: 15%">Ngày thêm</th>                 
+			              </tr>
+			          	</thead>
+			           	<tbody>
+			            	@foreach ($data_sanphamxemnhieu as $item)
+			              	<tr>
+			                    <td>{{ $item->id_sanpham}}</td>                        
+			                    <td>{{ $item->ten_san_pham}}</td>
+			                    <td>{{ $item->gia}}</td>
+			                    <td>{{ $item->so_luot_xem}}</td>
+			                    <td>{{ $item->so_luot_mua}}</td>
+			                    <td>{{ date('d-m-Y', strtotime($item->created_at)) }}</td>                   
+			                </tr> 
+			                @endforeach           
+			          	</tbody>              
+			      	</table>
+			      	{{ $data_sanphamxemnhieu->render() }}
 				</div>
 			</div>
 		</div>	
+     	 <div class="col-md-6">
+     	 	<div class="widget-box" >
+				<div class="widget-header widget-header-flat widget-header-small" style=" width: ; height: ">
+			        <table class="table">
+			  			<h3>
+			  				<b>DANH SÁCH LIÊN HỆ</b>
+			  				<div  style="margin-left: 80%"></div>
+			  			</h3>
+			          	<thead>
+			              <tr style="margin: 0px">
+			                <th style="width: 5%">Mã số</th>
+			                <th style="width: 10%">Tên người dùng</th>
+			                <th style="width: 15%">Ngày liên hệ</th>
+			                <th style="width: 25%">Tiêu đề</th> 
+			                <th style="width: 10%%">Chức năng</th>                 
+			              </tr>
+			          	</thead>
+			           	<tbody>
+			            
+			            	@foreach ($data_lienhe as $item)
+			              	<tr>
+			                    <td>{{ $item->id}}</td>                        
+			                    <td>{{ $item->ten}}</td>
+			                    <td>{{ date('d-m-Y', strtotime($item->ngay_lien_he)) }}</td>
+			                    <td>{{ $item->tieu_de}}</td>                     
+			                    <td>
+			                    	<a type="button" class="btn btn-danger" title="XÓA LIÊN HỆ" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id }}"><i class="fa fa-trash-o fa-fw"></i></a>
+			                     
+				                     <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id }}" role="dialog" tabindex="-1">
+				                        <div class="modal-dialog" role="document">
+				                            <div class="modal-content">
+				                                <div class="modal-header">
+				                                    <h4 class="modal-title">Bạn có chắc chắn?</h4>
+				                                </div>
+				                                <div class="modal-body">
+				                                    <p>Sau khi nhấn đồng ý, Liên hệ {{ $item->tieu_de }} sẽ bị xóa bỏ!</p>
+				                                </div>
+				                                <div class="modal-footer">
+				                                    <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
+				                                    <a class="btn btn-danger" href="{{ route('XOA_LIEN_HE', $item->id) }}" id="remove-button" type="submit">Đồng ý</a>
+				                                </div>
+				                            </div><!-- end modal-content -->
+				                        </div><!-- end modal-dialog -->
+				                    </div><!-- end modal -->
+
+			                    	<a type="button" class="btn btn-info" title="XEM CHI TIẾT" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal" data-target="#myModal{{ $item->id }}"><i class="fa fa-eye fa-fw"></i></a>
+									<!-- Modal -->
+									<div id="myModal{{ $item->id }}" class="modal fade" role="dialog">
+									  <div class="modal-dialog">
+
+									    <!-- Modal content-->
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <button type="button" class="close" data-dismiss="modal">&times;</button>
+									        <h4 class="modal-title">{{ $item->tieu_de }}</h4>
+									      </div>
+									      <div class="modal-body">
+									        <p><b>Tên người dùng: </b>{{ $item->ten }}</p>
+									        <p><b>Ngày liên hệ: </b> {{ date('d-m-Y', strtotime($item->ngay_lien_he)) }} </p>
+											<p><b>Nội dung: </b>{{ $item->noi_dung }}</p>
+											
+
+									      </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+									      </div>
+									    </div>
+
+									  </div>
+									</div>
+
+			                    </td>
+			                </tr> 
+			                @endforeach           
+			          	</tbody>              
+			      	</table>
+			      	{{ $data_lienhe->render() }}
+			      </div>
+			   </div>
+			  
+    </div>		
 	</div><!-- /.widget-box -->
-	 <div class="row">
-      <div class="col-md-12">
-         
-        <table class="table">
-          <h3><b>DANH SÁCH ĐÁNH GIÁ</b>  <div  style="margin-left: 80%">
-                   
-                </div>
-          </h3>
-                  <thead>
-                  <tr style="margin: 0px">
-                    <th style="width: 5%">Mã số</th>
-                    <th style="width: 10%">Tên người dùng</th>
-                    <th style="width: 10%">Ngày liên hệ</th>
-                    <th style="width: 35%">Tiêu đề</th> 
-                    <th style="width: 15%">Chức năng</th>                 
-                  </tr>
-                  </thead>
-                   <tbody>
-                    
-                @foreach ($data_lienhe as $item)
-                  <tr>
-                    <td>{{ $item->id}}</td>                        
-                    <td>{{ $item->ten}}</td>
-                    <td>{{ date('d-m-Y', strtotime($item->ngay_lien_he)) }}</td>
-                    <td>{{ $item->tieu_de}}</td>                     
-                    <td>
-                    	<a type="button" class="btn btn-danger" title="XÓA LIÊN HỆ" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id }}"><i class="fa fa-trash-o fa-fw"></i></a>
-                     
-	                     <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id }}" role="dialog" tabindex="-1">
-	                        <div class="modal-dialog" role="document">
-	                            <div class="modal-content">
-	                                <div class="modal-header">
-	                                    <h4 class="modal-title">Bạn có chắc chắn?</h4>
-	                                </div>
-	                                <div class="modal-body">
-	                                    <p>Sau khi nhấn đồng ý, Liên hệ {{ $item->tieu_de }} sẽ bị xóa bỏ!</p>
-	                                </div>
-	                                <div class="modal-footer">
-	                                    <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
-	                                    <a class="btn btn-danger" href="{{ route('XOA_LIEN_HE', $item->id) }}" id="remove-button" type="submit">Đồng ý</a>
-	                                </div>
-	                            </div><!-- end modal-content -->
-	                        </div><!-- end modal-dialog -->
-	                    </div><!-- end modal -->
-
-                    	<a type="button" class="btn btn-info" title="XEM CHI TIẾT" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal" data-target="#myModal{{ $item->id }}"><i class="fa fa-eye fa-fw"></i></a>
-						<!-- Modal -->
-						<div id="myModal{{ $item->id }}" class="modal fade" role="dialog">
-						  <div class="modal-dialog">
-
-						    <!-- Modal content-->
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <button type="button" class="close" data-dismiss="modal">&times;</button>
-						        <h4 class="modal-title">{{ $item->tieu_de }}</h4>
-						      </div>
-						      <div class="modal-body">
-						        <p><b>Tên người dùng: </b>{{ $item->ten }}</p>
-						        <p><b>Ngày liên hệ: </b> {{ date('d-m-Y', strtotime($item->ngay_lien_he)) }} </p>
-								<p><b>Nội dung: </b>{{ $item->noi_dung }}</p>
-								
-
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-						      </div>
-						    </div>
-
-						  </div>
-						</div>
-
-                    </td>
-                </tr> 
-                @endforeach           
-              </tbody>              
-          </table>
-      </div>
-    </div>
 <!-- PAGE CONTENT ENDS -->	
 </div>
 <?php
 	$doanhthuthang[] =(explode(',', $data_doanhthunam));
 	for ($i = 0; $i < 12; $i++) {
 		echo '<input type="hidden" id="t',$i+1,'" value="',$doanhthuthang[0][$i],'">';
+	}
+
+	$doanhthu12thang[] =(explode(',', $data_doanhthu12thang));
+	for ($i = 0; $i < 12; $i++) {
+		echo '<input type="hidden" id="d',$i+1,'" value="',$doanhthu12thang[0][$i],'">';
 	}
 ?>
 
@@ -237,14 +258,14 @@ function drawChart() {
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':'', 'width':450, 'height':300};
+  var options = {'title':'', 'width':400, 'height':235};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
 }
 </script>
-<canvas id="myChart" width="400" height="400"></canvas>
+<canvas id="myChart" width="400" height="500"></canvas>
 <script>
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
@@ -290,37 +311,21 @@ var myChart = new Chart(ctx, {
 
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
-
+      	var d1 = document.getElementById("d1").value*1;
+		var d2 = document.getElementById("d2").value*1;
+		var d3 = document.getElementById("d3").value*1;
+		var d4 = document.getElementById("d4").value*1;
+		var d5 = document.getElementById("d5").value*1;
+		var d6 = document.getElementById("d6").value*1;
+		var d7 = document.getElementById("d7").value*1;
+		var d8 = document.getElementById("d8").value*1;
+		var d9 = document.getElementById("d9").value*1;
+		var d10 = document.getElementById("d10").value*1;
+		var d11 = document.getElementById("d11").value*1;
+		var d12 = document.getElementById("d12").value*1;
+		var array = [d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12];
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Tháng', 'Doanh thu'],
-          [' 1', 400],
-          [' 2', 460],
-          [' 3', 540],
-          [' 4', 540],
-          [' 5', 540],
-          [' 6', 540],
-          [' 7', 540],
-          [' 8', 540],
-          [' 9', 100],
-          [' 10', 540],
-          [' 11', 540],
-          [' 12', 540],
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Doanh thu hàng tháng (12 tháng)'
-          }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-    <script>
-	    var d = new Date();
+      	var d = new Date();
 	    var n = d.getMonth();
 	    var x  = n+1;
 	    var dem = new Array();
@@ -345,6 +350,35 @@ var myChart = new Chart(ctx, {
     			dem.splice(i,1);
     		}
     	}
+        var data = google.visualization.arrayToDataTable([
+          ['Tháng', 'Doanh thu'],  
+          ['Thg '+ (dem[11]), array[11]],
+          ['Thg '+ (dem[10]), array[10]],
+          ['Thg '+ (dem[9]), array[9]],
+          ['Thg '+ (dem[8]), array[8]],
+          ['Thg '+ (dem[7]), array[7]],
+          ['Thg '+ (dem[6]), array[6]],
+          ['Thg '+ (dem[5]), array[5]],
+          ['Thg '+ (dem[4]), array[4]],
+          ['Thg '+ (dem[3]), array[3]],
+          ['Thg '+ (dem[2]), array[2]],
+          ['Thg '+ (dem[1]), array[1]],
+          ['Thg '+ (dem[0]), array[0]],
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Doanh thu hàng tháng (12 tháng)','width':500, 'height':400
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <script>
+	    
     </script>
 @endsection
 

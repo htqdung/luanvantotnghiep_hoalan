@@ -69,6 +69,15 @@
                     </div>
                     <br>
                     <div>
+                      <label for="form-field-11">Tên sản phẩm</label>
+                       <select  id="framework"  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control">
+                       @foreach ($sanpham as $item)
+                        <option value="{{ $item->id_sanpham }}">{{ $item->ten_san_pham }}</option>
+                      @endforeach
+                    </select>
+                    </div>
+                    <br>
+                    <div>
                       <label for="form-field-11">Ngày bắt đầu</label>
                       <input type="text" class="form-control" name="ngay_bat_dau" placeholder="DD/MM/YYYY" required value="{{ date("Y_m_d"),strtotime($data[0]->ngay_bat_dau) }}"  pattern="
                         (?:30))|(?:(?:0[13578]|1[02])-31))/
@@ -88,14 +97,36 @@
                       
                     </div>
                     <br>
-                    
-                  <div>
-                      <img src="http://localhost:8080/luanvantotnghiep_hoalan/public/admin/assets/images/avatars/avatar2.png" alt="">
-                    <br>
-                  <label for="image">Chọn hình ảnh</label>
+                    <div class="col-md-12" style="margin-left: 0px;">
+                      <ul class="ace-thumbnails clearfix">
+                      
+                        <li>
+                          <a href="../khuyenmai/<?php echo $data[0]->ten_hinh_anh; ?>" title="Photo Title" data-rel="colorbox">
+                            <img width="150" height="150" alt="150x150" src="/luanvantotnghiep_hoalan/public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>" />
+                          </a>
+                          <div class="tools">
+                            <a href="#">
+                              <i class="ace-icon fa fa-link"></i>
+                            </a>
 
-                  <input type="file" accept="image/*" class="" name="ten_hinh_anh" id="image" placeholder="" style="margin-right: 0; " >
-                    </div>                   
+                            <a href="#">
+                              <i class="ace-icon fa fa-paperclip"></i>
+                            </a>
+
+                            <a href="#">
+                              <i class="ace-icon fa fa-pencil"></i>
+                            </a>
+
+                            <a href="#">
+                              <i class="ace-icon fa fa-times red"></i>
+                            </a>
+                          </div>
+                        </li>
+                   
+                      </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                                    
                   </div>
 
                 </div>

@@ -69,7 +69,15 @@
                 <input type="number" value="{{ $quatang[0]->so_luong }}" name="so_luong" class="form-control" id=quatang" placeholder="">
                     </div>
                     <br>
-                                  
+                     <div>
+                      <label>Chương trình khuyến mại</label>
+                       <select  id="state" multiple="multiple"  name="ten_chuong_trinh[]" class="col-xs-9 col-sm-12 form-control col-md-12 col-lg-12 select2" data-placeholder="">
+                          @foreach ($data_khuyenmai as $item)
+                            <option value="{{ $item->ten_chuong_trinh }}"></option>
+                          @endforeach
+                      </select>
+               
+                    </div>             
                   </div>
 
                 </div>

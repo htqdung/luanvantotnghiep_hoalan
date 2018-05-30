@@ -27,7 +27,7 @@
                     <tbody>
                     	 <tr>
                         <th style="width: 30%">Tên khuyến mãi: </th>
-                        <td>{{ $data[0]->ten_chuong_trinh }}</td>
+                        <td>{{ $data[0]->tenhuong_trinh }}</td>
                       </tr>
                       <tr>
                         <th style="width: 30%">Phần trăm: </th>
@@ -48,7 +48,7 @@
                 </div> 
               </div>
             </div>
-              <div class="row">
+           <div class="row">
 			      <div class="col-md-12">
 			        <table class="table">
 			          <h3><b>DANH SÁCH SẢN PHẨM</b></h3>

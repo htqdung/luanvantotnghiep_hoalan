@@ -9,7 +9,7 @@
 			</li>
 			
 			<li>
-				<a href="javascript:void(0)">Đặc điểm hoa</a>
+				<a href="javascript:void(0)">Đặc điểm loài hoa</a>
 			</li>
 		</ul><!-- /.breadcrumb -->
 	</div>
@@ -19,7 +19,7 @@
 		<div class="hr hr-18 hr-double dotted"></div>
 		<div class="widget-box">
 			<div class="widget-header widget-header-blue widget-header-flat" style="text-align: center;">
-				<h4 class="widget-title lighter" >ĐẶC ĐIỂM HOA</h4>
+				<h4 class="widget-title lighter" >ĐẶC ĐIỂM LOÀI HOA</h4>
 				<div class="widget-toolbar">
 					<button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> <a href="{{ route('THEM_DAC_DIEM') }}">Thêm mới</a>  </button>
 				</div>

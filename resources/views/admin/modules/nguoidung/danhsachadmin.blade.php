@@ -16,37 +16,34 @@
     <!-- /.page-header -->
      <div class="box box-primary">
         <div class="box-header with-border">
-        
+          <div class="widget-toolbar">
+            <button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> <a href="{{ route('THEM_NGUOI_DUNG') }}">Thêm mới</a>  </button>
+          </div>
         </div>
     <div class="row" >
     </div><!-- /.row -->
     <div class="row">
       <div class="col-md-12">
         <table class="table">
-          <h3><b>DANH SÁCH NGƯỜI DÙNG</b></h3>
+          <h3><b>DANH SÁCH QUẢN TRỊ VIÊN</b></h3>
                   <thead>
                   <tr style="margin: 0px">
                     <th style="width: 7%">Mã số</th>
                     <th style="width: 20%">Họ tên</th>
                     <th style="width: 15%">Số điện thoại</th>
                     <th style="width: 15%">Email</th>
-                    <th style="width: 30%">Địa chỉ </th>
-                    <th style="width: 10%">Chức năng</th>
-                  
+                    <th style="width: 10%">Chức năng</th>                  
                   </tr>
                   </thead>
                    <tbody>
-                  
-                @foreach ($data as $item)
-                  <tr>
-                   <td>{{ $item->id_nguoidung }}</td>
-                    <td>{{ $item->ten}}</td>
-                    <td>{{ $item->so_dien_thoai}}</td>
-                    <td>{{ $item->email}}</td>
-                    <td>{{ $item->so_nha}}, {{ $item->ten_duong }}, {{ $item->ten_phuong_xa }}, {{ $item->ten_quan_huyen}} , {{ $item->ten_tinh_thanhpho }}</td>
-                    <td>
-                     
-                      <a style="padding-left:10px; padding: 0px; margin:0px; width: 100px" class="btn btn-warning"  data-toggle="modal" data-target="#myModal{{ $item->id_nguoidung }}"><i class="fa fa-eye fa-fw" title="chi tiết"></i></a>
+                    @foreach ($data as $item)
+                      <tr>
+                        <td>{{ $item->id_nguoidung }}</td>
+                        <td>{{ $item->ten}}</td>
+                        <td>{{ $item->so_dien_thoai}}</td>
+                        <td>{{ $item->email}}</td>
+                        <td>
+                          <a style="margin-right: 0px; padding: 0px; width: 40px"" class="btn btn-warning"  data-toggle="modal" title="chi tiết" data-target="#myModal{{ $item->id_nguoidung }}"><i class="fa fa-eye fa-fw"></i></a>
                          
                           <!-- Modal -->
                           <div id="myModal{{ $item->id_nguoidung }}" class="modal fade" role="dialog">
@@ -116,53 +113,36 @@
                                 </div><!-- /.span -->
 
                                 </div>
-                                  <div class="row">
-                                  <div class="col-md-12">
-                                     
-                                    <table class="table">
-                                      <h3><b>DANH SÁCH ĐƠN HÀNG</b>  <div  style="margin-left: 80%">
-                                               
-                                            </div>
-                                      </h3>
-                                              <thead>
-                                              <tr style="margin: 0px">
-                                                <th style="width: 3%">Mã số</th>
-                                                <th style="width: 20%">Ngày đặt hàng</th>
-                                                <th style="width: 30%">Địa chỉ</th>
-                                                <th style="width: 15%">Hình thức thanh toán</th>
-                                                <th style="width: 17%">Tổng tiền  </th>
-                                                <th style="width: 15%">Trạng thái  </th>
-                                             
-                                              </tr>
-                                              </thead>
-                                               <tbody>
-                                                <?php  $stt=1;  ?>
-                                            @foreach ($donhang as $item)
-                                              <tr>
-                                                <td><?php echo $stt; $stt++; ?></td>
-                                                <td>{{ date('d-m-Y', strtotime($item->ngay_dat_hang)) }}</td>                  
-                                                <td>{{ $item->so_nha}}, {{ $item->ten_duong }}, {{ $item->ten_phuong_xa }}, {{ $item->ten_quan_huyen}} , {{ $item->ten_tinh_thanhpho }}</td>
-                                                 <td>{{ $item->ten_hinh_thuc}}</td>
-                                                <td>{{ $item->tong_tien}}</td>
-                                                <td>{{ $item->ten_trang_thai}}</td>
-                                               
-                                            </tr> 
-                                            @endforeach           
-                                          </tbody>              
-                                      </table>
-                                  </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                                 </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                              </div>
+
                             </div>
                           </div>
+                          <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_NGUOI_DUNG', $item->id_nguoidung)  }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 
-                        </div>
-                      </div>
-                     
-                    </td>
-                </tr> 
-                @endforeach           
+                        <a type="button" class="btn btn-danger" title="xóa" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id_nguoidung }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
+                     </td>
+                           <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id_nguoidung }}" role="dialog" tabindex="-1">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Bạn có chắc chắn?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Sau khi nhấn đồng ý. Dữ liệu liên quan đến sản phẩm {{ $item->ten }} sẽ bị xóa bỏ!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
+                                        <a class="btn btn-danger" href="{{ route('XOA_NGUOI_DUNG', $item->id_nguoidung) }}" id="remove-button" type="submit">Đồng ý</a>
+                                    </div>
+                                </div><!-- end modal-content -->
+                            </div><!-- end modal-dialog -->
+                         </div><!-- end modal -->
+                       
+                      </tr> 
+                    @endforeach           
               </tbody>              
           </table>
           {{ $data->render() }}

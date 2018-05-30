@@ -60,17 +60,14 @@
                   <table class="table">
                     <thead>
                         @foreach ($data_sp as $data)
-                          <tr>
-                          <th style="width: 10%">Id: </th>
-                           <td>{{ $data->id_sanpham }}</td> 
-                        </tr>
+                         
                         <tr>
                           <th style="width: 30%">Tên sản phẩm: </th>
                          <td>{{ $data->ten_san_pham }}</td>
                         </tr>
                         <tr>
                           <th style="width: 30%">Giá: </th>
-                         <td>{{ $data->gia }}</td>
+                         <td><?= number_format($data->gia); ?></td>
                         </tr>
                        {{--  <tr>
                           <th style="width: 30%">Số lượng: </th>
@@ -111,20 +108,22 @@
                   <thead>
                   <tr style="margin: 0px">
                     <th style="width: 5%">Mã số</th>
-                    <th style="width: 20%">Tên người dùng</th>
-                    <th style="width: 30%">Ngày đánh giá</th>
+                    <th style="width: 15%">Tên người dùng</th>
                     <th style="width: 15%">Điểm đánh giá</th>                 
+                    <th style="width: 30%">Nội dung</th>
+                    <th style="width: 10%">Ngày đánh giá</th>
+                    
                   </tr>
                   </thead>
                    <tbody>
-                    <?php  $stt=1;  ?>
+                    
                 @foreach ($data_danhgia as $item)
                   <tr>
-                    <td><?php echo $stt; $stt++; ?></td>
-                    <td>{{ date('d-m-Y', strtotime($item->ngay_danh_gia)) }}</td>                  
+                    <td>{{ $item->id_danhgia }}</td>
                     <td>{{ $item->ten}}</td>
-                     <td>{{ $item->danh_gia}}</td>
-                    
+                    <td>{{ $item->danh_gia}}</td>
+                    <td>{{ $item->noi_dung}}</td>
+                    <td>{{ date('d-m-Y', strtotime($item->ngay_danh_gia)) }}</td>
                 </tr> 
                 @endforeach           
               </tbody>              

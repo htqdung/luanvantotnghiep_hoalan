@@ -56,7 +56,19 @@
 
                 <div class="widget-body" style="background-color: #f7fbff;">
                   <div class="widget-main" style="height: 700px">
-                    
+                    <div>
+                      <div class="col-md-12">
+                        <div class="col-md-12">
+                          <label>Chi</label>
+                            <select id="" name="id_chi"  class="form-control" required>
+                                  @foreach ($chi as $item)
+                                    <option value="{{ $item->id }}">{{ $item->ten_chi }}</option>
+                                  @endforeach
+                             </select>
+                        </div>  
+                      </div>
+                    </div>
+                    <br>
                     <div>
                       <div class="col-md-12">
                           <div class="col-md-12">
@@ -88,19 +100,7 @@
                         </div>
                     </div>
                     <br>
-                    <div>
-                      <div class="col-md-12">
-                        <div class="col-md-12">
-                          <label>Chi</label>
-                            <select id="" name="id_chi"  class="form-control" required>
-                                  @foreach ($chi as $item)
-                                    <option value="{{ $item->id }}">{{ $item->ten_chi }}</option>
-                                  @endforeach
-                             </select>
-                        </div>  
-                      </div>
-                    </div>
-                    <br>
+                    
                     <div class="col-md-12">
                       <div class="col-md-12">
                       <div class=" form-group" style="padding-top: 20px" >

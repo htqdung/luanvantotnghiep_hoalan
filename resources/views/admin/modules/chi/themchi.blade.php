@@ -65,29 +65,30 @@
                     <br>
                     <div>
                       <label for="form-field-11">Tên khoa học</label>
-                      <textarea type="text" id="form-field-11"  name="ten_khoa_hoc_chi"  class="autosize-transition form-control" id="chi" placeholder="Điền tên khoa học"> {{ old('ten_khoa_hoc_chi') }} </textarea>
+                      <input type="text"  name="ten_khoa_hoc_chi"  class="form-control" id="chi" value="{{ old('ten_khoa_hoc_chi') }}" placeholder="Điền tên khoa học">
+                     
                     </div>
                     <br>
                     <div>
-                      <label for="form-field-11">Hoa: *</label>
+                      <label for="form-field-11">Hoa:</label>
                       <textarea type="text" id="form-field-11"   name="chi_hoa" 
                       class="autosize-transition   form-control" id="chi" placeholder="Điền hoa: Cánh hoa, màu sắc,..">{{ old('chi_hoa') }} </textarea>
                     </div>
                     <br>
                     <div>
-                      <label for="form-field-11">Lá: *</label>
+                      <label for="form-field-11">Lá: </label>
                       <textarea type="text" id="form-field-11"   name="chi_la" 
-                      class="autosize-transition   form-control" id="chi" placeholder="DDienf lá">{{ old('chi_la') }} </textarea>
+                      class="autosize-transition   form-control" id="chi" placeholder="Điền lá">{{ old('chi_la') }} </textarea>
                     </div>
                     <br>
                     <div>
-                      <label for="form-field-11">Thân: *</label>
+                      <label for="form-field-11">Thân: </label>
                       <textarea type="text" id="form-field-11"   name="chi_than" 
                       class="autosize-transition   form-control" id="chi" placeholder="Điền thân">{{ old('chi_than') }} </textarea>
                     </div>
                     <br>
                     <div>
-                      <label for="form-field-11">Rễ: *</label>
+                      <label for="form-field-11">Rễ: </label>
                       <textarea type="text" id="form-field-11"   name="chi_re" 
                       class="autosize-transition   form-control" id="chi" placeholder="Điền rẽ">{{ old('chi_re') }} </textarea>
                     </div>

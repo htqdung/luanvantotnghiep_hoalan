@@ -102,12 +102,30 @@
                  
               </ul>
           </li>
+          
           <li class="">
-              <a href="{{ route('DANH_SACH_NGUOI_DUNG') }}">
-  					<i class="menu-icon fa fa-users"></i>
-  					<span class="menu-text"> Người dùng </span>
-  				</a>
+            <a href="javascript:void(0)" class="dropdown-toggle">
+            <i class="menu-icon fa fa-users"></i>
+            <span class="menu-text">  Người dùng </span>
+            <b class="arrow fa fa-angle-down"></b>
+          </a>
               <b class="arrow"></b>
+              <ul class="submenu">
+                  <li class="">
+                      <a href="{{ route('DANH_SACH_NGUOI_DUNG') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Người dùng thường
+                      </a>
+                      <b class="arrow"></b>
+                  </li>
+                  <li class="">
+                      <a href="{{ route('DANH_SACH_NGUOI_DUNG_ADMIN') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Quản trị
+                      </a>
+                      <b class="arrow"></b>
+                  </li>
+              </ul>
           </li>
           <li class="">
               <a href="{{ route('DANH_SACH_KHUYEN_MAI') }}" class="dropdown-toggle">

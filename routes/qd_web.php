@@ -1,11 +1,11 @@
   <?php
-Route::get('tsst', 'adminController@DoanhThuNam');
+Route::get('tsst', 'adminController@DoanhThuBanHang12Thang');
 Route::get('qt-admin', 'adminController@getTest')->name('MO_GIAO_DIEN_ADMIN');
 //danh mục loài hoa
 Route::get('qt-danh-muc-hoa', 'adminController@getdanhmuchoa')->name('DANH_MUC_HOA');
 Route::get('qt-chinh-sua-loai-hoa/{id}', 'adminController@getChinhSuaHoa')->name('CHINH_SUA_HOA');
 Route::post('qt-chinh-sua-loai-hoa/{id}', 'adminController@postChinhSuaLoaiHoa');
-Route::get('qt-xoa-loai-hoa/{id}', 'adminController@xoaloaihoa')->name('XOA-LOAI-HOA');
+Route::get('qt-xoa-loai-hoa/{id}', 'adminController@xoaloaihoa')->name('XOA_LOAI_HOA');
 
 Route::get('qt-them-danh-muc-hoa','adminController@themdanhmuchoa')->name('THEM_DANH_MUC_HOA');
 Route::post('qt-them-danh-muc-hoa', 'adminController@postThemLoaiHoa');
@@ -43,10 +43,11 @@ Route::get('qt-chi-tiet-chi/{id}','adminController@chitietchi')->name('CHI_TIET_
 
 //người dùng
 Route::get('qt-danh-sach-nguoi-dung', 'adminController@getnguoidung')->name('DANH_SACH_NGUOI_DUNG');
+Route::get('qt-danh-sach-nguoi-dung-admin', 'adminController@getnguoidungadmin')->name('DANH_SACH_NGUOI_DUNG_ADMIN');
 Route::get('them-nguoi-dung', 'adminController@themnguoidung')->name('THEM_NGUOI_DUNG');
 Route::get('chinh-sua-nguoi-dung/{id}', 'adminController@chinhsuanguoidung')->name('CHINH_SUA_NGUOI_DUNG');
 Route::get('qt-chi-tiet-nguoi-dung/{id}', 'adminController@ChiTietNguoiDung')->name('CHI_TIET_NGUOI_DUNG');
-
+Route::get('qt-xoa-nguoi-dung/{id}', 'adminController@xoanguoidung')->name('XOA_NGUOI_DUNG');
 //khuyến mãi
 Route::get('qt-danh-sach-khuyen-mai', 'adminController@getdanhsachkhuyenmai')->name('DANH_SACH_KHUYEN_MAI');
 
@@ -108,4 +109,13 @@ Route::get('qt-xoa-tags/{id}', 'adminController@xoatags')->name('XOA_TAGS');
 // Route::post('/reporting', ['uses' =>'ReportController@post']);
 // 
 Route::get('qt-xoa-lien-he/{id}', 'adminController@XoaLienHe')->name('XOA_LIEN_HE');
+
+
+
+//ajax
+Route::get('ajax-lay-danh-mua-loai-hoa/{id}', 'adminController@layDanhMucLoaiHoa');
+Route::get('ajax-lay-danh-sach-san-pham/{id}', 'adminController@laySanPhamChoKhuyenMai');
+
+
+
 ?>

@@ -52,12 +52,57 @@
 						        <td>{{ $item->hoa }}, {{ $item->la }},{{ $item->than }},{{ $item->re }}</td>
 						        
 			                    <td>
-			                    	<a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_LOAI_HOA', $item->id) }}"><i class="glyphicon glyphicon-folder-open"></i></a>
+			                      	<a type="button" class="btn btn-warning" title="XEM CHI TIẾT" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal" data-target="#myModal{{ $item->id }}"><i class="fa fa-eye fa-fw"></i></a>
+							<!-- Modal -->
+									<div id="myModal{{ $item->id }}" class="modal fade" role="dialog">
+									  <div class="modal-dialog">
+
+									    <!-- Modal content-->
+									    <div class="modal-content">
+									      <div class="modal-header">
+									        <button type="button" class="close" data-dismiss="modal">&times;</button>
+									        <h4 class="modal-title">{{ $item->ten_loai }}</h4>
+									       
+									      </div>
+									      <div class="modal-body">
+									        
+									        <p><b>Tên khoa học: </b>{{ $item->ten_khoa_hoc }}</p>
+									        <p><b>Tên chi: </b>{{ $item->ten_chi }}</p>
+									        <p><b>Đặc điểm: </b>
+
+		                                      Hoa: {{ $item->hoa }}, Lá: {{ $item->la }}, Thân: {{ $item->than }}, Rễ:{{ $item->re }}
+		                                      </p>
+									        
+									        <p><b>Mô tả: </b> <?= $item->mo_ta;?> </p>
+									      </div>
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+									      </div>
+									    </div>
+
+									  </div>
+									</div>
 			                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_HOA', $item->id) }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 			                                          
 			                      
-			                      <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{ route('XOA-LOAI-HOA', $item->id) }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
-			                    </td>
+			                      <a type="button" class="btn btn-danger" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
+				                 </td>
+				                 <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id }}" role="dialog" tabindex="-1">
+								    <div class="modal-dialog" role="document">
+								        <div class="modal-content">
+								            <div class="modal-header">
+								                <h4 class="modal-title">Bạn có chắc chắn?</h4>
+								            </div>
+								            <div class="modal-body">
+								                <p>Sau khi nhấn đồng ý. Dữ liệu liên quan đến chi {{ $item->ten_loai }} sẽ bị xóa bỏ!</p>
+								            </div>
+								            <div class="modal-footer">
+								                <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
+								                <a class="btn btn-danger" href="{{ route('XOA_LOAI_HOA', $item->id) }}" id="remove-button" type="submit">Đồng ý</a>
+								            </div>
+								        </div><!-- end modal-content -->
+								    </div><!-- end modal-dialog -->
+								</div><!-- end modal -->
 					      </tr>	
 					      @endforeach			      
 					    </tbody>
