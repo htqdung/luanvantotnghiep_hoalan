@@ -52,8 +52,7 @@
                     <h6>Phone:</h6>
                     <p>(+84) 913 826 156</p>
                     <h6>Email:</h6>
-                    <p>sales@near.vn
-                      Support@near.com</p>
+                    <p>sales@near.vn</p>
                   </div>
                 </div>
               </div>

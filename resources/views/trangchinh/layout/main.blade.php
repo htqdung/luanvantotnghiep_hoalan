@@ -11,8 +11,8 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="{{ asset('frontend/css/ionicons.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('frontend/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -115,15 +115,15 @@
                 <div class="collapse navbar-collapse" id="nav-open-btn">
                     <ul class="nav">
                         <li class="active"> <a href="/">Trang chủ</a></li>
-                        <li class="dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown"> Sản phẩm  </a>
+                        <li class="dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown"> Sản Phẩm  </a>
                             <ul class="dropdown-menu multi-level animated-2s fadeInUpHalf">
                                 @foreach($loai_sp as $loai)
                                     <li><a href="{{ route('loaisp',[str_slug($loai->ten_loai),$loai->id]) }}"> {{$loai->ten_loai}} </a></li>
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{ route('frontend.quatang') }}">Quà tặng</a></li>
-                        <li><a href="{{ route('frontend.khuyenmai') }}">Khuyến mãi</a></li>
+                        <li><a href="{{ route('frontend.quatang') }}">Quà Tặng</a></li>
+                        <li><a href="{{ route('frontend.khuyenmai') }}">Khuyến Mại</a></li>
                         <li> <a href="{{ route('frontend.contact') }}">Liên Hệ</a></li>
 
                     </ul>
@@ -199,13 +199,13 @@
                     <h6>Fanpage Facebook</h6>
                     <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
                        <iframe
-                       src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FV%C6%B0%E1%BB%9Dn-Lan-C%C3%A1i-Nai-1992538604093631&tabs&width=340&height=196&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FV%C6%B0%E1%BB%9Dn-Lan-C%C3%A1i-Nai-1992538604093631&tabs&width=340&height=196&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                        width="340" 
                        height="196"
-                       style="border:none;overflow:hidden" 
+                       style="border:none;overflow:hidden"
                        scrolling="no"
-                       frameborder="0" 
-                       allowTransparency="true" 
+                       frameborder="0"
+                       allowTransparency="true"
                        allow="encrypted-media"></iframe>
                     </ul>
                 </div>
@@ -240,13 +240,35 @@
 <script src="{{ asset('frontend/js/vendors/own-menu.js') }}"></script>
 <script src="{{ asset('frontend/js/vendors/jquery.sticky.js') }}"></script>
 <script src="{{ asset('frontend/js/vendors/owl.carousel.min.js') }}"></script>
-{{--<script src="{{ asset('frontend/js/all.min.js') }}"></script>--}}
+
 <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
 <script type="text/javascript" src="{{ asset('frontend/rs-plugin/js/jquery.tp.t.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('frontend/rs-plugin/js/jquery.tp.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('frontend/js/bootstrap3-typeahead.min.js') }}"></script>
 <script src="{{ asset('frontend/js/main.js') }}"></script>
 
+{{--<script src="{{ asset('frontend/js/all.min.js') }}"></script>--}}
+
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function() {
+        $(".price").keydown(function (e) {
+            // Allow: backspace, delete, tab, escape, enter and .
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                // Allow: Ctrl+A, Command+A
+                (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                // Allow: home, end, left, right, down, up
+                (e.keyCode >= 35 && e.keyCode <= 40)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+    });
+</script>

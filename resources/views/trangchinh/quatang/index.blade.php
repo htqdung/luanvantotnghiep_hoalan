@@ -34,16 +34,25 @@
                             <div class="checkbox checkbox-primary">
                                 <ul>
                                     <li class="<?= \Request::get('price') == '<1' ? 'active' : '' ?>">
-                                        <a href="<?= \App\Helpers\Url::addParams(['price' => '<1']) ?>"> Bé hơn 1tr đồng   </a>
+                                        <a href="<?= \App\Helpers\Url::addParams(['price' => '<1']) ?>">    </a>
                                     </li>
-                                    <li class="<?= \Request::get('price') == '1-3'   ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '1-3']) ?>"> 1.000.000đ - 3.000.000đ  </a></li>
-                                    <li class="<?= \Request::get('price') == '3-5'   ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '3-5']) ?>"> 3.000.000đ - 5.000.000đ  </a></li>
-                                    <li class="<?= \Request::get('price') == '5-7'   ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '5-7']) ?>"> 5.000.000đ - 7.000.000đ  </a></li>
-                                    <li class="<?= \Request::get('price') == '7-10'  ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '7-10']) ?>"> 7.000.000đ - 10.000.000đ </a></li>
-                                    <li class="<?= \Request::get('price') == '10-15' ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '10-15']) ?>"> 10.000.000đ - 15.000.000đ </a></li>
-                                    <li class="<?= \Request::get('price') == '15-20' ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '15-20']) ?>"> 15.000.000đ - 20.000.000đ </a></li>
-                                    <li class="<?= \Request::get('price') == '20'    ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '20']) ?>"> Trên 20.000.000 đ </a></li>
+                                    <li class="<?= \Request::get('price') == '0-3'   ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '0-3']) ?>"> 0đ - 300.000đ  </a></li>
+                                    <li class="<?= \Request::get('price') == '3-5'   ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '3-5']) ?>"> 300.000 đ -  500.000 đ  </a></li>
+                                    <li class="<?= \Request::get('price') == '5-8'   ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '5-8']) ?>"> 500.000đ - 800.000đ  </a></li>
+                                    <li class="<?= \Request::get('price') == '8-1tr'   ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '8-1tr']) ?>"> 800.000đ - 1.000.000 đ  </a></li>
+                                    <li class="<?= \Request::get('price') == '>1tr'   ? 'active' : '' ?>"><a href="<?= \App\Helpers\Url::addParams(['price' => '>1tr']) ?>"> > 1.000.000 đ  </a></li>
+
                                 </ul>
+                            </div>
+
+                            <h6> Lọc giá tuỳ chọn</h6>
+                            <!-- PRICE -->
+                            <div class="checkbox checkbox-primary">
+                                <form action="">
+                                    Từ <input type="number" name="min_price" class="form-control" value="{{ Request::get('min_price') }}" placeholder="0"><br>
+                                    Đến <input type="number" name="max_price" class="form-control" value="{{ Request::get('max_price') }}"  placeholder="1.000.000">
+                                    <input type="submit" value=" Lọc " class="btn btn-success" style="background: #337ab7;padding: 7px 10px ">
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -65,12 +74,40 @@
                         <div class="item-col-4">
                             <!-- Product -->
                             @foreach($products as $pro)
+                                @php
+
+                                    $rag = \DB::table('tbl_danhgia')->where('sanpham_id',$pro->id)->avg('danh_gia');
+                                    $rag_count = \DB::table('tbl_danhgia')->where('sanpham_id',$pro->id)->count();
+
+                                @endphp
                                 <div class="product">
-                                    <article> <img class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $pro->ten_hinh }}" alt="" >
+                                    <article> <img style="height: 170px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $pro->ten_hinh }}" alt="" >
                                         <!-- Content -->
                                         <a href="{{ route('frontend.chitiet',[str_slug($pro->ten_san_pham),$pro->id]) }}" class="tittle" style="margin-top: 10px">{{ $pro->ten_san_pham }}</a>
                                         <!-- Reviews -->
-                                        <p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">5 Đánh Giá</span></p>
+                                        <p class="rev">
+                                            <?php
+                                            $string_rag = '';
+                                            if ($rag)
+                                            {
+                                                for ($i = 1 ; $i <= $rag ; $i ++ )
+                                                {
+                                                    $string_rag .= '<i class="fa fa-star"></i>';
+                                                }
+
+                                                $stop = 5 - $rag ;
+                                                for ($i = 1 ; $i <= $stop ; $i ++ )
+                                                {
+                                                    $string_rag .= '<i class="fa fa-star-o"></i>';
+                                                }
+
+                                            }
+
+                                            ?>
+                                            {!! $string_rag !!}
+
+                                            <span class="margin-left-10">{{ $rag_count }} Đánh Giá</span>
+                                        </p>
                                         <div class="price">{{ number_format($pro->gia,0,",",".") }}đ</div>
                                         <a href="{{ route('cart.add',$pro->id) }}" class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
                                 </div>

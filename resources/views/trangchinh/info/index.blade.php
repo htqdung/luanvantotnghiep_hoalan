@@ -20,17 +20,17 @@
                         <div class="col-md-6">
                             <ul class="row">
                                 <li class="col-sm-12">
-                                    <label>Tên
+                                    <label>Tên:
                                         <input type="text" class="form-control" name="ten" placeholder="Nguyễn Văn A" required value="{{ $users->tbl_thongtinlienhe->ten }}">
                                     </label>
                                 </li>
                                 <li class="col-sm-12">
-                                    <label>Số điện thoại
+                                    <label>Số điện thoại:
                                         <input type="text" class="form-control" name="so_dien_thoai" placeholder="0987654321" required value="{{ $users->tbl_thongtinlienhe->so_dien_thoai }}">
                                     </label>
                                 </li>
                                 <li class="col-sm-12">
-                                    <label>Email
+                                    <label>Email:
                                         <input type="email" class="form-control" name="email" placeholder="email@gmail.com" required value="{{ $users->tbl_thongtinlienhe->email }}">
                                     </label>
                                 </li>
@@ -50,13 +50,13 @@
                         <div class="col-md-6">
                             <ul class="row">
                                 <li class="col-sm-12">
-                                    <label>Username
-                                        <input type="text" class="form-control" name="username" placeholder="quynhnhi" required>
+                                    <label>Tải Khoản:
+                                        <input type="text" class="form-control" name="username" placeholder="Nhập tài khoản..." required>
                                     </label>
                                 </li>
                                 <li class="col-sm-12">
-                                    <label>Password
-                                        <input type="password" class="form-control" name="password" placeholder="******" required>
+                                    <label>Mật Khẩu:
+                                        <input type="password" class="form-control" name="password" placeholder="*******" required>
                                     </label>
                                 </li>
 

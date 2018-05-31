@@ -22,12 +22,12 @@
                             <ul class="row">
                                 <li class="col-sm-12">
                                     <label>Tài Khoản:
-                                        <input type="text" class="form-control" name="username" placeholder="admin..." required>
+                                        <input type="text" class="form-control" name="username" placeholder="Nhập tài khoản..." required>
                                     </label>
                                 </li>
                                 <li class="col-sm-12">
                                     <label>Mật Khẩu:
-                                        <input type="password" class="form-control" name="password" placeholder="******" required>
+                                        <input type="password" class="form-control" name="password" placeholder="*******" required>
                                     </label>
                                 </li>
                                 <li class="col-sm-12 text-left">

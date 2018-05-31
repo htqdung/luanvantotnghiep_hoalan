@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\NguoiDung;
+use App\SanPham;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -26,11 +27,6 @@ class ShoppingCartController extends Controller
     {
         $products = \Cart::content();
 
-        if (count($products) < 1)
-        {
-            return redirect()->back()->with('danger','Không có sản phẩm trong giỏ hàng');
-        }
-//        return view('trangchinh.giohang.giohang',compact('products'));
         return view('trangchinh.giohang.index',compact('products'));
     }
 
@@ -51,7 +47,21 @@ class ShoppingCartController extends Controller
         {
             return redirect()->back();
         }
-        \Cart::add(['id' => $id, 'name' => $products->ten_san_pham, 'qty' => 1, 'price' => $products->gia, 'options' => ['hinhanh' => $products->ten_hinh]]);
+        $km_sp = \DB::table('tbl_khuyenmai_sanpham')->where('sanpham_id',$products->id)->first();
+        $price = $products->gia;
+        $pt_sale = 0;
+        if ($km_sp)
+        {
+            $sale = \DB::table('tbl_chuongtrinhkhuyenmai')->where('id',$km_sp->chuongtrinh_id)->first();
+            if ($sale)
+            {
+                $pt_sale = $sale->ti_le_giam_gia;
+                $price = (int)round($products->gia * ( 100 - $sale->ti_le_giam_gia  ) / 100,0, PHP_ROUND_HALF_UP) ;
+            }
+        }
+
+
+        \Cart::add(['id' => $id, 'name' => $products->ten_san_pham, 'qty' => 1, 'price' => $price, 'options' => ['hinhanh' => $products->ten_hinh,'pt_sale' => $pt_sale]]);
         return redirect()->back()->with('success','Thêm giỏ hàng thành công');
     }
 
@@ -88,13 +98,16 @@ class ShoppingCartController extends Controller
         $quanhuyen  = \DB::table('tbl_quanhuyen')->get();
         $tinhthanhp = \DB::table('tbl_tinh_thanhpho')->get();
 
+        $hinhthucthanhtoan = \DB::table('tbl_hinh_thuc_thanh_toan')->get();
+
         $users = NguoiDung::find(\Session::get('user')->id);
         $viewData = [
-            'diachi'     => $diachi,
-            'tinhthanhp' => $tinhthanhp,
-            'phuongxa'   => $phuongxa,
-            'quanhuyen'  => $quanhuyen,
-            'users'      => $users
+            'diachi'            => $diachi,
+            'tinhthanhp'        => $tinhthanhp,
+            'phuongxa'          => $phuongxa,
+            'quanhuyen'         => $quanhuyen,
+            'users'             => $users,
+            'hinhthucthanhtoan' => $hinhthucthanhtoan
         ];
 
         return view('trangchinh.dathang.pay',$viewData);
@@ -102,13 +115,14 @@ class ShoppingCartController extends Controller
 
     public function postPay(Request $request)
     {
+
         $id_donhang = \DB::table('tbl_donhang')->insertGetid([
            'ngay_dat_hang'         => date('Y-m-d'),
             'nguoidung_id'         => \Session::get('user')->id,
             'diachi_id'            => $request->address,
             'tong_tien'            => (str_replace(',','',\Cart::subtotal(0))),
             'ten_nguoi_nhan'       => $request->ten_nguoi_nhan,
-            'hinh_thuc_thanh_toan' => $request->hinh_thuc_thanh_toan,
+            'hinhthucthanhtoan_id' => $request->hinh_thuc_thanh_toan,
             'created_at'           => Carbon::now(),
             'updated_at'           => Carbon::now()
         ]);
@@ -126,6 +140,9 @@ class ShoppingCartController extends Controller
                     'created_at'   => Carbon::now(),
                     'updated_at'   => Carbon::now()
                 ]);
+                $sp = SanPham::find($val->id);
+                $sp->so_luot_mua += 1;
+                $sp->save();
             }
         }
         \Cart::destroy();

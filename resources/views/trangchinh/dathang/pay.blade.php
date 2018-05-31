@@ -83,8 +83,9 @@
                                         <div class="form-group">
                                             <label style="margin-bottom: 10px" for="zip">Hình Thức Thanh Toán</label>
                                             <select style="margin-bottom: 20px" required="" class="form-control"  name="hinh_thuc_thanh_toan">
-                                                <option value="Nhận hàng gủi tiền">Nhận Hàng Khi Thanh Toán </option>
-                                                <option value="Chuyển khoản">Chuyển Khoản </option>
+                                                @foreach($hinhthucthanhtoan as $ht)
+                                                    <option value="{{ $ht->id }}">{{ $ht->ten_hinh_thuc }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -95,8 +96,8 @@
                                 <div class="box-footer clearfix">
                                     <div class="text-center" style="margin-bottom: 40px">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <a href="/" class="btn btn-default"  style="background: #337ab7;border: 1px solid #337ab7"><i class="fa fa-chevron-left"></i> Quay Lại </a>
-                                        <button type="submit" class="btn btn-primary" style="background: #337ab7;border: 1px solid #337ab7"> Đặt Hàng <i class="fa fa-chevron-right"></i></button>
+                                        <a href="{{ route('cart.index') }}" class="btn btn-default"  style="background: #337ab7;border: 1px solid #337ab7"><i class="fa fa-chevron-left"></i> Quay Lại </a>
+                                        <button type="submit" class="btn btn-primary" style="background: #337ab7;border: 1px solid #337ab7"> Hoàn Tất <i class="fa fa-chevron-right"></i></button>
                                     </div>
                                 </div>
                             </div>

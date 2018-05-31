@@ -46,3 +46,6 @@ Route::get('/tim-kiem','Frontend\FrontendController@searchTypehead')->name('sear
 
 
 Route::get('/dang-xuat','Auth\LoginController@dangxuat')->name('dang-xuat');
+
+
+Route::post('/guiemail','Frontend\FrontendController@sendEmail')->name('send_email');

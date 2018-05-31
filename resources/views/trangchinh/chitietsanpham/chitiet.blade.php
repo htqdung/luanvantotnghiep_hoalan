@@ -1,4 +1,5 @@
 @extends('trangchinh.layout.main')
+{{--<meta http-equiv="refresh" content="10">--}}
 @section('main-content')
     <!-- Content -->
     <div id="content">
@@ -26,41 +27,71 @@
                                     </div>
                                     <!-- Item Content -->
                                     <div class="col-xs-7">
+
                                         <h5>{{ $product->ten_san_pham }}</h5>
-                                        <p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">5 Đánh Giá</span></p>
+                                        <p class="rev">
+                                            <?php
+                                                $string_rag = '';
+                                                if ($rag)
+                                                {
+                                                    for ($i = 1 ; $i <= $rag ; $i ++ )
+                                                    {
+                                                        $string_rag .= '<i class="fa fa-star"></i>';
+                                                    }
+
+                                                    $stop = 5 - $rag ;
+                                                    for ($i = 1 ; $i <= $stop ; $i ++ )
+                                                    {
+                                                        $string_rag .= '<i class="fa fa-star-o"></i>';
+                                                    }
+
+                                                }
+
+                                            ?>
+                                            {!! $string_rag !!}
+
+                                            <span class="margin-left-10">{{ $rag_count }} Đánh Giá</span></p>
                                         <div class="row">
                                             <div class="col-sm-6"><span class="price">{{ number_format($product->gia,0,",",'.') }} VNĐ</span></div>
                                             <div class="col-sm-6">
                                                 <p>Tình Trạng: <span class="in-stock">Còn Hàng</span></p>
                                             </div>
-                                        </div>
-                                        <!-- List Details -->
-                                        {{--<ul class="bullet-round-list">--}}
-                                            {{--<li>Screen: 1920 x 1080 pixels</li>--}}
-                                            {{--<li>Processor: 2.5 GHz None</li>--}}
-                                            {{--<li>RAM: 8 GB</li>--}}
-                                            {{--<li>Hard Drive: Flash memory solid state</li>--}}
-                                            {{--<li>Graphics : Intel HD Graphics 520 Integrated</li>--}}
-                                            {{--<li>Card Description: Integrated</li>--}}
-                                        {{--</ul>--}}
-                                        <!-- Colors -->
 
-                                        <!-- Compare Wishlist 
-                                        <ul class="cmp-list">
-                                            <li><a href="#."><i class="fa fa-heart"></i> Add to Wishlist</a></li>
-                                            <li><a href="#."><i class="fa fa-navicon"></i> Add to Compare</a></li>
-                                            <li><a href="#."><i class="fa fa-envelope"></i> Email to a friend</a></li>
+                                        </div>
+                                        @php
+
+                                            $dacdiem = \DB::table('tbl_sanpham_loai')
+                                                    ->leftJoin('tbl_loai','tbl_loai.id','=','tbl_sanpham_loai.loai_id')
+                                                    ->where('sanpham_id',$product->id)
+                                                    ->get();
+
+                                        @endphp
+                                        @if( $dacdiem )
+                                        <ul class="bullet-round-list">
+                                            <h6>Đặc điểm </h6>
+                                            @foreach($dacdiem as $item)
+                                                <li>{{ $item->ten_loai }} ({{ $item->ten_khoa_hoc }})</li>
+                                                <p>{{ $item->mo_ta }}</p>
+                                            @endforeach
                                         </ul>
-                                    -->
+                                        @endif
+
+
+
+                                        <ul class="cmp-list">
+                                            <li><a href="#."><i class="fa fa-clock-o"></i> Ngày đăng {{ $product->created_at ? $product->created_at : Carbon\Carbon::now() }}</a></li>
+                                            {{--<li><a href="#."><i class="fa fa-navicon"></i> Add to Compare</a></li>--}}
+                                            {{--<li><a href="#."><i class="fa fa-envelope"></i> Email to a friend</a></li>--}}
+                                        </ul>
+
                                         <!-- Quinty -->
                                         <br>
                                         <br>
                                         <div class="quinty">
-                                            <input type="number" value="1">
+                                            <input type="number" value="1" disabled>
                                         </div>
-                                        <div>
-                                        <a href="#." class="btn-round"><i class="icon-basket-loaded margin-right-5"></i> Thêm Vào Giỏ Hàng</a> 
-                                        </div>
+                                        <a href="{{ route('cart.add',$product->id) }}" class="btn-round"><i class="icon-basket-loaded margin-right-5"></i> Thêm Vào Giỏ Hàng</a>
+                                        <span class="btn btn-xs btn-round"> <i class="fa fa-eye"></i> {{ $product->so_luot_xem }}</span>
                                     </div>
                                 </div>
                             </div>

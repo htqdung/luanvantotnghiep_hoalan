@@ -59,20 +59,6 @@
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
                                              style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">120.000đ </div>
-
-                                        <!-- LAYER NR. 4 
-                                        <div class="tp-caption lfb tp-resizeme scroll"
-                                             data-x="left" data-hoffset="60"
-                                             data-y="center" data-voffset="80"
-                                             data-speed="800"
-                                             data-start="1300"
-                                             data-easing="Power3.easeInOut"
-                                             data-elementdelay="0.1"
-                                             data-endelementdelay="0.1"
-                                             data-endspeed="300"
-                                             data-scrolloffset="0"
-                                             style="z-index: 8;"><a href="#." class="btn-round big">Xem Ngay</a> </div>
-                                        -->
                                     </li>
 
                                     <!-- SLIDE  -->
@@ -121,20 +107,6 @@
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
                                              style="z-index: 5; font-size:36px; font-weight:800; color:#fff;  max-width: auto; max-height: auto; white-space: nowrap;">150.000đ </div>
-
-                                        <!-- LAYER NR. 4 
-                                        <div class="tp-caption lfb tp-resizeme scroll"
-                                             data-x="left" data-hoffset="60"
-                                             data-y="center" data-voffset="80"
-                                             data-speed="800"
-                                             data-start="1300"
-                                             data-easing="Power3.easeInOut"
-                                             data-elementdelay="0.1"
-                                             data-endelementdelay="0.1"
-                                             data-endspeed="300"
-                                             data-scrolloffset="0"
-                                             style="z-index: 8;"><a href="#." class="btn-round big">Xem Ngay</a> </div>
-                                        -->
                                     </li>
 
                                     <!-- SLIDE  -->
@@ -184,19 +156,6 @@
                                              data-endspeed="300"
                                              style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">130.000đ </div>
 
-                                        <!-- LAYER NR. 4 
-                                        <div class="tp-caption lfb tp-resizeme scroll"
-                                             data-x="left" data-hoffset="60"
-                                             data-y="center" data-voffset="80"
-                                             data-speed="800"
-                                             data-start="1300"
-                                             data-easing="Power3.easeInOut"
-                                             data-elementdelay="0.1"
-                                             data-endelementdelay="0.1"
-                                             data-endspeed="300"
-                                             data-scrolloffset="0"
-                                             style="z-index: 8;"><a href="#" class="btn-round big">Xem Ngay</a> </div>
-                                         -->
                                     </li>
                                 </ul>
                             </div>
@@ -219,8 +178,8 @@
 
                         <!-- Weekly Slaes  -->
                         <div class="week-sale-bnr">
-                            <h4>Chương Trình <span>Khuyến Mại!</span></h4>
-                            <p>Giảm giá đến 20%</p>
+                            <h4>Chương Trình <span>Khuyến Mại</span></h4>
+                            <p>--Giảm Giá Cực Sốc--</p>
                             <a href="{{ route('frontend.khuyenmai') }}" class="btn-round">Xem Ngay</a> </div>
                     </div>
                 </div>
@@ -253,7 +212,7 @@
                         <div class="media-left"> <i class="flaticon-operator"></i> </div>
                         <div class="media-body">
                             <h5>Hỗ Trợ 24/7</h5>
-                            <span>Hotline: (+100) 123 456 7890</span></div>
+                            <span>Hotline: (+84) 913 826 156</span></div>
                     </li>
                     <!-- Safe Payment -->
                     <li>
@@ -295,12 +254,41 @@
                                    ->get();
                             @endphp
                             @foreach($product4 as $itemNew)
+
+                                @php
+
+                                    $rag = \DB::table('tbl_danhgia')->where('sanpham_id',$itemNew->id)->avg('danh_gia');
+                                    $rag_count = \DB::table('tbl_danhgia')->where('sanpham_id',$itemNew->id)->count();
+
+                                @endphp
                                 <div class="product">
                                     <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" >
                                         <!-- Content -->
                                         <span class="tag">Lan Vanda</span> <a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="tittle">{{ $itemNew->ten_san_pham }}</a>
                                         <!-- Reviews -->
-                                        <p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">5 Đánh Giá</span></p>
+                                        <p class="rev">
+                                            <?php
+                                            $string_rag = '';
+                                            if ($rag)
+                                            {
+                                                for ($i = 1 ; $i <= $rag ; $i ++ )
+                                                {
+                                                    $string_rag .= '<i class="fa fa-star"></i>';
+                                                }
+
+                                                $stop = 5 - $rag ;
+                                                for ($i = 1 ; $i <= $stop ; $i ++ )
+                                                {
+                                                    $string_rag .= '<i class="fa fa-star-o"></i>';
+                                                }
+
+                                            }
+
+                                            ?>
+                                            {!! $string_rag !!}
+
+                                            <span class="margin-left-10">{{ $rag_count }} Đánh Giá</span>
+                                        </p>
                                         <div class="price">{{ number_format($itemNew->gia,0,",",".") }}đ</div>
                                         <a href="{{ route('cart.add',$itemNew->id) }}" class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
                                 </div>
@@ -322,9 +310,19 @@
                                ->limit(5)
                                ->where('tbl_sanpham_loai.loai_id',5)
                                ->get();
+
+
                         @endphp
+
                         <!-- Product -->
                             @foreach($product5 as $itemNew)
+
+                                @php
+
+                                    $rag = \DB::table('tbl_danhgia')->where('sanpham_id',$itemNew->id)->avg('danh_gia');
+                                    $rag_count = \DB::table('tbl_danhgia')->where('sanpham_id',$itemNew->id)->count();
+
+                                @endphp
                                 <div class="product">
                                     <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" >
                                         <!-- Content -->
@@ -353,14 +351,45 @@
                                ->limit(5)
                                ->get();
                         @endphp
+
+
                         <!-- Product -->
                             @foreach($product9 as $itemNew)
+
+                                @php
+
+                                    $rag = \DB::table('tbl_danhgia')->where('sanpham_id',$itemNew->id)->avg('danh_gia');
+                                    $rag_count = \DB::table('tbl_danhgia')->where('sanpham_id',$itemNew->id)->count();
+
+                                @endphp
                                 <div class="product">
                                     <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" >
                                         <!-- Content -->
                                         <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="tittle">{{ $itemNew->ten_san_pham }}</a>
                                         <!-- Reviews -->
-                                        <p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">5 Đánh Giá</span></p>
+                                        <p class="rev">
+                                            <?php
+                                            $string_rag = '';
+                                            if ($rag)
+                                            {
+                                                for ($i = 1 ; $i <= $rag ; $i ++ )
+                                                {
+                                                    $string_rag .= '<i class="fa fa-star"></i>';
+                                                }
+
+                                                $stop = 5 - $rag ;
+                                                for ($i = 1 ; $i <= $stop ; $i ++ )
+                                                {
+                                                    $string_rag .= '<i class="fa fa-star-o"></i>';
+                                                }
+
+                                            }
+
+                                            ?>
+                                            {!! $string_rag !!}
+
+                                            <span class="margin-left-10">{{ $rag_count }} Đánh Giá</span>
+                                        </p>
                                         <div class="price">{{ number_format($itemNew->gia,0,",",".") }}đ</div>
                                         <a href="{{ route('cart.add',$itemNew->id) }}" class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
                                 </div>
@@ -395,13 +424,41 @@
                     </div>
 
                     @foreach($productSale as $sale)
+
+                        @php
+
+                            $rag = \DB::table('tbl_danhgia')->where('sanpham_id',$itemNew->id)->avg('danh_gia');
+                            $rag_count = \DB::table('tbl_danhgia')->where('sanpham_id',$itemNew->id)->count();
+
+                        @endphp
                         <div class="product">
                             <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $sale->ten_hinh }}" alt="" >
                                 <!-- Content -->
                                 <span class="sale-tag">-10%</span>
                                 <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($sale->ten_san_pham),$sale->id]) }}" class="tittle">{{ $sale->ten_san_pham }}</a>
-                                <!-- Reviews -->
-                                <p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">5 Đánh Giá</span></p>
+                                <p class="rev">
+                                    <?php
+                                    $string_rag = '';
+                                    if ($rag)
+                                    {
+                                        for ($i = 1 ; $i <= $rag ; $i ++ )
+                                        {
+                                            $string_rag .= '<i class="fa fa-star"></i>';
+                                        }
+
+                                        $stop = 5 - $rag ;
+                                        for ($i = 1 ; $i <= $stop ; $i ++ )
+                                        {
+                                            $string_rag .= '<i class="fa fa-star-o"></i>';
+                                        }
+
+                                    }
+
+                                    ?>
+                                    {!! $string_rag !!}
+
+                                    <span class="margin-left-10">{{ $rag_count }} Đánh Giá</span>
+                                </p>
                                 <div class="price">{{ number_format($sale->gia,0,",",".") }}đ</div>
                                 <a href="{{ route('cart.add',$sale->id) }}" class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
                         </div>
@@ -423,13 +480,42 @@
                 <div class="item-col-5">
 
                     @foreach($productAll as $all)
+
+                        @php
+
+                            $rag = \DB::table('tbl_danhgia')->where('sanpham_id',$all->id)->avg('danh_gia');
+                            $rag_count = \DB::table('tbl_danhgia')->where('sanpham_id',$all->id)->count();
+
+                        @endphp
                         <div class="product">
                             <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $all->ten_hinh }}" alt="" >
                                 <span style="background-color: #0088cc" class="sale-tag">Mới</span>
                                 <!-- Content -->
                                 <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($all->ten_san_pham),$all->id]) }}" class="tittle">{{ $all->ten_san_pham }}</a>
                                 <!-- Reviews -->
-                                <p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">5 Đánh Giá</span></p>
+                                <p class="rev">
+                                    <?php
+                                    $string_rag = '';
+                                    if ($rag)
+                                    {
+                                        for ($i = 1 ; $i <= $rag ; $i ++ )
+                                        {
+                                            $string_rag .= '<i class="fa fa-star"></i>';
+                                        }
+
+                                        $stop = 5 - $rag ;
+                                        for ($i = 1 ; $i <= $stop ; $i ++ )
+                                        {
+                                            $string_rag .= '<i class="fa fa-star-o"></i>';
+                                        }
+
+                                    }
+
+                                    ?>
+                                    {!! $string_rag !!}
+
+                                    <span class="margin-left-10">{{ $rag_count }} Đánh Giá</span>
+                                </p>
                                 <div class="price">{{ number_format($all->gia,0,",",".") }}đ</div>
                                 <a href="{{ route('cart.add',$all->id) }}" class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
                         </div>
@@ -446,8 +532,9 @@
                         <h3>ĐĂNG KÝ NHẬN THÔNG TIN MỚI NHẤT!</h3>
                     </div>
                     <div class="col-md-6">
-                        <form>
-                            <input type="email" placeholder="Nhập Email của bạn vào đây...">
+                        <form action="{{ route('send_email') }}" method="POST">
+                            <input type="email" name="email" placeholder="Nhập Email của bạn vào đây..." required>
+                            <input type="hidden" value="{{ csrf_token() }}" name="_token">
                             <button type="submit">Đăng Ký</button>
                         </form>
                     </div>
