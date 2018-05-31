@@ -66,7 +66,7 @@
                           <h4 class="modal-title">{{ $item->ten_chuong_trinh }}</h4>
                          <label for="">Hình quảng cáo</label>
                             <div style="margin-left: 20%; padding-top: 10px " >
-                                <a href="/luanvantotnghiep_hoalan/public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>"> <img src="/luanvantotnghiep_hoalan/public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>" class="img-rounded" alt="Hình đại diện" style="height: 200px; width: 100%">  </a>
+                                <a href="/public/khuyenmai/<?= $item->ten_hinh_anh; ?>"> <img src="/public/khuyenmai/<?= $item->ten_hinh_anh; ?>" class="img-rounded" alt="<?= $item->ten_chuong_trinh;  ?>" style="height: 200px; width: 100%">  </a>
                             </div>
                         </div>
                         <div class="modal-body">
@@ -144,7 +144,7 @@
         url: path,
         type: 'GET'
     })
-   .done(function(argument) {
+   .done(function(argument) { 
         var dung = new String()
         argument.forEach(function(data){
           dung = '<tr><td>'+ data.id_sanpham +'</td><td>'+data.ten_san_pham +'</td></tr>';
@@ -153,6 +153,8 @@
         })
     })
     
+    
+   
     
   }
   function getTable1() {

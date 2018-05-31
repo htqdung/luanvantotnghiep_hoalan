@@ -1,7 +1,5 @@
 @extends('admin.layout.index')
 @section('main-content')
-
-
   <!-- left column -->
 <div class="col-md-12">
      <!-- general form elements -->
@@ -123,11 +121,14 @@
                             
                             <div>                               
                               <div class="col-xs-12">
-                                <input multiple="multiple" type="file" name="ten_hinh[]"  class="form-control" id="id-input-file-3" />
+                                <input multiple="multiple" type="file" name="ten_hinh[]" accept="image/*"  class="form-control" id="id-input-file-3" />
                               </div>
                                 <label>
                                   <input type="checkbox" name="" id="ten_hinh" class="ace" />
                                   <span class="lbl"> Chọn ảnh</span>
+                                  <input type="number"  value="" placeholder="Nhập chiều dài ảnh" name="ngang">
+                                  <input type="number"  value="" placeholder="Nhập chiều dọc ảnh" name="doc">
+                                  <br><small><i>Lưu ý: </i> Kích cỡ ảnh mặc định 1170 x 500, Chọn kích cỡ ảnh dùng để hiển thị slider ảnh</small>
                                 </label>
                             </div>                             
                            </div>

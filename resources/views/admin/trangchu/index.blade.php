@@ -134,10 +134,10 @@
 			          	<thead>
 			              <tr style="margin: 0px">
 			                <th style="width: 5%">Mã số</th>
-			                <th style="width: 10%">Tên người dùng</th>
+			                <th style="width: 25%">Tên người dùng</th>
 			                <th style="width: 15%">Ngày liên hệ</th>
-			                <th style="width: 25%">Tiêu đề</th> 
-			                <th style="width: 10%%">Chức năng</th>                 
+			                <th style="width: 33%">Tiêu đề</th> 
+			                <th style="width: 15%%">Chức năng</th>                 
 			              </tr>
 			          	</thead>
 			           	<tbody>

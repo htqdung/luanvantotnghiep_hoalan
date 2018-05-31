@@ -1,4 +1,15 @@
   <?php
+           
+ 
+Route::get('dang-nhap-admin','adminController@getdangnhap');
+
+Route::post('dang-nhap-admin','adminController@postdangnhap');
+
+           
+ 
+           
+
+
 Route::get('tsst', 'adminController@DoanhThuBanHang12Thang');
 Route::get('qt-admin', 'adminController@getTest')->name('MO_GIAO_DIEN_ADMIN');
 //danh mục loài hoa
@@ -46,6 +57,8 @@ Route::get('qt-danh-sach-nguoi-dung', 'adminController@getnguoidung')->name('DAN
 Route::get('qt-danh-sach-nguoi-dung-admin', 'adminController@getnguoidungadmin')->name('DANH_SACH_NGUOI_DUNG_ADMIN');
 Route::get('them-nguoi-dung', 'adminController@themnguoidung')->name('THEM_NGUOI_DUNG');
 Route::get('chinh-sua-nguoi-dung/{id}', 'adminController@chinhsuanguoidung')->name('CHINH_SUA_NGUOI_DUNG');
+
+Route::post('chinh-sua-nguoi-dung/{id}', 'adminController@postchinhsuanguoidung');
 Route::get('qt-chi-tiet-nguoi-dung/{id}', 'adminController@ChiTietNguoiDung')->name('CHI_TIET_NGUOI_DUNG');
 Route::get('qt-xoa-nguoi-dung/{id}', 'adminController@xoanguoidung')->name('XOA_NGUOI_DUNG');
 //khuyến mãi
@@ -115,7 +128,8 @@ Route::get('qt-xoa-lien-he/{id}', 'adminController@XoaLienHe')->name('XOA_LIEN_H
 //ajax
 Route::get('ajax-lay-danh-mua-loai-hoa/{id}', 'adminController@layDanhMucLoaiHoa');
 Route::get('ajax-lay-danh-sach-san-pham/{id}', 'adminController@laySanPhamChoKhuyenMai');
-
+Route::get('ajax-xoa-anh-sp/{id}', 'adminController@XoaAnhSanPham')->name('XoaAnhSanPham');
+Route::get('ajax-lay-hinh-anh-sp/{id}', 'adminController@layHinhAnhSanPham');
 
 
 ?>

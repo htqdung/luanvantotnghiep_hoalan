@@ -63,7 +63,7 @@
                               
 
                                 @if($item2->loai_id  == $item->loai_id)
-                                <option selected="selected" value="{{ $item->sanphamloai_id }}">{{ $item->ten_loai }}</option>
+                                <option selected="selected" value="{{ $item2->loai_id }}">{{ $item->ten_loai }}</option>
                                 @else
                                 <option value="{{ $item2->loai_id  }}">{{ $item2->ten_loai }}</option>
                                 @endif
@@ -74,8 +74,12 @@
                     
                     <div class="col-md-6 form-group" >
                         <label for="gia"><i>Đơn giá</i></label>
-                        <input type="hidden" value="{{ $data_gia[0]->dongia_id }}" name="dongia_id">
-                        <input type="number" min="0" class="form-control" name="gia" value="{{ $data_gia[0]->gia }}" id="gia" placeholder="" style="margin-right: 0; ">
+                        
+                        @foreach ($data_gia as $element)                            
+                            <input type="hidden" value="{{ $element->dongia_id }}" name="dongia_id">
+                            <input type="number" min="0" class="form-control" name="gia" value="{{ $element->gia }}" id="gia" placeholder="" style="margin-right: 0; ">
+                        @endforeach
+                        
                     </div> 
                     <div class="col-md-6 form-group" >
                         <label for="diem_thuong"><i>Điểm thưởng</i></label>
@@ -108,7 +112,7 @@
                     <div class="col-md-12 form-group" style="padding-top: 20px" >
                       <label for="content" >Nội dung chi tiết: </label>
                       <textarea style="height: 500px" id="content" >{{ $data_sp->mo_ta }}</textarea>
-                      <input type="hidden" name="mo_ta" value=" {{ old('mo_ta') }}"  id="content2">
+                      <input type="hidden" name="mo_ta" value=" {{ $data_sp->mo_ta }}"  id="content2">
                       <script src="../vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
                       <script>
                           
@@ -123,27 +127,36 @@
                       </script>
                     </div>  
                     <div class="col-md-12" style="margin-left: 0px;">
+                  
+                            <div class="widget-box">
+                              <div class="widget-header">
+                                <h4 class="widget-title">Chọn ảnh</h4>
+                              </div>
+                            <br>
+                            
+                            <div>                               
+                              <div class="col-xs-12">
+                                <input multiple="multiple" type="file" name="ten_hinh[]"  class="form-control" id="id-input-file-3" />
+                              </div>
+                                <label>
+                                  <input type="checkbox" name="" id="ten_hinh" class="ace" />
+                                  <span class="lbl"> Chọn ảnh</span>
+                                  <input type="number"  value="" placeholder="Nhập chiều dài ảnh" name="ngang">
+                                  <input type="number"  value="" placeholder="Nhập chiều dọc ảnh" name="doc">
+                                  <br><small><i>Lưu ý: </i> Kích cỡ ảnh mặc định 1170 x 500, Chọn kích cỡ ảnh dùng để hiển thị slider ảnh</small>
+                                </label>
+                            </div>                             
+                           </div>
+                           <br>
                       <ul class="ace-thumbnails clearfix">
                         @foreach($data_hinhanh as $item)
                         <li>
-                          <a href="../sanpham/<?php echo $item->ten_hinh; ?>" title="Photo Title" data-rel="colorbox">
-                            <img width="150" height="150" alt="150x150" src="/luanvantotnghiep_hoalan/public/sanpham/<?= $item->ten_hinh; ?>" />
+                          <a href="/public/sanpham/<?php echo $item->ten_hinh; ?>" title="Photo Title" data-rel="colorbox">
+                            <img width="150" height="150" alt="150x150" src="/public/sanpham/<?= $item->ten_hinh; ?>" />
                           </a>
                           <div class="tools">
-                            <a href="#">
-                              <i class="ace-icon fa fa-link"></i>
-                            </a>
-
-                            <a href="#">
-                              <i class="ace-icon fa fa-paperclip"></i>
-                            </a>
-
-                            <a href="#">
-                              <i class="ace-icon fa fa-pencil"></i>
-                            </a>
-
-                            <a href="#">
-                              <i class="ace-icon fa fa-times red"></i>
+                            <a href="{{ route('XoaAnhSanPham', $item->id ) }}">
+                              <i class="ace-icon fa fa-times red "  id="delete()"></i>
                             </a>
                           </div>
                         </li>
@@ -151,64 +164,7 @@
                       </ul>
                     </div>
                     <div class="clearfix"></div>
-                    {{-- <div class="col-xs-12 form-group" >
-                      <div class="table-header">
-                        DANH MỤC HOA CỦA SẢN PHẨM
-                      </div>
-                      <div>
-                        <table id="dynamic-table" class="table table-striped table-bordered table-hover">
-                          <thead>
-                            <tr>
-                              <th>ID</th>
-                              <th>Tên hoa</th>
-                              <th>Tên khoa học</th>
-                              <th>Số lượng</th>
-                              <th>Xoá</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            @foreach ($data_dmhoa as $item)
-                            <tr>
-                              
-                                  <td>{{ $item->id_loai }}</td>
-                                  <td>{{ $item->ten_loai }}</td>
-                                  <td>{{ $item->ten_khoa_hoc }}</td>
-                                  <td>{{ $item->so_luong }}</td>
-                              
-                                  <td>
-                                    <div class="hidden-sm hidden-xs action-buttons">
-                                      <a class="red" href="#">
-                                        <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                                      </a>
-                                    </div>
-
-                                    <div class="hidden-md hidden-lg">
-                                      <div class="inline pos-rel">
-                                        <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                          <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
-                                        </button>
-
-                                        <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                          <li>
-                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-                                              <span class="red">
-                                                <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                              </span>
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </td>
-
-                            </tr>
-                            @endforeach
-                          </tbody>
-                        </table> 
-                      </div>
-                    </div> --}}
-
-                          {{-- HẾT TABLE --}}
+                   
                     <button type="submit" class="btn btn-white btn-primary" style="float: right; margin-top: 15px; margin-right: 4.2%"><i class="ace-icon fa fa-floppy-o bigger-120 blue"></i> Lưu lại</button>
                   </div>
 

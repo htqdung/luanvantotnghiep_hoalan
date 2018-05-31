@@ -73,7 +73,13 @@
                       <label>Chương trình khuyến mại</label>
                        <select  id="state" multiple="multiple"  name="ten_chuong_trinh[]" class="col-xs-9 col-sm-12 form-control col-md-12 col-lg-12 select2" data-placeholder="">
                           @foreach ($data_khuyenmai as $item)
-                            <option value="{{ $item->ten_chuong_trinh }}"></option>
+                            @foreach ($khuyenmai_quatang as $element)
+                              @if($element->id == $item->id)
+                                <option selected value="{{ $item->id }}">{{ $item->ten_chuong_trinh }}</option>  
+                              @else
+                                <option value="{{ $item->ten_chuong_trinh }}"></option>  
+                              @endif
+                            @endforeach
                           @endforeach
                       </select>
                

@@ -12,13 +12,17 @@ use DateTime;
 use App\HinhThucKhuyenMai;
 use App\ChuongTrinhKhuyenMai;
 use App\UuDai;
+use Illuminate\Support\Facades\Session;
 use App\HinhThucUuDai;
 use App\QuaTang;
 use Carbon\Carbon;
 use App\LienHe;
+use App\NguoiDung;
 use App\Tags;
 use App\KhuyenMaiSanPham;
 use App\SanPham_Loai;
+use App\ThongTinLienHe;
+use App\DiaChi;
 // use App\khuyenmai_sanpham;
 use App\Http\Requests\ThemTagsRequest;
 use App\Http\Requests\ThemChiRequest;
@@ -28,8 +32,58 @@ use App\Http\Requests\ThemDacDiemRequest;
 use App\Http\Requests\ThemDanhSachSanPhamRequest;
 use App\Http\Requests\ChinhSuaDacDiemRequest;
 
+use Validator;
+
 class adminController extends Controller
 {
+
+    public function getdangnhap()
+    {
+        return view('admin.modules.dangnhapadmin.dangnhap');
+    }
+    public function postdangnhap(Request $request)
+    {
+       
+            $rules = [
+                        'username'=>'required',
+                    
+                        'password'=>'required',
+            ];
+            $messages = [
+                        'username.required'=>'Tài khoản không được để trống',
+                        
+                        'password.required'=>'Mật khẩu không được để trống',
+            ];
+            $Validator = Validator::make($request->all(),$rules,$messages);
+ 
+            if($Validator->fails())
+            {
+                return redirect()->back()->withErrors($Validator);
+            }
+            else
+            {
+                    $arr = [
+                        'username'=>$request->username,
+                        'password'=>$request->password,
+                    ];
+                    if(DB::table('tbl_nguoidung')->where($arr)->count()==1)
+                    {
+                        $data = DB::table('tbl_nguoidung')->where($arr)->first();
+                        Session::flash('success','đăng nhập thành công');
+                        Session::put('login',$data);
+                        return redirect()->intended('qt-admin');
+                    }
+                    else
+                    {
+                        return redirect()->back()->withErrors("Bạn không có quyền truy cập!");
+                    }
+            }
+        
+    }
+        
+    
+    
+
     public function SanPhamXemNhieu()
     {
         $sanphamxemnhieu = DB::table('tbl_sanpham')
@@ -742,13 +796,10 @@ class adminController extends Controller
         ->orderBy('id_sanpham','desc')
         ->paginate(5);
         
-         $hinhanhsp = DB::table('tbl_hinhanh')
-        ->join('tbl_sanpham', 'tbl_hinhanh.sanpham_id' ,'=', 'tbl_sanpham.id')
-        ->select('ten_hinh')
-        ->get();
+        
 
        
-    	return view('admin.modules.hoalan.danhsachsanpham',['data'=>$sanpham, 'data_hinhanh'=>$hinhanhsp]);
+    	return view('admin.modules.hoalan.danhsachsanpham',['data'=>$sanpham]);
     }
 
 
@@ -760,15 +811,19 @@ class adminController extends Controller
         ->select('ten_loai')
         ->where('tbl_sanpham.id', '=', $id)
         ->get();
-
-        $tmp [] = NULL;
-        foreach ($danhmuahoachosanpham as $value) {
-            $tmp = $value->ten_loai;
-        }
-
-        return $tmp;
+        return $danhmuahoachosanpham;
     }
 
+
+    public function layHinhAnhSanPham($id)
+    {
+         $hinhanhsp = DB::table('tbl_hinhanh')
+        ->join('tbl_sanpham', 'tbl_hinhanh.sanpham_id' ,'=', 'tbl_sanpham.id')
+        ->select('ten_hinh')
+        ->where('sanpham_id','=', $id)
+        ->get();
+        return $hinhanhsp;
+    }
 
 
 
@@ -808,7 +863,18 @@ class adminController extends Controller
         $dongia->gia=$request->input('gia');
         $dongia->save();
 
-
+        $chieungang = 1170;
+        $chieudoc = 500;
+            
+        if($request->input('ngang') != NULL ||$request->input('doc') != NULL) {
+            $chieungang = $request->input('ngang');
+            $chieudoc = $request->input('doc');
+        }
+        else
+        {
+            $chieungang = 1170;
+            $chieudoc = 500;
+        }
 
 
 
@@ -816,23 +882,34 @@ class adminController extends Controller
         $timedate = date("h_i_s");
         $time = '_'.$date.'_'.$timedate;
         $duong_dan   = public_path().'\sanpham\\';
-        // return $request->file('ten_hinh');
-        // $file_anh = $request->file('ten_hinh');
-        if( $file_anh = $request->file('ten_hinh'))
-        {
-            for($i = 0; $i < sizeof($file_anh); $i++)
+        if ($request->hasFile('ten_hinh')){
+            if( $file_anh = $request->file('ten_hinh'))
             {
-                $hinh_anh = \Image::make($file_anh[$i]);
-                $hinh_anh->resize(286,400);
-                $hinh_anh->save($duong_dan.'sanpham'.$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension());
-                $hinh_anh = new HinhAnh();
-                $hinh_anh->ten_hinh = "sanpham".$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension();
-                $hinh_anh->sanpham_id= $tmp2;
-                $hinh_anh->save();         
+                for($i = 0; $i < sizeof($file_anh); $i++)
+                {
+                    if($i == 0)
+                    {
+                        $hinh_anh = \Image::make($file_anh[$i]);
+                        $hinh_anh->resize($chieungang,$chieudoc);
+                        $hinh_anh->save($duong_dan.'sanpham'.$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension());
+                        $hinh_anh = new HinhAnh();
+                        $hinh_anh->ten_hinh = "sanpham".$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension();
+                        $hinh_anh->sanpham_id= $tmp2;
+                        $hinh_anh->save();             
+                    }
+                    else{
+                        $hinh_anh = \Image::make($file_anh[$i]);
+                        $hinh_anh->resize(286,400);
+                        $hinh_anh->save($duong_dan.'sanpham'.$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension());
+                        $hinh_anh = new HinhAnh();
+                        $hinh_anh->ten_hinh = "sanpham".$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension();
+                        $hinh_anh->sanpham_id= $tmp2;
+                        $hinh_anh->save();            
+                    }
 
+                }
             }
         }
-    
 
 
         $tags = new Tags();
@@ -897,13 +974,13 @@ class adminController extends Controller
         ->select('tbl_dongia.gia', 'tbl_dongia.id as dongia_id', 'ngay_ap_dung')
         ->join('tbl_sanpham', 'tbl_sanpham.id', '=', 'tbl_dongia.sanpham_id')
         ->orderBy('ngay_ap_dung', 'DESC')
-                
-        ->get();
+        ->where('sanpham_id','=', $id)
+        ->limit(1)->get();
 
 
         $hinhanhsp = DB::table('tbl_hinhanh')
         ->join('tbl_sanpham', 'tbl_hinhanh.sanpham_id' ,'=', 'tbl_sanpham.id')
-        ->select('ten_hinh')
+        ->select('tbl_hinhanh.id','ten_hinh')
         ->where('tbl_hinhanh.sanpham_id', '=', $id)
         ->get();
         // return $sanpham;
@@ -922,41 +999,60 @@ class adminController extends Controller
         $sanpham->so_luot_mua = 0;
        
         $sanpham->save();
-    
+        
         
         $dongia_id = $request->input('dongia_id');
         $dongia = DonGia::findOrFail($dongia_id);
+
+        // return $dongia_id;
         $dongia->sanpham_id=$id;
         $dongia->gia=$request->input('gia');
         $dongia->save();
-
-
-
-
-
-        // $date = date("Y_m_d");
-        // $timedate = date("h_i_s");
-        // $time = '_'.$date.'_'.$timedate;
-        // $duong_dan   = public_path().'\sanpham\\';
-        // // return $request->file('ten_hinh');
-        // // $file_anh = $request->file('ten_hinh');
-        // if( $file_anh = $request->file('ten_hinh'))
-        // {
-        //     for($i = 0; $i < sizeof($file_anh); $i++)
-        //     {
-        //         $hinh_anh = \Image::make($file_anh[$i]);
-        //         $hinh_anh->resize(286,400);
-        //         $hinh_anh->save($duong_dan.'sanpham'.$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension());
-        //         $hinh_anh = new HinhAnh();
-        //         $hinh_anh->ten_hinh = "sanpham".$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension();
-        //         $hinh_anh->sanpham_id= $tmp2;
-        //         $hinh_anh->save();         
-
-        //     }
-        // }
     
-
-
+        $date = date("Y_m_d");
+        $timedate = date("h_i_s");
+        $time = '_'.$date.'_'.$timedate;
+        $duong_dan   = public_path().'\sanpham\\';
+        $chieungang = 1170;
+        $chieudoc = 500;
+            
+        if($request->input('ngang') != NULL || $request->input('doc') != NULL) {
+            $chieungang = $request->input('ngang');
+            $chieudoc = $request->input('doc');
+        }
+        else
+        {
+            $chieungang = 1170;
+            $chieudoc = 500;
+        }
+        if ($request->hasFile('ten_hinh')){
+            if( $file_anh = $request->file('ten_hinh'))
+            {
+                for($i = 0; $i < sizeof($file_anh); $i++)
+                {
+                    if($i==0)
+                    {
+                        $hinh_anh = \Image::make($file_anh[$i]);
+                        $hinh_anh->resize($chieungang,$chieudoc);
+                        $hinh_anh->save($duong_dan.'sanpham'.$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension());
+                        $hinh_anh = new HinhAnh();
+                        $hinh_anh->ten_hinh = "sanpham".$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension();
+                        $hinh_anh->sanpham_id= $id;
+                        $hinh_anh->save();   
+                    }
+                    else
+                    {
+                        $hinh_anh = \Image::make($file_anh[$i]);
+                        $hinh_anh->resize(286,400);
+                        $hinh_anh->save($duong_dan.'sanpham'.$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension());
+                        $hinh_anh = new HinhAnh();
+                        $hinh_anh->ten_hinh = "sanpham".$time.$i.'.'.$file_anh[$i]->getClientOriginalExtension();
+                        $hinh_anh->sanpham_id= $id;
+                        $hinh_anh->save();             
+                    }
+                }
+            }
+        }
         // $tags->ten_tags=$request->input('ten_tags');
         $id_tag = DB::table('tbl_tags')->where('sanpham_id', $id)->select('id')->get();
         $id_sp_loai = DB::table('tbl_sanpham_loai')->where('sanpham_id', $id)->select('id')->get();
@@ -972,20 +1068,18 @@ class adminController extends Controller
         // return $id_sp_loai;
         // 
         
-               }
-                $tags = "".$request->input('ten_tags');
+        }
+        $tags = "".$request->input('ten_tags');
         $tag_name = explode(",", $tags);
 
         $loai= $request->input('themloai');
         
-        // return $loai[0];
         for($j = 0; $j < sizeof($loai); $j++ )
         {
-            // echo "VAO DAY";
-            // $dpl = new SanPham_Loai();
-            // $dpl->loai_id = $loai[$j];
-            // $dpl->sanpham_id = $id;
-            // $dpl->save();
+            $tag = new SanPham_Loai();
+            $tag->loai_id = $loai[$j];
+            $tag->sanpham_id = $id;
+            $tag->save();
         }
 
         $tags_save = [];
@@ -998,13 +1092,10 @@ class adminController extends Controller
         }
         return redirect()->intended('qt-danh-sach-san-pham')->with('message','Chỉnh sửa sản phẩm '.$request->input('ten_san_pham').' thành công!');
 
-      
+    // return "DUNG"      
 
 
     }
-
-
-
     public function chitietsanpham($id)
     {
         $danhmuahoachosanpham = DB::table('tbl_loai')
@@ -1031,10 +1122,13 @@ class adminController extends Controller
 
         $hinhanhsp = DB::table('tbl_hinhanh')
         ->leftJoin('tbl_sanpham', 'tbl_hinhanh.sanpham_id' ,'=', 'tbl_sanpham.id')
-        ->select('ten_hinh')->where('tbl_sanpham.id', '=', $id)->get();
+        ->select('ten_hinh')
+        ->where('tbl_sanpham.id', '=', $id)
+        ->get();
         // return $danhmuahoachosanpham;
         // return $sanpham;
         // return $hinhanhsp;
+        
         return view('admin.modules.hoalan.chitietsanpham', ['data_hoa'=>$danhmuahoachosanpham, 'data_sp'=>$sanpham, 'data_hinhanh'=>$hinhanhsp, 'data_danhgia'=>$danhgia]);
     }
    
@@ -1263,7 +1357,45 @@ class adminController extends Controller
     }
     public function chinhsuanguoidung($id)
     {
-        return view('admin.modules.nguoidung.chinhsuanguoidung');
+        
+         $nguoidung = NguoiDung::findOrFail($id);
+         $thongtinlienhe = DB::table('tbl_thongtinlienhe')
+        ->join('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
+        ->join('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
+        ->join('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
+        ->join('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
+        ->select('tbl_thongtinlienhe.id','ten','so_dien_thoai', 'email','ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','so_nha', 'ten_duong')
+        ->get();
+       
+         return view('admin.modules.nguoidung.chinhsuanguoidung', ['data'=>$nguoidung, 'thongtinlienhe'=>$thongtinlienhe]);
+    }
+    public function postchinhsuanguoidung(Request $request, $id)
+    {
+        
+        $idthongtinlienhe = $request->input('thongtinlienhe_id')   ;
+        // return $idthongtinlienhe;
+        $ThongTinLienHe_ten=$request->input('ten');
+        $ThongTinLienHe_so_dien_thoai=$request->input('so_dien_thoai');
+        $ThongTinLienHe_email=$request->input('email');
+        ThongTinLienHe::where('id', $idthongtinlienhe)
+        ->update(['ten'=>$ThongTinLienHe_ten,'so_dien_thoai'=>$ThongTinLienHe_so_dien_thoai, 'email'=>$ThongTinLienHe_email]);
+        $iddiachi = DB::table('tbl_thongtinlienhe')
+        ->select('diachi_id')
+        ->where('tbl_thongtinlienhe.id', '=', $idthongtinlienhe)
+        ->get();
+
+        foreach ($iddiachi as $value) {
+            $iddiachi =$value->diachi_id;
+        }
+        // return $iddiachi;
+        $iddiachi = $iddiachi*1;
+        $so_nha=$request->input('so_nha');
+        $ten_duong=$request->input('ten_duong');
+        DiaChi::where('id', $iddiachi)
+        ->update(['so_nha'=>$so_nha,'ten_duong'=>$ten_duong]);
+        $mss = 'Hoàn tất, Người dùng '.$ThongTinLienHe_ten.' đã được cập nhật! ';
+        return redirect()->intended('qt-danh-sach-khuyen-mai')->with('message', $mss);
+        return redirect()->intended('qt-danh-sach-nguoi-dung')->with('message', $mss);
     }
     public function ChiTietNguoiDung($id)
     {
@@ -1431,27 +1563,80 @@ class adminController extends Controller
         ->orderBy('tbl_chuongtrinhkhuyenmai.id', 'DESC')
         ->get();
 
-        $danhsachsanpham = DB::table('tbl_sanpham')
+        $danhsachsanphamkhuyenmai = DB::table('tbl_sanpham')
         ->join('tbl_khuyenmai_sanpham', 'tbl_khuyenmai_sanpham.sanpham_id','=','tbl_sanpham.id')
         ->join('tbl_chuongtrinhkhuyenmai', 'tbl_khuyenmai_sanpham.chuongtrinhkhuyenmai_id','=','tbl_chuongtrinhkhuyenmai.id')
         ->select('tbl_sanpham.id as id_sanpham','ten_san_pham')
         ->where('tbl_chuongtrinhkhuyenmai.id','=',$id)
         ->get();
+        $tatcasanpham = DB::table('tbl_sanpham')
+        ->select('tbl_sanpham.id as id_sanpham_tatca','ten_san_pham')
+        ->get();
         // return $chuongtrinhkhuyenmai;
-      return view('admin.modules.khuyenmai.chinhsuakhuyenmai' ,['data'=>$chuongtrinhkhuyenmai, 'sanpham'=>$danhsachsanpham]);
+      return view('admin.modules.khuyenmai.chinhsuakhuyenmai' ,['data'=>$chuongtrinhkhuyenmai, 'danhsachsanphamkhuyenmai'=>$danhsachsanphamkhuyenmai, 'tatcasanpham'=>$tatcasanpham]);
     }
 
 
     public function postChinhsuakhuyenmai(Request $request, $id)
     {
+        DB::table('tbl_khuyenmai_sanpham')->where('chuongtrinhkhuyenmai_id', $id)->delete();
         $khuyenmai = ChuongTrinhKhuyenMai::findOrFail($id);
         $khuyenmai->ten_chuong_trinh=$request->input('ten_hinh_thuc');
         $khuyenmai->ti_le_giam_gia=$request->input('ti_le_giam_gia');
-        $khuyenmai->ten_hinh_anh=$request->input('ten_hinh_anh');
         $khuyenmai->ngay_bat_dau=$request->input('ngay_bat_dau');
         $khuyenmai->ngay_ket_thuc=$request->input('ngay_ket_thuc');
+        
+        if ($request->hasFile('thangcho')){
+        $ngang= $request->input('ngang');
+        $doc=$request->input('doc');
+        if($ngang = null || $ngang < 0)
+        {
+            $ngang = 1366;
+        }
+        if($doc = null || $doc < 0)
+        {
+            $doc = 500;
+        }
+        $date = date("Y_m_d");
+        $timedate = date("h_i_s");
+        $time = '_'.$date.'_'.$timedate;
+        $duong_dan   = public_path().'\khuyenmai\\';
+        $file_anh = $request->file('thangcho');
+        $hinh_anh = \Image::make($file_anh);
+        $hinh_anh->resize($ngang,$doc);
+        $hinh_anh->save($duong_dan.'khuyenmai'.$time.'.'.$file_anh->getClientOriginalExtension());
+        $khuyenmai->ten_hinh_anh = "khuyenmai".$time.'.'.$file_anh->getClientOriginalExtension();
+        }
         $khuyenmai->save();
-        return  redirect()->intended('qt-danh-sach-khuyen-mai');
+
+        $sl_khuyenmai = DB::table('tbl_chuongtrinhkhuyenmai')
+        ->select('id')
+        ->orderBy('id','desc')
+        ->first();
+        $tmp1 = json_encode($sl_khuyenmai);
+        $tmp =  ltrim($tmp1, '{"id":');
+        // $tmp = str_replace($tmp1,'{"id":', '');
+        $tmp2 = rtrim($tmp,'}');
+        // return $tmp2;
+
+
+        $id_sanpham = $request->input('ten_san_pham');
+        // return $id_sanpham;
+
+        // // $id_sp = explode(",",$id_sanpham);
+        //     // $tag_name = explode(",", $tags);
+        for($i= 0; $i < sizeof($id_sanpham); $i++){
+            $sanpham_khuyenmai = new KhuyenMaiSanPham();
+            $sanpham_khuyenmai->sanpham_id = $id_sanpham[$i];
+            $sanpham_khuyenmai->chuongtrinhkhuyenmai_id = $tmp2;
+            // echo $tmp2.",";
+            $sanpham_khuyenmai->save();
+            
+            // echo  $id_sanpham[$i];
+        }
+        $tenctr = $request->input('ten_hinh_thuc');
+         $mss = 'Hoàn tất, Chương trình khuyến mại '.$tenctr.' đã được chỉnh sửa! ';
+        return redirect()->intended('qt-danh-sach-khuyen-mai')->with('message', $mss);
     }
     
 
@@ -1620,22 +1805,31 @@ class adminController extends Controller
     public function chinhsuaquatang($id)
     {
         $quatang = DB::table('tbl_quatang')
-        ->select('tbl_quatang.id','ten_qua_tang','so_luong','ten_chuong_trinh')
-          ->join('tbl_chuongtrinhkhuyenmai', 'tbl_chuongtrinhkhuyenmai.id', '=', 'tbl_quatang.chuongtrinhkhuyenmai_id')
-       ->orderBy('tbl_quatang.id', 'DESC')
+        ->select('tbl_quatang.id','ten_qua_tang','so_luong')
+        ->orderBy('tbl_quatang.id', 'DESC')
+        ->where('id', '=', $id)
         ->get();
-         $khuyenmai = DB::table('tbl_chuongtrinhkhuyenmai')
+
+        $khuyenmai = DB::table('tbl_chuongtrinhkhuyenmai')
         ->select('tbl_chuongtrinhkhuyenmai.id','ten_chuong_trinh')
         ->orderBy('ten_chuong_trinh', 'DESC')
         ->get();
 
-        return view('admin.modules.khuyenmai.chinhsuaquatang',['quatang'=>$quatang,'data_khuyenmai'=>$khuyenmai ]);
+        $khuyenmai_quatang = DB::table('tbl_quatang')
+        ->join('tbl_chuongtrinhkhuyenmai', 'tbl_chuongtrinhkhuyenmai.id', '=', 'tbl_quatang.chuongtrinhkhuyenmai_id')
+        ->select('tbl_chuongtrinhkhuyenmai.id', 'tbl_chuongtrinhkhuyenmai.ten_chuong_trinh')
+        ->where('tbl_quatang.id', '=', $id)
+        ->get();
+
+
+
+        return view('admin.modules.khuyenmai.chinhsuaquatang',['quatang'=>$quatang,'data_khuyenmai'=>$khuyenmai, 'khuyenmai_quatang'=>$khuyenmai_quatang]);
     }
       public function postChinhsuaquatang(Request $request,$id)
     {
         $quatang = QuaTang::findOrFail($id);
         $quatang->ten_qua_tang=$request->input('ten_qua_tang');
-        $quatang->ten_chuong_trinh=$request->input('ten_chuong_trinh');
+        
 
         $quatang->so_luong=$request->input('so_luong');
         $quatang->save();
@@ -1982,4 +2176,22 @@ class adminController extends Controller
         }
        
     }
+
+
+    public function XoaAnhSanPham($id)
+    {
+        $id_sanpham = DB::table('tbl_hinhanh')
+        ->select('sanpham_id')
+        ->where('id','=', $id)
+        ->get();
+        $idsp = "";
+        foreach ($id_sanpham as $value) {
+            $idsp = $value->sanpham_id;
+        }
+
+        $hinhanhsp = HinhAnh::find($id);
+        $hinhanhsp->delete();
+        return redirect()->intended('qt-chinh-sua-san-pham/'.$idsp);
+    }
+    
 }

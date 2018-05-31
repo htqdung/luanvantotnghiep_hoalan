@@ -1,28 +1,6 @@
 @extends('admin.layout.index')
 @section('main-content')
-<script>
-	function clickme() {
-		var id=document.getElementById('chitiet').getAttribute("data-‌​id");
-		console.log(id)			;
 
-		$.ajax({
-	        url : "http://localhost:8080/luanvantotnghiep_hoalan/public/ajax-lay-danh-mua-loai-hoa/"+id,
-	        type : "get", // chọn phương thức gửi là get
-	        dateType:"text", // dữ liệu trả về dạng text
-	       
-	        success : function (result){
-	            // Sau khi gửi và kết quả trả về thành công thì gán nội dung trả về
-	            // đó vào thẻ div có id = result
-	            $('#loai').html(result);
-	            // alert(result[0][0]);
-	            // console.log(result);
-	        }
-	    });
-
-	}
-	
-
-</script>
 <div class="main-content-inner">
 	<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 		<ul class="breadcrumb">
@@ -40,7 +18,7 @@
 				<div class="widget-header widget-header-blue widget-header-flat" style="text-align: center;">
 					<h4 class="widget-title lighter" >DANH MỤC SẢN PHẨM</h4>
 					<div class="widget-toolbar">
-						<button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> <a href="{{ route('THEM_SAN_PHAM') }}">Thêm mới</a>  </button>
+						<a href="{{ route('THEM_SAN_PHAM') }}"><button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> Thêm mới  </button></a>
 					</div>
 				</div>
 			</div>
@@ -52,8 +30,7 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<table class="table" >
-						
+					<table class="table" id="myTable">
 					    <thead>
 					      <tr>
 					        <th style="width: 7%">Mã số</th>
@@ -64,19 +41,17 @@
 					      </tr>
 					    </thead>
 					    <tbody>
-					    	
+					    	<?php $i=0 ?>
 					      @foreach ($data as $item)
 	                  <tr>
 	                    <td>{{ $item->id_sanpham }}</td>
 	                    <td><a href="{{ route('CHI_TIET_SAN_PHAM', $item->id_sanpham)  }}">{{ $item->ten_san_pham }}</a></td>
 	                    <td> <?= number_format($item->gia); ?> VND</td>
 	                    <td>{{ $item->diem_thuong}}</td>
-	          
-	                    
-	                    
+
 	                    <td>
 	                   	
-						<a type="button" id="chitiet" class="btn btn-warning" title="XEM CHI TIẾT" style=" margin: 0px; padding: 0px; width: 40px" data-‌​id="{{ $item->id_sanpham }}" onclick="clickme()" 
+						<a type="button" id="chitiet" class="btn btn-warning" title="XEM CHI TIẾT" style=" margin: 0px; padding: 0px; width: 40px" data-‌​id="{{ $item->id_sanpham }}" onclick="clickme<?= $i; ?>()" 
 						data-toggle="modal" data-target="#myModal{{ $item->id_sanpham }}
 						"><i class="fa fa-eye fa-fw"></i></a>
 							<!-- Modal -->
@@ -88,23 +63,18 @@
 							      <div class="modal-header">
 							        <button type="button" class="close" data-dismiss="modal">&times;</button>
 							        <h4 class="modal-title">{{ $item->ten_san_pham }}</h4>
-							        <p>Loài: <i id="loai"></i></p>
+							        <p>Loài: <i id="loai<?= $i;  ?>"></i></p>
 							      </div>
 							      	<div class="modal-body">
 
-							        @foreach($data_hinhanh as $item2)
-			                        <div class="col-sm-4 col-xs-4 row center">
-			                        	 <a href="../sanpham/<?php echo $item2->ten_hinh; ?>" title="Photo Title" style="margin-top: 0px" data-rel="colorbox">
-				                            <img width="" height="150" alt="150x150" src="/luanvantotnghiep_hoalan/public/sanpham/<?= $item2->ten_hinh; ?>" />
-				                          </a>
-				                         
-			                        </div>
+							        <div id="hinh_anh_slide<?= $i; $i++; ?>">
+				                        
+		                          	</div>
 			                       
-			                         
 			                       
-			                        @endforeach
 			                        <div class="clearfix" ></div>
-							        <p style = "padding-top: 25px"><b>Giá: </b> <?=  $item->gia ;?></p>
+							        <p style = "padding-top: 25px"><b>Giá: </b> <?= number_format($item->gia); ?>VND</p>
+							        
 							        <p><b>Điểm thưởng: </b>{{ $item->diem_thuong }}</p>
 							        <p><b>Mô tả: </b> <?= $item->mo_ta;?> </p>
 							      </div>
@@ -147,4 +117,178 @@
 	</div>
 </div>
 
+<script>
+function clickme0() {
+    var x = document.getElementById("myTable").rows[1].cells[0].innerHTML;
+    var path = 'ajax-lay-danh-mua-loai-hoa/'+x;
+
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+   .done(function(argument) {
+   		// console.log(argument);
+        var dung = new String();
+        argument.forEach(function(data){
+        	// console.log(data);
+          dung += data.ten_loai +'-';
+        })
+        $("#loai0").html(dung);
+    })
+
+   	var path2 = 'ajax-lay-hinh-anh-sp/'+x;
+
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+   	
+	.done(function(argument2) {
+   		console.log(argument2);
+        var dung = new String();
+        argument2.forEach(function(data2){
+        	
+          dung += '<div class="col-sm-4 col-xs-4 row center"> <a href="public/sanpham/'+ data2.ten_hinh+'" title="Photo Title" style="margin-top: 0px" data-rel="colorbox"><img width="" height="150" alt="150x150" src="/public/sanpham/'+data2.ten_hinh+'" /></a></div>';
+        })
+        $("#hinh_anh_slide0").html(dung);
+    })
+
+  }
+function clickme1() {
+    var x = document.getElementById("myTable").rows[2].cells[0].innerHTML;
+    var path = 'ajax-lay-danh-mua-loai-hoa/'+x;
+
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+   .done(function(argument) {
+   		// console.log(argument);
+        var dung = new String();
+        argument.forEach(function(data){
+        	// console.log(data);
+          dung += data.ten_loai +'-';
+        })
+        $("#loai1").html(dung);
+    })
+   var path2 = 'ajax-lay-hinh-anh-sp/'+x;
+
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+   
+	.done(function(argument) {
+   		// console.log(argument);
+        var dung = new String();
+        argument.forEach(function(data){
+        	
+          dung += '<div class="col-sm-4 col-xs-4 row center"> <a href="public/sanpham/'+ data.ten_hinh+'" title="Photo Title" style="margin-top: 0px" data-rel="colorbox"><img width="" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'" /></a></div>';
+        })
+        $("#hinh_anh_slide1").html(dung);
+    })
+  }
+  function clickme2() {
+    var x = document.getElementById("myTable").rows[3].cells[0].innerHTML;
+    var path = 'ajax-lay-danh-mua-loai-hoa/'+x;
+
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+   .done(function(argument) {
+   		// console.log(argument);
+        var dung = new String();
+        argument.forEach(function(data){
+        	// console.log(data);
+          dung += data.ten_loai +'-';
+        })
+        $("#loai2").html(dung);
+    })
+   var path2 = 'ajax-lay-hinh-anh-sp/'+x;
+
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+   
+	.done(function(argument) {
+   		// console.log(argument);
+        var dung = new String();
+        argument.forEach(function(data){
+        	
+          dung += '<div class="col-sm-4 col-xs-4 row center"> <a href="public/sanpham/'+ data.ten_hinh+'" title="Photo Title" style="margin-top: 0px" data-rel="colorbox"><img width="" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'" /></a></div>';
+        })
+        $("#hinh_anh_slide2").html(dung);
+    })
+  }
+  function clickme3() {
+    var x = document.getElementById("myTable").rows[4].cells[0].innerHTML;
+    var path = 'ajax-lay-danh-mua-loai-hoa/'+x;
+
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+   .done(function(argument) {
+   		// console.log(argument);
+        var dung = new String();
+        argument.forEach(function(data){
+        	// console.log(data);
+          dung += data.ten_loai +'-';
+        })
+        $("#loai3").html(dung);
+    })
+   var path2 = 'ajax-lay-hinh-anh-sp/'+x;
+
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+   
+	.done(function(argument) {
+   		// console.log(argument);
+        var dung = new String();
+        argument.forEach(function(data){
+        	
+          dung += '<div class="col-sm-4 col-xs-4 row center"> <a href="public/sanpham/'+ data.ten_hinh+'" title="Photo Title" style="margin-top: 0px" data-rel="colorbox"><img width="" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'" /></a></div>';
+        })
+        $("#hinh_anh_slide3").html(dung);
+    })
+  }
+  function clickme4() {
+    var x = document.getElementById("myTable").rows[5].cells[0].innerHTML;
+    var path = 'ajax-lay-danh-mua-loai-hoa/'+x;
+
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+   .done(function(argument) {
+   		// console.log(argument);
+        var dung = new String();
+        argument.forEach(function(data){
+        	// console.log(data);
+          dung += data.ten_loai +'-';
+        })
+        $("#loai4").html(dung);
+    })
+   var path2 = 'ajax-lay-hinh-anh-sp/'+x;
+
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+   
+	.done(function(argument) {
+   		// console.log(argument);
+        var dung = new String();
+        argument.forEach(function(data){
+        	
+          dung += '<div class="col-sm-4 col-xs-4 row center"> <a href="public/sanpham/'+ data.ten_hinh+'" title="Photo Title" style="margin-top: 0px" data-rel="colorbox"><img width="" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'" /></a></div>';
+        })
+        $("#hinh_anh_slide4").html(dung);
+    })
+  }
+</script>
 @endsection

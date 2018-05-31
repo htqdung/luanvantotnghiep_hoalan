@@ -18,7 +18,7 @@
               <div class="col-md-12 form-group img-rounded" >
                 <label for="">Hình quảng cáo</label>
                   <div style="margin-left: 20%; padding-top: 10px " >
-                      <a href="/luanvantotnghiep_hoalan/public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>"> <img src="/luanvantotnghiep_hoalan/public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>" class="img-rounded" alt="Hình đại diện" style="height: 200px; width: 100%">  </a>
+                      <a href="public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>"> <img src="public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>" class="img-rounded" alt="Hình đại diện" style="height: 200px; width: 100%">  </a>
                   </div>
               </div>
               <div class="col-md-12"  style="padding-top: 10px">

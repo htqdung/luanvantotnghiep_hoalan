@@ -77,7 +77,7 @@
                         <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href=""><i class="fa fa-eye fa-fw"></i></a>
                        
                          
-                          <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Xóa" class="btn btn-danger" href="{{-- {{ route('XOA_CHI', $item->id) }} --}}"><i class="fa fa fa-trash-o fa-fw"></i></a>
+                          <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Hủy" class="btn btn-danger" href="{{-- {{ route('XOA_CHI', $item->id) }} --}}"><i class="fa fa fa-trash-o fa-fw"></i></a>
  
                      </td>
                 </tr> 

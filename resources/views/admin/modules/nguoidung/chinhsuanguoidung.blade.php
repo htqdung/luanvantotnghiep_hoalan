@@ -60,33 +60,34 @@
                   <div class="widget-main">
                     <div>
                       <label><b>Tên người dùng:</b></label>
-                      <input type="text" name="ten_nguoi_dung" class="form-control" id=chi" placeholder="">{{ old('ten') }}
+                      <input type="text" name="ten" value='{{ $thongtinlienhe[0]->ten }}' class="form-control" id=chi" placeholder="">
                     </div>
                     <br>
-                    <div class="col-md-12">
+                    <input type="hidden" name="thongtinlienhe_id" value="{{  $thongtinlienhe[0]->id}}">
+                    <div class="col-md-12 row">
                       <label for="ten_loai"><b>Địa chỉ:</b></label>
-                      <div class="col-md-12"> 
-                        <div class="col-md-4">
+                      <div class="col-md-12 row"> 
+                        <div class="col-md-4 ">
                           <label for="ten_loai"><b>Số nhà:</b></label>
-                          <input type="text" name="so_nha" class="form-control" id=chi" placeholder="">{{ old('so_nha') }}
+                          <input type="text" name="so_nha" value='{{ $thongtinlienhe[0]->so_nha }}' class="form-control" id=chi" placeholder="">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" >
                           <label for="ten_loai"><b>Tên đường:</b></label>
-                          <input type="text" name="ten_duong" class="form-control" id=chi" placeholder="">{{ old('ten_duong') }}
+                          <input type="text" name="ten_duong"  value='{{ $thongtinlienhe[0]->ten_duong }}' class="form-control" id=chi" placeholder="">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 ">
                           <label for="ten_loai"><b>Phường\Xã:</b></label>
-                          <input type="text" name="ten_phuong_xa" class="form-control" id=chi" placeholder="">{{ old('ten_phuong_xa') }}
+                          <input type="text" name="ten_phuong_xa"  value='{{ $thongtinlienhe[0]->ten_phuong_xa }}' class="form-control" id=chi" placeholder="">
                         </div>
                       </div>
-                       <div class="col-md-12">
-                        <div class="col-md-6">
+                       <div class="col-md-12 row">
+                        <div class="col-md-6  ">
                           <label for="ten_loai"><b>Quận\Huyện:</b></label>
-                          <input type="text" name="ten_quan_huyen" class="form-control" id=chi" placeholder="">{{ old('ten_quan_huyen') }}
+                          <input type="text" name="ten_quan_huyen"  value='{{ $thongtinlienhe[0]->ten_quan_huyen }}' class="form-control" id=chi" placeholder="">
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 ">
                           <label for="ten_loai"><b>Tỉnh\Thành phố:</b></label>
-                          <input type="text" name="ten_phuong_xa" class="form-control" id=chi" placeholder="">{{ old('ten_tinh_thanhpho') }}
+                          <input type="text" name="ten_tinh_thanhpho"  value='{{ $thongtinlienhe[0]->ten_tinh_thanhpho }}' class="form-control" id=chi" placeholder="">
                         </div>
 
                       </div>
@@ -94,12 +95,12 @@
                     <br>
                     <div>
                       <label for="form-field-11"><b>Số điện thoại: </b></label>
-                      <input type="number" name="so_dien_thoai" class="form-control" id=chi" placeholder="">{{ old('so_dien_thoai') }}
+                      <input type="number" name="so_dien_thoai"  value='{{ $thongtinlienhe[0]->so_dien_thoai }}'  class="form-control" id=chi" placeholder="">
                     </div>
                     <br>
                     <div>
                       <label for="content" ><b>Email: </b></label>
-                       <input type="text" name="email" class="form-control" id=chi" placeholder="">{{ old('email') }}
+                       <input type="text" name="email"  value='{{ $thongtinlienhe[0]->email }}' class="form-control" id=chi" placeholder="">
                         <script>
                             
                             var editor = CKEDITOR.replace( 'content' );

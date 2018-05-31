@@ -18,9 +18,8 @@
              
           </div>
 
-
           <div class="navbar-header pull-right" style="float: right;" >
-              <a href="/" class="navbar-brand">
+              <a href="." target="_blank" class="navbar-brand">
           <small>
            
            <h5>

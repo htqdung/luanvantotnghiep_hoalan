@@ -31,26 +31,10 @@
                       <ul class="ace-thumbnails clearfix">
                         @foreach($data_hinhanh as $item)
                         <li>
-                          <a href="../sanpham/<?php echo $item->ten_hinh; ?>" title="Photo Title" data-rel="colorbox">
-                            <img width="150" height="150" alt="150x150" src="/luanvantotnghiep_hoalan/public/sanpham/<?= $item->ten_hinh; ?>" />
+                          <a href="public/sanpham/<?php echo $item->ten_hinh; ?>" title="Photo Title" data-rel="colorbox">
+                            <img width="150" height="150" alt="150x150" src="/public/sanpham/<?= $item->ten_hinh; ?>" />
                           </a>
-                          <div class="tools">
-                            <a href="#">
-                              <i class="ace-icon fa fa-link"></i>
-                            </a>
-
-                            <a href="#">
-                              <i class="ace-icon fa fa-paperclip"></i>
-                            </a>
-
-                            <a href="#">
-                              <i class="ace-icon fa fa-pencil"></i>
-                            </a>
-
-                            <a href="#">
-                              <i class="ace-icon fa fa-times red"></i>
-                            </a>
-                          </div>
+                         
                         </li>
                         @endforeach
                       </ul>
@@ -67,7 +51,8 @@
                         </tr>
                         <tr>
                           <th style="width: 30%">Giá: </th>
-                         <td><?= number_format($data->gia); ?></td>
+                         <td><?= number_format($data->gia); ?>VND</td>
+                        
                         </tr>
                        {{--  <tr>
                           <th style="width: 30%">Số lượng: </th>

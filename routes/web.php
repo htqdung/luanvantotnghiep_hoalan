@@ -1,5 +1,7 @@
 <?php
 include_once('qd_web.php');
+include_once('route_frontend.php');
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

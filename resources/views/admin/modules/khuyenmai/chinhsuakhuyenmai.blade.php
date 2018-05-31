@@ -70,9 +70,16 @@
                     <br>
                     <div>
                       <label for="form-field-11">Tên sản phẩm</label>
-                       <select  id="framework"  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control">
-                       @foreach ($sanpham as $item)
-                        <option value="{{ $item->id_sanpham }}">{{ $item->ten_san_pham }}</option>
+                       <select  id="framework" multiple=""  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control">
+                       @foreach ($danhsachsanphamkhuyenmai as $item)
+                          @foreach ($tatcasanpham as $item2)
+                          @if($item2->id_sanpham_tatca == $item->id_sanpham)
+                            <option selected value="{{ $item->id_sanpham }}">{{ $item->ten_san_pham }}</option>
+                          @else
+                              <option value="{{ $item->id_sanpham }}">{{ $item->ten_san_pham }}</option>
+                          @endif
+                       
+                          @endforeach  
                       @endforeach
                     </select>
                     </div>
@@ -97,30 +104,18 @@
                       
                     </div>
                     <br>
+                     <label for="image">Chọn hình ảnh</label>
+                  <input type="file" accept="image/*" class="" name="thangcho" id="image" placeholder="" style="margin-right: 0; " >
+                  </div>
+                  <br>
                     <div class="col-md-12" style="margin-left: 0px;">
                       <ul class="ace-thumbnails clearfix">
                       
                         <li>
-                          <a href="../khuyenmai/<?php echo $data[0]->ten_hinh_anh; ?>" title="Photo Title" data-rel="colorbox">
-                            <img width="150" height="150" alt="150x150" src="/luanvantotnghiep_hoalan/public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>" />
+                          <a href="public/khuyenmai/<?php echo $data[0]->ten_hinh_anh; ?>" title="Photo Title" data-rel="colorbox">
+                            <img width="150" height="150" alt="150x150" src="/public/khuyenmai/<?= $data[0]->ten_hinh_anh; ?>" />
                           </a>
-                          <div class="tools">
-                            <a href="#">
-                              <i class="ace-icon fa fa-link"></i>
-                            </a>
-
-                            <a href="#">
-                              <i class="ace-icon fa fa-paperclip"></i>
-                            </a>
-
-                            <a href="#">
-                              <i class="ace-icon fa fa-pencil"></i>
-                            </a>
-
-                            <a href="#">
-                              <i class="ace-icon fa fa-times red"></i>
-                            </a>
-                          </div>
+                         
                         </li>
                    
                       </ul>
