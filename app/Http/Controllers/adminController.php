@@ -1394,8 +1394,9 @@ class adminController extends Controller
         DiaChi::where('id', $iddiachi)
         ->update(['so_nha'=>$so_nha,'ten_duong'=>$ten_duong]);
         $mss = 'Hoàn tất, Người dùng '.$ThongTinLienHe_ten.' đã được cập nhật! ';
-        return redirect()->intended('qt-danh-sach-khuyen-mai')->with('message', $mss);
+        
         return redirect()->intended('qt-danh-sach-nguoi-dung')->with('message', $mss);
+        
     }
     public function ChiTietNguoiDung($id)
     {
