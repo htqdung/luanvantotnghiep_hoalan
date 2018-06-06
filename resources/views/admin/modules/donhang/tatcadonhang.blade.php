@@ -73,7 +73,7 @@
                     <td>{{ $item->tong_tien}}</td>
                     <td>{{ $item->ten_trang_thai}}</td>
                     <td>
-                       <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-success" data-toggle="tooltip" title="Duyệt đơn hàng"  href=""><i class="glyphicon glyphicon-check"></i></a>
+
                         <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href=""><i class="fa fa-eye fa-fw"></i></a>
                        
                          

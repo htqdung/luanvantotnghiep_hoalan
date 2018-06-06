@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblPhuongxaTable extends Migration
+class CreateTblEmailTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateTblPhuongxaTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_phuongxa', function (Blueprint $table) {
+        Schema::create('tbl_email', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_phuong_xa', 100);
-            $table->integer('quanhuyen_id')->unsigned();
-            $table->foreign('quanhuyen_id')->references('id')->on('tbl_quanhuyen')->onDelete('cascade');
+            $table->string('email',100);
+            $table->tinyInteger('status')->default('0');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateTblPhuongxaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_phuongxa');
+        Schema::dropIfExists('tbl_email');
     }
 }

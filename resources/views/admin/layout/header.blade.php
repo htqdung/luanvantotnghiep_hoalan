@@ -9,8 +9,9 @@
           <div class="navbar-header pull-left">
               <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}" class="navbar-brand">
   				<small>
-  					<i class="fa fa-leaf"></i>
-  					Near Admin
+            <img src="{{ asset('admin/assets/images/logo/logo3.jpg') }}" alt="" style="height: 28px">
+  					{{-- <i class="fa fa-leaf"></i>
+  					Near Admin --}}
   				</small>
   			</a>
           </div>

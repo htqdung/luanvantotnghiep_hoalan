@@ -73,7 +73,26 @@
                     <td>{{ $item->tong_tien}}</td>
                     <td>{{ $item->ten_trang_thai}}</td>
                     <td>
-                        <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-success" data-toggle="tooltip" title="Duyệt đơn hàng"  href=""><i class="glyphicon glyphicon-check"></i></a>
+                        <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-success" data-toggle="modal"   data-target="#removeUser{{ $item->id }}"  title="Duyệt đơn hàng"  href=""><i class="glyphicon glyphicon-check"></i></a>
+
+                        <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id }}" role="dialog" tabindex="-1">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Bạn có chắc chắn?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Bạn có chắc duyệt đơn hàng này!</p>
+                                    <small>Trạng thái kế tiếp: Đơn hàng đang giao</small>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
+                                    <a class="btn btn-danger" href="{{ route('DuyetDonHangMoiNhan', $item->id) }}" id="remove-button" type="submit">Đồng ý</a>
+                                </div>
+                            </div><!-- end modal-content -->
+                        </div><!-- end modal-dialog -->
+                    </div><!-- end modal -->
+
                         <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href=""><i class="glyphicon glyphicon-folder-open"></i></a>
                           <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Hủy" class="btn btn-danger" href="{{-- {{ route('XOA_CHI', $item->id) }} --}}"><i class="fa fa fa-trash-o fa-fw"></i></a>
                      </td>

@@ -10,7 +10,7 @@ Route::post('dang-nhap-admin','adminController@postdangnhap');
            
 
 
-Route::get('tsst', 'adminController@DoanhThuBanHang12Thang');
+Route::get('tsst/{id}', 'adminController@layDanhMucLoaiHoa');
 Route::get('qt-admin', 'adminController@getTest')->name('MO_GIAO_DIEN_ADMIN');
 //danh mục loài hoa
 Route::get('qt-danh-muc-hoa', 'adminController@getdanhmuchoa')->name('DANH_MUC_HOA');
@@ -55,7 +55,10 @@ Route::get('qt-chi-tiet-chi/{id}','adminController@chitietchi')->name('CHI_TIET_
 //người dùng
 Route::get('qt-danh-sach-nguoi-dung', 'adminController@getnguoidung')->name('DANH_SACH_NGUOI_DUNG');
 Route::get('qt-danh-sach-nguoi-dung-admin', 'adminController@getnguoidungadmin')->name('DANH_SACH_NGUOI_DUNG_ADMIN');
+
 Route::get('them-nguoi-dung', 'adminController@themnguoidung')->name('THEM_NGUOI_DUNG');
+Route::post('them-nguoi-dung', 'adminController@postThemnguoidungadmin');
+
 Route::get('chinh-sua-nguoi-dung/{id}', 'adminController@chinhsuanguoidung')->name('CHINH_SUA_NGUOI_DUNG');
 
 Route::post('chinh-sua-nguoi-dung/{id}', 'adminController@postchinhsuanguoidung');
@@ -95,6 +98,8 @@ Route::get('qt-tat-ca-don-hang','adminController@tatcadonhang')->name('TAT_CA_DO
 Route::get('qt-don-hang-da-giao','adminController@getDanhSachDonHangDaGiao')->name('DON_HANG_DA_GIAO');
 Route::get('qt-don-hang-dang-giao','adminController@donhangdanggiao')->name('DON_HANG_DANG_GIAO');
 Route::get('qt-don-hang-dang-xu-ly','adminController@donhangdangxuly')->name('DON_HANG_DANG_XU_LY');
+Route::get('qt-duyet-don-hang-moi-nhan/{id}', 'adminController@DuyetDonHangMoiNhan')
+->name('DuyetDonHangMoiNhan');
 
 //báo cáo
 Route::get('qt-bao-cao-tong','adminController@getBaoCaoTong')->name('DANH_SACH_TONG');
@@ -130,6 +135,8 @@ Route::get('ajax-lay-danh-mua-loai-hoa/{id}', 'adminController@layDanhMucLoaiHoa
 Route::get('ajax-lay-danh-sach-san-pham/{id}', 'adminController@laySanPhamChoKhuyenMai');
 Route::get('ajax-xoa-anh-sp/{id}', 'adminController@XoaAnhSanPham')->name('XoaAnhSanPham');
 Route::get('ajax-lay-hinh-anh-sp/{id}', 'adminController@layHinhAnhSanPham');
-
+Route::get('ajax-tinh-thanh-pho', 'adminController@LayThanhPho');
+Route::get('ajax-quan-huyen/{id}', 'adminController@LayQuanHuyen');
+Route::get('ajax-phuong-xa/{id}', 'adminController@LayPhuongXa');
 
 ?>

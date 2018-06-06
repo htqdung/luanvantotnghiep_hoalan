@@ -15,7 +15,7 @@ class CreateTblTinhThanhphoTable extends Migration
     {
         Schema::create('tbl_tinh_thanhpho', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ten_tinh_thanhpho', 200)->unique();
+            $table->string('ten_tinh_thanhpho', 200);
             $table->timestamps();
         });
     }

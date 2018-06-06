@@ -1,4 +1,4 @@
-  <div id="sidebar" class="sidebar responsive ace-save-state">
+  <div id="sidebar" class="sidebar responsive ace-save-state" >
       <script type="text/javascript">
       try { ace.settings.loadState('sidebar') } catch (e) {}
       </script>
@@ -12,7 +12,7 @@
           </div>
       
       <!-- /.sidebar-shortcuts -->
-      <ul class="nav nav-list">
+      <ul class="nav nav-list" >
           <li class="active">
               <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">
   				<i class="menu-icon fa fa-tachometer"></i>

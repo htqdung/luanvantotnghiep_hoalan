@@ -11,57 +11,57 @@
 	</div>
 	<!-- PAGE CONTENT BEGINS -->
 	<div class="row" >
-	<div class="space-12"></div>
-	<div class="infobox-container">
-		<div class="infobox" style="background-color: #6fb3e0">
-			<div class="infobox-data" style="width: 100%">		
-				<div class="infobox-content"> <a style="color: #fff" href="{{ route('DANH_SACH_NGUOI_DUNG') }}">NGƯỜI DÙNG</a></div>
+		<div class="space-12"></div>
+		<div class="infobox-container">
+			<div class="infobox" style="background-color: #51A9FF">
+				<div class="infobox-data" style="width: 100%">		
+					<div class="infobox-content"> <a style="color: #fff" href="{{ route('DANH_SACH_NGUOI_DUNG') }}">NGƯỜI DÙNG</a></div>
+				</div>
+				<br>
+				<hr style="margin-bottom: 8px">
+				<div class="infobox-icon">
+					<i class="ace-icon fa fa-user"></i>
+				</div>
+				<div class="infobox-data" style="padding-top: 7px; text-align: center; width: 100%; position: relative; top: -40px;">		
+					<span class="infobox-data-number" style="color: #fff">{{ $data_nguoidung }}</span>
+					
+				</div>
 			</div>
-			<br>
-			<hr style="margin-bottom: 8px">
-			<div class="infobox-icon">
-				<i class="ace-icon fa fa-user"></i>
+			<div class="infobox" style="background-color: #4491BB">
+				<div class="infobox-data" style="width: 100%">		
+					<div class="infobox-content"> <a style="color: #fff" href="{{ route('TAT_CA_DON_HANG') }}">ĐƠN HÀNG</a></div>
+				</div>
+				<br>
+				<hr style="margin-bottom: 8px">
+				<div class="infobox-icon">
+					<i class="ace-icon fa fa-shopping-cart"></i>
+				</div>
+				<div class="infobox-data" style="padding-top: 7px; text-align: center; width: 100%; position: relative; top: -40px;">		
+					<span class="infobox-data-number" style="color: #fff">{{ $data_donhang }}</span>
+					
+				</div>
 			</div>
-			<div class="infobox-data" style="padding-top: 7px; text-align: center; width: 100%; position: relative; top: -40px;">		
-				<span class="infobox-data-number" style="color: #fff">{{ $data_nguoidung }}</span>
-				
+			
+			<div class="infobox" style="background-color: #0085A8">
+				<div class="infobox-data" style="width: 100%">		
+					<div class="infobox-content"   ><a style="color: #fff" href="#">TỔNG DOANH THU</a></div>
+				</div>
+				<br>
+				<hr style="margin-bottom: 8px">
+				<div class="infobox-icon"  style="color: #fff">
+					<i class="ace-icon fa fa-money"></i>
+				</div>
+				<div class="infobox-data" style="padding-top: 7px; color: #fff;  text-align: center;  position: relative; top: -40px; width: 100%">		
+					<span class="infobox-data-number">
+						@foreach ($data_tongdoanhthu as $element)
+							<?= number_format($element->total_sales); ?>
+						@endforeach
+					</span>
+					
+				</div>
 			</div>
-		</div>
-		<div class="infobox" style="background-color: #6fb3e0">
-			<div class="infobox-data" style="width: 100%">		
-				<div class="infobox-content"> <a style="color: #fff" href="{{ route('TAT_CA_DON_HANG') }}">ĐƠN HÀNG</a></div>
-			</div>
-			<br>
-			<hr style="margin-bottom: 8px">
-			<div class="infobox-icon">
-				<i class="ace-icon fa fa-shopping-cart"></i>
-			</div>
-			<div class="infobox-data" style="padding-top: 7px; text-align: center; width: 100%; position: relative; top: -40px;">		
-				<span class="infobox-data-number" style="color: #fff">{{ $data_donhang }}</span>
-				
-			</div>
-		</div>
-		
-		<div class="infobox" style="background-color: #6fb3e0">
-			<div class="infobox-data" style="width: 100%">		
-				<div class="infobox-content"   ><a style="color: #fff" href="#">TỔNG DOANH THU</a></div>
-			</div>
-			<br>
-			<hr style="margin-bottom: 8px">
-			<div class="infobox-icon"  style="color: #fff">
-				<i class="ace-icon fa fa-money"></i>
-			</div>
-			<div class="infobox-data" style="padding-top: 7px; color: #fff;  text-align: center;  position: relative; top: -40px; width: 100%">		
-				<span class="infobox-data-number">
-					@foreach ($data_tongdoanhthu as $element)
-						<?= number_format($element->total_sales); ?>
-					@endforeach
-				</span>
-				
-			</div>
-		</div>
-	</div>	
-	<div class="vspace-12-sm"></div>
+		</div>	
+		<div class="vspace-12-sm"></div>
 	</div><!-- /.row -->
 	<div class="hr hr32 hr-dotted"></div>
 
@@ -123,7 +123,7 @@
 				</div>
 			</div>
 		</div>	
-     	 <div class="col-md-6">
+     	<div class="col-md-6">
      	 	<div class="widget-box" >
 				<div class="widget-header widget-header-flat widget-header-small" style=" width: ; height: ">
 			        <table class="table">
@@ -136,7 +136,7 @@
 			                <th style="width: 5%">Mã số</th>
 			                <th style="width: 25%">Tên người dùng</th>
 			                <th style="width: 15%">Ngày liên hệ</th>
-			                <th style="width: 33%">Tiêu đề</th> 
+			                <th style="width: 30%">Tiêu đề</th> 
 			                <th style="width: 15%%">Chức năng</th>                 
 			              </tr>
 			          	</thead>
@@ -151,7 +151,7 @@
 			                    <td>
 			                    	<a type="button" class="btn btn-danger" title="XÓA LIÊN HỆ" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id }}"><i class="fa fa-trash-o fa-fw"></i></a>
 			                     
-				                     <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id }}" role="dialog" tabindex="-1">
+				                    <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id }}" role="dialog" tabindex="-1">
 				                        <div class="modal-dialog" role="document">
 				                            <div class="modal-content">
 				                                <div class="modal-header">
@@ -200,10 +200,9 @@
 			          	</tbody>              
 			      	</table>
 			      	{{ $data_lienhe->render() }}
-			      </div>
-			   </div>
-			  
-    </div>		
+			    </div>
+			</div>
+    	</div>		
 	</div><!-- /.widget-box -->
 <!-- PAGE CONTENT ENDS -->	
 </div>
@@ -265,7 +264,7 @@ function drawChart() {
   chart.draw(data, options);
 }
 </script>
-<canvas id="myChart" width="400" height="500"></canvas>
+<canvas id="myChart" width="400" height="20"></canvas>
 <script>
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {

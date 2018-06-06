@@ -51,62 +51,60 @@
 
 	                    <td>
 	                   	
-						<a type="button" id="chitiet" class="btn btn-warning" title="XEM CHI TIẾT" style=" margin: 0px; padding: 0px; width: 40px" data-‌​id="{{ $item->id_sanpham }}" onclick="clickme<?= $i; ?>()" 
-						data-toggle="modal" data-target="#myModal{{ $item->id_sanpham }}
-						"><i class="fa fa-eye fa-fw"></i></a>
-							<!-- Modal -->
-							<div id="myModal{{ $item->id_sanpham }}" class="modal fade" role="dialog">
-							  <div class="modal-dialog">
+						            <a type="button" id="chitiet" class="btn btn-warning" title="XEM CHI TIẾT" style=" margin: 0px; padding: 0px; width: 40px" data-‌​id="{{ $item->id_sanpham }}" onclick="clickme<?= $i; ?>()" data-toggle="modal" data-target="#myModal{{ $item->id_sanpham }}"><i class="fa fa-eye fa-fw"></i>
+                        </a>
+          							<!-- Modal -->
+          							<div id="myModal{{ $item->id_sanpham }}" class="modal fade" role="dialog">
+          							  <div class="modal-dialog">
+          							    <!-- Modal content-->
+          							    <div class="modal-content modal_sanpham_width">
+          							      <div class="modal-header">
+          							        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          							        <h4 class="modal-title">{{ $item->ten_san_pham }}</h4>
+          							        <p>Loài: <i id="loai<?= $i;  ?>"></i></p>
+          							      </div>
+          							      	<div class="modal-body">
 
-							    <!-- Modal content-->
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <button type="button" class="close" data-dismiss="modal">&times;</button>
-							        <h4 class="modal-title">{{ $item->ten_san_pham }}</h4>
-							        <p>Loài: <i id="loai<?= $i;  ?>"></i></p>
-							      </div>
-							      	<div class="modal-body">
+          							        <div id="hinh_anh_slide<?= $i; $i++; ?>">
+          				                      
+  	                          	</div>
+          			                       
+          			                       
+          			                 <div class="clearfix" ></div>
+          							        <p style = "padding-top: 25px"><b>Giá: </b> <?= number_format($item->gia); ?>VND</p>
+          							        
+          							        <p><b>Điểm thưởng: </b>{{ $item->diem_thuong }}</p>
+          							        <p><b>Mô tả: </b> <?= $item->mo_ta;?> </p>
+          							      </div>
+          							      <div class="modal-footer">
+          							        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+          							      </div>
+          							    </div>
 
-							        <div id="hinh_anh_slide<?= $i; $i++; ?>">
-				                        
-		                          	</div>
-			                       
-			                       
-			                        <div class="clearfix" ></div>
-							        <p style = "padding-top: 25px"><b>Giá: </b> <?= number_format($item->gia); ?>VND</p>
-							        
-							        <p><b>Điểm thưởng: </b>{{ $item->diem_thuong }}</p>
-							        <p><b>Mô tả: </b> <?= $item->mo_ta;?> </p>
-							      </div>
-							      <div class="modal-footer">
-							        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-							      </div>
-							    </div>
-
-							  </div>
-							</div>
+          							  </div>
+          							</div>
 
 	                      <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_SAN_PHAM', $item->id_sanpham)  }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 
 	                      <a type="button" class="btn btn-danger" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id_sanpham }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
 		                 </td>
-		                 <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id_sanpham }}" role="dialog" tabindex="-1">
-						    <div class="modal-dialog" role="document">
-						        <div class="modal-content">
-						            <div class="modal-header">
-						                <h4 class="modal-title">Bạn có chắc chắn?</h4>
-						            </div>
-						            <div class="modal-body">
-						                <p>Sau khi nhấn đồng ý. Dữ liệu liên quan đến sản phẩm {{ $item->ten_san_pham }} sẽ bị xóa bỏ!</p>
-						            </div>
-						            <div class="modal-footer">
-						                <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
-						                <a class="btn btn-danger" href="{{ route('XOA_SAN_PHAM', $item->id_sanpham) }}" id="remove-button" type="submit">Đồng ý</a>
-						            </div>
-						        </div><!-- end modal-content -->
-						    </div><!-- end modal-dialog -->
-						</div><!-- end modal -->
-	                </tr> 
+		                  <div aria-labelledby="myModalLabel" class="modal fade" id="removeUser{{ $item->id_sanpham }}" role="dialog" tabindex="-1">
+        						    <div class="modal-dialog" role="document">
+        						        <div class="modal-content">
+        						            <div class="modal-header">
+        						                <h4 class="modal-title">Bạn có chắc chắn?</h4>
+        						            </div>
+        						            <div class="modal-body">
+        						                <p>Sau khi nhấn đồng ý. Dữ liệu liên quan đến sản phẩm {{ $item->ten_san_pham }} sẽ bị xóa bỏ!</p>
+        						            </div>
+        						            <div class="modal-footer">
+        						                <button class="btn btn-default" data-dismiss="modal" type="button">Hủy bỏ</button>
+        						                <a class="btn btn-danger" href="{{ route('XOA_SAN_PHAM', $item->id_sanpham) }}" id="remove-button" type="submit">Đồng ý</a>
+        						            </div>
+        						        </div><!-- end modal-content -->
+        						    </div><!-- end modal-dialog -->
+        						  </div><!-- end modal -->
+	                 </tr> 
 	                @endforeach    	      
 					    </tbody>
 					  </table>
@@ -129,29 +127,36 @@ function clickme0() {
    .done(function(argument) {
    		// console.log(argument);
         var dung = new String();
+        var hinh  = new String();
         argument.forEach(function(data){
         	// console.log(data);
-          dung += data.ten_loai +'-';
+          // console.log(data);
+          if(data.ten_loai == null)
+          {
+             
+          }
+          else
+          {
+            dung += data.ten_loai +'-';  
+          }
+
+          if(data.ten_hinh == null)
+          {
+
+          }
+          else
+          {
+            hinh += '<ul class="ace-thumbnails clearfix"><li><a href="/public/sanpham/'+data.ten_hinh+'" title="Photo Title" data-rel="colorbox"><img width="150" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'"></a></li></ul>';
+          }
+          
         })
         $("#loai0").html(dung);
+        $("#hinh_anh_slide0").html(hinh);
+        // console.log(dung);
+
+
     })
 
-   	var path2 = 'ajax-lay-hinh-anh-sp/'+x;
-
-    $.ajax({
-        url: path,
-        type: 'GET'
-    })
-   	
-	.done(function(argument2) {
-   		console.log(argument2);
-        var dung = new String();
-        argument2.forEach(function(data2){
-        	
-          dung += '<div class="col-sm-4 col-xs-4 row center"> <a href="public/sanpham/'+ data2.ten_hinh+'" title="Photo Title" style="margin-top: 0px" data-rel="colorbox"><img width="" height="150" alt="150x150" src="/public/sanpham/'+data2.ten_hinh+'" /></a></div>';
-        })
-        $("#hinh_anh_slide0").html(dung);
-    })
 
   }
 function clickme1() {
@@ -165,28 +170,33 @@ function clickme1() {
    .done(function(argument) {
    		// console.log(argument);
         var dung = new String();
+        var hinh  = new String();
         argument.forEach(function(data){
-        	// console.log(data);
-          dung += data.ten_loai +'-';
+          // console.log(data);
+          // console.log(data);
+          if(data.ten_loai == null)
+          {
+             
+          }
+          else
+          {
+            dung += data.ten_loai +'-';  
+          }
+
+          if(data.ten_hinh == null)
+          {
+
+          }
+          else
+          {
+            hinh += '<ul class="ace-thumbnails clearfix"><li><a href="/public/sanpham/'+data.ten_hinh+'" title="Photo Title" data-rel="colorbox"><img width="150" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'"></a></li></ul>';
+          }
+          
         })
         $("#loai1").html(dung);
-    })
-   var path2 = 'ajax-lay-hinh-anh-sp/'+x;
-
-    $.ajax({
-        url: path,
-        type: 'GET'
+        $("#hinh_anh_slide1").html(hinh);
     })
    
-	.done(function(argument) {
-   		// console.log(argument);
-        var dung = new String();
-        argument.forEach(function(data){
-        	
-          dung += '<div class="col-sm-4 col-xs-4 row center"> <a href="public/sanpham/'+ data.ten_hinh+'" title="Photo Title" style="margin-top: 0px" data-rel="colorbox"><img width="" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'" /></a></div>';
-        })
-        $("#hinh_anh_slide1").html(dung);
-    })
   }
   function clickme2() {
     var x = document.getElementById("myTable").rows[3].cells[0].innerHTML;
@@ -197,30 +207,34 @@ function clickme1() {
         type: 'GET'
     })
    .done(function(argument) {
-   		// console.log(argument);
-        var dung = new String();
-        argument.forEach(function(data){
-        	// console.log(data);
-          dung += data.ten_loai +'-';
-        })
-        $("#loai2").html(dung);
-    })
-   var path2 = 'ajax-lay-hinh-anh-sp/'+x;
+   		var dung = new String();
+      var hinh  = new String();
+      argument.forEach(function(data){
+        // console.log(data);
+        // console.log(data);
+        if(data.ten_loai == null)
+        {
+           
+        }
+        else
+        {
+          dung += data.ten_loai +'-';  
+        }
 
-    $.ajax({
-        url: path,
-        type: 'GET'
+        if(data.ten_hinh == null)
+        {
+
+        }
+        else
+        {
+          hinh += '<ul class="ace-thumbnails clearfix"><li><a href="/public/sanpham/'+data.ten_hinh+'" title="Photo Title" data-rel="colorbox"><img width="150" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'"></a></li></ul>';
+        }
+        
+      })
+      $("#loai2").html(dung);
+      $("#hinh_anh_slide2").html(hinh);
     })
    
-	.done(function(argument) {
-   		// console.log(argument);
-        var dung = new String();
-        argument.forEach(function(data){
-        	
-          dung += '<div class="col-sm-4 col-xs-4 row center"> <a href="public/sanpham/'+ data.ten_hinh+'" title="Photo Title" style="margin-top: 0px" data-rel="colorbox"><img width="" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'" /></a></div>';
-        })
-        $("#hinh_anh_slide2").html(dung);
-    })
   }
   function clickme3() {
     var x = document.getElementById("myTable").rows[4].cells[0].innerHTML;
@@ -231,30 +245,34 @@ function clickme1() {
         type: 'GET'
     })
    .done(function(argument) {
-   		// console.log(argument);
-        var dung = new String();
+   		var dung = new String();
+        var hinh  = new String();
         argument.forEach(function(data){
-        	// console.log(data);
-          dung += data.ten_loai +'-';
+          // console.log(data);
+          // console.log(data);
+          if(data.ten_loai == null)
+          {
+             
+          }
+          else
+          {
+            dung += data.ten_loai +'-';  
+          }
+
+          if(data.ten_hinh == null)
+          {
+
+          }
+          else
+          {
+            hinh += '<ul class="ace-thumbnails clearfix"><li><a href="/public/sanpham/'+data.ten_hinh+'" title="Photo Title" data-rel="colorbox"><img width="150" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'"></a></li></ul>';
+          }
+          
         })
         $("#loai3").html(dung);
-    })
-   var path2 = 'ajax-lay-hinh-anh-sp/'+x;
-
-    $.ajax({
-        url: path,
-        type: 'GET'
+        $("#hinh_anh_slide3").html(hinh);
     })
    
-	.done(function(argument) {
-   		// console.log(argument);
-        var dung = new String();
-        argument.forEach(function(data){
-        	
-          dung += '<div class="col-sm-4 col-xs-4 row center"> <a href="public/sanpham/'+ data.ten_hinh+'" title="Photo Title" style="margin-top: 0px" data-rel="colorbox"><img width="" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'" /></a></div>';
-        })
-        $("#hinh_anh_slide3").html(dung);
-    })
   }
   function clickme4() {
     var x = document.getElementById("myTable").rows[5].cells[0].innerHTML;
@@ -265,29 +283,32 @@ function clickme1() {
         type: 'GET'
     })
    .done(function(argument) {
-   		// console.log(argument);
-        var dung = new String();
+   		  var dung = new String();
+        var hinh  = new String();
         argument.forEach(function(data){
-        	// console.log(data);
-          dung += data.ten_loai +'-';
+          // console.log(data);
+          // console.log(data);
+          if(data.ten_loai == null)
+          {
+             
+          }
+          else
+          {
+            dung += data.ten_loai +'-';  
+          }
+
+          if(data.ten_hinh == null)
+          {
+
+          }
+          else
+          {
+            hinh += '<ul class="ace-thumbnails clearfix"><li><a href="/public/sanpham/'+data.ten_hinh+'" title="Photo Title" data-rel="colorbox"><img width="150" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'"></a></li></ul>';
+          }
+          
         })
         $("#loai4").html(dung);
-    })
-   var path2 = 'ajax-lay-hinh-anh-sp/'+x;
-
-    $.ajax({
-        url: path,
-        type: 'GET'
-    })
-   
-	.done(function(argument) {
-   		// console.log(argument);
-        var dung = new String();
-        argument.forEach(function(data){
-        	
-          dung += '<div class="col-sm-4 col-xs-4 row center"> <a href="public/sanpham/'+ data.ten_hinh+'" title="Photo Title" style="margin-top: 0px" data-rel="colorbox"><img width="" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'" /></a></div>';
-        })
-        $("#hinh_anh_slide4").html(dung);
+        $("#hinh_anh_slide4").html(hinh);
     })
   }
 </script>

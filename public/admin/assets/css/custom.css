@@ -1,0 +1,14 @@
+.modal_sanpham_width {
+	width: 850px !important;
+}
+.height_500{
+	height: 550px;
+}
+
+.btn_luu_lai_nd
+{
+    float: right;
+    position: relative;
+    top: -80px;
+    right: 50px;
+}
