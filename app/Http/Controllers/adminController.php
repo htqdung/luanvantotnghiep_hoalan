@@ -799,7 +799,7 @@ class adminController extends Controller
     {
         $sanpham = DB::table('tbl_sanpham')
         ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
-        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong', 'kich_thuoc')
         ->orderBy('id_sanpham','desc')
         ->paginate(5);
         
@@ -1000,17 +1000,12 @@ class adminController extends Controller
     {
 
 
-
         $sanpham = SanPham::findOrFail($id);
         $sanpham->ten_san_pham=$request->input('ten_san_pham');
         $sanpham->kich_thuoc=$request->input('kich_thuoc');
         $sanpham->mo_ta=$request->input('mo_ta');
         $sanpham->diem_thuong=$request->input('diem_thuong');
-        $sanpham->so_luot_xem = 0;
-        $sanpham->so_luot_mua = 0;
-       
         $sanpham->save();
-        
         
         $dongia_id = $request->input('dongia_id');
         $dongia = DonGia::findOrFail($dongia_id);
@@ -1318,6 +1313,7 @@ class adminController extends Controller
         ->join('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_thongtinlienhe.ten','so_nha', 'ten_duong','so_dien_thoai', 'email', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho')
         ->orderBy('tbl_nguoidung.id', 'desc')
+        ->where('nhom_id', '=', '2')
 
         ->paginate(5);
         $donhang = DB::table('tbl_donhang')
@@ -1347,7 +1343,7 @@ class adminController extends Controller
         ->join('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
         ->join('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->join('tbl_nhom', 'tbl_nhom.id', '=','tbl_nguoidung.nhom_id' )
-        ->select('tbl_nguoidung.id as id_nguoidung','tbl_thongtinlienhe.ten','so_nha', 'ten_duong','so_dien_thoai', 'email', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho')
+        ->select('tbl_nguoidung.id as id_nguoidung','tbl_thongtinlienhe.ten','so_nha', 'ten_duong','so_dien_thoai', 'email', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho', 'tbl_thongtinlienhe.id as id_lienhe')
 
         ->orderBy('tbl_nguoidung.id', 'desc')
         ->where('tbl_nhom.id', '=', 1)
@@ -1358,7 +1354,12 @@ class adminController extends Controller
 
     public function themnguoidung()
     {
-         $thongtinlienhe= DB::table('tbl_thongtinlienhe')
+        $thanhpho = DB::table('tbl_tinh_thanhpho')
+        ->select('id', 'ten_tinh_thanhpho')
+        ->get();
+
+
+        $thongtinlienhe= DB::table('tbl_thongtinlienhe')
         ->select( 'ten','so_nha', 'ten_duong','so_dien_thoai', 'email', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho')
         ->join('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
         ->join('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
@@ -1366,63 +1367,96 @@ class adminController extends Controller
         ->join('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->get();
            
-        return view('admin.modules.nguoidung.themnguoidung',['data'=>$thongtinlienhe]);
+        return view('admin.modules.nguoidung.themnguoidung',['data'=>$thongtinlienhe, 'tinhthanhpho'=>$thanhpho]);
     }
     public function postThemnguoidungadmin(Request $request)
     {
+       
+        $diachi = new DiaChi();
+        $diachi->so_nha = $request->input('so_nha');
+        $diachi->ten_duong = $request->input('ten_duong');
+        $diachi->phuongxa_id = $request->input('phuongxa');
+        $diachi->save();
+
+        $diachi1 = DB::table('tbl_diachi')
+        ->select('tbl_diachi.id')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->get();
+
+
+
+        $diachi_id =0;
+        foreach ($diachi1 as $item) {
+           $diachi_id = $item->id;
+        }
+
+
+        $thongtinlienhe =new ThongTinLienHe();
+        $thongtinlienhe->ten=$request->input('ten');
+        $thongtinlienhe->so_dien_thoai=$request->input('so_dien_thoai');
+        $thongtinlienhe->email=$request->input('email');
+        $thongtinlienhe->diachi_id=$diachi_id ;
+        $thongtinlienhe->save();
+
+     
+        
+        $thongtinlienhe1 = DB::table('tbl_thongtinlienhe')
+        ->select('id')
+        ->orderBy('id', 'DESC')
+        ->limit(1)
+        ->get();
+
+        $thongtinlienhe_id = 0;
+        foreach ($thongtinlienhe1 as $item) {
+           $thongtinlienhe_id = $thongtinlienhe->id;
+        }
+
+
+
         $nguoidung = new NguoiDung();
-        $nguoidung->ten=$request->input('ten');
-        $nguoidung->so_dien_thoai=$request->input('so_dien_thoai');
-        $nguoidung->so_nha=$request->input('so_nha');
-        $nguoidung->ten_quan_huyen=$request->input('ten_quan_huyen');
-        $nguoidung->ten_duong=$request->input('ten_duong');
-        $nguoidung->ten_phuong_xa=$request->input('ten_phuong_xa');
-        $nguoidung->ten_tinh_thanhpho=$request->input('ten_tinh_thanhpho');
-        $nguoidung->email=$request->input('email');
+        $nguoidung->username=$request->input('username');
+        $nguoidung->password=$request->input('password');
+        $nguoidung->nhom_id = 1;
+        $nguoidung->thongtinlienhe_id=$thongtinlienhe_id ;
+
+
         $nguoidung->save();
+
         return redirect()->intended('qt-danh-sach-nguoi-dung-admin')->with('message', "Hoàn tất, Đã thêm người dùng mới");
     }
     public function chinhsuanguoidung($id)
     {
-        
-         $nguoidung = NguoiDung::findOrFail($id);
-         $thongtinlienhe = DB::table('tbl_thongtinlienhe')
+        $data_thongtinlienhe = DB::table('tbl_thongtinlienhe')
+        ->select('ten', 'so_dien_thoai' , 'email', 'phuongxa_id', 'diachi_id', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho', 'so_nha', 'ten_duong')
         ->join('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
-        ->join('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
-        ->join('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
-        ->join('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
-        ->select('tbl_thongtinlienhe.id','ten','so_dien_thoai', 'email','ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','so_nha', 'ten_duong')
+        ->join('tbl_phuongxa', 'tbl_phuongxa.id', '=', 'tbl_diachi.phuongxa_id')
+        ->join('tbl_quanhuyen', 'tbl_quanhuyen.id', 'tbl_phuongxa.quanhuyen_id')
+        ->join('tbl_tinh_thanhpho', 'tbl_tinh_thanhpho.id', 'tbl_quanhuyen.tinh_thanhpho_id')
+        ->where('tbl_thongtinlienhe.id', '=', $id)
         ->get();
-       
-         return view('admin.modules.nguoidung.chinhsuanguoidung', ['data'=>$nguoidung, 'thongtinlienhe'=>$thongtinlienhe]);
+
+        $thanhpho = $this::LayThanhPho();
+        // return $data_thongtinlienhe;
+       return view('admin.modules.nguoidung.chinhsuanguoidung',['thongtinlienhe'=>$data_thongtinlienhe,'thanhpho'=>$thanhpho]);
     }
     public function postchinhsuanguoidung(Request $request, $id)
     {
-        
-        $idthongtinlienhe = $request->input('thongtinlienhe_id')   ;
-        // return $idthongtinlienhe;
-        $ThongTinLienHe_ten=$request->input('ten');
-        $ThongTinLienHe_so_dien_thoai=$request->input('so_dien_thoai');
-        $ThongTinLienHe_email=$request->input('email');
-        ThongTinLienHe::where('id', $idthongtinlienhe)
-        ->update(['ten'=>$ThongTinLienHe_ten,'so_dien_thoai'=>$ThongTinLienHe_so_dien_thoai, 'email'=>$ThongTinLienHe_email]);
-        $iddiachi = DB::table('tbl_thongtinlienhe')
-        ->select('diachi_id')
-        ->where('tbl_thongtinlienhe.id', '=', $idthongtinlienhe)
-        ->get();
-
-        foreach ($iddiachi as $value) {
-            $iddiachi =$value->diachi_id;
+        $kiemtraphuongxa = $request->input('kiemtraphuongxa');
+        $diachi_id = $request->input('diachi_id');
+        $so_nha= $request->input('so_nha');
+        $ten_duong= $request->input('ten_duong');
+        $phuongxa= $request->input('phuongxa');
+        if($kiemtraphuongxa == 1){
+            $data_diachi  = DiaChi::where('id', $diachi_id)
+        ->update(['so_nha'=>$so_nha, 'ten_duong'=>$ten_duong, 'phuongxa_id'=>$phuongxa]);
         }
-        // return $iddiachi;
-        $iddiachi = $iddiachi*1;
-        $so_nha=$request->input('so_nha');
-        $ten_duong=$request->input('ten_duong');
-        DiaChi::where('id', $iddiachi)
-        ->update(['so_nha'=>$so_nha,'ten_duong'=>$ten_duong]);
-        $mss = 'Hoàn tất, Người dùng '.$ThongTinLienHe_ten.' đã được cập nhật! ';
-        
-        return redirect()->intended('qt-danh-sach-nguoi-dung-admin')->with('message', $mss);
+        $ten = $request->input('ten');
+        $so_dien_thoai = $request->input('so_dien_thoai');
+        $email = $request->input('email');
+        $tt_lienhe  = ThongTinLienHe::where('id', $id)
+        ->update(['ten'=>$ten, 'so_dien_thoai'=>$so_dien_thoai, 'email'=>$email]);
+         return redirect()->intended('qt-danh-sach-nguoi-dung-admin')->with('message','Hoàn tất, Đã cập nhật người dùng'.$ten.'!');
         
     }
     public function ChiTietNguoiDung($id)
@@ -1459,10 +1493,10 @@ class adminController extends Controller
        $nguoidung = NguoiDung::find($id);
         if($nguoidung->delete())
         {
-            return redirect()->intended('qt-danh-sach-nguoi-dung');    
+            return redirect()->intended('qt-danh-sach-nguoi-dung-admin');    
         }
         else{
-             return  redirect()->intended('qt-danh-sach-nguoi-dung');
+             return  redirect()->intended('qt-danh-sach-nguoi-dung-admin');
         }
        
     }
@@ -1887,7 +1921,7 @@ class adminController extends Controller
         ->leftJoin('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
         ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
-        ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
+        ->select('tbl_nguoidung.id as id_nguoidung','tbl_donhang.id as donhang_id','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
         ->orderBy('id','desc')
         ->paginate(5);
 
@@ -1953,6 +1987,46 @@ class adminController extends Controller
 
         return view('admin.modules.donhang.dagiao', ['data'=>$donhang]);
     }
+    public function chitietdonhang($id)
+    {
+        $donhang = DB::table('tbl_donhang')
+        ->select('tbl_nguoidung.id as id_nguoidung', 'tbl_donhang.id as donhang_id', 'tbl_diachi.id as diachi_id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
+        
+        ->leftJoin('tbl_nguoidung','tbl_donhang.nguoidung_id', '=', 'tbl_nguoidung.id')
+        ->leftJoin('tbl_thongtinlienhe','tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
+        ->leftJoin('tbl_trangthai_donhang','tbl_donhang.id','=','tbl_trangthai_donhang.donhang_id')
+         ->leftJoin('tbl_hinh_thuc_thanh_toan','tbl_donhang.hinhthucthanhtoan_id', '=', 'tbl_hinh_thuc_thanh_toan.id')
+        ->leftJoin('tbl_trangthai','tbl_trangthai.id','=','tbl_trangthai_donhang.trangthai_id')
+        ->leftJoin('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
+        ->leftJoin('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
+        ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
+        ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
+        
+        ->orderBy('tbl_trangthai.id', 'DESC')
+        ->where('tbl_donhang.id' , '=', $id)
+        ->get();
+
+        $sanpham = DB::table('tbl_sanpham')
+        ->join('tbl_chitietdonhang', 'tbl_chitietdonhang.sanpham_id', '=', 'tbl_sanpham.id')
+        ->where('tbl_chitietdonhang.donhang_id', '=', $id)
+        ->select('tbl_chitietdonhang.id', 'ten_san_pham', 'tbl_chitietdonhang.so_luong')
+        ->get();
+        // return $sanpham;
+
+        return view('admin.modules.donhang.chitietdonhang',['data'=>$donhang, 'sanpham'=>$sanpham]);
+    }
+    public function chitietdonhangdangxuly()
+    {
+        return view('admin.modules.donhang.chitietdangxuly');
+    }
+    public function chitietdonhangdagiao()
+    {
+        return view('admin.modules.donhang.chitietdagiao');
+    }
+    public function chitietdonhangdanggiao()
+    {
+        return view('admin.modules.donhang.chitietdanggiao');
+    }
 //báo cáo
     public function getBaoCaoTong()
     {
@@ -1968,6 +2042,11 @@ class adminController extends Controller
        // return $donhang;
          return view('admin.modules.baocao.baocao', ['data'=>$donhang]);
     }
+
+
+
+
+    
 
     public function getBaoCaoTheoThangMot()
     {

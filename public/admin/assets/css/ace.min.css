@@ -47,7 +47,7 @@ h6 {
     max-width: inherit;
     bottom: 0;
     top: 0;
-    background-color: #1fa5cc
+    background-color: #F8F8F8
 }
 
 .main-container.container,
@@ -22413,4 +22413,8 @@ input.typeahead.scrollable~.tt-menu {
     .label {
         border: 1px solid #666!important
     }
+}
+
+@media only screen and (max-width: 320px) {
+    
 }

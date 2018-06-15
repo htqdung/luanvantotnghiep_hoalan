@@ -2,7 +2,7 @@
     <div class="footer-inner" >
         <div class="footer-content" >
             <span class="bigger-120">
-  				<span class="white bolder"><a href="{{ route('MO_GIAO_DIEN_ADMIN') }}"></a>Near</span> Application &copy; 2014-2018
+  				<span class="blue bolder"><a href="{{ route('MO_GIAO_DIEN_ADMIN') }}"></a>Near</span> Application &copy; 2014-2018
             </span>
               &nbsp; &nbsp;
               <span class="action-buttons">

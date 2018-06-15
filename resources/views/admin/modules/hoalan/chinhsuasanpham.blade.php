@@ -58,21 +58,24 @@
                       <small>* Có thể chọn được nhiều loài</small>
                          <br> 
                          <select  id="framework" name="themloai[]" class="select2 col-md-12" multiple="multiple" class="form-control">
-                          @foreach ($data_dmhoa2 as $item2)
-                              @foreach ($data_dmhoa as $item)
+                          @foreach ($data_dmhoa as $item)
+                               @foreach ($data_dmhoa2 as $item2)      
+                              
                                 @if($item2->loai_id  == $item->loai_id)
-                                <option selected="selected" value="{{ $item2->loai_id }}">{{ $item->ten_loai }}</option>
+                                  <option selected="selected" value="{{ $item->loai_id }}">{{ $item->ten_loai }}</option>
+                                @elseif($item2->loai_id  != $item->loai_id)
+                                  <option  value="{{ $item2->loai_id }}">{{ $item2->ten_loai }}</option>
                                 @else
-                                <option value="{{ $item->loai_id  }}">{{ $item->ten_loai }}</option>
                                 @endif
                               @endforeach
+
                           @endforeach
                          </select>
                     </div>
                     
                     <div class="col-md-6 form-group" >
                         <label for="gia"><i>Đơn giá</i></label>
-                        
+
                         @foreach ($data_gia as $element)                            
                             <input type="hidden" value="{{ $element->dongia_id }}" name="dongia_id">
                             <input type="number" min="0" class="form-control" name="gia" value="{{ $element->gia }}" id="gia" placeholder="" style="margin-right: 0; ">

@@ -74,7 +74,9 @@
           							        <p style = "padding-top: 25px"><b>Giá: </b> <?= number_format($item->gia); ?>VND</p>
           							        
           							        <p><b>Điểm thưởng: </b>{{ $item->diem_thuong }}</p>
-          							        <p><b>Mô tả: </b> <?= $item->mo_ta;?> </p>
+          							        <p><b>Kích thước: </b> <?= $item->kich_thuoc;?> </p>
+                                <p><b>Mô tả: </b> <?= $item->mo_ta;?> </p>
+                                
           							      </div>
           							      <div class="modal-footer">
           							        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>

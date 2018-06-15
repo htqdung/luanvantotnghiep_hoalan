@@ -168,6 +168,7 @@
           {{ $data->render() }}
       </div>
     </div>
+  </div>
   </div><!-- /.page-content -->
 </div>
 @endsection

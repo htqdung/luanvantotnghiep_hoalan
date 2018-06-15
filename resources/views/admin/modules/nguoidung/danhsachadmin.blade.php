@@ -6,9 +6,8 @@
     <ul class="breadcrumb">
       <li>
         <i class="ace-icon fa fa-home home-icon"></i>
-          <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
-      </li>
-    
+        <a href=" {{ route('MO_GIAO_DIEN_ADMIN') }} ">Trang chủ</a>
+      </li><li><a href="javascript:void(0)">Danh sách quản trị viên</a></li>
     </ul><!-- /.breadcrumb -->
   </div>
 
@@ -17,7 +16,8 @@
      <div class="box box-primary">
         <div class="box-header with-border">
           <div class="widget-toolbar">
-            <button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> <a href="{{ route('THEM_NGUOI_DUNG') }}">Thêm mới</a>  </button>
+            <a href="{{ route('THEM_NGUOI_DUNG') }}"><button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> Thêm mới  </button></a>
+           
           </div>
         </div>
     <div class="row" >
@@ -120,7 +120,7 @@
 
                             </div>
                           </div>
-                          <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_NGUOI_DUNG', $item->id_nguoidung)  }}"><i class="fa fa fa-pencil fa-fw"></i></a>
+                          <a style="margin-right: 0px; padding: 0px; width: 40px" class="btn btn-info" data-toggle="tooltip" title="Chỉnh sửa" href="{{ route('CHINH_SUA_NGUOI_DUNG', $item->id_lienhe)  }}"><i class="fa fa fa-pencil fa-fw"></i></a>
 
                         <a type="button" class="btn btn-danger" title="xóa" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal"   data-target="#removeUser{{ $item->id_nguoidung }}"><i class="fa fa fa-trash-o fa-fw"></i></a>
                      </td>

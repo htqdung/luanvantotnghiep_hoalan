@@ -13,9 +13,9 @@
 	<div class="row" >
 		<div class="space-12"></div>
 		<div class="infobox-container">
-			<div class="infobox" style="background-color: #51A9FF">
+			<div class="infobox" style="background-color: #87B87F">
 				<div class="infobox-data" style="width: 100%">		
-					<div class="infobox-content"> <a style="color: #fff" href="{{ route('DANH_SACH_NGUOI_DUNG') }}">NGƯỜI DÙNG</a></div>
+					<div class="infobox-content"> <a style="color: #fff; " href="{{ route('DANH_SACH_NGUOI_DUNG') }}">NGƯỜI DÙNG</a></div>
 				</div>
 				<br>
 				<hr style="margin-bottom: 8px">
@@ -42,7 +42,7 @@
 				</div>
 			</div>
 			
-			<div class="infobox" style="background-color: #0085A8">
+			<div class="infobox" style="background-color: #D15B47">
 				<div class="infobox-data" style="width: 100%">		
 					<div class="infobox-content"   ><a style="color: #fff" href="#">TỔNG DOANH THU</a></div>
 				</div>
@@ -70,15 +70,15 @@
 			<div class="widget-box">
 				<div class="widget-header widget-header-flat widget-header-small">
 					<h5 class="widget-title">
-					<h3>DOANH THU/ĐƠN HÀNG TRONG NĂM</h3>
+					<h3>ĐƠN HÀNG HÀNG THÁNG (2018)</h3>
 					</h5>
 					<div id="piechart"></div>
 				</div>
 			</div>
 		</div>			
 		<div class="col-sm-6">	
-			<div class="widget-box">
-				<div class="widget-header widget-header-flat widget-header-small">
+			<div class="widget-box" style="height: 290px;">
+				<div class="widget-header widget-header-flat widget-header-small" style="height: 287px;">
 					<h5 class="widget-title">
 					<h3>DOANH THU BÁN HÀNG</h3>
 					</h5>
@@ -100,7 +100,6 @@
 			              <tr style="margin: 0px">
 			                <th style="width: 5%">Mã số</th>
 			                <th style="width: 40%">Tên sản phẩm</th>
-			                <th style="width: 10%">Giá</th>
 			                <th style="width: 15%">Lượt xem</th>
 			                <th style="width: 15%">Lượt mua</th> 
 			                <th style="width: 15%">Ngày thêm</th>                 
@@ -111,7 +110,6 @@
 			              	<tr>
 			                    <td>{{ $item->id_sanpham}}</td>                        
 			                    <td>{{ $item->ten_san_pham}}</td>
-			                    <td>{{ $item->gia}}</td>
 			                    <td>{{ $item->so_luot_xem}}</td>
 			                    <td>{{ $item->so_luot_mua}}</td>
 			                    <td>{{ date('d-m-Y', strtotime($item->created_at)) }}</td>                   
@@ -128,7 +126,7 @@
 				<div class="widget-header widget-header-flat widget-header-small" style=" width: ; height: ">
 			        <table class="table">
 			  			<h3>
-			  				<b>DANH SÁCH LIÊN HỆ</b>
+			  				DANH SÁCH LIÊN HỆ
 			  				<div  style="margin-left: 80%"></div>
 			  			</h3>
 			          	<thead>

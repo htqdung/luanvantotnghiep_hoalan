@@ -9,7 +9,7 @@
           <div class="navbar-header pull-left">
               <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}" class="navbar-brand">
   				<small>
-            <img src="{{ asset('admin/assets/images/logo/logo3.jpg') }}" alt="" style="height: 28px">
+            <img src="{{ asset('admin/assets/images/logo/logo4.png') }}" alt="" style="height: 28px;     padding-left: 25px;">
   					{{-- <i class="fa fa-leaf"></i>
   					Near Admin --}}
   				</small>
@@ -20,7 +20,7 @@
           </div>
 
           <div class="navbar-header pull-right" style="float: right;" >
-              <a href="." target="_blank" class="navbar-brand">
+              <a style="    padding-top: 2px;" href="." target="_blank" class="navbar-brand">
           <small>
            
            <h5>

@@ -40,8 +40,8 @@
       </script>
       <!-- /.box-header -->
       <!-- form start -->
-      <form role="form" method="POST" action="" enctype="multipart/form-data">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <form role="form" method="POST" action="" enctype="multipart/form-data">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="box-body">
 
           <div class="row">
@@ -61,7 +61,7 @@
                     <div>
                         <div class="col-md-12 form-group">
                           <label><b>Tên người dùng:</b></label>
-                          <input type="text" name="ten_nguoi_dung" required class="form-control" id=chi" placeholder="">{{ old('ten') }}  
+                          <input type="text" name="ten" required class="form-control" id=chi" placeholder="">{{ old('ten') }}  
                         </div>
                        
                       
@@ -91,17 +91,20 @@
                     <div class="col-md-12 row">
                       <div class="form-group">
                         <div class="col-md-12">
-                          <label for="ten_loai"><b>Tỉnh\Thành phố:</b></label>
-                          <select  id="province_id" name="tinhthanhpho[]" onchange="provChange()" class="select2 col-md-12" multiple="multiple" class="form-control">
+                          <label for="province_id"><b>Tỉnh\Thành phố:</b></label>
+                          <select  id="province_id" name="tinhthanhpho[]" class="select2 col-md-12" class="form-control">
+                            @foreach ($tinhthanhpho as $element)
+                                <option value="{{ $element->id }}">{{ $element->ten_tinh_thanhpho }}</option>
+                            @endforeach
                           </select>                        
                         </div>
-                        <div class="col-md-12">
-                          <label for="ten_loai"><b>Quận\Huyện:</b></label>
-                          <input type="text" name="ten_quan_huyen" class="form-control" id=chi" placeholder="">{{ old('ten_quan_huyen') }}
+                        <div class="col-md-12" >
+                          <label for="district"><b>Quận\Huyện:</b></label>
+                          <select  id="district" name="quanhuyen" class="select2 col-md-12" class="form-control"></select>
                         </div>
                         <div class="col-md-12">
-                            <label for="ten_loai"><b>Phường\Xã:</b></label>
-                            <input type="text" name="ten_phuong_xa" class="form-control" id=chi" placeholder="">{{ old('ten_phuong_xa') }}
+                            <label for="ward_id"><b>Phường\Xã:</b></label>
+                            <select  id="ward_id" name="phuongxa"  class="select2 col-md-12" class="form-control"></select>
                         </div>
                         <div class="col-md-4">
                             <label for="ten_loai"><b>Số nhà:</b></label>
@@ -111,34 +114,20 @@
                             <label for="ten_loai"><b>Tên đường:</b></label>
                             <input type="text" name="ten_duong" class="form-control" id=chi" placeholder="">{{ old('ten_duong') }}
                         </div>
-                        
-                        
-                    </div>
-                    <br>
-                    <div>
-                      <div class="col-md-4">
-                        <label for="form-field-11"><b>Số điện thoại: </b></label>
-                        <input type="number" name="so_dien_thoai" class="form-control" id=chi" placeholder="">{{ old('so_dien_thoai') }}
+                        <div class="col-md-4">
+                          <label for="form-field-11"><b>Số điện thoại: </b></label>
+                          <input type="number" name="so_dien_thoai" class="form-control" id=chi" placeholder="">{{ old('so_dien_thoai') }}
+                        </div>
+                        <div class="col-md-8">
+                          <label for="content" ><b>Email: </b></label>
+                           <input type="text" name="email" class="form-control" id=chi" placeholder="">{{ old('email') }}
+                        </div>
                       </div>
-                      <br>
-                      <div class="col-md-8">
-                        <label for="content" ><b>Email: </b></label>
-                         <input type="text" name="email" class="form-control" id=chi" placeholder="">{{ old('email') }}
-                         
-                      </div>
-                    </div>
-                    <br>
-                  </div>
-
-                </div>
-
                 <button type="submit" class="btn btn-primary btn_luu_lai_nd" > Lưu lại</button>
-              </div>
             </div><!-- /.span -->
           </div>
-        </div>
         
-      </form>
+    </form>
 </div>
 <script>
   $('#click').on('click', function(e){
@@ -147,23 +136,52 @@
   });
 </script>
 
-{{-- <script type="text/javascript">
-  function provChange(){
-    var province = $("#province_id").val();
-    $.ajax({
-      url: "/"+province+"/<?php //echo $this->request->data('Car.city_id'); ?>",cache: false,
-      success: function(msg){$("#city_id").html(msg); },
-      "statusCode": {
-        403: function() {
-          window.location.href="<?php //echo $this->Html->url(array('controller'=>'front','action'=>'index')); ?>"
-        },
-        500: function() {
-          alert('Error Server Side occured');
-        }
-      }
-    });
-  }
-</script> --}}
+<script type="text/javascript">
+  //load quan theo tinh thanh pho
+function load_district() {
+    $("#province_id").change(function() {
+        var path = 'ajax-quan-huyen/' + $(this).val();
+        console.log(path);
+        $.ajax({
+            url: path,
+            type: 'GET'
+        })
+        .done(function (response) {
+            var lam = new String(); // khoi tao bien luu pha hien thi len view
+            response.forEach(function (data) {
+                lam += '<option value="' + data.id + '">' + data.ten_quan_huyen +'</option>';
+                // console.log(data);
+            })
+            $('#district').html(lam);
+        })
+    })
+}
+// load ward
+function load_ward() {
+    $("#district").change(function() {
+        var path = 'ajax-phuong-xa/' + $(this).val();
+        $.ajax({
+            url: path,
+            type: 'GET'
+        })
+        .done(function (response) {
+            var lam = new String(); // khoi tao bien luu pha hien thi len view
+            response.forEach(function (data) {
+                lam += '<option data-longtitude="' + data.longtitude + '" data-latitude="' + data.latitude + '" value="' + data.id + '">' + data.ten_phuong_xa +'</option>';
+            })
+            $('#ward_id').html(lam);
+        })
+    })
+}
+
+    
+$(document).ready(function () {
+    
+    load_district();
+    load_ward();
+    
+})
+</script>
 
 @endsection
 

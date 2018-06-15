@@ -18,10 +18,10 @@
     <!-- /.page-header -->
     <div class="row">
       <div class="col-md-12">
-        <table class="table">
+        <table class="table" style="margin-top: 65px;">
           <h3><b>DANH SÁCH ĐƠN HÀNG</b>  
             <div  >
-               <label  style="float: right; margin-right: 350px"><b>Sắp xếp: </b></label>
+               <label  style="float: right; margin-right: 180px"><b>Sắp xếp (theo tháng):  </b></label>
                     <div class="col-md-12" >
                            
                            <div class="col-md-2"  style="float: right;">
@@ -41,7 +41,7 @@
                               <option value="{{ route('DANH_SACH_THANG_MUOI_HAI') }}">Tháng mười hai</option>
                             </select>
                           </div>
-                             <div class="col-md-2"  style="float: right;">
+                             {{-- <div class="col-md-2"  style="float: right;">
                              <select name="forma" style="font-size: 0.7em; float: left; " onchange="location = this.value;">
                                 <option value=""> Chọn một danh sách</option>
                                 <option value="{{ route('TAT_CA_DON_HANG') }}">Tất cả đơn hàng</option>
@@ -49,12 +49,12 @@
                                 <option value="{{ route('DON_HANG_DANG_GIAO') }}">Đang giao</option>
                                 <option value="{{ route('DON_HANG_DANG_XU_LY') }}">Đang xử lý</option>
                               </select> 
-                           </div>  
+                           </div>  --}} 
                     </div>
                 </div>
           </h3>
                   <thead>
-                  <tr style="margin: 0px">
+                  <tr style="margin: 0px; padding-top: 10px">
                     <th style="width: 3%">Stt</th>
                     <th style="width: 20%">Ngày đặt hàng</th>
                     <th style="width: 25%">Địa chỉ</th>

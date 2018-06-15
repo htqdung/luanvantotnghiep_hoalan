@@ -87,8 +87,7 @@
                       <div class="col-md-12">
                         <div class="col-md-12">
                           <label for="form-field-8">Rể: </label>
-                          <input type="text" id="form-field-8"   name="re" 
-                          class="autosize-transition   form-control" id="chi" title="VD: Rễ chùm, rễ cọc,..." placeholder="Đặc điểm rể" value="{{ old('re') }} ">
+                          <input type="text" id="form-field-8"   name="re" class="autosize-transition   form-control" id="chi" title="VD: Rễ chùm, rễ cọc,..." placeholder="Đặc điểm rể" value="{{ old('re') }} ">
                         </div>
                       </div>
                     </div>
