@@ -72,7 +72,17 @@ class adminController extends Controller
                         $data = DB::table('tbl_nguoidung')->where($arr)->first();
                         Session::flash('success','đăng nhập thành công');
                         Session::put('login',$data);
-                        return redirect()->intended('qt-admin');
+                        $nhom_id = $data->nhom_id;
+
+                        if($nhom_id == 1 || $nhom_id == 0)
+                        {
+
+                            return redirect()->intended('qt-admin');    
+                        }
+                        else
+                        {
+                            return redirect()->back()->withErrors("Bạn không có quyền truy cập!");
+                        }    
                     }
                     else
                     {
@@ -81,7 +91,16 @@ class adminController extends Controller
             }
         
     }
-        
+
+    public function LogoutAdmin()
+    {
+        Session::flush();
+        return redirect()->route('dangnhap');
+    }
+    public function doimatkhau()
+       {
+           return view('admin.modules.dangnhapadmin.doimatkhau');
+       }   
     public function DuyetDonHangMoiNhan($id)
     {
         TrangThai_DonHang::where('donhang_id',$id)
@@ -90,7 +109,13 @@ class adminController extends Controller
         
     }
     
-
+ public function DuyetDonHangDangXuLy($id)
+    {
+       TrangThai_DonHang::where('donhang_id',$id)
+        ->update(['trangthai_id'=>3]);
+        return redirect()->intended('qt-tat-ca-don-hang')->with('message', 'Đơn hàng'.$id.'đã được duyệt thành công!');
+         
+    }
     public function SanPhamXemNhieu()
     {
         $sanphamxemnhieu = DB::table('tbl_sanpham')
@@ -1326,8 +1351,8 @@ class adminController extends Controller
         ->leftJoin('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
         ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
-        ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
-      
+        ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai','tbl_donhang.id')
+        
         ->orderBy('tbl_donhang.id', 'desc')
         ->paginate(5);
         // return $nguoidung;

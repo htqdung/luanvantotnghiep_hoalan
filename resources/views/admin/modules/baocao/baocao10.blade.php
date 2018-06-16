@@ -19,7 +19,7 @@
     <div class="row">
       <div class="col-md-12">
         <table class="table">
-         <h3><b>DANH SÁCH ĐƠN HÀNG</b> <button type="" name="in" style="float: right;" >   <i class="  fa fa-print" ></i></button></h3>
+         <h3><b>DANH SÁCH ĐƠN HÀNG</b></h3>
           
             <select name="" onchange="window.location=this.value" id="" style="float: right;" >
             <option value="{{ route('DANH_SACH_TONG') }}">Tất cả</option>

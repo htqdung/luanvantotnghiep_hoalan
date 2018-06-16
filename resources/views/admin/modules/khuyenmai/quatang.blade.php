@@ -45,7 +45,7 @@
                    <tbody>
                    <?php $i; $arr[][]="";?>
             @foreach ($data as $item) 
-              <tr>
+              <tr> 
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->ten_qua_tang }}</td>
                     <td>{{ $item->ten_chuong_trinh }}</td>

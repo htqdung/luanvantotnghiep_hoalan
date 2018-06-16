@@ -1,8 +1,12 @@
 <?php ini_set('display_errors', 1);?>
 
  <html lang="en">
-  @include('admin.script.script_head')
+
+      @include('admin.script.script_head')
       <body class="no-skin" onload=" tach_chuoi() ">
+          {{-- NẾU CÓ ĐĂNG NHẬP THÌ LƯU SESSION LẠI< NẾU CHƯA ĐĂNG NHẬP THÌ KHÔNG TRUY CẬP ĐƯỢC VÀO BÊN TRONG VÙNG NÀY --}}
+
+          @if(Session::has('login'))
           @include('admin.layout.header')
           <div class="main-container ace-save-state" id="main-container">
               <script type="text/javascript">
@@ -32,7 +36,12 @@
           </div>
           <!-- /.main-container -->
               @include('admin.script.script_last_page')
+              @else
+
+              <div class="alert alert-danger">
+                <strong>Bạn chưa đăng nhập! </strong><a href="{{ route('dangnhap') }}">Đăng nhập</a> 
+              </div>
+              @endif
       </body>
   
   </html>
- 
