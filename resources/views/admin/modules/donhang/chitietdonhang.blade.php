@@ -29,10 +29,11 @@
 	<div id="collapseOne" class="panel-collapse collapse in"
 		role="tabpanel" aria-labelledby="headingOne">
 		<div class="panel-body">
-			<form class="profileForm" action="#">
+
 				<table class="table table-responsive" id="tblAccounts">
 					<tbody class="">
 						<tr > 
+							<input type="hidden" id="donhang_id" value="{{ $data[0]->donhang_id }}">
 							<td style="width: 20%"><b>Ngày đơn hàng:</b></td>
 							<td class="form-value1" id="tdinputName"  >{{ $data[0]->ngay_dat_hang }}</td>
 							
@@ -43,8 +44,9 @@
 							
 						</tr>
 						<tr >
-							<td style="width: 20%"><b>Địa chỉ:</b></td>
-							<td class="form-value1" id="tdinputName" >{{ $data[0]->diachi_id }}</td>
+							<td style="width: 20%"><b>Địa chỉ giao hàng:</b></td>
+							<td class="form-value1" id="tdinputName" >{{ $data[0]->so_nha }}, {{ $data[0]->ten_duong }}
+								, {{ $data[0]->ten_phuong_xa }}, {{ $data[0]->ten_quan_huyen }} , {{ $data[0]->ten_tinh_thanhpho }}</td>
 							
 						</tr>
 						<tr >
@@ -59,17 +61,35 @@
 						<tr >
 							<td style="width: 20%"><b>Hình thức thanh toán:</b></td>
 							<td class="form-value1" id="tdinputName" >{{ $data[0]->ten_hinh_thuc }}</td>
-							
 						</tr>
+
 						<tr>
 							<td style="width: 20%"><b>Trạng thái:</b></td>
-							<td class="form-value1" id="tdinputDOB" > {{ $data[0]->ten_trang_thai }}</td>
+							<td class="form-value1" id="tdinputDOB" >
+								<form action="" method="POST" enctype="multipart/form-data" >
+									<input type="hidden" name="_token" value="{{ csrf_token() }}">
+									<select name="trangthai" id="xuly">
+										@foreach ($trangthai as $element)
+											@if($data[0]->trangthai_id == $element->id)
+												<option value="{{ $element->id }}" selected>{{ $data[0]->ten_trang_thai }}</option>	
+											@else
+												<option value="{{ $element->id }}" >{{ $element->ten_trang_thai }}</option>	
+											@endif
+										@endforeach
+									</select>
+									<button type="submit" class="btn btn-success" id="btn_xuly" style="
+									    margin-top: -2px;
+									    padding: 0px 10px;
+									">Xử lý</button>
+								</form>
+								
+							</td>
 							
 						</tr>
 						
 					</tbody>
 				</table>
-			</form>
+			
 
 		</div>
 	</div>
@@ -96,6 +116,11 @@
 			      </div>
 			    </div>
 </div>
+<script>
+	
+	
 
+
+</script>
   
 @endsection

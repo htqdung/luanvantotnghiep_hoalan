@@ -105,6 +105,7 @@ Route::get('qt-duyet-don-hang-moi-nhan/{id}', 'adminController@DuyetDonHangMoiNh
 Route::get('qt-duyet-don-hang-dang-xu-ly/{id}', 'adminController@DuyetDonHangDangXuLy')
 ->name('DuyetDonHangDangXuLy');
 Route::get('qt-chi-tiet-don-hang/{id}','adminController@chitietdonhang')->name('CHI_TIET_DON_HANG');
+Route::post('qt-chi-tiet-don-hang/{id}','adminController@DuyetDonHangMoiNhan');
 Route::get('qt-chi-tiet-dang-xu-ly','adminController@chitietdonhangdangxuly')->name('CHI_TIET_DANG_XU_LY');
 Route::get('qt-chi-tiet-da-giao','adminController@chitietdonhangdagiao')->name('CHI_TIET_DA_GIAO');
 Route::get('qt-chi-tiet-dang-giao','adminController@chitietdonhangdanggiao')->name('CHI_TIET_DANG_GIAO');
@@ -145,5 +146,10 @@ Route::get('ajax-lay-hinh-anh-sp/{id}', 'adminController@layHinhAnhSanPham');
 // Route::get('ajax-tinh-thanh-pho', 'adminController@LayThanhPho');
 Route::get('ajax-quan-huyen/{id}', 'adminController@LayQuanHuyen');
 Route::get('ajax-phuong-xa/{id}', 'adminController@LayPhuongXa');
+
+
+
+Route::get('ajax-trang-thai-don-hang/{id}', 'adminController@LayTrangThaiDonHang');
+Route::get('ajax-sap-xep/thang={thang}&trangthai={trangthai}', 'adminController@getSapXepTongHop');
 
 ?>
