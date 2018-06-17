@@ -47,10 +47,10 @@
                     <th style="width: 3%">Mã số</th>
                     <th style="width: 10%">Ngày đặt hàng</th>
                     <th style="width: 25%">Địa chỉ</th>
-                    <th style="width: 10%">Hình thức thanh toán</th>
+                    <th style="width: 15%">Hình thức thanh toán</th>
                     <th style="width: 10%">Tổng tiền  </th>
                     <th style="width: 10%">Trạng thái  </th>
-                    <th style="width: 15%">Chức năng</th>
+                    <th style="width: 10%">Chức năng</th>
                   </tr>
                   </thead>
                    <tbody>
@@ -223,7 +223,7 @@
       var trangthai = $('#trangthai').val();
       var trangthai_text = $( "#trangthai option:selected" ).text();
       var path ='ajax-sap-xep/thang='+thang+'&trangthai='+trangthai;
-
+      console.log(path);
       $.ajax({
           url: path,
           type: 'GET'
@@ -232,7 +232,7 @@
           var _data = new String();var _table = new String();
           argument.forEach(function(data){
             // console.log(data);
-            _data +=  '<tr><td>'+ data.donhang_id +'</td><td>'+data.ngay_dat_hang+'</td><td>'+data.so_nha+', '+data.ten_duong+', '+data.ten_phuong_xa+','+data.ten_quan_huyen+','+data.ten_tinh_thanhpho+'</td><td>'+ data.ten_hinh_thuc +'</td>    <td>'+ data.tong_tien +'</td>    <td>'+trangthai_text +'</td>    <td><a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" href="qt-chi-tiet-don-hang/'+data.donhang_id+'" title="Chi tiết" href=""><i class="fa fa-eye fa-fw"></i></a></td></tr>';
+            _data +=  '<tr><td>'+ data.donhang_id +'</td><td>'+data.ngay_dat_hang+'</td><td>'+data.so_nha+', '+data.ten_duong+', '+data.ten_phuong_xa+','+data.ten_quan_huyen+','+data.ten_tinh_thanhpho+'</td><td>'+ data.ten_hinh_thuc +'</td>    <td>'+ data.tong_tien +'</td>    <td>'+data.ten_trang_thai +'</td>    <td><a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" href="qt-chi-tiet-don-hang/'+data.donhang_id+'" title="Chi tiết" href=""><i class="fa fa-eye fa-fw"></i></a></td></tr>';
 
           })
           // var elementDelete = $("#myTable").parent();
@@ -248,10 +248,26 @@
 
 
     $('#thang').change(function(event) {
-      SapXep();
+      if($('#thang').val()== 0)
+      {
+        location.reload();
+      }
+      else
+      {
+        SapXep();  
+      }
+      
     });
     $('#trangthai').change(function(event) {
-      SapXep();
+      if($('#trangthai').val()==0)
+      {
+        location.reload();
+      }
+      else
+      {
+        SapXep();  
+      }
+      
     });
 
 

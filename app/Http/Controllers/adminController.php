@@ -1975,8 +1975,10 @@ class adminController extends Controller
         ->leftJoin('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
         ->leftJoin('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
         ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
+        ->leftJoin('tbl_trangthai_donhang', 'tbl_trangthai_donhang.donhang_id', '=', 'tbl_donhang.id')
+        ->leftJoin('tbl_trangthai', 'tbl_trangthai.id', '=', 'tbl_trangthai_donhang.trangthai_id')
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
-        ->select('tbl_nguoidung.id as id_nguoidung','tbl_donhang.id as donhang_id','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho')
+        ->select('tbl_nguoidung.id as id_nguoidung','tbl_donhang.id as donhang_id','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho', 'tbl_trangthai.ten_trang_thai')
         ->orderBy('id','desc')
         ->paginate(5);
 
@@ -2067,7 +2069,7 @@ class adminController extends Controller
         $sanpham = DB::table('tbl_sanpham')
         ->join('tbl_chitietdonhang', 'tbl_chitietdonhang.sanpham_id', '=', 'tbl_sanpham.id')
         ->where('tbl_chitietdonhang.donhang_id', '=', $id)
-        ->select('tbl_chitietdonhang.id', 'ten_san_pham', 'tbl_chitietdonhang.so_luong')
+        ->select('tbl_chitietdonhang.id', 'ten_san_pham', 'tbl_chitietdonhang.so_luong','don_gia','thanh_tien')
         ->get();
         // return $sanpham;
 
@@ -2109,7 +2111,7 @@ class adminController extends Controller
 
         if($thang == 0){
             $donhang = DB::table('tbl_donhang')
-            ->select('tbl_nguoidung.id as id_nguoidung','tbl_donhang.id as donhang_id','tbl_diachi.id','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho',
+            ->select('tbl_nguoidung.id as id_nguoidung','tbl_donhang.id as donhang_id','tbl_diachi.id','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai',
                 DB::raw('DATE_FORMAT(ngay_dat_hang, "%d-%m-%Y") as ngay_dat_hang'))
             
             ->leftJoin('tbl_trangthai_donhang','tbl_donhang.id','=','tbl_trangthai_donhang.donhang_id')
@@ -2128,7 +2130,7 @@ class adminController extends Controller
         else if($trangthai == 0)
         {
             $donhang = DB::table('tbl_donhang')
-            ->select('tbl_nguoidung.id as id_nguoidung','tbl_donhang.id as donhang_id','tbl_diachi.id','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho',
+            ->select('tbl_nguoidung.id as id_nguoidung','tbl_donhang.id as donhang_id','tbl_diachi.id','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai',
                 DB::raw('DATE_FORMAT(ngay_dat_hang, "%d-%m-%Y") as ngay_dat_hang'))
             
             ->leftJoin('tbl_trangthai_donhang','tbl_donhang.id','=','tbl_trangthai_donhang.donhang_id')
@@ -2145,7 +2147,7 @@ class adminController extends Controller
         }
         else{
             $donhang = DB::table('tbl_donhang')
-            ->select('tbl_nguoidung.id as id_nguoidung','tbl_donhang.id as donhang_id','tbl_diachi.id','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho',
+            ->select('tbl_nguoidung.id as id_nguoidung','tbl_donhang.id as donhang_id','tbl_diachi.id','phi_van_chuyen','tong_tien','ten_nguoi_nhan','tbl_hinh_thuc_thanh_toan.ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai',
                 DB::raw('DATE_FORMAT(ngay_dat_hang, "%d-%m-%Y") as ngay_dat_hang'))
             
             ->leftJoin('tbl_trangthai_donhang','tbl_donhang.id','=','tbl_trangthai_donhang.donhang_id')

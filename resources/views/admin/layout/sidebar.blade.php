@@ -64,10 +64,10 @@
               </ul>
           </li>
           <li class="">
-              <a href="#" class="dropdown-toggle">
+              <a href="{{ route('TAT_CA_DON_HANG') }}" >
   					<i class="menu-icon fa fa-list"></i>
-  					<span class="menu-text"> Đơn hàng </span>
-  					<b class="arrow fa fa-angle-down"></b>
+  					<span class="menu-text"> Đơn hàng </span></a>  				
+            	{{-- <b class="arrow fa fa-angle-down"></b>
   				</a>
               <b class="arrow"></b>
               <ul class="submenu">
@@ -101,7 +101,7 @@
                   </li>
                   
                  
-              </ul>
+              </ul> --}}
           </li>
           
           <li class="">

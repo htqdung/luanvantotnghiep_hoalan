@@ -49,15 +49,7 @@
 								, {{ $data[0]->ten_phuong_xa }}, {{ $data[0]->ten_quan_huyen }} , {{ $data[0]->ten_tinh_thanhpho }}</td>
 							
 						</tr>
-						<tr >
-							<td style="width: 20%"><b>Tổng tiền:</b></td>
-							<td class="form-value1" id="tdinputName" ><?=  
-								number_format($data[0]->tong_tien,1,",",".");
-								?> VND
-
-							 </td>
-							
-						</tr>
+						
 						<tr >
 							<td style="width: 20%"><b>Hình thức thanh toán:</b></td>
 							<td class="form-value1" id="tdinputName" >{{ $data[0]->ten_hinh_thuc }}</td>
@@ -94,27 +86,55 @@
 		</div>
 	</div>
 	 <div class="row">
-			      <div class="col-md-12">
-			        <table class="table">
-			          <h3><b>DANH SÁCH SẢN PHẨM</b></h3>
-			                  <thead>
-			                  	<tr style="">
-			                    <th style="width: 10%">Mã chi tiết</th>
-			                    <th style="width: 80%">Tên sản phẩm</th>
-			                    <th style="width: 15%">Số lượng </th>
-			                  
-			                  </tr>
-			                  </thead>
-			                   <tbody>
-			                       @foreach ($sanpham as $element)
-			                       <td>{{ $element->id }}</td>
-			                       	<td>{{ $element->ten_san_pham }}</td>
-			                       	<td>{{ $element->so_luong }}</td>
-			                       @endforeach
-				              </tbody>              
-			          </table>
-			      </div>
-			    </div>
+	      <div class="col-md-12">
+	        <table class="table">
+	          <h3><b>DANH SÁCH SẢN PHẨM</b></h3>
+	                  <thead>
+	                  	<tr style="">
+	                    <th style="width: 10%">Mã số</th>
+	                    <th style="width: 40%">Tên sản phẩm</th>
+	                    <th style="width: 15%">Đơn giá</th>
+	                    <th style="width: 15%">Số lượng </th>
+	                    <th style="width: 15%">Thành tiền </th>
+	                  
+	                  </tr>
+	                  </thead>
+	                   <tbody>
+	                       @foreach ($sanpham as $element)
+	                       <td>{{ $element->id }}</td>
+	                       	<td>{{ $element->ten_san_pham }}</td>
+	                       	<td> <?=number_format( $element->don_gia);
+								?> VND</td>
+	                       	<td>{{ $element->so_luong }}</td>
+	                       
+	                       	<td> <?=number_format( $element->thanh_tien);
+								?> VND</td>
+	                       @endforeach
+							<tr>
+	                        	<td></td>
+	                        	<td></td>
+	                        	<td></td>
+							<td style="width: 20%; "><b>Phí vận chuyển:</b></td>
+							<td class="form-value1" id="tdinputName"  style="color: red"><?=  
+								number_format($data[0]->phi_van_chuyen);
+								?> VND
+							 </td>
+							</tr>
+	                        <tr>
+	                        	<td></td>
+	                        	<td></td>
+	                        	<td></td>
+							<td style="width: 20%; "><b>Tổng tiền:</b></td>
+							<td class="form-value1" id="tdinputName"  style="color: red"><?=  
+								number_format($data[0]->tong_tien);
+								?> VND
+							 </td>
+							</tr>
+		              </tbody>              
+	          </table>
+	      </div>
+	 </div>
+
 </div>
 <script>
 	
