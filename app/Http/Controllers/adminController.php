@@ -1358,22 +1358,9 @@ class adminController extends Controller
         ->where('nhom_id', '=', '2')
 
         ->paginate(5);
-        $donhang = DB::table('tbl_donhang')
-        ->leftJoin('tbl_nguoidung','tbl_donhang.nguoidung_id', '=', 'tbl_nguoidung.id')
-        ->leftJoin('tbl_thongtinlienhe','tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')
-        ->leftJoin('tbl_trangthai_donhang','tbl_donhang.id','=','tbl_trangthai_donhang.donhang_id')
-        ->leftJoin('tbl_trangthai','tbl_trangthai.id','=','tbl_trangthai_donhang.trangthai_id')
-         ->leftJoin('tbl_hinh_thuc_thanh_toan','tbl_hinh_thuc_thanh_toan.id','=','tbl_donhang.hinhthucthanhtoan_id')
-        ->leftJoin('tbl_diachi', 'tbl_diachi.id', '=', 'tbl_thongtinlienhe.diachi_id')
-        ->leftJoin('tbl_phuongxa', 'tbl_diachi.phuongxa_id', '=', 'tbl_phuongxa.id')
-        ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
-        ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
-        ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai','tbl_donhang.id')
-        
-        ->orderBy('tbl_donhang.id', 'desc')
-        ->paginate(5);
+       
         // return $nguoidung;
-        return view('admin.modules.nguoidung.danhsachnguoidung' , ['data'=>$nguoidung,'donhang'=>$donhang]);
+        return view('admin.modules.nguoidung.danhsachnguoidung' , ['data'=>$nguoidung]);
     }
 
     public function getnguoidungadmin()
@@ -1514,9 +1501,9 @@ class adminController extends Controller
         ->leftJoin('tbl_quanhuyen', 'tbl_phuongxa.quanhuyen_id', '=', 'tbl_quanhuyen.id')
         ->leftJoin('tbl_tinh_thanhpho', 'tbl_quanhuyen.tinh_thanhpho_id', '=', 'tbl_tinh_thanhpho.id')
         ->select('tbl_nguoidung.id as id_nguoidung','tbl_diachi.id','ngay_dat_hang','phi_van_chuyen','tong_tien','ten_nguoi_nhan','ten_hinh_thuc', 'tbl_thongtinlienhe.so_dien_thoai', 'email', 'so_nha', 'ten_duong', 'ten_phuong_xa', 'ten_quan_huyen', 'ten_tinh_thanhpho','ten_trang_thai')
-        ->where('tbl_donhang.nguoidung_id','=',$id)
+        ->where('tbl_nguoidung.id','=',$id)
         ->orderBy('tbl_donhang.id', 'desc')
-        ->paginate(5);
+        ->get();
 
         $nguoidung = DB::table('tbl_nguoidung')
         ->join('tbl_thongtinlienhe','tbl_nguoidung.thongtinlienhe_id', '=', 'tbl_thongtinlienhe.id')

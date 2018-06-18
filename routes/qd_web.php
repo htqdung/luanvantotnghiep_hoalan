@@ -152,4 +152,9 @@ Route::get('ajax-phuong-xa/{id}', 'adminController@LayPhuongXa');
 Route::get('ajax-trang-thai-don-hang/{id}', 'adminController@LayTrangThaiDonHang');
 Route::get('ajax-sap-xep/thang={thang}&trangthai={trangthai}', 'adminController@getSapXepTongHop');
 
+
+Route::get('ajax-lay-danh-sach-don-hang/{id}', 'adminController@laydonhangchonguoidung');
+
+
+
 ?>
