@@ -98,9 +98,49 @@ class adminController extends Controller
         return redirect()->route('dangnhap');
     }
     public function doimatkhau()
-       {
-           return view('admin.modules.dangnhapadmin.doimatkhau');
-       }   
+    {
+       return view('admin.modules.dangnhapadmin.doimatkhau');
+    }   
+    public function postDoiMatKhau(Request $request)
+    { 
+
+        // Validation
+        $mat_khau_cu_db0 = DB::table('tbl_nguoidung')
+        ->select('password')
+        ->where('username','=',$request->input('username'))
+        ->get();
+        $mat_khau_cu_input = $request->input('old_pass');
+        $mat_khau_cu_db = "";
+        foreach ($mat_khau_cu_db0 as $value) {
+            $mat_khau_cu_db = $value->password;
+        }
+
+        $mat_khau_moi = $request->input('new_pass');
+        $mat_khau_moi_2 = $request->input('re_new_pass');
+        
+         if(!$mat_khau_cu_input || !$mat_khau_moi ||!$mat_khau_moi_2)
+        {
+            return redirect()->back()->withErrors("Bạn phải nhập nhập đầy đủ thông tin!");
+            exit;
+        }
+    
+        else if($mat_khau_cu_input!=$mat_khau_cu_db)
+        {
+            return redirect()->back()->withErrors("Mật khẩu cũ nhập không đúng!");
+            exit;
+        }
+        else if($mat_khau_moi!=$mat_khau_moi_2)
+        {
+            return redirect()->back()->withErrors("Xác nhận mật khẩu sai!");
+            exit;
+        }
+        else 
+        {
+            NguoiDung::where('username',$request->input('username'))
+           ->update(['password'=>$request->input('new_pass')]);
+            return redirect()->intended('qt-admin');
+        }
+    }
 
 
 

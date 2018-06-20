@@ -51,7 +51,10 @@
 
 });
 
-
+<?php $value = session('login');
+  $id =  $value->id;
+  $ten =  $value->username;
+?>
 
 
 	</script>
@@ -92,11 +95,12 @@
 
 												<input type="hidden" name="_token" value="{{ csrf_token() }}">
 												<fieldset >
-													
+													<input type="hidden" name="username" value="{{ $ten }}">
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="password" name="old_pass"  class="form-control" placeholder="Mật khẩu cũ">
 															<i class="ace-icon fa fa-lock"></i>
+															
 														</span>
 													</label>
 													<label class="block clearfix">

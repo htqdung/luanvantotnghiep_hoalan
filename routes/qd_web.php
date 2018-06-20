@@ -8,7 +8,7 @@ Route::post('dang-nhap-admin','adminController@postdangnhap');
 Route::get('logout', 'adminController@LogoutAdmin')->name('LogoutAdmin');        
  
 Route::get('doi-mat-khau','adminController@doimatkhau')->name('DOI_MAT_KHAU');          
-
+Route::post('doi-mat-khau','adminController@postDoiMatKhau'); 
 
 Route::get('tsst/{id}', 'adminController@layDanhMucLoaiHoa');
 Route::get('qt-admin', 'adminController@getTest')->name('MO_GIAO_DIEN_ADMIN');
