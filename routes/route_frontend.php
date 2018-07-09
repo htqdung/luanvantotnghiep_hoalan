@@ -33,6 +33,9 @@ Route::group(['prefix' => 'gio-hang','namespace' => 'Frontend'],function(){
 
     Route::get('/thanh-toan.html','ShoppingCartController@pay')->name('pay');
     Route::post('/thanh-toan','ShoppingCartController@postPay')->name('postPay');
+
+    Route::get('/delete_ajax/{id}','ShoppingCartController@deleteItemProduct');
+    Route::get('/update_ajax/{id}/{qty}','ShoppingCartController@updateItemProduct');
 });
 
 Route::post('/get_city/{id}','Frontend\FrontendController@getCity');

@@ -26,6 +26,7 @@ class ShoppingCartController extends Controller
     public function index()
     {
         $products = \Cart::content();
+//        dump($products);
 
         return view('trangchinh.giohang.index',compact('products'));
     }
@@ -47,9 +48,11 @@ class ShoppingCartController extends Controller
         {
             return redirect()->back();
         }
+
         $km_sp = \DB::table('tbl_khuyenmai_sanpham')->where('sanpham_id',$products->id)->first();
         $price = $products->gia;
         $pt_sale = 0;
+
         if ($km_sp)
         {
             $sale = \DB::table('tbl_chuongtrinhkhuyenmai')->where('id',$km_sp->chuongtrinh_id)->first();
@@ -61,12 +64,13 @@ class ShoppingCartController extends Controller
         }
 
 
-        \Cart::add(['id' => $id, 'name' => $products->ten_san_pham, 'qty' => 1, 'price' => $price, 'options' => ['hinhanh' => $products->ten_hinh,'pt_sale' => $pt_sale]]);
+        \Cart::add(['id' => $id, 'name' => $products->ten_san_pham, 'qty' => 1, 'price' => $price, 'options' => ['hinhanh' => $products->ten_hinh,'pt_sale' => $pt_sale,'price' => $products->gia ]]);
         return redirect()->back()->with('success','Thêm giỏ hàng thành công');
     }
 
     public function updateCart(Request $request)
     {
+    
         $data   = $request->except('_token');
         $qty    = array_get($data,'qty');
         $rowId  = array_get($data,'rowID');
@@ -147,5 +151,22 @@ class ShoppingCartController extends Controller
         }
         \Cart::destroy();
         return redirect('/')->with('success','Xác nhận thông tin thanh toán thành công ');
+    }
+
+    public function deleteItemProduct($id)
+    {
+        \Cart::remove($id);
+        $total = number_format((str_replace(',','',\Cart::subtotal(0))),0,",",".").' VNĐ ';
+
+        return json_encode(['total' => $total]);
+    }
+
+    public function updateItemProduct($id , $qty)
+    {
+        \Cart::update($id,$qty);
+
+        $total = number_format((str_replace(',','',\Cart::subtotal(0))),0,",",".").' VNĐ ';
+
+        return json_encode(['total' => $total]);
     }
 }

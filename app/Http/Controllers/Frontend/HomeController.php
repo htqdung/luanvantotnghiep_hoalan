@@ -33,10 +33,13 @@ class HomeController extends Controller
             ->select('tbl_sanpham.*','tbl_hinhanh.ten_hinh','tbl_dongia.gia')
             ->distinct('tbl_sanpham_loai.sanpham_id')
             ->limit(8)->get();
+
+        $slide = \DB::table('tbl_slide')->get();
         $viewData =
         [
             'productAll' => $productAll,
-            'productSale' => $productSale
+            'productSale' => $productSale,
+            'slide'       => $slide
         ];
         return view('trangchinh.trangchu.index',$viewData);
     }

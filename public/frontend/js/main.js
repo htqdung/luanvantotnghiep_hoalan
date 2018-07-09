@@ -1,11 +1,11 @@
 jQuery( document ).ready(function( $ ) {
 "use strict"
 /*-----------------------------------------------------------------------------------*/
-/* 	LOADER
+/*  LOADER
 /*-----------------------------------------------------------------------------------*/
 $("#loader").delay(1000).fadeOut("slow");
 /*-----------------------------------------------------------------------------------*/
-/*		STICKY NAVIGATION
+/*      STICKY NAVIGATION
 /*-----------------------------------------------------------------------------------*/
 $(".sticky").sticky({topSpacing:0});
 /*-----------------------------------------------------------------------------------*/
@@ -21,8 +21,8 @@ $('.progress-bars').waypoint(function() {
       width:$(this).attr('data-percent')
      },200);
 });},
-	{ 
-	offset: '100%',
+    { 
+    offset: '100%',
     triggerOnce: true 
 });
 /* ==========================================================================
@@ -32,14 +32,14 @@ $('.countdown').downCount({
      date: '12/12/2018 12:00:00' // M/D/Y
 });
 /*-----------------------------------------------------------------------------------*/
-/*	ISOTOPE PORTFOLIO
+/*  ISOTOPE PORTFOLIO
 /*-----------------------------------------------------------------------------------*/
 var $container = $('.port-wrap .items');
     $container.imagesLoaded(function () {
     $container.isotope({
     itemSelector: '.portfolio-item',
     layoutMode: 'masonry'
-});	
+}); 
 });
 $('.portfolio-filter li a').on('click', function () {
     $('.portfolio-filter li a').removeClass('active');
@@ -52,17 +52,17 @@ return false;
 });
 //Togle Menu on click in Header
 $(".menu-shows").on('click', function(){
-	$(".menu-shows, .menu-shows-inner, .menu").toggleClass("active");
+    $(".menu-shows, .menu-shows-inner, .menu").toggleClass("active");
 });
 /*-----------------------------------------------------------------------------------*/
-/*	ISOTOPE PORTFOLIO
+/*  ISOTOPE PORTFOLIO
 /*-----------------------------------------------------------------------------------*/
 var $container = $('.port-wrap .items');
     $container.imagesLoaded(function () {
     $container.isotope({
     itemSelector: '.portfolio-item',
     layoutMode: 'masonry'
-});	
+}); 
 });
 $('.portfolio-filter li a').on('click', function () {
     $('.portfolio-filter li a').removeClass('active');
@@ -77,40 +77,40 @@ return false;
 /*    PIE CHART
 /*-----------------------------------------------------------------------------------*/
 $('#pie-1').pieChart({
-	barColor: '#8c5f0b',
+    barColor: '#8c5f0b',
     trackColor: '#fff',
     lineCap: 'round',
     lineWidth: 4,
-    	onStep: function (from, to, percent) {
-    		$(this.element).find('.pie-value').text(Math.round(percent) + '%');
+        onStep: function (from, to, percent) {
+            $(this.element).find('.pie-value').text(Math.round(percent) + '%');
         }
 });
 $('#pie-2').pieChart({
-	barColor: '#8c5f0b',
+    barColor: '#8c5f0b',
     trackColor: '#fff',
     lineCap: 'round',
     lineWidth: 4,
-    	onStep: function (from, to, percent) {
-    	$(this.element).find('.pie-value').text(Math.round(percent) + '%');
-	}
+        onStep: function (from, to, percent) {
+        $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+    }
 });
 $('#pie-3').pieChart({
-	barColor: '#8c5f0b',
+    barColor: '#8c5f0b',
     trackColor: '#fff',
     lineCap: 'round',
     lineWidth: 4,
-    	onStep: function (from, to, percent) {
-        	$(this.element).find('.pie-value').text(Math.round(percent) + '%');
-		}
+        onStep: function (from, to, percent) {
+            $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+        }
 });
 $('#pie-4').pieChart({
-	barColor: '#8c5f0b',
+    barColor: '#8c5f0b',
     trackColor: '#fff',
     lineCap: 'round',
     lineWidth: 4,
-    	onStep: function (from, to, percent) {
-        	$(this.element).find('.pie-value').text(Math.round(percent) + '%');
-		}
+        onStep: function (from, to, percent) {
+            $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+        }
 });
 
 
@@ -123,103 +123,103 @@ jQuery.stellar({
    positionProperty: 'position',
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	SLIDER REVOLUTION
+/*  SLIDER REVOLUTION
 /*-----------------------------------------------------------------------------------*/
 jQuery(".tp-banner").revolution({
-	sliderType:"standard",
-	sliderLayout:"auto",
-	delay:9000,
-	minHeight:500,
-	gridwidth:0,
-	navigationType:"bullet",
-	navigationArrows:"solo",
-	navigationStyle:"preview4",
-	gridheight:500		
-});		
+    sliderType:"standard",
+    sliderLayout:"auto",
+    delay:9000,
+    minHeight:500,
+    gridwidth:0,
+    navigationType:"bullet",
+    navigationArrows:"solo",
+    navigationStyle:"preview4",
+    gridheight:500      
+});     
 /*-----------------------------------------------------------------------------------*/
-/* 	SLIDER REVOLUTION
+/*  SLIDER REVOLUTION
 /*-----------------------------------------------------------------------------------*/
 jQuery('.tp-banner-full').show().revolution({
-	dottedOverlay:"none",
-	delay:7000,
-	startwidth:1200,
-	startheight:500,
-	navigationType:"bullet",
-	navigationArrows:"solo",
-	navigationStyle:"preview4",
-	parallax:"mouse",
-	parallaxBgFreeze:"on",
-	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],												
-	keyboardNavigation:"on",						
-	shadow:0,
-	fullWidth:"on",
-	fullScreen:"off",
-	shuffle:"off",						
-	autoHeight:"off",						
-	forceFullWidth:"on",	
-	fullScreenOffsetContainer:""	
+    dottedOverlay:"none",
+    delay:7000,
+    startwidth:1200,
+    startheight:500,
+    navigationType:"bullet",
+    navigationArrows:"solo",
+    navigationStyle:"preview4",
+    parallax:"mouse",
+    parallaxBgFreeze:"on",
+    parallaxLevels:[7,4,3,2,5,4,3,2,1,0],                                               
+    keyboardNavigation:"on",                        
+    shadow:0,
+    fullWidth:"on",
+    fullScreen:"off",
+    shuffle:"off",                      
+    autoHeight:"off",                       
+    forceFullWidth:"on",    
+    fullScreenOffsetContainer:""    
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	TESTIMONIAL SLIDER
+/*  TESTIMONIAL SLIDER
 /*-----------------------------------------------------------------------------------*/
 $("#testi-slide").owlCarousel({ 
     items : 1,
-	autoplay:true,
-	loop:true,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
+    autoplay:true,
+    loop:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
     navigation : true,
-	nav: true,
-	navText: ["<i class='lnr lnr-arrow-left'></i>","<i class='lnr lnr-arrow-right'></i>"],
-	pagination : true,
-	singleItem	: true
+    nav: true,
+    navText: ["<i class='lnr lnr-arrow-left'></i>","<i class='lnr lnr-arrow-right'></i>"],
+    pagination : true,
+    singleItem  : true
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	Single SLIDER
+/*  Single SLIDER
 /*-----------------------------------------------------------------------------------*/
 $(".singl-slide").owlCarousel({ 
     items : 1,
-	autoplay:true,
-	loop:true,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
+    autoplay:true,
+    loop:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
     navigation : true,
-	nav: true,
-	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-	pagination : true,
-	singleItem	: true
+    nav: true,
+    navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+    pagination : true,
+    singleItem  : true
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	TESTIMONIAL SLIDER
+/*  TESTIMONIAL SLIDER
 /*-----------------------------------------------------------------------------------*/
 $(".deal-slide").owlCarousel({ 
     items : 1,
-	autoplay:true,
-	loop:true,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
+    autoplay:true,
+    loop:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
     navigation : true,
-	nav: true,
-	navText: ["<span>Previous Deal</span>","<span>Next Deal</span>"],
-	pagination : true,
-	lazyLoad:true,
-	nav: true,
-	singleItem	: true
+    nav: true,
+    navText: ["<span>Previous Deal</span>","<span>Next Deal</span>"],
+    pagination : true,
+    lazyLoad:true,
+    nav: true,
+    singleItem  : true
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	TESTIMONIAL SLIDER
+/*  TESTIMONIAL SLIDER
 /*-----------------------------------------------------------------------------------*/
 $(".item-slide-5").owlCarousel({ 
     items : 5,
-	autoplay:true,
-	loop:true,
-	margin: 30,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
-	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-	lazyLoad:true,
-	nav: true,
-	responsive:{
+    autoplay:true,
+    loop:true,
+    margin: 30,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+    lazyLoad:true,
+    nav: true,
+    responsive:{
         0:{
             items:1,
         },
@@ -229,26 +229,26 @@ $(".item-slide-5").owlCarousel({
         1000:{
             items:4,
         },
-		1200:{
+        1200:{
             items:5,
         }
     },
-	animateOut: 'fadeOut'		
+    animateOut: 'fadeOut'       
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	TESTIMONIAL SLIDER
+/*  TESTIMONIAL SLIDER
 /*-----------------------------------------------------------------------------------*/
 $(".item-slide-4").owlCarousel({ 
     items : 4,
-	autoplay:true,
-	loop:false,
-	margin: 30,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
-	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-	lazyLoad:true,
-	nav: true,
-	responsive:{
+    autoplay:true,
+    loop:false,
+    margin: 30,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+    lazyLoad:true,
+    nav: true,
+    responsive:{
         0:{
             items:1,
         },
@@ -259,143 +259,143 @@ $(".item-slide-4").owlCarousel({
             items:4,
         }
     },
-	animateOut: 'fadeOut'		
+    animateOut: 'fadeOut'       
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	CASE SLIDER
+/*  CASE SLIDER
 /*-----------------------------------------------------------------------------------*/
 $(".item-slide-3").owlCarousel({ 
     items : 3,
-	autoplay:true,
-	loop:false,
-	margin: 30,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
-	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-	lazyLoad:true,
-	nav: true,
-	responsive:{
+    autoplay:true,
+    loop:false,
+    margin: 30,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+    lazyLoad:true,
+    nav: true,
+    responsive:{
         0:{
             items:1,
         },
         800:{
             items:2,
         },
-		1000:{
+        1000:{
             items:3,
         },
     },
-	animateOut: 'fadeOut'		
+    animateOut: 'fadeOut'       
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	CASE SLIDER
+/*  CASE SLIDER
 /*-----------------------------------------------------------------------------------*/
 $(".item-slide-2").owlCarousel({ 
     items : 2,
-	autoplay:true,
-	loop:false,
-	margin: 30,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
-	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-	lazyLoad:true,
-	nav: true,
-	responsive:{
+    autoplay:true,
+    loop:false,
+    margin: 30,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+    lazyLoad:true,
+    nav: true,
+    responsive:{
         0:{
             items:1,
         },
         800:{
             items:2,
         },
-		1000:{
+        1000:{
             items:2,
         },
     },
-	animateOut: 'fadeOut'
-		
+    animateOut: 'fadeOut'
+        
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	CASE SLIDER
+/*  CASE SLIDER
 /*-----------------------------------------------------------------------------------*/
 $("#blog-slide").owlCarousel({ 
     items : 3,
-	autoplay:true,
-	loop:false,
-	margin: 30,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
-	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-	lazyLoad:true,
-	nav: true,
-	responsive:{
+    autoplay:true,
+    loop:false,
+    margin: 30,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+    lazyLoad:true,
+    nav: true,
+    responsive:{
         0:{
             items:1,
         },
         600:{
             items:2,
         },
-		1000:{
+        1000:{
             items:3,
         },
     },
-	animateOut: 'fadeOut'		
+    animateOut: 'fadeOut'       
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	CASE SLIDER
+/*  CASE SLIDER
 /*-----------------------------------------------------------------------------------*/
 $("#blog-slide-2").owlCarousel({ 
     items : 2,
-	autoplay:true,
-	loop:false,
-	margin: 30,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
-	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-	lazyLoad:true,
-	nav: true,
-	responsive:{
+    autoplay:true,
+    loop:false,
+    margin: 30,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+    lazyLoad:true,
+    nav: true,
+    responsive:{
         0:{
             items:1,
         },
         800:{
             items:2,
         },
-		1000:{
+        1000:{
             items:2,
         },
     },
-	animateOut: 'fadeOut'
-		
+    animateOut: 'fadeOut'
+        
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	CASE SLIDER
+/*  CASE SLIDER
 /*-----------------------------------------------------------------------------------*/
 $("#client-slide-1").owlCarousel({ 
     items : 4,
-	autoplay:true,
-	loop:true,
-	margin: 30,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
-	navText: ["<i class='lnr lnr-arrow-left'></i>","<i class='lnr lnr-arrow-right'></i>"],
-	lazyLoad:true,
-	nav: true,
-	responsive:{
+    autoplay:true,
+    loop:true,
+    margin: 30,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    navText: ["<i class='lnr lnr-arrow-left'></i>","<i class='lnr lnr-arrow-right'></i>"],
+    lazyLoad:true,
+    nav: true,
+    responsive:{
         0:{
             items:1,
         },
         800:{
             items:2,
         },
-		1000:{
+        1000:{
             items:4,
         },
     },
-	animateOut: 'fadeOut'
-		
+    animateOut: 'fadeOut'
+        
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	COUNTER
+/*  COUNTER
 /*-----------------------------------------------------------------------------------*/
 $('.counter').counterUp({
     delay: 10,
@@ -405,23 +405,23 @@ $('.counter').counterUp({
     TESTNMONIALS STYLE 1
 /*-----------------------------------------------------------------------------------*/
 $('.free-slide').flexslider({
-	mode: 'fade',
-	animation: "fade",
-	auto: true
+    mode: 'fade',
+    animation: "fade",
+    auto: true
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	Thumb Slider
+/*  Thumb Slider
 /*-----------------------------------------------------------------------------------*/
 $('.thumb-slider').flexslider({
     animation: "slide",
     controlNav: "thumbnails"
 });
 /*-----------------------------------------------------------------------------------*/
-/* 	ANIMATION
+/*  ANIMATION
 /*-----------------------------------------------------------------------------------*/
 var wow = new WOW({
     boxClass:     'animate',      // animated element css class (default is wow)
-    animateClass: 'animated', 	// animation css class (default is animated)
+    animateClass: 'animated',   // animation css class (default is animated)
     offset:       100,          // distance to the element when triggering the animation (default is 0)
     mobile:       false        // trigger animations on mobile devices (true is default)
 });
@@ -575,3 +575,76 @@ function ChangeToSlug(title)
 
     return slug;
 }
+
+var ShoppingCart = {
+    configSelect : {
+        'classItemAddCart'    : '.add-to-car' , // class  them san pham vao gio hang
+        'classItemDeleteCart' : '.item-product-remove' , // class xoa chi tiet tung san pham trong  gio hang
+        'classChangeQtyCart'  : '.change-qty-cart' , // thay doi so luong trong gio hang
+        'idTotalCart'         : '#total-cart' , // id chua noi dung tong tien ,
+        'classTotalItem'      : '.total-item' , // tong tien cua tung sp
+    },
+
+    init : function()
+    {
+        let _this = this;
+
+        _this.clickItemDeleteCart();//
+        _this.clickItemChangeQty();
+    },
+
+    clickItemDeleteCart : function()
+    {
+        let _this = this ;
+        $(_this.configSelect.classItemDeleteCart).click(function(){
+            let id = $(this).attr('data-id-product');
+            let $this = $(this);
+
+            if (id)
+            {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: "get",
+                    dataType : 'json',
+                    url:  '/gio-hang/delete_ajax/'+id,
+
+                    success : function (data) {
+                        $(_this.configSelect.idTotalCart).text(data.total);
+                        $this.parents('tr').remove();
+                    }
+                })
+            }else
+            {
+                alert(' Không tồn tại id sản phẩm ');
+            }
+        });
+    },
+
+    clickItemChangeQty : function()
+    {
+        let _this = this ;
+
+        $(_this.configSelect.classChangeQtyCart).click(function(){
+            let $this = $(this);
+            let qty = $this.val();
+            let id  = $this.attr('data-id-product');
+            $.ajax({
+                type: "get",
+                dataType : 'json',
+                url:  '/gio-hang/update_ajax/'+id+'/'+qty,
+                success: function( data ) {
+                    $(_this.configSelect.idTotalCart).text(data.total);
+                },
+                error : function () {
+                    alert("Lỗi xử lý ajax ");
+                }
+            });
+        });
+    }
+}
+
+$(function(){
+    ShoppingCart.init();
+})

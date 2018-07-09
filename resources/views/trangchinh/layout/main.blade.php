@@ -194,7 +194,7 @@
                     </ul>
                 </div>
 
-                <!-- Categories -->
+                <!-- Facebook 
                 <div class="col-md-3">
                     <h6>Fanpage Facebook</h6>
                     <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
@@ -209,6 +209,7 @@
                        allow="encrypted-media"></iframe>
                     </ul>
                 </div>
+                -->
             </div>
         </div>
     </footer>

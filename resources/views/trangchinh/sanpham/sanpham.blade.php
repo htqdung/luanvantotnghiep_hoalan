@@ -77,7 +77,7 @@
                                 <form action="">
 
                                     Từ <input type="number" name="min_price" min="0" class="form-control" value="{{ Request::get('min_price') }}" placeholder="0"><br>
-                                    Đến <input type="number" name="max_price" min="0"class="form-control" value="{{ Request::get('max_price') }}"  placeholder="1.000.000">
+                                    Đến <input type="number" name="max_price" max="10000000" class="form-control" value="{{ Request::get('max_price') }}"  placeholder="10.000.000">
                                     <input type="submit" value=" Lọc " class="btn btn-success" style="background: #337ab7;padding: 7px 10px ">
                                     
                                 </form>

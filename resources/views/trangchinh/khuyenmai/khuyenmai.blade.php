@@ -61,8 +61,8 @@
 							<!-- PRICE -->
 							<div class="checkbox checkbox-primary">
 								<form action="">
-									Từ <input type="number" name="min_price" class="form-control" value="{{ Request::get('min_price') }}" placeholder="0"><br>
-									Đến <input type="number" name="max_price" class="form-control" value="{{ Request::get('max_price') }}"  placeholder="1.000.000">
+									Từ <input type="number" min="0" name="min_price" class="form-control" value="{{ Request::get('min_price') }}" placeholder="0"><br>
+									Đến <input type="number" max="10000000" name="max_price" class="form-control" value="{{ Request::get('max_price') }}"  placeholder="10.000.000">
 									<input type="submit" value=" Lọc " class="btn btn-success" style="background: #337ab7; padding: 7px 10px ">
 								</form>
 							</div>

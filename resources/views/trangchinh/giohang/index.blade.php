@@ -1,7 +1,6 @@
 @extends('trangchinh.layout.main')
 @section('main-content')
     <div id="content">
-
         <style>
             .sale_custome {
                 background: #f73232;
@@ -104,15 +103,22 @@
                                                 @endif
                                             </div>
                                         </div></td>
-                                    <td class="text-center padding-top-60">{{ number_format($item->price,0,",",".") }} VNĐ</td>
+                                    <td class="text-center padding-top-60">
+                                        @if($item->options->pt_sale)
+                                            <span style="text-decoration: line-through;font-size: 12px;">{{ number_format($item->options->price,0,",",".") }} VNĐ</span> | <span>{{ number_format($item->price,0,",",".") }} VNĐ</span>
+                                        @else
+                                            {{ number_format($item->price,0,",",".") }} VNĐ
+                                        @endif
+
+                                    </td>
                                     <td class="text-center"><!-- Quinty -->
 
                                         <div class="quinty padding-top-20">
-                                            <input type="number" value="{{ $item->qty }}" class="form-control price" min="1" name="qty[]">
+                                            <input type="number" value="{{ $item->qty }}" class="form-control price change-qty-cart" data-id-product="{{ $key }}" min="1" name="qty[]">
                                             <input type="hidden" name="rowID[]" value="{{ $key }}">
                                         </div></td>
                                     <td class="text-center padding-top-60">{{ number_format($item->price * $item->qty,0,",",".") }} VNĐ</td>
-                                    <td class="text-center padding-top-60"><a href="{{ route('delete.item.cart',$item->rowId) }}"><i class="fa fa-trash-o"></i></a>
+                                    <td class="text-center padding-top-60"><a href="javascript:;void(0)" class="item-product-remove" data-id-product="{{ $key }}"><i class="fa fa-trash-o"></i></a>
                                 </tr>
                             @endforeach
 
@@ -132,7 +138,8 @@
 
                             <!-- Grand total -->
                             <div class="g-totel">
-                                <h5>Tổng tiền : <span>{{ number_format((str_replace(',','',\Cart::subtotal(0))),0,",",".") }} VNĐ</span></h5>
+
+                                <h5>Tổng tiền : <span id="total-cart">{{ number_format((str_replace(',','',\Cart::subtotal(0))),0,",",".") }} VNĐ</span></h5>
                             </div>
                         </div>
 
@@ -151,3 +158,7 @@
     </div>
 
 @endsection<!-- Footer -->
+
+<script>
+
+</script>

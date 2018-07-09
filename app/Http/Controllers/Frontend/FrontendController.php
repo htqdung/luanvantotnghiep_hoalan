@@ -295,6 +295,7 @@ class FrontendController extends Controller
 
             if (!$product) return redirect('/');
             $pro = SanPham::find($id);
+            
             event( new ViewProducts($pro));
 
             $rag = \DB::table('tbl_danhgia')->where('sanpham_id',$id)->avg('danh_gia');
@@ -430,6 +431,7 @@ class FrontendController extends Controller
     public function sendEmail(Request $request)
     {
         $email = $request->email ;
+
         try{
             \DB::table('tbl_email')->insert(array('email' => $email));
             $message = ' Chúng tôi sẽ sớm gủi thông tin vào email này cho bạn ';

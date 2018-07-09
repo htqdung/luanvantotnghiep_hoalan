@@ -12,11 +12,11 @@
                         <div class="tp-banner-container">
                             <div class="tp-banner">
                                 <ul>
-
+                                    @foreach($slide as $sl)
                                     <!-- SLIDE  -->
                                     <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
                                         <!-- MAIN IMAGE -->
-                                        <img src="trangchinh_asset/images/slide4.jpg"  alt="slider"  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
+                                        <img src="trangchinh_asset/images/<?= $sl->hinhanh ?>"  alt="slider"  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
 
                                         <!-- LAYER NR. 2 -->
                                         <div class="tp-caption sfr tp-resizeme"
@@ -60,8 +60,9 @@
                                              data-endspeed="300"
                                              style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">120.000đ </div>
                                     </li>
+                                    @endforeach
 
-                                    <!-- SLIDE  -->
+                                  {{--   <!-- SLIDE  -->
                                     <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
                                         <!-- MAIN IMAGE -->
                                         <img src="trangchinh_asset/images/slide3.jpg"  alt="slider"  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
@@ -154,7 +155,7 @@
                                              data-elementdelay="0.03"
                                              data-endelementdelay="0.4"
                                              data-endspeed="300"
-                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">130.000đ </div>
+                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">130.000đ </div> --}}
 
                                     </li>
                                 </ul>
@@ -178,8 +179,8 @@
 
                         <!-- Weekly Slaes  -->
                         <div class="week-sale-bnr">
-                            <h4>Chương Trình <span>Khuyến Mại</span></h4>
-                            <p>--Giảm Giá Cực Sốc--</p>
+                            <h4>Chương Trình <span>Khuyến Mại!</span></h4>
+                            <p>Giảm giá đến 20%</p>
                             <a href="{{ route('frontend.khuyenmai') }}" class="btn-round">Xem Ngay</a> </div>
                     </div>
                 </div>
@@ -212,7 +213,7 @@
                         <div class="media-left"> <i class="flaticon-operator"></i> </div>
                         <div class="media-body">
                             <h5>Hỗ Trợ 24/7</h5>
-                            <span>Hotline: (+84) 913 826 156</span></div>
+                            <span>Hotline: (+100) 123 456 7890</span></div>
                     </li>
                     <!-- Safe Payment -->
                     <li>
