@@ -130,11 +130,11 @@
                                 @if($product_suggess)
                                     @foreach($product_suggess as $ps )
                                         <div class="product">
-                                            <article> <img style="height: 250px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $ps->ten_hinh }}" alt="" >
+                                            <article> <img style="width: 270px; height: 250px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $ps->ten_hinh }}" alt="" >
                                                 <!-- Content -->
                                                  <a href="{{ route('frontend.chitiet',[str_slug($ps->ten_san_pham),$ps->id]) }}" class="tittle">{{ $ps->ten_san_pham }}</a>
                                                 <!-- Reviews -->
-                                                <p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">5 Đánh Giá</span></p>
+                                                <p class="rev"><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">0 Đánh Giá</span></p>
                                                 <div class="price">{{ number_format($ps->gia,0,",",".") }}đ</div>
                                                 <a href="{{ route('cart.add',$ps->id) }}" class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
                                         </div>

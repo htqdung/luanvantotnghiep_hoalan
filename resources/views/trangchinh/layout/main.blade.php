@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-{{--    <link rel="stylesheet" href="{{ asset('frontend/css/ionicons.min.css') }}">--}}
+    <link rel="stylesheet" href="{{ asset('frontend/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -106,17 +106,17 @@
                 <!-- NAV -->
                 <div class="collapse navbar-collapse" id="nav-open-btn">
                     <ul class="nav">
-                        <li class="active"> <a href="/">Trang chủ</a></li>
-                        <li class="dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown"> Sản phẩm  </a>
+                        <li class=""> <a href="/">Trang Chủ</a></li>
+                        <li class="dropdown"> <a href="{{ \Request::route()->getName() == 'frontend.listproduct' ? 'active' : '' }}" class="dropdown-toggle" data-toggle="dropdown"> Sản Phẩm  </a>
                             <ul class="dropdown-menu multi-level animated-2s fadeInUpHalf">
                                 @foreach($loai_sp as $loai)
                                     <li><a href="{{ route('loaisp',[str_slug($loai->ten_loai),$loai->id]) }}"> {{$loai->ten_loai}} </a></li>
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{ route('frontend.quatang') }}">Quà tặng</a></li>
-                        <li><a href="{{ route('frontend.khuyenmai') }}">Khuyến mãi</a></li>
-                        <li> <a href="{{ route('frontend.contact') }}">Liên Hệ</a></li>
+                        <li class="{{ \Request::route()->getName() == 'frontend.quatang' ? 'active' : '' }}"><a href="{{ route('frontend.quatang') }}">Quà Tặng</a></li>
+                        <li class="{{ \Request::route()->getName() == 'frontend.khuyenmai' ? 'active' : '' }}"><a href="{{ route('frontend.khuyenmai') }}">Khuyến Mại</a></li>
+                        <li class="{{ \Request::route()->getName() == 'frontend.contact' ? 'active' : '' }}"> <a href="{{ route('frontend.contact') }}">Liên Hệ</a></li>
 
                     </ul>
                 </div>

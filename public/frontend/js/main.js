@@ -617,7 +617,7 @@ var ShoppingCart = {
                 })
             }else
             {
-                alert(' Không tồn tại id sản phẩm ');
+                alert(' Không tồn tại mã sản phẩm này');
             }
         });
     },
@@ -635,10 +635,13 @@ var ShoppingCart = {
                 dataType : 'json',
                 url:  '/gio-hang/update_ajax/'+id+'/'+qty,
                 success: function( data ) {
+
+                    console.log(data.item);
+                    $this.parents('tr').find('.total_item').html('').html(data.item);
                     $(_this.configSelect.idTotalCart).text(data.total);
                 },
                 error : function () {
-                    alert("Lỗi xử lý ajax ");
+                    alert("Lỗi: Vui lòng thử lại");
                 }
             });
         });

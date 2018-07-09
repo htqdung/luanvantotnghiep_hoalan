@@ -90,7 +90,7 @@
                         <div class="media-left"> <i class="flaticon-operator"></i> </div>
                         <div class="media-body">
                             <h5>Hỗ Trợ 24/7</h5>
-                            <span>Hotline: (+100) 123 456 7890</span></div>
+                            <span>Hotline: (+84) 913 826 156</span></div>
                     </li>
                     <!-- Safe Payment -->
                     <li>
@@ -128,7 +128,7 @@
                                    ->leftJoin('tbl_hinhanh','tbl_sanpham.id','tbl_hinhanh.sanpham_id')
                                    ->orderBy('tbl_sanpham.id','DESC')
                                    ->limit(8)
-                                   ->where('tbl_sanpham_loai.loai_id',4)
+                                   ->where('tbl_sanpham_loai.loai_id',1)
                                    ->get();
                             @endphp
                             @foreach($product4 as $itemNew)
@@ -206,7 +206,7 @@
                                         <!-- Content -->
                                         <span class="tag">Lan Hồ Điệp</span> <a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="tittle">{{ $itemNew->ten_san_pham }}</a>
                                         <!-- Reviews -->
-                                        <p class="rev"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">5 Đánh Giá</span></p>
+                                        <p class="rev"><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <span class="margin-left-10">0 Đánh Giá</span></p>
                                         <div class="price">{{ number_format($itemNew->gia,0,",",".") }}đ</div>
                                         <a href="{{ route('cart.add',$itemNew->id) }}" class="cart-btn"><i class="icon-basket-loaded"></i></a> </article>
                                 </div>
@@ -225,7 +225,7 @@
                                ->leftJoin('tbl_dongia','tbl_sanpham.id','tbl_dongia.sanpham_id')
                                ->leftJoin('tbl_hinhanh','tbl_sanpham.id','tbl_hinhanh.sanpham_id')
                                ->orderBy('tbl_sanpham.id','DESC')
-                               ->where('tbl_sanpham_loai.loai_id',9)
+                               ->where('tbl_sanpham_loai.loai_id',11)
                                ->limit(5)
                                ->get();
                         @endphp
@@ -312,7 +312,7 @@
                         <div class="product">
                             <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $sale->ten_hinh }}" alt="" >
                                 <!-- Content -->
-                                <span class="sale-tag">-10%</span>
+                                <span class="sale-tag">SALE</span>
                                 <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($sale->ten_san_pham),$sale->id]) }}" class="tittle">{{ $sale->ten_san_pham }}</a>
                                 <p class="rev">
                                     <?php

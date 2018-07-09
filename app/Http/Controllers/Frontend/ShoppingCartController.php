@@ -7,6 +7,7 @@ use App\NguoiDung;
 use App\SanPham;
 use App\User;
 use Carbon\Carbon;
+use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Http\Request;
 
 class ShoppingCartController extends Controller
@@ -165,8 +166,11 @@ class ShoppingCartController extends Controller
     {
         \Cart::update($id,$qty);
 
-        $total = number_format((str_replace(',','',\Cart::subtotal(0))),0,",",".").' VNĐ ';
+        $itemCart = \Cart::get($id);
 
-        return json_encode(['total' => $total]);
+
+        $total = number_format((str_replace(',','',\Cart::subtotal(0))),0,",",".").' VNĐ ';
+        $totalItem = number_format($itemCart->qty * $itemCart->price,0,',','.').' VNĐ ';
+        return json_encode(['total' => $total,'item' => $totalItem]);
     }
 }
