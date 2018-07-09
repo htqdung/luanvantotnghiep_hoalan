@@ -60,12 +60,12 @@
                   <div class="widget-main">
                     <div >
                       <label>Tên ưu đãi</label>
-                      <input type="text" name="ten_hinh_thuc" value="{{ old('ten_hinh_thuc') }}" class="form-control" id="ten_hinh_thuc" placeholder="">
+                      <input type="text" name="ten_hinh_thuc" value="{{ old('ten_hinh_thuc') }}" class="form-control" id="ten_hinh_thuc" placeholder="" required="">
                     </div>
                     <br>
                     <div>
                       <label>Chọn sản phẩm</label>
-                      <select  id="framework"  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control">
+                      <select  id="framework"  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control" required="">
                         @foreach ($data as $item)
                           <option value="{{ $item->id_sanpham }}">{{ $item->ten_san_pham }}</option>
                         @endforeach
@@ -75,12 +75,12 @@
                     <br>
                     <div>
                       <label for="form-field-11">Số lượng</label>
-                      <input type="number" min="0"  name="so_luong_toi_thieu"  class="form-control" id="so_luong_toi_thieu" value="{{ old('so_luong_toi_thieu') }}" placeholder="">
+                      <input type="number" min="0"  name="so_luong_toi_thieu"  class="form-control" id="so_luong_toi_thieu" value="{{ old('so_luong_toi_thieu') }}" placeholder="" required="">
                     </div>
                     <br>
                     <div>
                       <label for="form-field-11">Tỉ lệ giảm giá (%)</label>
-                      <input type="number"  name="ti_le_giam_gia"  class="form-control" id="chi" value="{{ old('ti_le_giam_gia') }}" placeholder="">
+                      <input type="number"  name="ti_le_giam_gia"  class="form-control" id="chi" value="{{ old('ti_le_giam_gia') }}" placeholder="" required="">
                     </div>
                     <br>              
                   </div>

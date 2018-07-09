@@ -825,7 +825,7 @@ class adminController extends Controller
         return redirect()->intended('qt-danh-muc-hoa')->with('message', $mss);
 
     }
-
+    
     public function postChinhSuaLoaiHoa(ThemHoaRequest $request,$id)
     {
         $hoalan = Loai::findOrFail($id);

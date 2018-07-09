@@ -60,17 +60,17 @@
                   <div class="widget-main">
                     <div>
                       <label>Tên quà tặng</label>
-                      <input type="text" name="ten_qua_tang" value="{{ old('ten_qua_tang') }}" class="form-control" id="ten_qua_tang" placeholder="Nhập tên quà tặng">
+                      <input type="text" name="ten_qua_tang" value="{{ old('ten_qua_tang') }}" class="form-control" id="ten_qua_tang" placeholder="Nhập tên quà tặng" required="">
                     </div>
                     <br>
                     <div>
                       <label for="form-field-11">Số lượng</label>
-                      <input type="number" min="0"  name="so_luong"  class="form-control" id="so_luong" value="{{ old('so_luong') }}" placeholder="Nhập số lượng quà tặng">
+                      <input type="number" min="0"  name="so_luong"  class="form-control" id="so_luong" value="{{ old('so_luong') }}" placeholder="Nhập số lượng quà tặng" required="">
                     </div>
                     <br>
                     <div>
                       <label for="form-field-11">Chương trình khuyến mại</label>
-                      <select  id="state" multiple="multiple"  name="chuongtrinh_id[]" class="col-xs-9 col-sm-12 form-control col-md-12 col-lg-12 select2" data-placeholder="Chọn chương trình khuyến mại">
+                      <select  id="state" multiple="multiple"  name="chuongtrinh_id[]" class="col-xs-9 col-sm-12 form-control col-md-12 col-lg-12 select2" data-placeholder="Chọn chương trình khuyến mại" required="">
                           @foreach ($data as $item)
                             <option value="{{ $item->id }}">{{ $item->ten_chuong_trinh }}</option>
                           @endforeach
