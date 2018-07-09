@@ -68,7 +68,7 @@
 								<h1>
 									<i class="ace-icon fa fa-leaf green"></i>
 									<span class="red">NEAR</span>
-									<span class="white" id="id-text2">ADMIN</span>
+									<span class="black" id="id-text2">ADMIN</span>
 								</h1>
 							</div>
 							<div class="space-6"></div>
@@ -87,8 +87,8 @@
 
 											@endif
 											
-											<h4 class="header blue lighter bigger">
-												<i class="ace-icon fa fa-coffee green"></i>
+											<h4 class="header blue lighter bigger" style="text-align: center;">
+												
 												ĐỔI MẬT KHẨU
 											</h4>
 											<form class="form-horizontal" role="form" method="POST" id="doimatkhau" action="" >

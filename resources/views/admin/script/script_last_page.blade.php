@@ -428,7 +428,7 @@
                       {
                         placeholder:tag_input.attr('placeholder'),
                         //enable typeahead by specifying the source array
-                        source: ace.vars['US_STATES'],//defined in ace.js >> ace.enable_search_ahead
+                        //source: ace.vars['US_STATES'],//defined in ace.js >> ace.enable_search_ahead
                         /**
                         //or fetch data from database, fetch those that match "query"
                         source: function(query, process) {

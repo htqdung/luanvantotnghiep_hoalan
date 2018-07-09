@@ -242,17 +242,6 @@ $('#txtSkills').tagsinput({
 
 <script>
 
-  function noi_chuoi() {
-    var dai = "";
-    var rong = "";
-    var cao = "";
-    var tong= "";
-    dai = document.getElementById("dai").value;    
-    rong = document.getElementById("rong").value;     
-    cao = document.getElementById("cao").value;
-    tong = dai + "," + rong + "," + cao; 
-    document.getElementById("kich_thuoc").value = tong;
-  }
   
 
 </script>

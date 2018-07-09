@@ -45,7 +45,7 @@
 					      @foreach ($data as $item)
 	                  <tr>
 	                    <td>{{ $item->id_sanpham }}</td>
-	                    <td><a href="{{ route('CHI_TIET_SAN_PHAM', $item->id_sanpham)  }}">{{ $item->ten_san_pham }}</a></td>
+	                    <td><a href="{{ route('CHINH_SUA_SAN_PHAM', $item->id_sanpham)  }}">{{ $item->ten_san_pham }}</a></td>
 	                    <td> <?= number_format($item->gia); ?> VND</td>
 	                    <td>{{ $item->diem_thuong}}</td>
 

@@ -47,7 +47,7 @@
 								<h1>
 									<i class="ace-icon fa fa-leaf green"></i>
 									<span class="red">NEAR</span>
-									<span class="white" id="id-text2">ADMIN</span>
+									<span class="black" id="id-text2">ADMIN</span>
 								</h1>
 							</div>
 							<div class="space-6"></div>
@@ -66,8 +66,8 @@
 
 											@endif
 											
-											<h4 class="header blue lighter bigger">
-												<i class="ace-icon fa fa-coffee green"></i>
+											<h4 class="header blue lighter bigger" style="text-align: center;">
+												
 												THÔNG TIN ĐĂNG NHẬP
 											</h4>
 											<form class="form-horizontal" role="form" method="POST" action="{{ url('dang-nhap-admin') }}" >
@@ -108,20 +108,7 @@
 
 							</div><!-- /.position-relative -->
 
-							<div class="navbar-fixed-top align-right">
-								<br />
-								&nbsp;
-								<a id="btn-login-dark" href="#">Dark</a>
-								&nbsp;
-								<span class="blue">/</span>
-								&nbsp;
-								<a id="btn-login-blur" href="#">Blur</a>
-								&nbsp;
-								<span class="blue">/</span>
-								&nbsp;
-								<a id="btn-login-light" href="#">Light</a>
-								&nbsp; &nbsp; &nbsp;
-							</div>
+							
 						</div>
 					</div><!-- /.col -->
 				</div><!-- /.row -->
