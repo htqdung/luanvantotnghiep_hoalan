@@ -14,10 +14,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('trangchinh.layout.menu',function($view){
-            $loai_sp = Loai::all();
-            $view->with('loai_sp',$loai_sp);
-        });
+//        view()->composer('trangchinh.layout.menu',function($view){
+//
+//        });
+
+        $loai_sp = Loai::all();
+
+        \View::share('loai_sp',$loai_sp);
+
     }
 
     /**

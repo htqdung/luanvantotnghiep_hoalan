@@ -103,7 +103,7 @@
 
 								@endphp
 								<div class="product">
-									<article> <img style="height: 170px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $pro->ten_hinh }}" alt="" >
+									<article> <img style="height: 170px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $pro->ten_hinh }}" alt="" >
 										<!-- Content -->
 										<span class="sale-tag">-{{ isset($hinhthuc->ti_le_giam_gia) && $hinhthuc->ti_le_giam_gia > 0 ? $hinhthuc->ti_le_giam_gia : '' }}%</span>
 										<a href="{{ route('frontend.chitiet',[str_slug($pro->ten_san_pham),$pro->id]) }}" class="tittle" style="margin-top: 10px">{{ $pro->ten_san_pham }}</a>

@@ -162,7 +162,7 @@ class FrontendController extends Controller
 
         if($request->chuong_trinh_khuyen_mai)
         {
-            $products = $products->where('tbl_khuyenmai_sanpham.chuongtrinhkhuyenmai_id',$request->chuong_trinh_khuyen_mai);
+            $products = $products->where('tbl_khuyenmai_sanpham.chuongtrinh_id',$request->chuong_trinh_khuyen_mai);
         }
 
         $products = $products->select('tbl_sanpham.*','tbl_dongia.gia','tbl_hinhanh.ten_hinh')->paginate(9);
@@ -254,7 +254,7 @@ class FrontendController extends Controller
 
             if ($request->hinhthuckm)
             {
-                $products = $products->where('tbl_khuyenmai_sanpham.chuongtrinhkhuyenmai_id',$request->hinhthuckm);
+                $products = $products->where('tbl_khuyenmai_sanpham.chuongtrinh_id',$request->hinhthuckm);
             }
 
             if ($request->max_price && $request->min_price)
@@ -291,9 +291,12 @@ class FrontendController extends Controller
                 ->leftJoin('tbl_dongia','tbl_sanpham.id','tbl_dongia.sanpham_id')
                 ->leftJoin('tbl_hinhanh','tbl_sanpham.id','tbl_hinhanh.sanpham_id')
                 ->leftJoin('tbl_kho','tbl_sanpham.id','tbl_kho.sanpham_id')
-                ->where('tbl_sanpham.id',$id)->first();
+                ->where('tbl_sanpham.id',$id)
+                ->select('tbl_sanpham.*','tbl_hinhanh.ten_hinh','tbl_dongia.gia','tbl_sanpham_loai.loai_id')
+                ->first();
 
             if (!$product) return redirect('/');
+
             $pro = SanPham::find($id);
             
             event( new ViewProducts($pro));

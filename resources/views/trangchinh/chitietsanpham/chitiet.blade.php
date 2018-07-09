@@ -17,10 +17,10 @@
                                     <div class="col-xs-5">
                                         <article class="slider-item on-nav">
                                             <div class="thumb-slider">
-                                                <ul class="slides">
-                                                    <li data-thumb="{{ asset('trangchinh_asset/images') }}/{{ $product->ten_hinh }}"> <img src="{{ asset('trangchinh_asset/images') }}/{{ $product->ten_hinh }}" alt="" style="height: 500px" > </li>
-                                                    <li data-thumb="{{ asset('trangchinh_asset/images') }}/{{ $product->ten_hinh }}"> <img src="{{ asset('trangchinh_asset/images') }}/{{ $product->ten_hinh }}" alt="" style="height: 500px" > </li>
-                                                    <li data-thumb="{{ asset('trangchinh_asset/images') }}/{{ $product->ten_hinh }}"> <img src="{{ asset('trangchinh_asset/images') }}/{{ $product->ten_hinh }}" alt="" style="height: 500px" > </li>
+                                                <ul style="text-align: center;" class="slides">
+                                                    <li data-thumb="{{ asset('sanpham') }}/{{ $product->ten_hinh }}"> <img src="{{ asset('sanpham') }}/{{ $product->ten_hinh }}" alt="" style=" width: 400px; height: 400px" > </li>
+                                                    <li data-thumb="{{ asset('sanpham') }}/{{ $product->ten_hinh }}"> <img src="{{ asset('sanpham') }}/{{ $product->ten_hinh }}" alt="" style="width: 400px; height: 400px" > </li>
+                                                    
                                                 </ul>
                                             </div>
                                         </article>
@@ -68,10 +68,10 @@
                                         @endphp
                                         @if( $dacdiem )
                                         <ul class="bullet-round-list">
-                                            <h6>Đặc điểm </h6>
+                                            <h6>Đặc điểm loài</h6>
                                             @foreach($dacdiem as $item)
-                                                <li>{{ $item->ten_loai }} ({{ $item->ten_khoa_hoc }})</li>
-                                                <p>{{ $item->mo_ta }}</p>
+                                                <b>{{ $item->ten_loai }} ({{ $item->ten_khoa_hoc }})</b>
+                                                {!! $item->mo_ta !!}
                                             @endforeach
                                         </ul>
                                         @endif
@@ -90,7 +90,8 @@
                                         <div class="quinty">
                                             <input type="number" value="1" disabled>
                                         </div>
-                                        <a href="{{ route('cart.add',$product->id) }}" class="btn-round"><i class="icon-basket-loaded margin-right-5"></i> Thêm Vào Giỏ Hàng</a>
+
+                                        <a href="{{ route('cart.add',$product->id) }}" class="btn-round"><i class="icon-basket-loaded margin-right-5"></i> Thêm vào giỏ hàng</a>
                                         <span class="btn btn-xs btn-round"> <i class="fa fa-eye"></i> {{ $product->so_luot_xem }}</span>
                                     </div>
                                 </div>
@@ -108,7 +109,7 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane fade in active" id="pro-detil">
-                                        {{ $product->mo_ta }}
+                                        {!! $product->mo_ta !!}
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade" id="cus-rev"></div>
                                     <div role="tabpanel" class="tab-pane fade" id="ship"></div>
@@ -129,7 +130,7 @@
                                 @if($product_suggess)
                                     @foreach($product_suggess as $ps )
                                         <div class="product">
-                                            <article> <img style="height: 250px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $ps->ten_hinh }}" alt="" >
+                                            <article> <img style="height: 250px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $ps->ten_hinh }}" alt="" >
                                                 <!-- Content -->
                                                  <a href="{{ route('frontend.chitiet',[str_slug($ps->ten_san_pham),$ps->id]) }}" class="tittle">{{ $ps->ten_san_pham }}</a>
                                                 <!-- Reviews -->

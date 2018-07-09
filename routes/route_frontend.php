@@ -44,6 +44,7 @@ Route::post('/get_wards/{id}','Frontend\FrontendController@getWards');
 
 Route::get('/don-hang.html','Frontend\FrontendController@donhang')->name('frontend.donhang');
 Route::get('/chi-tiet-don-hang.html','Frontend\FrontendController@chitietdonhang')->name('frontend.chitietdonhang');
+
 // tim kiem typehead
 Route::get('/tim-kiem','Frontend\FrontendController@searchTypehead')->name('searchTypehead');
 

@@ -11,8 +11,8 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-   <link rel="stylesheet" href="{{ asset('frontend/css/ionicons.min.css') }}">
 
+{{--    <link rel="stylesheet" href="{{ asset('frontend/css/ionicons.min.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -67,15 +67,6 @@
             <div class="logo"> <a href="/"><img src="{{ asset('trangchinh_asset/images/logoshop5.png') }}" alt="" style="width: 260px;height: 55px;"></a> </div>
             <div class="search-cate">
                 <form action="">
-
-                    <select class="selectpicker">
-                        @php $loai_sp = \App\Loai::all(); @endphp
-                        <option value=""> Tìm Kiếm </option>
-                        @foreach($loai_sp as $loai)
-                            <option value="{{ $loai->id }}"> {{$loai->ten_loai}}</option>
-                        @endforeach
-
-                    </select>
                     <input type="text" class="typeahead" name="keyword" placeholder="Tên sản phẩm ..." value="{{ Request::get('keyword') }}">
                     <button class="submit" type="submit"><i class="icon-magnifier"></i></button>
                 </form>
@@ -99,9 +90,10 @@
                     <div class="cate-bar-in">
                         <div id="cater" class="collapse">
                             <ul>
-                                @foreach($loai_sp as $ls)
-                                <li><a href="{{ route('loaisp',[str_slug($loai->ten_loai),$loai->id]) }}"> {{ $ls->ten_loai }}</a></li>
-                                    @endforeach
+
+                                @foreach($loai_sp as $loai)
+                                    <li><a href="{{ route('loaisp',[str_slug($loai->ten_loai),$loai->id]) }}"> {{$loai->ten_loai}} </a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -115,15 +107,15 @@
                 <div class="collapse navbar-collapse" id="nav-open-btn">
                     <ul class="nav">
                         <li class="active"> <a href="/">Trang chủ</a></li>
-                        <li class="dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown"> Sản Phẩm  </a>
+                        <li class="dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown"> Sản phẩm  </a>
                             <ul class="dropdown-menu multi-level animated-2s fadeInUpHalf">
                                 @foreach($loai_sp as $loai)
                                     <li><a href="{{ route('loaisp',[str_slug($loai->ten_loai),$loai->id]) }}"> {{$loai->ten_loai}} </a></li>
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{ route('frontend.quatang') }}">Quà Tặng</a></li>
-                        <li><a href="{{ route('frontend.khuyenmai') }}">Khuyến Mại</a></li>
+                        <li><a href="{{ route('frontend.quatang') }}">Quà tặng</a></li>
+                        <li><a href="{{ route('frontend.khuyenmai') }}">Khuyến mãi</a></li>
                         <li> <a href="{{ route('frontend.contact') }}">Liên Hệ</a></li>
 
                     </ul>
@@ -194,22 +186,21 @@
                     </ul>
                 </div>
 
-                <!-- Facebook 
+                <!-- Categories -->
                 <div class="col-md-3">
                     <h6>Fanpage Facebook</h6>
-                    <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
-                       <iframe
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FV%C6%B0%E1%BB%9Dn-Lan-C%C3%A1i-Nai-1992538604093631&tabs&width=340&height=196&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                       width="340" 
-                       height="196"
-                       style="border:none;overflow:hidden"
-                       scrolling="no"
-                       frameborder="0"
-                       allowTransparency="true"
-                       allow="encrypted-media"></iframe>
-                    </ul>
+                    {{--<ul class="social-nav model-3d-0 footer-social w3_agile_social two">--}}
+                       {{--<iframe--}}
+                       {{--src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FV%C6%B0%E1%BB%9Dn-Lan-C%C3%A1i-Nai-1992538604093631&tabs&width=340&height=196&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"--}}
+                       {{--width="340" --}}
+                       {{--height="196"--}}
+                       {{--style="border:none;overflow:hidden" --}}
+                       {{--scrolling="no"--}}
+                       {{--frameborder="0" --}}
+                       {{--allowTransparency="true" --}}
+                       {{--allow="encrypted-media"></iframe>--}}
+                    {{--</ul>--}}
                 </div>
-                -->
             </div>
         </div>
     </footer>

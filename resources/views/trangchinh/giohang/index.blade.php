@@ -15,47 +15,6 @@
             }
         </style>
 
-        <!-- Ship Process 
-        <div class="ship-process padding-top-30 padding-bottom-30">
-            <div class="container">
-                <ul class="row">
-
-                    
-                    <li class="col-sm-3 current">
-                        <div class="media-left"> <i class="flaticon-shopping"></i> </div>
-                        <div class="media-body"> <span>Step 1</span>
-                            <h6>Shopping Cart</h6>
-                        </div>
-                    </li>
-
-                    
-                    <li class="col-sm-3">
-                        <div class="media-left"> <i class="flaticon-business"></i> </div>
-                        <div class="media-body"> <span>Step 2</span>
-                            <h6>Payment Methods</h6>
-                        </div>
-                    </li>
-
-                    
-                    <li class="col-sm-3">
-                        <div class="media-left"> <i class="flaticon-delivery-truck"></i> </div>
-                        <div class="media-body"> <span>Step 3</span>
-                            <h6>Delivery Methods</h6>
-                        </div>
-                    </li>
-
-                    
-                    <li class="col-sm-3">
-                        <div class="media-left"> <i class="fa fa-check"></i> </div>
-                        <div class="media-body"> <span>Step 4</span>
-                            <h6>Confirmation</h6>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    -->
-
         <!-- Shopping Cart -->
         <section class="shopping-cart padding-top-30 padding-bottom-60">
             @if ( $products->count() == 0)
@@ -88,7 +47,7 @@
                                     <td><div class="media">
                                             <div class="media-left">
                                                 <a href="#." style="position: relative">
-                                                    <img class="img-responsive" src="{{ asset('trangchinh_asset/images/') }}/{{ $item->options->hinhanh }}" alt="" >
+                                                    <img class="img-responsive" src="{{ asset('sanpham/') }}/{{ $item->options->hinhanh }}" alt="" >
                                                     @if($item->options->pt_sale)
                                                         <span style="position: absolute" class="sale_custome">{{ $item->options->pt_sale  }} % </span>
                                                     @endif
@@ -127,15 +86,6 @@
 
                         <!-- Promotion -->
                         <div class="promo">
-                            <!--
-                            <div class="coupen">
-                                <label> Promotion Code
-                                    <input type="text" placeholder="Your code here">
-                                    <button type="submit"><i class="fa fa-arrow-circle-right"></i></button>
-                                </label>
-                            </div>
-                            -->
-
                             <!-- Grand total -->
                             <div class="g-totel">
 
