@@ -61,12 +61,12 @@
                     <div>
                       <label>Tên ưu đãi</label>
                       <input type="hidden" value="{{ $uudai[0]->id_hinhthuc }}" name="id_hinhthuc">
-                      <input type="text"  value="{{ $uudai[0]->ten_hinh_thuc }}" name="ten_hinh_thuc" class="form-control" id=uudai" placeholder="">
+                      <input type="text"  value="{{ $uudai[0]->ten_hinh_thuc }}" name="ten_hinh_thuc" class="form-control" id=uudai" placeholder="" required="">
                     </div>
                     <br>
                     <div>
                       <label>Chọn sản phẩm</label>
-                      <select  id="framework"  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control">
+                      <select  id="framework"  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control" required="">
                         
                         @foreach ($danhsachsanpham as $item)
                           @if($uudai[0]->sanpham_id == $item->id_sanpham)

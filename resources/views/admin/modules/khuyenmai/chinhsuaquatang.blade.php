@@ -61,17 +61,17 @@
                   <div class="widget-main">
                     <div>
                       <label>Tên quà tặng</label>
-                <input type="text" value="{{ $quatang[0]->ten_qua_tang }}" name="ten_qua_tang" class="form-control" id=quatang" placeholder="">
+                <input type="text" value="{{ $quatang[0]->ten_qua_tang }}" name="ten_qua_tang" class="form-control" id=quatang" placeholder="" required="">
                     </div>
                     <br>
                     <div>
                       <label>Số lượng</label>
-                <input type="number" value="{{ $quatang[0]->so_luong }}" name="so_luong" class="form-control" id=quatang" placeholder="">
+                <input type="number" value="{{ $quatang[0]->so_luong }}" name="so_luong" class="form-control" id=quatang" placeholder="" required="">
                     </div>
                     <br>
                      <div>
                       <label>Chương trình khuyến mại</label>
-                       <select  id="state" multiple="multiple"  name="ten_chuong_trinh[]" class="col-xs-9 col-sm-12 form-control col-md-12 col-lg-12 select2" data-placeholder="">
+                       <select  id="state" multiple="multiple"  name="ten_chuong_trinh[]" class="col-xs-9 col-sm-12 form-control col-md-12 col-lg-12 select2" data-placeholder="" required="">
                           @foreach ($data_khuyenmai as $item)
                             @foreach ($khuyenmai_quatang as $element)
                               @if($element->id == $item->id)
