@@ -1,16 +1,16 @@
   <?php
            
  
-Route::get('dang-nhap-admin','adminController@getdangnhap');
+Route::get('dang-nhap-admin','adminController@getdangnhap')->name('dangnhap');
 
 Route::post('dang-nhap-admin','adminController@postdangnhap');
 
-           
+Route::get('logout', 'adminController@LogoutAdmin')->name('LogoutAdmin');        
  
-           
+Route::get('doi-mat-khau','adminController@doimatkhau')->name('DOI_MAT_KHAU');          
+Route::post('doi-mat-khau','adminController@postDoiMatKhau'); 
 
-
-Route::get('tsst', 'adminController@DoanhThuBanHang12Thang');
+Route::get('tsst/{id}', 'adminController@layDanhMucLoaiHoa');
 Route::get('qt-admin', 'adminController@getTest')->name('MO_GIAO_DIEN_ADMIN');
 //danh mục loài hoa
 Route::get('qt-danh-muc-hoa', 'adminController@getdanhmuchoa')->name('DANH_MUC_HOA');
@@ -26,6 +26,7 @@ Route::get('qt-chi-tiet-loai-hoa/{id}', 'adminController@chitietloaihoa')->name(
 Route::get('qt-danh-sach-san-pham', 'adminController@getdachsachsanpham')->name('DANH_SACH_SAN_PHAM');
 Route::get('qt-them-san-pham','adminController@themsanpham')->name('THEM_SAN_PHAM');
 Route::post('qt-them-san-pham','adminController@postThemSanPham');
+
 
 Route::post('qt-chinh-sua-san-pham/{id}','adminController@postChinhSuaSanPham');
 Route::get('qt-chinh-sua-san-pham/{id}','adminController@chinhsuasanpham')->name('CHINH_SUA_SAN_PHAM');
@@ -55,7 +56,10 @@ Route::get('qt-chi-tiet-chi/{id}','adminController@chitietchi')->name('CHI_TIET_
 //người dùng
 Route::get('qt-danh-sach-nguoi-dung', 'adminController@getnguoidung')->name('DANH_SACH_NGUOI_DUNG');
 Route::get('qt-danh-sach-nguoi-dung-admin', 'adminController@getnguoidungadmin')->name('DANH_SACH_NGUOI_DUNG_ADMIN');
+
 Route::get('them-nguoi-dung', 'adminController@themnguoidung')->name('THEM_NGUOI_DUNG');
+Route::post('them-nguoi-dung', 'adminController@postThemnguoidungadmin');
+
 Route::get('chinh-sua-nguoi-dung/{id}', 'adminController@chinhsuanguoidung')->name('CHINH_SUA_NGUOI_DUNG');
 
 Route::post('chinh-sua-nguoi-dung/{id}', 'adminController@postchinhsuanguoidung');
@@ -95,21 +99,30 @@ Route::get('qt-tat-ca-don-hang','adminController@tatcadonhang')->name('TAT_CA_DO
 Route::get('qt-don-hang-da-giao','adminController@getDanhSachDonHangDaGiao')->name('DON_HANG_DA_GIAO');
 Route::get('qt-don-hang-dang-giao','adminController@donhangdanggiao')->name('DON_HANG_DANG_GIAO');
 Route::get('qt-don-hang-dang-xu-ly','adminController@donhangdangxuly')->name('DON_HANG_DANG_XU_LY');
+Route::get('qt-duyet-don-hang-moi-nhan/{id}', 'adminController@DuyetDonHangMoiNhan')
+->name('DuyetDonHangMoiNhan');
 
+Route::get('qt-duyet-don-hang-dang-xu-ly/{id}', 'adminController@DuyetDonHangDangXuLy')
+->name('DuyetDonHangDangXuLy');
+Route::get('qt-chi-tiet-don-hang/{id}','adminController@chitietdonhang')->name('CHI_TIET_DON_HANG');
+Route::post('qt-chi-tiet-don-hang/{id}','adminController@DuyetDonHangMoiNhan');
+Route::get('qt-chi-tiet-dang-xu-ly','adminController@chitietdonhangdangxuly')->name('CHI_TIET_DANG_XU_LY');
+Route::get('qt-chi-tiet-da-giao','adminController@chitietdonhangdagiao')->name('CHI_TIET_DA_GIAO');
+Route::get('qt-chi-tiet-dang-giao','adminController@chitietdonhangdanggiao')->name('CHI_TIET_DANG_GIAO');
 //báo cáo
-Route::get('qt-bao-cao-tong','adminController@getBaoCaoTong')->name('DANH_SACH_TONG');
-Route::get('qt-bao-cao-thang-1','adminController@getBaoCaoTheoThangMot')->name('DANH_SACH_THANG_MOT');
-Route::get('qt-bao-cao-thang-2','adminController@getBaoCaoTheoThangHai')->name('DANH_SACH_THANG_HAI');
-Route::get('qt-bao-cao-thang-3','adminController@getBaoCaoTheoThangBa')->name('DANH_SACH_THANG_BA');
-Route::get('qt-bao-cao-thang-4','adminController@getBaoCaoTheoThangTu')->name('DANH_SACH_THANG_TU');
-Route::get('qt-bao-cao-thang-5','adminController@getBaoCaoTheoThangNam')->name('DANH_SACH_THANG_NAM');
-Route::get('qt-bao-cao-thang-6','adminController@getBaoCaoTheoThangSau')->name('DANH_SACH_THANG_SAU');
-Route::get('qt-bao-cao-thang-7','adminController@getBaoCaoTheoThangBay')->name('DANH_SACH_THANG_BAY');
-Route::get('qt-bao-cao-thang-8','adminController@getBaoCaoTheoThangTam')->name('DANH_SACH_THANG_TAM');
-Route::get('qt-bao-cao-thang-9','adminController@getBaoCaoTheoThangChin')->name('DANH_SACH_THANG_CHIN');
-Route::get('qt-bao-cao-thang-10','adminController@getBaoCaoTheoThangMuoi')->name('DANH_SACH_THANG_MUOI');
-Route::get('qt-bao-cao-thang-11','adminController@getBaoCaoTheoThangMuoiMot')->name('DANH_SACH_THANG_MUOI_MOT');
-Route::get('qt-bao-cao-thang-12','adminController@getBaoCaoTheoThangMuoiHai')->name('DANH_SACH_THANG_MUOI_HAI');
+Route::get('qt-tat-ca','adminController@getBaoCaoTong')->name('DANH_SACH_TONG');
+Route::get('qt-thang-1','adminController@getBaoCaoTheoThangMot')->name('DANH_SACH_THANG_MOT');
+Route::get('qt-thang-2','adminController@getBaoCaoTheoThangHai')->name('DANH_SACH_THANG_HAI');
+Route::get('qt-thang-3','adminController@getBaoCaoTheoThangBa')->name('DANH_SACH_THANG_BA');
+Route::get('qt-thang-4','adminController@getBaoCaoTheoThangTu')->name('DANH_SACH_THANG_TU');
+Route::get('qt-thang-5','adminController@getBaoCaoTheoThangNam')->name('DANH_SACH_THANG_NAM');
+Route::get('qt-thang-6','adminController@getBaoCaoTheoThangSau')->name('DANH_SACH_THANG_SAU');
+Route::get('qt-thang-7','adminController@getBaoCaoTheoThangBay')->name('DANH_SACH_THANG_BAY');
+Route::get('qt-thang-8','adminController@getBaoCaoTheoThangTam')->name('DANH_SACH_THANG_TAM');
+Route::get('qt-thang-9','adminController@getBaoCaoTheoThangChin')->name('DANH_SACH_THANG_CHIN');
+Route::get('qt-thang-10','adminController@getBaoCaoTheoThangMuoi')->name('DANH_SACH_THANG_MUOI');
+Route::get('qt-thang-11','adminController@getBaoCaoTheoThangMuoiMot')->name('DANH_SACH_THANG_MUOI_MOT');
+Route::get('qt-thang-12','adminController@getBaoCaoTheoThangMuoiHai')->name('DANH_SACH_THANG_MUOI_HAI');
 Route::get('qt-bao-cao-bieu-do','adminController@getBaoCaoTheoBieuDo')->name('DANH_SACH_BIEU_DO');
 //tags
 Route::get('qt-danh-sach-tags','adminController@danhsachtags')->name('DANH_SACH_TAGS');
@@ -130,6 +143,18 @@ Route::get('ajax-lay-danh-mua-loai-hoa/{id}', 'adminController@layDanhMucLoaiHoa
 Route::get('ajax-lay-danh-sach-san-pham/{id}', 'adminController@laySanPhamChoKhuyenMai');
 Route::get('ajax-xoa-anh-sp/{id}', 'adminController@XoaAnhSanPham')->name('XoaAnhSanPham');
 Route::get('ajax-lay-hinh-anh-sp/{id}', 'adminController@layHinhAnhSanPham');
+// Route::get('ajax-tinh-thanh-pho', 'adminController@LayThanhPho');
+Route::get('ajax-quan-huyen/{id}', 'adminController@LayQuanHuyen');
+Route::get('ajax-phuong-xa/{id}', 'adminController@LayPhuongXa');
+
+
+
+Route::get('ajax-trang-thai-don-hang/{id}', 'adminController@LayTrangThaiDonHang');
+Route::get('ajax-sap-xep/thang={thang}&trangthai={trangthai}', 'adminController@getSapXepTongHop');
+
+
+Route::get('ajax-lay-danh-sach-don-hang/{id}', 'adminController@laydonhangchonguoidung');
+
 
 
 ?>

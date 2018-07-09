@@ -1,4 +1,4 @@
-  <div id="sidebar" class="sidebar responsive ace-save-state">
+  <div id="sidebar" class="sidebar responsive ace-save-state" >
       <script type="text/javascript">
       try { ace.settings.loadState('sidebar') } catch (e) {}
       </script>
@@ -12,7 +12,7 @@
           </div>
       
       <!-- /.sidebar-shortcuts -->
-      <ul class="nav nav-list">
+      <ul class="nav nav-list" >
           <li class="active">
               <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">
   				<i class="menu-icon fa fa-tachometer"></i>
@@ -52,7 +52,7 @@
             						Danh mục sản phẩm
             					</a>
                   </li>
-                   <li class="">
+                   <li hidden="hidden" class="">
                     <a href="{{ route('DANH_SACH_TAGS') }}">
                       <i class="menu-icon fa fa-caret-right"></i>
                       Danh mục Tags
@@ -64,10 +64,10 @@
               </ul>
           </li>
           <li class="">
-              <a href="#" class="dropdown-toggle">
+              <a href="{{ route('TAT_CA_DON_HANG') }}" >
   					<i class="menu-icon fa fa-list"></i>
-  					<span class="menu-text"> Đơn hàng </span>
-  					<b class="arrow fa fa-angle-down"></b>
+  					<span class="menu-text"> Đơn hàng </span></a>  				
+            	{{-- <b class="arrow fa fa-angle-down"></b>
   				</a>
               <b class="arrow"></b>
               <ul class="submenu">
@@ -75,6 +75,13 @@
                       <a href="{{ route('TAT_CA_DON_HANG') }}">
                 <i class="menu-icon fa fa-caret-right"></i>
                 Tất cả đơn hàng
+              </a>
+                      <b class="arrow"></b>
+                  </li>
+                  <li class="">
+                      <a href="{{ route('DON_HANG_DANG_XU_LY') }}">
+                <i class="menu-icon fa fa-caret-right"></i>
+                Đang xử lý
               </a>
                       <b class="arrow"></b>
                   </li>
@@ -92,15 +99,9 @@
               </a>
                       <b class="arrow"></b>
                   </li>
-                  <li class="">
-                      <a href="{{ route('DON_HANG_DANG_XU_LY') }}">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							Đang xử lý
-  						</a>
-                      <b class="arrow"></b>
-                  </li>
+                  
                  
-              </ul>
+              </ul> --}}
           </li>
           
           <li class="">

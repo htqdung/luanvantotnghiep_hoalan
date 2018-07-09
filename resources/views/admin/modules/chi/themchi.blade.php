@@ -72,13 +72,13 @@
                     <div>
                       <label for="form-field-11">Hoa:</label>
                       <textarea type="text" id="form-field-11"   name="chi_hoa" 
-                      class="autosize-transition   form-control" id="chi" placeholder="Điền hoa: Cánh hoa, màu sắc,..">{{ old('chi_hoa') }} </textarea>
+                      class="autosize-transition form-control" id="chi" placeholder="Điền hoa: Cánh hoa, màu sắc,..">{{ old('chi_hoa') }} </textarea>
                     </div>
                     <br>
                     <div>
                       <label for="form-field-11">Lá: </label>
                       <textarea type="text" id="form-field-11"   name="chi_la" 
-                      class="autosize-transition   form-control" id="chi" placeholder="Điền lá">{{ old('chi_la') }} </textarea>
+                      class="autosize-transition   form-control" id="chi" placeholder="Điền lá" >{{ old('chi_la') }} </textarea>
                     </div>
                     <br>
                     <div>

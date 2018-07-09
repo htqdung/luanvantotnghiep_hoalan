@@ -22,7 +22,7 @@
 
           <h3><b>DANH SÁCH ĐƠN HÀNG</b>  
             <div  >
-               <label  style="float: right; margin-right: 350px"><b>Sắp xếp: </b></label>
+                <label  style="float: right; margin-right: 180px"><b>Sắp xếp (theo tháng):  </b></label>
                     <div class="col-md-12" >
                            
                            <div class="col-md-2"  style="float: right;">
@@ -42,7 +42,7 @@
                               <option value="{{ route('DANH_SACH_THANG_MUOI_HAI') }}">Tháng mười hai</option>
                             </select>
                           </div>
-                             <div class="col-md-2"  style="float: right;">
+                             {{-- <div class="col-md-2"  style="float: right;">
                              <select name="forma" style="font-size: 0.7em; float: left; " onchange="location = this.value;">
                                 <option value=""> Chọn một danh sách</option>
                                 <option value="{{ route('TAT_CA_DON_HANG') }}">Tất cả đơn hàng</option>
@@ -50,7 +50,7 @@
                                 <option value="{{ route('DON_HANG_DANG_GIAO') }}">Đang giao</option>
                                 <option value="{{ route('DON_HANG_DANG_XU_LY') }}">Đang xử lý</option>
                               </select> 
-                           </div>  
+                           </div>  --}} 
                     </div>
                 </div>
           </h3>
@@ -77,8 +77,8 @@
                     <td>{{ $item->ten_trang_thai}}</td>
                     
                    <td>
-                        <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-success" data-toggle="tooltip" title="Duyệt đơn hàng"  href=""><i class="glyphicon glyphicon-check"></i></a>
-                        <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href=""><i class="glyphicon glyphicon-folder-open"></i></a>
+                        {{-- <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-success" data-toggle="tooltip" title="Duyệt đơn hàng"  href=""><i class="glyphicon glyphicon-check"></i></a> --}}
+                        <a style=" margin: 0px; padding: 0px; width: 40px" class="btn btn-warning" data-toggle="tooltip" title="Chi tiết"  href="{{ route('CHI_TIET_DA_GIAO') }}"><i class="glyphicon glyphicon-folder-open"></i></a>
                        
                          
                           <a style="margin: 0px; padding: 0px; width: 40px" data-toggle="tooltip" title="Hủy" class="btn btn-danger" href="{{-- {{ route('XOA_CHI', $item->id) }} --}}"><i class="fa fa fa-trash-o fa-fw"></i></a>

@@ -6,9 +6,8 @@
     <ul class="breadcrumb">
       <li>
         <i class="ace-icon fa fa-home home-icon"></i>
-        <a href="{{ route('MO_GIAO_DIEN_ADMIN') }}">Trang chủ</a>
-      </li>
-    
+        <a href=" {{ route('MO_GIAO_DIEN_ADMIN') }} ">Trang chủ</a>
+      </li><li><a href="javascript:void(0)">Thêm khuyến mại</a></li>
     </ul><!-- /.breadcrumb -->
   </div>
   <div class="row">
@@ -48,7 +47,7 @@
             <div class="col-xs-12 col-sm-6 col-md-offset-3">
               <div class="widget-box">
                 <div class="widget-header" style="text-align: center;">
-                  <h4 class="widget-title">Thông tin khuyến mãi</h4>
+                  <h4 class="widget-title">Thông tin khuyến mại</h4>
                   <div class="widget-toolbar">
                     <a href="#" data-action="collapse">
                       <i class="ace-icon fa fa-chevron-up"></i>
@@ -59,7 +58,7 @@
                 <div class="widget-body" style="background-color: #f7fbff;">
                   <div class="widget-main">
                     <div>
-                      <label for="form-field-8">Tên khuyến mãi</label>
+                      <label for="form-field-8">Tên khuyến mại</label>
                       <input type="text"  name="ten_chuong_trinh"  class="form-control" id="chi" value="{{ old('ten_chuong_trinh') }}" placeholder="Điền tên khuyến mãi">
                     </div>
                     <br>

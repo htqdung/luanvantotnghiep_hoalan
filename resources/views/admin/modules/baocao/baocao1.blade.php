@@ -19,7 +19,7 @@
     <div class="row">
       <div class="col-md-12">
         <table class="table">
-          <h3><b>DANH SÁCH ĐƠN HÀNG</b> <button type="" name="in" style="float: right;" >   <i class="  fa fa-print" ></i></button></h3>
+          <h3><b>DANH SÁCH ĐƠN HÀNG</b> </h3>
           
             <select name="" onchange="window.location=this.value" id="" style="float: right;" >
             <option value="{{ route('DANH_SACH_TONG') }}"> Tất cảt</option>  
@@ -38,22 +38,22 @@
           </select>
                   <thead>
                   <tr style="margin: 0px">
-                    <th style="width: 7%">Mã số</th>
+                    <th style="width: 3%">Mã số</th>
                     <th style="width: 20%">Ngày đặt hàng</th>
-                    <th style="width: 17%">Tổng tiền  </th>
+                    <th style="width: 25%">Địa chỉ</th>
+                    <th style="width: 15%">Hình thức thanh toán</th>
+                    <th style="width: 10%">Tổng tiền  </th>
                   </tr>
                   </thead>
                    <tbody>
+                   
                 @foreach ($data as $item)
                   <tr>
                     <td>{{ $item->id }}</td>
-                    <td>{{ date('d-m-Y', strtotime($item->ngay_dat_hang)) }}</td>
-                   
-                    
+                    <td>{{ date('d-m-Y', strtotime($item->ngay_dat_hang)) }}</td>                 
+                    <td>{{ $item->so_nha}}, {{ $item->ten_duong }}, {{ $item->ten_phuong_xa }}, {{ $item->ten_quan_huyen}} , {{ $item->ten_tinh_thanhpho }}</td>
+                     <td>{{ $item->ten_hinh_thuc}}</td>
                     <td>{{ $item->tong_tien}}</td>
-                  
-                    
-                    
                 </tr> 
                 @endforeach           
               </tbody>              

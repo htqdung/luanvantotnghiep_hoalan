@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap-datepicker3.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('admin/assets/css/ace-skins.min.css') }} " />
     <link rel="stylesheet" href=" {{ asset('admin/assets/css/ace-rtl.min.css') }} " />
+    <link rel="stylesheet" href=" {{ asset('admin/assets/css/custom.css') }} " />
     <link rel="stylesheet" href="">
     <!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />

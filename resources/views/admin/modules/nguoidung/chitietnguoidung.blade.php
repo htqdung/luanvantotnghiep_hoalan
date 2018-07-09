@@ -23,12 +23,7 @@
 							<td colspan="8">
 								<div class="table-detail">
 									<div class="row">
-										<div class="col-xs-12 col-sm-2">
-											<div class="text-center">
-												<img height="150" width="150" class="thumbnail inline no-margin-bottom" alt="{{ $nguoidung[0]->ten }}" src="admin/assets/images/avatars/avatar.jpg" />
-												<br />
-											</div>
-										</div>
+										
 
 										<div class="col-xs-12 col-sm-7" style="padding-left:80px">
 											<div class="space visible-xs"></div>
@@ -80,44 +75,50 @@
 				</table>
 			</div><!-- /.span -->
 		</div>
+		<div class="row">
+                      <div class="col-md-12">
+                         
+                        <table class="table" id="myTable">
+                          <h3><b>DANH SÁCH ĐƠN HÀNG CỦA NGƯỜI DÙNG</b>  <div  style="margin-left: 80%">
+                                   
+                                </div>
+                          </h3>
+                                  <thead>
+                                  <tr style="margin: 0px">
+                                    <th style="width: 3%">Mã số</th>
+                                    <th style="width: 20%">Ngày đặt hàng</th>
+                                    <th style="width: 30%">Địa chỉ</th>
+                                    <th style="width: 15%">Hình thức thanh toán</th>
+                                    <th style="width: 17%">Tổng tiền  </th>
+                                    <th style="width: 15%">Trạng thái  </th>
+                                 
+                                  </tr>
+                                  </thead>
+                                   <tbody>
+                                    <?php  $stt=1;  ?>
+                                @foreach ($data as $item)
+                                  <tr>
+                                    <td><?php echo $stt; $stt++; ?></td>
+                                    <td>{{ date('d-m-Y', strtotime($item->ngay_dat_hang)) }}</td>                  
+                                    <td>{{ $item->so_nha}}, {{ $item->ten_duong }}, {{ $item->ten_phuong_xa }}, {{ $item->ten_quan_huyen}} , {{ $item->ten_tinh_thanhpho }}</td>
+                                     <td>{{ $item->ten_hinh_thuc}}</td>
+                                    <td>{{ $item->tong_tien}}</td>
+                                    <td>{{ $item->ten_trang_thai}}</td>
+                                   
+                                </tr> 
+                                @endforeach           
+                              </tbody>              
+                          </table>
+                      </div>
+                    </div>
+               
+              </div>
+
+            </div>
+          </div>
 		</div>
 	</div>
-	 <div class="row">
-      <div class="col-md-12">
-         
-        <table class="table">
-          <h3><b>DANH SÁCH ĐƠN HÀNG</b>  <div  style="margin-left: 80%">
-                   
-                </div>
-          </h3>
-                  <thead>
-                  <tr style="margin: 0px">
-                    <th style="width: 3%">Mã số</th>
-                    <th style="width: 20%">Ngày đặt hàng</th>
-                    <th style="width: 30%">Địa chỉ</th>
-                    <th style="width: 15%">Hình thức thanh toán</th>
-                    <th style="width: 17%">Tổng tiền  </th>
-                    <th style="width: 15%">Trạng thái  </th>
-                 
-                  </tr>
-                  </thead>
-                   <tbody>
-                   	<?php  $stt=1;  ?>
-                @foreach ($data as $item)
-                  <tr>
-                    <td><?php echo $stt; $stt++; ?></td>
-                    <td>{{ date('d-m-Y', strtotime($item->ngay_dat_hang)) }}</td>                  
-                    <td>{{ $item->so_nha}}, {{ $item->ten_duong }}, {{ $item->ten_phuong_xa }}, {{ $item->ten_quan_huyen}} , {{ $item->ten_tinh_thanhpho }}</td>
-                     <td>{{ $item->ten_hinh_thuc}}</td>
-                    <td>{{ $item->tong_tien}}</td>
-                    <td>{{ $item->ten_trang_thai}}</td>
-                   
-                </tr> 
-                @endforeach           
-              </tbody>              
-          </table>
-      </div>
-    </div>
+	
 		<!-- PAGE CONTENT ENDS -->
 	<script src="assets/js/jquery-2.1.4.min.js"></script>
 

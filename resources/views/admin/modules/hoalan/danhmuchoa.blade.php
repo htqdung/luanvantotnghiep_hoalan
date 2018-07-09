@@ -18,7 +18,8 @@
 				<div class="widget-header widget-header-blue widget-header-flat" style="text-align: center;">
 					<h4 class="widget-title lighter" >DANH MỤC LOÀI HOA</h4>
 					<div class="widget-toolbar">
-						<button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> <a href="{{ route('THEM_DANH_MUC_HOA') }}">Thêm mới</a>  </button>
+						<a href="{{ route('THEM_DANH_MUC_HOA') }}"><button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> Thêm mới  </button></a>
+						
 					</div>
 				</div>
 			</div>
@@ -42,14 +43,21 @@
 					      </tr>
 					    </thead>
 					    <tbody>
-					    	
+					    
 					    	@foreach ($data as $item)
 					        <tr>
 					      		<td>{{ $item->id }}</td>
 						        <td>{{ $item->ten_loai}}</td>
 						        <td>{{ $item->ten_khoa_hoc }}</td>
 						        <td>{{ $item->ten_chi }}</td>
-						        <td>{{ $item->hoa }}, {{ $item->la }},{{ $item->than }},{{ $item->re }}</td>
+						        <td> <?php
+						        		$hoa = $item->hoa;
+						        		$la = $item->la;
+						        		$than = $item->than;
+						        		$re = $item->re;
+						        		$tmp = 'Hoa: '.$hoa.', Lá: '.$la.', Thân: '.$than.' ,Rễ: '.$re;
+						         $tmp = substr( $tmp, 0, 20); echo $tmp; echo  '.....'; ?> <?php if(strlen( $tmp) > 20) echo  '.....'; ?></td>
+						        {{-- <td>{{  }}, {{ $item->la }},{{ $item->than }},{{ $item->re }}</td> --}}
 						        
 			                    <td>
 			                      	<a type="button" class="btn btn-warning" title="XEM CHI TIẾT" style=" margin: 0px; padding: 0px; width: 40px"   data-toggle="modal" data-target="#myModal{{ $item->id }}"><i class="fa fa-eye fa-fw"></i></a>

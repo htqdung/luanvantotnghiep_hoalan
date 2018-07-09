@@ -18,7 +18,8 @@
         <div class="widget-header widget-header-blue widget-header-flat" style="text-align: center;">
           <h4 class="widget-title lighter" >DANH MỤC KHUYẾN MẠI</h4>
           <div class="widget-toolbar">
-            <button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> <a href="{{ route('THEM_KHUYEN_MAI') }}">Thêm mới</a>  </button>
+            <a href="{{ route('THEM_KHUYEN_MAI') }}"><button class="btn btn-white btn-info btn-bold"  ><i class="ace-icon fa fa-plus bigger-120 blue"></i> Thêm mới  </button></a>
+            
           </div>
         </div>
       </div>
@@ -132,7 +133,7 @@
       </div>
     </div>
   </div><!-- /.page-content -->
-</div>
+</div> 
 
 
 

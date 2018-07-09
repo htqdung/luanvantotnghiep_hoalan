@@ -263,7 +263,7 @@
 
                                 @endphp
                                 <div class="product">
-                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" >
+                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $itemNew->ten_hinh }}" alt="" >
                                         <!-- Content -->
                                         <span class="tag">Lan Vanda</span> <a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="tittle">{{ $itemNew->ten_san_pham }}</a>
                                         <!-- Reviews -->
@@ -325,7 +325,7 @@
 
                                 @endphp
                                 <div class="product">
-                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" >
+                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $itemNew->ten_hinh }}" alt="" >
                                         <!-- Content -->
                                         <span class="tag">Lan Hồ Điệp</span> <a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="tittle">{{ $itemNew->ten_san_pham }}</a>
                                         <!-- Reviews -->
@@ -364,7 +364,7 @@
 
                                 @endphp
                                 <div class="product">
-                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" >
+                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $itemNew->ten_hinh }}" alt="" >
                                         <!-- Content -->
                                         <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="tittle">{{ $itemNew->ten_san_pham }}</a>
                                         <!-- Reviews -->
@@ -433,7 +433,7 @@
 
                         @endphp
                         <div class="product">
-                            <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $sale->ten_hinh }}" alt="" >
+                            <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $sale->ten_hinh }}" alt="" >
                                 <!-- Content -->
                                 <span class="sale-tag">-10%</span>
                                 <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($sale->ten_san_pham),$sale->id]) }}" class="tittle">{{ $sale->ten_san_pham }}</a>
@@ -489,7 +489,7 @@
 
                         @endphp
                         <div class="product">
-                            <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $all->ten_hinh }}" alt="" >
+                            <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $all->ten_hinh }}" alt="" >
                                 <span style="background-color: #0088cc" class="sale-tag">Mới</span>
                                 <!-- Content -->
                                 <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($all->ten_san_pham),$all->id]) }}" class="tittle">{{ $all->ten_san_pham }}</a>
