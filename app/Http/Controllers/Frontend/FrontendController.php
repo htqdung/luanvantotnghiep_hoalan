@@ -162,7 +162,7 @@ class FrontendController extends Controller
 
         if($request->chuong_trinh_khuyen_mai)
         {
-            $products = $products->where('tbl_khuyenmai_sanpham.chuongtrinh_id',$request->chuong_trinh_khuyen_mai);
+            $products = $products->where('tbl_khuyenmai_sanpham.chuongtrinhkhuyenmai_id',$request->chuong_trinh_khuyen_mai);
         }
 
         $products = $products->select('tbl_sanpham.*','tbl_dongia.gia','tbl_hinhanh.ten_hinh')->paginate(9);
@@ -254,7 +254,7 @@ class FrontendController extends Controller
 
             if ($request->hinhthuckm)
             {
-                $products = $products->where('tbl_khuyenmai_sanpham.chuongtrinh_id',$request->hinhthuckm);
+                $products = $products->where('tbl_khuyenmai_sanpham.chuongtrinhkhuyenmai_id',$request->hinhthuckm);
             }
 
             if ($request->max_price && $request->min_price)

@@ -30,134 +30,11 @@
                                              data-elementdelay="0.03"
                                              data-endelementdelay="0.1"
                                              data-endspeed="300"
-                                             style="z-index: 6; font-size:50px; color:#0088cc; font-weight:800; white-space: nowrap;">Lan Hồ Điệp </div>
+                                             style="z-index: 6; font-size:50px; color:#0088cc; font-weight:800; white-space: nowrap;"><?= $sl->noidung ?></div>
 
-                                        <!-- LAYER NR. 3 -->
-                                        <div class="tp-caption sfl tp-resizeme"
-                                             data-x="left" data-hoffset="60"
-                                             data-y="center" data-voffset="10"
-                                             data-speed="800"
-                                             data-start="1200"
-                                             data-easing="Power3.easeInOut"
-                                             data-splitin="none"
-                                             data-splitout="none"
-                                             data-elementdelay="0.1"
-                                             data-endelementdelay="0.1"
-                                             data-endspeed="300"
-                                             style="z-index: 7;  font-size:24px; color:#888888; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">Giá chỉ từ: </div>
-
-                                        <!-- LAYER NR. 1 -->
-                                        <div class="tp-caption sfr tp-resizeme"
-                                             data-x="left" data-hoffset="210"
-                                             data-y="center" data-voffset="5"
-                                             data-speed="800"
-                                             data-start="1300"
-                                             data-easing="Power3.easeInOut"
-                                             data-splitin="chars"
-                                             data-splitout="none"
-                                             data-elementdelay="0.03"
-                                             data-endelementdelay="0.4"
-                                             data-endspeed="300"
-                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">120.000đ </div>
                                     </li>
                                     @endforeach
 
-                                  {{--   <!-- SLIDE  -->
-                                    <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
-                                        <!-- MAIN IMAGE -->
-                                        <img src="trangchinh_asset/images/slide3.jpg"  alt="slider"  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                                        <!-- LAYER NR. 2 -->
-                                        <div class="tp-caption sfr tp-resizeme"
-                                             data-x="left" data-hoffset="60"
-                                             data-y="center" data-voffset="-60"
-                                             data-speed="800"
-                                             data-start="1000"
-                                             data-easing="Power3.easeInOut"
-                                             data-splitin="chars"
-                                             data-splitout="none"
-                                             data-elementdelay="0.03"
-                                             data-endelementdelay="0.1"
-                                             data-endspeed="300"
-                                             style="z-index: 6; font-size:50px; color:#0088cc; font-weight:800; white-space: nowrap;">Lan Vũ Nữ </div>
-
-                                        <!-- LAYER NR. 3 -->
-                                        <div class="tp-caption sfl tp-resizeme"
-                                             data-x="left" data-hoffset="60"
-                                             data-y="center" data-voffset="10"
-                                             data-speed="800"
-                                             data-start="1200"
-                                             data-easing="Power3.easeInOut"
-                                             data-splitin="none"
-                                             data-splitout="none"
-                                             data-elementdelay="0.1"
-                                             data-endelementdelay="0.1"
-                                             data-endspeed="300"
-                                             style="z-index: 7;  font-size:24px; color:#fff; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">Giá chỉ từ: </div>
-
-                                        <!-- LAYER NR. 1 -->
-                                        <div class="tp-caption sfr tp-resizeme"
-                                             data-x="left" data-hoffset="210"
-                                             data-y="center" data-voffset="5"
-                                             data-speed="800"
-                                             data-start="1300"
-                                             data-easing="Power3.easeInOut"
-                                             data-splitin="chars"
-                                             data-splitout="none"
-                                             data-elementdelay="0.03"
-                                             data-endelementdelay="0.4"
-                                             data-endspeed="300"
-                                             style="z-index: 5; font-size:36px; font-weight:800; color:#fff;  max-width: auto; max-height: auto; white-space: nowrap;">150.000đ </div>
-                                    </li>
-
-                                    <!-- SLIDE  -->
-                                    <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
-                                        <!-- MAIN IMAGE -->
-                                        <img src="trangchinh_asset/images/slide5.jpg"  alt="slider"  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                                        <!-- LAYER NR. 2 -->
-                                        <div class="tp-caption sfr tp-resizeme"
-                                             data-x="left" data-hoffset="60"
-                                             data-y="center" data-voffset="-60"
-                                             data-speed="800"
-                                             data-start="1000"
-                                             data-easing="Power3.easeInOut"
-                                             data-splitin="chars"
-                                             data-splitout="none"
-                                             data-elementdelay="0.03"
-                                             data-endelementdelay="0.1"
-                                             data-endspeed="300"
-                                             style="z-index: 6; font-size:50px; color:#0088cc; font-weight:800; white-space: nowrap;">Lan Vanda </div>
-
-                                        <!-- LAYER NR. 3 -->
-                                        <div class="tp-caption sfl tp-resizeme"
-                                             data-x="left" data-hoffset="60"
-                                             data-y="center" data-voffset="0"
-                                             data-speed="800"
-                                             data-start="1200"
-                                             data-easing="Power3.easeInOut"
-                                             data-splitin="none"
-                                             data-splitout="none"
-                                             data-elementdelay="0.1"
-                                             data-endelementdelay="0.1"
-                                             data-endspeed="300"
-                                             style="z-index: 7;  font-size:24px; color:#fff; font-weight:500; max-width: auto; max-height: auto; white-space: nowrap;">Giá chỉ từ:</div>
-
-                                        <!-- LAYER NR. 1 -->
-                                        <div class="tp-caption sfr tp-resizeme"
-                                             data-x="left" data-hoffset="240"
-                                             data-y="center" data-voffset=" -5"
-                                             data-speed="800"
-                                             data-start="1300"
-                                             data-easing="Power3.easeInOut"
-                                             data-splitin="chars"
-                                             data-splitout="none"
-                                             data-elementdelay="0.03"
-                                             data-endelementdelay="0.4"
-                                             data-endspeed="300"
-                                             style="z-index: 5; font-size:36px; font-weight:800; color:#000;  max-width: auto; max-height: auto; white-space: nowrap;">130.000đ </div> --}}
-
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -263,7 +140,7 @@
 
                                 @endphp
                                 <div class="product">
-                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $itemNew->ten_hinh }}" alt="" >
+                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" >
                                         <!-- Content -->
                                         <span class="tag">Lan Vanda</span> <a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="tittle">{{ $itemNew->ten_san_pham }}</a>
                                         <!-- Reviews -->
@@ -325,7 +202,7 @@
 
                                 @endphp
                                 <div class="product">
-                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $itemNew->ten_hinh }}" alt="" >
+                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" >
                                         <!-- Content -->
                                         <span class="tag">Lan Hồ Điệp</span> <a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="tittle">{{ $itemNew->ten_san_pham }}</a>
                                         <!-- Reviews -->
@@ -364,7 +241,7 @@
 
                                 @endphp
                                 <div class="product">
-                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $itemNew->ten_hinh }}" alt="" >
+                                    <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $itemNew->ten_hinh }}" alt="" >
                                         <!-- Content -->
                                         <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($itemNew->ten_san_pham),$itemNew->id]) }}" class="tittle">{{ $itemNew->ten_san_pham }}</a>
                                         <!-- Reviews -->
@@ -433,7 +310,7 @@
 
                         @endphp
                         <div class="product">
-                            <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $sale->ten_hinh }}" alt="" >
+                            <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $sale->ten_hinh }}" alt="" >
                                 <!-- Content -->
                                 <span class="sale-tag">-10%</span>
                                 <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($sale->ten_san_pham),$sale->id]) }}" class="tittle">{{ $sale->ten_san_pham }}</a>
@@ -489,7 +366,7 @@
 
                         @endphp
                         <div class="product">
-                            <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $all->ten_hinh }}" alt="" >
+                            <article> <img style="height: 220px" class="img-responsive" src="{{ asset('trangchinh_asset/images') }}/{{ $all->ten_hinh }}" alt="" >
                                 <span style="background-color: #0088cc" class="sale-tag">Mới</span>
                                 <!-- Content -->
                                 <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($all->ten_san_pham),$all->id]) }}" class="tittle">{{ $all->ten_san_pham }}</a>

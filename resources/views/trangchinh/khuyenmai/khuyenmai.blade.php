@@ -91,7 +91,7 @@
 									$tbl_chuongtrinhkhuyenmai =  \DB::table('tbl_khuyenmai_sanpham')->where('sanpham_id',$pro->id)->first();
 
 									if ($tbl_chuongtrinhkhuyenmai){
-										$hinhthuc = \DB::table('tbl_chuongtrinhkhuyenmai')->where('id',$tbl_chuongtrinhkhuyenmai->chuongtrinh_id)->first();
+										$hinhthuc = \DB::table('tbl_chuongtrinhkhuyenmai')->where('id',$tbl_chuongtrinhkhuyenmai->chuongtrinhkhuyenmai_id)->first();
 									}
 
 								@endphp

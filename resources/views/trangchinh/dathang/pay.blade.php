@@ -39,11 +39,10 @@
                                             <label style="margin-bottom: 10px" for="company">Tỉnh/Thành Phố:</label>
                                             <select style="margin-bottom: 20px" required="" class="form-control city" id="state" name="city">
                                                 <option value="">--Chọn tỉnh thành phố --</option>
-                                                <option value="1">Cần Thơ</option>
-                                                <option value="2">Sóc Trăng</option>
-                                                <option value="3">Kiên Giang</option>
-                                                <option value="4">Thành Phố Hồ Chí Minh</option>
-                                                <option value="5">Hà Nội</option>
+                                                @foreach($tinhthanhp as $tp)
+                                                    <option value="{{ $tp->id }}">{{ $tp->ten_tinh_thanhpho }}</option>
+                                                @endforeach
+
                                             </select>
                                         </div>
                                     </div>
@@ -96,8 +95,8 @@
                                 <div class="box-footer clearfix">
                                     <div class="text-center" style="margin-bottom: 40px">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <a href="{{ route('cart.index') }}" class="btn btn-default"  style="background: #337ab7;border: 1px solid #337ab7"><i class="fa fa-chevron-left"></i> Quay Lại </a>
-                                        <button type="submit" class="btn btn-primary" style="background: #337ab7;border: 1px solid #337ab7"> Hoàn Tất <i class="fa fa-chevron-right"></i></button>
+                                        <a href="/" class="btn btn-default"  style="background: #337ab7;border: 1px solid #337ab7"><i class="fa fa-chevron-left"></i> Quay Lại </a>
+                                        <button type="submit" class="btn btn-primary" style="background: #337ab7;border: 1px solid #337ab7"> Đặt Hàng <i class="fa fa-chevron-right"></i></button>
                                     </div>
                                 </div>
                             </div>
