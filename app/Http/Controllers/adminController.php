@@ -1844,31 +1844,37 @@ class adminController extends Controller
     public function chinhsuauudai($id)
     {
         $uudai = DB::table('tbl_uudai')
-        ->select('tbl_uudai.id','ten_hinh_thuc', 'tbl_hinhthucuudai.id as id_hinhthuc','ten_san_pham','ti_le_giam_gia','so_luong_toi_thieu', 'sanpham_id')
-        ->leftJoin('tbl_hinhthucuudai','tbl_hinhthucuudai.uudai_id','=','tbl_hinhthucuudai.id')
-        ->leftJoin('tbl_sanpham', 'tbl_hinhthucuudai.sanpham_id', '=', 'tbl_sanpham.id')
-       ->orderBy('tbl_hinhthucuudai.id', 'DESC')
+        ->select('so_luong_toi_thieu', 'ti_le_giam_gia')
+        ->where('tbl_uudai.id', '=', $id)->get();
+
+        $HinhThucUuDai = DB::table('tbl_hinhthucuudai')
+        ->select('tbl_hinhthucuudai.id as id_hinhthuc','ten_hinh_thuc', 'sanpham_id')
+        ->join('tbl_sanpham', 'tbl_sanpham.id','=' ,'tbl_hinhthucuudai.sanpham_id')
+        ->where('uudai_id', '=', $id)
+        ->get(); 
+
+        $danhsachsanpham = DB::table('tbl_sanpham')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham')
         ->get();
-         $danhsachsanpham = DB::table('tbl_sanpham')
-        ->leftJoin('tbl_dongia', 'tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
-       // ->leftJoin(' tbl_khuyenmai_sanpham', 'tbl_khuyenmai_sanpham.sanpham_id','=','tbl_sanpham.id')
-        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham', 'mo_ta')
-    
-        ->get();
-        return view('admin.modules.khuyenmai.chinhsuauudai', ['uudai'=>$uudai, 'danhsachsanpham'=>$danhsachsanpham]);
+        return view('admin.modules.khuyenmai.chinhsuauudai', ['uudai'=>$uudai,'hinhthuc'=>$HinhThucUuDai , 'danhsachsanpham'=>$danhsachsanpham]);
     }
      public function postChinhSuaUuDai(Request $request,$id)
     {
+
+
         $id_hinhthuc = $request->input('id_hinhthuc');
+
         $uudai = UuDai::findOrFail($id);  
         
+
         $uudai->so_luong_toi_thieu=$request->input('so_luong_toi_thieu');
         $uudai->ti_le_giam_gia=$request->input('ti_le_giam_gia');
         $uudai->save();
         
-        $hinhthuc = HinhThucUuDai::find($id_hinhthuc);
+        $hinhthuc = HinhThucUuDai::findOrFail($id_hinhthuc);
         $hinhthuc->ten_hinh_thuc=$request->input('ten_hinh_thuc');
         $hinhthuc->save();
+
         $mss = 'Hoàn tất, Chương trình khuyến mại '.$request->input('ten_hinh_thuc').' đã được thêm! ';
         return redirect()->intended('qt-danh-sach-uu-dai')->with($mss);
     }
@@ -1916,14 +1922,10 @@ class adminController extends Controller
             // echo  $id_sanpham[$i];
         }
         $tenctr = $request->input('ten_qua_tang');
-
-
-
         $mss = 'Hoàn tất, Quà tặng '.$tenctr.' đã được thêm! ';
         return redirect()->intended('qt-danh-sach-qua-tang')->with('message', $mss);
 
-        
-        
+             
     }
 
 // ajax 
@@ -1949,7 +1951,7 @@ class adminController extends Controller
         ->orderBy('tbl_quatang.id', 'DESC')
         ->where('id', '=', $id)
         ->get();
-
+        // return $quatang;
         $khuyenmai = DB::table('tbl_chuongtrinhkhuyenmai')
         ->select('tbl_chuongtrinhkhuyenmai.id','ten_chuong_trinh')
         ->orderBy('ten_chuong_trinh', 'DESC')
@@ -1962,17 +1964,17 @@ class adminController extends Controller
         ->get();
 
 
-
         return view('admin.modules.khuyenmai.chinhsuaquatang',['quatang'=>$quatang,'data_khuyenmai'=>$khuyenmai, 'khuyenmai_quatang'=>$khuyenmai_quatang]);
     }
       public function postChinhsuaquatang(Request $request,$id)
     {
         $quatang = QuaTang::findOrFail($id);
         $quatang->ten_qua_tang=$request->input('ten_qua_tang');
-        
-
         $quatang->so_luong=$request->input('so_luong');
         $quatang->save();
+
+        
+        
         return redirect()->intended('qt-danh-sach-qua-tang');
     }
      public function xoaquatang(Request $request,$id)

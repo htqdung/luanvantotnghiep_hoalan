@@ -60,22 +60,27 @@
                   <div class="widget-main">
                     <div>
                       <label>Tên ưu đãi</label>
-                      <input type="hidden" value="{{ $uudai[0]->id_hinhthuc }}" name="id_hinhthuc">
-                      <input type="text"  value="{{ $uudai[0]->ten_hinh_thuc }}" name="ten_hinh_thuc" class="form-control" id=uudai" placeholder="" required="">
+                      
+                      <input type="text"  value="{{ $hinhthuc[0]->ten_hinh_thuc }}" name="ten_hinh_thuc" class="form-control" id="" placeholder="" required="">
                     </div>
                     <br>
+                    @foreach ($hinhthuc as $item2)  
+                    <input type="hidden" value="{{ $item2->id_hinhthuc }}" name="id_hinhthuc">
+                    @endforeach
                     <div>
                       <label>Chọn sản phẩm</label>
                       <select  id="framework"  name="ten_san_pham[]" class="select2 col-md-12" multiple="multiple" class="form-control" required="">
-                        
-                        @foreach ($danhsachsanpham as $item)
-                          @if($uudai[0]->sanpham_id == $item->id_sanpham)
-                            <option selected value="{{ $uudai[0]->sanpham_id }}">{{ $uudai[0]->ten_san_pham }}</option>
-                          @else
-                            <option value="{{ $item->id_sanpham }}">{{ $item->ten_san_pham }}</option>
-                          @endif
-                        @endforeach
-
+                         @foreach ($danhsachsanpham as $item)
+                               @foreach ($hinhthuc as $item2)  
+                                @if($item2->sanpham_id  == $item->id_sanpham)
+                                    <option selected="selected" value="{{ $item->id_sanpham }}">{{ $item->ten_san_pham }}</option>
+                                @elseif($item2->sanpham_id  != $item->id_sanpham)
+                                    <option  value="{{ $item2->sanpham_id }}">{{ $item->ten_san_pham }}</option>
+                                @else
+                                @endif
+                              @endforeach
+                          @endforeach
+                       
                        </select>
                     </div>
                     <br>

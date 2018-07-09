@@ -60,7 +60,6 @@
                          <select  id="framework" name="themloai[]" class="select2 col-md-12" multiple="multiple" class="form-control">
                           @foreach ($data_dmhoa as $item)
                                @foreach ($data_dmhoa2 as $item2)      
-                              
                                 @if($item2->loai_id  == $item->loai_id)
                                   <option selected="selected" value="{{ $item->loai_id }}">{{ $item->ten_loai }}</option>
                                 @elseif($item2->loai_id  != $item->loai_id)
