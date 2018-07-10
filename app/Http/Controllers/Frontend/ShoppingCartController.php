@@ -56,7 +56,7 @@ class ShoppingCartController extends Controller
 
         if ($km_sp)
         {
-            $sale = \DB::table('tbl_chuongtrinhkhuyenmai')->where('id',$km_sp->chuongtrinh_id)->first();
+            $sale = \DB::table('tbl_chuongtrinhkhuyenmai')->where('id',$km_sp->chuongtrinhkhuyenmai_id)->first();
             if ($sale)
             {
                 $pt_sale = $sale->ti_le_giam_gia;
@@ -95,7 +95,7 @@ class ShoppingCartController extends Controller
     {
         if (!\Session::has('user'))
         {
-            return redirect()->back()->with('danger',' Mời bạn đăng nhập hoạc đăng ký để thanh toán ');
+            return redirect()->back()->with('danger',' Mời bạn đăng nhập hoặc đăng ký để thanh toán ');
         }
 
         $diachi     = \DB::table('tbl_diachi')->get();
@@ -151,7 +151,7 @@ class ShoppingCartController extends Controller
             }
         }
         \Cart::destroy();
-        return redirect('/')->with('success','Xác nhận thông tin thanh toán thành công ');
+        return redirect('/')->with('success','Xác nhận thông tin thanh toán thành công! ');
     }
 
     public function deleteItemProduct($id)

@@ -80,8 +80,6 @@
 
                                         <ul class="cmp-list">
                                             <li><a href="#."><i class="fa fa-clock-o"></i> Ngày đăng {{ $product->created_at ? $product->created_at : Carbon\Carbon::now() }}</a></li>
-                                            {{--<li><a href="#."><i class="fa fa-navicon"></i> Add to Compare</a></li>--}}
-                                            {{--<li><a href="#."><i class="fa fa-envelope"></i> Email to a friend</a></li>--}}
                                         </ul>
 
                                         <!-- Quinty -->

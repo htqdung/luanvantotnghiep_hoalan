@@ -58,7 +58,7 @@ class FrontendController extends Controller
     {
         if( !\Session::has('user') )
         {
-            return redirect()->back()->with('danger','bạn phải đăng nhập mới thực hiện chức năng này');
+            return redirect()->back()->with('danger','Bạn phải đăng nhập để thực hiện chức năng này');
         }
         $user = \Session::get('user');
 

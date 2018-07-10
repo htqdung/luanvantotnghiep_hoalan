@@ -56,7 +56,7 @@ class LoginController extends Controller
             return redirect('/')->with('success',' Đăng nhập thành công ');
         }
 
-        return redirect()->back()->withInput($request->only('username','password'));
+        return redirect()->back()->with('danger','Sai thông tin đăng nhập ');
     }
 
     /**

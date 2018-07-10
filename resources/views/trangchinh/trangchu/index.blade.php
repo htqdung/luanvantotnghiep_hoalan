@@ -312,7 +312,7 @@
                         <div class="product">
                             <article> <img style="height: 220px" class="img-responsive" src="{{ asset('sanpham') }}/{{ $sale->ten_hinh }}" alt="" >
                                 <!-- Content -->
-                                <span class="sale-tag">SALE</span>
+                                <span class="sale-tag">-15%</span>
                                 <span class="tag">Lan Vũ Nữ</span> <a href="{{ route('frontend.chitiet',[str_slug($sale->ten_san_pham),$sale->id]) }}" class="tittle">{{ $sale->ten_san_pham }}</a>
                                 <p class="rev">
                                     <?php

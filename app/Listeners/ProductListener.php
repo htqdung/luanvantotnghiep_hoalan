@@ -22,7 +22,7 @@ class ProductListener implements ShouldQueue
 
     }
 
-    public $timeStop = 1800;
+    public $timeStop = 5;
 
     /**
      * Handle the event.
