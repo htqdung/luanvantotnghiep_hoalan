@@ -96,7 +96,11 @@
                               });
                         </script>
                         <div class="col-md-12">
-                          <div class="col-md-12" style="margin-right: 0; ">
+                          <div class="col-md-6" style="margin-right: 0; ">
+                              <label for="so_luong"><i>Số lượng</i></label>
+                              <input type="number" required="required" class="form-control" name="so_luong" id="so_luong" value="{{ old('so_luong') }}" placeholder="" style="margin-right: 0; ">
+                          </div>
+                           <div class="col-md-6" style="margin-right: 0; ">
                               <label for="kich_thuoc"><i>Kích thước</i></label>
                               <input type="text" required="required" class="form-control" name="kich_thuoc" id="kich_thuoc" value="{{ old('kich_thuoc') }}" placeholder="" style="margin-right: 0; ">
                           </div>

@@ -35,7 +35,8 @@
 					      <tr>
 					        <th style="width: 7%">Mã số</th>
 					        <th style="width: 30% ">Tên sản phẩm</th>
-					        <th style="width: 10%">Đơn giá</th>				       						
+					        <th style="width: 10%">Đơn giá</th>	
+                  <th style="width: 10%">Tồn kho</th>  		       						
 					        <th style="width: 10% ">Điểm thưởng</th>
 					        <th  style="width: 15%">Chức năng</th>
 					      </tr>
@@ -47,6 +48,29 @@
 	                    <td>{{ $item->id_sanpham }}</td>
 	                    <td><a href="{{ route('CHINH_SUA_SAN_PHAM', $item->id_sanpham)  }}">{{ $item->ten_san_pham }}</a></td>
 	                    <td> <?= number_format($item->gia); ?> VND</td>
+                       <td>{{ $item->so_luong}} <a href="" data-toggle="modal" data-target="#so_luong{{ $item->id_sanpham }}"><i class="fa fa-edit" style="font-size:24px"></i></a>
+                       </td>
+                       <div id="so_luong{{ $item->id_sanpham }}" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content modal_sanpham_width">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Quản lý kho</h4>
+                                <div class="col-md-12">
+                                  <input type="hidden" value="{{ $item->id_sanpham }}" id="id_sanpham<?= $i ?>">
+                                  <div class="col-md-6"><label for="">SL Tồn hiện tại: </label>
+                                  <input type="number" required="required" class="form-control"  id="so_luong_cu<?= $i ?>" id="so_luong" value="{{ $item->so_luong }}" readonly="" placeholder="" style="margin-right: 0; "> </div>
+                                  <div class="col-md-6"> <label for="">SL nhập hàng: </label>
+                                   <input type="number" required="required" class="form-control" id="so_luong_moi<?= $i ?>" id="so_luong" placeholder="" style="margin-right: 0; "></div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" id="capnhatkho<?= $i ?>" class="btn btn-info" data-dismiss="modal">Cập nhật</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 	                    <td>{{ $item->diem_thuong}}</td>
 
 	                    <td>
@@ -64,25 +88,18 @@
           							        <p>Loài: <i id="loai<?= $i;  ?>"></i></p>
           							      </div>
           							      	<div class="modal-body">
-
-          							        <div id="hinh_anh_slide<?= $i; $i++; ?>">
-          				                      
-  	                          	</div>
-          			                       
-          			                       
+          							        <div id="hinh_anh_slide<?= $i; $i++; ?>">     
+  	                          	</div>   
           			                 <div class="clearfix" ></div>
           							        <p style = "padding-top: 25px"><b>Giá: </b> <?= number_format($item->gia); ?>VND</p>
-          							        
           							        <p><b>Điểm thưởng: </b>{{ $item->diem_thuong }}</p>
           							        <p><b>Kích thước: </b> <?= $item->kich_thuoc;?> </p>
                                 <p><b>Mô tả: </b> <?= $item->mo_ta;?> </p>
-                                
           							      </div>
           							      <div class="modal-footer">
           							        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
           							      </div>
           							    </div>
-
           							  </div>
           							</div>
 
@@ -116,12 +133,123 @@
 		</div><!-- /.page-content -->
 	</div>
 </div>
-
+<button onclick="reload()">RELOAD</button>
 <script>
+function reload() {
+  location.reload();
+}
+
+$( "#capnhatkho0" ).click(function() {
+    var id_sanpham = $('#id_sanpham0').val();
+    var sl_ton = $('#so_luong_cu0').val();
+    var sl_moi = $('#so_luong_moi0').val();
+
+    var sl_ton_moi = sl_ton*1 + sl_moi*1;
+    var path = 'cap-nhat-kho/id='+id_sanpham+'&sl='+sl_ton_moi;
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+
+    .done(function(argument) {
+      argument.forEach(function(data){
+       $(this).html(s);
+      })
+    })    
+});
+$( "#capnhatkho1" ).click(function() {
+    var id_sanpham = $('#id_sanpham1').val();
+    var sl_ton = $('#so_luong_cu1').val();
+    var sl_moi = $('#so_luong_moi1').val();
+
+    var sl_ton_moi = sl_ton*1 + sl_moi*1;
+    var path = 'cap-nhat-kho/id='+id_sanpham+'&sl='+sl_ton_moi;
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+
+    .done(function(argument) {
+      argument.forEach(function(data){
+        $(this).html(s);
+      })
+    })    
+});
+$( "#capnhatkho2" ).click(function() {
+    var id_sanpham = $('#id_sanpham2').val();
+    var sl_ton = $('#so_luong_cu2').val();
+    var sl_moi = $('#so_luong_moi2').val();
+
+    var sl_ton_moi = sl_ton*1 + sl_moi*1;
+    var path = 'cap-nhat-kho/id='+id_sanpham+'&sl='+sl_ton_moi;
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+
+    .done(function(argument) {
+      argument.forEach(function(data){
+        $(this).html(s);
+      })
+    })    
+});
+$( "#capnhatkho3" ).click(function() {
+    var id_sanpham = $('#id_sanpham3').val();
+    var sl_ton = $('#so_luong_cu3').val();
+    var sl_moi = $('#so_luong_moi3').val();
+
+    var sl_ton_moi = sl_ton*1 + sl_moi*1;
+    var path = 'cap-nhat-kho/id='+id_sanpham+'&sl='+sl_ton_moi;
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+
+    .done(function(argument) {
+      argument.forEach(function(data){
+        $(this).html(s);
+      })
+    })    
+});
+$( "#capnhatkho4" ).click(function() {
+    var id_sanpham = $('#id_sanpham4').val();
+    var sl_ton = $('#so_luong_cu4').val();
+    var sl_moi = $('#so_luong_moi4').val();
+
+    var sl_ton_moi = sl_ton*1 + sl_moi*1;
+    var path = 'cap-nhat-kho/id='+id_sanpham+'&sl='+sl_ton_moi;
+    $.ajax({
+        url: path,
+        type: 'GET'
+    })
+
+    .done(function(argument) {
+      argument.forEach(function(data){
+        $(this).html(s);
+      })
+    })    
+});
+// $( "#capnhatkho5" ).click(function() {
+//     var id_sanpham = $('#id_sanpham5').val();
+//     var sl_ton = $('#so_luong_cu5').val();
+//     var sl_moi = $('#so_luong_moi5').val();
+
+//     var sl_ton_moi = sl_ton*1 + sl_moi*1;
+//     var path = 'cap-nhat-kho/id='+id_sanpham+'&sl='+sl_ton_moi;
+//     $.ajax({
+//         url: path,
+//         type: 'GET'
+//     })
+
+//     .done(function(argument) {
+//       argument.forEach(function(data){
+//          location.reload()
+//       })
+//     })    
+// });
 function clickme0() {
     var x = document.getElementById("myTable").rows[1].cells[0].innerHTML;
     var path = 'ajax-lay-danh-mua-loai-hoa/'+x;
-
     $.ajax({
         url: path,
         type: 'GET'
@@ -133,24 +261,13 @@ function clickme0() {
         argument.forEach(function(data){
         	// console.log(data);
           // console.log(data);
-          if(data.ten_loai == null)
-          {
-             
-          }
-          else
-          {
-            dung += data.ten_loai +'-';  
-          }
-
-          if(data.ten_hinh == null)
-          {
-
-          }
+          if(data.ten_loai == null){}
+          else{dung += data.ten_loai +'-'; }if(data.ten_hinh == null)
+          {}
           else
           {
             hinh += '<ul class="ace-thumbnails clearfix"><li><a href="/public/sanpham/'+data.ten_hinh+'" title="Photo Title" data-rel="colorbox"><img width="150" height="150" alt="150x150" src="/public/sanpham/'+data.ten_hinh+'"></a></li></ul>';
           }
-          
         })
         $("#loai0").html(dung);
         $("#hinh_anh_slide0").html(hinh);

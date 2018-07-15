@@ -157,4 +157,8 @@ Route::get('ajax-lay-danh-sach-don-hang/{id}', 'adminController@laydonhangchongu
 
 
 
+Route::get('cap-nhat-kho/id={id}&sl={sl}','adminController@EditSLKho' );
+
+
+Route::get('danh-sach-email', 'adminController@EmailControllerList')->name('email-list');
 ?>

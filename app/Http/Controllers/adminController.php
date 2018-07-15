@@ -24,6 +24,8 @@ use App\SanPham_Loai;
 use App\ThongTinLienHe;
 use App\DiaChi;
 use App\TrangThai_DonHang;
+use App\Kho;
+use App\Email;
 // use App\khuyenmai_sanpham;
 use App\Http\Requests\ThemTagsRequest;
 use App\Http\Requests\ThemChiRequest;
@@ -881,13 +883,11 @@ class adminController extends Controller
     {
         $sanpham = DB::table('tbl_sanpham')
         ->leftJoin('tbl_dongia','tbl_dongia.sanpham_id', '=', 'tbl_sanpham.id')
-        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','diem_thuong', 'kich_thuoc')
+        ->leftJoin('tbl_kho','tbl_kho.sanpham_id', '=', 'tbl_sanpham.id')
+        ->select('tbl_sanpham.id as id_sanpham','ten_san_pham','gia','mo_ta','tbl_kho.so_luong','diem_thuong', 'kich_thuoc')
         ->orderBy('id_sanpham','desc')
-        ->paginate(5);
-        
-        
-
-       
+        ->paginate(5);        
+        // return $sanpham;
     	return view('admin.modules.hoalan.danhsachsanpham',['data'=>$sanpham]);
     }
 
@@ -1067,6 +1067,11 @@ class adminController extends Controller
         ->where('sanpham_id','=', $id)
         ->limit(1)->get();
 
+        $kho = DB::table('tbl_kho')
+        ->join('tbl_sanpham', 'tbl_kho.sanpham_id' ,'=', 'tbl_sanpham.id')
+        ->select('tbl_kho.id','so_luong')
+        ->where('tbl_kho.sanpham_id', '=', $id)
+        ->get();
 
         $hinhanhsp = DB::table('tbl_hinhanh')
         ->join('tbl_sanpham', 'tbl_hinhanh.sanpham_id' ,'=', 'tbl_sanpham.id')
@@ -2473,4 +2478,22 @@ class adminController extends Controller
     }
 
 
+    public function EditSLKho($id, $sl)
+    {
+        Kho::where('sanpham_id', $id)
+        ->update(['so_luong'=>$sl]);
+        return redirect()->intended('/qt-danh-sach-san-pham');
+    }
+
+
+
+
+    public function EmailControllerList()
+    {
+      $danhsachEmail = DB::table('tbl_email')
+      ->select('id','email', 'status')
+      ->where('status', 1)
+      ->paginate(5);
+    return view('admin.modules.email.danhSachEmail', ['data'=>$danhsachEmail]);
+    }
 }

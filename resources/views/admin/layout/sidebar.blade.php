@@ -67,43 +67,7 @@
               <a href="{{ route('TAT_CA_DON_HANG') }}" >
   					<i class="menu-icon fa fa-list"></i>
   					<span class="menu-text"> Đơn hàng </span></a>  				
-            	{{-- <b class="arrow fa fa-angle-down"></b>
-  				</a>
-              <b class="arrow"></b>
-              <ul class="submenu">
-                 <li class="">
-                      <a href="{{ route('TAT_CA_DON_HANG') }}">
-                <i class="menu-icon fa fa-caret-right"></i>
-                Tất cả đơn hàng
-              </a>
-                      <b class="arrow"></b>
-                  </li>
-                  <li class="">
-                      <a href="{{ route('DON_HANG_DANG_XU_LY') }}">
-                <i class="menu-icon fa fa-caret-right"></i>
-                Đang xử lý
-              </a>
-                      <b class="arrow"></b>
-                  </li>
-                  <li class="">
-                      <a href="{{ route('DON_HANG_DANG_GIAO') }}">
-  							<i class="menu-icon fa fa-caret-right"></i>
-  							Đang giao
-  						</a>
-                      <b class="arrow"></b>
-                  </li>
-                  <li class="">
-                      <a href="{{ route('DON_HANG_DA_GIAO') }}">
-                <i class="menu-icon fa fa-caret-right"></i>
-                Đã giao
-              </a>
-                      <b class="arrow"></b>
-                  </li>
-                  
-                 
-              </ul> --}}
           </li>
-          
           <li class="">
             <a href="javascript:void(0)" class="dropdown-toggle">
             <i class="menu-icon fa fa-users"></i>
@@ -158,6 +122,30 @@
                       <b class="arrow"></b>
                   </li>
                 
+              </ul>
+          </li>
+          <li class="">
+              <a href="{{ route('email-list') }}" class="dropdown-toggle">
+            <i class="menu-icon fa fa-envelope "></i>
+            <span class="menu-text"> Quản lý email </span>
+            <b class="arrow fa fa-angle-down"></b>
+          </a>
+              <b class="arrow"></b>
+              <ul class="submenu">
+                  <li class="">
+                      <a href="{{ route('email-list') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách email
+                      </a>
+                      <b class="arrow"></b>
+                  </li>
+                  <li class="">
+                      <a href="{{ route('DANH_SACH_UU_DAI') }}">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Gửi mail
+                      </a>
+                      <b class="arrow"></b>
+                  </li>
               </ul>
           </li>
           <div hidden="hidden">

@@ -94,11 +94,14 @@
                           $('#diem_thuong_gioi_y').removeAttr('hidden');
                           });
                     </script>
-                    <div class="col-md-12 form-group" style="margin-right: 0; ">
+                    <div class="col-md-6 form-group" style="margin-right: 0; ">
+                        <label for="so_luong"><i>Số lượng</i></label>
+                        <input type="text" required="required" class="form-control" name="so_luong" id="so_luong" value="{{ $data_sp->so_luong }}" placeholder="" style="margin-right: 0; ">
+                    </div>
+                     <div class="col-md-6 form-group" style="margin-right: 0; ">
                         <label for="kich_thuoc"><i>Kích thước</i></label>
                         <input type="text" required="required" class="form-control" name="kich_thuoc" id="kich_thuoc" value="{{ $data_sp->kich_thuoc }}" placeholder="" style="margin-right: 0; ">
                     </div>
-
                     <label for="form-field-tags" style="padding-left: 8px;">Tags</label>
                     <div class="col-md-12">
                       <div class="inline">

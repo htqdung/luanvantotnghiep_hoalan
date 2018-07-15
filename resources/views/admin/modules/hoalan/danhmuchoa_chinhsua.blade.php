@@ -62,7 +62,7 @@
                           <label>Chi</label>
                             <select id="" name="id_chi"  class="form-control" required>
                                   @foreach ($chi as $item)
-                                    <option value="{{ $item->id }}">{{ $item->ten_chi }}</option>
+                                    <option value="{{ $item->id  }}">{{ $item->ten_chi }}</option>
                                   @endforeach
                              </select>
                         </div>  
