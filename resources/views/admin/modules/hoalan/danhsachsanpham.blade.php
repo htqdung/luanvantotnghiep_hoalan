@@ -56,7 +56,7 @@
                             <div class="modal-content modal_sanpham_width">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Quản lý kho</h4>
+                                <h4 class="modal-title">Quản lý kho: {{ $item->ten_san_pham }}</h4>
                                 <div class="col-md-12">
                                   <input type="hidden" value="{{ $item->id_sanpham }}" id="id_sanpham<?= $i ?>">
                                   <div class="col-md-6"><label for="">SL Tồn hiện tại: </label>
